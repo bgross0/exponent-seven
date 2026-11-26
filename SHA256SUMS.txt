@@ -1,9 +1,6 @@
 ce0088c151383254d79a5f48ea5f5a86d52ab2990d9390a957bffd6157d1d2e5  ./.gitignore
 60aca5c92885ee61f38aad1d842178f175bd6d9c2b615a17d042bb845ef6a893  ./.zenodo.json
 a9c2fd0a90ef67b34349c3de00e47d8de14725e31d54984f10697e7cc35cd492  ./CITATION.cff
-491f1c02bb31774c3f711155a4cc24da5923dc8ba7016e9aaff13969e2ea49ca  ./Exp7Lean/.github/workflows/create-release.yml
-27c305b340e38c4adc482ea8109aa3e36dfd89c8e56eaf90d57aa7368be2b627  ./Exp7Lean/.github/workflows/lean_action_ci.yml
-608304be502130030682762aa4a9bbec3e127d6b1eb2acf054818b84b6c81a4f  ./Exp7Lean/.github/workflows/update.yml
 b3ad09fc93f83fdbd0bee771258dd4a58d3798fd7e6048611dde5a804bb43f1e  ./Exp7Lean/.gitignore
 91e7e5a473ff4db0b1cf4bea0dd533774f6183de8328a12ab9db23f7dea7f138  ./Exp7Lean/Exp7Lean.lean
 8b837400b6887ae821eca70d8be6fc2139910d6c59333f564c2c73b6818da494  ./Exp7Lean/Exp7Lean/Above.lean
