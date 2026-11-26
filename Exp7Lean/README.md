@@ -1,6 +1,6 @@
-# Lean formalization (partial)
+# Lean formalization
 
-A Lean 4 / Mathlib formalization of the argument, with the inputs it does not formalize stated as explicit hypotheses.
+A Lean 4 / Mathlib formalization of Theorems A and D. Both are proved with GRH for the quadratic characters of prime conductor as their only hypothesis; the two computer searches are checked in Lean's kernel. The one input that is still assumed is the published split-prime bound used above `10^32` (see `Above.lean`), which Theorems A and D do not use.
 
 ## Status of each step
 
@@ -28,9 +28,10 @@ A Lean 4 / Mathlib formalization of the argument, with the inputs it does not fo
 | Low-range search: soundness of the certificate (a sieve over `q` below a cut, a sieve over `x` for each `y` above it, exceptions matched against the survivor list), one kernel certificate per prime | **proved** (`SieveLow/`, design in `SieveLow/DESIGN.md`) |
 | Completeness of the main search (`SearchHigh`) | **proved**, kernel-checked (`Sieve/All.lean`, `Exp7.searchHigh`): 465 per-prime certificates `Sieve/P<p>.lean`, about 11 core-hours of `decide +kernel` |
 | Theorem A with GRH as its only hypothesis | **proved** (`Final5.lean`, `theoremA_GRH`, `theoremA_fundamental_GRH`) |
-| Completeness of the low-range search (`SearchLow`) | **assumed**; the kernel run over the 401 per-prime certificates is in progress |
+| Completeness of the low-range search (`SearchLow`) | **proved**, kernel-checked (`SieveLow/All.lean`, `Exp7.searchLow`): 401 per-prime certificates `SieveLow/P<p>.lean`, about 8 core-hours of `decide +kernel` |
+| Theorem D with GRH as its only hypothesis | **proved** (`Final6.lean`, `theoremD_GRH`, `theoremD_fundamental_GRH`) |
 
-Theorem A is fully formalized: its only hypothesis is GRH (`Final5.lean`).
+Theorems A and D are fully formalized: their only hypothesis is GRH (`Final5.lean`, `Final6.lean`).
 
 ```lean
 theorem theoremA_fundamental_GRH (hGRH : GRHPrimeConductor) (a b : ℤ)
@@ -41,7 +42,18 @@ theorem theoremA_fundamental_GRH (hGRH : GRHPrimeConductor) (a b : ℤ)
     Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
 ```
 
-`Final5.lean` and the 465 certificate files are outside the default build target; `lake build Exp7Full` checks them (about 11 core-hours, about 5 GB of memory per job).
+```lean
+theorem theoremD_fundamental_GRH (hGRH : GRHPrimeConductor) (a b : ℤ)
+    (hfund : Int.IsFundamentalDiscr (QuadraticAlgebra.discr a b))
+    (hneg : QuadraticAlgebra.discr a b < 0) [IsDomain (QuadraticAlgebra ℤ a b)]
+    (hhi : -QuadraticAlgebra.discr a b ≤ (QTOP : ℤ)) :
+    Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) = 7 ↔
+      ∃ q ∈ known, QuadraticAlgebra.discr a b = -(q : ℤ)
+```
+
+Here `QTOP = 10^32`, `QLOW = 3.1·10^20`, `known` is the list of 33 primes, and `GRHPrimeConductor` says that for every prime `q ≡ 3 (mod 4)` the zeros of Mathlib's `DirichletCharacter.LFunction` of the quadratic character mod `q` in the open critical strip have real part `1/2`.
+
+`Final5.lean`, `Final6.lean` and the 866 certificate files (465 for the main search, 401 for the low range) are outside the default build target; `lake build Exp7Full` checks them (about 20 core-hours, 5 to 7 GB of memory per job).
 
 The statements with the search hypotheses explicit are in `Final4.lean`:
 
