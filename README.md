@@ -4,7 +4,7 @@
 
 Ben Gross. 25 November 2026.
 
-**Status: computer-assisted research note for independent review. Not refereed. The search has three implementations with different algorithms, one of them written by a different AI system; all three find 0 survivors. The certificate is checked by two independent verifiers.**
+**Status: computer-assisted research note for independent review. Not refereed. The search above 3.1·10^20 has three implementations with different algorithms, one of them written by a different AI system; all three find 0 survivors. The certificate is checked by two independent verifiers. Below 3.1·10^20 the list of 33 fields is rederived from scratch (Theorem D) and agrees with the published table.**
 
 Use of AI: the argument, code and computations were produced with Claude (Anthropic), directed by the author. The independent audit in `independent/AUDIT.md`, with the third search and the second certificate verifier, was produced with Codex (OpenAI). Corrections are welcome through the issue tracker.
 
@@ -16,9 +16,11 @@ Write E(D) for the exponent of the class group of Q(√D), D < 0 a fundamental d
 
 **Corollary B.** Assume the Riemann hypothesis for ζ(s) and for the L-functions L(s, χ_D), that is, ERH for the Dedekind zeta functions of the imaginary quadratic fields (the hypothesis of EKN Theorem 3 and ARSX Theorem 1.3). Then exactly 33 imaginary quadratic fields have class group of exponent 7, the largest being Q(√−118843), and exactly 40 imaginary quadratic orders have Picard group of exponent 7 (largest discriminant −118843).
 
-**Corollary C.** Assume GRH as in Theorem A. Let q ≡ 3 (mod 4) be a prime with 3.1·10^20 ≤ q ≤ 10^32, let p be the least prime that splits in Q(√−q), and let 𝔭 be a prime ideal above p. Then the ideal class of 𝔭 has odd order at least 9.
+**Corollary C.** Assume the hypotheses of Corollary B. Let q ≡ 3 (mod 4) be a prime with q ≥ 3.1·10^20, let p be the least prime that splits in Q(√−q), and let 𝔭 be a prime ideal above p. Then the ideal class of 𝔭 has odd order at least 9. For q ≤ 10^32 the hypothesis of Theorem A suffices.
 
 Corollary C holds for every field in the range, whatever its class group. The proof is after Step 4.
+
+**Theorem D.** Assume GRH as in Theorem A. Then exactly 33 fundamental discriminants D with |D| ≤ 10^32 have E(D) = 7. This does not use the EKN table: the same method is run from scratch below 3.1·10^20 (see "The range below 3.1·10^20").
 
 Corollary B follows from Theorem A and three published results:
 
@@ -64,9 +66,19 @@ So q ≤ 4·4297^7 = 108197560039107534049882852 and the least split prime p sat
 
 **Step 4 (search).** For each of the 465 primes p in [701, 4297], each y ≥ 1, and each x ≥ 0 with x² ≡ 4p^7 (mod y²) and q = (4p^7 − x²)/y² ≥ Qlo(p), `sieve7` tests the necessary conditions: (−q/l) = −1 for every odd prime l < p, and q ≡ 3 (mod 8). For l ∤ y the condition reads "x² − 4p^7 is a non-residue mod l", which is sieved (a wheel on the first primes, 64-bit patterns for l < 64, then one prime at a time). Totals: 21,577 progressions, 7.8·10^12 positions after the wheel, 1.6·10^10 after the bit patterns, and **0 values of x passing all odd primes l < p**. So no such q exists. ∎
 
-**Proof of Corollary C.** Let n be the order of the class of 𝔭. The class number is odd (genus theory), so n is odd. As in Step 1, 𝔭^n = (α) with α not rational, so q ≤ 4p^n. By the first bootstrap row, p ≤ 6361. If n ≤ 5 then q ≤ 4·6361^5 < 4.2·10^19 < 3.1·10^20. If n = 7: Steps 1 to 4 used E(D) = 7 only to know that 𝔭^7 is principal for the least split prime p (for p ≥ 701 in Step 1, for q ≤ 4P^7 at each bootstrap row, and for the norm equation in Step 4), and the search found no solution. So n ≥ 9. ∎
+**Proof of Corollary C.** Let n be the order of the class of 𝔭. The class number is odd (genus theory), so n is odd. As in Step 1, 𝔭^n = (α) with α not rational, so q ≤ 4p^n. If q > 10^32, then p ≤ (1.881 log q + 6.18)² by EKN Theorem 3, and n ≤ 7 would give q ≤ 4p^7 < q by the bound above. Now let q ≤ 10^32. By the first bootstrap row, p ≤ 6361. If n ≤ 5 then q ≤ 4·6361^5 < 4.2·10^19 < 3.1·10^20. If n = 7: Steps 1 to 4 used E(D) = 7 only to know that 𝔭^7 is principal for the least split prime p (for p ≥ 701 in Step 1, for q ≤ 4P^7 at each bootstrap row, and for the norm equation in Step 4), and the search found no solution. So n ≥ 9. ∎
 
 Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `logs/prod_1.log`. A full rerun on a separate 28-thread machine (`logs/rerun.log`) gives identical output for all 465 primes.
+
+## The range below 3.1·10^20 (Theorem D)
+
+Everything for this part is in `lowrange/`. Put B = 10^5.
+
+- **Below B** (`direct.py`). For each of the 4,808 primes q ≡ 3 (mod 4) below B the class number is computed by counting reduced forms. Exactly 32 have class group of exponent 7: the known ones other than 118843. (For q = 63499, class number 49, every split prime l ≤ √(q/3) has 𝔩^7 principal.)
+- **More certificate rows** (`ladder_low.py`, `certificate_full.json`). 124 further rows, from Q ≈ 2.3·10^20 down to Q = B (X = 218). `kernel_verify.rigorous_margin` and `independent/verify_fixedpoint.cjs` both accept all of them.
+- **Search** (`lowsearch.c`). For B ≤ q < 3.1·10^20 with exponent 7, the least split prime p satisfies 3 ≤ p < 2760, q ≡ 3 (mod 8), q > Q_i for every row with X_i ≤ p, and 4p^7 = x² + qy² with p ∤ y. `lowsearch` enumerates these for the 401 primes p: 2.83·10^12 candidates, y up to 1.1·10^6, **6,608 survivors** (`low_run.log`, `low_survivors.txt`; 16 minutes on 24 cores).
+- **Classification** (`classify.py`). 4,685 survivors have composite q. For each of the 1,923 primes, form reduction confirms independently that 𝔭^7 is principal and that p is the least split prime. For 1,922 the second split prime l has 𝔩^7 not principal. The one left is **q = 118843** (found at p = 11, x = 8128, y = 10), class number 49, exponent 7.
+- **Checks.** `test_lowsearch.py`: exact agreement with a brute-force reference on 106 configurations (105 with survivors, composite y up to 659). On p = 701..760 with l < 60, `lowsearch` and `independent/search7i` give the same 650,165 survivors. The brute-force test caught one bug during development (a sentinel value that dropped solutions when 4p^7 ≡ 1 mod l); the production run was made after the fix.
 
 ## Checks
 
@@ -83,8 +95,8 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
 ## Caveats
 
 1. All three search implementations and both certificate verifiers were written by AI systems: two searches and one verifier by Claude (the second search in a separate session with only the specification), and one search and one verifier by Codex. None has been written or reviewed line by line by a person, and none is formally verified.
-2. The proof is only partially formalized. `Exp7Lean/` proves in Lean 4 with Mathlib, with no `sorry` and only the standard axioms, that Theorem A and the classification of the 33 fields follow from explicitly stated inputs: Step 1, the 51 certificate rows, the search result, and EKN Theorems 1 and 3. Lean checks the whole argument connecting them, and proves the bound above 10^32 outright. The inputs themselves are not formalized; see `Exp7Lean/README.md`.
-3. The result rests on EKN's 2020 computation below 3.1·10^20, on Bach–Sorenson (through EKN Theorem 3) above 10^32, and on ARSX for the count of orders.
+2. The proof is only partially formalized. `Exp7Lean/` proves in Lean 4 with Mathlib, with no `sorry` and only the standard axioms, that Theorem A, Theorem D and the classification of the 33 fields follow from explicitly stated inputs: Step 1, the certificate rows, the search results, the class groups below 10^5, and (for the range above 10^32 only) EKN Theorem 3. Lean checks the whole argument connecting them, and proves the bound above 10^32 outright. The inputs themselves are not formalized; see `Exp7Lean/README.md`.
+3. The count of 33 fields no longer rests on EKN's table (Theorem D), and it agrees with that table. The result still rests on Bach–Sorenson (through EKN Theorem 3) above 10^32, and on ARSX for the count of 40 orders. `lowsearch` has one implementation; it is checked against brute force and against `search7i` on an overlapping range.
 4. Priority: a search found no earlier claim on exponent 7, but unpublished or very recent work cannot be excluded.
 
 ## Reproduce
@@ -103,6 +115,12 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
     python3 independent/test_sieve.py && ./independent_sieve ladder.txt 701 4297   # third implementation
     python3 figures.py                      # regenerate the figures in paper/
     (cd Exp7Lean && lake exe cache get && lake build)   # Lean formalization
+    python3 lowrange/direct.py              # Theorem D: class groups below 10^5              (30 s)
+    python3 lowrange/ladder_low.py          # Theorem D: build and verify the 124 extra rows  (5 min)
+    gcc -O3 -march=native -o lowrange/lowsearch lowrange/lowsearch.c -lm
+    python3 lowrange/test_lowsearch.py      # Theorem D: lowsearch against brute force        (4 min)
+    ./lowrange/lowsearch lowrange/ladder_full.txt 3 2759    # Theorem D: the search (stride=N offset=i to split)
+    python3 lowrange/classify.py lowrange/low_run.log lowrange/low_survivors.txt
     python3 kernel_verify.py build          # optional: regenerate the certificate from scratch
 
 The search prints one line per prime and ends with `DONE survivors 0`.
@@ -117,6 +135,7 @@ The search prints one line per prime and ends with `DONE survivors 0`.
 | `certificate.json`, `ladder.txt` | the 51 certificate rows, and the (X, Q) pairs read by the search |
 | `controls.py`, `sanity.py` | the checks listed above |
 | `independent/` | the second and third search implementations, the second certificate verifier, the Codex audit notes (`AUDIT.md`), brute-force references, validation and run summaries |
+| `lowrange/` | Theorem D: extended certificate, the search below 3.1·10^20, class groups below 10^5, classification of survivors, logs |
 | `Exp7Lean/` | Lean 4 formalization of the argument from the stated inputs |
 | `figures.py` | regenerates the three figures from the certificate and the logs |
 | `CITATION.cff`, `.zenodo.json` | citation metadata |

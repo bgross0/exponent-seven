@@ -11,7 +11,16 @@ theorem classification {IsExp7 : ℕ → Prop} (H : Inputs IsExp7) (P : Publishe
     (hq : q.Prime) (h4 : q % 4 = 3) : IsExp7 q ↔ q ∈ known
 ```
 
-That is: given the inputs below, a prime `q ≡ 3 (mod 4)` has class group of exponent 7 if and only if it is one of the 33 listed primes. On the way it proves:
+That is: given the inputs below, a prime `q ≡ 3 (mod 4)` has class group of exponent 7 if and only if it is one of the 33 listed primes.
+
+`Exp7.theoremD` (in `Exp7Lean/Low.lean`) proves the same equivalence for every `q ≤ 10^32` without assuming any published table:
+
+```lean
+theorem theoremD {IsExp7 : ℕ → Prop} (H : Inputs IsExp7) (L : LowInputs IsExp7) {q : ℕ}
+    (hq : q.Prime) (h4 : q % 4 = 3) (hhi : q ≤ QTOP) : IsExp7 q ↔ q ∈ known
+```
+
+On the way the development proves:
 
 - `Exp7.theoremA` (`Main.lean`): Theorem A, no exponent-7 `q` with `3.1·10^20 ≤ q ≤ 10^32`.
 - `Exp7.above_bound` (`Above.lean`): `4 (1.881 log D + 6.18)^14 < D` for every real `D ≥ 10^32`, proved from Mathlib's bounds on `e` and `log 2`.
@@ -38,11 +47,16 @@ These are the fields of `Inputs` and `Published`. Each is a precise statement of
 | `Inputs.cert` | each of the 51 certificate rows `⟨Q, X⟩` forces a split prime below `X` | Steps 2–3: explicit formula under GRH; rows verified by `kernel_verify.py` and `independent/verify_fixedpoint.cjs` |
 | `Inputs.search` | no survivor for the 465 primes `701 ≤ p ≤ 4297` | Step 4: three independent search programs |
 | `Published.ekn3` | under ERH, a split prime `p ≤ (1.881 log q + 6.18)^2` exists for `q > e^25` | Elsenhans–Klüners–Nicolae, Theorem 3 (from Bach–Sorenson) |
-| `Published.ekn1` | the exponent-7 list below `3.1·10^20` | Elsenhans–Klüners–Nicolae, Theorem 1 and Table 1 |
+| `Published.ekn1` | the exponent-7 list below `3.1·10^20` | Elsenhans–Klüners–Nicolae, Theorem 1 and Table 1 (used by `classification` only) |
+| `LowInputs.normEqPrim` | as `normEq`, with `p ∤ y` | Step 1 and the primitivity remark |
+| `LowInputs.certLow` | each of the 124 extra rows forces a split prime below `X` | explicit formula under GRH; rows verified by both verifiers |
+| `LowInputs.direct` | the exponent-7 list below `10^5` | `lowrange/direct.py` |
+| `LowInputs.searchLow` | for `3 ≤ p < 2760` and `q < 3.1·10^20`, the only prime survivor with exponent 7 is `118843` | `lowrange/lowsearch.c` and `lowrange/classify.py` |
+| `LowInputs.exp118843` | `ℚ(√-118843)` has exponent 7 | class group computation |
 
 `Splits q p` is defined by the Dedekind–Kummer criterion: `2` splits iff `q ≡ 7 (mod 8)`, and an odd `p` splits iff the Jacobi symbol `(-q/p)` is 1. `IsExp7` is a parameter, so the theorem holds for any predicate that satisfies the inputs. Connecting it to Mathlib's `ClassGroup` is part of formalizing `normEq`. The reduction from fundamental discriminants `D` to primes `q` (Step 0, genus theory) is also not formalized.
 
-The certificate rows in `Basic.lean` are generated from `../certificate.json`. As a check that `Inputs.search` states exactly what was computed, `Qlo p` evaluated in Lean equals the lower bound in the production logs for all 465 primes.
+The certificate rows in `Basic.lean` and `Low.lean` are generated from `../certificate.json` and `../lowrange/certificate_full.json`. As a check that the search hypotheses state exactly what was computed, `Qlo p` evaluated in Lean equals the lower bound in the production logs for all 465 primes, and `QloFull p` equals the lower bound in `lowrange/low_run.log` for all 401 primes.
 
 ## Build
 

@@ -1,0 +1,5 @@
+log files 2, primes 401, survivor lines 6608, distinct q 6608
+no witness among 12 split primes: q=118843  class number 49  exponent divides 7: True
+composite q: 4685   prime q rejected by a witness or by the class group: 1922
+index of the witness among the split primes (0 = least): {1: 1922}
+ACCEPTED (exponent divides 7): [(118843, 49)]

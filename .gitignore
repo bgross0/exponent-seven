@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 independent/search7i
 independent_sieve
+lowrange/lowsearch
