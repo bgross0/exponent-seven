@@ -42,7 +42,7 @@ Assume the Riemann hypothesis for $\zeta(s)$ and for the $L$-functions $L(s,\chi
 Corollary~\ref{cor:B} follows from Theorem~\ref{thm:A} and three published results.
 \begin{itemize}
 \item Elsenhans, Kl\"uners and Nicolae \cite[Theorem~1 and Table~1]{EKN}: the list of imaginary quadratic fields with $E(D)\le 8$ and $|D|\le 3.1\cdot10^{20}$ is complete. It contains $33$ fields of exponent $7$, the largest with $D=-118843$.
-\item \cite[Theorem~3]{EKN}, derived from Bach and Sorenson \cite{BS}: under ERH for the Dedekind zeta function of $\Q(\sqrt D)$ and for $|D|>e^{25}$, some prime $p\le(1.881\log|D|+6.18)^2$ splits in $\Q(\sqrt D)$. By Step~1 below a split prime forces $|D|\le4p^7$ when $E(D)=7$, so $E(D)=7$ requires $h(\log|D|)\ge0$, where $h(t)=\log4+14\log(1.881t+6.18)-t$. Since $h'(t)=14\cdot1.881/(1.881t+6.18)-1<0$ for $t>10.7$, $h$ is decreasing on $[\log10^{32},\infty)$, and $h(\log10^{32})<-2.64$. Hence no $D$ with $|D|\ge10^{32}$ has $E(D)=7$.
+\item \cite[Theorem~3]{EKN}, derived from Bach and Sorenson \cite{BS}: under ERH for the Dedekind zeta function of $\Q(\sqrt D)$ and for $|D|>e^{25}$, some prime $p\le(1.881\log|D|+6.18)^2$ splits in $\Q(\sqrt D)$. By Step~1 below a split prime forces $|D|\le4p^7$ when $E(D)=7$, so $E(D)=7$ requires $h(\log|D|)\ge0$, where $h(t)=\log4+14\log(1.881t+6.18)-t$. Since $h'(t)=14\cdot1.881/(1.881t+6.18)-1<0$ for $t>10.7$, $h$ is decreasing on $[\log10^{32},\infty)$. Since $\log10^{32}<74$, we have $1.881\log10^{32}+6.18<146$, and $4\cdot146^{14}=7998342040108832435319302324224<10^{32}$, so $h(\log10^{32})<0$. Hence no $D$ with $|D|\ge10^{32}$ has $E(D)=7$.
 \item Aiken, Ross, Shvydkoy and Xue \cite[Theorem~1.3(6)]{ARSX}: under ERH, their table of $40$ orders of exponent $7$ is complete if no fundamental discriminant $D$ with $3.1\cdot10^{20}\le|D|\le3.9\cdot10^{30}$ has class group of exponent $7$. Theorem~\ref{thm:A} supplies this hypothesis.
 \end{itemize}
 
@@ -78,7 +78,7 @@ Suppose no prime below $X$ splits. Since $q>X$ is the only ramified prime, every
 The kernel is chosen with $f$ negative on most of $(0,\log X)$, so that $\Sigma(X,g)$ is large and positive.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.8\linewidth]{fig_kernel.pdf}
+\includegraphics[width=0.74\linewidth]{fig_kernel.pdf}
 \caption{The kernel $f$ of the first bootstrap row ($Q=10^{32}$, $X=6362$). Ticks mark $u=\log p$ for the primes $p<X$. Since $f(\log p)<0$ for all but the smallest primes, each inert prime contributes positively to $\Sigma(X,g)$.}
 \label{fig:kernel}
 \end{figure}
@@ -89,7 +89,7 @@ The kernel is chosen with $f$ negative on most of $(0,\log X)$, so that $\Sigma(
 for some $J^+\ge J_f$. By \eqref{eq:EF}, a valid row gives: every prime $q\equiv3\pmod 4$ with $X<q\le Q$ has a split prime below $X$.
 
 \subsection*{Verification of the rows}
-For each row the program \texttt{kernel\_verify.py} encloses every quantity in \eqref{eq:row} in outward-rounded intervals (\texttt{mpmath.iv}, $40$ digits). The autocorrelation values at the nodes are exact rationals, and the cell containing $\log n$ is determined by the exact integer comparison $X^k\le n^{m}<X^{k+1}$, so no floating-point step enters the verification. $J^+$ is obtained as follows. On the first cell we use $2e^{-3u/2}/(1-e^{-2u})=e^{-u/2}/\sinh u\le1/u$. On the other cells we split into $16$ subcells and use that the kernel is decreasing and $1-f\ge0$, so the kernel can be replaced by its value at the left end of each subcell. For $u>\log X$ the integral is bounded by $\tfrac43X^{-3/2}(1-X^{-2})^{-1}$. We use $\log\pi-\psi(3/4)=\log\pi+\gamma-\pi/2+3\log2$.
+For each row the program \texttt{kernel\_verify.py} encloses every quantity in \eqref{eq:row} in outward-rounded intervals (\texttt{mpmath.iv}, $40$ digits). The autocorrelation values at the nodes are exact rationals, and the cell containing $\log n$ is determined by the exact integer comparison $X^k\le n^{m}<X^{k+1}$, so no floating-point step enters the verification. A second verifier, written independently in fixed-point integer arithmetic at scale $10^{-30}$ with its own series for $\log$ and $\exp$, accepts all $51$ rows with minimum margin $0.0126$. $J^+$ is obtained as follows. On the first cell we use $2e^{-3u/2}/(1-e^{-2u})=e^{-u/2}/\sinh u\le1/u$. On the other cells we split into $16$ subcells and use that the kernel is decreasing and $1-f\ge0$, so the kernel can be replaced by its value at the left end of each subcell. For $u>\log X$ the integral is bounded by $\tfrac43X^{-3/2}(1-X^{-2})^{-1}$. We use $\log\pi-\psi(3/4)=\log\pi+\gamma-\pi/2+3\log2$.
 
 \subsection*{Step 3: bootstrap}
 Six valid rows, each feeding $q\le4P^7$, with $P$ the largest prime below $X$, into the next:
@@ -110,7 +110,7 @@ $1.082\cdot10^{26}$ & 4312 & 4297 & 0.0147 & $1.082\cdot10^{26}$\\
 Hence $q\le4\cdot4297^7=108197560039107534049882852$, and the least split prime satisfies $701\le p\le4297$. A further $45$ valid rows $(Q_i,X_i)$, from $Q_i\approx8.1\cdot10^{25}$ down to $3.1\cdot10^{20}$, shorten the search: if $p\ge X_i$ then $q>Q_i$.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.8\linewidth]{fig_certificate.pdf}
+\includegraphics[width=0.74\linewidth]{fig_certificate.pdf}
 \caption{All $51$ certificate rows. A row $(Q,X)$ certifies that every prime $q\equiv3\pmod4$ with $X<q\le Q$ has a split prime below $X$. The bootstrap rows (squares) reduce the range from $10^{32}$ to $4\cdot4297^7$. The ladder rows (dots) give each candidate $p$ a lower bound for $q$.}
 \label{fig:certificate}
 \end{figure}
@@ -121,7 +121,7 @@ For each of the $465$ primes $p\in[701,4297]$, each $y\ge1$, and each $x\ge0$ wi
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.8\linewidth]{fig_search.pdf}
+\includegraphics[width=0.74\linewidth]{fig_search.pdf}
 \caption{Positions remaining after the wheel for each of the $465$ candidate primes $p$ in the production run. Every prime has $0$ survivors.}
 \label{fig:search}
 \end{figure}
@@ -134,6 +134,9 @@ The production run took about $25$ minutes on $2$ virtual CPUs. A second run of 
 \subsection*{A second implementation}
 A second search program, \texttt{search7i}, was written from the mathematical specification of Step~4 alone, without access to \texttt{sieve7} or its output. Its design is different. For each arithmetic progression $x=r+y^2k$ the value $q$ is a quadratic polynomial in $k$. The program enumerates the admissible residues of $k$ by a two-sided Chinese-remainder enumeration over $8$ and the small odd primes, filters the remaining candidates by table lookup over every odd prime $\ell<p$, and rechecks anything that passes in exact $128$-bit arithmetic. Before the full run it was compared with a brute-force reference on $240$ small configurations ($251{,}096$ survivors, all identical), and it recovers a solution of $4p^7=x^2+qy^2$ for each of the $28$ known fields of exponent $7$ with $q\equiv3\pmod8$. On the full range it took $111$ seconds on $24$ threads and found no survivors. For every one of the $465$ primes, its lower bound for $q$, its largest $y$ and its number of progressions agree with the production run.
 
+\subsection*{A third implementation}
+A third program, written by a different AI system (OpenAI's Codex) in an independent audit, lifts the admissible residues of $x$ directly modulo $8y^2$ and then by the Chinese remainder theorem over the small primes, combines further primes into periodic $64$-bit masks, and treats primes dividing $y$ on the exact value of $q$. It agrees exactly with a brute-force reference on $11$ windows and recovers all $33$ known fields. Its full run, reproduced on our hardware with identical totals ($77{,}049{,}566{,}290$ sieve blocks), finds no survivors. The same audit confirms from reduced forms that the two fields with class number $49$ have class group $C_7\times C_7$.
+
 \subsection*{Further checks}
 The following checks of \texttt{sieve7} are in the repository.
 \begin{itemize}
@@ -145,13 +148,16 @@ The following checks of \texttt{sieve7} are in the repository.
 \end{itemize}
 
 \subsection*{Caveats}
-Both search programs were written with the assistance of the same AI model, the second in a separate session that had only the specification. They are independent designs but not independent authors. The interval check relies on \texttt{mpmath}'s interval arithmetic.
+All three search programs and both certificate verifiers were written by AI systems, two of the searches by the same model. None has been reviewed line by line by a person or formally verified, and the proof has not been formalized in a proof assistant.
 
 \subsection*{Data availability}
-Code, certificate, logs and checksums are archived at \href{https://doi.org/10.5281/zenodo.24549332}{doi:10.5281/zenodo.24549332} (version 1.0.0) and maintained at \url{https://github.com/bgross0/exponent-seven}.
+Code, certificate, logs and checksums are archived on Zenodo and maintained on GitHub:
+\begin{center}
+\url{https://doi.org/10.5281/zenodo.24549331}\qquad \url{https://github.com/bgross0/exponent-seven}
+\end{center}
 
 \subsection*{Use of AI}
-The argument, code and computations were produced with Claude, an AI model by Anthropic, under the direction of the author, who takes responsibility for the content.
+The argument, code and computations were produced with Claude (Anthropic) under the direction of the author, who takes responsibility for the content. The independent audit, including the third search and the second certificate verifier, was produced with Codex (OpenAI).
 
 \begin{thebibliography}{9}
 \bibitem{ARSX} D.~Aiken, E.~Ross, D.~Shvydkoy, H.~Xue, \emph{Boundary CM points and class groups of small exponent}, arXiv:2605.26020.

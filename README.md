@@ -4,9 +4,9 @@
 
 Ben Gross. 25 November 2026.
 
-**Status: computer-assisted research note for independent review. Not refereed. The search has two implementations with different algorithms; both find 0 survivors.**
+**Status: computer-assisted research note for independent review. Not refereed. The search has three implementations with different algorithms, one of them written by a different AI system; all three find 0 survivors. The certificate is checked by two independent verifiers.**
 
-Use of AI: the argument, code and computations were produced with Claude (Anthropic's AI model), directed by the author. Corrections are welcome through the issue tracker.
+Use of AI: the argument, code and computations were produced with Claude (Anthropic), directed by the author. The independent audit in `independent/AUDIT.md`, with the third search and the second certificate verifier, was produced with Codex (OpenAI). Corrections are welcome through the issue tracker.
 
 ## Result
 
@@ -19,7 +19,7 @@ Write E(D) for the exponent of the class group of Q(√D), D < 0 a fundamental d
 Corollary B follows from Theorem A and three published results:
 
 - Elsenhans–Klüners–Nicolae (EKN), Theorem 1: the list of fields with E(D) ≤ 8 is complete for |D| ≤ 3.1·10^20 (a computation; the theorem is stated without hypotheses). It has 33 fields of exponent 7 (EKN Table 1).
-- EKN Theorem 3 (from Bach–Sorenson, under ERH for the Dedekind zeta function of Q(√D)): for |D| > e^25 some prime p ≤ (1.881 log|D| + 6.18)² splits. A split prime forces |D| ≤ 4p^7 when E(D) = 7 (Step 1 below), so E(D) = 7 needs h(log|D|) ≥ 0, where h(t) = log 4 + 14 log(1.881t + 6.18) − t. Now h′(t) = 14·1.881/(1.881t + 6.18) − 1 < 0 for t > 10.7, so h is decreasing for |D| ≥ 10^32, and h(log 10^32) < −2.64. So no |D| ≥ 10^32 has E(D) = 7 (`kernel_verify.py` checks this in interval arithmetic).
+- EKN Theorem 3 (from Bach–Sorenson, under ERH for the Dedekind zeta function of Q(√D)): for |D| > e^25 some prime p ≤ (1.881 log|D| + 6.18)² splits. A split prime forces |D| ≤ 4p^7 when E(D) = 7 (Step 1 below), so E(D) = 7 needs h(log|D|) ≥ 0, where h(t) = log 4 + 14 log(1.881t + 6.18) − t. Now h′(t) = 14·1.881/(1.881t + 6.18) − 1 < 0 for t > 10.7, so h is decreasing for |D| ≥ 10^32. At the endpoint, log 10^32 < 74 gives 1.881 log 10^32 + 6.18 < 146, and 4·146^14 = 7998342040108832435319302324224 < 10^32, so h(log 10^32) < 0. So no |D| ≥ 10^32 has E(D) = 7 (`kernel_verify.py` also checks this in interval arithmetic).
 - Aiken–Ross–Shvydkoy–Xue (ARSX), Theorem 1.3(6): under ERH, their table of 40 orders of exponent 7 is complete if no fundamental D with 3.1·10^20 ≤ |D| ≤ 3.9·10^30 has exponent 7. Theorem A supplies that hypothesis.
 
 **What this adds.** EKN Theorem 2 gives completeness under ERH for exponents ≤ 5 and 8. For exponents 6 and 7 the ERH bounds of their Table 2 (2.5·10^25 and 3.9·10^30) lie beyond their search limit. ARSX recorded both as explicit gaps (Theorem 1.3(5) and (6)). A computer-assisted note of 23 November 2026 ([`nunavipahe60-star/exponent-six`](https://github.com/nunavipahe60-star/exponent-six)) treats the exponent-6 gap. This note treats the exponent-7 gap; a search on 25 November 2026 found no earlier claim. EKN note that finiteness was known unconditionally for exponents 2 ≤ c ≤ 8 except c = 7.
@@ -41,7 +41,7 @@ If no prime below X splits, every prime below X is inert (q is the only ramified
 
     Σ_{p<X} A_p − J_up − log Q + (log π − ψ(3/4)) > 0,     J_up ≥ J_f,
 
-and then every prime q ≤ Q in our family has a split prime below X. `kernel_verify.py` checks each row with outward-rounded interval arithmetic (mpmath `iv`, 40 digits); the autocorrelation values are exact rationals, and the cell containing log n is found by exact integer comparison (X^k ≤ n^64 < X^(k+1)), with no floating point.
+and then every prime q ≤ Q in our family has a split prime below X. `kernel_verify.py` checks each row with outward-rounded interval arithmetic (mpmath `iv`, 40 digits); the autocorrelation values are exact rationals, and the cell containing log n is found by exact integer comparison (X^k ≤ n^64 < X^(k+1)), with no floating point. A second, independently written verifier (`independent/verify_fixedpoint.cjs`, BigInt fixed point at scale 10^−30, its own log and exp series with explicit tail bounds, no mpmath) also accepts all 51 rows, with minimum certified margin 0.0126; its constants π and γ are certified by exact rational series in `independent/verify_constants.py`.
 
 This is the positive-kernel method of the exponent-six note, which applies the explicit formula in the form of Carneiro–Milinovich–Quesada-Herrera–Ramos, Lemma 9. Step 0 simplifies it: with prime conductor there are no ramified primes to pay for.
 
@@ -71,12 +71,13 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
 - **Counts.** `sanity.py` truncates the prime set so that survivors exist over the full x-range, checks each survivor from the definition, and compares the count with the product of local densities: 59,086 found against 58,608 expected over six runs (for example 26,875 against 26,820 for p = 2003, l < 100). Single runs deviate by −1.8σ to +2.1σ and the total by +2.0σ, an excess; a sieve that dropped candidates would fall short.
 - **Log audit.** Each of the 465 primes appears exactly once in the logs.
 - **Second implementation.** `independent/search7i.c` was written from the mathematical specification alone, without access to `sieve7.c`, its logs or this README. Its design is different: for each progression x = r + y²k it enumerates the admissible residues of k by a two-sided CRT over 8 and the small primes, then filters by table lookup over every odd prime l < p, with an exact 128-bit recheck of anything that passes. It was compared with a brute-force Python reference (`independent/ref7.py`) on 240 small configurations in 4 modes each (251,096 survivors, all identical), and it reports a solution of 4p^7 = x² + qy² for all 28 known exponent-7 fields with q ≡ 3 (mod 8). On the full range (`independent/full_run.log`, 111 s on 24 threads) it finds **0 survivors**, and for every one of the 465 primes its Qlo(p), largest y and number of progressions agree with the production logs.
+- **Third implementation, by a different AI system.** `independent/independent_sieve.cpp` was written by OpenAI's Codex in an independent audit (`independent/AUDIT.md`). It lifts the admissible residues of x directly modulo 8y² and then by CRT over the small primes, combines further small primes into periodic 64-bit masks, and checks primes dividing y on the exact q. It agrees exactly with a brute-force reference on 11 windows (`independent/test_sieve.py`) and recovers all 33 known fields. Its full run (465 primes, 77,049,566,290 sieve blocks, **0 survivors**) was reproduced here with identical totals and hashes (`logs/third_search.log`, 93 s on 24 cores), and its Qlo(p) and largest y agree with the production logs for every prime. `independent/verify_groups.py` also confirms from reduced forms that the two fields with class number 49 have class group C7 × C7.
 - **Source.** The test options `kmax` and `nimax` were added to `sieve7.c` after the production run. With the defaults the program is unchanged: rerunning the primes 701 to 800, 1201 and 2003 reproduces the log lines exactly. The production run read a ladder file whose rows with X ≤ 4297 are identical to `ladder.txt`; rows with X > 4297 (the bootstrap rows) never affect a prime p ≤ 4297.
 
 ## Caveats
 
-1. Both search implementations were written with Claude: the second by a separate session that had only the specification, not the first program. They are independent designs, but not independent authors. A search written by a person would strengthen the result further.
-2. The interval check relies on mpmath's `iv` arithmetic.
+1. All three search implementations and both certificate verifiers were written by AI systems: two searches and one verifier by Claude (the second search in a separate session with only the specification), and one search and one verifier by Codex. None has been written or reviewed line by line by a person, and none is formally verified.
+2. The proof has not been formalized in Lean or any other proof assistant.
 3. The result rests on EKN's 2020 computation below 3.1·10^20, on Bach–Sorenson (through EKN Theorem 3) above 10^32, and on ARSX for the count of orders.
 4. Priority: a search found no earlier claim on exponent 7, but unpublished or very recent work cannot be excluded.
 
@@ -91,6 +92,9 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
     gcc -O3 -march=native -fopenmp -o independent/search7i independent/search7i.c -lm
     (cd independent && ./search7i)          # the second implementation (about 2 min on 24 threads)
     python3 independent/validate.py         # second implementation against the brute-force reference
+    node independent/verify_fixedpoint.cjs certificate.json   # second certificate verifier
+    g++ -O3 -march=native -std=c++17 independent/independent_sieve.cpp -o independent_sieve
+    python3 independent/test_sieve.py && ./independent_sieve ladder.txt 701 4297   # third implementation
     python3 figures.py                      # regenerate the figures in paper/
     python3 kernel_verify.py build          # optional: regenerate the certificate from scratch
 
@@ -105,10 +109,10 @@ The search prints one line per prime and ends with `DONE survivors 0`.
 | `kernel_opt.py` | floating-point search for the step functions; not part of the proof |
 | `certificate.json`, `ladder.txt` | the 51 certificate rows, and the (X, Q) pairs read by the search |
 | `controls.py`, `sanity.py` | the checks listed above |
-| `independent/` | the second search implementation, its brute-force reference, validation and full-run logs |
+| `independent/` | the second and third search implementations, the second certificate verifier, the Codex audit notes (`AUDIT.md`), brute-force references, validation and run summaries |
 | `figures.py` | regenerates the three figures from the certificate and the logs |
 | `CITATION.cff`, `.zenodo.json` | citation metadata |
-| `logs/` | output of the production run, the rerun and the checks |
+| `logs/` | output of the production run, the rerun, the third search and the checks |
 | `paper/` | the note in LaTeX (arXiv source) and the compiled PDF |
 | `work/` | the exact source of the production binary and its hash, the ladder file the production run read, and the first certificate and ladder (bootstrap from 3.9·10^30) |
 
