@@ -1,5 +1,9 @@
 # Blueprint: the Hadamard input H1/H2 in-house
 
+> **Current status (26 Nov 2026).** Every leaf below is now proved. `lake build` reports no `sorry`,
+> and `#print axioms Exp7.EF.explicitFormulaBound` shows only `propext`, `Classical.choice` and
+> `Quot.sound`. The status notes further down are the original plan and are kept for reference.
+
 Scope: nodes **H1, H2** of `BLUEPRINT.md` (the real-part partial fractions of `Λ'/Λ(s, χ)` over the
 zeros, and their absolute convergence) without importing any outside library.
 

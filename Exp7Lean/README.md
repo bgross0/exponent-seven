@@ -84,6 +84,8 @@ Lean checks all of the following:
 
 ## What is assumed (not formalized)
 
+> This section describes the original abstract interface. Most of these inputs are now proved; see the status table at the top. The final theorems in `Final4.lean` assume only `GRHPrimeConductor`, `SearchHigh` and (for Theorem D) `SearchLow`.
+
 These are the fields of `Inputs` and `Published`. Each is a precise statement of what the note establishes outside Lean, or imports from the literature.
 
 | Field | Statement | Established by |

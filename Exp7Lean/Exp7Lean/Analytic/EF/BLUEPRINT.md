@@ -1,5 +1,9 @@
 # Blueprint: the explicit-formula inequality `ExplicitFormulaBound`
 
+> **Current status (26 Nov 2026).** Every leaf below is now proved. `lake build` reports no `sorry`,
+> and `#print axioms Exp7.EF.explicitFormulaBound` shows only `propext`, `Classical.choice` and
+> `Quot.sound`. The status notes further down are the original plan and are kept for reference.
+
 Target (`Exp7Lean/Analytic/Statement.lean`, unchanged):
 
 ```lean

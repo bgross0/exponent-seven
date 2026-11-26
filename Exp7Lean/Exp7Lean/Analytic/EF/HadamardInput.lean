@@ -15,8 +15,8 @@ vocabulary only) from the Tau Ceti library, file
 (`DirichletCharacter.re_logDeriv_LFunction_add_eq_tsum`,
 `DirichletCharacter.summable_norm_analyticOrderNatAt_completedLFunction_mul_re_one_div_sub`),
 commit `6d810e58e90dc1a8f89e5cb6056ee36c26da67d3`, which is pinned to the *same* Mathlib commit as this
-project.  If that library is added as a dependency the two `sorry`s become one-line `exact`s.
-The in-house alternative is decomposed in `HadamardFallback.lean`.
+project.  This project does not import it: both statements are proved in-house, from
+`HadamardFallback.lean` via `HadamardAssembly.lean`.
 
 Here `χ.gammaFactor s = Γ_ℝ(s + 1) = π^{-(s+1)/2} Γ((s+1)/2)` for odd `χ`, so the left-hand side of
 H1 is `Re (L'/L)(s) + ½ log (N/π) + ½ Re ψ((s+1)/2)`.
