@@ -16,3 +16,6 @@ rev = "v4.37.0-rc1"
 
 [[lean_lib]]
 name = "Exp7Lean"
+# This library is written as ordinary (non-`module`) Lean files that import Mathlib.
+# Without this flag Lake repeats a warning about that for every path in the import graph.
+allowNonModules = true

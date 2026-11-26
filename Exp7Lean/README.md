@@ -19,7 +19,11 @@ A Lean 4 / Mathlib formalization of the argument, with the inputs it does not fo
 | The explicit-formula inequality `ExplicitFormulaBound` | **proved** (`Analytic/EF/`, about 4,900 lines: damped explicit formula, analytic continuation in the damping parameter, Hadamard partial fractions from Jensen's formula) |
 | Fixed-point numerics for `log`, `√`, `exp`, `π`, `γ` and the primes below 6400 | **proved** (`Numerics/`) |
 | Numerical margins of the 175 rows (`RowMargins`) | **proved**, kernel-checked (`Rows/`): a verified fixed-point evaluator with soundness theorem `rowCheck_sound`, about 0.5 s of kernel time per row |
-| Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed** |
+| Robust certificate rows: a threshold `T` with worst-case signs above it; 137 of the 465 candidate primes excluded outright, stronger bounds for the rest | **proved**, kernel-checked (`Cond/`, 26 rows) |
+| Theorem A from the reduced search over 328 primes (`SearchHighR`) | **proved** (`FinalR.lean`, `theoremA_reduced`) |
+| Square roots modulo `y²` with kernel-checkable completeness certificates | **proved** (`Sieve/Roots*.lean`) |
+| Packed-bitset block exclusion and exception masks | **proved** (`SieveKernel.lean`, `SieveExceptions.lean`) |
+| Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed**; the kernel run for `SearchHigh` is in progress |
 
 The strongest statements are in `Final4.lean`:
 
