@@ -16,23 +16,23 @@ A Lean 4 / Mathlib formalization of the argument, with the inputs it does not fo
 | No other prime below `10^5` has exponent 7 | **proved**, kernel-checked table (`Witness/Direct.lean`) |
 | The 6608 survivors of the low search: only `118843` has exponent 7 | **proved**, kernel-checked table (`Witness/Survivors.lean`) |
 | Bound above `10^32` | **proved** (`Above.lean`); the split-prime bound of EKN Theorem 3 is assumed |
-| The explicit-formula inequality `ExplicitFormulaBound` | **assumed** (stated in `Analytic/Statement.lean`) |
+| The explicit-formula inequality `ExplicitFormulaBound` | **proved** (`Analytic/EF/`, about 4,900 lines: damped explicit formula, analytic continuation in the damping parameter, Hadamard partial fractions from Jensen's formula) |
+| Fixed-point numerics for `log`, `√`, `exp`, `π`, `γ` and the primes below 6400 | **proved** (`Numerics/`) |
 | Numerical margins of the 175 rows (`RowMargins`) | **assumed** |
 | Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed** |
 
-The strongest statements are in `Final2.lean`:
+The strongest statements are in `Final3.lean`:
 
 ```lean
-theorem theoremA_final (hEF : ExplicitFormulaBound) (hGRH : GRHPrimeConductor)
-    (hM : RowMargins allRows) (hS : SearchHigh) {q : ℕ} (hq : q.Prime) (h4 : q % 4 = 3)
-    (hlow : QLOW ≤ q) (hhi : q ≤ QTOP) : ¬ IsExp7 q
+theorem theoremA_ef (hGRH : GRHPrimeConductor) (hM : RowMargins allRows) (hS : SearchHigh)
+    {q : ℕ} (hq : q.Prime) (h4 : q % 4 = 3) (hlow : QLOW ≤ q) (hhi : q ≤ QTOP) : ¬ IsExp7 q
 
-theorem theoremD_final (hEF : ExplicitFormulaBound) (hGRH : GRHPrimeConductor)
-    (hM : RowMargins allRows) (hML : RowMargins lowRows) (hS : SearchHigh) (hSL : SearchLow)
-    {q : ℕ} (hq : q.Prime) (h4 : q % 4 = 3) (hhi : q ≤ QTOP) : IsExp7 q ↔ q ∈ known
+theorem theoremD_ef (hGRH : GRHPrimeConductor) (hM : RowMargins allRows)
+    (hML : RowMargins lowRows) (hS : SearchHigh) (hSL : SearchLow) {q : ℕ} (hq : q.Prime)
+    (h4 : q % 4 = 3) (hhi : q ≤ QTOP) : IsExp7 q ↔ q ∈ known
 ```
 
-`GRHPrimeConductor` is the hypothesis of the theorem itself (GRH for the characters of prime conductor). The other four hypotheses are what remains to be formalized. `isExp7_of_known_all : ∀ q ∈ known, IsExp7 q` has no hypotheses.
+`GRHPrimeConductor` is the hypothesis of the theorem itself (GRH for the characters of prime conductor). The other hypotheses are what remains to be formalized: the numerical row margins and completeness of the two searches. `EF.explicitFormulaBound : ExplicitFormulaBound` has no hypotheses. `isExp7_of_known_all : ∀ q ∈ known, IsExp7 q` has no hypotheses.
 
 The headline statements are in `Final.lean`, for `IsExp7 q := Monoid.exponent (ClassGroup (OK q)) = 7`, where `OK q = ℤ[ω]`, `ω² = ω − (q+1)/4`, is the ring of integers of `ℚ(√-q)`:
 
