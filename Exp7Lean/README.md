@@ -23,6 +23,8 @@ A Lean 4 / Mathlib formalization of the argument, with the inputs it does not fo
 | Theorem A from the reduced search over 328 primes (`SearchHighR`) | **proved** (`FinalR.lean`, `theoremA_reduced`) |
 | Square roots modulo `y²` with kernel-checkable completeness certificates | **proved** (`Sieve/Roots*.lean`) |
 | Packed-bitset block exclusion and exception masks | **proved** (`SieveKernel.lean`, `SieveExceptions.lean`) |
+| Theorems A and D restated for every negative fundamental discriminant, in Mathlib's own terms (`QuadraticAlgebra ℤ a b`, `ClassGroup`) | **proved** (`Fundamental.lean`, `theoremA_fundamental`, `theoremD_fundamental`): Step 0 joined to `Final4.lean` through the isomorphism of quadratic orders of equal discriminant |
+| Bridge from the packed-bitset sieve to the search statement, one kernel certificate per prime | **proved** (`Sieve/Bridge.lean`, `Sieve/Assembly.lean`) |
 | Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed**; the kernel run for `SearchHigh` is in progress |
 
 The strongest statements are in `Final4.lean`:
@@ -33,6 +35,17 @@ theorem theoremA_rows (hGRH : GRHPrimeConductor) (hS : SearchHigh) {q : ℕ} (hq
 
 theorem theoremD_rows (hGRH : GRHPrimeConductor) (hS : SearchHigh) (hSL : SearchLow) {q : ℕ}
     (hq : q.Prime) (h4 : q % 4 = 3) (hhi : q ≤ QTOP) : IsExp7 q ↔ q ∈ known
+```
+
+`Fundamental.lean` states the same results without the project's ring `OK q`:
+
+```lean
+theorem theoremA_fundamental (hGRH : GRHPrimeConductor) (hS : SearchHigh) (a b : ℤ)
+    (hfund : Int.IsFundamentalDiscr (QuadraticAlgebra.discr a b))
+    (hneg : QuadraticAlgebra.discr a b < 0) [IsDomain (QuadraticAlgebra ℤ a b)]
+    (hlow : (QLOW : ℤ) ≤ -QuadraticAlgebra.discr a b)
+    (hhi : -QuadraticAlgebra.discr a b ≤ (QTOP : ℤ)) :
+    Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
 ```
 
 `GRHPrimeConductor` is the hypothesis of the theorem itself (GRH for the characters of prime conductor). The other two hypotheses are what remains to be formalized: completeness of the two searches (`SieveKernel.lean` has the packed-bitset primitives for this). `EF.explicitFormulaBound : ExplicitFormulaBound` has no hypotheses. `isExp7_of_known_all : ∀ q ∈ known, IsExp7 q` has no hypotheses.
