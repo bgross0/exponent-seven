@@ -82,7 +82,7 @@ def main() -> int:
         pending.replace(output)
         query = log_path.with_suffix(".declarations.lean")
         declarations = log_path.with_suffix(".declarations.log")
-        query.write_text("import Exp7GRHBridge.Final\n\nset_option pp.width 220\n" +
+        query.write_text("import Exp7GRHBridge.Final\n\n" +
                          "".join(f"#check @{name}\n#print axioms {name}\n" for name in FINAL_DECLARATIONS))
         with declarations.open("wb") as log:
             returncode = subprocess.run([str(lake), "env", "lean", str(query)], cwd=root,
