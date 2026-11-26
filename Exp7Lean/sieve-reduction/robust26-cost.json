@@ -1,0 +1,21 @@
+{
+  "high": {
+    "originalPrimeCases": 465,
+    "remainingPrimeCases": 328,
+    "largestRemaining": 3229,
+    "originalYSum": 14770,
+    "newYSum": 5520,
+    "originalWorkProxy": "28405511252419549",
+    "newWorkProxy": "4835499006428037"
+  },
+  "low": {
+    "originalActivePrimeCases": 400,
+    "newActivePrimeCases": 325,
+    "largestRemaining": 2179,
+    "originalYSum": "72796110",
+    "newYSum": "57114892",
+    "originalWorkProxy": "968950326386072356",
+    "newWorkProxy": "408035193756618321"
+  },
+  "meaning": "Robust26 rows only; arithmetic reduction assuming proven GRH-dependent robust row lemma. Work proxy=sum floor(sqrt(4*p^7))*Ymax, not measured runtime."
+}
