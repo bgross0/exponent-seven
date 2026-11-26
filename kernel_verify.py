@@ -55,22 +55,20 @@ def rigorous_margin(Q, X, v):
     one = iv.mpf(1)
     logX = iv.log(iv.mpf(X))
     width = logX / m
+    Xpow = [X**k for k in range(m + 1)]                  # exact integers
 
     def f_at(n):
-        coord = iv.log(iv.mpf(n)) / width
-        lo = max(0, int(math.floor(float(coord.a))) - 0)
-        hi = min(m - 1, int(math.floor(float(coord.b))))
-        # float() of an endpoint may be off by one ulp: widen by one cell on each side if close
-        if float(coord.a) - lo < 1e-9:
-            lo = max(0, lo - 1)
-        if hi + 1 - float(coord.b) < 1e-9:
-            hi = min(m - 1, hi + 1)
-        vals = []
-        for k in range(lo, hi + 1):
-            h = coord - k
-            vals.append(corr[k] + h*(corr[k+1] - corr[k]))
-        a = min(t.a for t in vals); b = max(t.b for t in vals)
-        return iv.mpf([a, b])
+        # f(log n) for an integer 2 <= n < X.  The cell index k (log n in [k*width, (k+1)*width))
+        # is chosen by exact integer comparison: X^k <= n^m < X^(k+1).  No floating point.
+        assert 2 <= n < X
+        nm = n**m
+        k = 0
+        while k + 1 < m and Xpow[k + 1] <= nm:
+            k += 1
+        assert Xpow[k] <= nm < Xpow[k + 1]
+        h = iv.log(iv.mpf(n)) / width - k               # in [0, 1) exactly; enclose and clip
+        h = iv.mpf([max(h.a, 0), min(h.b, 1)])
+        return corr[k] + h*(corr[k+1] - corr[k])
 
     total = iv.mpf(0)
     for p in primes_below(X):
@@ -99,6 +97,22 @@ def rigorous_margin(Q, X, v):
     const = iv.log(iv.pi) + gamma - iv.pi/2 + 3*iv.log(iv.mpf(2))
     margin = total - J - iv.log(iv.mpf(Q)) + const
     return margin.a, total, J
+
+
+def check_above_qtop():
+    """Exclusion of |D| >= QTOP.  EKN Theorem 3 (ERH, |D| > e^25) gives a split prime
+    p <= (1.881 log|D| + 6.18)^2, and E(D) = 7 forces |D| <= 4 p^7 (norm equation).  So it suffices
+    that  h(t) = log 4 + 14 log(1.881 t + 6.18) - t < 0  for all t >= T0 = log QTOP.
+    h'(t) = 14*1.881/(1.881 t + 6.18) - 1 < 0  iff  1.881 t + 6.18 > 26.334, i.e. t > 10.7;
+    so h is decreasing on [T0, oo) and it is enough that h(T0) < 0 (and T0 > 25)."""
+    T0 = iv.log(iv.mpf(QTOP))
+    a, b = iv.mpf("1.881"), iv.mpf("6.18")
+    assert T0.a > 25                                     # |D| > e^25
+    assert (a*T0 + b).a > (14*a).b                       # h' < 0 on [T0, oo)
+    h = iv.log(iv.mpf(4)) + 14*iv.log(a*T0 + b) - T0
+    assert h.b < 0
+    print("above QTOP  h(log QTOP) < %s < 0 and h decreasing: no exponent-7 D with |D| >= %d under ERH"
+          % (mp.nstr(mp.mpf(h.b), 6), QTOP))
 
 
 def float_row(Q, m=M_STEPS, slack=0.02):
@@ -166,7 +180,8 @@ def build():
 
 def check():
     c = json.load(open(CERT))
-    ok = True
+    assert c["QTOP"] == QTOP and c["QLOW"] == QLOW
+    check_above_qtop()
     Q = c["QTOP"]
     for row in c["bootstrap"]:
         assert row["Q"] == Q

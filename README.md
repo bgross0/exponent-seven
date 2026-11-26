@@ -17,7 +17,7 @@ Write E(D) for the exponent of the class group of Q(√D), D < 0 a fundamental d
 Corollary B follows from Theorem A and three published results:
 
 - Elsenhans–Klüners–Nicolae (EKN), Theorem 1: the list of fields with E(D) ≤ 8 is complete for |D| ≤ 3.1·10^20 (a computation; the theorem is stated without hypotheses). It has 33 fields of exponent 7 (EKN Table 1).
-- EKN Theorem 3 (from Bach–Sorenson, under ERH for the Dedekind zeta function of Q(√D)): for |D| > e^25 some prime p ≤ (1.881 log|D| + 6.18)² splits. A split prime forces |D| ≤ 4p^7 when E(D) = 7 (Step 1 below), and for |D| ≥ 10^32 this gives |D| ≤ 7.2·10^30, a contradiction.
+- EKN Theorem 3 (from Bach–Sorenson, under ERH for the Dedekind zeta function of Q(√D)): for |D| > e^25 some prime p ≤ (1.881 log|D| + 6.18)² splits. A split prime forces |D| ≤ 4p^7 when E(D) = 7 (Step 1 below), so E(D) = 7 needs h(log|D|) ≥ 0, where h(t) = log 4 + 14 log(1.881t + 6.18) − t. Now h′(t) = 14·1.881/(1.881t + 6.18) − 1 < 0 for t > 10.7, so h is decreasing for |D| ≥ 10^32, and h(log 10^32) < −2.64. So no |D| ≥ 10^32 has E(D) = 7 (`kernel_verify.py` checks this in interval arithmetic).
 - Aiken–Ross–Shvydkoy–Xue (ARSX), Theorem 1.3(6): under ERH, their table of 40 orders of exponent 7 is complete if no fundamental D with 3.1·10^20 ≤ |D| ≤ 3.9·10^30 has exponent 7. Theorem A supplies that hypothesis.
 
 **What this adds.** EKN Theorem 2 gives completeness under ERH for exponents ≤ 5 and 8. For exponents 6 and 7 the ERH bounds of their Table 2 (2.5·10^25 and 3.9·10^30) lie beyond their search limit. ARSX recorded both as explicit gaps (Theorem 1.3(5) and (6)). A computer-assisted note of 23 November 2026 ([`nunavipahe60-star/exponent-six`](https://github.com/nunavipahe60-star/exponent-six)) treats the exponent-6 gap. This note treats the exponent-7 gap; a search on 25 November 2026 found no earlier claim. EKN note that finiteness was known unconditionally for exponents 2 ≤ c ≤ 8 except c = 7.
@@ -39,7 +39,7 @@ If no prime below X splits, every prime below X is inert (q is the only ramified
 
     Σ_{p<X} A_p − J_up − log Q + (log π − ψ(3/4)) > 0,     J_up ≥ J_f,
 
-and then every prime q ≤ Q in our family has a split prime below X. `kernel_verify.py` checks each row with outward-rounded interval arithmetic (mpmath `iv`, 40 digits); the autocorrelation values are exact rationals.
+and then every prime q ≤ Q in our family has a split prime below X. `kernel_verify.py` checks each row with outward-rounded interval arithmetic (mpmath `iv`, 40 digits); the autocorrelation values are exact rationals, and the cell containing log n is found by exact integer comparison (X^k ≤ n^64 < X^(k+1)), with no floating point.
 
 This is the positive-kernel method of the exponent-six note, which applies the explicit formula in the form of Carneiro–Milinovich–Quesada-Herrera–Ramos, Lemma 9. Step 0 simplifies it: with prime conductor there are no ramified primes to pay for.
 
