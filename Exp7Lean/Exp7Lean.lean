@@ -12,3 +12,4 @@ import Exp7Lean.Genus.Main
 import Exp7Lean.ClassGroup.Results
 import Exp7Lean.Analytic.JBound
 import Exp7Lean.Final2
+import Exp7Lean.Numerics.All
