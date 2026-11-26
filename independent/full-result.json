@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "prime_count": 465,
+  "range": [
+    701,
+    4297
+  ],
+  "survivors": 0,
+  "total_roots": 43544,
+  "total_wheel_residues": 1757136116,
+  "total_blocks": 77049566290,
+  "total_exact": 0,
+  "ladder_sha256": "2c9fad0535db4e800ec92ef5592f51ed3ed7a7d0144eecaa59a1e360997aceb7",
+  "source_sha256": "fb1ce1561d5c14bd891efc7003a3f99a81a28138ef447139531eaf5dccdcf9d7",
+  "receipts": [
+    {
+      "file": "00.log",
+      "prime_count": 15,
+      "sha256": "70c7789456ae5e47a19180f7ca3cde5d2fe307ea51b9127f7376173cbaf0418b"
+    },
+    {
+      "file": "01.log",
+      "prime_count": 15,
+      "sha256": "b02953678bcc4c2ef2e4f284de1e283809ebaa15910e3ec31e7479e6fa475227"
+    },
+    {
+      "file": "02.log",
+      "prime_count": 15,
+      "sha256": "776cfe81cc755017259d466317407749ef5e64de122af1f282ff82782679fe63"
+    },
+    {
+      "file": "03.log",
+      "prime_count": 15,
+      "sha256": "011b95a4e1a2198783eeaf46c4ac713e1070a3b03072176233bcf28bbf30ae70"
+    },
+    {
+      "file": "04.log",
+      "prime_count": 15,
+      "sha256": "cc4c644bdfd16f2e70ca2bf2d7c7a59281b35233759a5e8e93c3357ae07ccf3a"
+    },
+    {
+      "file": "05.log",
+      "prime_count": 15,
+      "sha256": "b7b954b346c45854c3c33fff226d443510d5e60750e830bd2eb4cb3b8adefeea"
+    },
+    {
+      "file": "06.log",
+      "prime_count": 15,
+      "sha256": "1f73b7246923757d7b1c0cb31f35200922168086eb2bf2472129f94ae0211624"
+    },
+    {
+      "file": "07.log",
+      "prime_count": 15,
+      "sha256": "6c2b315277ed5dfc99b3718d9928ff6fa69b07a5d03da9c078f44a63571c6028"
+    },
+    {
+      "file": "08.log",
+      "prime_count": 15,
+      "sha256": "7106f915393199c1ad329ed2ad750a633a684c8b95f9e1ce0332e41a68d7a5d9"
+    },
+    {
+      "file": "09.log",
+      "prime_count": 15,
+      "sha256": "290c0e26518bb90a5cae3178db57dc16b3755e4fdd399c5af2b5e7ee37f07685"
+    },
+    {
+      "file": "10.log",
+      "prime_count": 15,
+      "sha256": "845180d952b9cea02abb6e03c74140ca0b24526e3bbd37857ca1f3ebc2277521"
+    },
+    {
+      "file": "11.log",
+      "prime_count": 15,
+      "sha256": "2a31b48f6f4ed6ad61d1673a61305c5cb7d900bf00cb5d2d1fe94d540629ccef"
+    },
+    {
+      "file": "12.log",
+      "prime_count": 15,
+      "sha256": "0a2bee36d21c30bd2d3709421b565a307567c4789a355aa084535c609230fc0b"
+    },
+    {
+      "file": "13.log",
+      "prime_count": 15,
+      "sha256": "67a6aceba4e5570e95fe481a15956faefd575b64383c1feeca29ffdd6a15b58f"
+    },
+    {
+      "file": "14.log",
+      "prime_count": 15,
+      "sha256": "8ff7b286ee3254148e5d4de9ea3efc9225897c76c5ac160684759b1883488085"
+    },
+    {
+      "file": "15.log",
+      "prime_count": 15,
+      "sha256": "29415aeae0b04c76d5a6dc841ebdf738b48bd7997b1ad7081e06d3b1c5959c74"
+    },
+    {
+      "file": "16.log",
+      "prime_count": 15,
+      "sha256": "2ed3993b0a0ee583b04dcbdc718f35dd7e43ee4afadd565a1b2b4cc316817e90"
+    },
+    {
+      "file": "17.log",
+      "prime_count": 15,
+      "sha256": "e2e1bf93a72bc9df82683036d68876e279f9c781eafdcd67d1dd7f23bd276418"
+    },
+    {
+      "file": "18.log",
+      "prime_count": 15,
+      "sha256": "f2518681b069892ff6b4ea519a1e22440aa063b9c8754635f0b1178072ae9f21"
+    },
+    {
+      "file": "19.log",
+      "prime_count": 15,
+      "sha256": "07251713c1ae770c9fb59bf2195a78f32de452fbfdb15b598db82cdff9064fdf"
+    },
+    {
+      "file": "20.log",
+      "prime_count": 15,
+      "sha256": "64c493216b822eeae0bca5c5016e86e5442460fffd175355caf562b61b697c52"
+    },
+    {
+      "file": "21.log",
+      "prime_count": 15,
+      "sha256": "85d586ea7ebd64e8ab4b517f15c067bf3a0a41447af36190dd543347ab182d00"
+    },
+    {
+      "file": "22.log",
+      "prime_count": 15,
+      "sha256": "2b78ca3f3e200e6922144fa4187461fd20adc148787f10dd73472990a6ef9995"
+    },
+    {
+      "file": "23.log",
+      "prime_count": 15,
+      "sha256": "9aa8c8f196feed7fd58ee2337caa686876d45d8e0ab7bbf787808b9458946fe7"
+    },
+    {
+      "file": "24.log",
+      "prime_count": 15,
+      "sha256": "bc0f4a8a7a4d45a35782ffb26a484bfdf6b486cbdd14cc2ec8e7df252227da68"
+    },
+    {
+      "file": "25.log",
+      "prime_count": 15,
+      "sha256": "eae1e736ad2c0f5f299d83afcd1327ef2a96fc7840fe0fad171cc91ff057b093"
+    },
+    {
+      "file": "26.log",
+      "prime_count": 15,
+      "sha256": "0c0a4a8e1efee26afcbebc9f088b12f0cf0a889012683022976a34c0bb908734"
+    },
+    {
+      "file": "27.log",
+      "prime_count": 15,
+      "sha256": "c3504d86bb0511a9d103e1184594c76c3fddb0e806c48e9822dd38b4ef344081"
+    },
+    {
+      "file": "28.log",
+      "prime_count": 15,
+      "sha256": "bbb77ad27aaf7c988e3b23d0a13eb48e426e2719c29f350e556184b7f341095b"
+    },
+    {
+      "file": "29.log",
+      "prime_count": 15,
+      "sha256": "acec9da7fa179396e894d97c442c56dd8ffa16d4e808a6a44711f3059df99df4"
+    },
+    {
+      "file": "30.log",
+      "prime_count": 15,
+      "sha256": "a6966ebc09784dae018c5e1f0c687e1ee5b71e9adaca6e67594c1f4d7919500d"
+    }
+  ],
+  "run_note": "Initial 180s budget stopped after 450 completed primes; remaining 15 completed in four separate continuation processes (2,3,6,4 primes). Combined shard DONE lines reconstructed; independent validator checked every per-prime row, exact coverage, bounds, and zero survivors. Raw logs retained in separately delivered archive."
+}
