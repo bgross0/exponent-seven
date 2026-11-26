@@ -13,7 +13,8 @@ if [[ $1 =~ ^Exp7Lean/(Sieve|SieveLow)/P([0-9]+)\.lean$ ]]; then
   dir=${EXP7_CERT_LOG_DIR:?}/$family
   mkdir -p "$dir"
   log=$(mktemp "$dir/P$prime.XXXXXX.log")
-  lake env lean "$@" |& tee "$log"
+  # Direct lean invocations need the same elaboration budget as the pinned lakefile.
+  lake env lean -DmaxHeartbeats=4000000 "$@" |& tee "$log"
   grep -Fxq "'$name' depends on axioms: [propext, Classical.choice, Quot.sound]" "$log"
 else
   exec lake env lean "$@"

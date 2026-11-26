@@ -92,7 +92,9 @@ runs four single-threaded Lean checks at once. The worker runs the pinned
 `run_all.sh` and `run_low.sh`, preserves a raw Lean log per prime, and
 checks coverage against all 465 main and 401 low-range primes. Each acceptance
 requires the compiled object, the runner's successful timing record, and the
-exact axiom line. The low-range generator also checks the pinned C survivor list.
+exact axiom line. Direct per-prime Lean invocations use the compact project's
+`maxHeartbeats = 4000000` setting. The low-range generator also checks the
+pinned C survivor list.
 
 The generators write their sources under `combined/Exp7Lean`. The two
 `All.lean` modules import the per-prime objects in the shared Lake environment.

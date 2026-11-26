@@ -1,0 +1,52 @@
+{
+  "direct_compiler_option": "-DmaxHeartbeats=4000000",
+  "source_changes": 0,
+  "certificate_jobs_total": 4,
+  "retries": [
+    {
+      "prime": 331,
+      "cause": "default-heartbeats",
+      "rejected_log_sha256": "f50e408d81e36104a1cbe88324091f495100d33b30cd1e4dc6322a0734374946",
+      "first_message": "Exp7Lean/SieveLow/P331.lean:47:132: error: (deterministic) timeout at `\u00absynthesize pending MVars\u00bb`, maximum number of heartbeats (200000) has been reached",
+      "original_source_sha256": "c3845215e646ba3836e430f0ca55ac8bfbd1fe6a40849aca44f18945020d2bd8",
+      "retry_lean_output": "'Exp7.searchLow_331' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "timing": "331 OK user_s elapsed_s maxrss_kb: 31.45 32.83 9120044 | STAT 331 1776 999417 587 40 8616 108430575 0 0 24.4 4.7 0.2"
+    },
+    {
+      "prime": 487,
+      "cause": "wrapper-edit",
+      "rejected_log_sha256": "a293b845616d707518fe2dfd723e2dd16507094258c00d9350eedce9adcfcf55",
+      "first_message": "/home/ben/GitHub/exponent-seven-certs435/frontier/grh-integration/certificates435/leanq: line 23: unexpected EOF while looking for matching `\"'",
+      "original_source_sha256": "4dada341665a289ad127d35dd387b80b0c9381322a7471756af217d07b95cc12",
+      "retry_lean_output": "'Exp7.searchLow_487' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "timing": "487 OK user_s elapsed_s maxrss_kb: 60.78 62.79 9084996 | STAT 487 5421 594566 1357 287 17520 338579834 0 0 45.9 10.2 0.4"
+    },
+    {
+      "prime": 491,
+      "cause": "wrapper-edit",
+      "rejected_log_sha256": "2f88058134f23ea1dea927429523f408a8aa611c9c30dd7300abdcea1a246e3e",
+      "first_message": "/home/ben/GitHub/exponent-seven-certs435/frontier/grh-integration/certificates435/leanq: line 23: unexpected EOF while looking for matching `\"'",
+      "original_source_sha256": "5ba70d7a96852ddf8cdfa0a6cdc3d29907120c47839f0c882725379836e3cc2c",
+      "retry_lean_output": "'Exp7.searchLow_491' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "timing": "491 OK user_s elapsed_s maxrss_kb: 51.42 52.75 8807332 | STAT 491 5421 611835 1160 243 14294 363162812 0 0 39.4 8.9 0.4"
+    },
+    {
+      "prime": 499,
+      "cause": "default-heartbeats",
+      "rejected_log_sha256": "a6a3a56b99d84d5159bd9e99fd8bde3c01d6c345fb3f2c67d6fb33d530b21dd2",
+      "first_message": "Exp7Lean/SieveLow/P499.lean:117:130: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached",
+      "original_source_sha256": "2639021dfd7505ae98c93762a0430bd3facddf75a30707a9b8ba68f740e682f9",
+      "retry_lean_output": "'Exp7.searchLow_499' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "timing": "499 OK user_s elapsed_s maxrss_kb: 78.25 81.12 9596544 | STAT 499 5421 560661 1676 328 24162 316705086 0 0 58.7 12.5 0.5"
+    },
+    {
+      "prime": 503,
+      "cause": "wrapper-edit",
+      "rejected_log_sha256": "f0ac21be81d1f6b4eabee30b63684c0c499501c38f79e9006485ded7be32654c",
+      "first_message": "/home/ben/GitHub/exponent-seven-certs435/frontier/grh-integration/certificates435/leanq: line 23: unexpected EOF while looking for matching `\"'",
+      "original_source_sha256": "97e069932c9c166f5a31ef146c36a9743d046a5b1dd7985ef52d53051a359d25",
+      "retry_lean_output": "'Exp7.searchLow_503' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "timing": "503 OK user_s elapsed_s maxrss_kb: 31.27 32.77 7983896 | STAT 503 5421 576550 679 130 6692 491862842 0 0 25.5 5.7 0.4"
+    }
+  ]
+}
