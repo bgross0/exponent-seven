@@ -2,7 +2,7 @@
 
 Ben Gross. 25 November 2026.
 
-**Status: computer-assisted research note for independent review. Not refereed. The search has been run twice on different hardware with identical output, but not with independently written code.**
+**Status: computer-assisted research note for independent review. Not refereed. The search has two implementations with different algorithms; both find 0 survivors.**
 
 Use of AI: the argument, code and computations were produced with Claude (Anthropic's AI model), directed by the author. Corrections are welcome through the issue tracker.
 
@@ -68,11 +68,12 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
 - **Wheel configurations.** Full-range runs for three primes with different wheel depths give identical survivor lists.
 - **Counts.** `sanity.py` truncates the prime set so that survivors exist over the full x-range, checks each survivor from the definition, and compares the count with the product of local densities: 59,086 found against 58,608 expected over six runs (for example 26,875 against 26,820 for p = 2003, l < 100). Single runs deviate by −1.8σ to +2.1σ and the total by +2.0σ, an excess; a sieve that dropped candidates would fall short.
 - **Log audit.** Each of the 465 primes appears exactly once in the logs.
+- **Second implementation.** `independent/search7i.c` was written from the mathematical specification alone, without access to `sieve7.c`, its logs or this README. Its design is different: for each progression x = r + y²k it enumerates the admissible residues of k by a two-sided CRT over 8 and the small primes, then filters by table lookup over every odd prime l < p, with an exact 128-bit recheck of anything that passes. It was compared with a brute-force Python reference (`independent/ref7.py`) on 240 small configurations in 4 modes each (251,096 survivors, all identical), and it reports a solution of 4p^7 = x² + qy² for all 28 known exponent-7 fields with q ≡ 3 (mod 8). On the full range (`independent/full_run.log`, 111 s on 24 threads) it finds **0 survivors**, and for every one of the 465 primes its Qlo(p), largest y and number of progressions agree with the production logs.
 - **Source.** The test options `kmax` and `nimax` were added to `sieve7.c` after the production run. With the defaults the program is unchanged: rerunning the primes 701 to 800, 1201 and 2003 reproduces the log lines exactly. The production run read a ladder file whose rows with X ≤ 4297 are identical to `ladder.txt`; rows with X > 4297 (the bootstrap rows) never affect a prime p ≤ 4297.
 
 ## Caveats
 
-1. One implementation of the search. The checks above compare it against independent Python code on small ranges only. The full run has been repeated on separate hardware (`logs/rerun.log`) but not with independently written code.
+1. Both search implementations were written with Claude: the second by a separate session that had only the specification, not the first program. They are independent designs, but not independent authors. A search written by a person would strengthen the result further.
 2. The interval check relies on mpmath's `iv` arithmetic.
 3. The result rests on EKN's 2020 computation below 3.1·10^20, on Bach–Sorenson (through EKN Theorem 3) above 10^32, and on ARSX for the count of orders.
 4. Priority: a search found no earlier claim on exponent 7, but unpublished or very recent work cannot be excluded.
@@ -85,6 +86,10 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
     python3 controls.py                     # positive controls and window tests                   (20 s)
     python3 sanity.py                       # soundness and expected counts on full ranges         (1 min)
     ./sieve7 ladder.txt 701 4297            # the search; for N cores run N copies with stride=N offset=0..N-1
+    gcc -O3 -march=native -fopenmp -o independent/search7i independent/search7i.c -lm
+    (cd independent && ./search7i)          # the second implementation (about 2 min on 24 threads)
+    python3 independent/validate.py         # second implementation against the brute-force reference
+    python3 figures.py                      # regenerate the figures in paper/
     python3 kernel_verify.py build          # optional: regenerate the certificate from scratch
 
 The search prints one line per prime and ends with `DONE survivors 0`.
@@ -98,6 +103,9 @@ The search prints one line per prime and ends with `DONE survivors 0`.
 | `kernel_opt.py` | floating-point search for the step functions; not part of the proof |
 | `certificate.json`, `ladder.txt` | the 51 certificate rows, and the (X, Q) pairs read by the search |
 | `controls.py`, `sanity.py` | the checks listed above |
+| `independent/` | the second search implementation, its brute-force reference, validation and full-run logs |
+| `figures.py` | regenerates the three figures from the certificate and the logs |
+| `CITATION.cff`, `.zenodo.json` | citation metadata |
 | `logs/` | output of the production run, the rerun and the checks |
 | `paper/` | the note in LaTeX (arXiv source) and the compiled PDF |
 | `work/` | the exact source of the production binary and its hash, the ladder file the production run read, and the first certificate and ladder (bootstrap from 3.9·10^30) |

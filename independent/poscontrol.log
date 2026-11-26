@@ -1,0 +1,64 @@
+# part 1: class numbers
+q=71 prime=True q%8=7 h=7
+q=151 prime=True q%8=7 h=7
+q=223 prime=True q%8=7 h=7
+q=251 prime=True q%8=3 h=7
+q=463 prime=True q%8=7 h=7
+q=467 prime=True q%8=3 h=7
+q=487 prime=True q%8=7 h=7
+q=587 prime=True q%8=3 h=7
+q=811 prime=True q%8=3 h=7
+q=827 prime=True q%8=3 h=7
+q=859 prime=True q%8=3 h=7
+q=1163 prime=True q%8=3 h=7
+q=1171 prime=True q%8=3 h=7
+q=1483 prime=True q%8=3 h=7
+q=1523 prime=True q%8=3 h=7
+q=1627 prime=True q%8=3 h=7
+q=1787 prime=True q%8=3 h=7
+q=1987 prime=True q%8=3 h=7
+q=2011 prime=True q%8=3 h=7
+q=2083 prime=True q%8=3 h=7
+q=2179 prime=True q%8=3 h=7
+q=2251 prime=True q%8=3 h=7
+q=2467 prime=True q%8=3 h=7
+q=2707 prime=True q%8=3 h=7
+q=3019 prime=True q%8=3 h=7
+q=3067 prime=True q%8=3 h=7
+q=3187 prime=True q%8=3 h=7
+q=3907 prime=True q%8=3 h=7
+q=4603 prime=True q%8=3 h=7
+q=5107 prime=True q%8=3 h=7
+q=5923 prime=True q%8=3 h=7
+q=63499 prime=True q%8=3 h=49 exponent_divides_7=True
+q=118843 prime=True q%8=3 h=49 exponent_divides_7=True
+# part 2: q = 3 mod 8, least split prime p, search7i --p p --qlo q
+q=251 p=3 solutions(x,y)=[(88, 2)] odd_l<p_not_inert=none reported_by_C=[(88, 2)] total_C_survivors=71
+q=467 p=3 solutions(x,y)=[(91, 1)] odd_l<p_not_inert=none reported_by_C=[(91, 1)] total_C_survivors=68
+q=587 p=3 solutions(x,y)=[(80, 2)] odd_l<p_not_inert=none reported_by_C=[(80, 2)] total_C_survivors=66
+q=811 p=5 solutions(x,y)=[(463, 11)] odd_l<p_not_inert=none reported_by_C=[(463, 11)] total_C_survivors=249
+q=827 p=3 solutions(x,y)=[(89, 1)] odd_l<p_not_inert=none reported_by_C=[(89, 1)] total_C_survivors=61
+q=859 p=5 solutions(x,y)=[(49, 19)] odd_l<p_not_inert=none reported_by_C=[(49, 19)] total_C_survivors=248
+q=1163 p=3 solutions(x,y)=[(64, 2)] odd_l<p_not_inert=none reported_by_C=[(64, 2)] total_C_survivors=53
+q=1171 p=5 solutions(x,y)=[(542, 4)] odd_l<p_not_inert=none reported_by_C=[(542, 4)] total_C_survivors=246
+q=1483 p=7 solutions(x,y)=[(135, 47)] odd_l<p_not_inert=none reported_by_C=[(135, 47)] total_C_survivors=323
+q=1523 p=3 solutions(x,y)=[(85, 1)] odd_l<p_not_inert=none reported_by_C=[(85, 1)] total_C_survivors=50
+q=1627 p=7 solutions(x,y)=[(972, 38)] odd_l<p_not_inert=none reported_by_C=[(972, 38)] total_C_survivors=322
+q=1787 p=3 solutions(x,y)=[(40, 2)] odd_l<p_not_inert=none reported_by_C=[(40, 2)] total_C_survivors=48
+q=1987 p=7 solutions(x,y)=[(1628, 18)] odd_l<p_not_inert=none reported_by_C=[(1628, 18)] total_C_survivors=320
+q=2011 p=5 solutions(x,y)=[(263, 11)] odd_l<p_not_inert=none reported_by_C=[(263, 11)] total_C_survivors=244
+q=2083 p=13 solutions(x,y)=[(10445, 261)] odd_l<p_not_inert=none reported_by_C=[(10445, 261)] total_C_survivors=762
+q=2179 p=5 solutions(x,y)=[(221, 11)] odd_l<p_not_inert=none reported_by_C=[(221, 11)] total_C_survivors=243
+q=2251 p=5 solutions(x,y)=[(557, 1)] odd_l<p_not_inert=none reported_by_C=[(557, 1)] total_C_survivors=242
+q=2467 p=7 solutions(x,y)=[(1223, 27)] odd_l<p_not_inert=none reported_by_C=[(1223, 27)] total_C_survivors=318
+q=2707 p=7 solutions(x,y)=[(1812, 2)] odd_l<p_not_inert=none reported_by_C=[(1812, 2)] total_C_survivors=317
+q=3019 p=5 solutions(x,y)=[(514, 4)] odd_l<p_not_inert=none reported_by_C=[(514, 4)] total_C_survivors=240
+q=3067 p=13 solutions(x,y)=[(5391, 269)] odd_l<p_not_inert=none reported_by_C=[(5391, 269)] total_C_survivors=760
+q=3187 p=11 solutions(x,y)=[(6439, 107)] odd_l<p_not_inert=none reported_by_C=[(6439, 107)] total_C_survivors=783
+q=3907 p=11 solutions(x,y)=[(2149, 137)] odd_l<p_not_inert=none reported_by_C=[(2149, 137)] total_C_survivors=782
+q=4603 p=13 solutions(x,y)=[(10641, 173)] odd_l<p_not_inert=none reported_by_C=[(10641, 173)] total_C_survivors=758
+q=5107 p=19 solutions(x,y)=[(38603, 639)] odd_l<p_not_inert=none reported_by_C=[(38603, 639)] total_C_survivors=583
+q=5923 p=19 solutions(x,y)=[(13128, 758)] odd_l<p_not_inert=none reported_by_C=[(13128, 758)] total_C_survivors=582
+q=63499 p=5 solutions(x,y)=[(499, 1)] odd_l<p_not_inert=none reported_by_C=[(499, 1)] total_C_survivors=167
+q=118843 p=11 solutions(x,y)=[(8128, 10)] odd_l<p_not_inert=none reported_by_C=[(8128, 10)] total_C_survivors=755
+# q = 3 mod 8 tested: 28, control (x,y,q) reported: 28

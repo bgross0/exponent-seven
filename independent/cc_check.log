@@ -1,0 +1,5 @@
+  650165 cc_auto.txt
+  650165 cc_nowheel.txt
+ 1300330 total
+cc_check: IDENTICAL
+spot check: 3000 random survivors from the auto run re-verified exactly in Python (ref7 Legendre, l < 60): 0 failures

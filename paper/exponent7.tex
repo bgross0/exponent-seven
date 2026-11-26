@@ -1,6 +1,6 @@
 \documentclass[11pt]{amsart}
 \usepackage[margin=1.1in]{geometry}
-\usepackage{amssymb,booktabs,url}
+\usepackage{amssymb,booktabs,url,graphicx}
 \usepackage[hidelinks]{hyperref}
 
 \newtheorem{theorem}{Theorem}
@@ -16,6 +16,8 @@
 \title[Class groups of exponent 7]{Imaginary quadratic fields with class group of exponent 7}
 \author{Ben Gross}
 \date{25 November 2026}
+\subjclass[2020]{11R29 (primary); 11R11, 11Y40, 11M26}
+\keywords{class group, exponent, imaginary quadratic field, generalized Riemann hypothesis, explicit formula, computer-assisted proof}
 
 \begin{document}
 
@@ -73,7 +75,14 @@ Suppose no prime below $X$ splits. Since $q>X$ is the only ramified prime, every
 \[
 \Sigma(X,g)=\sum_{p<X}A_p,\qquad A_p=2\log p\sum_{k\ge1,\;p^k<X}(-1)^k\,\frac{f(k\log p)}{p^{k/2}}.
 \]
-The kernel is chosen with $f$ negative on most of $(0,\log X)$, so that $\Sigma(X,g)$ is large and positive. A triple $(Q,X,g)$ is a \emph{valid row} if
+The kernel is chosen with $f$ negative on most of $(0,\log X)$, so that $\Sigma(X,g)$ is large and positive.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{fig_kernel.pdf}
+\caption{The kernel $f$ of the first bootstrap row ($Q=10^{32}$, $X=6362$). Ticks mark $u=\log p$ for the primes $p<X$. Since $f(\log p)<0$ for all but the smallest primes, each inert prime contributes positively to $\Sigma(X,g)$.}
+\label{fig:kernel}
+\end{figure}
+ A triple $(Q,X,g)$ is a \emph{valid row} if
 \begin{equation}\label{eq:row}
 \Sigma(X,g)-J^{+}-\log Q+\log\pi-\psi(3/4)>0
 \end{equation}
@@ -99,13 +108,34 @@ $1.082\cdot10^{26}$ & 4312 & 4297 & 0.0147 & $1.082\cdot10^{26}$\\
 \end{tabular}
 \end{center}
 Hence $q\le4\cdot4297^7=108197560039107534049882852$, and the least split prime satisfies $701\le p\le4297$. A further $45$ valid rows $(Q_i,X_i)$, from $Q_i\approx8.1\cdot10^{25}$ down to $3.1\cdot10^{20}$, shorten the search: if $p\ge X_i$ then $q>Q_i$.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{fig_certificate.pdf}
+\caption{All $51$ certificate rows. A row $(Q,X)$ certifies that every prime $q\equiv3\pmod4$ with $X<q\le Q$ has a split prime below $X$. The bootstrap rows (squares) reduce the range from $10^{32}$ to $4\cdot4297^7$. The ladder rows (dots) give each candidate $p$ a lower bound for $q$.}
+\label{fig:certificate}
+\end{figure}
+
 
 \subsection*{Step 4: search}
 For each of the $465$ primes $p\in[701,4297]$, each $y\ge1$, and each $x\ge0$ with $x^2\equiv4p^7\pmod{y^2}$ and $q=(4p^7-x^2)/y^2$ at least the lower bound given by the ladder for $p$, the program \texttt{sieve7} tests the necessary conditions $(-q/\ell)=-1$ for every odd prime $\ell<p$ and $q\equiv3\pmod8$. For $\ell\nmid y$ the first condition says that $x^2-4p^7$ is a non-residue modulo $\ell$, and this is sieved: a wheel on the first primes, $64$-bit residue patterns for $\ell<64$, then one prime at a time. In total there were $21{,}577$ arithmetic progressions, $7.8\cdot10^{12}$ positions after the wheel, $1.6\cdot10^{10}$ after the bit patterns, and no value of $x$ passing every odd prime $\ell<p$. So no such $q$ exists, and Theorem~\ref{thm:A} follows.\qed
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{fig_search.pdf}
+\caption{Positions remaining after the wheel for each of the $465$ candidate primes $p$ in the production run. Every prime has $0$ survivors.}
+\label{fig:search}
+\end{figure}
+
+
 \section{Computation and checks}
 
-The production run took about $25$ minutes on $2$ virtual CPUs. A second run of the full search, on separate hardware with $26$ processes, produced identical output for every prime. The following checks are in the repository.
+The production run took about $25$ minutes on $2$ virtual CPUs. A second run of the full search, on separate hardware with $26$ processes, produced identical output for every prime.
+
+\subsection*{A second implementation}
+A second search program, \texttt{search7i}, was written from the mathematical specification of Step~4 alone, without access to \texttt{sieve7} or its output. Its design is different. For each arithmetic progression $x=r+y^2k$ the value $q$ is a quadratic polynomial in $k$. The program enumerates the admissible residues of $k$ by a two-sided Chinese-remainder enumeration over $8$ and the small odd primes, filters the remaining candidates by table lookup over every odd prime $\ell<p$, and rechecks anything that passes in exact $128$-bit arithmetic. Before the full run it was compared with a brute-force reference on $240$ small configurations ($251{,}096$ survivors, all identical), and it recovers a solution of $4p^7=x^2+qy^2$ for each of the $28$ known fields of exponent $7$ with $q\equiv3\pmod8$. On the full range it took $111$ seconds on $24$ threads and found no survivors. For every one of the $465$ primes, its lower bound for $q$, its largest $y$ and its number of progressions agree with the production run.
+
+\subsection*{Further checks}
+The following checks of \texttt{sieve7} are in the repository.
 \begin{itemize}
 \item \emph{Known fields.} For each of the $33$ known fields the class group is recomputed from reduced forms (exponent $7$ in every case; class number $7$, or $49$ for $q=63499$ and $118843$). A least split prime and a solution of $4p^7=x^2+qy^2$ are found, and the production code path of \texttt{sieve7} reports it.
 \item \emph{Windows.} On $8$ windows, with the prime set truncated so that survivors exist, the survivor list is recomputed in Python from Jacobi symbols of $-q$ and agrees exactly with \texttt{sieve7}.
@@ -115,7 +145,7 @@ The production run took about $25$ minutes on $2$ virtual CPUs. A second run of 
 \end{itemize}
 
 \subsection*{Caveats}
-The search has one implementation. It agrees with independent Python code on small ranges and was run twice in full, but it has not been rewritten independently. The interval check relies on \texttt{mpmath}'s interval arithmetic.
+Both search programs were written with the assistance of the same AI model, the second in a separate session that had only the specification. They are independent designs but not independent authors. The interval check relies on \texttt{mpmath}'s interval arithmetic.
 
 \subsection*{Data availability}
 Code, certificate, logs and checksums: \url{https://github.com/bgross0/exponent-seven}.

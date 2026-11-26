@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary quadratic fields with class group of exponent 7: certificate, search and logs",
+  "upload_type": "software",
+  "description": "Code, interval-arithmetic certificate, search logs and LaTeX note for the result: assuming GRH for the quadratic Dirichlet L-functions of prime conductor, no fundamental discriminant D with 3.1e20 <= |D| <= 1e32 has class group of exponent 7. With Elsenhans-Klüners-Nicolae (Acta Arith. 193, 2020) and Aiken-Ross-Shvydkoy-Xue (arXiv:2605.26020, Theorem 1.3(6)) this shows that under ERH there are exactly 33 imaginary quadratic fields and 40 imaginary quadratic orders with class group of exponent 7.",
+  "creators": [{"name": "Gross, Ben"}],
+  "license": "Apache-2.0",
+  "keywords": ["class group", "imaginary quadratic field", "generalized Riemann hypothesis", "explicit formula", "computer-assisted proof"],
+  "related_identifiers": [
+    {"identifier": "arXiv:1803.02056", "relation": "references", "scheme": "arxiv"},
+    {"identifier": "arXiv:2605.26020", "relation": "references", "scheme": "arxiv"}
+  ]
+}
