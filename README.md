@@ -77,7 +77,7 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
 ## Caveats
 
 1. All three search implementations and both certificate verifiers were written by AI systems: two searches and one verifier by Claude (the second search in a separate session with only the specification), and one search and one verifier by Codex. None has been written or reviewed line by line by a person, and none is formally verified.
-2. The proof has not been formalized in Lean or any other proof assistant.
+2. The proof is only partially formalized. `Exp7Lean/` proves in Lean 4 with Mathlib, with no `sorry` and only the standard axioms, that Theorem A and the classification of the 33 fields follow from explicitly stated inputs: Step 1, the 51 certificate rows, the search result, and EKN Theorems 1 and 3. Lean checks the whole argument connecting them, and proves the bound above 10^32 outright. The inputs themselves are not formalized; see `Exp7Lean/README.md`.
 3. The result rests on EKN's 2020 computation below 3.1·10^20, on Bach–Sorenson (through EKN Theorem 3) above 10^32, and on ARSX for the count of orders.
 4. Priority: a search found no earlier claim on exponent 7, but unpublished or very recent work cannot be excluded.
 
@@ -96,6 +96,7 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
     g++ -O3 -march=native -std=c++17 independent/independent_sieve.cpp -o independent_sieve
     python3 independent/test_sieve.py && ./independent_sieve ladder.txt 701 4297   # third implementation
     python3 figures.py                      # regenerate the figures in paper/
+    (cd Exp7Lean && lake exe cache get && lake build)   # Lean formalization
     python3 kernel_verify.py build          # optional: regenerate the certificate from scratch
 
 The search prints one line per prime and ends with `DONE survivors 0`.
@@ -110,6 +111,7 @@ The search prints one line per prime and ends with `DONE survivors 0`.
 | `certificate.json`, `ladder.txt` | the 51 certificate rows, and the (X, Q) pairs read by the search |
 | `controls.py`, `sanity.py` | the checks listed above |
 | `independent/` | the second and third search implementations, the second certificate verifier, the Codex audit notes (`AUDIT.md`), brute-force references, validation and run summaries |
+| `Exp7Lean/` | Lean 4 formalization of the argument from the stated inputs |
 | `figures.py` | regenerates the three figures from the certificate and the logs |
 | `CITATION.cff`, `.zenodo.json` | citation metadata |
 | `logs/` | output of the production run, the rerun, the third search and the checks |

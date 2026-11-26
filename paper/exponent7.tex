@@ -147,8 +147,11 @@ The following checks of \texttt{sieve7} are in the repository.
 \item \emph{Source.} The exact source of the production binary is archived with its hash. The current source differs from it only by two test options whose defaults reproduce the production behaviour.
 \end{itemize}
 
+\subsection*{Formalization}
+The argument is partially formalized in Lean~4 with Mathlib, in the directory \texttt{Exp7Lean} of the repository. With no unproved steps and only the standard axioms, Lean proves that Theorem~\ref{thm:A} and the field part of Corollary~\ref{cor:B} follow from five explicitly stated inputs: the norm equation of Step~1, the $51$ certificate rows, the search result, and \cite[Theorems~1 and~3]{EKN}. The connecting argument is fully checked: the bootstrap chain, the inert primes below $701$, the least split prime and its range, the Jacobi-symbol conditions and the ladder bounds. The bound for $|D|\ge10^{32}$ is proved outright. The inputs themselves, in particular the explicit formula and the search, are not formalized.
+
 \subsection*{Caveats}
-All three search programs and both certificate verifiers were written by AI systems, two of the searches by the same model. None has been reviewed line by line by a person or formally verified, and the proof has not been formalized in a proof assistant.
+All three search programs and both certificate verifiers were written by AI systems, two of the searches by the same model. None has been reviewed line by line by a person or formally verified.
 
 \subsection*{Data availability}
 Code, certificate, logs and checksums are archived on Zenodo and maintained on GitHub:
