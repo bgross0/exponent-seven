@@ -1,0 +1,7 @@
+p=2003  l<140 : found 43 (all sound), expected 51.1, deviation -1.13 sigma
+p=3001  l<150 : found 41 (all sound), expected 53.9, deviation -1.76 sigma
+p=2503  l<145 : found 72 (all sound), expected 73.8, deviation -0.21 sigma
+p=2003  l<100 : found 26875 (all sound), expected 26819.7, deviation +0.34 sigma
+p=3001  l<104 : found 13341 (all sound), expected 13179.1, deviation +1.41 sigma
+p=3511  l<104 : found 18714 (all sound), expected 18430.5, deviation +2.09 sigma
+total: found 59086, expected 58608, deviation +1.97 sigma

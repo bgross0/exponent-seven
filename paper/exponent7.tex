@@ -1,0 +1,134 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amssymb,booktabs,url}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\Alph{theorem}}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\p}{\mathfrak{p}}
+
+\title[Class groups of exponent 7]{Imaginary quadratic fields with class group of exponent 7}
+\author{Ben Gross}
+\date{25 November 2026}
+
+\begin{document}
+
+\begin{abstract}
+Assuming the generalized Riemann hypothesis for the quadratic Dirichlet $L$-functions of prime conductor, we show that no fundamental discriminant $D$ with $3.1\cdot 10^{20}\le |D|\le 10^{32}$ has class group of exponent $7$. Combined with the computation of Elsenhans, Kl\"uners and Nicolae and with a result of Aiken, Ross, Shvydkoy and Xue, this shows that under ERH there are exactly $33$ imaginary quadratic fields and exactly $40$ imaginary quadratic orders whose class group has exponent $7$, the largest discriminant being $-118843$ in both cases. The proof combines a positive-kernel explicit-formula certificate, checked in interval arithmetic, that bounds the least split prime, with a sieve search over the norm equation $4p^7=x^2+qy^2$. All code, certificates and logs are public.
+\end{abstract}
+
+\maketitle
+
+\section{Result}
+
+For a negative fundamental discriminant $D$ write $E(D)$ for the exponent of the class group of $\Q(\sqrt D)$.
+
+\begin{theorem}\label{thm:A}
+Assume GRH for the Dirichlet $L$-functions $L(s,\chi_D)$ of the odd real primitive characters of prime conductor. Then no fundamental discriminant $D$ with $3.1\cdot10^{20}\le|D|\le10^{32}$ has $E(D)=7$.
+\end{theorem}
+
+\begin{corollary}\label{cor:B}
+Assume the Riemann hypothesis for $\zeta(s)$ and for the $L$-functions $L(s,\chi_D)$, that is, ERH for the Dedekind zeta functions of the imaginary quadratic fields. Then exactly $33$ imaginary quadratic fields have class group of exponent $7$, the largest being $\Q(\sqrt{-118843})$, and exactly $40$ imaginary quadratic orders have Picard group of exponent $7$, the largest discriminant again being $-118843$.
+\end{corollary}
+
+Corollary~\ref{cor:B} follows from Theorem~\ref{thm:A} and three published results.
+\begin{itemize}
+\item Elsenhans, Kl\"uners and Nicolae \cite[Theorem~1 and Table~1]{EKN}: the list of imaginary quadratic fields with $E(D)\le 8$ and $|D|\le 3.1\cdot10^{20}$ is complete. It contains $33$ fields of exponent $7$, the largest with $D=-118843$.
+\item \cite[Theorem~3]{EKN}, derived from Bach and Sorenson \cite{BS}: under ERH for the Dedekind zeta function of $\Q(\sqrt D)$ and for $|D|>e^{25}$, some prime $p\le(1.881\log|D|+6.18)^2$ splits in $\Q(\sqrt D)$. By Step~1 below a split prime forces $|D|\le4p^7$ when $E(D)=7$. For $|D|\ge10^{32}$ this gives $|D|\le 7.2\cdot10^{30}$, a contradiction.
+\item Aiken, Ross, Shvydkoy and Xue \cite[Theorem~1.3(6)]{ARSX}: under ERH, their table of $40$ orders of exponent $7$ is complete if no fundamental discriminant $D$ with $3.1\cdot10^{20}\le|D|\le3.9\cdot10^{30}$ has class group of exponent $7$. Theorem~\ref{thm:A} supplies this hypothesis.
+\end{itemize}
+
+\subsection*{Context}
+\cite[Theorem~2]{EKN} gives completeness under ERH for exponents $\le5$ and $8$. For exponents $6$ and $7$ the ERH bounds of \cite[Table~2]{EKN}, about $2.5\cdot10^{25}$ and $3.9\cdot10^{30}$, lie beyond their search limit, and \cite[Theorem~1.3(5),(6)]{ARSX} records both as conditional on these ranges. A computer-assisted note \cite{E6} treats exponent $6$ by a positive-kernel method that we adapt here. As \cite{EKN} remarks, finiteness of the list is known unconditionally for every exponent $2\le c\le 8$ except $c=7$.
+
+\section{Proof of Theorem~\ref{thm:A}}
+
+Let $D$ be fundamental with $E(D)=7$ and $3.1\cdot10^{20}\le|D|\le10^{32}$.
+
+\subsection*{Step 0: genus theory}
+The class group has odd order, so its $2$-rank, which is one less than the number of prime divisors of $D$, is $0$. Hence $D=-q$ with $q\equiv3\pmod4$ prime.
+
+\subsection*{Step 1: the norm equation}
+Let $p$ be a prime that splits, $(p)=\p\p'$. Then $\p^7=(\alpha)$ with $\alpha=(x+y\sqrt{-q})/2$, $x\equiv y\pmod 2$, and $y\ne0$, since otherwise $\p^7$ would be fixed by conjugation and equal $\p'^7$. Taking norms gives
+\[
+4p^7=x^2+qy^2,\qquad\text{so}\qquad q\le4p^7.
+\]
+Since $4\cdot691^7<3.1\cdot10^{20}$, no prime $p\le691$ splits. As $q>691$, these primes are inert; in particular $2$ is inert and $q\equiv3\pmod8$. Let $p$ be the least split prime. Then $p\ge701$ and every prime $\ell<p$ is inert.
+
+\subsection*{Step 2: a split prime below an explicit bound}
+Fix $X>2$ and a real step function $g$ on $[0,\log X]$ with $m=64$ cells of equal width. Let $f$ be its autocorrelation divided by $\int g^2$. Then $f$ is even and piecewise linear with nodes at multiples of the cell width, $f(0)=1$, $|f|\le1$, $f$ vanishes outside $[-\log X,\log X]$, and $\hat f=|\hat g|^2/\!\int g^2\ge0$.
+
+Let $\chi=(-q/\cdot)$, an odd real primitive character of conductor $q$, and assume GRH for $L(s,\chi)$. The Guinand--Weil explicit formula (in the form of \cite[Lemma~9]{CMQR}) expresses $\sum_\gamma\hat f(\gamma)$, summed over the ordinates of the nontrivial zeros, as the archimedean and conductor terms minus the prime sum. Under GRH every $\gamma$ is real, so the left side is $\ge0$, and
+\begin{equation}\label{eq:EF}
+2\sum_{n<X}\frac{\Lambda(n)\chi(n)f(\log n)}{\sqrt n}\;\le\;\log\frac q\pi+\psi(3/4)+J_f,\qquad
+J_f=\int_0^\infty\frac{2e^{-3u/2}}{1-e^{-2u}}\bigl(1-f(u)\bigr)\,du.
+\end{equation}
+Suppose no prime below $X$ splits. Since $q>X$ is the only ramified prime, every prime $p<X$ is inert, $\chi(p^k)=(-1)^k$, and the left side of \eqref{eq:EF} equals the explicit number
+\[
+\Sigma(X,g)=\sum_{p<X}A_p,\qquad A_p=2\log p\sum_{k\ge1,\;p^k<X}(-1)^k\,\frac{f(k\log p)}{p^{k/2}}.
+\]
+The kernel is chosen with $f$ negative on most of $(0,\log X)$, so that $\Sigma(X,g)$ is large and positive. A triple $(Q,X,g)$ is a \emph{valid row} if
+\begin{equation}\label{eq:row}
+\Sigma(X,g)-J^{+}-\log Q+\log\pi-\psi(3/4)>0
+\end{equation}
+for some $J^+\ge J_f$. By \eqref{eq:EF}, a valid row gives: every prime $q\equiv3\pmod 4$ with $X<q\le Q$ has a split prime below $X$.
+
+\subsection*{Verification of the rows}
+For each row the program \texttt{kernel\_verify.py} encloses every quantity in \eqref{eq:row} in outward-rounded intervals (\texttt{mpmath.iv}, $40$ digits). The autocorrelation values at the nodes are exact rationals. $J^+$ is obtained as follows. On the first cell we use $2e^{-3u/2}/(1-e^{-2u})=e^{-u/2}/\sinh u\le1/u$. On the other cells we split into $16$ subcells and use that the kernel is decreasing and $1-f\ge0$, so the kernel can be replaced by its value at the left end of each subcell. For $u>\log X$ the integral is bounded by $\tfrac43X^{-3/2}(1-X^{-2})^{-1}$. We use $\log\pi-\psi(3/4)=\log\pi+\gamma-\pi/2+3\log2$.
+
+\subsection*{Step 3: bootstrap}
+Six valid rows, each feeding $q\le4P^7$, with $P$ the largest prime below $X$, into the next:
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$Q$ & $X$ & $P$ & margin $>$ & $4P^7$\\
+\midrule
+$10^{32}$ & 6362 & 6361 & 0.0126 & $1.686\cdot10^{27}$\\
+$1.686\cdot10^{27}$ & 4690 & 4679 & 0.0161 & $1.964\cdot10^{26}$\\
+$1.964\cdot10^{26}$ & 4393 & 4391 & 0.0188 & $1.259\cdot10^{26}$\\
+$1.259\cdot10^{26}$ & 4333 & 4327 & 0.0191 & $1.136\cdot10^{26}$\\
+$1.136\cdot10^{26}$ & 4319 & 4297 & 0.0181 & $1.082\cdot10^{26}$\\
+$1.082\cdot10^{26}$ & 4312 & 4297 & 0.0147 & $1.082\cdot10^{26}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Hence $q\le4\cdot4297^7=108197560039107534049882852$, and the least split prime satisfies $701\le p\le4297$. A further $45$ valid rows $(Q_i,X_i)$, from $Q_i\approx8.1\cdot10^{25}$ down to $3.1\cdot10^{20}$, shorten the search: if $p\ge X_i$ then $q>Q_i$.
+
+\subsection*{Step 4: search}
+For each of the $465$ primes $p\in[701,4297]$, each $y\ge1$, and each $x\ge0$ with $x^2\equiv4p^7\pmod{y^2}$ and $q=(4p^7-x^2)/y^2$ at least the lower bound given by the ladder for $p$, the program \texttt{sieve7} tests the necessary conditions $(-q/\ell)=-1$ for every odd prime $\ell<p$ and $q\equiv3\pmod8$. For $\ell\nmid y$ the first condition says that $x^2-4p^7$ is a non-residue modulo $\ell$, and this is sieved: a wheel on the first primes, $64$-bit residue patterns for $\ell<64$, then one prime at a time. In total there were $21{,}577$ arithmetic progressions, $7.8\cdot10^{12}$ positions after the wheel, $1.6\cdot10^{10}$ after the bit patterns, and no value of $x$ passing every odd prime $\ell<p$. So no such $q$ exists, and Theorem~\ref{thm:A} follows.\qed
+
+\section{Computation and checks}
+
+The production run took about $25$ minutes on $2$ virtual CPUs. A second run of the full search, on separate hardware with $26$ processes, produced identical output for every prime. The following checks are in the repository.
+\begin{itemize}
+\item \emph{Known fields.} For each of the $33$ known fields the class group is recomputed from reduced forms (exponent $7$ in every case; class number $7$, or $49$ for $q=63499$ and $118843$). A least split prime and a solution of $4p^7=x^2+qy^2$ are found, and the production code path of \texttt{sieve7} reports it.
+\item \emph{Windows.} On $8$ windows, with the prime set truncated so that survivors exist, the survivor list is recomputed in Python from Jacobi symbols of $-q$ and agrees exactly with \texttt{sieve7}.
+\item \emph{Fast versus naive.} $14$ runs comparing the wheel and bit-pattern path with a direct scan, $9$ of them with non-empty survivor lists, give identical lists.
+\item \emph{Counts.} With truncated prime sets, the number of survivors over full $x$-ranges is compared with the product of local densities: $59{,}086$ found against $58{,}608$ expected over six runs, every survivor checked from the definition. A sieve that dropped candidates would show a deficit.
+\item \emph{Source.} The exact source of the production binary is archived with its hash. The current source differs from it only by two test options whose defaults reproduce the production behaviour.
+\end{itemize}
+
+\subsection*{Caveats}
+The search has one implementation. It agrees with independent Python code on small ranges and was run twice in full, but it has not been rewritten independently. The interval check relies on \texttt{mpmath}'s interval arithmetic.
+
+\subsection*{Data availability}
+Code, certificate, logs and checksums: \url{https://github.com/bgross0/exponent-seven}.
+
+\subsection*{Use of AI}
+The argument, code and computations were produced with Claude, an AI model by Anthropic, under the direction of the author, who takes responsibility for the content.
+
+\begin{thebibliography}{9}
+\bibitem{ARSX} D.~Aiken, E.~Ross, D.~Shvydkoy, H.~Xue, \emph{Boundary CM points and class groups of small exponent}, arXiv:2605.26020.
+\bibitem{BS} E.~Bach, J.~Sorenson, \emph{Explicit bounds for primes in residue classes}, Math.\ Comp.\ \textbf{65} (1996), 1717--1735.
+\bibitem{CMQR} E.~Carneiro, M.~B.~Milinovich, E.~Quesada-Herrera, A.~P.~Ramos, arXiv:2404.08380.
+\bibitem{EKN} A.-S.~Elsenhans, J.~Kl\"uners, F.~Nicolae, \emph{Imaginary quadratic number fields with class groups of small exponent}, Acta Arith.\ \textbf{193} (2020), 217--233. arXiv:1803.02056.
+\bibitem{E6} \emph{Class groups of exponent 6}, computer-assisted note, \url{https://github.com/nunavipahe60-star/exponent-six}, November 2026.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,43 @@
+q=    71  h=   7 exponent=7  least split p=  2  4p^7 = 21^2 + q*1^2  sieve7 FOUND (11 survivors, naive 11)
+q=   151  h=   7 exponent=7  least split p=  2  4p^7 = 19^2 + q*1^2  sieve7 FOUND (11 survivors, naive 11)
+q=   223  h=   7 exponent=7  least split p=  2  4p^7 = 17^2 + q*1^2  sieve7 FOUND (11 survivors, naive 11)
+q=   251  h=   7 exponent=7  least split p=  3  4p^7 = 88^2 + q*2^2  sieve7 FOUND (12 survivors, naive 12)
+q=   463  h=   7 exponent=7  least split p=  2  4p^7 = 7^2 + q*1^2  sieve7 FOUND (11 survivors, naive 11)
+q=   467  h=   7 exponent=7  least split p=  3  4p^7 = 91^2 + q*1^2  sieve7 FOUND (47 survivors, naive 47)
+q=   487  h=   7 exponent=7  least split p=  2  4p^7 = 5^2 + q*1^2  sieve7 FOUND (11 survivors, naive 11)
+q=   587  h=   7 exponent=7  least split p=  3  4p^7 = 80^2 + q*2^2  sieve7 FOUND (12 survivors, naive 12)
+q=   811  h=   7 exponent=7  least split p=  5  4p^7 = 463^2 + q*11^2  sieve7 FOUND (4 survivors, naive 4)
+q=   827  h=   7 exponent=7  least split p=  3  4p^7 = 89^2 + q*1^2  sieve7 FOUND (47 survivors, naive 47)
+q=   859  h=   7 exponent=7  least split p=  5  4p^7 = 49^2 + q*19^2  sieve7 FOUND (1 survivors, naive 1)
+q=  1163  h=   7 exponent=7  least split p=  3  4p^7 = 64^2 + q*2^2  sieve7 FOUND (12 survivors, naive 12)
+q=  1171  h=   7 exponent=7  least split p=  5  4p^7 = 542^2 + q*4^2  sieve7 FOUND (23 survivors, naive 23)
+q=  1483  h=   7 exponent=7  least split p=  7  4p^7 = 135^2 + q*47^2  sieve7 FOUND (1 survivors, naive 1)
+q=  1523  h=   7 exponent=7  least split p=  3  4p^7 = 85^2 + q*1^2  sieve7 FOUND (47 survivors, naive 47)
+q=  1627  h=   7 exponent=7  least split p=  7  4p^7 = 972^2 + q*38^2  sieve7 FOUND (1 survivors, naive 1)
+q=  1787  h=   7 exponent=7  least split p=  3  4p^7 = 40^2 + q*2^2  sieve7 FOUND (12 survivors, naive 12)
+q=  1987  h=   7 exponent=7  least split p=  7  4p^7 = 1628^2 + q*18^2  sieve7 FOUND (1 survivors, naive 1)
+q=  2011  h=   7 exponent=7  least split p=  5  4p^7 = 263^2 + q*11^2  sieve7 FOUND (4 survivors, naive 4)
+q=  2083  h=   7 exponent=7  least split p= 13  4p^7 = 10445^2 + q*261^2  sieve7 FOUND (1 survivors, naive 1)
+q=  2179  h=   7 exponent=7  least split p=  5  4p^7 = 221^2 + q*11^2  sieve7 FOUND (4 survivors, naive 4)
+q=  2251  h=   7 exponent=7  least split p=  5  4p^7 = 557^2 + q*1^2  sieve7 FOUND (187 survivors, naive 187)
+q=  2467  h=   7 exponent=7  least split p=  7  4p^7 = 1223^2 + q*27^2  sieve7 FOUND (1 survivors, naive 1)
+q=  2707  h=   7 exponent=7  least split p=  7  4p^7 = 1812^2 + q*2^2  sieve7 FOUND (46 survivors, naive 46)
+q=  3019  h=   7 exponent=7  least split p=  5  4p^7 = 514^2 + q*4^2  sieve7 FOUND (23 survivors, naive 23)
+q=  3067  h=   7 exponent=7  least split p= 13  4p^7 = 5391^2 + q*269^2  sieve7 FOUND (1 survivors, naive 1)
+q=  3187  h=   7 exponent=7  least split p= 11  4p^7 = 6439^2 + q*107^2  sieve7 FOUND (1 survivors, naive 1)
+q=  3907  h=   7 exponent=7  least split p= 11  4p^7 = 2149^2 + q*137^2  sieve7 FOUND (1 survivors, naive 1)
+q=  4603  h=   7 exponent=7  least split p= 13  4p^7 = 10641^2 + q*173^2  sieve7 FOUND (1 survivors, naive 1)
+q=  5107  h=   7 exponent=7  least split p= 19  4p^7 = 38603^2 + q*639^2  sieve7 FOUND (1 survivors, naive 1)
+q=  5923  h=   7 exponent=7  least split p= 19  4p^7 = 13128^2 + q*758^2  sieve7 FOUND (1 survivors, naive 1)
+q= 63499  h=  49 exponent=7  least split p=  5  4p^7 = 499^2 + q*1^2  sieve7 FOUND (187 survivors, naive 187)
+q=118843  h=  49 exponent=7  least split p= 11  4p^7 = 8128^2 + q*10^2  sieve7 FOUND (11 survivors, naive 11)
+control_known: PASS
+window p=2011 y=1 x<=3000000 l<30 : python 1207, sieve7 1207  OK
+window p=2011 y=3 x<=6000000 l<30 : python 1618, sieve7 1618  OK
+window p=2011 y=15 x<=40000000 l<30 : python 2178, sieve7 2178  OK
+window p=3001 y=1 x<=2000000 l<24 : python 2412, sieve7 2412  OK
+window p=1009 y=1 x<=3000000 l<32 : python 850, sieve7 850  OK
+window p=2011 y=2 x<=4000000 l<30 : python 399, sieve7 399  OK
+window p=2011 y=9 x<=30000000 l<30 : python 916, sieve7 916  OK
+window p=4201 y=1 x<=2000000 l<24 : python 2177, sieve7 2177  OK
+control_windows: PASS
