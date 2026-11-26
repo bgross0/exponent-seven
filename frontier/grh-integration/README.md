@@ -1,6 +1,8 @@
 # Importing the compact Dirichlet-GRH proof into exponent-seven
 
-Prepared 26 November 2026. **Status: integration source prepared; no common-environment build was completed by this preparation step.** The files deliberately introduce no axiom, placeholder proof, or native-decide computation.
+Prepared 26 November 2026. **Status: the smoke interface compiled successfully in one Lean 4.35 environment. The actual external GRH import and final classification wrapper have not yet completed.** The files deliberately introduce no axiom, placeholder proof, or native-decide computation.
+
+The isolated 4.35 trial exposed a real dependency added after Mathlib 4.35: the integral-closure theorem for quadratic orders. `compat435/QuadraticIntegralClosure.lean` now proves the squarefree-discriminant case needed by Step1, using trace/norm integrality and rational denominators. This standalone proof compiled successfully in Lean 4.35 with exactly `propext`, `Classical.choice`, and `Quot.sound`. The patched project dependency chain and smoke adapter then compiled successfully as well: Lake reported 9,055 jobs, exit status 0. The adapter's axioms are exactly the same three standard axioms. Its conclusion is still an implication taking `DirichletLZerosOnLine` as an input. See `compat435/smoke-verification.json` and the complete `smoke-build.log`; they do not establish the full external-proof import.
 
 ## What the exact statements establish
 
@@ -58,6 +60,8 @@ python frontier/grh-integration/prepare.py \
 ```
 
 It copies the compact project as the root Lake project, copies the project's source library to `src/Exp7Lean`, and adds `src/Exp7GRHBridge`. In particular, `Analytic/Statement.lean`, `Final4.lean`, and the external `Statements.lean` and `Main.lean` are copied byte for byte, with SHA-256 receipts. It never changes the two input checkouts.
+
+For `external435`, preparation then applies the explicit, hash-guarded `compat435/Step1.patch` by default. It embeds the proved squarefree-discriminant integral-closure helpers and replaces the newer natural-number multiplicity aliases with existing generic finite-multiplicity theorems. All existing project definitions and theorem statements are preserved. The source and result hashes must match the recorded receipt. Use `--no-compat435` to reproduce the unpatched compatibility failure; `project437` never applies this backport. A fresh-workspace reproduction check confirmed that the preparation script produces exactly the patched Step1 bytes used by the trial build.
 
 The added `Exp7Lean` library restores its original Lean options locally, including the default `autoImplicit = true`, rather than inheriting the compact project's `autoImplicit = false`. The compact project's larger heartbeat and stack limits remain resource settings for the isolated build. Lake appends library Lean options after package options, so these local overrides take effect.
 

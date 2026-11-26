@@ -1,0 +1,36 @@
+{
+  "status": "SMOKE_COMPILED",
+  "recorded_utc": "2026-11-26T19:20:35.482399+00:00",
+  "command": [
+    "lake",
+    "build",
+    "Exp7GRHBridge.Smoke"
+  ],
+  "environment": {
+    "lean": "leanprover/lean4:v4.35.0",
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "LEAN_NUM_THREADS": "1"
+  },
+  "exit_code": 0,
+  "lake_reported_jobs": 9055,
+  "theorem": "Exp7.GRHIntegration.primeConductor_of_dirichletZeros",
+  "type": "DirichletLZerosOnLine \u2192 Exp7.GRHPrimeConductor",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "unchanged_source_sha256": {
+    "project_statement": "111a7096c57943388fb0ba4aa547e8b2a28e8e3c8c66c025c3f788b46cefb382",
+    "external_statement": "79ef7ca776e42abe1f46caee13ea09bd19f1e2d0b1620d8d5d200258f33b47bf",
+    "smoke_bridge": "481d34de4ffef8245b9e5d81938f9dcbea3c6334ab41ce27cdfb9f7232808c71"
+  },
+  "step1_patch_sha256": "d7a1c6a8979051bfada165df4596549a026eb3285ff3407bcec251445b090300",
+  "patched_step1_sha256": "75b8f6116ef9a4e206679c6f029a29a5cc598353d225589c75c5e7d001006ead",
+  "log_sha256": "cd304a98cb9c7fe5e987247b90200224a08b630e2eb9c7a6cb40d0e6c8c58965",
+  "limitations": [
+    "This is an implication using an assumed DirichletLZerosOnLine input.",
+    "The external theorem LFunction_eq_zero_re was not imported by this gate.",
+    "The full GRH import, finite searches, and global classification are not established by this receipt."
+  ]
+}

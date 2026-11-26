@@ -35,6 +35,8 @@ def main() -> None:
     parser.add_argument("--grh", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--environment", choices=("external435", "project437"), default="external435")
+    parser.add_argument("--compat435", action=argparse.BooleanOptionalAction, default=True,
+                        help="Apply the checked Step1 backport in external435 (default on); ignored in project437")
     args = parser.parse_args()
     exp = args.exponent_seven.resolve()
     grh = args.grh.resolve()
@@ -82,12 +84,35 @@ globs = ["Exp7GRHBridge.+"]
     if args.environment != "external435":
         # Never reuse a manifest/cache for the other Mathlib/Lean environment.
         (out / "lake-manifest.json").unlink()
+    compat_receipt = None
+    if args.environment == "external435" and args.compat435:
+        compat_dir = HERE / "compat435"
+        verification = json.loads((compat_dir / "verification.json").read_text())
+        step1 = out / "src" / "Exp7Lean" / "Step1.lean"
+        expected_before = verification["original_step1_sha256"]
+        expected_after = verification["patched_step1_sha256"]
+        before = digest(step1)
+        if before not in (expected_before, expected_after):
+            raise SystemExit("Step1 compatibility patch input hash does not match its audited source.")
+        if before == expected_before:
+            subprocess.run(["git", "apply", "--directory=src", "-p2",
+                            str(compat_dir / "Step1.patch")], cwd=out, check=True)
+        if digest(step1) != expected_after:
+            raise SystemExit("Step1 compatibility patch output hash does not match its audited result.")
+        compat_receipt = {
+            "patch_sha256": digest(compat_dir / "Step1.patch"),
+            "original_step1_sha256": expected_before,
+            "patched_step1_sha256": expected_after,
+            "foundation_status": verification["status"],
+            "note": "Explicit proof backport only; project definitions and theorem statements unchanged.",
+        }
     receipt = {
         "status": "PREPARED_NOT_COMPILED",
         "environment": args.environment,
         "lean": chosen["lean"],
         "mathlib": chosen["mathlib"],
         "source_pins": PINS,
+        "compat435": compat_receipt,
         "copied_sha256": {},
     }
     for rel in ("Analytic/Statement.lean", "Final4.lean", "Above.lean"):
@@ -102,6 +127,13 @@ globs = ["Exp7GRHBridge.+"]
         receipt["copied_sha256"]["external/" + rel] = digest(dst)
     for rel in ("Smoke.lean", "Imported.lean", "Final.lean"):
         receipt["copied_sha256"]["Exp7GRHBridge/" + rel] = digest(bridge / rel)
+    all_inputs = sorted((out / "src").rglob("*.lean"))
+    all_inputs += [out / "lakefile.toml", out / "lean-toolchain"]
+    if (out / "lake-manifest.json").is_file():
+        all_inputs.append(out / "lake-manifest.json")
+    receipt["prepared_inputs_sha256"] = {
+        str(path.relative_to(out)): digest(path) for path in all_inputs
+    }
     (out / "INTEGRATION-PROVENANCE.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps({"workspace": str(out), "environment": args.environment,
                       "status": receipt["status"]}, indent=2))

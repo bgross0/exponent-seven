@@ -1,0 +1,44 @@
+{
+  "status": "COMPILED",
+  "recorded_utc": "2026-11-26T19:22:40.063284+00:00",
+  "lean": "leanprover/lean4:v4.35.0",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "/absolute/path/to/frontier/root-period/RootPeriod.lean"
+  ],
+  "LEAN_NUM_THREADS": "1",
+  "exit_code": 0,
+  "source_sha256": "5fec491614202fbbdee7217822abb7468c88ac501589689b113bb4503eb9bc82",
+  "log_sha256": "11111a0ebd15e3fec1666b27884c5d57c528ffd64cbf7338a2782ab679260ad6",
+  "checked_axioms": {
+    "Exp7.RootPeriod.parity_of_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.RootPeriod.square_shift_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.RootPeriod.root_shift_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.RootPeriod.exists_compressed_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "Exact integer root-predicate periodicity, independent of GRH. Representative bounds require y>0; shift and parity lemmas allow y=0.",
+  "limitations": [
+    "Not yet compiled under the project main Lean4.37 pin.",
+    "Not yet integrated into the SearchHigh certificate generator or arithmetic bridge.",
+    "Does not establish SearchHigh, SearchLow, or a runtime speedup."
+  ]
+}

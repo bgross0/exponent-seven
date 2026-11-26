@@ -1,0 +1,41 @@
+{
+  "status": "compiled successfully; exact delivered source bytes match build input",
+  "command": "env PATH=/workspace/scratch/50ed92e4bf2d/lean-4.35.0-linux/bin:$PATH LEAN_NUM_THREADS=1 lake build Exp7Lean.Analytic.HaarJBound",
+  "working_directory": "/workspace/scratch/50ed92e4bf2d/grh-build435",
+  "exit_code": 0,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "source_sha256": "6a234da5e9e1f9d9b5a579149bc8b4da7f57aac94daad391f8bf62882949fef5",
+  "log_sha256": "b8bcd9ca2b158dda231372f8115c3f782d2dea3929b4e0a13b4a8c1c67251505",
+  "axioms": {
+    "Exp7.Jplus_haar_le_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Jterm_haar_le_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "compiled_module_seconds": {
+    "Exp7Lean.Analytic.Autocorr": 47,
+    "Exp7Lean.Analytic.JBound": 47,
+    "Exp7Lean.Analytic.HaarJBound": 45
+  },
+  "Autocorr_and_JBound_match_upstream": true,
+  "source_import_closure_sha256": {
+    "src/Exp7Lean/Basic.lean": "f9425547cb760648e8df0c11978767442986bd464fb81e1eee29035f0fc93081",
+    "src/Exp7Lean/Main.lean": "feb65f24525b4ebf346cf22c627ec826f91ef46a777c7173cc37c32fbdde553c",
+    "src/Exp7Lean/Above.lean": "8b837400b6887ae821eca70d8be6fc2139910d6c59333f564c2c73b6818da494",
+    "src/Exp7Lean/Low.lean": "255d2255c0c949e354afd798fd7b042b4c8540349abad5f38f300268edbe6032",
+    "src/Exp7Lean/Step1.lean": "75b8f6116ef9a4e206679c6f029a29a5cc598353d225589c75c5e7d001006ead",
+    "src/Exp7Lean/Final.lean": "b227b1f9926dc87b8a33ad99bbb747a6e2cdf01724fe0d35b6dc9695f4474178",
+    "src/Exp7Lean/Analytic/Statement.lean": "111a7096c57943388fb0ba4aa547e8b2a28e8e3c8c66c025c3f788b46cefb382",
+    "src/Exp7Lean/Analytic/Autocorr.lean": "24edb6f2cd11b491dc4cdb1989632284497411f02c41d85b4e8d776c9af682a8",
+    "src/Exp7Lean/Analytic/JBound.lean": "05666037dee2a9d9212f9e80eda920dffe5f39f52032b0e4b79fd413b39b5839",
+    "src/Exp7Lean/Analytic/HaarJBound.lean": "6a234da5e9e1f9d9b5a579149bc8b4da7f57aac94daad391f8bf62882949fef5"
+  },
+  "scope": "Only the Haar J bound and its imports; not the complete Chebyshev tail, finite bridge row, or external GRH proof."
+}

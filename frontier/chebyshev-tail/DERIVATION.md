@@ -1,6 +1,8 @@
 # A uniform Chebyshev tail using the existing GRH explicit formula
 
-26 November 2026. Research derivation, not a compiled Lean theorem.
+26 November 2026. The analytic conductor-bound argument remains a research
+derivation. Its uniform arithmetic comparison and dyadic-index selection
+have been checked by Lean as recorded below.
 
 ## Intended replacement
 
@@ -287,7 +289,37 @@ slack becomes
 
 Thus the same uniform cutoff `2^135` works with this simpler profile. The
 fixed bridge row also still has a positive margin when 4 replaces its J
-bound. `ChebyshevTailArithmetic.lean` uses this coarse profile explicitly.
+bound: the independent integer interval verifier encloses it in
+`[3.898286,3.898287]`. `ChebyshevTailArithmetic.lean` uses this coarse profile
+explicitly.
+
+## 9. Kernel-checked arithmetic component
+
+`ChebyshevTailArithmetic.lean` was checked successfully with Lean 4.35.0 and
+Mathlib commit `56a005855ea17e0b0958f73ec801ae140b0a1679`. The final run
+returned exit code 0 with no errors or warnings. Its two main public results
+are:
+
+* `haarLowerBound_gt`: for every natural n>=19, the explicit lower-bound
+  expression obtained from (6), with the actual constants `log 2`,
+  `2^(1/2)`, `2^(1/4)`, and `2^(1/6)`, exceeds
+  `(7n+9)log 2+4`. No numerical root bounds are assumed by this theorem;
+  they are proved from Mathlib inside the file.
+* `exists_dyadic_index_of_mod_four`: if `q>=2^135` and q is 3 modulo 4,
+  there exists n>=19 with `4*(2^n)^7<q` and `q<=2^(7n+9)`. The weak upper
+  endpoint is sufficient because the arithmetic comparison is strict.
+
+Both declarations depend only on `propext`, `Classical.choice`, and
+`Quot.sound`. Neither depends on `sorryAx`, `native_decide`, an asserted
+Chebyshev inequality, or any GRH declaration. The exact source hashes,
+toolchain, command, and axiom output are in `arithmetic-lean-receipt.json`;
+the output is also retained in `arithmetic-lean.log`.
+
+This checks the infinite algebraic induction and the integer choice of
+cutoff. It does **not** yet check that the actual inert prime sum is bounded
+below by `haarLowerBound n`. The Abel-summation argument, function identities,
+finite bridge certificate, and composition with the existing explicit formula
+remain the integration work listed next.
 
 ## Formalization obligations and limits
 
@@ -310,3 +342,11 @@ This route is intended to remove one published-result interface while
 preserving the explicit GRH hypothesis. It does not make the global
 classification unconditional. No compiled theorem should be claimed until
 the listed bridges have actually been built and checked.
+
+For item 3, Mathlib already provides `sum_mul_eq_sub_sub_integral_mul` for
+the positive-prime interval with real endpoints, and
+`sum_mul_eq_sub_integral_mul₀` for the two psi sums with lower integral
+endpoint 1. `Chebyshev.theta_eq_sum_Icc` and `Chebyshev.psi_eq_sum_Icc`
+identify the finite coefficient sums. The proof of
+`Chebyshev.primeCounting_eq_theta_div_log_add_integral` provides a concrete
+example of the derivative and integrability obligations for this interface.

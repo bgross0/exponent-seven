@@ -1,0 +1,45 @@
+name: Pinned GRH integration audit
+
+on:
+  push:
+    branches: [grh-import-audit]
+    paths: [.github/workflows/grh-import-audit.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pinned-grh-integration-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  proof-import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    steps:
+      - name: Check out the integration handoff
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Build the exact statement and the actual imported proof
+        run: >-
+          python3 frontier/grh-integration/worker.py
+          --work-root "$RUNNER_TEMP/exponent-seven-grh-worker"
+          --threads 3
+          --stages smoke external imported
+
+      - name: Preserve source receipts and complete build logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: grh-integration-receipts-${{ github.sha }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/exponent-seven-grh-worker/machine.json
+            ${{ runner.temp }}/exponent-seven-grh-worker/WORKER-SOURCES.json
+            ${{ runner.temp }}/exponent-seven-grh-worker/verified-toolchain.json
+            ${{ runner.temp }}/exponent-seven-grh-worker/combined/INTEGRATION-PROVENANCE.json
+            ${{ runner.temp }}/exponent-seven-grh-worker/combined/integration-receipts/

@@ -1,0 +1,17 @@
+This compatibility proof includes adaptations of Mathlib code.
+
+Copyright (c) 2026 Xavier Roblot.
+Released under Apache License 2.0; see the repository LICENSE.
+
+Source revision: 31ce06eaadf4a200c0e1407c5f10953cf606b8f8
+Source files:
+- Mathlib/Algebra/QuadraticAlgebra/Basic.lean (conjugation algebra automorphism)
+- Mathlib/Algebra/QuadraticAlgebra/Integral.lean (integrality of trace and norm)
+- Mathlib/Algebra/QuadraticAlgebra/Int.lean (rational-denominator argument)
+
+Changes: namespaced the helpers under Exp7.Compat435; used squarefreeness of the
+discriminant instead of the later general fundamental-discriminant maximality
+API; derived the discriminant identity directly by ring arithmetic; adapted
+Int.cast_injective's binder name to Lean/Mathlib 4.35; used existing generic
+finite-multiplicity power theorems in Step1. No project mathematical definition
+or existing theorem statement was weakened.

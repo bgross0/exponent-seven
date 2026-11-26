@@ -29,6 +29,18 @@
     7445605,
     7445606
   ],
+  "coarse_Jplus_profile": {
+    "J_upper_bound": 4,
+    "required_log_X_lower_bound": 1,
+    "log_X_enclosure": [
+      10308952,
+      10308953
+    ],
+    "margin": [
+      3898286,
+      3898287
+    ]
+  },
   "kernel_reference_check": "1001 exact overlap evaluations and a straddling interval",
-  "elapsed_seconds": 0.216
+  "elapsed_seconds": 0.222
 }

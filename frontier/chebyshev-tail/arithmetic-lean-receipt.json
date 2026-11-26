@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-11-26T19:13:34.263171+00:00",
+  "lean_version": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "working_directory": "/workspace/scratch/50ed92e4bf2d/grh-build435",
+  "command": "env PATH=/workspace/scratch/50ed92e4bf2d/lean-4.35.0-linux/bin:$PATH LEAN_NUM_THREADS=1 timeout 240s /workspace/scratch/50ed92e4bf2d/lean-4.35.0-linux/bin/lake env lean /workspace/scratch/50ed92e4bf2d/exponent-seven/frontier/chebyshev-tail/ChebyshevTailArithmetic.lean > /workspace/scratch/50ed92e4bf2d/exponent-seven/frontier/chebyshev-tail/arithmetic-lean.log 2>&1",
+  "observed_exit_code": 0,
+  "stdout_and_stderr": "'Exp7.ChebyshevTailArithmetic.haarLowerBound_gt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Exp7.ChebyshevTailArithmetic.exists_dyadic_index_of_mod_four' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+  "file_sha256": {
+    "ChebyshevTailArithmetic.lean": "050550262cec4ef349c4dd3e85a1b09b45223757edcf7761e7e98a7711ba5fd5",
+    "arithmetic-lean.log": "a0706a3041541b8f0ba4bf3fd7035b96a4f54a38c60085913029f6ae805e8764",
+    "DERIVATION.md": "5384e379b0e6196b51a51d764a713e32c119541e3ce1985c8fd1105e1300cd57",
+    "verify_induction.py": "cff335ee40ff1a18229dddf701ebaca519e67bd695752486d441e0c1ec48bb74",
+    "induction-result.json": "7f5b7ea5c612dbbd6ccaa466ffb619009103e162392aa95d6088a8b106779a55"
+  },
+  "proved_components": [
+    "uniform explicit arithmetic inequality for every n>=19",
+    "actual real-root bounds and log2 bounds",
+    "dyadic cutoff selection for q>=2^135 and q mod4=3"
+  ],
+  "remaining_integration": [
+    "Haar function and J bound specialization",
+    "three weighted Chebyshev/Abel inequalities for the actual inert prime sum",
+    "finite bridge certificate kernel verification",
+    "composition with project norm equation and GRH explicit formula"
+  ],
+  "status": "kernel-checked arithmetic components only; the full conductor theorem is not yet assembled"
+}

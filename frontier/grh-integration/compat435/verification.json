@@ -1,0 +1,18 @@
+{
+  "status": "STANDALONE_FOUNDATION_AND_PROJECT_SMOKE_COMPILED",
+  "lean": "leanprover/lean4:v4.35.0",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "source_sha256": "3ad16d6e72ced712f8580a8905a36c6cf813ca3846936a58e353b912ef596e2a",
+  "compiled_theorem": "Exp7.Compat435.isIntegralClosure_of_squarefree_discr",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exit_code": 0,
+  "original_step1_sha256": "a1e03fdd665d455f9c3b66fb8fb050149af809417323e1c78cde59d8e4f56d7d",
+  "patched_step1_sha256": "75b8f6116ef9a4e206679c6f029a29a5cc598353d225589c75c5e7d001006ead",
+  "command": "LEAN_NUM_THREADS=1 lake env lean /absolute/path/to/compat435/QuadraticIntegralClosure.lean",
+  "note": "Standalone foundation passed. Compile the patched project and bridge separately; this receipt does not assert the full GRH import or classification.",
+  "smoke_receipt": "smoke-verification.json"
+}

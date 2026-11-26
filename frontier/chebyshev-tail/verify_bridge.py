@@ -75,6 +75,9 @@ def check():
     margin = P - J + constant - logq
     if margin.lo <= 0:
         raise ArithmeticError(f"nonpositive bridge margin: {margin}")
+    coarse_margin = P - 4 + constant - logq
+    if L.lo < SCALE or coarse_margin.lo <= 0:
+        raise ArithmeticError("the existing-Jplus coarse profile did not pass")
     return {
         "status": "positive outward integer interval; not a Lean theorem",
         "kernel": "autocorrelation of stepFn(log X, [1,-1])",
@@ -88,6 +91,12 @@ def check():
         "log_Qmax": logq.enclosure(),
         "log_pi_minus_psi_three_quarters": constant.enclosure(),
         "margin": margin.enclosure(),
+        "coarse_Jplus_profile": {
+            "J_upper_bound": 4,
+            "required_log_X_lower_bound": 1,
+            "log_X_enclosure": L.enclosure(),
+            "margin": coarse_margin.enclosure(),
+        },
         "kernel_reference_check": "1001 exact overlap evaluations and a straddling interval",
         "elapsed_seconds": round(time.monotonic()-start, 3),
     }

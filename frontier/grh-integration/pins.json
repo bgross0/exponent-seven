@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED_UNCOMPILED",
+  "status": "SMOKE_COMPILED_GRH_IMPORT_PENDING",
   "project": {
     "repository": "https://github.com/bgross0/exponent-seven",
     "commit": "be878187267cd97bf3016c21b7182968898ba242",

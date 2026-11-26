@@ -231,12 +231,56 @@ The final margin is computed before display rounding; subtracting only the
 six-decimal table endpoints would give a slightly weaker valid bound.
 The complete output is [bridge-result.json](bridge-result.json).
 
+## Coarse J bound using the existing finite Jplus theorem
+
+The finite bridge and the infinite tail also work with the coarser bound
+`J<=4`. This is useful for formalization because it follows directly from
+the project's already proved `Jterm_le_Jplus`, without a new argument
+interchanging an integral and a geometric series.
+
+The bound holds for **every L>=1**, including `L=log 30000` (enclosed by
+`[10.308952,10.308953]`). In the two-cell specialization:
+
+- `corr([1,-1],1)=-1/2`, so the first-cell bound is `3/2`.
+- Write `step=L/32`. Each of the 16 middle terms is at most `3/32`:
+  `step*aKer(step*(16+i))<=1/16` follows from `aKer(u)*u<=1`, while its
+  remaining midpoint factor lies between zero and `3/2`. The middle sum is
+  at most `3/2`.
+- For L>=1, `exp(3L/2)>=5/2` and `exp(2L)>=3`, from `1+x<=exp x`.
+  Thus `exp(-2L)<=1/3`, and the existing tail expression has denominator
+  at least `3*(5/2)*(2/3)=5`. Its value is at most `4/5`.
+
+In fact this proves `Jplus<=19/5<4`. The Lean implementation in
+[HaarJBound.lean](HaarJBound.lean), using the existing definitions directly,
+**compiled successfully** in the isolated common environment with Lean
+4.35.0 and Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679`.
+Both `Exp7.Jplus_haar_le_four` and `Exp7.Jterm_haar_le_four` report exactly
+`propext`, `Classical.choice`, and `Quot.sound`. The imported Autocorr and
+JBound source files compiled unchanged. The file's original creation-time
+header is retained so that delivered source bytes exactly match the build;
+the current status and hashes are in [haar-build-receipt.json](haar-build-receipt.json),
+with the complete output in [haar-build.log](haar-build.log).
+
+The bridge verifier now also checks the coarse profile, with positive margin
+
+```text
+P_30000 - 4 + log pi - psi(3/4) - 135log2
+  in [3.898286, 3.898287].
+```
+
+For the uniform induction, replace E5 by `(11c+12)n` and omit E7. At n=19
+this increases the total error bound by `4*19-7=69`, leaving exact positive
+slack `4490381/10800`. Its growth factor is unchanged. I independently
+checked these substitutions. The same cutoff `q<2^135` therefore survives
+with this easier J bound.
+
 ## Remaining proof obligations
 
-The independent review supports the mathematical argument, but does not
-remove the formal work: exact autocorrelation/J identities, the prime-power
-partition, Abel summation and elementary integrals, the real-power induction,
-and the certified bridge row must be connected inside Lean. A generated
+The independent review supports the mathematical argument, and the coarse
+Haar J bound now has a checked Lean proof. Further formal work remains:
+the exact Haar autocorrelation identity, the sign-based prime-power
+partition, Abel summation and elementary integrals, and the certified bridge
+row must be connected to the separately developed dyadic arithmetic. A generated
 certificate should reference the existing step-function and row-margin
 definitions directly. The final theorem must still show its GRH proof or
 hypothesis explicitly.

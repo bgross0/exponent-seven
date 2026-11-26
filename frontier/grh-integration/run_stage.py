@@ -55,18 +55,28 @@ def main() -> int:
     print(json.dumps({"receipt": str(receipt_path), "log": str(log_path),
                       "status": "RUNNING"}), flush=True)
     started = time.monotonic()
+    usage_before = resource.getrusage(resource.RUSAGE_CHILDREN)
     with log_path.open("wb") as log:
-        result = subprocess.run(command, cwd=root, env=env,
-                                stdout=log, stderr=subprocess.STDOUT)
-    receipt.update(status="COMMAND_SUCCEEDED" if result.returncode == 0 else "COMMAND_FAILED",
-                   exit_code=result.returncode,
+        try:
+            result = subprocess.run(command, cwd=root, env=env,
+                                    stdout=log, stderr=subprocess.STDOUT)
+            returncode = result.returncode
+        except KeyboardInterrupt:
+            returncode = 130
+    status = ("COMMAND_SUCCEEDED" if returncode == 0 else
+              "INTERRUPTED" if returncode == 130 else "COMMAND_FAILED")
+    usage_after = resource.getrusage(resource.RUSAGE_CHILDREN)
+    receipt.update(status=status,
+                   exit_code=returncode,
                    completed_utc=datetime.now(timezone.utc).isoformat(),
                    elapsed_seconds=round(time.monotonic() - started, 3),
-                   largest_child_max_rss_kib=resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss,
+                   child_user_cpu_seconds=round(usage_after.ru_utime - usage_before.ru_utime, 3),
+                   child_system_cpu_seconds=round(usage_after.ru_stime - usage_before.ru_stime, 3),
+                   largest_child_max_rss_kib=usage_after.ru_maxrss,
                    log_sha256=hashlib.sha256(log_path.read_bytes()).hexdigest())
     receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps(receipt, indent=2), flush=True)
-    return result.returncode
+    return returncode
 
 if __name__ == "__main__":
     raise SystemExit(main())

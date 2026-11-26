@@ -1,0 +1,9 @@
+Recorded command result from the successful standalone compatibility proof check.
+
+Working directory: /workspace/scratch/50ed92e4bf2d/grh-build435
+Command: env PATH=/workspace/scratch/50ed92e4bf2d/lean-4.35.0-linux/bin:$PATH LEAN_NUM_THREADS=1 lake env lean /workspace/scratch/50ed92e4bf2d/exponent-seven/frontier/grh-integration/compat435/QuadraticIntegralClosure.lean
+Exit status: 0
+Output:
+'Exp7.Compat435.isIntegralClosure_of_squarefree_discr' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+This is the observed standalone check. It does not certify the external GRH proof, the complete project, or the final bridge.

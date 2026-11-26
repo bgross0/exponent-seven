@@ -1,0 +1,46 @@
+⚠ [9047/9056] Replayed Exp7Lean.Basic
+warning: src/Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9048/9056] Replayed Exp7Lean.Main
+warning: src/Exp7Lean/Main.lean:22:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+warning: src/Exp7Lean/Main.lean:113:0: automatically included section variable(s) unused in theorem `Exp7.X_lt_q`:
+  H
+  hq
+  hE
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit H hq hE in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9050/9056] Replayed Exp7Lean.Low
+warning: src/Exp7Lean/Low.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Low.lean:21:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+⚠ [9051/9056] Replayed Exp7Lean.Step1
+warning: src/Exp7Lean/Step1.lean:259:4: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/Step1.lean:260:4: `exact hp.ne_zero this`
+uses `this`, which was modified by the flexible tactic `simp` on line 259!
+warning: src/Exp7Lean/Step1.lean:380:4: `simp at him` is a flexible tactic modifying `him`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/Step1.lean:381:4: `have : (p : ℤ) ∣ 1 := ⟨c.im, him⟩`
+uses `him`, which was modified by the flexible tactic `simp` on line 380!
+⚠ [9052/9056] Replayed Exp7Lean.Final
+warning: src/Exp7Lean/Final.lean:51:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [9054/9056] Built Exp7Lean.Analytic.Autocorr (47s)
+✔ [9055/9056] Built Exp7Lean.Analytic.JBound (47s)
+ℹ [9056/9056] Built Exp7Lean.Analytic.HaarJBound (45s)
+info: src/Exp7Lean/Analytic/HaarJBound.lean:112:0: 'Exp7.Jplus_haar_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/Analytic/HaarJBound.lean:113:0: 'Exp7.Jterm_haar_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9056 jobs).

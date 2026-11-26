@@ -3,7 +3,7 @@
 26 November 2026. Work is isolated on `grh-import-audit`; main is not modified.
 Project source pin: `be878187267cd97bf3016c21b7182968898ba242`.
 
-## Three concrete results
+## Four concrete results
 
 ### 1. An exact interface to the published compact Dirichlet-GRH proof
 
@@ -17,6 +17,12 @@ The external development uses Lean 4.35 / Mathlib `56a00585`; exponent-seven
 uses Lean 4.37-rc1 / Mathlib `31ce06ea`. A source-level match alone does not
 establish an integrated theorem. The build gates distinguish the implication
 check, import of the real GRH proof, and final classification wrapper.
+
+The implication check has now compiled in the common Lean 4.35 environment,
+against the project's unchanged analytic statement. Its axioms are exactly
+the three standard ones. The necessary Step1 backport is an explicit proved
+integral-closure argument; the full real-GRH import remains a separate build
+gate. See `grh-integration/compat435/smoke-verification.json`.
 
 At the pinned project commit, `Final4.lean` already proves both collections of
 row margins. Its bounded classification still takes `GRHPrimeConductor`,
@@ -38,8 +44,31 @@ The new derivation in `chebyshev-tail/` avoids that separate published input:
 
 The full analytic derivation has two independent mathematical checks. The
 finite bridge was evaluated with integer intervals and has a positive margin
-at least `7.445605` with the sharper J estimate. The exact gate is
+at least `7.445605` with the sharper J estimate, and at least `3.898286` with
+the simpler bound `J<=4`. The exact gate is
 `4*30000^7 < 10^32`; the row has 3,320 prime-power terms.
+
+The complete arithmetic comparison is now kernel-checked in Lean 4.35:
+`ChebyshevTailArithmetic.haarLowerBound_gt` proves it for every `n>=19`,
+using actual `log 2` and real roots, with no numerical assumptions.
+`exists_dyadic_index_of_mod_four` supplies the needed dyadic scale for every
+`q>=2^135` with `q%4=3`. Both print only `propext`, `Classical.choice`, and
+`Quot.sound`. The source hash, successful command, and complete output are
+in `chebyshev-tail/arithmetic-lean-receipt.json`.
+
+The companion lemmas `Jplus_haar_le_four` and `Jterm_haar_le_four` have now
+also compiled, against unchanged `Autocorr` and `JBound`, with only the
+standard axioms. See `chebyshev-tail/haar-build-receipt.json`.
+The remaining central analytic work is the lower bound for the actual inert
+prime sum, using the three weighted Abel-summation estimates.
+
+The finite row also has an exact preflight using the existing 64-cell evaluator:
+32 entries +1 followed by 32 entries -1. Extending the prime table to 30000
+and its power loop gives a margin above `7.5227702413`. The required 3245
+prime-table entries can retain the existing width-16 log bounds by verifying
+them with the already available higher-precision P26 routine. This preflight
+is not yet a Lean certificate; the minimal changes are documented in
+`chebyshev-tail/IMPLEMENTATION_PLAN.md`.
 
 This argument still uses EF and GRH. Importing the actual GRH theorem would
 supply that input. It is not yet a connected Lean proof of the upper-range
@@ -70,6 +99,16 @@ These are external arithmetic checks, not Lean certificates. The distinction
 between a tested calculation, an audited analytic argument, a compiled helper,
 and an integrated theorem is retained throughout the handoff.
 
+### 4. Kernel-checked fourfold compression of root representatives
+
+`root-period/RootPeriod.lean` proves that the original predicate
+`x^2+3*y^2 == 4*p^7 (mod 8*y^2)` has period `2*y^2`, using the parity forced
+by that same predicate. It compiled with only the standard axioms. This
+shortens the representative range by four while retaining the original
+congruence modulus. The resulting progressions are longer, so this is a
+proved reduction in root enumeration, not a claimed fourfold runtime gain.
+The generator integration is still separate.
+
 ## Reproduce the finite computations
 
 From the repository root:
@@ -83,6 +122,19 @@ python frontier/chebyshev-tail/verify_bridge.py
 
 The original interval pilot is retained in `zero_rectangle.py` for comparison.
 The integer checker does not import or depend on that implementation.
+
+## Ready worker for Kubuntu and other Linux CPU nodes
+
+`grh-integration/worker.py` installs a SHA-256-verified official Lean release
+inside a dedicated work directory, checks out both exact source pins, applies
+the proved compatibility patch, obtains the matching Mathlib cache, and runs
+the smoke, external, and imported build gates. It preserves logs and reuses
+completed modules on restart. It chooses conservative thread counts from
+available RAM and CPU count, locks its work directory, and verifies a manifest
+of every prepared Lean source and Lake configuration file.
+
+`COMPUTE_HANDOFF.md` gives the Precision 7670/Kubuntu commands and exact
+acceptance criteria. The separate public CI workflow uses the same worker.
 
 ## Remaining classification work
 
