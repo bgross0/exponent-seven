@@ -1,0 +1,50 @@
+{
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "env",
+    "lean",
+    "/home/ben/exp7-grh-final435/verification/integration-receipts/declarations.lean"
+  ],
+  "completed_utc": "2026-11-26T20:55:52.984215+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 5.08,
+  "axioms": {
+    "LFunction_eq_zero_re": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.primeConductor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremA_importedGRH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD_importedGRH": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.EF.PoissonJensen435.log_norm_meromorphicTrailingCoeffAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DirichletCharacter.completedLFunction_ne_zero_of_one_le_re": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DirichletCharacter.rootNumber_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "accepted": true,
+  "log_sha256": "6be3129f4d470793b41833bc56181521c6129a4d08c67898e4370e0817facb7f"
+}

@@ -38,7 +38,7 @@ Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor
 | [Imported](grh-integration/precision7670/imported.json) | 0 | 10.365 s |
 | [Classification](grh-integration/precision7670/final.json) | 1 | 146.032 s |
 
-The bounded-classification wrapper failed in four prerequisite modules.
+The first bounded-classification build failed in four prerequisite modules.
 The first error was `Real.exp_natCast_mul` at `Digamma.lean:493`. A separate
 Lean check confirmed that `Real.exp_nat_mul` supplies that rewrite in 4.35.
 The remaining errors include changed circle-average and scalar-multiplication
@@ -47,6 +47,26 @@ The wrapper retains `SearchHigh`, `SearchLow`, and the bound `q ≤ QTOP`.
 [Final build log](grh-integration/precision7670/final.log) ·
 [API check](grh-integration/precision7670/final-api-check.log) ·
 [Machine, source pins, and timings](grh-integration/precision7670/precision7670-summary.json)
+
+#### Bounded classification after the 4.35 backport
+
+The repair on `grh-final435-precision7670` compiles `Exp7GRHBridge.Final`.
+Theorem D takes `SearchHigh` and `SearchLow`. For a prime `q` with
+`q % 4 = 3` and `q ≤ QTOP`, it yields `IsExp7 q ↔ q ∈ known`.
+Theorem A takes `SearchHigh` and excludes `IsExp7 q` in the range
+`QLOW ≤ q ≤ QTOP` under the same prime and congruence conditions.
+Here `QTOP = 10^32`. Lean reports exactly `propext`, `Classical.choice`, and
+`Quot.sound` for both theorems. The two finite search proofs remain open.
+[Lean signatures and axioms](grh-integration/precision7670/classification435/declarations.log) ·
+[Final gate receipt](grh-integration/precision7670/classification435/final.json)
+
+The backport proves the centred Poisson–Jensen identity using the pinned
+Mathlib’s canonical decomposition, including the contribution of boundary zeros.
+It proves the two needed Dirichlet-character nonvanishing lemmas from the existing
+functional equation and L-function nonvanishing. Six existing proof files have
+API adjustments. The final bridge, search propositions, numerical inputs, and
+pinned dependencies match the first build byte for byte.
+[Proof files, caller patch, and hashes](grh-integration/compat435/final)
 
 ### 2. A route to the entire range above 10^32 using existing analytic tools
 

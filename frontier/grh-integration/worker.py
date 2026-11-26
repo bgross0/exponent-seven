@@ -110,6 +110,8 @@ def source_identity() -> dict[str, str]:
     paths = [HERE / "pins.json", HERE / "prepare.py", HERE / "worker.py", HERE / "run_stage.py"]
     paths += sorted((HERE / "bridge").glob("*.lean"))
     paths += [HERE / "compat435" / "Step1.patch", HERE / "compat435" / "verification.json"]
+    backport = HERE / "compat435" / "final"
+    paths += [backport / "sources.json", backport / "callers.patch", *sorted(backport.glob("*.lean"))]
     return {str(p.relative_to(HERE)): digest(p) for p in paths}
 
 

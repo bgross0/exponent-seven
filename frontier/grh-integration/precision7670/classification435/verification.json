@@ -1,0 +1,55 @@
+{
+  "basis_commit": "61545c94e9f95befa64c5408501733f412064618",
+  "build_branch": "grh-final435-precision7670",
+  "environment": "external435",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "target": "Exp7GRHBridge.Final",
+  "exit_code": 0,
+  "elapsed_seconds": 156.073,
+  "threads": 8,
+  "lake_jobs": 9923,
+  "cache": "Reused Mathlib and the verified external proof from the pinned worker. Removed the copied Exp7Lean and Exp7GRHBridge build artifacts before the verification build.",
+  "project_and_bridge_modules_built": 83,
+  "prepared_input_hashes_checked": 886,
+  "changed_existing_lean_files": 6,
+  "new_proof_modules": 2,
+  "exact_preparation_inputs": {
+    "pins.json": "d6258228afabf1271ab2236cae0cd201f86db3edddae2b7e7df2c9e62e1eb56d",
+    "prepare.py": "f9994b3884f61c71eadd9b95b2c65f316eff4595005421e764370e0e86bd4cae",
+    "worker.py": "527365978f40f0d8371a7d0261b3b217326b00c1c62ec7d0fd837e25274770d1",
+    "run_stage.py": "71a69e927f91a6e2f2faef212366bd81b26215d460dbb510e5ef822c82b6364e",
+    "bridge/Final.lean": "0dc7e678191259fed7e9661d32201e96e993a83538aaa0181037098ca27a4e20",
+    "bridge/Imported.lean": "e0a6a8a225bab9889509e10eb8229a72649c2996d8f8683530839e2b5bf017c5",
+    "bridge/Smoke.lean": "481d34de4ffef8245b9e5d81938f9dcbea3c6334ab41ce27cdfb9f7232808c71",
+    "compat435/Step1.patch": "d7a1c6a8979051bfada165df4596549a026eb3285ff3407bcec251445b090300",
+    "compat435/verification.json": "7e5778fd04d22cdec8982994bb98f587565e808ba78df8c69a653a0328c81287",
+    "compat435/final/sources.json": "603279985e9eb7ab89a8837280a102f82b45e3f7b5fe620b5842c23422596a54",
+    "compat435/final/callers.patch": "755682f80a6d49d41418b64954f18f877610dd73f95dbc24db9797c7052eed2f",
+    "compat435/final/Dirichlet435.lean": "8894978616a88df4fcc979f76bf7fc5f5eae6ae8ae0d2f9e71ed00573769d74c",
+    "compat435/final/PoissonJensen435.lean": "15e2b44fadc4d0d02f476b7b54a20b2f7b642320777e5f9a35b20a9571ba0acc"
+  },
+  "final_bridge_sha256": "0dc7e678191259fed7e9661d32201e96e993a83538aaa0181037098ca27a4e20",
+  "declaration_check": "declarations.json",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "remaining_hypotheses": {
+    "theoremA_importedGRH": [
+      "SearchHigh",
+      "q.Prime",
+      "q % 4 = 3",
+      "QLOW \u2264 q",
+      "q \u2264 QTOP"
+    ],
+    "theoremD_importedGRH": [
+      "SearchHigh",
+      "SearchLow",
+      "q.Prime",
+      "q % 4 = 3",
+      "q \u2264 QTOP"
+    ]
+  }
+}

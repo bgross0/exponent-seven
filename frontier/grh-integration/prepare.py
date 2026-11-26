@@ -29,6 +29,24 @@ def check_checkout(root: Path, expected: str) -> None:
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+def apply_classification_backport(out: Path, backport: Path) -> dict:
+    sources = json.loads((backport / "sources.json").read_text())
+    for name, hashes in sources.items():
+        target = out / name
+        before = digest(target) if target.exists() else None
+        if before != hashes["before"]:
+            raise SystemExit(f"Unexpected classification backport input: {name}")
+
+    patch = backport / "callers.patch"
+    subprocess.run(["git", "apply", str(patch)], cwd=out, check=True)
+    for name, hashes in sources.items():
+        target = out / name
+        if hashes["before"] is None:
+            shutil.copy2(backport / target.name, target)
+        if digest(target) != hashes["after"]:
+            raise SystemExit(f"Classification backport output hash mismatch: {name}")
+    return {"callers_patch_sha256": digest(patch), "sources": sources}
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--exponent-seven", type=Path, required=True)
@@ -36,7 +54,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--environment", choices=("external435", "project437"), default="external435")
     parser.add_argument("--compat435", action=argparse.BooleanOptionalAction, default=True,
-                        help="Apply the checked Step1 backport in external435 (default on); ignored in project437")
+                        help="Apply the checked Step1 and classification backports in external435 (default on); ignored in project437")
     args = parser.parse_args()
     exp = args.exponent_seven.resolve()
     grh = args.grh.resolve()
@@ -101,6 +119,7 @@ globs = ["Exp7GRHBridge.+"]
             raise SystemExit("Step1 compatibility patch output hash does not match its audited result.")
         compat_receipt = {
             "patch_sha256": digest(compat_dir / "Step1.patch"),
+            "classification_backport": apply_classification_backport(out, compat_dir / "final"),
             "original_step1_sha256": expected_before,
             "patched_step1_sha256": expected_after,
             "foundation_status": verification["status"],

@@ -1,0 +1,22 @@
+{"receipt": "/home/ben/exp7-grh-final435/verification/integration-receipts/final.json", "log": "/home/ben/exp7-grh-final435/verification/integration-receipts/final.log", "status": "RUNNING"}
+{
+  "stage": "final",
+  "target": "Exp7GRHBridge.Final",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "build",
+    "Exp7GRHBridge.Final"
+  ],
+  "workspace": "/home/ben/exp7-grh-final435/verification",
+  "threads": 8,
+  "started_utc": "2026-11-26T20:52:59.246709+00:00",
+  "status": "COMMAND_SUCCEEDED",
+  "exit_code": 0,
+  "provenance_sha256": "3357e5cc17add5b7dd24b44dbb1765e89964227c774122b642741f7e46758c86",
+  "completed_utc": "2026-11-26T20:55:35.320519+00:00",
+  "elapsed_seconds": 156.073,
+  "child_user_cpu_seconds": 952.612,
+  "child_system_cpu_seconds": 130.248,
+  "largest_child_max_rss_kib": 7827556,
+  "log_sha256": "867d93f41cd4b2c8e724948e63c15c32a69a691581131ad9cb95d2dc03ac6951"
+}

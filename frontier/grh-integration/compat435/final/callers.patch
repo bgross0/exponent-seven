@@ -1,0 +1,140 @@
+diff --git a/src/Exp7Lean/Analytic/EF/Digamma.lean b/src/Exp7Lean/Analytic/EF/Digamma.lean
+index 30bafa8232c5c23342584d7b1fb4d92b8e61f92a..5d5ca1121f9be53c9b710a9c06d50a9e817e7e3a 100644
+--- a/src/Exp7Lean/Analytic/EF/Digamma.lean
++++ b/src/Exp7Lean/Analytic/EF/Digamma.lean
+@@ -490,7 +490,7 @@ theorem re_digamma_add_mul_I_sub {a : ℝ} (ha : 0 < a) (τ : ℝ) :
+           intro n
+           simp only [hF]
+           rw [show -(a + (n : ℝ)) * w = -a * w + (n : ℝ) * (-w) by ring, Real.exp_add,
+-            Real.exp_natCast_mul]
++            Real.exp_nat_mul]
+           ring
+         simp only [hterm]
+         rw [tsum_mul_left, tsum_geometric_of_lt_one (Real.exp_pos _).le hr, div_eq_mul_inv]
+diff --git a/src/Exp7Lean/Analytic/EF/HadamardFallback.lean b/src/Exp7Lean/Analytic/EF/HadamardFallback.lean
+index 6a4228e8a915d14c7d191444be1f90cebdf5a154..4df7101c700fe0648bf507be91433410345f02d2 100644
+--- a/src/Exp7Lean/Analytic/EF/HadamardFallback.lean
++++ b/src/Exp7Lean/Analytic/EF/HadamardFallback.lean
+@@ -1,4 +1,5 @@
+ import Exp7Lean.Analytic.EF.HadamardHF1
++import Exp7Lean.Analytic.EF.Dirichlet435
+ 
+ /-!
+ # Explicit formula blueprint: in-house decomposition of the Hadamard input (fallback)
+@@ -87,7 +88,7 @@ private lemma hf2_factorial_mul_pow_le (D b K : ℝ) (hD : 0 ≤ D) (hb : 1 ≤
+     calc (m.factorial : ℝ) ≤ (m : ℝ) ^ m := by exact_mod_cast Nat.factorial_le_pow m
+       _ ≤ (K' * (2 + x)) ^ m := pow_le_pow_left₀ (Nat.cast_nonneg m) hm' m
+       _ = Real.exp (m * Real.log (K' * (2 + x))) := by
+-          rw [Real.exp_natCast_mul, Real.exp_log hpos]
++          rw [Real.exp_nat_mul, Real.exp_log hpos]
+       _ ≤ _ := by
+           apply Real.exp_le_exp.mpr
+           rw [Real.log_mul (by positivity) (by positivity)]
+@@ -101,7 +102,7 @@ private lemma hf2_factorial_mul_pow_le (D b K : ℝ) (hD : 0 ≤ D) (hb : 1 ≤
+             _ = _ := by ring
+   have h3 : b ^ (m + 1) ≤ Real.exp (2 * ((K + 1) * Real.log b) * (1 + x) * Real.log (2 + x)) := by
+     calc b ^ (m + 1) = Real.exp (((m + 1 : ℕ) : ℝ) * Real.log b) := by
+-          rw [Real.exp_natCast_mul, Real.exp_log (by linarith)]
++          rw [Real.exp_nat_mul, Real.exp_log (by linarith)]
+       _ ≤ _ := by
+           apply Real.exp_le_exp.mpr
+           push_cast
+@@ -657,7 +658,8 @@ theorem analyticOrderNatAt_xi_one_sub_conj (χ : DirichletCharacter ℂ N) (hχ
+     rw [analyticOrderAt_comp_of_deriv_ne_zero (by fun_prop) hderiv, sub_sub_cancel, h2,
+       analyticOrderAt_conj_conj hd]
+   conv_lhs => rw [h1]
+-  rw [analyticOrderNatAt_const_mul (hcomp.analyticAt _) hW, analyticOrderNatAt, key,
++  rw [analyticOrderNatAt, analyticOrderAt_mul analyticAt_const (hcomp.analyticAt _),
++    analyticAt_const.analyticOrderAt_eq_zero.mpr hW, zero_add, key,
+     analyticOrderNatAt]
+ 
+ /- **HF6** (L): H1 and H2 of `HadamardInput.lean` from HF1–HF5.
+diff --git a/src/Exp7Lean/Analytic/EF/HadamardHF1Boundary.lean b/src/Exp7Lean/Analytic/EF/HadamardHF1Boundary.lean
+index 59bd8751a1a3b7a4448c21c63be38d4037d4a29d..e826697b600ae82bc37fc08299a7d7b1d12c8a01 100644
+--- a/src/Exp7Lean/Analytic/EF/HadamardHF1Boundary.lean
++++ b/src/Exp7Lean/Analytic/EF/HadamardHF1Boundary.lean
+@@ -70,7 +70,7 @@ theorem circleAverage_abs_log_norm_le {F : ℂ → ℂ} (hF : Differentiable ℂ
+   -- Jensen: the mean of `log ‖F‖` is at least `log ‖F 0‖`
+   have hJ : Real.log ‖F 0‖ ≤ Real.circleAverage (fun ζ ↦ Real.log ‖F ζ‖) 0 R := by
+     have han : AnalyticOnNhd ℂ F (closedBall 0 |R|) := fun x _ ↦ hF.analyticAt x
+-    rw [han.circleAverage_log_norm h0]
++    rw [AnalyticOnNhd.circleAverage_log_norm hR.ne' han h0]
+     have hnn : 0 ≤ ∑ᶠ u, (MeromorphicOn.divisor F (closedBall 0 |R|) u : ℝ)
+         * Real.log (R * ‖(0 : ℂ) - u‖⁻¹) := by
+       refine finsum_nonneg fun x ↦ ?_
+@@ -173,7 +173,7 @@ theorem norm_circleAverage_kernel_sub_le {u : ℂ → ℝ} {R : ℝ} (hR : 0 < R
+   · have h := (hi w hwR).fun_sub (hi 0 h0R)
+     rw [circleIntegrable_def] at h ⊢
+     exact h.norm
+-  · exact CircleIntegrable.const_smul (𝕜 := ℝ) (a := 20 * ‖w‖ / R ^ 2) habs
++  · exact CircleIntegrable.const_smul (a := 20 * ‖w‖ / R ^ 2) habs
+   · rw [mem_sphere_zero_iff_norm, abs_of_pos hR] at hζ
+     rw [← sub_smul, norm_smul, Complex.norm_real, Real.norm_eq_abs, smul_eq_mul]
+     gcongr
+diff --git a/src/Exp7Lean/Analytic/EF/HadamardHF1Poisson.lean b/src/Exp7Lean/Analytic/EF/HadamardHF1Poisson.lean
+index 80203c3c317513540429be768e6f3f603ceff043..d4793a0b8de7e9662136007a35eccb1d9920e86c 100644
+--- a/src/Exp7Lean/Analytic/EF/HadamardHF1Poisson.lean
++++ b/src/Exp7Lean/Analytic/EF/HadamardHF1Poisson.lean
+@@ -1,4 +1,5 @@
+ import Exp7Lean.Analytic.EF.HadamardHF1Counting
++import Exp7Lean.Analytic.EF.PoissonJensen435
+ 
+ /-!
+ # HF1, part 2: the differentiated Poisson–Jensen formula on a disc
+@@ -142,7 +143,7 @@ theorem log_norm_eq_circleAverage_sub_sum {F : ℂ → ℂ} (hF : Differentiable
+   have hord : meromorphicOrderAt F z = 0 := by
+     rw [(hF.analyticAt z).meromorphicOrderAt_eq, (hF.analyticAt z).analyticOrderAt_eq_zero.mpr hFz]
+     rfl
+-  have h := MeromorphicOn.log_norm_meromorphicTrailingCoeffAt hzb hord han.meromorphicOn
++  have h := PoissonJensen435.log_norm_meromorphicTrailingCoeffAt hzb hord han.meromorphicOn
+   rw [(hF.analyticAt z).meromorphicTrailingCoeffAt_of_ne_zero hFz] at h
+   rw [h]
+   congr 1
+@@ -155,7 +156,7 @@ theorem log_norm_eq_circleAverage_sub_sum {F : ℂ → ℂ} (hF : Differentiable
+     simp
+   rw [finsum_eq_sum_of_support_subset (s := S)]
+   · refine Finset.sum_congr rfl fun ρ hρS ↦ ?_
+-    rw [sub_zero, sub_zero, hdiv ρ ((hS ρ).mp hρS).1]
++    rw [hdiv ρ ((hS ρ).mp hρS).1]
+   · intro ρ hρ
+     rw [Function.mem_support] at hρ
+     rw [Finset.mem_coe, hS]
+diff --git a/src/Exp7Lean/Numerics/FixedExp.lean b/src/Exp7Lean/Numerics/FixedExp.lean
+index 2794cde659a87d86e734594487b0143e04ebe99e..45df1adfcd91dbbc8740620f830666850a5ea8f9 100644
+--- a/src/Exp7Lean/Numerics/FixedExp.lean
++++ b/src/Exp7Lean/Numerics/FixedExp.lean
+@@ -213,7 +213,7 @@ theorem le_sqIterLo {D v : ℕ} (hD : 0 < D) (hv : D ≤ v) (s : ℕ) : D ≤ sq
+     exact Nat.mul_le_mul ih ih
+ 
+ theorem exp_eq_pow_two_pow (t : ℝ) (s : ℕ) : exp t = exp (t / 2 ^ s) ^ (2 ^ s) := by
+-  rw [← exp_natCast_mul]
++  rw [← exp_nat_mul]
+   congr 1
+   push_cast
+   field_simp
+@@ -297,7 +297,7 @@ theorem le_expHi {D : ℕ} (hD : 0 < D) (N s : ℕ) {x : ℕ} {t : ℝ} (hx : D
+       refine le_trans ?_ this
+       rw [le_div_iff₀ hDr]; linarith
+     calc exp t ≤ exp ((cdiv x D : ℕ) : ℝ) := exp_le_exp.mpr h1
+-      _ = exp 1 ^ cdiv x D := by rw [← exp_natCast_mul, mul_one]
++      _ = exp 1 ^ cdiv x D := by rw [← exp_nat_mul, mul_one]
+       _ ≤ 3 ^ cdiv x D := by
+         gcongr
+         exact exp_one_lt_three.le
+diff --git a/src/Exp7Lean/Rows/JPart.lean b/src/Exp7Lean/Rows/JPart.lean
+index ac9b19f4d9884a96f254907f88bd7cfc13701935..274ce06e0cd8033413c43b0fff50ec6a83f46135 100644
+--- a/src/Exp7Lean/Rows/JPart.lean
++++ b/src/Exp7Lean/Rows/JPart.lean
+@@ -156,10 +156,10 @@ theorem le_jTerm (pk : PackOK v sq pack) {lX : ℝ} (hlX : 0 < lX) {stepHi A B m
+     -- the exponentials
+     have he3 : Real.exp (-(3 / 2) * (lX / 64 / 16 * (m : ℝ))) =
+         Real.exp (-(lX / 2048)) ^ (3 * m) := by
+-      rw [← Real.exp_natCast_mul]; congr 1; push_cast; ring
++      rw [← Real.exp_nat_mul]; congr 1; push_cast; ring
+     have he4 : Real.exp (-2 * (lX / 64 / 16 * (m : ℝ))) =
+         Real.exp (-(lX / 2048)) ^ (4 * m) := by
+-      rw [← Real.exp_natCast_mul]; congr 1; push_cast; ring
++      rw [← Real.exp_nat_mul]; congr 1; push_cast; ring
+     have he4lt : 0 < 1 - Real.exp (-(lX / 2048)) ^ (4 * m) := by
+       rw [← he4]; exact one_sub_exp_neg_two_mul_pos hu
+     have he30 : 0 ≤ Real.exp (-(lX / 2048)) ^ (3 * m) := by positivity

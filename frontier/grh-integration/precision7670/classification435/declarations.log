@@ -1,0 +1,15 @@
+LFunction_eq_zero_re : DirichletLZerosOnLine
+'LFunction_eq_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor
+'Exp7.GRHIntegration.primeConductor' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremA_importedGRH : Exp7.SearchHigh →
+  ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → Exp7.QLOW ≤ q → q ≤ Exp7.QTOP → ¬Exp7.IsExp7 q
+'Exp7.GRHIntegration.theoremA_importedGRH' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremD_importedGRH : Exp7.SearchHigh →
+  Exp7.SearchLow → ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → q ≤ Exp7.QTOP → (Exp7.IsExp7 q ↔ q ∈ Exp7.known)
+'Exp7.GRHIntegration.theoremD_importedGRH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.EF.PoissonJensen435.log_norm_meromorphicTrailingCoeffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'DirichletCharacter.completedLFunction_ne_zero_of_one_le_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DirichletCharacter.rootNumber_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
