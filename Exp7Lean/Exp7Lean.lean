@@ -6,3 +6,4 @@ import Exp7Lean.Step1
 import Exp7Lean.Final
 import Exp7Lean.Analytic.Statement
 import Exp7Lean.ClassGroup.Defs
+import Exp7Lean.Analytic.Reduce
