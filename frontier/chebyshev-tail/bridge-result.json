@@ -1,0 +1,34 @@
+{
+  "status": "positive outward integer interval; not a Lean theorem",
+  "kernel": "autocorrelation of stepFn(log X, [1,-1])",
+  "X": 30000,
+  "Qmin": "100000000000000000000000000000000",
+  "Qmax": "43556142965880123323311949751266331066368",
+  "gate_4_X_pow_7": "87480000000000000000000000000000",
+  "gate_gap_Qmin_minus_4_X_pow_7": "12520000000000000000000000000000",
+  "prime_power_terms": 3320,
+  "arithmetic_scale": "10000000000000000000000000000000000000000",
+  "output_scale": 1000000,
+  "prime_sum": [
+    99242565,
+    99242566
+  ],
+  "J_upper_enclosure": [
+    452680,
+    452681
+  ],
+  "log_Qmax": [
+    93574869,
+    93574870
+  ],
+  "log_pi_minus_psi_three_quarters": [
+    2230590,
+    2230591
+  ],
+  "margin": [
+    7445605,
+    7445606
+  ],
+  "kernel_reference_check": "1001 exact overlap evaluations and a straddling interval",
+  "elapsed_seconds": 0.216
+}

@@ -1,0 +1,630 @@
+[
+  {
+    "X": 19000,
+    "Qmin": "3900000000000000000000000000000",
+    "Qmax": "100000000000000000000000000000000",
+    "scale": 1000000,
+    "delta": "1/100",
+    "original_verifier": {
+      "X": 19000,
+      "Qmin": "3900000000000000000000000000000",
+      "Qmax": "100000000000000000000000000000000",
+      "terms": 2222,
+      "delta": "1/100",
+      "height": 1000,
+      "scale": 1000000,
+      "prime_sum": [
+        76650521,
+        76650522
+      ],
+      "J_upper_enclosure": [
+        483334,
+        483335
+      ],
+      "margin": [
+        4715054,
+        4715055
+      ],
+      "weighted_zero_mass_upper_enclosure": [
+        77682722,
+        77682723
+      ],
+      "low_zero_loss_upper_enclosure": [
+        2558041,
+        2558042
+      ],
+      "high_zero_loss_upper_enclosure": [
+        608418,
+        608419
+      ],
+      "residual": [
+        1548595,
+        1548596
+      ],
+      "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+    },
+    "elementary_kappa_enclosure": [
+      931480,
+      931481
+    ],
+    "exact_haar_A_enclosure": [
+      5860,
+      5861
+    ],
+    "exact_haar_B_enclosure": [
+      3865,
+      3866
+    ],
+    "monotone_taper_test_enclosure": [
+      47308,
+      47309
+    ],
+    "shifted_tail_profiles": [
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+4",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          402299,
+          402300
+        ],
+        "low_zero_loss_upper_enclosure": [
+          2558041,
+          2558042
+        ],
+        "high_zero_loss_upper_enclosure": [
+          636502,
+          636503
+        ],
+        "residual": [
+          1520509,
+          1520511
+        ]
+      },
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          402299,
+          402300
+        ],
+        "low_zero_loss_upper_enclosure": [
+          2459253,
+          2459254
+        ],
+        "high_zero_loss_upper_enclosure": [
+          636502,
+          636503
+        ],
+        "residual": [
+          1619297,
+          1619299
+        ]
+      },
+      {
+        "height": 80,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "2078178381193813",
+        "harmonic_denominator": "485721041551200",
+        "shifted_zero_mass_upper_enclosure": [
+          501495,
+          501496
+        ],
+        "low_zero_loss_upper_enclosure": [
+          2459253,
+          2459254
+        ],
+        "high_zero_loss_upper_enclosure": [
+          1242862,
+          1242863
+        ],
+        "residual": [
+          1012938,
+          1012940
+        ]
+      },
+      {
+        "height": 60,
+        "low_zero_kernel_bound": "exact_haar",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "9304682830147",
+        "harmonic_denominator": "2329089562800",
+        "shifted_zero_mass_upper_enclosure": [
+          666298,
+          666299
+        ],
+        "low_zero_loss_upper_enclosure": [
+          726362,
+          726363
+        ],
+        "high_zero_loss_upper_enclosure": [
+          2947889,
+          2947890
+        ],
+        "residual": [
+          1040802,
+          1040804
+        ]
+      }
+    ],
+    "first_passing_even_height_for_logq_plus_1": 66,
+    "status": "External interval inequalities; analytic proof audit only; no Lean theorem"
+  },
+  {
+    "X": 30000,
+    "Qmin": "100000000000000000000000000000000",
+    "Qmax": "10000000000000000000000000000000000000000",
+    "scale": 1000000,
+    "delta": "1/100",
+    "original_verifier": {
+      "X": 30000,
+      "Qmin": "100000000000000000000000000000000",
+      "Qmax": "10000000000000000000000000000000000000000",
+      "terms": 3320,
+      "delta": "1/100",
+      "height": 1000,
+      "scale": 1000000,
+      "prime_sum": [
+        95424837,
+        95424838
+      ],
+      "J_upper_enclosure": [
+        461919,
+        461920
+      ],
+      "margin": [
+        5090105,
+        5090106
+      ],
+      "weighted_zero_mass_upper_enclosure": [
+        96103403,
+        96103404
+      ],
+      "low_zero_loss_upper_enclosure": [
+        3539947,
+        3539948
+      ],
+      "high_zero_loss_upper_enclosure": [
+        795820,
+        795821
+      ],
+      "residual": [
+        754337,
+        754338
+      ],
+      "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+    },
+    "elementary_kappa_enclosure": [
+      931480,
+      931481
+    ],
+    "exact_haar_A_enclosure": [
+      6714,
+      6715
+    ],
+    "exact_haar_B_enclosure": [
+      4044,
+      4045
+    ],
+    "monotone_taper_test_enclosure": [
+      49503,
+      49504
+    ],
+    "shifted_tail_profiles": [
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+4",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          494403,
+          494404
+        ],
+        "low_zero_loss_upper_enclosure": [
+          3539947,
+          3539948
+        ],
+        "high_zero_loss_upper_enclosure": [
+          827047,
+          827048
+        ],
+        "residual": [
+          723110,
+          723112
+        ]
+      },
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          494403,
+          494404
+        ],
+        "low_zero_loss_upper_enclosure": [
+          3429443,
+          3429444
+        ],
+        "high_zero_loss_upper_enclosure": [
+          827047,
+          827048
+        ],
+        "residual": [
+          833614,
+          833616
+        ]
+      },
+      {
+        "height": 80,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "2078178381193813",
+        "harmonic_denominator": "485721041551200",
+        "shifted_zero_mass_upper_enclosure": [
+          616625,
+          616626
+        ],
+        "low_zero_loss_upper_enclosure": [
+          3429443,
+          3429444
+        ],
+        "high_zero_loss_upper_enclosure": [
+          1615755,
+          1615756
+        ],
+        "residual": [
+          44905,
+          44907
+        ]
+      },
+      {
+        "height": 60,
+        "low_zero_kernel_bound": "exact_haar",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "9304682830147",
+        "harmonic_denominator": "2329089562800",
+        "shifted_zero_mass_upper_enclosure": [
+          819803,
+          819804
+        ],
+        "low_zero_loss_upper_enclosure": [
+          1001722,
+          1001723
+        ],
+        "high_zero_loss_upper_enclosure": [
+          3834876,
+          3834877
+        ],
+        "residual": [
+          253505,
+          253507
+        ]
+      }
+    ],
+    "first_passing_even_height_for_logq_plus_1": 80,
+    "status": "External interval inequalities; analytic proof audit only; no Lean theorem"
+  },
+  {
+    "X": 100000,
+    "Qmin": "10000000000000000000000000000000000000000",
+    "Qmax": "1000000000000000000000000000000000000000000000000000000000000",
+    "scale": 1000000,
+    "delta": "1/100",
+    "original_verifier": {
+      "X": 100000,
+      "Qmin": "10000000000000000000000000000000000000000",
+      "Qmax": "1000000000000000000000000000000000000000000000000000000000000",
+      "terms": 9700,
+      "delta": "1/100",
+      "height": 1000,
+      "scale": 1000000,
+      "prime_sum": [
+        168193072,
+        168193073
+      ],
+      "J_upper_enclosure": [
+        413613,
+        413614
+      ],
+      "margin": [
+        31854943,
+        31854944
+      ],
+      "weighted_zero_mass_upper_enclosure": [
+        142155105,
+        142155106
+      ],
+      "low_zero_loss_upper_enclosure": [
+        6925555,
+        6925556
+      ],
+      "high_zero_loss_upper_enclosure": [
+        1422783,
+        1422784
+      ],
+      "residual": [
+        23506604,
+        23506605
+      ],
+      "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+    },
+    "elementary_kappa_enclosure": [
+      931480,
+      931481
+    ],
+    "exact_haar_A_enclosure": [
+      9353,
+      9354
+    ],
+    "exact_haar_B_enclosure": [
+      4517,
+      4518
+    ],
+    "monotone_taper_test_enclosure": [
+      55290,
+      55291
+    ],
+    "shifted_tail_profiles": [
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+4",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          724661,
+          724662
+        ],
+        "low_zero_loss_upper_enclosure": [
+          6925555,
+          6925556
+        ],
+        "high_zero_loss_upper_enclosure": [
+          1465157,
+          1465158
+        ],
+        "residual": [
+          23464230,
+          23464232
+        ]
+      },
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          724661,
+          724662
+        ],
+        "low_zero_loss_upper_enclosure": [
+          6779400,
+          6779401
+        ],
+        "high_zero_loss_upper_enclosure": [
+          1465157,
+          1465158
+        ],
+        "residual": [
+          23610385,
+          23610387
+        ]
+      },
+      {
+        "height": 80,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "2078178381193813",
+        "harmonic_denominator": "485721041551200",
+        "shifted_zero_mass_upper_enclosure": [
+          904448,
+          904449
+        ],
+        "low_zero_loss_upper_enclosure": [
+          6779400,
+          6779401
+        ],
+        "high_zero_loss_upper_enclosure": [
+          2864429,
+          2864430
+        ],
+        "residual": [
+          22211112,
+          22211114
+        ]
+      },
+      {
+        "height": 60,
+        "low_zero_kernel_bound": "exact_haar",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "9304682830147",
+        "harmonic_denominator": "2329089562800",
+        "shifted_zero_mass_upper_enclosure": [
+          1203567,
+          1203568
+        ],
+        "low_zero_loss_upper_enclosure": [
+          1930308,
+          1930309
+        ],
+        "high_zero_loss_upper_enclosure": [
+          6804746,
+          6804747
+        ],
+        "residual": [
+          23119888,
+          23119890
+        ]
+      }
+    ],
+    "first_passing_even_height_for_logq_plus_1": 40,
+    "status": "External interval inequalities; analytic proof audit only; no Lean theorem"
+  },
+  {
+    "X": 1000000,
+    "Qmin": "1000000000000000000000000000000000000000000000000000000000000",
+    "Qmax": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "scale": 1000000,
+    "delta": "1/100",
+    "original_verifier": {
+      "X": 1000000,
+      "Qmin": "1000000000000000000000000000000000000000000000000000000000000",
+      "Qmax": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "terms": 78734,
+      "delta": "1/100",
+      "height": 1000,
+      "scale": 1000000,
+      "prime_sum": [
+        484511342,
+        484511343
+      ],
+      "J_upper_enclosure": [
+        344678,
+        344679
+      ],
+      "margin": [
+        113378470,
+        113378471
+      ],
+      "weighted_zero_mass_upper_enclosure": [
+        377018785,
+        377018786
+      ],
+      "low_zero_loss_upper_enclosure": [
+        29660773,
+        29660774
+      ],
+      "high_zero_loss_upper_enclosure": [
+        6202524,
+        6202525
+      ],
+      "residual": [
+        77515171,
+        77515172
+      ],
+      "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+    },
+    "elementary_kappa_enclosure": [
+      931480,
+      931481
+    ],
+    "exact_haar_A_enclosure": [
+      16167,
+      16168
+    ],
+    "exact_haar_B_enclosure": [
+      5423,
+      5424
+    ],
+    "monotone_taper_test_enclosure": [
+      66363,
+      66364
+    ],
+    "shifted_tail_profiles": [
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+4",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          1898980,
+          1898981
+        ],
+        "low_zero_loss_upper_enclosure": [
+          29660773,
+          29660774
+        ],
+        "high_zero_loss_upper_enclosure": [
+          6311003,
+          6311004
+        ],
+        "residual": [
+          77406693,
+          77406695
+        ]
+      },
+      {
+        "height": 100,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "13943237577224054960759",
+        "harmonic_denominator": "3099044504245996706400",
+        "shifted_zero_mass_upper_enclosure": [
+          1898980,
+          1898981
+        ],
+        "low_zero_loss_upper_enclosure": [
+          29424757,
+          29424758
+        ],
+        "high_zero_loss_upper_enclosure": [
+          6311003,
+          6311004
+        ],
+        "residual": [
+          77642709,
+          77642711
+        ]
+      },
+      {
+        "height": 80,
+        "low_zero_kernel_bound": "original",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "2078178381193813",
+        "harmonic_denominator": "485721041551200",
+        "shifted_zero_mass_upper_enclosure": [
+          2372346,
+          2372347
+        ],
+        "low_zero_loss_upper_enclosure": [
+          29424757,
+          29424758
+        ],
+        "high_zero_loss_upper_enclosure": [
+          12349850,
+          12349851
+        ],
+        "residual": [
+          71603861,
+          71603863
+        ]
+      },
+      {
+        "height": 60,
+        "low_zero_kernel_bound": "exact_haar",
+        "low_zero_mass_bound": "log(Qmax)+1",
+        "harmonic_numerator": "9304682830147",
+        "harmonic_denominator": "2329089562800",
+        "shifted_zero_mass_upper_enclosure": [
+          3160765,
+          3160766
+        ],
+        "low_zero_loss_upper_enclosure": [
+          8075488,
+          8075489
+        ],
+        "high_zero_loss_upper_enclosure": [
+          29373976,
+          29373977
+        ],
+        "residual": [
+          75929004,
+          75929006
+        ]
+      }
+    ],
+    "first_passing_even_height_for_logq_plus_1": 44,
+    "status": "External interval inequalities; analytic proof audit only; no Lean theorem"
+  }
+]

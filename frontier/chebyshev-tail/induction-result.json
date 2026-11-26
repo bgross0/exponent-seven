@@ -1,0 +1,143 @@
+{
+  "arithmetic": "stdlib fractions.Fraction and Python integers only",
+  "base_n": 19,
+  "log2_lower": {
+    "numerator": "2",
+    "denominator": "3"
+  },
+  "log2_upper": {
+    "numerator": "7",
+    "denominator": "10"
+  },
+  "log2_series_upper": {
+    "numerator": "1123",
+    "denominator": "1620"
+  },
+  "log2_series_identity": "analytic obligation; alternatively use Mathlib log_two bounds",
+  "root_facts": {
+    "sqrt_2_greater_than_7_over_5": true,
+    "fourth_root_2_less_than_6_over_5": true,
+    "sixth_root_2_less_than_6_over_5": true,
+    "2_to_19_over_4_less_than_27": true,
+    "2_to_19_over_6_less_than_9": true,
+    "2_to_19_over_4_greater_than_16": true
+  },
+  "main_lower": {
+    "numerator": "28672",
+    "denominator": "5"
+  },
+  "error_upper_bounds": {
+    "E1": {
+      "numerator": "12933",
+      "denominator": "10"
+    },
+    "E2": {
+      "numerator": "432",
+      "denominator": "1"
+    },
+    "E3": {
+      "numerator": "3697001",
+      "denominator": "5400"
+    },
+    "E4": {
+      "numerator": "186998",
+      "denominator": "75"
+    },
+    "E5": {
+      "numerator": "2983",
+      "denominator": "10"
+    },
+    "E6": {
+      "numerator": "3287",
+      "denominator": "80"
+    },
+    "E7": {
+      "numerator": "7",
+      "denominator": "1"
+    }
+  },
+  "error_sum_upper": {
+    "numerator": "56695939",
+    "denominator": "10800"
+  },
+  "base_slack_lower": {
+    "numerator": "5235581",
+    "denominator": "10800"
+  },
+  "coarse_J4_profile": {
+    "error_upper_bounds": {
+      "E1": {
+        "numerator": "12933",
+        "denominator": "10"
+      },
+      "E2": {
+        "numerator": "432",
+        "denominator": "1"
+      },
+      "E3": {
+        "numerator": "3697001",
+        "denominator": "5400"
+      },
+      "E4": {
+        "numerator": "186998",
+        "denominator": "75"
+      },
+      "E5": {
+        "numerator": "3743",
+        "denominator": "10"
+      },
+      "E6": {
+        "numerator": "3287",
+        "denominator": "80"
+      }
+    },
+    "base_slack_lower": {
+      "numerator": "4490381",
+      "denominator": "10800"
+    },
+    "status": "same induction, E5 enlarged by 4n and E7 omitted"
+  },
+  "main_growth_lower": {
+    "numerator": "7",
+    "denominator": "5"
+  },
+  "error_growth_upper_bounds": {
+    "E1": {
+      "numerator": "24",
+      "denominator": "19"
+    },
+    "E2": {
+      "numerator": "6",
+      "denominator": "5"
+    },
+    "E3": {
+      "numerator": "8000",
+      "denominator": "6859"
+    },
+    "E4": {
+      "numerator": "400",
+      "denominator": "361"
+    },
+    "E5": {
+      "numerator": "20",
+      "denominator": "19"
+    },
+    "E6": {
+      "numerator": "400",
+      "denominator": "361"
+    },
+    "E7": {
+      "numerator": "1",
+      "denominator": "1"
+    }
+  },
+  "uniform_q_cutoff": "43556142965880123323311949751266331066368",
+  "finite_bridge": {
+    "X": 30000,
+    "Qmin": "100000000000000000000000000000000",
+    "Qmax": "43556142965880123323311949751266331066368",
+    "four_times_X_to_seven": "87480000000000000000000000000000",
+    "gate_passes": true
+  },
+  "status": "all exact arithmetic checks passed; analytic derivation and Lean integration remain"
+}
