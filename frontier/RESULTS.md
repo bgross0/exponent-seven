@@ -68,6 +68,23 @@ API adjustments. The final bridge, search propositions, numerical inputs, and
 pinned dependencies match the first build byte for byte.
 [Proof files, caller patch, and hashes](grh-integration/compat435/final)
 
+#### Certificate build on the updated project pin
+
+The Precision's next build uses exponent-seven `aae4b20` with the same Lean 4.35
+and external GRH pins. All four pilot certificates compiled and a fresh Lean
+process imported them. The printed axioms for main primes 701 and 2767 and
+low-range primes 11 and 1009 were exactly `propext`, `Classical.choice`, and
+`Quot.sound`. The low-range generator also checked the pinned C survivor list.
+[Lean pilot output](grh-integration/precision7670/certificates435/pilots-import.log) ·
+[Pilot timings and peak RSS](grh-integration/precision7670/certificates435/pilots.json)
+
+The main sieve bridge and assembly, the low-range sieve modules, and
+`Fundamental.lean` compiled on 4.35. The genus reduction uses an additional
+integral-closure proof for even fundamental discriminants. The two conditional
+fundamental statements retain their upstream definitions and hypotheses.
+[Fundamental build](grh-integration/precision7670/certificates435/03-fundamental.log) ·
+[Re-pinned GRH import](grh-integration/precision7670/certificates435/imported.log)
+
 ### 2. A route to the entire range above 10^32 using existing analytic tools
 
 `Above.lean` still obtains a small split prime through `Published.ekn3`.

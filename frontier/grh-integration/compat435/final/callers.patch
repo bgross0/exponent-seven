@@ -12,7 +12,7 @@ index 30bafa8232c5c23342584d7b1fb4d92b8e61f92a..5d5ca1121f9be53c9b710a9c06d50a9e
          simp only [hterm]
          rw [tsum_mul_left, tsum_geometric_of_lt_one (Real.exp_pos _).le hr, div_eq_mul_inv]
 diff --git a/src/Exp7Lean/Analytic/EF/HadamardFallback.lean b/src/Exp7Lean/Analytic/EF/HadamardFallback.lean
-index 6a4228e8a915d14c7d191444be1f90cebdf5a154..4df7101c700fe0648bf507be91433410345f02d2 100644
+index faa5424b7d17c05103323a4aae9cd6d40330ae7d..95b64c17f77a3a9bfc12af026509e28d7ca7e6bb 100644
 --- a/src/Exp7Lean/Analytic/EF/HadamardFallback.lean
 +++ b/src/Exp7Lean/Analytic/EF/HadamardFallback.lean
 @@ -1,4 +1,5 @@
@@ -99,6 +99,58 @@ index 80203c3c317513540429be768e6f3f603ceff043..d4793a0b8de7e9662136007a35eccb1d
    · intro ρ hρ
      rw [Function.mem_support] at hρ
      rw [Finset.mem_coe, hS]
+diff --git a/src/Exp7Lean/Genus/Main.lean b/src/Exp7Lean/Genus/Main.lean
+index 6ec8ff7b84ddd8a64b63b8801aa789615f0ee72a..23b2de56bf5886dd8f8aced45f2cbe3e49b98918 100644
+--- a/src/Exp7Lean/Genus/Main.lean
++++ b/src/Exp7Lean/Genus/Main.lean
+@@ -1,4 +1,4 @@
+-import Mathlib
++import Exp7Lean.Genus.Integral435
+ 
+ /-!
+ Exponent 7: Step 0 ("genus theory"), proved from Mathlib's class group.
+@@ -44,7 +44,7 @@ theorem isDedekindDomain_of_fundamental (hfund : Int.IsFundamentalDiscr (discr a
+     have : ((discr a b : ℤ) : ℚ) < 0 := by exact_mod_cast hneg
+     nlinarith [mul_self_nonneg r]⟩
+   have : IsIntegralClosure (QuadraticAlgebra ℤ a b) ℤ (QuadraticAlgebra ℚ (a : ℚ) (b : ℚ)) :=
+-    QuadraticAlgebra.Int.isIntegralClosure_iff.mpr hfund
++    Compat435.isIntegralClosure_of_fundamental hfund
+   have := isDomain_of_discr_neg hneg
+   exact IsIntegralClosure.isDedekindDomain ℤ ℚ (QuadraticAlgebra ℚ (a : ℚ) (b : ℚ))
+     (QuadraticAlgebra ℤ a b)
+@@ -137,7 +137,7 @@ lemma ramIdeal_not_isPrincipal [IsDomain (QuadraticAlgebra ℤ a b)] (hneg : dis
+   rw [map_mul, map_mul, QuadraticAlgebra.norm_natCast] at hnorm
+   have hunit : IsUnit (QuadraticAlgebra.norm (u : QuadraticAlgebra ℤ a b)) :=
+     QuadraticAlgebra.isUnit_iff_norm_isUnit.mp u.isUnit
+-  have h4 := four_mul_norm_eq β
++  have h4 := Compat435.four_mul_norm_eq β
+   rw [trace_def] at h4
+   set n : ℤ := QuadraticAlgebra.norm β with hn
+   have hlpos : (0 : ℤ) < l := by exact_mod_cast hl.pos
+@@ -164,12 +164,12 @@ lemma ramIdeal_not_isPrincipal [IsDomain (QuadraticAlgebra ℤ a b)] (hneg : dis
+ 
+ lemma norm_nonneg_of_discr_neg (hneg : discr a b < 0) (z : QuadraticAlgebra ℤ a b) :
+     0 ≤ QuadraticAlgebra.norm z := by
+-  have h4 := four_mul_norm_eq z
++  have h4 := Compat435.four_mul_norm_eq z
+   nlinarith [sq_nonneg (trace z), sq_nonneg z.im]
+ 
+ lemma eq_zero_of_norm_eq_zero (hneg : discr a b < 0) {z : QuadraticAlgebra ℤ a b}
+     (h : QuadraticAlgebra.norm z = 0) : z = 0 := by
+-  have h4 := four_mul_norm_eq z
++  have h4 := Compat435.four_mul_norm_eq z
+   rw [h, trace_def] at h4
+   have him : z.im = 0 := by
+     by_contra hne
+@@ -212,7 +212,7 @@ lemma exists_norm_sub_mul_lt (hneg : discr a b < 0) (hsmall : -12 < discr a b)
+     rw [hw]; simp [hc]; ring
+   have him : (r * star y).im = d - n * f := by
+     rw [hw]; simp [hd]; ring
+-  have h4 := four_mul_norm_eq (r * star y)
++  have h4 := Compat435.four_mul_norm_eq (r * star y)
+   rw [trace_def, hre, him, map_mul, QuadraticAlgebra.norm_star, ← hn] at h4
+   -- `T = 2 (c - n e) + b (d - n f)` and `S = 2 (d - n f)` both lie in `[-n, n]`
+   have hT : (2 * (c - n * e) + b * (d - n * f)) ^ 2 ≤ n ^ 2 := sq_le_sq' (by linarith) (by linarith)
 diff --git a/src/Exp7Lean/Numerics/FixedExp.lean b/src/Exp7Lean/Numerics/FixedExp.lean
 index 2794cde659a87d86e734594487b0143e04ebe99e..45df1adfcd91dbbc8740620f830666850a5ea8f9 100644
 --- a/src/Exp7Lean/Numerics/FixedExp.lean

@@ -1,8 +1,8 @@
 {
-  "status": "SMOKE_COMPILED_GRH_IMPORT_PENDING",
+  "status": "PINNED_BOUNDED_CERTIFICATE_BUILD",
   "project": {
     "repository": "https://github.com/bgross0/exponent-seven",
-    "commit": "be878187267cd97bf3016c21b7182968898ba242",
+    "commit": "aae4b2012f80bcb5cbe7b30c13debf0704f07266",
     "root": "Exp7Lean",
     "lean": "leanprover/lean4:v4.37.0-rc1",
     "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8"
@@ -22,13 +22,10 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "remaining_hypotheses": [
-    "SearchHigh",
-    "SearchLow",
+  "above_QTOP_missing_formal_input": "Published.ekn3: explicit small split-prime theorem (Bach\u2013Sorenson/EKN), not automatically discharged by the GRH import",
+  "bounded_theorem_domain": [
     "q.Prime",
     "q % 4 = 3",
     "q <= QTOP"
-  ],
-  "above_QTOP_missing_formal_input": "Published.ekn3: explicit small split-prime theorem (Bach–Sorenson/EKN), not automatically discharged by the GRH import"
+  ]
 }
-

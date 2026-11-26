@@ -11,12 +11,20 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import resource
 import subprocess
 import time
 
 TARGETS = {"smoke": "Exp7GRHBridge.Smoke", "external": "Main",
            "imported": "Exp7GRHBridge.Imported", "final": "Exp7GRHBridge.Final"}
+
+FINAL_DECLARATIONS = (
+    "LFunction_eq_zero_re", "Exp7.GRHIntegration.primeConductor",
+    "Exp7.searchHigh", "Exp7.searchLow",
+    "Exp7.GRHIntegration.theoremA", "Exp7.GRHIntegration.theoremD",
+    "Exp7.GRHIntegration.theoremA_fundamental", "Exp7.GRHIntegration.theoremD_fundamental",
+)
 
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
@@ -46,6 +54,13 @@ def main() -> int:
     env["PATH"] = str(lake.parent) + os.pathsep + env.get("PATH", "")
     env["LEAN_NUM_THREADS"] = str(a.threads)
     command = [str(lake), "build", TARGETS[a.stage]]
+    if a.stage == "final":
+        # The upstream generators compile their modules directly. Load these checked
+        # objects in the same Lake environment without replaying every prime.
+        output = root / ".lake/build/lib/lean/Exp7GRHBridge/Final.olean"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        pending = output.with_name("Final.pending.olean")
+        command = [str(lake), "env", "lean", "-R", "src", "src/Exp7GRHBridge/Final.lean", "-o", str(pending)]
     receipt = {"stage": a.stage, "target": TARGETS[a.stage], "command": command,
                "workspace": str(root), "threads": a.threads,
                "started_utc": datetime.now(timezone.utc).isoformat(),
@@ -63,6 +78,23 @@ def main() -> int:
             returncode = result.returncode
         except KeyboardInterrupt:
             returncode = 130
+    if a.stage == "final" and returncode == 0:
+        pending.replace(output)
+        query = log_path.with_suffix(".declarations.lean")
+        declarations = log_path.with_suffix(".declarations.log")
+        query.write_text("import Exp7GRHBridge.Final\n\nset_option pp.width 220\n" +
+                         "".join(f"#check @{name}\n#print axioms {name}\n" for name in FINAL_DECLARATIONS))
+        with declarations.open("wb") as log:
+            returncode = subprocess.run([str(lake), "env", "lean", str(query)], cwd=root,
+                                        env=env, stdout=log, stderr=subprocess.STDOUT).returncode
+        observed = {name: values.split(", ") for name, values in re.findall(
+            r"'([^']+)' depends on axioms: \[([^\]]*)\]", " ".join(declarations.read_text().split()))}
+        expected = ["propext", "Classical.choice", "Quot.sound"]
+        if returncode == 0 and any(observed.get(name) != expected for name in FINAL_DECLARATIONS):
+            returncode = 1
+        receipt.update(declarations_log=declarations.name, declaration_axioms=observed,
+                       declarations_sha256=hashlib.sha256(declarations.read_bytes()).hexdigest(),
+                       olean_sha256=hashlib.sha256(output.read_bytes()).hexdigest())
     status = ("COMMAND_SUCCEEDED" if returncode == 0 else
               "INTERRUPTED" if returncode == 130 else "COMMAND_FAILED")
     usage_after = resource.getrusage(resource.RUSAGE_CHILDREN)

@@ -1,0 +1,12 @@
+{
+  "logical_cpus": 24,
+  "available_memory_gib": 19.96,
+  "free_disk_gib": 612.56,
+  "threads": 6,
+  "missing_commands": [],
+  "work_root": "/home/ben/exp7-certs435",
+  "stages": [
+    "final"
+  ],
+  "certificate_jobs": 4
+}

@@ -1,0 +1,4 @@
+'Exp7.search_701' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.search_2767' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.searchLow_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.searchLow_1009' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -12,6 +12,7 @@ import argparse
 from datetime import datetime, timezone
 import fcntl
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -110,6 +111,7 @@ def source_identity() -> dict[str, str]:
     paths = [HERE / "pins.json", HERE / "prepare.py", HERE / "worker.py", HERE / "run_stage.py"]
     paths += sorted((HERE / "bridge").glob("*.lean"))
     paths += [HERE / "compat435" / "Step1.patch", HERE / "compat435" / "verification.json"]
+    paths += [HERE / "certificates435" / name for name in ("run.py", "leanq")]
     backport = HERE / "compat435" / "final"
     paths += [backport / "sources.json", backport / "callers.patch", *sorted(backport.glob("*.lean"))]
     return {str(p.relative_to(HERE)): digest(p) for p in paths}
@@ -137,6 +139,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--work-root", type=Path, required=True, help="A new dedicated directory, or this worker's existing directory to resume")
     p.add_argument("--threads", type=int, help="Default: at most 8, at most half the logical CPUs, and about one per 3 GiB available RAM")
+    p.add_argument("--certificate-jobs", type=int, help="Concurrent single-threaded certificate checks (automatic maximum 4)")
     p.add_argument("--stages", nargs="+", choices=STAGES, default=list(STAGES[:3]))
     p.add_argument("--preflight-only", action="store_true", help="Print machine requirements without downloading or creating the work root")
     args = p.parse_args()
@@ -148,6 +151,9 @@ def main() -> int:
     threads = args.threads if args.threads is not None else max(1, min(8, cpus // 2, int(available // 3)))
     if threads < 1:
         p.error("--threads must be positive")
+    jobs = args.certificate_jobs if args.certificate_jobs is not None else max(1, min(4, threads, int(available // 6)))
+    if jobs < 1:
+        p.error("--certificate-jobs must be positive")
     root = args.work_root.expanduser().resolve()
     parent = root
     while not parent.exists():
@@ -156,11 +162,17 @@ def main() -> int:
     machine = {"logical_cpus": cpus, "available_memory_gib": round(available, 2),
                "free_disk_gib": round(free, 2), "threads": threads, "missing_commands": missing,
                "work_root": str(root), "stages": args.stages}
+    if "final" in args.stages:
+        machine["certificate_jobs"] = jobs
+        if importlib.util.find_spec("sympy") is None:
+            missing.append("python3-sympy")
+        if not Path("/usr/bin/time").is_file():
+            missing.append("time")
     print(json.dumps(machine, indent=2), flush=True)
     if args.preflight_only:
         return 0 if not missing else 2
     if missing:
-        p.error("Install these packages first: " + " ".join(missing) + ". On Kubuntu: sudo apt install git zstd")
+        p.error("Install these packages first: " + " ".join(missing))
     if not root.exists() and free < 16:
         p.error("The initial build needs at least 16 GiB free; 30 GiB is recommended.")
     identity = source_identity()
@@ -204,6 +216,13 @@ def main() -> int:
                                             "mathlib": PINS["external"]["mathlib"]}, indent=2) + "\n")
     validate_workspace(workspace)
     for stage in args.stages:
+        if stage == "final":
+            call([str(lake), "build", "Exp7GRHBridge.Imported", "Exp7Lean.Fundamental",
+                  "Exp7Lean.Sieve.Assembly", "Exp7Lean.SieveLow.Audit"], cwd=workspace, env=env)
+            call([sys.executable, str(HERE / "certificates435" / "run.py"),
+                  "--workspace", str(workspace), "--project", str(root / "exponent-seven-pinned"),
+                  "--logs", str(workspace / "integration-receipts" / "certificates"),
+                  "--jobs", str(jobs)], env=env)
         # Lake reuses successful modules. Each invocation retains a fresh stage receipt.
         call([sys.executable, str(HERE / "run_stage.py"), stage, "--workspace", str(workspace),
               "--lake", str(lake), "--threads", str(threads)], env=env)

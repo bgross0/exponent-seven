@@ -1,0 +1,147 @@
+⚠ [9046/9129] Replayed Exp7Lean.Witness.SurvivorData
+warning: src/Exp7Lean/Witness/SurvivorData.lean: imports `Mathlib.Data.Nat.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9047/9129] Replayed Exp7Lean.Witness.DirectData
+warning: src/Exp7Lean/Witness/DirectData.lean: imports `Mathlib.Data.Nat.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9051/9129] Replayed Exp7Lean.Basic
+warning: src/Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9052/9129] Replayed Exp7Lean.Main
+warning: src/Exp7Lean/Main.lean:22:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+warning: src/Exp7Lean/Main.lean:113:0: automatically included section variable(s) unused in theorem `Exp7.X_lt_q`:
+  H
+  hq
+  hE
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit H hq hE in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9054/9129] Replayed Exp7Lean.Low
+warning: src/Exp7Lean/Low.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Low.lean:21:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+⚠ [9055/9129] Replayed Exp7Lean.Step1
+warning: src/Exp7Lean/Step1.lean:259:4: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/Step1.lean:260:4: `exact hp.ne_zero this`
+uses `this`, which was modified by the flexible tactic `simp` on line 259!
+warning: src/Exp7Lean/Step1.lean:380:4: `simp at him` is a flexible tactic modifying `him`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/Step1.lean:381:4: `have : (p : ℤ) ∣ 1 := ⟨c.im, him⟩`
+uses `him`, which was modified by the flexible tactic `simp` on line 380!
+⚠ [9056/9129] Replayed Exp7Lean.Final
+warning: src/Exp7Lean/Final.lean:51:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9061/9129] Replayed Exp7Lean.ClassGroup.Defs
+warning: src/Exp7Lean/ClassGroup/Defs.lean:27:2: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/ClassGroup/Defs.lean:28:2: `exact hl this`
+uses `this`, which was modified by the flexible tactic `simp` on line 27!
+⚠ [9071/9129] Replayed Exp7Lean.Analytic.EF.Defs
+warning: src/Exp7Lean/Analytic/EF/Defs.lean:53:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9072/9129] Replayed Exp7Lean.Analytic.EF.Character
+warning: src/Exp7Lean/Analytic/EF/Character.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Character.lean:38:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9073/9129] Replayed Exp7Lean.Analytic.EF.HadamardHF1Counting
+warning: src/Exp7Lean/Analytic/EF/HadamardHF1Counting.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9079/9129] Replayed Exp7Lean.Analytic.EF.HadamardInput
+warning: src/Exp7Lean/Analytic/EF/HadamardInput.lean:17:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9081/9129] Replayed Exp7Lean.Analytic.EF.Digamma
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:11:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:187:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:308:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:378:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:566:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9083/9129] Replayed Exp7Lean.Analytic.EF.Pointwise
+warning: src/Exp7Lean/Analytic/EF/Pointwise.lean:34:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9085/9129] Replayed Exp7Lean.Analytic.EF.Pairing
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:193:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:204:6: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:213:8: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:217:6: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:227:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:236:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:241:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+⚠ [9090/9129] Replayed Exp7Lean.Analytic.EF.TestFunction
+warning: src/Exp7Lean/Analytic/EF/TestFunction.lean:157:21: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Exp7Lean/Analytic/EF/TestFunction.lean:263:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/TestFunction.lean:455:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9094/9129] Replayed Exp7Lean.Numerics.LogSeries
+warning: src/Exp7Lean/Numerics/LogSeries.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9109/9129] Replayed Exp7Lean.Rows.PrimePart
+warning: src/Exp7Lean/Rows/PrimePart.lean:217:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+ℹ [9125/9129] Replayed Exp7Lean.Rows.Margins
+info: src/Exp7Lean/Rows/Margins.lean:219:0: 'Exp7.rowMargins_allRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/Rows/Margins.lean:220:0: 'Exp7.rowMargins_lowRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [9127/9129] Built Exp7Lean.Genus.Integral435 (2.0s)
+✔ [9128/9129] Built Exp7Lean.Genus.Main (5.0s)
+ℹ [9129/9129] Built Exp7Lean.Fundamental (2.4s)
+info: src/Exp7Lean/Fundamental.lean:103:0: 'Exp7.theoremA_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/Fundamental.lean:104:0: 'Exp7.theoremD_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9129 jobs).

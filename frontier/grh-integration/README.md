@@ -39,7 +39,7 @@ A correct adapter is small. Its dependency graph is not: the external theorem's 
 
 | Component | Pinned source | Lean | Mathlib |
 |---|---|---|---|
-| exponent-seven | `be878187267cd97bf3016c21b7182968898ba242` | `v4.37.0-rc1` | `31ce06eaadf4a200c0e1407c5f10953cf606b8f8` |
+| exponent-seven | `aae4b2012f80bcb5cbe7b30c13debf0704f07266` | `v4.37.0-rc1` | `31ce06eaadf4a200c0e1407c5f10953cf606b8f8` |
 | compact GRH | `72fead102f663d5c7a407964a13dc0cf9d977207` | `v4.35.0` | `56a005855ea17e0b0958f73ec801ae140b0a1679` |
 
 The compact source is an Apache-2.0 research artifact. Preserve its LICENSE, NOTICE, and ATTRIBUTION.md when copying it. It is not advertised as a maintained package. Its README reports machine verification and explicitly says no mathematician has read the full proof.
@@ -50,7 +50,7 @@ The GRH proof's `Lib/General/LinearAlgebra/Base.lean` changes instance prioritie
 
 1. **Smoke.lean** imports the external statement and the project's actual `Analytic/Statement.lean`. It proves only the implication `DirichletLZerosOnLine → GRHPrimeConductor`. Success checks the interface and part of source compatibility. It does **not** remove an assumption.
 2. **Imported.lean** imports the actual external `Main` and applies `LFunction_eq_zero_re`. Success gives `Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor` in the common environment.
-3. **Final.lean** imports `Final4` and combines its theorems with the imported proof. Success gives Theorems A and D with the GRH argument removed, while preserving their remaining finite-search hypotheses and range bound.
+3. **Final.lean** imports the two certified searches and `Fundamental`. It applies the search proofs and the imported GRH theorem to A and D for prime conductors and negative fundamental discriminants up to `10^32`.
 
 Each file prints the relevant axioms. The allowed list is a subset of `propext`, `Classical.choice`, and `Quot.sound`; inspect actual output, including any unexpected `sorryAx` or evaluator axiom. A build log is required before changing the prepared status.
 
@@ -73,35 +73,34 @@ It copies the compact project as the root Lake project, copies the project's sou
 For `external435`, preparation then applies the explicit, hash-guarded `compat435/Step1.patch` by default. It embeds the proved squarefree-discriminant integral-closure helpers and replaces the newer natural-number multiplicity aliases with existing generic finite-multiplicity theorems. All existing project definitions and theorem statements are preserved. The source and result hashes must match the recorded receipt. Use `--no-compat435` to reproduce the unpatched compatibility failure; `project437` never applies this backport. A fresh-workspace reproduction check confirmed that the preparation script produces exactly the patched Step1 bytes used by the trial build.
 
 The same preparation now applies the classification caller patch and copies the
-two proof modules from `compat435/final`. It checks the before and after hashes
-for all eight affected paths. To reproduce all gates on this branch, run the
+three proof modules from `compat435/final`. It checks the before and after hashes
+for all ten affected paths. The genus-theory backport covers the even fundamental discriminants. To reproduce all gates on this branch, run the
 worker in its own dedicated build directory.
 
 ```bash
 python3 frontier/grh-integration/worker.py \
-  --work-root "$HOME/exp7-grh-classification-worker" \
-  --stages smoke external imported final
+  --work-root "$HOME/exp7-grh-certificates-worker" \
+  --certificate-jobs 4 --stages smoke external imported final
 ```
 
 The added `Exp7Lean` library restores its original Lean options locally, including the default `autoImplicit = true`, rather than inheriting the compact project's `autoImplicit = false`. The compact project's larger heartbeat and stack limits remain resource settings for the isolated build. Lake appends library Lean options after package options, so these local overrides take effect.
 
 The default `external435` route preserves the independently checked external proof's Lean/Mathlib pins and attempts to backport the smaller exponent-seven codebase. Any necessary proof-API edits must be explicit in the isolated integration worktree, followed by a full rebuild and fresh receipts. Preserve theorem statements. The alternate `project437` route retains exponent-seven's environment and ports the compact proof; it changes the copied root's Mathlib pin, changes the toolchain, and discards the old manifest before dependency resolution.
 
-In the generated workspace, with the matching Lean toolchain on PATH:
+The certificate stage needs Python with SymPy and GNU time. The Precision
+runs four single-threaded Lean checks at once. The worker runs the pinned
+`run_all.sh` and `run_low.sh`, preserves a raw Lean log per prime, and
+checks coverage against all 465 main and 401 low-range primes. Each acceptance
+requires the compiled object, the runner's successful timing record, and the
+exact axiom line. The low-range generator also checks the pinned C survivor list.
 
-```bash
-lake --version
-lake update
-lake exe cache get
-lake build Exp7GRHBridge.Smoke
-lake build Exp7GRHBridge.Imported
-lake build Exp7GRHBridge.Final
-lake env lean src/Exp7GRHBridge/Final.lean
-```
-
-Record command exit statuses and complete logs. In Lean 4.35's Lake, `-j2` is not a supported Lake option. Restrict concurrency using a supported runtime/process configuration and monitor memory; the external README estimates 12 cores and 24 GB for a one-to-two-hour build. An optional independent kernel replay is a stronger audit beyond merely elaborating the bridge.
-
-No source archive, toolchain binary, build cache, or generated large proof file is vendored in this handoff.
+The generators write their sources under `combined/Exp7Lean`. The two
+`All.lean` modules import the per-prime objects in the shared Lake environment.
+The final gate compiles `src/Exp7GRHBridge/Final.lean` against those objects,
+then starts a fresh Lean process to import the result, print the declarations,
+and check their axioms. Repeating the worker command reuses completed primes.
+The worker records its logs, coverage manifests, object hashes, and final
+declaration check under `combined/integration-receipts/`.
 
 ## What current main already proves, and what is still missing
 
@@ -128,13 +127,13 @@ The unbounded classification has an additional formal gap. `Above.lean` proves t
 
 The source cites Elsenhans–Klüners–Nicolae Theorem 3 / Bach–Sorenson. Even after a successful GRH import, this explicit split-prime theorem needs its own formal proof or a different proved upper-bound argument. Filling that gap is distinct from adapting the zero-on-line statement. The `Published` structure also contains the old low-range classification input, which can eventually be replaced by the project's new low-range proof once the searches are discharged.
 
-Finally, the prime-conductor result must be assembled with the genus-theory reduction and the exact field/ring definitions for a theorem over all negative fundamental discriminants. Do not report a completed global classification from the bounded wrapper alone.
+At this project pin, `Fundamental.lean` supplies the genus-theory reduction for negative fundamental discriminants. Its bounded classification uses the same GRH and search inputs as `Final4.lean`. The bridge applies those inputs to both formulations.
 
 ## Primary sources inspected
 
-- [Pinned project statement](https://github.com/bgross0/exponent-seven/blob/be878187267cd97bf3016c21b7182968898ba242/Exp7Lean/Exp7Lean/Analytic/Statement.lean)
-- [Pinned Final4](https://github.com/bgross0/exponent-seven/blob/be878187267cd97bf3016c21b7182968898ba242/Exp7Lean/Exp7Lean/Final4.lean)
-- [Pinned Above](https://github.com/bgross0/exponent-seven/blob/be878187267cd97bf3016c21b7182968898ba242/Exp7Lean/Exp7Lean/Above.lean)
+- [Pinned project statement](https://github.com/bgross0/exponent-seven/blob/aae4b2012f80bcb5cbe7b30c13debf0704f07266/Exp7Lean/Exp7Lean/Analytic/Statement.lean)
+- [Pinned Final4](https://github.com/bgross0/exponent-seven/blob/aae4b2012f80bcb5cbe7b30c13debf0704f07266/Exp7Lean/Exp7Lean/Final4.lean)
+- [Pinned Above](https://github.com/bgross0/exponent-seven/blob/aae4b2012f80bcb5cbe7b30c13debf0704f07266/Exp7Lean/Exp7Lean/Above.lean)
 - [Pinned external statement](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact/src/Statements.lean)
 - [Pinned external Main](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact/src/Main.lean)
 - [Pinned external README](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact/README.md)

@@ -1,0 +1,277 @@
+⚠ [9045/9086] Replayed Exp7Lean.Witness.SurvivorData
+warning: src/Exp7Lean/Witness/SurvivorData.lean: imports `Mathlib.Data.Nat.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9046/9086] Replayed Exp7Lean.Witness.DirectData
+warning: src/Exp7Lean/Witness/DirectData.lean: imports `Mathlib.Data.Nat.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9051/9141] Replayed Exp7Lean.Basic
+warning: src/Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9052/9141] Replayed Exp7Lean.Main
+warning: src/Exp7Lean/Main.lean:22:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+warning: src/Exp7Lean/Main.lean:113:0: automatically included section variable(s) unused in theorem `Exp7.X_lt_q`:
+  H
+  hq
+  hE
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit H hq hE in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9054/9141] Replayed Exp7Lean.Low
+warning: src/Exp7Lean/Low.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Low.lean:21:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+⚠ [9055/9141] Replayed Exp7Lean.Analytic.EF.HadamardHF1Counting
+warning: src/Exp7Lean/Analytic/EF/HadamardHF1Counting.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9059/9141] Replayed Exp7Lean.Numerics.LogSeries
+warning: src/Exp7Lean/Numerics/LogSeries.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9066/9141] Replayed Exp7Lean.Step1
+warning: src/Exp7Lean/Step1.lean:259:4: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/Step1.lean:260:4: `exact hp.ne_zero this`
+uses `this`, which was modified by the flexible tactic `simp` on line 259!
+warning: src/Exp7Lean/Step1.lean:380:4: `simp at him` is a flexible tactic modifying `him`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/Step1.lean:381:4: `have : (p : ℤ) ∣ 1 := ⟨c.im, him⟩`
+uses `him`, which was modified by the flexible tactic `simp` on line 380!
+⚠ [9067/9141] Built Exp7Lean.SieveKernel (13s)
+warning: src/Exp7Lean/SieveKernel.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/SieveKernel.lean:17:41: Variable name `hw` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Exp7Lean/SieveKernel.lean:36:27: This simp argument is unused:
+  Nat.mul_mod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.add_mod]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: src/Exp7Lean/SieveKernel.lean:120:0: 'Exp7.SieveKernel.exclude_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveKernel.lean:121:0: 'Exp7.SieveKernel.makeBits_keeps' depends on axioms: [propext, Quot.sound]
+info: src/Exp7Lean/SieveKernel.lean:122:0: 'Exp7.SieveKernel.wheel_decomposition' depends on axioms: [propext]
+⚠ [9070/9141] Replayed Exp7Lean.Final
+warning: src/Exp7Lean/Final.lean:51:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9072/9141] Built Exp7Lean.Sieve.RootsBasic (14s)
+warning: src/Exp7Lean/Sieve/RootsBasic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✖ [9075/9141] Building Exp7Lean.Genus.Main (15s)
+warning: src/Exp7Lean/Genus/Main.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+trace: .> LEAN_PATH=/home/ben/exp7-certs435/combined/.lake/packages/Cli/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/batteries/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/Qq/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/aesop/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/importGraph/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/plausible/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/packages/mathlib/.lake/build/lib/lean:/home/ben/exp7-certs435/combined/.lake/build/lib/lean /home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lean --tstack=400000 /home/ben/exp7-certs435/combined/src/Exp7Lean/Genus/Main.lean -o /home/ben/exp7-certs435/combined/.lake/build/lib/lean/Exp7Lean/Genus/Main.olean -i /home/ben/exp7-certs435/combined/.lake/build/lib/lean/Exp7Lean/Genus/Main.ilean -c /home/ben/exp7-certs435/combined/.lake/build/ir/Exp7Lean/Genus/Main.c --setup /home/ben/exp7-certs435/combined/.lake/build/ir/Exp7Lean/Genus/Main.setup.json --json
+error: src/Exp7Lean/Genus/Main.lean:47:4: Unknown constant `QuadraticAlgebra.Int.isIntegralClosure_iff.mpr`
+error: src/Exp7Lean/Genus/Main.lean:140:13: Unknown identifier `four_mul_norm_eq`
+error: src/Exp7Lean/Genus/Main.lean:131:40: unsolved goals
+a b : ℤ
+inst✝ : IsDomain (QuadraticAlgebra ℤ a b)
+hneg : discr a b < 0
+l : ℕ
+hl : Nat.Prime l
+hlt : 4 * ↑l < -discr a b
+t : ℤ
+β : QuadraticAlgebra ℤ a b
+hβ : ramIdeal a b l t = QuadraticAlgebra ℤ a b ∙ β
+hβ' : ramIdeal a b l t = Ideal.span {β}
+u : (QuadraticAlgebra ℤ a b)ˣ
+hu : β * β * ↑u = ↑l
+hnorm : QuadraticAlgebra.norm β * QuadraticAlgebra.norm β * QuadraticAlgebra.norm ↑u = ↑l ^ 2
+hunit : IsUnit (QuadraticAlgebra.norm ↑u)
+⊢ False
+error: src/Exp7Lean/Genus/Main.lean:167:13: Unknown identifier `four_mul_norm_eq`
+error: src/Exp7Lean/Genus/Main.lean:166:35: unsolved goals
+a b : ℤ
+hneg : discr a b < 0
+z : QuadraticAlgebra ℤ a b
+⊢ 0 ≤ QuadraticAlgebra.norm z
+error: src/Exp7Lean/Genus/Main.lean:172:13: Unknown identifier `four_mul_norm_eq`
+error: src/Exp7Lean/Genus/Main.lean:171:49: unsolved goals
+a b : ℤ
+hneg : discr a b < 0
+z : QuadraticAlgebra ℤ a b
+h : QuadraticAlgebra.norm z = 0
+⊢ z = 0
+error: src/Exp7Lean/Genus/Main.lean:215:13: Unknown identifier `four_mul_norm_eq`
+error: src/Exp7Lean/Genus/Main.lean:187:97: unsolved goals
+a b : ℤ
+hneg : discr a b < 0
+hsmall : -12 < discr a b
+x y : QuadraticAlgebra ℤ a b
+hy : y ≠ 0
+n : ℤ := QuadraticAlgebra.norm y
+hn : n = QuadraticAlgebra.norm y
+hnpos : 0 < n
+h2n : 0 < 2 * n
+c : ℤ := (x * star y).re
+hc : c = (x * star y).re
+d : ℤ := (x * star y).im
+hd : d = (x * star y).im
+f : ℤ := (2 * d + n) / (2 * n)
+hf : f = (2 * d + n) / (2 * n)
+hf1 : (2 * d + n) % (2 * n) + 2 * n * f = 2 * d + n
+hf2 : 0 ≤ (2 * d + n) % (2 * n)
+hf3 : (2 * d + n) % (2 * n) < 2 * n
+e : ℤ := (2 * c + b * (d - n * f) + n) / (2 * n)
+he : e = (2 * c + b * (d - n * f) + n) / (2 * n)
+he1 : (2 * c + b * (d - n * f) + n) % (2 * n) + 2 * n * e = 2 * c + b * (d - n * f) + n
+he2 : 0 ≤ (2 * c + b * (d - n * f) + n) % (2 * n)
+he3 : (2 * c + b * (d - n * f) + n) % (2 * n) < 2 * n
+r : QuadraticAlgebra ℤ a b := x - { re := e, im := f } * y
+hr : r = x - { re := e, im := f } * y
+hns : (algebraMap ℤ (QuadraticAlgebra ℤ a b)) n = y * star y
+hw : r * star y = x * star y - { re := e, im := f } * (algebraMap ℤ (QuadraticAlgebra ℤ a b)) n
+hre : (r * star y).re = c - n * e
+him : (r * star y).im = d - n * f
+⊢ QuadraticAlgebra.norm r < n
+⚠ [9078/9141] Replayed Exp7Lean.ClassGroup.Defs
+warning: src/Exp7Lean/ClassGroup/Defs.lean:27:2: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: src/Exp7Lean/ClassGroup/Defs.lean:28:2: `exact hl this`
+uses `this`, which was modified by the flexible tactic `simp` on line 27!
+✔ [9080/9141] Built Exp7Lean.Analytic.EF.HadamardFallback (16s)
+✔ [9086/9141] Built Exp7Lean.Sieve.Bridge (3.9s)
+⚠ [9087/9141] Replayed Exp7Lean.Analytic.EF.Defs
+warning: src/Exp7Lean/Analytic/EF/Defs.lean:53:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9095/9141] Built Exp7Lean.Sieve.RootsCRT (3.1s)
+warning: src/Exp7Lean/Sieve/RootsCRT.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9096/9141] Replayed Exp7Lean.Analytic.EF.Character
+warning: src/Exp7Lean/Analytic/EF/Character.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Character.lean:38:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9097/9141] Replayed Exp7Lean.Analytic.EF.Digamma
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:11:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:187:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:308:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:378:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/Digamma.lean:566:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9101/9141] Replayed Exp7Lean.Analytic.EF.TestFunction
+warning: src/Exp7Lean/Analytic/EF/TestFunction.lean:157:21: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Exp7Lean/Analytic/EF/TestFunction.lean:263:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Analytic/EF/TestFunction.lean:455:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9105/9141] Replayed Exp7Lean.Rows.PrimePart
+warning: src/Exp7Lean/Rows/PrimePart.lean:217:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+ℹ [9121/9141] Replayed Exp7Lean.Rows.Margins
+info: src/Exp7Lean/Rows/Margins.lean:219:0: 'Exp7.rowMargins_allRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/Rows/Margins.lean:220:0: 'Exp7.rowMargins_lowRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9122/9141] Built Exp7Lean.Sieve.RootsTwo (3.3s)
+warning: src/Exp7Lean/Sieve/RootsTwo.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [9123/9141] Built Exp7Lean.Analytic.EF.HadamardAssembly (3.9s)
+✔ [9124/9141] Built Exp7Lean.SieveLow.Core (3.4s)
+⚠ [9125/9141] Built Exp7Lean.Sieve.RootsCert (3.4s)
+warning: src/Exp7Lean/Sieve/RootsCert.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9126/9141] Built Exp7Lean.Analytic.EF.HadamardInput (2.4s)
+warning: src/Exp7Lean/Analytic/EF/HadamardInput.lean:17:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [9127/9141] Built Exp7Lean.Sieve.Assembly (5.3s)
+✔ [9128/9141] Built Exp7Lean.SieveLow.Stmt (2.5s)
+✔ [9129/9141] Built Exp7Lean.Analytic.EF.Zeros (2.8s)
+✔ [9130/9141] Built Exp7Lean.SieveLow.QSieve (2.9s)
+✔ [9131/9141] Built Exp7Lean.SieveLow.XSieve (2.0s)
+⚠ [9132/9141] Built Exp7Lean.Analytic.EF.Pointwise (2.8s)
+warning: src/Exp7Lean/Analytic/EF/Pointwise.lean:34:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [9133/9141] Built Exp7Lean.Analytic.EF.Pairing (3.2s)
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:193:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:204:6: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:213:8: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:217:6: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:227:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:236:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: src/Exp7Lean/Analytic/EF/Pairing.lean:241:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+✔ [9134/9141] Built Exp7Lean.SieveLow.Assembly (4.2s)
+✔ [9135/9141] Built Exp7Lean.Analytic.EF.DampedFormula (2.5s)
+ℹ [9136/9141] Built Exp7Lean.SieveLow.Audit (2.3s)
+info: src/Exp7Lean/SieveLow/Audit.lean:12:0: 'Exp7.SieveLow.Fam.ofCond_sound' depends on axioms: [propext, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:13:0: 'Exp7.SieveLow.groupOkF_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:14:0: 'Exp7.SieveLow.leafLo_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:15:0: 'Exp7.SieveLow.Task.ok_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:16:0: 'Exp7.SieveLow.Task.sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:18:0: 'Exp7.SieveLow.LowStatement.glue' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:19:0: 'Exp7.SieveLow.witOk_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:21:0: 'Exp7.SieveLow.famX_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:22:0: 'Exp7.SieveLow.tabPats_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:23:0: 'Exp7.SieveLow.XC.ok_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:24:0: 'Exp7.SieveLow.XC.sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:25:0: 'Exp7.SieveLow.XT.ok_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:26:0: 'Exp7.SieveLow.YC.ok_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:27:0: 'Exp7.SieveLow.UpTo.range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:28:0: 'Exp7.SieveLow.low_of_upTo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:30:0: 'Exp7.SieveLow.famQ_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:31:0: 'Exp7.SieveLow.qOk_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:32:0: 'Exp7.SieveLow.q_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:33:0: 'Exp7.SieveLow.famY_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:34:0: 'Exp7.SieveLow.nosolOk_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:35:0: 'Exp7.SieveLow.low_of_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:37:0: 'Exp7.SieveLow.mem_lowPrimes' depends on axioms: [propext, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:38:0: 'Exp7.SieveLow.lowStatement_of_cert' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:39:0: 'Exp7.SieveLow.searchLow_of_primes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/SieveLow/Audit.lean:40:0: 'Exp7.SieveLow.searchLow_of_done' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [9137/9141] Built Exp7Lean.Analytic.EF.Continuation (3.7s)
+✔ [9138/9141] Built Exp7Lean.Analytic.EF.Main (2.2s)
+✔ [9139/9141] Built Exp7Lean.Final3 (2.2s)
+✔ [9140/9141] Built Exp7Lean.Final4 (2.2s)
+Some required targets logged failures:
+- Exp7Lean.Genus.Main
+error: build failed
