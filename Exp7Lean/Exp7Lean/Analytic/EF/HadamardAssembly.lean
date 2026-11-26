@@ -13,10 +13,10 @@ Inputs.
 
 * **HF1** (Hadamard partial fractions for entire functions of order ≤ 1): the *proved* theorem
   `Exp7.EF.HF1.logDeriv_eq_add_tsum_of_order_one` of `HadamardHF1.lean` (same statement as the
-  `sorry` leaf in `HadamardFallback.lean`, which is therefore not used).
+  statement in `HadamardFallback.lean`).
 * **HF2–HF5** of `HadamardFallback.lean`, as black boxes, bundled in the structure `XiLeaves`.
-  `H1_of_leaves` and `H2_of_leaves` take a proof of `XiLeaves χ` and are `sorry`-free;
-  `xiLeaves_of_fallback` is the only place where the `sorry`s of HF2–HF5 enter.
+  `H1_of_leaves` and `H2_of_leaves` take a proof of `XiLeaves χ`; `xiLeaves_of_fallback` supplies it
+  from the proved leaves HF2–HF5.
 * **HF4b** (`xi_inv_conj`, proved here from Mathlib): the conjugation symmetry
   `ξ(conj s, χ⁻¹) = conj ξ(s, χ)`.
 
@@ -304,7 +304,7 @@ lemma logDeriv_xi_inv_conj (χ : DirichletCharacter ℂ N) (hne : χ ≠ 1) (s :
 
 /-- The statements of the leaves **HF2–HF5** of `HadamardFallback.lean` for one character, bundled
 as hypotheses.  Everything below up to `H1_of_leaves` / `H2_of_leaves` is proved from this
-structure without `sorry`; `xiLeaves_of_fallback` instantiates it from HF2–HF5. -/
+structure; `xiLeaves_of_fallback` instantiates it from HF2–HF5. -/
 structure XiLeaves (χ : DirichletCharacter ℂ N) : Prop where
   /-- HF2 (`xi_growth`). -/
   growth : ∃ C : ℝ, ∀ z : ℂ, ‖xi χ z‖ ≤ Real.exp (C * (1 + ‖z‖) * Real.log (2 + ‖z‖))
@@ -345,7 +345,7 @@ section Main
 
 variable {N : ℕ} [NeZero N]
 
-/-- **H2 from the statements HF2–HF5** (no `sorry`: HF1 is the proved
+/-- **H2 from the statements HF2–HF5** (HF1 is the proved
 `Exp7.EF.HF1.logDeriv_eq_add_tsum_of_order_one`). -/
 theorem H2_of_leaves {χ : DirichletCharacter ℂ N} (h : XiLeaves χ) (hne : χ ≠ 1) (s : ℂ) :
     Summable (fun ρ : ℂ ↦
@@ -414,7 +414,7 @@ theorem logDeriv_xi_eq (χ : DirichletCharacter ℂ N) (hne : χ ≠ 1) {s : ℂ
   rw [xi_eq_mul, logDeriv_mul s (natCast_cpow_ne_zero s) hΛs (differentiable_natCast_cpow s)
     ((DirichletCharacter.differentiable_completedLFunction hne) s), logDeriv_natCast_cpow, hlogΛ]
 
-/-- **H1 from the statements HF2–HF5** (no `sorry`: HF1 is the proved
+/-- **H1 from the statements HF2–HF5** (HF1 is the proved
 `Exp7.EF.HF1.logDeriv_eq_add_tsum_of_order_one`). -/
 theorem H1_of_leaves {χ : DirichletCharacter ℂ N} (h : XiLeaves χ) (hne : χ ≠ 1) {s : ℂ}
     (hs : 0 < s.re) (hL : χ.LFunction s ≠ 0) :
@@ -427,8 +427,7 @@ theorem H1_of_leaves {χ : DirichletCharacter ℂ N} (h : XiLeaves χ) (hne : χ
   simp only [add_re, div_ofNat_re, ofReal_re]
   ring
 
-/-- The leaves HF2–HF5 of `HadamardFallback.lean` (this is the only place where their `sorry`s
-enter). -/
+/-- The leaves HF2–HF5 of `HadamardFallback.lean`, all proved. -/
 theorem xiLeaves_of_fallback (χ : DirichletCharacter ℂ N) (hχ : χ.IsPrimitive) (hne : χ ≠ 1) :
     XiLeaves χ where
   growth := xi_growth χ hχ hne

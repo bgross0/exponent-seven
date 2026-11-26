@@ -10,8 +10,8 @@ of the blueprint:
 * **C4** `primeSum_le_of_weilAdmissible` (analytic side, `Continuation.lean`),
 * **T10** `weilAdmissible_autocorr_stepFn` (test-function side, `TestFunction.lean`).
 
-This file contains no `sorry`; the theorem depends on the `sorry`s of the leaves listed in
-`BLUEPRINT.md` (check with `#print axioms Exp7.EF.explicitFormulaBound`).
+All leaves of `BLUEPRINT.md` are proved. `#print axioms Exp7.EF.explicitFormulaBound` shows only
+`propext`, `Classical.choice` and `Quot.sound`.
 -/
 
 namespace Exp7.EF

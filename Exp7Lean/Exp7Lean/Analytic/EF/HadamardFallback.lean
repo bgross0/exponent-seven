@@ -3,9 +3,9 @@ import Exp7Lean.Analytic.EF.HadamardHF1
 /-!
 # Explicit formula blueprint: in-house decomposition of the Hadamard input (fallback)
 
-**Not on the import path of `Main.lean`.**  This file only records the statements into which
-H1/H2 of `HadamardInput.lean` decompose if the Tau Ceti library is *not* imported.  See
-`BLUEPRINT.md`, section "The Hadamard input", for the proof plan and size estimates.
+On the import path of `Main.lean`: H1/H2 of `HadamardInput.lean` are proved from the leaves in this
+file (via `HadamardAssembly.lean`), without the Tau Ceti library.  All leaves are proved.  See
+`BLUEPRINT.md`, section "The Hadamard input", for the original plan.
 
 Route: differentiated Poisson–Jensen formula on discs `|z| < R`, `R → ∞`
 (Mathlib: `MeromorphicOn.circleAverage_log_norm` and the Poisson–Jensen formula in
