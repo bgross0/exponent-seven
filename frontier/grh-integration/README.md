@@ -1,0 +1,119 @@
+# Importing the compact Dirichlet-GRH proof into exponent-seven
+
+Prepared 26 November 2026. **Status: integration source prepared; no common-environment build was completed by this preparation step.** The files deliberately introduce no axiom, placeholder proof, or native-decide computation.
+
+## What the exact statements establish
+
+At the pinned external commit, `grh-compact/src/Statements.lean` imports only Mathlib and defines:
+
+```lean
+def DirichletLZerosOnLine : Prop :=
+  ∀ (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N) (s : ℂ),
+    0 < s.re → s.re < 1 →
+      DirichletCharacter.LFunction χ s = 0 → s.re = 1 / 2
+```
+
+Its `src/Main.lean` imports `New.Main` and proves:
+
+```lean
+theorem LFunction_eq_zero_re : DirichletLZerosOnLine :=
+  New.zeros_on_line New.grh
+```
+
+This statement covers every Dirichlet character of every nonzero natural modulus. Specializing to the project's quadratic character `Exp7.chi q` proves precisely `Exp7.GRHFor q`. A prime `q` supplies `NeZero q`; neither character primitivity nor a further analytic identification is needed in the adapter because both projects use Mathlib's `DirichletCharacter.LFunction`.
+
+A correct adapter is small. Its dependency graph is not: the external theorem's full proof must be checked in the same environment as the project's definitions. Building two incompatible packages separately, copying theorem text, or declaring the desired statement as an axiom does not establish the combined result.
+
+## Source pins and compatibility
+
+| Component | Pinned source | Lean | Mathlib |
+|---|---|---|---|
+| exponent-seven | `be878187267cd97bf3016c21b7182968898ba242` | `v4.37.0-rc1` | `31ce06eaadf4a200c0e1407c5f10953cf606b8f8` |
+| compact GRH | `72fead102f663d5c7a407964a13dc0cf9d977207` | `v4.35.0` | `56a005855ea17e0b0958f73ec801ae140b0a1679` |
+
+The compact source is an Apache-2.0 research artifact. Preserve its LICENSE, NOTICE, and ATTRIBUTION.md when copying it. It is not advertised as a maintained package. Its README reports machine verification and explicitly says no mathematician has read the full proof.
+
+The GRH proof's `Lib/General/LinearAlgebra/Base.lean` changes instance priorities, introduces classical decidability instances, and changes the simp set. These changes are not additional axioms, but they matter when elaborating new files that import the proof. Keep the external import confined to the bridge; do not add it to the beginning of every existing project file. Module names `Main`, `Statements`, `Lib.*`, and `New.*` are global and could collide with other dependencies. The project currently uses the distinct `Exp7Lean.*` module prefix.
+
+## Three separate build gates
+
+1. **Smoke.lean** imports the external statement and the project's actual `Analytic/Statement.lean`. It proves only the implication `DirichletLZerosOnLine → GRHPrimeConductor`. Success checks the interface and part of source compatibility. It does **not** remove an assumption.
+2. **Imported.lean** imports the actual external `Main` and applies `LFunction_eq_zero_re`. Success gives `Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor` in the common environment.
+3. **Final.lean** imports `Final4` and combines its theorems with the imported proof. Success gives Theorems A and D with the GRH argument removed, while preserving their remaining finite-search hypotheses and range bound.
+
+Each file prints the relevant axioms. The allowed list is a subset of `propext`, `Classical.choice`, and `Quot.sound`; inspect actual output, including any unexpected `sorryAx` or evaluator axiom. A build log is required before changing the prepared status.
+
+## Isolated build workspace
+
+`prepare.py` consumes two clean git checkouts at the exact commits above and a nonexistent output path. It refuses wrong commits, dirty inputs, existing output, and output inside an input checkout.
+
+Example, from a checkout containing this handoff:
+
+```bash
+python frontier/grh-integration/prepare.py \
+  --exponent-seven /absolute/path/to/pinned-exponent-seven \
+  --grh /absolute/path/to/pinned-grh-lean \
+  --output /absolute/path/to/exp7-grh-435 \
+  --environment external435
+```
+
+It copies the compact project as the root Lake project, copies the project's source library to `src/Exp7Lean`, and adds `src/Exp7GRHBridge`. In particular, `Analytic/Statement.lean`, `Final4.lean`, and the external `Statements.lean` and `Main.lean` are copied byte for byte, with SHA-256 receipts. It never changes the two input checkouts.
+
+The added `Exp7Lean` library restores its original Lean options locally, including the default `autoImplicit = true`, rather than inheriting the compact project's `autoImplicit = false`. The compact project's larger heartbeat and stack limits remain resource settings for the isolated build. Lake appends library Lean options after package options, so these local overrides take effect.
+
+The default `external435` route preserves the independently checked external proof's Lean/Mathlib pins and attempts to backport the smaller exponent-seven codebase. Any necessary proof-API edits must be explicit in the isolated integration worktree, followed by a full rebuild and fresh receipts. Preserve theorem statements. The alternate `project437` route retains exponent-seven's environment and ports the compact proof; it changes the copied root's Mathlib pin, changes the toolchain, and discards the old manifest before dependency resolution.
+
+In the generated workspace, with the matching Lean toolchain on PATH:
+
+```bash
+lake --version
+lake update
+lake exe cache get
+lake build Exp7GRHBridge.Smoke
+lake build Exp7GRHBridge.Imported
+lake build Exp7GRHBridge.Final
+lake env lean src/Exp7GRHBridge/Final.lean
+```
+
+Record command exit statuses and complete logs. In Lean 4.35's Lake, `-j2` is not a supported Lake option. Restrict concurrency using a supported runtime/process configuration and monitor memory; the external README estimates 12 cores and 24 GB for a one-to-two-hour build. An optional independent kernel replay is a stronger audit beyond merely elaborating the bridge.
+
+No source archive, toolchain binary, build cache, or generated large proof file is vendored in this handoff.
+
+## What current main already proves, and what is still missing
+
+At the pinned exponent-seven commit, `Final4.lean` imports `Rows.Margins` and calls `rowMargins_allRows` and `rowMargins_lowRows`. The old final statement listing row margins as open inputs is therefore stale. Its current bounded classification is:
+
+```lean
+theorem theoremD_rows
+    (hGRH : GRHPrimeConductor)
+    (hS : SearchHigh) (hSL : SearchLow)
+    {q : ℕ} (hq : q.Prime) (h4 : q % 4 = 3) (hhi : q ≤ QTOP) :
+    IsExp7 q ↔ q ∈ known
+```
+
+After the actual GRH import is compiled, only `SearchHigh` and `SearchLow` remain as named computational hypotheses **in this bounded theorem**. They are not automatically proved by GRH. The conclusion still applies only to prime `q ≡ 3 mod 4` with `q ≤ 10^32`.
+
+The unbounded classification has an additional formal gap. `Above.lean` proves the numerical inequality
+`4 * (1.881 * log D + 6.18)^14 < D` for `D ≥ 10^32`. Its exclusion theorem still obtains a sufficiently small split prime from the field `Published.ekn3`. That field is a precise imported *hypothesis*, not a theorem established from `GRHPrimeConductor` in the inspected code:
+
+```lean
+∀ q : ℕ, q.Prime → q % 4 = 3 → Real.exp 25 < (q : ℝ) →
+  ∃ p : ℕ, p.Prime ∧ Splits q p ∧
+    (p : ℝ) ≤ (1881 / 1000 * Real.log q + 309 / 50)^2
+```
+
+The source cites Elsenhans–Klüners–Nicolae Theorem 3 / Bach–Sorenson. Even after a successful GRH import, this explicit split-prime theorem needs its own formal proof or a different proved upper-bound argument. Filling that gap is distinct from adapting the zero-on-line statement. The `Published` structure also contains the old low-range classification input, which can eventually be replaced by the project's new low-range proof once the searches are discharged.
+
+Finally, the prime-conductor result must be assembled with the genus-theory reduction and the exact field/ring definitions for a theorem over all negative fundamental discriminants. Do not report a completed global classification from the bounded wrapper alone.
+
+## Primary sources inspected
+
+- [Pinned project statement](https://github.com/bgross0/exponent-seven/blob/be878187267cd97bf3016c21b7182968898ba242/Exp7Lean/Exp7Lean/Analytic/Statement.lean)
+- [Pinned Final4](https://github.com/bgross0/exponent-seven/blob/be878187267cd97bf3016c21b7182968898ba242/Exp7Lean/Exp7Lean/Final4.lean)
+- [Pinned Above](https://github.com/bgross0/exponent-seven/blob/be878187267cd97bf3016c21b7182968898ba242/Exp7Lean/Exp7Lean/Above.lean)
+- [Pinned external statement](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact/src/Statements.lean)
+- [Pinned external Main](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact/src/Main.lean)
+- [Pinned external README](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact/README.md)
+- [Waterloo compact verification report](https://mrubinst.github.io/grh-lean-compact-check/)
+- [MIT independent verification report](https://math.mit.edu/~drew/shortgrh/)
+
