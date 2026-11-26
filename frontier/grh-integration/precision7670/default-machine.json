@@ -1,0 +1,13 @@
+{
+  "logical_cpus": 24,
+  "available_memory_gib": 24.57,
+  "free_disk_gib": 677.63,
+  "threads": 8,
+  "missing_commands": [],
+  "work_root": "/home/ben/exp7-grh-build",
+  "stages": [
+    "smoke",
+    "external",
+    "imported"
+  ]
+}

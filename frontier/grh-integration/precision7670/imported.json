@@ -1,0 +1,21 @@
+{
+  "stage": "imported",
+  "target": "Exp7GRHBridge.Imported",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "build",
+    "Exp7GRHBridge.Imported"
+  ],
+  "workspace": "/home/ben/exp7-grh-build/combined",
+  "threads": 8,
+  "started_utc": "2026-11-26T20:36:46.700492+00:00",
+  "status": "COMMAND_SUCCEEDED",
+  "exit_code": 0,
+  "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+  "completed_utc": "2026-11-26T20:36:57.066093+00:00",
+  "elapsed_seconds": 10.365,
+  "child_user_cpu_seconds": 12.126,
+  "child_system_cpu_seconds": 3.489,
+  "largest_child_max_rss_kib": 8490468,
+  "log_sha256": "e8c049f9a8777d9dbf923c1bebd9daed46f49483302366ed631684fe640c62d0"
+}

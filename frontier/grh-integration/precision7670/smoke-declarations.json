@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-26T20:19:39.912906+00:00",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "env",
+    "lean",
+    "/home/ben/exp7-grh-build/combined/integration-receipts/smoke-declarations.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 8.324,
+  "output": "Exp7.GRHIntegration.primeConductor_of_dirichletZeros : DirichletLZerosOnLine \u2192 Exp7.GRHPrimeConductor\n'Exp7.GRHIntegration.primeConductor_of_dirichletZeros' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+}

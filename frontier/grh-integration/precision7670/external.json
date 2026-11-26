@@ -1,0 +1,21 @@
+{
+  "stage": "external",
+  "target": "Main",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "build",
+    "Main"
+  ],
+  "workspace": "/home/ben/exp7-grh-build/combined",
+  "threads": 8,
+  "started_utc": "2026-11-26T19:37:39.853418+00:00",
+  "status": "COMMAND_SUCCEEDED",
+  "exit_code": 0,
+  "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+  "completed_utc": "2026-11-26T20:36:46.606042+00:00",
+  "elapsed_seconds": 3546.752,
+  "child_user_cpu_seconds": 43847.586,
+  "child_system_cpu_seconds": 1352.918,
+  "largest_child_max_rss_kib": 9642952,
+  "log_sha256": "181cee8fd92c2f1d993b29194ddfd0b155423ecccbb258572f38e8e890e36140"
+}

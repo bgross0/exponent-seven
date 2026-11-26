@@ -1,0 +1,7 @@
+Real.exp_nat_mul (x : ℝ) (n : ℕ) : Real.exp (↑n * x) = Real.exp x ^ n
+AnalyticOnNhd.circleAverage_log_norm {c : ℂ} {R : ℝ} {f : ℂ → ℂ} (hR : R ≠ 0)
+  (h₁f : AnalyticOnNhd ℂ f (Metric.closedBall c |R|)) (h₂f : f c ≠ 0) :
+  Real.circleAverage (fun x => Real.log ‖f x‖) c R =
+    ∑ᶠ (u : ℂ), ↑((MeromorphicOn.divisor f (Metric.closedBall c |R|)) u) * Real.log (R * ‖c - u‖⁻¹) + Real.log ‖f c‖
+CircleIntegrable.const_smul.{u_2} {c : ℂ} {R : ℝ} {A : Type u_2} [NormedRing A] {a : A} {f : ℂ → A}
+  (h : CircleIntegrable f c R) : CircleIntegrable (a • f) c R

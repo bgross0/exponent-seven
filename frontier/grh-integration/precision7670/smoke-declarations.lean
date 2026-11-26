@@ -1,0 +1,3 @@
+import Exp7GRHBridge.Smoke
+#check @Exp7.GRHIntegration.primeConductor_of_dirichletZeros
+#print axioms Exp7.GRHIntegration.primeConductor_of_dirichletZeros

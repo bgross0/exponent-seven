@@ -1,0 +1,2 @@
+Exp7.GRHIntegration.primeConductor_of_dirichletZeros : DirichletLZerosOnLine → Exp7.GRHPrimeConductor
+'Exp7.GRHIntegration.primeConductor_of_dirichletZeros' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,188 @@
+{
+  "host": "precision7670",
+  "handoff_commit": "248889f68a9a399ac1c4a011f89af1c4aa87ecd3",
+  "handoff_branch": "grh-worker-precision7670",
+  "cpu": "Intel Core i7-12850HX",
+  "installed_usable_memory_gib": 31.03,
+  "preflight": {
+    "available_memory_gib": 24.29,
+    "free_disk_gib": 677.63,
+    "logical_cpus": 24,
+    "threads": 8,
+    "missing_commands": []
+  },
+  "launch": {
+    "logical_cpus": 24,
+    "available_memory_gib": 24.57,
+    "free_disk_gib": 677.63,
+    "threads": 8,
+    "missing_commands": [],
+    "work_root": "/home/ben/exp7-grh-build",
+    "stages": [
+      "smoke",
+      "external",
+      "imported"
+    ]
+  },
+  "min_sampled_available_memory_gib": 17.77,
+  "elapsed_to_imported_seconds": 3923.748,
+  "elapsed_to_classification_exit_seconds": 4089.213,
+  "elapsed_measured_from": "WORKER-SOURCES.json creation at 2026-11-26T19:31:33.318400+00:00",
+  "prepared_input_hashes_checked": 884,
+  "verified_dependency_commits": {
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "plausible": "dfa4f38190d07c37e315953e08b90fe2d95b3c24",
+    "LeanSearchClient": "d6b4c7be5be75ec4917c873ac50c756dc1436372",
+    "importGraph": "a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93",
+    "proofwidgets": "df72b022e558978a1c50264cfc4d7fec86fa8e04",
+    "aesop": "4a174c490d8707121c4a9290800489f105d85e07",
+    "Qq": "dce0ad79c486cb1fb504af04f953c3466b0c6db8",
+    "batteries": "66e469188fe07963e5cf666c7d4433f45b8131c5",
+    "Cli": "c24fe6078c630e89b489bffe59b3e20ac30d12c8"
+  },
+  "verified_pins": {
+    "status": "SMOKE_COMPILED_GRH_IMPORT_PENDING",
+    "project": {
+      "repository": "https://github.com/bgross0/exponent-seven",
+      "commit": "be878187267cd97bf3016c21b7182968898ba242",
+      "root": "Exp7Lean",
+      "lean": "leanprover/lean4:v4.37.0-rc1",
+      "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8"
+    },
+    "external": {
+      "repository": "https://github.com/lsernau/grh-lean",
+      "commit": "72fead102f663d5c7a407964a13dc0cf9d977207",
+      "root": "grh-compact",
+      "lean": "leanprover/lean4:v4.35.0",
+      "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "module": "Main",
+      "theorem": "LFunction_eq_zero_re",
+      "statement": "DirichletLZerosOnLine"
+    },
+    "expected_axiom_allowlist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "remaining_hypotheses": [
+      "SearchHigh",
+      "SearchLow",
+      "q.Prime",
+      "q % 4 = 3",
+      "q <= QTOP"
+    ],
+    "above_QTOP_missing_formal_input": "Published.ekn3: explicit small split-prime theorem (Bach\u2013Sorenson/EKN), not automatically discharged by the GRH import"
+  },
+  "gates": {
+    "smoke": {
+      "stage": "smoke",
+      "target": "Exp7GRHBridge.Smoke",
+      "command": [
+        "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+        "build",
+        "Exp7GRHBridge.Smoke"
+      ],
+      "workspace": "/home/ben/exp7-grh-build/combined",
+      "threads": 8,
+      "started_utc": "2026-11-26T19:36:53.623578+00:00",
+      "status": "COMMAND_SUCCEEDED",
+      "exit_code": 0,
+      "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+      "completed_utc": "2026-11-26T19:37:39.777435+00:00",
+      "elapsed_seconds": 46.154,
+      "child_user_cpu_seconds": 53.997,
+      "child_system_cpu_seconds": 10.326,
+      "largest_child_max_rss_kib": 7471788,
+      "log_sha256": "c7f656639e26fa74205f43dcdd1b358f94219b9d72f62b08d86c3485b2c3b475",
+      "receipt": "smoke.json",
+      "log": "smoke.log"
+    },
+    "external": {
+      "stage": "external",
+      "target": "Main",
+      "command": [
+        "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+        "build",
+        "Main"
+      ],
+      "workspace": "/home/ben/exp7-grh-build/combined",
+      "threads": 8,
+      "started_utc": "2026-11-26T19:37:39.853418+00:00",
+      "status": "COMMAND_SUCCEEDED",
+      "exit_code": 0,
+      "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+      "completed_utc": "2026-11-26T20:36:46.606042+00:00",
+      "elapsed_seconds": 3546.752,
+      "child_user_cpu_seconds": 43847.586,
+      "child_system_cpu_seconds": 1352.918,
+      "largest_child_max_rss_kib": 9642952,
+      "log_sha256": "181cee8fd92c2f1d993b29194ddfd0b155423ecccbb258572f38e8e890e36140",
+      "receipt": "external.json",
+      "log": "external.log"
+    },
+    "imported": {
+      "stage": "imported",
+      "target": "Exp7GRHBridge.Imported",
+      "command": [
+        "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+        "build",
+        "Exp7GRHBridge.Imported"
+      ],
+      "workspace": "/home/ben/exp7-grh-build/combined",
+      "threads": 8,
+      "started_utc": "2026-11-26T20:36:46.700492+00:00",
+      "status": "COMMAND_SUCCEEDED",
+      "exit_code": 0,
+      "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+      "completed_utc": "2026-11-26T20:36:57.066093+00:00",
+      "elapsed_seconds": 10.365,
+      "child_user_cpu_seconds": 12.126,
+      "child_system_cpu_seconds": 3.489,
+      "largest_child_max_rss_kib": 8490468,
+      "log_sha256": "e8c049f9a8777d9dbf923c1bebd9daed46f49483302366ed631684fe640c62d0",
+      "receipt": "imported.json",
+      "log": "imported.log"
+    },
+    "final": {
+      "stage": "final",
+      "target": "Exp7GRHBridge.Final",
+      "command": [
+        "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+        "build",
+        "Exp7GRHBridge.Final"
+      ],
+      "workspace": "/home/ben/exp7-grh-build/combined",
+      "threads": 8,
+      "started_utc": "2026-11-26T20:37:16.498362+00:00",
+      "status": "COMMAND_FAILED",
+      "exit_code": 1,
+      "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+      "completed_utc": "2026-11-26T20:39:42.531144+00:00",
+      "elapsed_seconds": 146.032,
+      "child_user_cpu_seconds": 516.728,
+      "child_system_cpu_seconds": 45.58,
+      "largest_child_max_rss_kib": 8466064,
+      "log_sha256": "993795ab26c54d277b3beca2fef746b1e2fef21fdf0bb2967c08efab5916da3f",
+      "receipt": "final.json",
+      "log": "final.log"
+    }
+  },
+  "smoke_declaration_output": "Exp7.GRHIntegration.primeConductor_of_dirichletZeros : DirichletLZerosOnLine \u2192 Exp7.GRHPrimeConductor\n'Exp7.GRHIntegration.primeConductor_of_dirichletZeros' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "imported_declaration_output": "LFunction_eq_zero_re : DirichletLZerosOnLine\n'LFunction_eq_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]\nExp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor\n'Exp7.GRHIntegration.primeConductor' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "grh_import_accepted": true,
+  "bounded_classification_compiled": false,
+  "first_final_error": "error: src/Exp7Lean/Analytic/EF/Digamma.lean:493:12: Unknown constant `Real.exp_natCast_mul`",
+  "failed_final_modules": [
+    "- Exp7Lean.Analytic.EF.Digamma",
+    "- Exp7Lean.Analytic.EF.HadamardHF1Boundary",
+    "- Exp7Lean.Analytic.EF.HadamardHF1Poisson",
+    "- Exp7Lean.Numerics.FixedExp"
+  ],
+  "final_diagnosis": "Real.exp_nat_mul compiles for the missing exponential rewrite (see final-api-check.lean and its log). The bounded wrapper also encounters changed circle-average and scalar-multiplication signatures and a missing MeromorphicOn.log_norm_meromorphicTrailingCoeffAt. No classification theorem or final axiom listing was produced.",
+  "new_proof_or_dependency_edits": [],
+  "open_search_hypotheses": [
+    "SearchHigh",
+    "SearchLow"
+  ],
+  "receipts_directory": "/home/ben/exp7-grh-build/combined/integration-receipts"
+}

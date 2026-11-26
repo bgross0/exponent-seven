@@ -1,0 +1,36 @@
+{
+  "logical_cpus": 24,
+  "available_memory_gib": 25.25,
+  "free_disk_gib": 659.3,
+  "threads": 8,
+  "missing_commands": [],
+  "work_root": "/home/ben/exp7-grh-build",
+  "stages": [
+    "final"
+  ]
+}
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+RUN ["/usr/bin/python3", "/home/ben/GitHub/exponent-seven-grh-worker-precision7670/frontier/grh-integration/run_stage.py", "final", "--workspace", "/home/ben/exp7-grh-build/combined", "--lake", "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake", "--threads", "8"]
+{"receipt": "/home/ben/exp7-grh-build/combined/integration-receipts/final.json", "log": "/home/ben/exp7-grh-build/combined/integration-receipts/final.log", "status": "RUNNING"}
+{
+  "stage": "final",
+  "target": "Exp7GRHBridge.Final",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "build",
+    "Exp7GRHBridge.Final"
+  ],
+  "workspace": "/home/ben/exp7-grh-build/combined",
+  "threads": 8,
+  "started_utc": "2026-11-26T20:37:16.498362+00:00",
+  "status": "COMMAND_FAILED",
+  "exit_code": 1,
+  "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+  "completed_utc": "2026-11-26T20:39:42.531144+00:00",
+  "elapsed_seconds": 146.032,
+  "child_user_cpu_seconds": 516.728,
+  "child_system_cpu_seconds": 45.58,
+  "largest_child_max_rss_kib": 8466064,
+  "log_sha256": "993795ab26c54d277b3beca2fef746b1e2fef21fdf0bb2967c08efab5916da3f"
+}
+WORKER STOPPED: Command '['/usr/bin/python3', '/home/ben/GitHub/exponent-seven-grh-worker-precision7670/frontier/grh-integration/run_stage.py', 'final', '--workspace', '/home/ben/exp7-grh-build/combined', '--lake', '/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake', '--threads', '8']' returned non-zero exit status 1.

@@ -1,0 +1,21 @@
+{
+  "stage": "final",
+  "target": "Exp7GRHBridge.Final",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "build",
+    "Exp7GRHBridge.Final"
+  ],
+  "workspace": "/home/ben/exp7-grh-build/combined",
+  "threads": 8,
+  "started_utc": "2026-11-26T20:37:16.498362+00:00",
+  "status": "COMMAND_FAILED",
+  "exit_code": 1,
+  "provenance_sha256": "1705b0fe1e1117aae2f58ebe51d8e1b96e98a7e7da3e992a63ef36859c22d38f",
+  "completed_utc": "2026-11-26T20:39:42.531144+00:00",
+  "elapsed_seconds": 146.032,
+  "child_user_cpu_seconds": 516.728,
+  "child_system_cpu_seconds": 45.58,
+  "largest_child_max_rss_kib": 8466064,
+  "log_sha256": "993795ab26c54d277b3beca2fef746b1e2fef21fdf0bb2967c08efab5916da3f"
+}

@@ -1,6 +1,7 @@
 # Frontier research and integration handoff
 
-26 November 2026. Work is isolated on `grh-import-audit`; main is not modified.
+26 November 2026. The Precision 7670 built handoff commit
+`248889f68a9a399ac1c4a011f89af1c4aa87ecd3` on `grh-worker-precision7670`.
 Project source pin: `be878187267cd97bf3016c21b7182968898ba242`.
 
 ## Four concrete results
@@ -18,16 +19,34 @@ uses Lean 4.37-rc1 / Mathlib `31ce06ea`. A source-level match alone does not
 establish an integrated theorem. The build gates distinguish the implication
 check, import of the real GRH proof, and final classification wrapper.
 
-The implication check has now compiled in the common Lean 4.35 environment,
-against the project's unchanged analytic statement. Its axioms are exactly
-the three standard ones. The necessary Step1 backport is an explicit proved
-integral-closure argument; the full real-GRH import remains a separate build
-gate. See `grh-integration/compat435/smoke-verification.json`.
+The Precision compiled the smoke adapter, the complete external `Main`, and
+`Exp7GRHBridge.Imported` in the same pinned Lean 4.35 environment. A fresh
+Lean invocation checked both declarations and printed their axioms.
+[Exact Lean output](grh-integration/precision7670/imported-declarations.log)
 
-At the pinned project commit, `Final4.lean` already proves both collections of
-row margins. Its bounded classification still takes `GRHPrimeConductor`,
-`SearchHigh`, and `SearchLow`. The proposed imported theorem removes only
-the first of these after a successful common-environment build.
+```text
+LFunction_eq_zero_re : DirichletLZerosOnLine
+'LFunction_eq_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor
+'Exp7.GRHIntegration.primeConductor' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+| Gate | Exit | Elapsed |
+|---|---:|---:|
+| [Smoke](grh-integration/precision7670/smoke.json) | 0 | 46.154 s |
+| [External](grh-integration/precision7670/external.json) | 0 | 3,546.752 s |
+| [Imported](grh-integration/precision7670/imported.json) | 0 | 10.365 s |
+| [Classification](grh-integration/precision7670/final.json) | 1 | 146.032 s |
+
+The bounded-classification wrapper failed in four prerequisite modules.
+The first error was `Real.exp_natCast_mul` at `Digamma.lean:493`. A separate
+Lean check confirmed that `Real.exp_nat_mul` supplies that rewrite in 4.35.
+The remaining errors include changed circle-average and scalar-multiplication
+signatures and a missing `MeromorphicOn.log_norm_meromorphicTrailingCoeffAt`.
+The wrapper retains `SearchHigh`, `SearchLow`, and the bound `q ≤ QTOP`.
+[Final build log](grh-integration/precision7670/final.log) ·
+[API check](grh-integration/precision7670/final-api-check.log) ·
+[Machine, source pins, and timings](grh-integration/precision7670/precision7670-summary.json)
 
 ### 2. A route to the entire range above 10^32 using existing analytic tools
 
@@ -70,10 +89,10 @@ them with the already available higher-precision P26 routine. This preflight
 is not yet a Lean certificate; the minimal changes are documented in
 `chebyshev-tail/IMPLEMENTATION_PLAN.md`.
 
-This argument still uses EF and GRH. Importing the actual GRH theorem would
-supply that input. It is not yet a connected Lean proof of the upper-range
-exclusion: the weighted Abel-summation bounds, test-function lemmas, and finite
-row must be connected to the existing formal statements. The derivation and
+This argument still uses EF and GRH. The imported theorem supplies the
+project’s GRH input in the pinned 4.35 environment. The upper-range exclusion
+still requires the weighted Abel-summation bounds, test-function lemmas, and
+finite row to be connected to the existing formal statements. The derivation and
 review enumerate these obligations explicitly. No assertion of novelty is made.
 
 ### 3. A stronger independent zero obstruction, checked without floating point

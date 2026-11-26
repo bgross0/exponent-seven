@@ -1,6 +1,11 @@
 # Importing the compact Dirichlet-GRH proof into exponent-seven
 
-Prepared 26 November 2026. **Status: the smoke interface compiled successfully in one Lean 4.35 environment. The actual external GRH import and final classification wrapper have not yet completed.** The files deliberately introduce no axiom, placeholder proof, or native-decide computation.
+The Precision 7670 compiled `Main` and `Exp7GRHBridge.Imported` on 26 November
+2026. Lean reported exactly `propext`, `Classical.choice`, and `Quot.sound`
+for both `LFunction_eq_zero_re` and `Exp7.GRHIntegration.primeConductor`.
+The separate `Exp7GRHBridge.Final` build exited 1 on project compatibility
+errors. [Verified declarations](precision7670/imported-declarations.log) ·
+[Gate receipts and diagnosis](precision7670/precision7670-summary.json)
 
 The isolated 4.35 trial exposed a real dependency added after Mathlib 4.35: the integral-closure theorem for quadratic orders. `compat435/QuadraticIntegralClosure.lean` now proves the squarefree-discriminant case needed by Step1, using trace/norm integrality and rational denominators. This standalone proof compiled successfully in Lean 4.35 with exactly `propext`, `Classical.choice`, and `Quot.sound`. The patched project dependency chain and smoke adapter then compiled successfully as well: Lake reported 9,055 jobs, exit status 0. The adapter's axioms are exactly the same three standard axioms. Its conclusion is still an implication taking `DirichletLZerosOnLine` as an input. See `compat435/smoke-verification.json` and the complete `smoke-build.log`; they do not establish the full external-proof import.
 
