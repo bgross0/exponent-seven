@@ -1,0 +1,33 @@
+{
+  "status": "executed",
+  "p": 2767,
+  "Qlo": "310000000000000000000",
+  "ymax": 126,
+  "wheel": 255255,
+  "root_modulus": "8*y^2",
+  "skip": {
+    "roots": 384,
+    "blocks": 794304,
+    "bits": 32056895134,
+    "ands": 8870926,
+    "and_bits": 638792630323,
+    "max_block": 1091401,
+    "max_eliminator": 181,
+    "survivors": 0,
+    "jobs": 4,
+    "elapsed_s": 23.665288722000014
+  },
+  "unified": {
+    "roots": 384,
+    "blocks": 1161216,
+    "bits": 21702319428,
+    "ands": 11490339,
+    "and_bits": 435301492788,
+    "max_block": 1091401,
+    "max_eliminator": 179,
+    "survivors": 0,
+    "jobs": 1,
+    "elapsed_s": 60.36894791299994
+  },
+  "note": "All y=1..126 included. Timings not comparable (different worker counts and overlapping runs); and_bits is the sum of nominal block lengths at each AND, not CPU instructions. Neither run is a Lean proof."
+}
