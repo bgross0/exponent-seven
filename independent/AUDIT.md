@@ -28,7 +28,7 @@ Run from repository root:
 
     node independent/verify_fixedpoint.cjs certificate.json
 
-This implementation uses BigInt fixed-point intervals, scale 10^-30, with directed integer division, integer square roots, exact integer cell selection n^64 versus X^k, and independently evaluated log/exp Taylor series with explicit tail allowances. It verifies the entire bootstrap chain, all 45 ladder rows, and the endpoints and count of the prime range. It does not call mpmath. The two classical constant enclosures for pi and Euler's gamma are hardcoded to 30 decimal places; their independent derivation is a remaining small audit task. See certificate-result.json. The original ladder was separately reconstructed from the exact integer JSON fields and matched ladder.txt byte for byte.
+This implementation uses BigInt fixed-point intervals, scale 10^-30, with directed integer division, integer square roots, exact integer cell selection n^64 versus X^k, and independently evaluated log/exp Taylor series with explicit tail allowances. It verifies the entire bootstrap chain, all 45 ladder rows, and the endpoints and count of the prime range. It does not call mpmath. The two classical constant enclosures for pi and Euler's gamma are hardcoded to 30 decimal places; both were independently verified by exact rational series in verify_constants.py (Machin's identity and the harmonic Euler–Maclaurin expansion). See certificate-result.json. The original ladder was separately reconstructed from the exact integer JSON fields and matched ladder.txt byte for byte.
 
 ## Independent sieve
 
@@ -51,3 +51,7 @@ The brute-force reference compares exact survivor sets, not just counts, for 11 
 * ARSX arXiv:2605.26020v1 Theorem 1.3(6) and Table A.7 explicitly record the open interval and the 40-order consequence.
 * Retain GRH/ERH hypotheses in the theorem statements pending broad mathematical review of Alpoge's formal proof. See Michael Rubinstein's independent verification report: https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/ . For a quadratic field, zeta_K(s)=zeta(s)L(s,chi_D), so the relevant Dedekind-zeta hypothesis is covered by the two claimed formal results. This does not assert general ERH for all number fields.
 * The independent implementation is not a formally verified program. Its source, proof of coverage, execution logs, and constants should be independently reviewed. No claim to priority is established by this audit.
+
+## Completed execution
+
+The independent full search ran all 465 primes from 701 through 4297, with zero survivors. Totals: 43,544 initial modular roots, 1,757,136,116 CRT wheel residues, 77,049,566,290 64-bit sieve blocks, zero exact candidates. The validator accepted all prime rows and their bounds. See full-result.json for the source and ladder hashes and all 31 shard receipts. The initial 180-second run budget interrupted the four final shards after 450 primes; the remaining 15 were run to completion separately, and the combined shard logs were validated. The raw logs and continuation logs are in the independently delivered archive. No result was inferred from the interrupted processes.
