@@ -9,3 +9,4 @@ import Exp7Lean.ClassGroup.Defs
 import Exp7Lean.Analytic.Reduce
 import Exp7Lean.ClassGroup.GenBoundProof
 import Exp7Lean.Genus.Main
+import Exp7Lean.ClassGroup.Results
