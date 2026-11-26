@@ -1,0 +1,128 @@
+{
+  "meaning": "Conservative combinatorial upper bounds, not runtime. Per root T positions, A CRT-admissible residues, W wheel modulus; at most min(A,T) nonempty blocks, each at most ceil(T/W) bits. bits_upper sums A*ceil(T/W). Includes no AND multiplicity.",
+  "wheelLastPrimes": [
+    11,
+    13,
+    17,
+    19,
+    23
+  ],
+  "results": [
+    {
+      "mode": "original roots; skip y divisors",
+      "rootsPeriod": 8,
+      "robust": false,
+      "unified": false,
+      "ySum": 14770,
+      "active": 465,
+      "blocks": [
+        2102080,
+        12825376,
+        102821528,
+        925279080,
+        10028957568
+      ],
+      "bits": [
+        50594518639807,
+        25317642366662,
+        12657420625836,
+        6351478254584,
+        3182401615712
+      ],
+      "max": [
+        843342551,
+        64872504,
+        3816030,
+        200844,
+        8733
+      ]
+    },
+    {
+      "mode": "compressed roots; skip y divisors",
+      "rootsPeriod": 2,
+      "robust": false,
+      "unified": false,
+      "ySum": 14770,
+      "active": 465,
+      "blocks": [
+        525520,
+        3206344,
+        25705382,
+        231319770,
+        2507239392
+      ],
+      "bits": [
+        50594517844045,
+        25317637562325,
+        12657382771175,
+        6351135715438,
+        3178218683070
+      ],
+      "max": [
+        3373370201,
+        259490016,
+        15264119,
+        803375,
+        34930
+      ]
+    },
+    {
+      "mode": "compressed roots; all primes",
+      "rootsPeriod": 2,
+      "robust": false,
+      "unified": true,
+      "ySum": 14770,
+      "active": 465,
+      "blocks": [
+        665936,
+        4325776,
+        36684158,
+        348581232,
+        3995572126
+      ],
+      "bits": [
+        44052301550059,
+        21990010794315,
+        10982876099533,
+        5507079274414,
+        2756108601370
+      ],
+      "max": [
+        3373370201,
+        259490016,
+        15264119,
+        803375,
+        34930
+      ]
+    },
+    {
+      "mode": "robust26; compressed roots; all primes",
+      "rootsPeriod": 2,
+      "robust": true,
+      "unified": true,
+      "ySum": 5520,
+      "active": 328,
+      "blocks": [
+        254513,
+        1648555,
+        13998601,
+        132739993,
+        1525501372
+      ],
+      "bits": [
+        11536546050545,
+        5801573019504,
+        2911190825552,
+        1459717296448,
+        727886640742
+      ],
+      "max": [
+        1244661186,
+        95743169,
+        5631952,
+        296419,
+        12888
+      ]
+    }
+  ]
+}
