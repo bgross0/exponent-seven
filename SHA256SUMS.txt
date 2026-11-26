@@ -2,8 +2,10 @@
 60aca5c92885ee61f38aad1d842178f175bd6d9c2b615a17d042bb845ef6a893  ./.zenodo.json
 a9c2fd0a90ef67b34349c3de00e47d8de14725e31d54984f10697e7cc35cd492  ./CITATION.cff
 b3ad09fc93f83fdbd0bee771258dd4a58d3798fd7e6048611dde5a804bb43f1e  ./Exp7Lean/.gitignore
-496f618ae3b2f9ea3c8f62656f27999731a609de34e5c04c3d8eb6ad6e5f1f5c  ./Exp7Lean/Exp7Lean.lean
+d292db50e192b9bd3ad2e6b52fc0920263837657727c1ad20526cb5e84dc97ed  ./Exp7Lean/Exp7Lean.lean
 8b837400b6887ae821eca70d8be6fc2139910d6c59333f564c2c73b6818da494  ./Exp7Lean/Exp7Lean/Above.lean
+24edb6f2cd11b491dc4cdb1989632284497411f02c41d85b4e8d776c9af682a8  ./Exp7Lean/Exp7Lean/Analytic/Autocorr.lean
+05666037dee2a9d9212f9e80eda920dffe5f39f52032b0e4b79fd413b39b5839  ./Exp7Lean/Exp7Lean/Analytic/JBound.lean
 77a14e367154e0ef8dffc6299ae38e12c99fc9692978a6c64737263debb66ae0  ./Exp7Lean/Exp7Lean/Analytic/Reduce.lean
 111a7096c57943388fb0ba4aa547e8b2a28e8e3c8c66c025c3f788b46cefb382  ./Exp7Lean/Exp7Lean/Analytic/Statement.lean
 f9425547cb760648e8df0c11978767442986bd464fb81e1eee29035f0fc93081  ./Exp7Lean/Exp7Lean/Basic.lean
