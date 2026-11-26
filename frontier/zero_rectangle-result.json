@@ -1,0 +1,154 @@
+[
+  {
+    "X": 19000,
+    "Qmin": "3900000000000000000000000000000",
+    "Qmax": "100000000000000000000000000000000",
+    "terms": 2222,
+    "delta": "1/100",
+    "height": 1000,
+    "scale": 1000000,
+    "prime_sum": [
+      76650521,
+      76650522
+    ],
+    "J_upper_enclosure": [
+      483334,
+      483335
+    ],
+    "margin": [
+      4715054,
+      4715055
+    ],
+    "weighted_zero_mass_upper_enclosure": [
+      77682722,
+      77682723
+    ],
+    "low_zero_loss_upper_enclosure": [
+      2558041,
+      2558042
+    ],
+    "high_zero_loss_upper_enclosure": [
+      608418,
+      608419
+    ],
+    "residual": [
+      1548595,
+      1548596
+    ],
+    "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+  },
+  {
+    "X": 30000,
+    "Qmin": "100000000000000000000000000000000",
+    "Qmax": "10000000000000000000000000000000000000000",
+    "terms": 3320,
+    "delta": "1/100",
+    "height": 1000,
+    "scale": 1000000,
+    "prime_sum": [
+      95424837,
+      95424838
+    ],
+    "J_upper_enclosure": [
+      461919,
+      461920
+    ],
+    "margin": [
+      5090105,
+      5090106
+    ],
+    "weighted_zero_mass_upper_enclosure": [
+      96103403,
+      96103404
+    ],
+    "low_zero_loss_upper_enclosure": [
+      3539947,
+      3539948
+    ],
+    "high_zero_loss_upper_enclosure": [
+      795820,
+      795821
+    ],
+    "residual": [
+      754337,
+      754338
+    ],
+    "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+  },
+  {
+    "X": 100000,
+    "Qmin": "10000000000000000000000000000000000000000",
+    "Qmax": "1000000000000000000000000000000000000000000000000000000000000",
+    "terms": 9700,
+    "delta": "1/100",
+    "height": 1000,
+    "scale": 1000000,
+    "prime_sum": [
+      168193072,
+      168193073
+    ],
+    "J_upper_enclosure": [
+      413613,
+      413614
+    ],
+    "margin": [
+      31854943,
+      31854944
+    ],
+    "weighted_zero_mass_upper_enclosure": [
+      142155105,
+      142155106
+    ],
+    "low_zero_loss_upper_enclosure": [
+      6925555,
+      6925556
+    ],
+    "high_zero_loss_upper_enclosure": [
+      1422783,
+      1422784
+    ],
+    "residual": [
+      23506604,
+      23506605
+    ],
+    "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+  },
+  {
+    "X": 1000000,
+    "Qmin": "1000000000000000000000000000000000000000000000000000000000000",
+    "Qmax": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "terms": 78734,
+    "delta": "1/100",
+    "height": 1000,
+    "scale": 1000000,
+    "prime_sum": [
+      484511342,
+      484511343
+    ],
+    "J_upper_enclosure": [
+      344678,
+      344679
+    ],
+    "margin": [
+      113378470,
+      113378471
+    ],
+    "weighted_zero_mass_upper_enclosure": [
+      377018785,
+      377018786
+    ],
+    "low_zero_loss_upper_enclosure": [
+      29660773,
+      29660774
+    ],
+    "high_zero_loss_upper_enclosure": [
+      6202524,
+      6202525
+    ],
+    "residual": [
+      77515171,
+      77515172
+    ],
+    "status": "positive interval margin; analytic derivation requires review and Lean formalization"
+  }
+]
