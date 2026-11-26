@@ -1,0 +1,11 @@
+Exp7.searchHigh : Exp7.SearchHigh
+'Exp7.searchHigh' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Exp7.theoremA_rows Exp7.GRHIntegration.primeConductor
+  Exp7.searchHigh : ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → Exp7.QLOW ≤ q → q ≤ Exp7.QTOP → ¬Exp7.IsExp7 q
+Exp7.theoremA_fundamental Exp7.GRHIntegration.primeConductor
+  Exp7.searchHigh : ∀ (a b : ℤ),
+  (QuadraticAlgebra.discr a b).IsFundamentalDiscr →
+    QuadraticAlgebra.discr a b < 0 →
+      ∀ [inst : IsDomain (QuadraticAlgebra ℤ a b)],
+        ↑Exp7.QLOW ≤ -QuadraticAlgebra.discr a b →
+          -QuadraticAlgebra.discr a b ≤ ↑Exp7.QTOP → Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
