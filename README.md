@@ -16,6 +16,10 @@ Write E(D) for the exponent of the class group of Q(√D), D < 0 a fundamental d
 
 **Corollary B.** Assume the Riemann hypothesis for ζ(s) and for the L-functions L(s, χ_D), that is, ERH for the Dedekind zeta functions of the imaginary quadratic fields (the hypothesis of EKN Theorem 3 and ARSX Theorem 1.3). Then exactly 33 imaginary quadratic fields have class group of exponent 7, the largest being Q(√−118843), and exactly 40 imaginary quadratic orders have Picard group of exponent 7 (largest discriminant −118843).
 
+**Corollary C.** Assume GRH as in Theorem A. Let q ≡ 3 (mod 4) be a prime with 3.1·10^20 ≤ q ≤ 10^32, let p be the least prime that splits in Q(√−q), and let 𝔭 be a prime ideal above p. Then the ideal class of 𝔭 has odd order at least 9.
+
+Corollary C holds for every field in the range, whatever its class group. The proof is after Step 4.
+
 Corollary B follows from Theorem A and three published results:
 
 - Elsenhans–Klüners–Nicolae (EKN), Theorem 1: the list of fields with E(D) ≤ 8 is complete for |D| ≤ 3.1·10^20 (a computation; the theorem is stated without hypotheses). It has 33 fields of exponent 7 (EKN Table 1).
@@ -50,7 +54,7 @@ This is the positive-kernel method of the exponent-six note, which applies the e
 | q ≤ Q | X | largest prime P < X | margin > | new bound 4P^7 |
 |---|---|---|---|---|
 | 10^32 | 6362 | 6361 | 0.0126 | 1.686·10^27 |
-| 1.686·10^27 | 4690 | 4679 | 0.0161 | 1.964·10^26 |
+| 1.686·10^27 | 4690 | 4679 | 0.0160 | 1.964·10^26 |
 | 1.964·10^26 | 4393 | 4391 | 0.0188 | 1.259·10^26 |
 | 1.259·10^26 | 4333 | 4327 | 0.0191 | 1.136·10^26 |
 | 1.136·10^26 | 4319 | 4297 | 0.0181 | 1.082·10^26 |
@@ -59,6 +63,8 @@ This is the positive-kernel method of the exponent-six note, which applies the e
 So q ≤ 4·4297^7 = 108197560039107534049882852 and the least split prime p satisfies 701 ≤ p ≤ 4297. A further 45 rows (the "ladder", from Q = 8.1·10^25 down to 3.1·10^20) shorten the search: if X_i ≤ p then q > Q_i.
 
 **Step 4 (search).** For each of the 465 primes p in [701, 4297], each y ≥ 1, and each x ≥ 0 with x² ≡ 4p^7 (mod y²) and q = (4p^7 − x²)/y² ≥ Qlo(p), `sieve7` tests the necessary conditions: (−q/l) = −1 for every odd prime l < p, and q ≡ 3 (mod 8). For l ∤ y the condition reads "x² − 4p^7 is a non-residue mod l", which is sieved (a wheel on the first primes, 64-bit patterns for l < 64, then one prime at a time). Totals: 21,577 progressions, 7.8·10^12 positions after the wheel, 1.6·10^10 after the bit patterns, and **0 values of x passing all odd primes l < p**. So no such q exists. ∎
+
+**Proof of Corollary C.** Let n be the order of the class of 𝔭. The class number is odd (genus theory), so n is odd. As in Step 1, 𝔭^n = (α) with α not rational, so q ≤ 4p^n. By the first bootstrap row, p ≤ 6361. If n ≤ 5 then q ≤ 4·6361^5 < 4.2·10^19 < 3.1·10^20. If n = 7: Steps 1 to 4 used E(D) = 7 only to know that 𝔭^7 is principal for the least split prime p (for p ≥ 701 in Step 1, for q ≤ 4P^7 at each bootstrap row, and for the norm equation in Step 4), and the search found no solution. So n ≥ 9. ∎
 
 Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `logs/prod_1.log`. A full rerun on a separate 28-thread machine (`logs/rerun.log`) gives identical output for all 465 primes.
 
