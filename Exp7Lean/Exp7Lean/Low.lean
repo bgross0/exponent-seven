@@ -6,7 +6,7 @@ Exponent 7: Theorem D, the classification for all `q ≤ 10^32` without the EKN 
 The 124 extra certificate rows below are generated from `lowrange/certificate_full.json`.
 The fields of `LowInputs` are the steps of Section 3 of the note that are not formalized:
 
-* `normEqPrim` — Step 1 with the remark that `p ∤ y`.
+* `normEqPrim` — Step 1 with the remark that `p ∤ y` for odd `p` (proved in `Step1.lean`).
 * `certLow`    — the 124 extra certificate rows (explicit formula under GRH; rows verified outside
                  Lean by both verifiers).
 * `direct`     — class groups of the 4808 primes `q ≡ 3 (mod 4)` below `10^5` (`lowrange/direct.py`).
@@ -159,7 +159,7 @@ def QloFull (p : ℕ) : ℕ :=
 
 /-- The inputs for the range `q < 3.1·10^20`, established outside Lean. -/
 structure LowInputs (IsExp7 : ℕ → Prop) : Prop where
-  normEqPrim : ∀ q, q.Prime → q % 4 = 3 → IsExp7 q → ∀ p, p.Prime → p ≠ q → Splits q p →
+  normEqPrim : ∀ q, q.Prime → q % 4 = 3 → IsExp7 q → ∀ p, p.Prime → p ≠ 2 → p ≠ q → Splits q p →
     ∃ x y : ℕ, 1 ≤ y ∧ ¬ p ∣ y ∧ 4 * p ^ 7 = x ^ 2 + q * y ^ 2
   certLow : ∀ r ∈ lowRows, ∀ q, q.Prime → q % 4 = 3 → r.X < q → q ≤ r.Q →
     ∃ p, p.Prime ∧ p < r.X ∧ Splits q p
@@ -232,7 +232,7 @@ theorem theoremD {IsExp7 : ℕ → Prop} (H : Inputs IsExp7) (L : LowInputs IsEx
       have hn2 : ¬ Splits q 2 := fun h => hmin 2 (by omega) ⟨Nat.prime_two, h⟩
       rw [splits_two_iff] at hn2
       omega
-    obtain ⟨x, y, hy, hpy, he⟩ := L.normEqPrim q hq h4 hE p hp hpq hs
+    obtain ⟨x, y, hy, hpy, he⟩ := L.normEqPrim q hq h4 hE p hp hp2 hpq hs
     have key : q = 118843 := by
       refine L.searchLow p hp hp3 hplt x y q hy hpy he ?_ hqlt h8 ?_ hq hE
       · refine QloFull_le hBq (fun r hr hXp => ?_)

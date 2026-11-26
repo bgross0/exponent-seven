@@ -2,6 +2,32 @@
 
 A Lean 4 / Mathlib formalization of the argument, with the inputs it does not formalize stated as explicit hypotheses.
 
+## Status of each step
+
+| Step | Status |
+|---|---|
+| Step 0, genus theory (fundamental `D` to prime `q`) | not formalized |
+| Step 1, class group to norm equation | **proved** for Mathlib's `ClassGroup` (`Step1.lean`) |
+| Steps 2–3, explicit formula under GRH and the certificate rows | assumed (`Computed.cert`, `ComputedLow.certLow`) |
+| Bootstrap, least split prime, ladder bounds, Jacobi conditions | **proved** (`Main.lean`, `Low.lean`) |
+| Step 4, the searches | assumed (`Computed.search`, `ComputedLow.searchLow`) |
+| Class groups below `10^5`, and of `ℚ(√-118843)` | assumed (`ComputedLow.direct`, `ComputedLow.exp118843`) |
+| Bound above `10^32` | **proved** (`Above.lean`); the split-prime bound of EKN Theorem 3 is assumed |
+
+The headline statements are in `Final.lean`, for `IsExp7 q := Monoid.exponent (ClassGroup (OK q)) = 7`, where `OK q = ℤ[ω]`, `ω² = ω − (q+1)/4`, is the ring of integers of `ℚ(√-q)`:
+
+```lean
+theorem theoremA_classGroup (C : Computed) {q : ℕ} (hq : q.Prime) (h4 : q % 4 = 3)
+    (hlow : QLOW ≤ q) (hhi : q ≤ QTOP) : ¬ IsExp7 q
+
+theorem theoremD_classGroup (C : Computed) (L : ComputedLow) {q : ℕ} (hq : q.Prime)
+    (h4 : q % 4 = 3) (hhi : q ≤ QTOP) : IsExp7 q ↔ q ∈ known
+```
+
+`Step1.lean` proves `normEq_classGroup`: if the class group has exponent 7 and `p ≠ q` splits, then `4p^7 = x² + qy²` with `y ≥ 1`, and `p ∤ y` for odd `p`. The proof builds the ideal `P = (p, ω − t)`, shows `P · P̄ = (p)`, uses the exponent to get `P^7 = (α)`, and takes norms. `OK q` is shown to be a Dedekind domain from Mathlib's result that `QuadraticAlgebra ℤ a b` is the integral closure when the discriminant is fundamental.
+
+The sections below describe the abstract versions (`theoremA`, `theoremD`, `classification`), which take the predicate `IsExp7` as a parameter and Step 1 as a hypothesis.
+
 ## What is proved
 
 `Exp7.classification` (in `Exp7Lean/Above.lean`):
@@ -43,18 +69,18 @@ These are the fields of `Inputs` and `Published`. Each is a precise statement of
 
 | Field | Statement | Established by |
 |---|---|---|
-| `Inputs.normEq` | exponent 7 and `p` split ⇒ `4p^7 = x² + qy²` with `y ≥ 1` | Step 1 (algebraic number theory of `ℚ(√-q)`) |
+| `Inputs.normEq` | exponent 7 and `p` split ⇒ `4p^7 = x² + qy²` with `y ≥ 1` | **proved** in `Step1.lean` for the class-group predicate |
 | `Inputs.cert` | each of the 51 certificate rows `⟨Q, X⟩` forces a split prime below `X` | Steps 2–3: explicit formula under GRH; rows verified by `kernel_verify.py` and `independent/verify_fixedpoint.cjs` |
 | `Inputs.search` | no survivor for the 465 primes `701 ≤ p ≤ 4297` | Step 4: three independent search programs |
 | `Published.ekn3` | under ERH, a split prime `p ≤ (1.881 log q + 6.18)^2` exists for `q > e^25` | Elsenhans–Klüners–Nicolae, Theorem 3 (from Bach–Sorenson) |
 | `Published.ekn1` | the exponent-7 list below `3.1·10^20` | Elsenhans–Klüners–Nicolae, Theorem 1 and Table 1 (used by `classification` only) |
-| `LowInputs.normEqPrim` | as `normEq`, with `p ∤ y` | Step 1 and the primitivity remark |
+| `LowInputs.normEqPrim` | as `normEq`, with `p ∤ y` for odd `p` | **proved** in `Step1.lean` for the class-group predicate |
 | `LowInputs.certLow` | each of the 124 extra rows forces a split prime below `X` | explicit formula under GRH; rows verified by both verifiers |
 | `LowInputs.direct` | the exponent-7 list below `10^5` | `lowrange/direct.py` |
 | `LowInputs.searchLow` | for `3 ≤ p < 2760` and `q < 3.1·10^20`, the only prime survivor with exponent 7 is `118843` | `lowrange/lowsearch.c` and `lowrange/classify.py` |
 | `LowInputs.exp118843` | `ℚ(√-118843)` has exponent 7 | class group computation |
 
-`Splits q p` is defined by the Dedekind–Kummer criterion: `2` splits iff `q ≡ 7 (mod 8)`, and an odd `p` splits iff the Jacobi symbol `(-q/p)` is 1. `IsExp7` is a parameter, so the theorem holds for any predicate that satisfies the inputs. Connecting it to Mathlib's `ClassGroup` is part of formalizing `normEq`. The reduction from fundamental discriminants `D` to primes `q` (Step 0, genus theory) is also not formalized.
+`Splits q p` is defined by the Dedekind–Kummer criterion: `2` splits iff `q ≡ 7 (mod 8)`, and an odd `p` splits iff the Jacobi symbol `(-q/p)` is 1. In `Main.lean`, `Above.lean` and `Low.lean`, `IsExp7` is a parameter, so those theorems hold for any predicate that satisfies the inputs; `Final.lean` instantiates it with Mathlib's `ClassGroup`. The reduction from fundamental discriminants `D` to primes `q` (Step 0, genus theory) is also not formalized.
 
 The certificate rows in `Basic.lean` and `Low.lean` are generated from `../certificate.json` and `../lowrange/certificate_full.json`. As a check that the search hypotheses state exactly what was computed, `Qlo p` evaluated in Lean equals the lower bound in the production logs for all 465 primes, and `QloFull p` equals the lower bound in `lowrange/low_run.log` for all 401 primes.
 
@@ -70,5 +96,5 @@ The toolchain is Lean `v4.37.0-rc1` with the matching Mathlib.
 ## Next steps toward a full formalization
 
 1. `cert`: the explicit formula for `L(s, χ)` is not in Mathlib. That is the main gap.
-2. `normEq` and Step 0: class groups of `ℚ(√-q)` and genus theory, using Mathlib's `NumberField` and `ClassGroup`.
+2. Step 0: genus theory, in the same setting as `Step1.lean`. The class-group computations (`direct`, `exp118843`) need a bound on generators of the class group.
 3. `search`: about 10^15 candidates are beyond direct kernel checking. A verified sieve with a small checkable certificate would be needed.
