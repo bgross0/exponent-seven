@@ -25,7 +25,8 @@ A Lean 4 / Mathlib formalization of the argument, with the inputs it does not fo
 | Packed-bitset block exclusion and exception masks | **proved** (`SieveKernel.lean`, `SieveExceptions.lean`) |
 | Theorems A and D restated for every negative fundamental discriminant, in Mathlib's own terms (`QuadraticAlgebra ℤ a b`, `ClassGroup`) | **proved** (`Fundamental.lean`, `theoremA_fundamental`, `theoremD_fundamental`): Step 0 joined to `Final4.lean` through the isomorphism of quadratic orders of equal discriminant |
 | Bridge from the packed-bitset sieve to the search statement, one kernel certificate per prime | **proved** (`Sieve/Bridge.lean`, `Sieve/Assembly.lean`) |
-| Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed**; the kernel run for `SearchHigh` is in progress |
+| Low-range search: soundness of the certificate (a sieve over `q` below a cut, a sieve over `x` for each `y` above it, exceptions matched against the survivor list), one kernel certificate per prime | **proved** (`SieveLow/`, design in `SieveLow/DESIGN.md`) |
+| Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed**; the kernel runs over the 465 and 401 per-prime certificates are in progress |
 
 The strongest statements are in `Final4.lean`:
 
