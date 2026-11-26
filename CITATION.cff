@@ -12,6 +12,7 @@ authors:
     given-names: Ben
 type: software
 license: Apache-2.0
+doi: "10.5281/zenodo.24549331"
 repository-code: "https://github.com/bgross0/exponent-seven"
 date-released: 2026-11-25
 version: "1.0.0"

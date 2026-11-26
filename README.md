@@ -1,5 +1,7 @@
 # Imaginary quadratic fields with class group of exponent 7
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24549331.svg)](https://doi.org/10.5281/zenodo.24549331)
+
 Ben Gross. 25 November 2026.
 
 **Status: computer-assisted research note for independent review. Not refereed. The search has two implementations with different algorithms; both find 0 survivors.**
