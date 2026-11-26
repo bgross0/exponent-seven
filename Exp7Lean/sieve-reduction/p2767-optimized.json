@@ -1,0 +1,19 @@
+{
+  "p": 2767,
+  "Qlo": "108800000000000000000000",
+  "ymax": 6,
+  "wheel": 255255,
+  "root_modulus": "2*y^2",
+  "skip": false,
+  "jobs": 1,
+  "elapsed_s": 24.77344694400017,
+  "roots": 6,
+  "blocks": 18144,
+  "bits": 19175269367,
+  "ands": 361351,
+  "and_bits": 432530177449,
+  "max_block": 4317664,
+  "max_eliminator": 179,
+  "survivors": 0,
+  "note": "Uses stronger bound from threshold 2700 in robust26.txt, whose GRH-dependent implication still needs formalization. No timings are Lean timings."
+}
