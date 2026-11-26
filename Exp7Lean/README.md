@@ -26,9 +26,24 @@ A Lean 4 / Mathlib formalization of the argument, with the inputs it does not fo
 | Theorems A and D restated for every negative fundamental discriminant, in Mathlib's own terms (`QuadraticAlgebra ℤ a b`, `ClassGroup`) | **proved** (`Fundamental.lean`, `theoremA_fundamental`, `theoremD_fundamental`): Step 0 joined to `Final4.lean` through the isomorphism of quadratic orders of equal discriminant |
 | Bridge from the packed-bitset sieve to the search statement, one kernel certificate per prime | **proved** (`Sieve/Bridge.lean`, `Sieve/Assembly.lean`) |
 | Low-range search: soundness of the certificate (a sieve over `q` below a cut, a sieve over `x` for each `y` above it, exceptions matched against the survivor list), one kernel certificate per prime | **proved** (`SieveLow/`, design in `SieveLow/DESIGN.md`) |
-| Completeness of the two searches (`SearchHigh`, `SearchLow`) | **assumed**; the kernel runs over the 465 and 401 per-prime certificates are in progress |
+| Completeness of the main search (`SearchHigh`) | **proved**, kernel-checked (`Sieve/All.lean`, `Exp7.searchHigh`): 465 per-prime certificates `Sieve/P<p>.lean`, about 11 core-hours of `decide +kernel` |
+| Theorem A with GRH as its only hypothesis | **proved** (`Final5.lean`, `theoremA_GRH`, `theoremA_fundamental_GRH`) |
+| Completeness of the low-range search (`SearchLow`) | **assumed**; the kernel run over the 401 per-prime certificates is in progress |
 
-The strongest statements are in `Final4.lean`:
+Theorem A is fully formalized: its only hypothesis is GRH (`Final5.lean`).
+
+```lean
+theorem theoremA_fundamental_GRH (hGRH : GRHPrimeConductor) (a b : ℤ)
+    (hfund : Int.IsFundamentalDiscr (QuadraticAlgebra.discr a b))
+    (hneg : QuadraticAlgebra.discr a b < 0) [IsDomain (QuadraticAlgebra ℤ a b)]
+    (hlow : (QLOW : ℤ) ≤ -QuadraticAlgebra.discr a b)
+    (hhi : -QuadraticAlgebra.discr a b ≤ (QTOP : ℤ)) :
+    Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
+```
+
+`Final5.lean` and the 465 certificate files are outside the default build target; `lake build Exp7Full` checks them (about 11 core-hours, about 5 GB of memory per job).
+
+The statements with the search hypotheses explicit are in `Final4.lean`:
 
 ```lean
 theorem theoremA_rows (hGRH : GRHPrimeConductor) (hS : SearchHigh) {q : ℕ} (hq : q.Prime)

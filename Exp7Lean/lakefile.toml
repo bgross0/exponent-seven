@@ -19,3 +19,10 @@ name = "Exp7Lean"
 # This library is written as ordinary (non-`module`) Lean files that import Mathlib.
 # Without this flag Lake repeats a warning about that for every path in the import graph.
 allowNonModules = true
+
+# The kernel-checked search certificates and the theorems that use them.
+# Not a default target: checking the certificates takes about 11 core-hours and about 5 GB of
+# memory per job.  Build with `lake build Exp7Full`.
+[[lean_lib]]
+name = "Exp7Full"
+allowNonModules = true
