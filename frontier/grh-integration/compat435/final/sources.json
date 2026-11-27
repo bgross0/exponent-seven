@@ -1,0 +1,42 @@
+{
+  "src/Exp7Lean/Analytic/EF/Digamma.lean": {
+    "before": "9be2e537dda5eccaf00a514cbf69e57daa354ebad210b2f0ddc125904fc74bea",
+    "after": "e462fb5de86fb805e09e01a8cef7d6179b51edd65115ca5c65a7a92f1365d9a7"
+  },
+  "src/Exp7Lean/Analytic/EF/Dirichlet435.lean": {
+    "before": null,
+    "after": "8894978616a88df4fcc979f76bf7fc5f5eae6ae8ae0d2f9e71ed00573769d74c"
+  },
+  "src/Exp7Lean/Analytic/EF/HadamardFallback.lean": {
+    "before": "508e52b05ccc9acbaaf1315a50466d35de00827f1755c1fad2f5efca00c50631",
+    "after": "e586d25fb5df8db1554bbd7d1081ce1cb479c875fe6c0be952f882390c98cac6"
+  },
+  "src/Exp7Lean/Analytic/EF/HadamardHF1Boundary.lean": {
+    "before": "6639b009cb05f962d66fa386035363074f389ad99539e8983f1be3e1de2b7ba7",
+    "after": "a83cd480ccd07d5745e818a2b013a8643259230e80adb777b27ae686baea16a3"
+  },
+  "src/Exp7Lean/Analytic/EF/HadamardHF1Poisson.lean": {
+    "before": "3c8e78c3e35b7a46eff1a473dbd24d479277cd8c38e693170bc2b5e41863a483",
+    "after": "db94d22fdb73159723b524990a716ed70eed4cab9b4e34fae66be9ac77858a99"
+  },
+  "src/Exp7Lean/Analytic/EF/PoissonJensen435.lean": {
+    "before": null,
+    "after": "15e2b44fadc4d0d02f476b7b54a20b2f7b642320777e5f9a35b20a9571ba0acc"
+  },
+  "src/Exp7Lean/Genus/Integral435.lean": {
+    "before": null,
+    "after": "134be2b8b34a5be2966af8230af7c9378fe0c362ffea8ce77f957f757be781e7"
+  },
+  "src/Exp7Lean/Genus/Main.lean": {
+    "before": "d06e0ad69fb9a215f176f9ae68dd0224378d737bfdd4fd0bae63dceee2518bd5",
+    "after": "2efb4bf625f368c09730fc93155d8b0541b99cf07edfb74ec6082484fa25d244"
+  },
+  "src/Exp7Lean/Numerics/FixedExp.lean": {
+    "before": "13cd9728abb5cd7d998730fa85b45ec4eaf3ac9db897512b921f24004d9d8d02",
+    "after": "e6bee7f7fbb2754c64d451d61a737d31995fc3c2cc906b8afea4c9c19d755195"
+  },
+  "src/Exp7Lean/Rows/JPart.lean": {
+    "before": "0c622d7ee55dd19e9a45efb9f14e7bebe0e2ed17fe770d1ac4b400d7f0a0e145",
+    "after": "6c58073e7aca1a92d5768de4aaac97617bf321bd390c46cbc2394f11cdbf4379"
+  }
+}

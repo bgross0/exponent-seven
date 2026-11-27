@@ -1,0 +1,71 @@
+{
+  "stage": "final",
+  "target": "Exp7GRHBridge.Final",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "env",
+    "lean",
+    "-R",
+    "src",
+    "src/Exp7GRHBridge/Final.lean",
+    "-o",
+    "/home/ben/exp7-main435/combined/.lake/build/lib/lean/Exp7GRHBridge/Final.pending.olean"
+  ],
+  "workspace": "/home/ben/exp7-main435/combined",
+  "threads": 4,
+  "started_utc": "2026-11-27T03:13:34.697566+00:00",
+  "status": "COMMAND_SUCCEEDED",
+  "exit_code": 0,
+  "provenance_sha256": "001e57258e38597a581c997bd3b5fb4d60d07a787cfbd40c5a417c560548eb5e",
+  "declarations_log": "final.declarations.log",
+  "declaration_axioms": {
+    "LFunction_eq_zero_re": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.primeConductor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.searchHigh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.searchLow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremA_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "declarations_sha256": "04a744f92b0d00ec6e5c57bb9c21fddc45a165e80983298ee06794860d2817ec",
+  "olean_sha256": "05cfaaacd94694883c3d073849741a1eb86cb76c4c6d7dea24cc3ce8fa948f99",
+  "completed_utc": "2026-11-27T03:13:42.588207+00:00",
+  "elapsed_seconds": 7.89,
+  "child_user_cpu_seconds": 4.031,
+  "child_system_cpu_seconds": 2.573,
+  "largest_child_max_rss_kib": 8211048,
+  "log_sha256": "29bc552e0096d4cbadf8061eb5227d820f130b47de03d5070dce9d72c037b23a"
+}
