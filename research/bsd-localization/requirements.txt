@@ -1,2 +1,3 @@
-# Only the ambient polynomial-matrix fixture checker needs this dependency.
+# Exact symbolic certificates and bounded integer linear algebra.
 sympy==1.14.0
+numpy==2.3.5

@@ -1,0 +1,30 @@
+{
+  "bound": 6825,
+  "compressed_bytes": 230499,
+  "counts": {
+    "compact_table_storage_bytes": 34861464,
+    "enumerated_ideals": 1263725,
+    "ideals_prime_to_selected_p": 1011038,
+    "packed_table_storage_upper_bound_bytes": 67497172,
+    "raw_q_bound": 484575,
+    "selected_product_indices": 13554,
+    "selected_raw_sha256": "16ac019db294719d590c3934289d45d2e3832ea7c4f594b2b960d2411399a4f8",
+    "shared_jet_products": 1001625
+  },
+  "digits": 12,
+  "gzip_sha256": "db108a6c64e1b966d75f8b2147a291aa7fc5c8bb24c9c48f684b535b27de7661",
+  "performance": {
+    "generation_and_checks_seconds": 22.159633,
+    "peak_RSS_KiB": 162432,
+    "table_and_reflection_seconds": 14.05053
+  },
+  "status": "PASS",
+  "uncompressed_bytes": 596365,
+  "uncompressed_sha256": "5e8cf2490f1cf9750850b342a650b9bacb843dea52cdf161402be3ccf3cd7c0f",
+  "verification": {
+    "cubic_vector_coefficients_checked": 174,
+    "independent_naive_overlap_bound": 57,
+    "overlap_modulus": 244140625,
+    "pinned_CM_gzip_sha256": "5054b565231b63457eba413dfcb3e74eb0970891a6dfbc7a91375bdff57857d3"
+  }
+}

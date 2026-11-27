@@ -1,0 +1,93 @@
+{
+  "D_norm": 6329,
+  "N_norm": 8737,
+  "R_eigenvalue_valuations_U_alpha_beta": [
+    0,
+    -1
+  ],
+  "R_inverse_is_integral": true,
+  "coefficient_field_polynomial": [
+    -1,
+    -2,
+    1,
+    1
+  ],
+  "five_times_R_eigenvalue_valuations": [
+    1,
+    0
+  ],
+  "five_times_R_eigenvalues_U_alpha_beta": [
+    [
+      73510,
+      215860,
+      153725
+    ],
+    [
+      310646,
+      234570,
+      386569
+    ]
+  ],
+  "five_times_R_matrix": [
+    [
+      [
+        266350,
+        12635,
+        229585
+      ],
+      [
+        254193,
+        84355,
+        18297
+      ]
+    ],
+    [
+      [
+        330855,
+        250300,
+        50545
+      ],
+      [
+        117806,
+        47170,
+        310709
+      ]
+    ]
+  ],
+  "inverse_R_matrix": [
+    [
+      [
+        119066,
+        306825,
+        223627
+      ],
+      [
+        389537,
+        60985,
+        192569
+      ]
+    ],
+    [
+      [
+        122570,
+        319600,
+        339590
+      ],
+      [
+        124020,
+        331445,
+        200575
+      ]
+    ]
+  ],
+  "lattice_scope": "U-stable (equivalently F-stable on E) integral lattice; any coordinate comparison has its own denominator cost",
+  "matrix_modulus": 390625,
+  "scope": "Exact Euler transfer for proper E projections, given the CM cohomology identities in README. No raw q-series projection or arithmetic regulator comparison is inferred.",
+  "status": "PASS",
+  "tau_in_xi_basis": [
+    1,
+    -1,
+    -1
+  ],
+  "worst_case_digit_loss": 1
+}

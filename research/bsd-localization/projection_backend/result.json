@@ -1,0 +1,163 @@
+{
+  "actual_crystalline_two_slope_regression": {
+    "converted_omega_eta": [
+      {
+        "absolute_digits": 6,
+        "denominator_exponent": 1,
+        "meaning": "p^(-denominator_exponent)*residue + O(p^absolute_digits)",
+        "p": 5,
+        "residue": 36350
+      },
+      {
+        "absolute_digits": 6,
+        "denominator_exponent": 1,
+        "meaning": "p^(-denominator_exponent)*residue + O(p^absolute_digits)",
+        "p": 5,
+        "residue": 48455
+      }
+    ],
+    "known_stabilization_coefficients": [
+      7,
+      11
+    ],
+    "operator_basis": "row coordinates in omega,eta; transpose of saved column operator",
+    "recovered_balls": {
+      "alpha": {
+        "absolute_digits": 7,
+        "denominator_exponent": 0,
+        "meaning": "p^(-denominator_exponent)*residue + O(p^absolute_digits)",
+        "p": 5,
+        "precision": {
+          "denominator_digits": 7,
+          "kernel_digits": 7,
+          "normalization_row_digits": 7,
+          "normalization_row_valuation_lower_bound": 0,
+          "numerator_digits": 7,
+          "row_digits": 7,
+          "row_valuation_lower_bound": 0
+        },
+        "residue": 7
+      },
+      "beta": {
+        "absolute_digits": 6,
+        "denominator_exponent": 1,
+        "meaning": "p^(-denominator_exponent)*residue + O(p^absolute_digits)",
+        "p": 5,
+        "precision": {
+          "denominator_digits": 7,
+          "kernel_digits": 7,
+          "normalization_row_digits": 7,
+          "normalization_row_valuation_lower_bound": 1,
+          "numerator_digits": 7,
+          "row_digits": 7,
+          "row_valuation_lower_bound": 0
+        },
+        "residue": 55
+      }
+    },
+    "scope": "Actual pilot crystalline operator; input is a known elliptic linear combination, not the CM jet",
+    "source_sha256": "5654f8cf30854cbeedf03d5e2359bf9769bd79fd3ce580c39980759ea438aafc"
+  },
+  "corrupted_and_unsupported_input_rejections": {
+    "corrupted_coordinate": true,
+    "corrupted_inverse": true,
+    "corrupted_kernel": true,
+    "inconsistent_extra_equation": true,
+    "integer_overflow_contract": true,
+    "repeated_target_eigenvalue": true,
+    "unresolved_congruence_at_available_precision": true,
+    "unresolved_zero_normalization": true
+  },
+  "elliptic_subspace_adapter_regression": {
+    "actual_curve_q_bound": 39,
+    "basis_dimension": 2,
+    "classical_fixture_checks": {
+      "alpha_on_alpha": {
+        "absolute_digits": 7,
+        "contains_expected": true
+      },
+      "alpha_on_beta": {
+        "absolute_digits": 8,
+        "contains_expected": true
+      },
+      "beta_on_alpha": {
+        "absolute_digits": 6,
+        "contains_expected": true
+      },
+      "beta_on_beta": {
+        "absolute_digits": 7,
+        "contains_expected": true
+      }
+    },
+    "fit_guard": 0,
+    "fitted_columns": 11,
+    "known_second_coefficient_pairs": [
+      [
+        7,
+        11
+      ],
+      [
+        13,
+        17
+      ],
+      [
+        19,
+        23
+      ]
+    ],
+    "scope": "End-to-end adapter regression on actual elliptic q-series in a restricted two-dimensional model; not the full Katz capsule or actual CM trace",
+    "separate_undepleted_transfer_coefficients_checked": 6,
+    "undepleted_target_absolute_digits": {
+      "alpha": [
+        7,
+        7,
+        7
+      ],
+      "beta": [
+        5,
+        5,
+        5
+      ]
+    }
+  },
+  "rectangular_fit_guard": 2,
+  "scope": "Finite kernel/fit/normalization certificates and genuine crystalline calibration. No Katz capsule, CM de Rham projection, input-tail bound, or nonzero localization is supplied by this test.",
+  "scrambled_local_elimination_checks": [
+    {
+      "dimension": 2,
+      "dual_guard": 0,
+      "fit_guard": 3
+    },
+    {
+      "dimension": 3,
+      "dual_guard": 1,
+      "fit_guard": 3
+    },
+    {
+      "dimension": 5,
+      "dual_guard": 2,
+      "fit_guard": 3
+    },
+    {
+      "dimension": 8,
+      "dual_guard": 2,
+      "fit_guard": 3
+    }
+  ],
+  "sharp_kernel_direction_guard": 2,
+  "sharp_normalization_counterexample": {
+    "actual_compatible_perturbation_difference_valuation": 4,
+    "certified_absolute_digits": 4,
+    "matrix_digits": 8,
+    "naive_absolute_digits": 6,
+    "normalization_valuation": 2,
+    "numerator_valuation": 0,
+    "primitive_kernel_guard": 0,
+    "same_exact_normalization_row": [
+      -25,
+      1
+    ],
+    "scope": "Exact rank-one linear-algebra counterexample, not an arithmetic counterexample"
+  },
+  "status": "PASS"
+}

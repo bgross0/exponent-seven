@@ -1,6 +1,8 @@
-# Rank-two BSD: reduced analytic input and de Rham preparation
+# Rank-two BSD: projective target and finite projection certificates
 
-Research branch: `bsd-de-rham-preparation`, continuing
+Research branch: `bsd-projection-certificates`, continuing
+`bsd-de-rham-preparation` commit `704a86d0f48f0f037d327ee9339a7e211e1a2652`.
+The latter continued
 `bsd-tame-trace-computation` commit `0667f5e23fa33a4cfc09ccd80abaedc94c9d5297`.
 The latter continued `bsd-finite-log-coordinate` commit
 `29eaf5a02bff8907b9914cdf71221da8bb6e6896`.
@@ -23,15 +25,15 @@ input, extracts further exact consequences, and develops a specific global
 class to investigate next. It does not redo the 140-class CM construction.
 The original p=29 arithmetic and projection work remains available below.
 
-This continuation reduces the analytic computation to one representative
-over a cubic coefficient field, proves that its full elliptic constant
-and first weight coefficients vanish, and computes the representative
-through q6825 at twelve 5-adic digits. It supplies a two-slope coordinate
-calibration, an exact residue filter, and bounded Sage jobs to construct
-the remaining finite geometry. The remaining computational step is proper
-de Rham reduction with a certified input-tail bound. The reflected class's
-finite logarithm has not yet been evaluated, and its arithmetic comparison
-with this analytic vector remains a separate theorem to prove.
+This continuation proves that the ordinary second coefficient is already
+nonzero under the supplied theta/arithmetic and analytic inputs. The new
+numerical target is the ratio of the critical and ordinary coefficients.
+It provides an explicit conditional CM tail inequality, a simpler cubic
+product input with a fixed Euler correction, and executable two-slope
+projection certificates with measured precision loss. Bounded Sage
+geometry jobs run on the research branch. The reflected class's finite
+logarithm has not been evaluated; identifying the relevant line under an
+arithmetic regulator comparison remains a substantive theorem to prove.
 
 ## What is completed
 
@@ -62,7 +64,12 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Larger executable input | One cubic-field representative through q6825 and weight order two modulo 5^12; generated in 16.896 seconds | [Data, algorithms, and measured benchmarks](trace_scaling/README.md); raw series, not yet projected de Rham coordinates |
 | Two-slope calibration | Explicit invertible conversion from the two p-stabilizations to omega, eta modulo 5^7 | [Calibration](de_rham_strategy/README.md); the U and F slope labels are interchanged |
 | Proper residue filter | U5^2-1 kills the residue quotient; its elliptic inverse is -(F+2I)/9 | [Proof and exact matrix check](residue_filter/README.md); zero correction loss in an F-stable integral lattice |
-| Finite geometry handoff | A 1333-dimensional six-digit Katz gate and an exact 195-dimensional pole-order core | [Executable Sage jobs and scope](de_rham_strategy/README.md); Sage-dependent jobs have not yet run |
+| Finite geometry handoff | A 1333-dimensional six-digit Katz gate and an exact 195-dimensional pole-order core | [Executable Sage jobs and scope](de_rham_strategy/README.md); cloud-run provenance is recorded separately |
+| Ordinary second coefficient | ord_W a_E(W)=2, using the supplied theta input and Castella--Do's conductor-one factorization | [Leading comparison](leading_comparison/README.md); no value or valuation of a2 is claimed |
+| Projective numerical target | r_E=b2/a2 is invariant under regular scalar normalization and parameter change | [Line-level comparison target](leading_comparison/README.md); the arithmetic bad line is still unidentified |
+| Conditional quantitative tail | Explicit pole-index bound; cutoff17 gives eight digits after saturated pole reduction | [Proof and exact inequalities](cm_tail_bound/README.md), with the fixed-weight Coleman realization (CF) stated explicitly |
+| Undepleted cubic representative | Tr71 of (Q+sigma Q)/2 through q6825 modulo5^12; an explicit R(U) recovers the original E projection | [Product and Euler correction](cm_product_transfer/README.md); one-digit worst-case correction loss |
+| Finite projection implementation | Both slopes, exact inverse-minor witnesses, and valuation-sensitive normalization | [Executable adapter and proof](projection_backend/README.md); actual infinite input/operator comparison remains separate |
 
 These additions contain mathematical proofs and exact Python calculations.
 They are **not additional Lean kernel-checked theorems**. The supplied
@@ -70,7 +77,111 @@ package has its own formal layer and verification receipts. The new finite
 matrix examples are explicitly abstract algebraic models, not elliptic
 curves or counterexamples to BSD.
 
-## Current research frontier and next executable job
+## Current frontier: compute a direction and identify the exceptional line
+
+Write the analytic vector in its calibrated elliptic stabilization basis:
+
+\[
+ L(W)=a_E(W)[f_\alpha]+b_E(W)[f_\beta].
+\]
+
+The preceding reflection argument gave L(0)=L'(0)=0. The new
+[leading-comparison proof](leading_comparison/README.md) combines this
+with Castella--Do Proposition5.2.1 and the actual conductor-one theta
+input to prove
+
+\[
+ \operatorname{ord}_W a_E(W)=2.
+\]
+
+The source permits the conductor-one class characters used here. At the
+minimal common tame level, the two diagonal CM placements come from
+level71 and vanish in the E-new projection; the two cross placements
+have the same output. Thus a good triple-product test vector gives a
+regular scalar multiple of a_E. Its exact order two forces the same
+order for a_E. The proof checks regularity in the CM weight variables;
+it does not infer it merely from nonvanishing of a scalar function.
+
+Consequently the next numerical target can be
+
+\[
+ r_E=\frac{[W^2]b_E}{[W^2]a_E}\in\mathbf Q_5(\xi).
+\]
+
+This ratio removes common period and coordinate scales. Under the
+appropriate arithmetic comparison, the reflected logarithm is nonzero
+exactly when the second vector lies outside the image of the rank-one
+base regulator. It therefore suffices to identify that one line, rather
+than every entry of an absolute comparison matrix. That identification
+is still unproved. The note gives a DL Euler-line candidate and an exact
+model showing why the known ordinary scalar law does not determine it.
+
+### A quantitative bound for a simpler input
+
+The new [tail theorem](cm_tail_bound/README.md) uses the explicit
+fixed-weight Coleman-family realization (CF) and compatible integral
+Katz/pole models. The [source review](cm_tail_bound/CF_REVIEW.md) supplies
+the qualitative realization for the actual normalized CM family from
+published analytic theorems. It assumes no quantitative radius or integral
+norm for that family. A unit-eigenvector minimum argument, together
+with published radius estimates, then yields the second-coefficient
+numerator bound at pole index i:
+
+\[
+ v_5(B_{i,2})\ge
+ \max\left(0,\left\lceil\frac{20i-58}{25}\right\rceil-4\right).
+\]
+
+After saturated pole reduction the loss is at most floor(log_5(i-1)).
+Keeping pole indices through10,12,15,17 gives discarded-tail bounds of
+2,4,6,8 digits respectively. These numbers precede the actual later
+coordinate and normalization losses. The analytic argument is separate
+from the finite q-expansion checker; a backend still has to identify its
+computed lattice with the model used in this bound.
+
+The bounded input is the ordinary CM product Q=h_-s*V389(h_s). Its cubic
+average has been generated through q6825 modulo5^12 in22.160 seconds.
+The [new artifact](cm_product_transfer/cubic-product-6825-12.json.gz)
+is230499 bytes compressed. With tau=1-xi-xi^2, its proper E projection
+is converted to the original depleted input by
+
+\[
+ R(U)=\frac{U^2-\tau U+1}{U(U-\tau/2)}.
+\]
+
+This operator is constant in W, integral on the ordinary eigenline, and
+has valuation -1 on the critical eigenline. The inverse is integral.
+The exact field and matrix checks are in
+[cm_product_transfer](cm_product_transfer/README.md).
+
+### Executable finite projection, with corrected error accounting
+
+Once a Katz geometry capsule is available, run:
+
+```sh
+python research/bsd-localization/projection_backend/project_capsule.py --katz de-rham-katz6/katz-capsule.json.gz --input-kind undepleted-product --output undepleted-projection-output
+```
+
+The adapter fits all eleven input/fixture columns, isolates both dual
+eigenfunctionals, and normalizes them against the two actual elliptic
+p-stabilizations. It retains the Q output separately from the Euler-
+corrected depleted output. Certificates contain finite equations and
+scaled inverse-minor witnesses that can be verified independently of
+the elimination algorithm.
+
+The normalization bound has been corrected. A numerator N and denominator
+D known to precisions a,b, with t a lower bound for v(N) and v=v(D)<b,
+give quotient precision min(a-v,b+t-2v). The previous unconditional
+M-c-v statement was too optimistic for nonintegral outputs. An exact
+counterexample and the corrected theorem are included.
+
+The finite certificate still needs the compatible infinite input and
+operator comparison before it becomes a theorem about the analytic CM
+vector. The conditional tail estimate is stated in a saturated pole
+model; it must not be inserted directly as a precision label on an
+unrelated finite Katz-fit row.
+
+## Preceding reduction: one cubic input and the finite geometry
 
 The new [analytic audit](analytic_target_audit/README.md) removes redundant
 inputs before the expensive geometry. The eight saved raw variants do not
@@ -126,9 +237,11 @@ timeout 45m sage -python research/bsd-localization/de_rham_strategy/backend_prob
 This uses Sage's documented higher_level_UpGj implementation. It exports
 the finite U5 matrix, its q-expansion basis, both classical elliptic
 p-stabilizations, and runtime/source provenance. It checks the finite
-matrix identities. **This Sage job has not run here.** Its subsequent
-dual-eigenvector extraction and the infinite input-tail estimate are not
-implemented by the probe. Six matrix digits do not certify six final
+matrix identities. The cloud job is tracked on the research branch.
+The subsequent dual-eigenvector extraction is now implemented in
+[projection_backend](projection_backend/README.md). The analytic tail
+argument is a separate theorem and must be connected to the computed
+lattice. Six matrix digits do not certify six final
 vector digits. The precise precision contract is in the
 [backend note](de_rham_strategy/README.md).
 
@@ -558,12 +671,15 @@ To write a fresh receipt:
 python research/bsd-localization/verify_all.py --receipt research/bsd-localization/verification.json
 ```
 
-The runner performs 25 checks covering the original arithmetic, p5,
+The runner performs 30 checks covering the original arithmetic, p5,
 formal-log, reflection, exterior-algebra, finite-coordinate, crystalline,
 height, ambient-jet, CM-weight-jet, tame-trace, interpolation, exact Hecke
-projector, analytic-target identities, cubic descent, residue filter,
-two-slope calibration, and the larger trace certificates. The ambient algebra and Hecke projector
-use SymPy 1.14.0; the other scripts use Python's standard library.
+projector, analytic-target identities, cubic descent, residue and Euler
+filters, two-slope calibration, both larger trace inputs, the conditional
+tail arithmetic, leading-coordinate identities, and finite projection
+certificates. Symbolic checks use SymPy1.14.0; the finite projection
+adapter uses NumPy2.3.5 with explicit integer overflow guards. The other
+scripts use Python's standard library.
 The receipt records exit status, timing, and hashes of sources and
 compressed data. This command does not rebuild or reverify the other
 thread's CM/Lean package; its input provenance and mathematical scope are

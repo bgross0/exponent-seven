@@ -1,0 +1,54 @@
+name: BSD pole geometry from low weight products
+
+on:
+  push:
+    branches: [bsd-projection-certificates]
+    paths: [.github/workflows/bsd-pole-product-geometry.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bsd-pole-product-geometry-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pole-products:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    container:
+      image: sagemath/sagemath:10.10@sha256:310dfe23fc786f3a5a06a7b0387c60201ec79b32c0db941b7624505ee5edb565
+      options: --user 0
+    steps:
+      - name: Check out the exact research commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Check the complete product pipeline at level eleven
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p geometry-output/pole-products-smoke
+          timeout 5m sage -python research/bsd-localization/pole_core_fast/build_core.py \
+            --level 11 --q-precision 40 --output geometry-output/pole-products-smoke \
+            2>&1 | tee geometry-output/pole-products-smoke/run.log
+
+      - name: Construct the pilot using low weight products
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p geometry-output/pole-products-389
+          timeout 35m sage -python research/bsd-localization/pole_core_fast/build_core.py \
+            --level 389 --q-precision 390 --output geometry-output/pole-products-389 \
+            2>&1 | tee geometry-output/pole-products-389/run.log
+
+      - name: Preserve every completed checkpoint and result
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bsd-pole-products-${{ github.sha }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: geometry-output/

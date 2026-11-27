@@ -1,0 +1,240 @@
+{
+  "exact_euler_identity": {
+    "U_identity_output_q_bound": 819,
+    "branches": [
+      {
+        "c_zeta_exponent": 3,
+        "embedding": 2,
+        "nonzero_coefficients_checked": 1842,
+        "placement": "A",
+        "raw_vector_coefficients_checked": 2460,
+        "trace_vector_coefficients_checked": 36,
+        "wrong_c_coefficients_rejected": 609
+      },
+      {
+        "c_zeta_exponent": 3,
+        "embedding": 2,
+        "nonzero_coefficients_checked": 1845,
+        "placement": "B",
+        "raw_vector_coefficients_checked": 2460,
+        "trace_vector_coefficients_checked": 36,
+        "wrong_c_coefficients_rejected": 612
+      },
+      {
+        "c_zeta_exponent": 4,
+        "embedding": 4,
+        "nonzero_coefficients_checked": 1842,
+        "placement": "A",
+        "raw_vector_coefficients_checked": 2460,
+        "trace_vector_coefficients_checked": 36,
+        "wrong_c_coefficients_rejected": 609
+      },
+      {
+        "c_zeta_exponent": 4,
+        "embedding": 4,
+        "nonzero_coefficients_checked": 1845,
+        "placement": "B",
+        "raw_vector_coefficients_checked": 2460,
+        "trace_vector_coefficients_checked": 36,
+        "wrong_c_coefficients_rejected": 612
+      }
+    ],
+    "formula": "U5(original)=(U5-c)Q; c=zeta^3 for omega2 and zeta^4 for omega4",
+    "modulus": 244140625,
+    "nu389_modulus": 42504617,
+    "source_q_bound": 4096,
+    "source_sha256": "5054b565231b63457eba413dfcb3e74eb0970891a6dfbc7a91375bdff57857d3",
+    "trace_U_identity_output_q_bound": 11
+  },
+  "scope": "Finite exact coefficient identities and tail-inequality arithmetic. The quantitative theorem is conditional on the Coleman fixed-weight family realization (CF) and the specified integral geometric models in README. No new projected elliptic vector, global regulator comparison, or Lean verification is computed.",
+  "status": "PASS",
+  "valuation_arithmetic": {
+    "CM_jet_output_norm_valuation": "-29/25",
+    "G_minus_one_valuation": "1/25",
+    "cutoffs": [
+      {
+        "further_loss_digits": 0,
+        "requested_digits": 1,
+        "retained_pole_order": 9,
+        "tail_digits_before_further_loss": 1
+      },
+      {
+        "further_loss_digits": 1,
+        "requested_digits": 1,
+        "retained_pole_order": 10,
+        "tail_digits_before_further_loss": 2
+      },
+      {
+        "further_loss_digits": 2,
+        "requested_digits": 1,
+        "retained_pole_order": 11,
+        "tail_digits_before_further_loss": 3
+      },
+      {
+        "further_loss_digits": 3,
+        "requested_digits": 1,
+        "retained_pole_order": 12,
+        "tail_digits_before_further_loss": 4
+      },
+      {
+        "further_loss_digits": 0,
+        "requested_digits": 2,
+        "retained_pole_order": 10,
+        "tail_digits_before_further_loss": 2
+      },
+      {
+        "further_loss_digits": 1,
+        "requested_digits": 2,
+        "retained_pole_order": 11,
+        "tail_digits_before_further_loss": 3
+      },
+      {
+        "further_loss_digits": 2,
+        "requested_digits": 2,
+        "retained_pole_order": 12,
+        "tail_digits_before_further_loss": 4
+      },
+      {
+        "further_loss_digits": 3,
+        "requested_digits": 2,
+        "retained_pole_order": 14,
+        "tail_digits_before_further_loss": 5
+      },
+      {
+        "further_loss_digits": 0,
+        "requested_digits": 4,
+        "retained_pole_order": 12,
+        "tail_digits_before_further_loss": 4
+      },
+      {
+        "further_loss_digits": 1,
+        "requested_digits": 4,
+        "retained_pole_order": 14,
+        "tail_digits_before_further_loss": 5
+      },
+      {
+        "further_loss_digits": 2,
+        "requested_digits": 4,
+        "retained_pole_order": 15,
+        "tail_digits_before_further_loss": 6
+      },
+      {
+        "further_loss_digits": 3,
+        "requested_digits": 4,
+        "retained_pole_order": 16,
+        "tail_digits_before_further_loss": 7
+      },
+      {
+        "further_loss_digits": 0,
+        "requested_digits": 6,
+        "retained_pole_order": 15,
+        "tail_digits_before_further_loss": 6
+      },
+      {
+        "further_loss_digits": 1,
+        "requested_digits": 6,
+        "retained_pole_order": 16,
+        "tail_digits_before_further_loss": 7
+      },
+      {
+        "further_loss_digits": 2,
+        "requested_digits": 6,
+        "retained_pole_order": 17,
+        "tail_digits_before_further_loss": 8
+      },
+      {
+        "further_loss_digits": 3,
+        "requested_digits": 6,
+        "retained_pole_order": 19,
+        "tail_digits_before_further_loss": 9
+      },
+      {
+        "further_loss_digits": 0,
+        "requested_digits": 8,
+        "retained_pole_order": 17,
+        "tail_digits_before_further_loss": 8
+      },
+      {
+        "further_loss_digits": 1,
+        "requested_digits": 8,
+        "retained_pole_order": 19,
+        "tail_digits_before_further_loss": 9
+      },
+      {
+        "further_loss_digits": 2,
+        "requested_digits": 8,
+        "retained_pole_order": 20,
+        "tail_digits_before_further_loss": 10
+      },
+      {
+        "further_loss_digits": 3,
+        "requested_digits": 8,
+        "retained_pole_order": 21,
+        "tail_digits_before_further_loss": 11
+      },
+      {
+        "further_loss_digits": 0,
+        "requested_digits": 12,
+        "retained_pole_order": 22,
+        "tail_digits_before_further_loss": 12
+      },
+      {
+        "further_loss_digits": 1,
+        "requested_digits": 12,
+        "retained_pole_order": 24,
+        "tail_digits_before_further_loss": 13
+      },
+      {
+        "further_loss_digits": 2,
+        "requested_digits": 12,
+        "retained_pole_order": 26,
+        "tail_digits_before_further_loss": 14
+      },
+      {
+        "further_loss_digits": 3,
+        "requested_digits": 12,
+        "retained_pole_order": 27,
+        "tail_digits_before_further_loss": 15
+      }
+    ],
+    "finite_tail_minimum_regressions": 255,
+    "log_G_valuation_lower_bound": -1,
+    "operator_jet_valuation_lower_bounds": [
+      0,
+      0,
+      0
+    ],
+    "output_radius": "4/5",
+    "pole_reduction_loss": "floor(log_5(i-1))",
+    "product_jet_output_norm_valuation": "-58/25",
+    "radius": "4/25",
+    "second_W_coefficient_bound": "max(0,ceil((20*i-58)/25)-4)",
+    "tail_table": [
+      {
+        "pole_reduced_tail_digits": 2,
+        "retained_pole_order": 10
+      },
+      {
+        "pole_reduced_tail_digits": 4,
+        "retained_pole_order": 12
+      },
+      {
+        "pole_reduced_tail_digits": 6,
+        "retained_pole_order": 15
+      },
+      {
+        "pole_reduced_tail_digits": 8,
+        "retained_pole_order": 17
+      },
+      {
+        "pole_reduced_tail_digits": 10,
+        "retained_pole_order": 20
+      },
+      {
+        "pole_reduced_tail_digits": 12,
+        "retained_pole_order": 22
+      }
+    ],
+    "weight_rescaling": "W=25*w"
+  }
+}

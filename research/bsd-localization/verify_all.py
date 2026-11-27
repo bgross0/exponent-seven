@@ -50,6 +50,11 @@ JOBS = [
      ["--bound", "2048", "--digits", "12", "--output", "trace_scaling/traces-2048-12.json.gz", "--check"], None),
     ("cubic_trace_6825_12", "trace_scaling/cubic_trace.py", ["--check"], None),
     ("independent_cubic_trace_overlap", "trace_scaling/check_cubic_overlap.py", ["--check"], None),
+    ("leading_coordinate_and_projective_target", "leading_comparison/check_leading.py", ["--check"], None),
+    ("conditional_cm_tail_arithmetic", "cm_tail_bound/check_bound.py", ["--check"], None),
+    ("cubic_undepleted_euler_transfer", "cm_product_transfer/check_transfer.py", ["--check"], None),
+    ("cubic_undepleted_product_6825_12", "cm_product_transfer/product_trace.py", ["--check"], None),
+    ("finite_two_slope_projection_certificates", "projection_backend/check_projection.py", ["--check"], None),
 ]
 
 
@@ -85,7 +90,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, actual tame-trace jets, exact elliptic Hecke projection, low-weight interpolation, weight reflection and cubic descent identities, q6825 cubic trace at twelve digits, two-slope coordinate calibration, residue-filter arithmetic, classical geometry dimensions, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. The Sage backend geometry jobs have not run in this environment. No new Lean verification, upstream CM reconstruction, overconvergent input-tail bound, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner."}
+               "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, conditional tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, and algebraic lift/descent/Bockstein fixtures. The analytic tail theorem retains the explicitly stated Coleman-family and integral-model hypotheses. External Sage geometry runs have separate provenance. No new Lean verification, upstream CM reconstruction, unconditional infinite-operator identification, arithmetic global Bockstein, actual projected CM vector, or nonzero reflected logarithm is certified by this runner."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

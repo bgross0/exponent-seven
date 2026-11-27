@@ -1,0 +1,239 @@
+{
+  "DL_Euler_candidate": {
+    "arithmetic_line_comparison_proved": false,
+    "critical_over_ordinary": [
+      15070,
+      68205,
+      21655
+    ],
+    "critical_over_ordinary_mod5": [
+      0,
+      0,
+      0
+    ],
+    "cubic_basis": [
+      "1",
+      "xi",
+      "xi^2"
+    ],
+    "modulus": 78125,
+    "omega_eta_coordinates": [
+      [
+        46526,
+        61230,
+        61230
+      ],
+      [
+        12990,
+        37980,
+        37980
+      ]
+    ],
+    "polynomial": "E(F)/(1-F^2)=((-2-10*tau)+(11+tau)*F)/3",
+    "stabilized_coordinates": [
+      [
+        62101,
+        54190,
+        54190
+      ],
+      [
+        16020,
+        49980,
+        49980
+      ]
+    ],
+    "tau": "zeta^3+zeta^4=1-xi-xi^2"
+  },
+  "PR_annihilator_line": {
+    "coordinates_mod5": [
+      3,
+      1
+    ],
+    "not_the_same_line_as_DL_candidate_mod5": true,
+    "omega_eta_coordinates_mod_5_power_7": [
+      13133,
+      32916
+    ]
+  },
+  "cm_norm_two_coordinate": {
+    "delta": 52766382,
+    "delta_mod5": 2,
+    "digits": 12,
+    "formula": "(log(10+omega)-log(11-omega))/(7*log(6))",
+    "linear_odd_parameter_scale_for_a_equals_2_omega": 52766382,
+    "modulus": 244140625,
+    "normalization_scope": "Uses supplied primitive quaternionic sign and norm-two cycle; other normalizations may multiply by a unit.",
+    "omega_mod_5_power_13": 304628837,
+    "quadratic_coordinate_scale_mod5": 4,
+    "raw_quadratic_residue_mod5": 1,
+    "regularized_norm_two_theta_residue_mod5": 4,
+    "regularized_theta_after_CM_weight_substitution_mod5": 1,
+    "unoriented_norm_two_cycle_sign": "delta or -delta; the quadratic transport is unchanged"
+  },
+  "scope": "Exact CM parameter transport, theta-residue transport, DL Euler candidate-line algebra, and insufficiency models. The ordinary order-two result is a theorem-based deduction in README using the supplied theta identification. No critical second coefficient, bad-line reciprocity comparison, or nonzero reflected logarithm is computed.",
+  "shear_countermodels": [
+    {
+      "bad_line": [
+        1,
+        0
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "finite_log": 0,
+      "r": 0
+    },
+    {
+      "bad_line": [
+        1,
+        -1
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "finite_log": 1,
+      "r": 0
+    },
+    {
+      "bad_line": [
+        1,
+        -5
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          -5,
+          1
+        ]
+      ],
+      "finite_log": 5,
+      "r": 0
+    },
+    {
+      "bad_line": [
+        1,
+        1
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "finite_log": 0,
+      "r": 1
+    },
+    {
+      "bad_line": [
+        1,
+        0
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "finite_log": 1,
+      "r": 1
+    },
+    {
+      "bad_line": [
+        1,
+        -4
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          -4,
+          1
+        ]
+      ],
+      "finite_log": 5,
+      "r": 1
+    },
+    {
+      "bad_line": [
+        1,
+        7
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "finite_log": 0,
+      "r": 7
+    },
+    {
+      "bad_line": [
+        1,
+        6
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "finite_log": 1,
+      "r": 7
+    },
+    {
+      "bad_line": [
+        1,
+        2
+      ],
+      "comparison": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "finite_log": 5,
+      "r": 7
+    }
+  ],
+  "status": "PASS"
+}

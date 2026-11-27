@@ -6,8 +6,11 @@ Date: 2026-11-27. Pilot: E389.a1, K=Q(sqrt(-71)), p=5.
 The new results are an exact two-slope coordinate calibration, a finite
 195-dimensional model for the open cohomology, and a targeted cup-product
 formula that can extract the elliptic factor using a classical weight-12
-trace. Two Sage backend gates are supplied as executable handoffs; neither
-was run in this environment, which has no Sage or Magma installation.
+trace. Two Sage backend gates were first supplied as executable handoffs.
+They are now being exercised on the research branch's cloud runner;
+the local Python environment has no Sage or Magma installation. A run
+starting does not certify the output: its result and provenance are
+recorded separately.
 
 The most useful next job is to build the backend geometry once. It is shared
 by every input coefficient and every weight jet. The existing trace input
@@ -153,13 +156,18 @@ The numerical path after the matrix gate is specific:
    diagnostic; the final certificate also needs the tail bound.
 
 For a finite matrix known modulo 5^M with one-dimensional target kernel,
-let c be the largest nonzero Smith exponent. The kernel direction is
-determined modulo 5^(M-c). If its normalization has valuation v, the
-normalized functional has at most M-c-v absolute digits. This is the
-elementary-divisor mechanism behind the LSZ method, expressed in the
-row-operator convention used by Sage. It is not legitimate to set c=0
-merely because the elliptic roots differ by a unit: other overconvergent
-eigenpackets may be congruent to either root.
+an invertible complementary minor with inverse guard c determines a
+primitive kernel direction modulo 5^(M-c), conditional on the compatible
+exact eigenline. Normalization needs a separate quotient bound. If the
+evaluated numerator and denominator have precisions a,b, with denominator
+valuation v<b and numerator valuation at least t, the quotient has
+precision min(a-v,b+t-2v). The earlier M-c-v rule requires extra
+structure, such as an integral output; a coordinate of the normalized
+functional can otherwise require M-c-2v. The executable certificate and
+an exact counterexample to the unconditional rule are in
+[projection_backend](../projection_backend/README.md). It is not
+legitimate to set c=0 merely because the elliptic roots differ by a unit:
+other overconvergent eigenpackets may be congruent to either root.
 
 The geometry matrices have rational/5-adic coefficients. They can act on
 the three coefficient columns in the cubic fixed field identified by
@@ -193,9 +201,14 @@ complementary weights. That removes the need to estimate a general
 inverse-Bol operator. What is still required is a uniform integral norm
 bound for these ordinary-family sections and their two weight jets on a
 specified strict neighborhood, including the finite V5 operations.
-An ordinary unit eigenvalue and integral q-coefficients alone have not
-been converted here into that quantitative bound. The correct remaining
-norm problem is now much more special, but it is not declared solved.
+The continuation in [cm_tail_bound](../cm_tail_bound/README.md) now proves
+an explicit bound for the undepleted CM product. Its source review
+constructs the qualitative fixed-weight eigenfamily, and its minimum-norm
+argument supplies the quantitative estimate. A fixed Euler operator then
+recovers the depleted input, as proved in
+[cm_product_transfer](../cm_product_transfer/README.md). The numerical
+backend must still certify its integral lattice comparison before using
+that bound as a final error estimate.
 
 ## 4. A 195-dimensional algebraic core
 
