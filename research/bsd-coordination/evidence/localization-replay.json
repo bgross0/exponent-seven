@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "check": "eligibility",
+      "command": [
+        "python",
+        "eligibility/arithmetic/check_eligibility.py",
+        "--check",
+        "eligibility/arithmetic/eligibility.json"
+      ],
+      "elapsed_seconds": 0.060433,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "twist_interval",
+      "command": [
+        "python",
+        "eligibility/arithmetic/check_twist_lvalue.py",
+        "--check",
+        "eligibility/arithmetic/twist-lvalue.json"
+      ],
+      "elapsed_seconds": 1.48469,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "localization_and_logic",
+      "command": [
+        "python",
+        "logic/verify_logic.py"
+      ],
+      "elapsed_seconds": 0.038459,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cyclotomic_fixtures",
+      "command": [
+        "python",
+        "logic/c7_period.py"
+      ],
+      "elapsed_seconds": 0.054217,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "ring_class_projection",
+      "command": [
+        "python",
+        "projection/ring_class_projection.py"
+      ],
+      "elapsed_seconds": 0.105807,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    }
+  ],
+  "python": "3.12.14",
+  "scope": "Exact arithmetic and algebraic fixtures; mathematical interpretation in notes; no Lean verification or curve-specific theta/CM period computation.",
+  "sha256": {
+    "README.md": "11e3dca73b21841b41565a089b481226fc02c5014744a983afb8dc55803578aa",
+    "eligibility/arithmetic/README.md": "9d026df1c9da3edd14361f3e125158aab37ccd02ce94eff7fbe573d067a3d003",
+    "eligibility/arithmetic/check_eligibility.py": "b7643acf2d370104993071943c149d90bbc78d083dd5f5fa56a0680bb0a3c0a7",
+    "eligibility/arithmetic/check_twist_lvalue.py": "461b29ddeb6574bd134afbe85870c70c72a3e8982937387325572353b6734ee7",
+    "eligibility/arithmetic/eligibility.json": "02b035463ecbd8eed17e288697873562191739613cfd5b5e58166c570db618c3",
+    "eligibility/arithmetic/twist-lvalue.json": "e387f73acf7323d48a08106e7f36aab50b106b6319eeee057de3e38ddbdfdb37",
+    "literature/THEOREM_LEDGER.md": "ab88e7ef3129d6b6045658076a9443580c2d490d4253105eafd0b15200983d91",
+    "literature/THETA_CONVENTIONS.md": "f35a99ad19483b323bf106bd88fa713f3dccc8a102b5eae027111f3f65a39aee",
+    "logic/AUDIT.md": "b360b3a4566b4ff1cabb31798fed6d141777542896d95ae94c804cf1d59ce7b3",
+    "logic/C7_AUXILIARY_PERIOD.md": "f9d7d97e27cd7085d6c936d5b6fe102196f95e1e6147b1c72685754700c6bf35",
+    "logic/TWIST_INTERVAL_REVIEW.md": "b58ec5a10adfbd15b83913148bfa528a2f89e98f71ef2c93b98b17b1edbd304b",
+    "logic/c7-fixtures.json": "9c23f69d14d751234d5000cc0182f97ad31d87047bf9210ec4eb01e661e6c215",
+    "logic/c7_period.py": "64cc142763b4922abf6d613046efd58633ca5debf1628d0d6072ec7adc09f24f",
+    "logic/result.json": "9243ae1519e37d9d81cd054dfb153f43d6b990163bb8bc00d80ae281fc61546f",
+    "logic/verify_logic.py": "78a16e65b5d22142b0d3c692bf818707188baf6e6757c21be5c4fb5cd2ab62ee",
+    "projection/README.md": "edf0f322199c26f6f686c60248ea04975b0733696c8b2a2567a8133abadbf494",
+    "projection/result.json": "390951cfc0347238b6b8b0dd450c0cc99e6867a7d163cf2c29579f64f5c45c76",
+    "projection/ring_class_projection.py": "d3fe5a0f56bdb3d3ebb46e168d0f56b7b31619b2fab6a8d63384a2bd731b6e70",
+    "verify_all.py": "c5fae3ac5c18a3982faf36f6c0235dcfbae5c2b2da22f5e5997d049e485ff13a"
+  },
+  "status": "PASS"
+}

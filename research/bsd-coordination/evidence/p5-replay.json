@@ -1,0 +1,84 @@
+{
+  "result": "PASS",
+  "recorded_utc": "2026-11-27T16:27:13.057607+00:00",
+  "python_flint_version": "0.9.0",
+  "scope": "Exact computational certificate; classical arithmetic bridges are documented, not end-to-end formalized",
+  "class_polynomial_reconstruction": [
+    {
+      "D": -71,
+      "class_number": 7,
+      "working_bits": 16384,
+      "unique_integer_polynomial": true
+    },
+    {
+      "D": -44375,
+      "class_number": 140,
+      "working_bits": 16384,
+      "unique_integer_polynomial": true
+    }
+  ],
+  "supersingular": {
+    "vertices": 33,
+    "Deuring_roots": 194,
+    "rational_eigenline_dimension": 1,
+    "CM_order7_values": [
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      0,
+      0
+    ]
+  },
+  "theta_jet": {
+    "CM_classes": 140,
+    "comparison_precision": "389^4",
+    "max_derivative_valuation": 12,
+    "min_certified_root_precision": 32,
+    "raw_group_ring_coefficients": [
+      5,
+      -1,
+      -1,
+      5,
+      -8
+    ],
+    "exact_moments": [
+      0,
+      -20,
+      -34
+    ],
+    "moments_mod5": [
+      0,
+      0,
+      1
+    ],
+    "old_level_norm_jet_mod5": [
+      0,
+      0,
+      0
+    ],
+    "unit_root_mod5": 2,
+    "regularization_convention": "Chida-Hsieh section 4.2; class-cycle generator; primitive phi as recorded",
+    "regularized_quadratic_residue_mod5": 4,
+    "invariant_conclusion": "quadratic coefficient is a 5-adic unit; numerical residue depends on normalization"
+  },
+  "curve_point_counts": {
+    "2": 5,
+    "3": 6,
+    "5": 9,
+    "7": 13,
+    "29": 36
+  },
+  "quadratic_twist_modular_symbol_sum": -4,
+  "PARI_replay": "PASS",
+  "input_sha256": {
+    "verify_certificate.py": "deac0c892a597199c597f9749a72e410f0fdaddad76d25d660a617c88852cfe7",
+    "data/supersingular-389.json": "cb60ce7574e6a4a0e8cc9d4f108fec26547131ff7c38c2c682d2f1f1316f1998",
+    "data/cm-jet-p5.json": "0fb46c8b69b82047e613cf2abf8e6235b692e10263fa917fc63f273a6030f2eb",
+    "data/H-minus44375-coeffs.json": "f222661c25ed46012466b9d55ee8f24c1638aa073326e975e79ec1e5ddb8de7c",
+    "data/CM-minus44375-lifts32.json": "cdc3013ad102db99aa503f31a042edf701843d3beaa65a1bdde649e19660e2c2",
+    "data/arithmetic-audit.json": "3db7f2a91081df0bea5bad013649119625f0b2f9489768eff56e3e16d7303b26"
+  },
+  "seconds": 1.668
+}

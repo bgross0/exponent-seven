@@ -1,0 +1,13 @@
+test_altered_class_polynomial (test_rejection.RejectMalformedCertificates.test_altered_class_polynomial) ... ok
+test_duplicate_root_balls (test_rejection.RejectMalformedCertificates.test_duplicate_root_balls) ... ok
+test_forged_nonzero_residue (test_rejection.RejectMalformedCertificates.test_forged_nonzero_residue) ... ok
+test_incomplete_cm_cycle (test_rejection.RejectMalformedCertificates.test_incomplete_cm_cycle) ... ok
+test_insufficient_hensel_precision (test_rejection.RejectMalformedCertificates.test_insufficient_hensel_precision) ... ok
+test_modular_zero_is_not_exact_vanishing (test_rejection.RejectMalformedCertificates.test_modular_zero_is_not_exact_vanishing) ... ok
+test_prime_two_needs_extra_level (test_rejection.RejectMalformedCertificates.test_prime_two_needs_extra_level) ... ok
+test_wrong_isogeny_multiplicity (test_rejection.RejectMalformedCertificates.test_wrong_isogeny_multiplicity) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.249s
+
+OK

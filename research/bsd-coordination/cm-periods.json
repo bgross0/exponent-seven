@@ -1,0 +1,246 @@
+{
+  "CM_orbit": {
+    "CM_stabilizer_weights": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "j_coordinates_in_cycle_order": [
+      [
+        78,
+        112
+      ],
+      [
+        121,
+        0
+      ],
+      [
+        78,
+        277
+      ],
+      [
+        181,
+        321
+      ],
+      [
+        347,
+        53
+      ],
+      [
+        347,
+        336
+      ],
+      [
+        181,
+        68
+      ]
+    ],
+    "local_cycle": [
+      0,
+      2,
+      1,
+      4,
+      5,
+      6,
+      3
+    ],
+    "source_CM_indices": [
+      9,
+      10,
+      13,
+      21,
+      22,
+      28,
+      29
+    ],
+    "source_values_in_vertex_order": [
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "supersingular_indices_in_cycle_order": [
+      9,
+      13,
+      10,
+      22,
+      28,
+      29,
+      21
+    ],
+    "values_in_cycle_order": [
+      -1,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      1
+    ]
+  },
+  "adapter_checks": {
+    "CM_adjacency_rederived_from_full_matrix": true,
+    "cyclotomic_norm": 49,
+    "full_source_verification_replayed": false,
+    "mathematical_Gross_theorem_proved_by_adapter": false,
+    "matrix_function_and_weight_consistency": true,
+    "one_simple_seven_cycle": true,
+    "one_step_translation_norm": 49,
+    "payload_hash_matches_imported_PASS_receipt": true,
+    "pinned_checker_and_CM_payload": true,
+    "reverse_orientation_norm": 49
+  },
+  "class_conventions": {
+    "basepoint_choice": "smallest global CM vertex index; no identity class is asserted",
+    "class_mapping_recomputed_by_adapter": false,
+    "class_mapping_reference": "research/bsd-localization/projection/README.md",
+    "exact_orientation_resolved": false,
+    "generator": "a=(2,omega), represented by (2,-1,9)",
+    "orbit_interpretation": "a^i or a^(-i) acting on an arbitrary base Gross point",
+    "orientation_choice": "smaller-index first neighbor in the undirected norm-two graph",
+    "prime29_class": "c=(29,omega-13)=a^4; a=c^2",
+    "prime29_generator_values_same_orientation": [
+      -1,
+      0,
+      0,
+      0,
+      -1,
+      1,
+      1
+    ]
+  },
+  "curve": {
+    "ainvs": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "conductor": 389,
+    "label": "389.a1"
+  },
+  "cyclotomic_analysis": {
+    "L_value_nonvanishing_certified": false,
+    "all_nontrivial_periods_nonzero_over_Q_zeta7": true,
+    "all_values_equal": false,
+    "cyclotomic_norm": 49,
+    "geometric_validation_performed": false,
+    "missing_bridge": "Verified Gross CM evaluations, eigenfunction identification, and applicable nonzero toric-period formula",
+    "period_remainders_j_1_to_6": [
+      [
+        -2,
+        -1,
+        -2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        -2,
+        -1,
+        -1,
+        -1,
+        -2,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      [
+        -1,
+        -1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        -1,
+        1,
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0,
+        1,
+        -1
+      ]
+    ],
+    "sum_of_values": 0,
+    "unequal_pair_indices": [
+      0,
+      1
+    ],
+    "values": [
+      -1,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      1
+    ]
+  },
+  "external_base_commit": "12c58ddf46ebd89141d4392b519ca7ae533e67ea",
+  "finite_field": {
+    "basis": "1,u",
+    "p": 389,
+    "u_squared": 2
+  },
+  "mathematical_bridge": {
+    "Brandt_model": "Supersingular Brandt module for the definite algebra ramified at 389 and infinity",
+    "CM_model": "The seven roots of H_-71 reduced at 389 give the complete conductor-one CM orbit",
+    "character_convention": "Gross's inverse character exchanges j with -j; all six nontrivial periods are covered",
+    "eigenline": "The recorded one-dimensional T2=-2 eigenline is identified with E by Jacquet-Langlands",
+    "normalization": "One common primitive integral eigenfunction; no independent entry rescalings",
+    "period_formula": "Gross's theorem identifies nonzero projection onto this line with nonzero class-character central L-value",
+    "references": [
+      "research/bsd-theta/research/arithmetic-audit.md, sections 3 and 5",
+      "research/bsd-localization/logic/C7_AUXILIARY_PERIOD.md",
+      "https://wstein.org/papers/bib/Gross-Heights_and_the_Special_Values_of_L-series.pdf, section 11, Theorem 11.5",
+      "https://sites.math.rutgers.edu/~mpy4/ReductionFinalVersion.pdf, section 2, equations (2.1)-(2.2)"
+    ],
+    "status": "Cited mathematical interpretation of imported geometric evidence; not a new program proof",
+    "weighted_pairing": "If <e_i,e_j>=w_i delta_ij, take g=sum_i(phi_i/w_i)e_i; then <e_j,g>=phi_j"
+  },
+  "prime_scope": {
+    "conductor_one_auxiliary_period": "Independent of the Iwasawa prime; usable for the p=29 auxiliary hypothesis",
+    "imported_theta_certificate_prime": 5,
+    "p29_theta_coefficient_certified_here": false,
+    "theta_coefficient_computed_by_adapter": false
+  },
+  "quadratic_field": {
+    "discriminant": -71,
+    "omega_polynomial": "x^2-x+18"
+  },
+  "result": "BSD_ALIGNMENT_C7_PASS",
+  "schema_version": 1,
+  "source_sha256": {
+    "research/bsd-coordination/check_alignment.py": "ae41ef27631d020b6d6f4dac5fa55585dd20080ca9a8afe6158f4a5a819ff514",
+    "research/bsd-localization/logic/C7_AUXILIARY_PERIOD.md": "f9d7d97e27cd7085d6c936d5b6fe102196f95e1e6147b1c72685754700c6bf35",
+    "research/bsd-localization/logic/c7_period.py": "64cc142763b4922abf6d613046efd58633ca5debf1628d0d6072ec7adc09f24f",
+    "research/bsd-localization/projection/README.md": "edf0f322199c26f6f686c60248ea04975b0733696c8b2a2567a8133abadbf494",
+    "research/bsd-theta/data/arithmetic-audit.json": "3db7f2a91081df0bea5bad013649119625f0b2f9489768eff56e3e16d7303b26",
+    "research/bsd-theta/data/supersingular-389.json": "cb60ce7574e6a4a0e8cc9d4f108fec26547131ff7c38c2c682d2f1f1316f1998",
+    "research/bsd-theta/evidence/certificate-verification.json": "704ffabc5feb407854516f0062ce15154df915e2ffd0418742d5ad0d4b2cb1f3",
+    "research/bsd-theta/research/arithmetic-audit.md": "a86c2be2370c29125d914622b007bcd3fc7d7f9f89655264047f860fc61accdc"
+  }
+}
