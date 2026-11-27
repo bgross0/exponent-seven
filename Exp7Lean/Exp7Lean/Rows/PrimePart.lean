@@ -23,9 +23,9 @@ local notation "OFFr" => (4611686018427387904 : ℝ)
 local notation "Zn" => (461168601842738790400000000000000000000 : ℕ)
 
 /-- The hypotheses shared by the evaluators of one row. -/
-structure RowCtx (X LX LXhi sq pack : ℕ) (v : List ℝ) : Prop where
+structure RowCtx (X LX LXhi sq pack : ℕ) (v : List ℝ) (bound : ℕ := 6400) : Prop where
   hX : 2 ≤ X
-  hX' : X ≤ 6400
+  hX' : X ≤ bound
   pk : PackOK v sq pack
   lxpos : 0 < LX
   lx : (LX : ℝ) ≤ Dr * Real.log X
@@ -311,7 +311,7 @@ theorem alg_odd {D sq P lp F rt : ℝ} (hD : D ≠ 0) (hsq : sq ≠ 0) (hP : P �
 
 variable {X LX LXhi sq pack : ℕ} {v : List ℝ}
 
-theorem termLo_le (C : RowCtx X LX LXhi sq pack v) {p L S k : ℕ} (hp : p.Prime)
+theorem termLo_le {B : ℕ} (C : RowCtx X LX LXhi sq pack v B) {p L S k : ℕ} (hp : p.Prime)
     (h1 : (L : ℝ) ≤ Dr * Real.log p) (h2 : Dr * Real.log p ≤ (L : ℝ) + 16)
     (h3 : (S : ℝ) ≤ Dr * √(p : ℝ)) (h4 : Dr * √(p : ℝ) ≤ (S : ℝ) + 1) :
     ((termLo X LX LXhi sq pack p L S k : ℤ) : ℝ) ≤
@@ -429,7 +429,7 @@ def primeLo (X LX LXhi sq pack p L S fuel k : ℕ) : ℤ :=
     (fun _ ih k => cond (Nat.ble X (Nat.pow p k)) 0
       (Int.add (termLo X LX LXhi sq pack p L S k) (ih (Nat.succ k)))) fuel k
 
-theorem primeLo_le (C : RowCtx X LX LXhi sq pack v) {p L S : ℕ} (hp : p.Prime)
+theorem primeLo_le {B : ℕ} (C : RowCtx X LX LXhi sq pack v B) {p L S : ℕ} (hp : p.Prime)
     (h1 : (L : ℝ) ≤ Dr * Real.log p) (h2 : Dr * Real.log p ≤ (L : ℝ) + 16)
     (h3 : (S : ℝ) ≤ Dr * √(p : ℝ)) (h4 : Dr * √(p : ℝ) ≤ (S : ℝ) + 1) (fuel k : ℕ) :
     ((primeLo X LX LXhi sq pack p L S fuel k : ℤ) : ℝ) ≤
@@ -495,22 +495,36 @@ theorem tableSumZ_le_aux (g : ℕ → ℕ → ℕ → ℤ) (F : ℕ → ℝ) (X 
 def totalLo (X LX LXhi sq pack : ℕ) : ℤ :=
   tableSumZ (fun p L S => primeLo X LX LXhi sq pack p L S 13 1) X primeTable6400
 
+/-- Fold a certified table over enough powers to cover every prime power below `X`. -/
+theorem tablePrimeLo_le {B fuel : ℕ} (C : RowCtx X LX LXhi sq pack v B)
+    (T : List (ℕ × ℕ × ℕ)) (hpow : X ≤ 2 ^ (1 + fuel)) (hn : (T.map Prod.fst).Nodup)
+    (hprimes : (T.map Prod.fst).toFinset.filter (· < X) = (Finset.range X).filter Nat.Prime)
+    (hspec : ∀ e ∈ T, e.1.Prime ∧
+      (e.2.1 : ℝ) ≤ Dr * Real.log e.1 ∧ Dr * Real.log e.1 ≤ (e.2.1 : ℝ) + 16 ∧
+      (e.2.2 : ℝ) ≤ Dr * √(e.1 : ℝ) ∧ Dr * √(e.1 : ℝ) ≤ (e.2.2 : ℝ) + 1) :
+    ((tableSumZ (fun p L S => primeLo X LX LXhi sq pack p L S fuel 1) X T : ℤ) : ℝ) ≤
+      Dr * inertSum (autocorr (stepFn (Real.log X) v)) X := by
+  rw [inertSum_eq _ X (1 + fuel) hpow]
+  have hsum : Dr * (2 * ∑ p ∈ (Finset.range X).filter Nat.Prime, ∑ k ∈ Finset.Ico 1 (1 + fuel),
+        if p ^ k < X then ppTerm (autocorr (stepFn (Real.log X) v)) p k else 0) =
+      ∑ p ∈ (Finset.range X).filter Nat.Prime, Dr * ∑ k ∈ Finset.Ico 1 (1 + fuel),
+        if p ^ k < X then 2 * ppTerm (autocorr (stepFn (Real.log X) v)) p k else 0 := by
+    simp only [Finset.mul_sum, mul_ite, mul_zero]
+  rw [hsum, ← hprimes]
+  apply tableSumZ_le_aux _ _ X _ hn
+  intro e he _
+  obtain ⟨hp, h1, h2, h3, h4⟩ := hspec e he
+  exact primeLo_le C hp h1 h2 h3 h4 fuel 1
+
 theorem totalLo_le (C : RowCtx X LX LXhi sq pack v) :
     ((totalLo X LX LXhi sq pack : ℤ) : ℝ) ≤
       Dr * inertSum (autocorr (stepFn (Real.log X) v)) X := by
-  have e20 : (10 : ℝ) ^ 20 = Dr := by norm_num
-  rw [inertSum_eq _ X 14 (le_trans C.hX' (by norm_num))]
-  have hsum : Dr * (2 * ∑ p ∈ (Finset.range X).filter Nat.Prime, ∑ k ∈ Finset.Ico 1 14,
-        if p ^ k < X then ppTerm (autocorr (stepFn (Real.log X) v)) p k else 0) =
-      ∑ p ∈ (Finset.range X).filter Nat.Prime, Dr * ∑ k ∈ Finset.Ico 1 (1 + 13),
-        if p ^ k < X then 2 * ppTerm (autocorr (stepFn (Real.log X) v)) p k else 0 := by
-    simp only [Finset.mul_sum, mul_ite, mul_zero]
-  rw [hsum, ← primeTable6400_filter C.hX']
-  unfold totalLo
-  apply tableSumZ_le_aux _ _ X _ primeTable6400_nodup
-  intro e he _
+  apply tablePrimeLo_le C primeTable6400 (le_trans C.hX' (by decide))
+    primeTable6400_nodup (primeTable6400_filter C.hX')
+  intro e he
   obtain ⟨hp, -, h1, h2, h3, h4⟩ := primeTable6400_spec (p := e.1) (L := e.2.1) (S := e.2.2) he
+  have e20 : (10 : ℝ) ^ 20 = Dr := by norm_num
   rw [e20] at h1 h2 h3 h4
-  exact primeLo_le C hp h1 h2 h3 h4 13 1
+  exact ⟨hp, h1, h2, h3, h4⟩
 
 end Exp7.Rows

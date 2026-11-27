@@ -1,0 +1,2 @@
+'Exp7.theoremD_GRH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.theoremD_fundamental_GRH' depends on axioms: [propext, Classical.choice, Quot.sound]

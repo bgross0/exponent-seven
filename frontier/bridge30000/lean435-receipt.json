@@ -1,0 +1,134 @@
+{
+  "toolchain": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "project_base": "04d553508eb27e2a5a8e3e4becd1da64ccfedd0e",
+  "started_utc": "2026-11-27T03:29:24.530949+00:00",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "Exp7Lean.Rows.Bridge30000",
+        "Exp7GRHBridge.Imported"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.798,
+      "log_sha256": "2d41ea9af4420d8ae29f7424a95b6e648ac5cd075b3bd708a6e878663611c625"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-R",
+        "src",
+        "src/Exp7Lean/Final5.lean",
+        "-o",
+        ".lake/build/lib/lean/Exp7Lean/Final5.olean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.842,
+      "log_sha256": "b05f415f20e039f2512632d59013349543790f18aa436131c00dc32603e22758"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-R",
+        "src",
+        "src/Exp7Lean/Final6.lean",
+        "-o",
+        ".lake/build/lib/lean/Exp7Lean/Final6.olean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.902,
+      "log_sha256": "4309f759e5dbfb8f9e60a4fd23c983b6e09488d489dad714c803d89af468097a"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-R",
+        "src",
+        "src/Exp7GRHBridge/FiniteBridge.lean",
+        "-o",
+        ".lake/build/lib/lean/Exp7GRHBridge/FiniteBridge.olean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.088,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/home/ben/exp7-bridge30000/Declarations435.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.05,
+      "log_sha256": "75d9782d582e34d0979c62aec98b82e5c478edde24c9cc6a8d66c171495846e6"
+    }
+  ],
+  "axioms": {
+    "Exp7.Rows.Bridge30000.primeTotal_eq": [
+      "propext"
+    ],
+    "Exp7.Rows.Bridge30000.margin_eq": [
+      "propext"
+    ],
+    "Exp7.Rows.Bridge30000.margin_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Rows.Bridge30000.rowOK": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Rows.Bridge30000.excludes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Rows.Bridge30000.excludes_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.primeConductor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.bridge30000": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.bridge30000_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD_fundamental_135": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "declarations_sha256": "75d9782d582e34d0979c62aec98b82e5c478edde24c9cc6a8d66c171495846e6",
+  "build_log": "final-build-435.log",
+  "completed_utc": "2026-11-27T03:29:39.211758+00:00",
+  "source_sha256": {
+    "Exp7Lean/Rows/PrimePart.lean": "e8691f0ff80759f41bd357373fe107de79d3b4cbdac1f6024a573d502edd11e4",
+    "Exp7Lean/Rows/JPart.lean": "e549e189935f0f5a1a8fd7cca3f039ceee5a9512daf6eec1e20913c4805366a2",
+    "Exp7Lean/Rows/Check.lean": "5928738fd28dd31b166348f78a7433674c3184fdea0b20946de619321a646d94",
+    "Exp7Lean/Rows/Bridge30000Data.lean": "71f86c1810a291346764b2f08f273b41ebc09518c858bb664d6aa38e499fdd0b",
+    "Exp7Lean/Rows/Bridge30000.lean": "a550211cdd121f93211a5760e06b52bbfa246b50276959166afe1acb478ce24b",
+    "Exp7GRHBridge/FiniteBridge.lean": "bc6cecb4aa6edc58f54e8a658b5f3fd77eb8ee0f92e32f508edb6bbd1f687ee5"
+  }
+}

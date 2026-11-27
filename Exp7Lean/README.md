@@ -2,6 +2,12 @@
 
 A Lean 4 / Mathlib formalization of Theorems A and D. Both are proved with GRH for the quadratic characters of prime conductor as their only hypothesis; the two computer searches are checked in Lean's kernel. The one input that is still assumed is the published split-prime bound used above `10^32` (see `Above.lean`), which Theorems A and D do not use.
 
+The optional finite bridge excludes exponent seven for negative fundamental
+discriminants with `10^32 ≤ |D| ≤ 2^135` under the same GRH input. Its single
+64-cell row has a kernel-certified margin of at least `7.52277024130489382120`.
+Build it with `lake build Exp7Lean.Rows.Bridge30000` from this directory.
+[Proof and verification](../frontier/bridge30000/README.md)
+
 ## Status of each step
 
 | Step | Status |
