@@ -1,0 +1,46 @@
+{
+  "boundary_dimension": 1,
+  "curve": [
+    0,
+    1,
+    1,
+    -2,
+    0
+  ],
+  "cuspidal_dimension": 64,
+  "elliptic_factor_conjugation_dimensions": {
+    "minus": 1,
+    "plus": 1
+  },
+  "elliptic_factor_dimension": 2,
+  "level": 389,
+  "mod5_target_kernel_dimensions": {
+    "T2": 7,
+    "T2_and_T3": 2
+  },
+  "point_count_hecke_eigenvalues": {
+    "2": -2,
+    "3": -2,
+    "5": -3
+  },
+  "polynomial_degree": 32,
+  "polynomial_denominator_5_adic_valuation": 1,
+  "polynomial_identity_verified": "q(T2+4*T3)=q(-10)*P",
+  "polynomial_operator": "T2+4*T3",
+  "polynomial_value_at_target": 4991964896182583587087694480,
+  "precision_loss_witness": {
+    "5_adic_valuation": -1,
+    "entry": "-1/40",
+    "zero_based_column": 0,
+    "zero_based_row": 0
+  },
+  "projector_least_denominator_in_manin_lattice": 40,
+  "relative_dimension": 65,
+  "scope": "Exact proper weight-two Hecke projector; at most one digit of 5-adic loss on a Hecke-stable integral lattice. No overconvergent reduction, crystalline coordinate identification, vector L-value, or nonzero reflected logarithm is asserted.",
+  "small_level_relative_dimensions": {
+    "11": 3,
+    "23": 5,
+    "37": 5
+  },
+  "status": "PASS"
+}

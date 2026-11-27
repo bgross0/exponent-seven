@@ -37,6 +37,10 @@ JOBS = [
     ("ambient_bockstein_algebra", "ambient_arithmetic/check_ambient_jet.py",
      ["--check", "ambient_arithmetic/result.json"], None),
     ("cm_weight_second_jets", "reflected_pilot/cm_weight_jets.py", ["--check"], None),
+    ("actual_tame_trace_jets", "tame_trace_compute/compute_traces.py", ["--check"], None),
+    ("tame_trace_and_interpolation_audit", "tame_trace_audit/check_trace_audit.py",
+     ["--check", "tame_trace_audit/result.json"], None),
+    ("exact_elliptic_hecke_projector", "elliptic_projection/check_projector.py", ["--check"], None),
 ]
 
 
@@ -72,7 +76,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner."}
+               "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, actual tame-trace jets, exact elliptic Hecke projection, low-weight interpolation, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

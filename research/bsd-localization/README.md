@@ -1,7 +1,9 @@
-# Rank-two BSD: finite-coordinate research and exact pilot computations
+# Rank-two BSD: tame traces and an exact elliptic projector
 
-Research branch: `bsd-finite-log-coordinate`, continuing
-`bsd-derived-localization` commit `46ca3323b6b8f10f2334925220a5c75a487a2bfb`.
+Research branch: `bsd-tame-trace-computation`, continuing
+`bsd-finite-log-coordinate` commit `29eaf5a02bff8907b9914cdf71221da8bb6e6896`.
+That branch continued `bsd-derived-localization` at
+`46ca3323b6b8f10f2334925220a5c75a487a2bfb`.
 The preceding audit commit is `12c58ddf46ebd89141d4392b519ca7ae533e67ea`.
 The original base in exponent-seven is
 `640e6c91b3485e1a55c99476ecb06ebd8379740b`.
@@ -19,11 +21,12 @@ input, extracts further exact consequences, and develops a specific global
 class to investigate next. It does not redo the 140-class CM construction.
 The original p=29 arithmetic and projection work remains available below.
 
-This continuation specifies the missing local coordinate, computes its
-interpolation annihilator, and produces exact CM weight derivatives for
-a possible analytic comparison. It also certifies a nonzero cyclotomic
-height on the pilot's strict line. The reflected class's finite logarithm
-has not yet been evaluated.
+This continuation computes the actual tame traces of the CM weight jets
+and certifies a full two-dimensional elliptic Hecke projector with an
+explicit one-digit precision bound. It follows the earlier finite-coordinate,
+crystalline, and cyclotomic-height work. The remaining computational step
+is proper de Rham reduction of the traced inputs; the reflected class's
+finite logarithm has not yet been evaluated.
 
 ## What is completed
 
@@ -46,7 +49,9 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Explicit interpolation annihilator | `zeta=(20I-13F)/45 omega`, computed modulo `5^7` | [Local crystalline proof](local_crystalline/README.md), using exact Frobenius modulo `5^8` |
 | Cyclotomic strict height | `h_cyc(R,R)/5=1 mod5`, for `R=(log Q/5)P-(log P/5)Q` | [Exact rational height certificate](local_crystalline/height_leading.py); this is a cyclotomic quantity |
 | CM analytic input | Weight-one CM forms and their first two normalized weight derivatives, both p-adic embeddings | [Executable input and scope](reflected_pilot/README.md); no projected vector L-value or global class is computed |
-| Tame-level reduction | Two degeneracy traces recover the entire E-old component at level 389 with an invertible recovery matrix modulo 5 | [Trace argument and conditional resource estimates](reflected_pilot/README.md); the cusp/trace computation remains to be implemented |
+| Actual tame traces | Both traces equal `Xi+U71 Xi`; eight inputs through q128 and weight order two modulo 5^5 | [Proof](tame_trace_theory/TAME_TRACE.md), [computation](tame_trace_compute/README.md), and [independent audit](tame_trace_audit/README.md) |
+| Exact elliptic projector | Complete rank-two E factor; polynomial in T2 and T3 with at most one 5-adic digit of loss | [Witness and checker](elliptic_projection/README.md); proper de Rham reduction of the input remains separate |
+| Low-weight interpolation | Fourteen classical CM weights suffice for a second coefficient modulo 5^12 in an integral fixed module | [Proof and exact weights](tame_trace_audit/README.md); reduction and normalization denominators must be added |
 | Global obstruction criterion | The reflected logarithm is nonzero exactly when the augmentation-localized global H2 has length one, under the listed identifications | [Conditional arithmetic reduction](ambient_arithmetic/README.md); the actual first global Bockstein has not been evaluated |
 
 These additions contain mathematical proofs and exact Python calculations.
@@ -124,41 +129,96 @@ explicitly conjectural. The
 [source ledger](finite_log_reciprocity/SOURCE_LEDGER.md) records exact
 theorem scopes, including the recent finite-slope and CM results.
 
-## Reducing the next analytic computation before adding hardware
+## New completed step: actual traces and an exact projector
 
-The common tame level of the triple product is `71*389=27619`. The two
-degeneracy maps to level 389 each have degree 72. On the elliptic
-component their trace/pullback matrix is
+The two CM cross products at tame level `71*389=27619` have fixed total
+weight two. The new [trace proof](tame_trace_theory/TAME_TRACE.md)
+tracks the native CM Fricke sign, the oldform character at 389, and the
+unique depleted inverse-Bol primitive. It proves that the whole family
+is Fricke-71 invariant. Consequently the two geometric degeneracy traces
+are equal, including their weight derivatives:
 
 \[
-\begin{pmatrix}72&a_{71}(E)\\a_{71}(E)&72\end{pmatrix}
-=\begin{pmatrix}72&-10\\-10&72\end{pmatrix}.
+\boxed{\operatorname{Tr}_1\Xi_j=\operatorname{Tr}_2\Xi_j
+=\Xi_j+U_{71}\Xi_j,\qquad j=0,1,2.}
 \]
 
-Its determinant is `5084=4 mod5`. Both traces together therefore retain
-the entire E-old component, with no 5-adic precision loss in recovering
-it. A single trace would not suffice for an arbitrary oldform combination.
-The trace applies to the whole modular-form product; a trace of each
-factor separately is a different operation.
+This bypasses independent construction of all 72 cusp expansions for
+these particular inputs. The proof uses analytic continuation from a
+sequence of classical weights accumulating at weight one, not a finite
+numerical test of the identity.
 
-For the stated 12-digit reference Katz setup, moving the subsequent
-projection to level 389 changes these illustrative workspace bounds:
+The [computed trace artifact](tame_trace_compute/traces.json) contains
+all eight inputs (two p-adic embeddings, two cross-oldform placements,
+and two depletion variants), each through `q^128` and `W^2`, modulo
+`5^5`. Generation requires raw CM input through `q^9088`. It checks all
+98,328 overlapping raw vector coefficients against the earlier 12-digit
+archive. An independent algebraic weight-five specialization supplies
+5,776 further vector-coefficient checks. The oldspace normalization is
+tested with the actual elliptic q-series and independently with Delta
+at weight twelve. These are finite input checks, not a computation of
+the projected arithmetic class.
 
-| Quantity | At level 27619 | After two traces to level 389 |
+On the elliptic oldspace the trace/pullback matrix is
+
+\[
+\begin{pmatrix}72&-10\\-10&72\end{pmatrix}.
+\]
+
+The Fricke-plus symmetry reduces recovery to
+
+\[
+\Pi_{E,\mathrm{old}}\Xi_j
+=(\pi_1^*+\pi_2^*)\left(\frac1{62}\Pi_E\operatorname{Tr}_1\Xi_j\right).
+\]
+
+This is a two-dimensional de Rham vector, not an ordinary-only line.
+The factor 62 is a 5-adic unit. The final global test vector still has
+to use its prescribed combination of the degeneracy coordinates.
+
+The separate [elliptic projector certificate](elliptic_projection/README.md)
+constructs the 65-dimensional relative Manin-symbol space at level 389
+and isolates the complete rank-two elliptic factor. With `A=T2+4*T3`,
+an explicit monic degree-32 integer polynomial gives
+
+\[
+P_E=\frac{q(A)}{q(-10)},\qquad
+q(-10)=4991964896182583587087694480,\quad v_5(q(-10))=1.
+\]
+
+The identity is checked entry-by-entry over the rationals. It transfers
+as an identity of Hecke correspondences to proper de Rham cohomology.
+On any Hecke-stable integral lattice the projection loses at most one
+5-adic digit. The Manin matrix has an entry `-1/40`, demonstrating why
+one cannot assume this projector integral. Its two eigenvector columns
+are not silently identified with the crystalline `omega,eta` basis.
+
+### Correct resource accounting
+
+For the stated 12-digit reference Katz setup:
+
+| Quantity | At tame level 27619 | After trace, at tame level 389 |
 |---|---:|---:|
 | Weight-78 modular-form dimension | 180182 | 2503 |
-| Required input q bound for the reference setup | 912600 | 12675 |
+| q coefficients consumed by the projection stage | 912600 | 12675 |
+| Raw CM bound to provide those trace coefficients | 912600 | 899925 |
 | One dense matrix, four-byte entries | 129862212496 bytes | 25060036 bytes |
 | One dense matrix, eight-byte working entries | 259724424992 bytes | 50120072 bytes |
 
-This is a factor of 72 in the q bound and about 5182 in the dense matrix
-storage estimate. It is not a measured runtime improvement. Implementing
-the two traces requires the other cusp/coset expansions or an equivalent
-cohomological representation, with the two distinct Hasse/Eisenstein
-pullback trivializations tracked at bounded precision. These operations,
-additional matrices, and eigenprojection denominators are not included
-in the table. The saved 4096-term CM jets are a checked input fixture;
-the full traced projection and reciprocity comparison remain outstanding.
+The matrix-storage estimate improves by about 5182. The factor 72 in
+q precision concerns the **projection stage**: obtaining `B` traced
+coefficients still needs raw coefficients through `71B`. It is not a
+72-fold reduction in raw CM generation, nor a measured runtime gain.
+The new trace identity controls the cusp operation, while overconvergent
+reduction, its tail bound, extra matrices, and final normalization retain
+their own costs.
+
+The q128 pilot exceeds the classical weight-two Sturm bound 65. That
+is useful for classical regressions, but it does not certify an arbitrary
+overconvergent jet from finitely many q coefficients. The next missing
+computational operation is the proper de Rham reduction at level 389
+with both slopes and bounded denominators. A full regulator comparison
+with the CH class remains a separate mathematical obligation.
 
 ## A global test independent of computing the full vector L-function
 
@@ -393,8 +453,9 @@ python research/bsd-localization/verify_all.py --receipt research/bsd-localizati
 
 The runner checks the original arithmetic, p5, formal-log, reflection,
 exterior-algebra, finite-coordinate, crystalline, height, ambient-jet and
-CM-weight-jet certificates against saved data. The ambient algebra
-checker uses SymPy 1.14.0; the other scripts use Python's standard library.
+CM-weight-jet, tame-trace, interpolation and exact Hecke-projector
+certificates against saved data. The ambient algebra and Hecke projector
+use SymPy 1.14.0; the other scripts use Python's standard library.
 The receipt records exit status, timing, and hashes of sources and
 compressed data. This command does not rebuild or reverify the other
 thread's CM/Lean package; its input provenance and mathematical scope are
