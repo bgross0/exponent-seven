@@ -1114,7 +1114,7 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./frontier/haa
 12525f0c203482f59c7e0507e698d511c81be3f1b14779716271e748bab4a1be  ./frontier/haar-tail/lean437-declarations.log
 e063bd63e5471571900d750cba181c91615ffefd8231f60a6539bad1aaa2b40d  ./frontier/haar-tail/lean437-receipt.json
 6ce988c6a129878039c34fe386ceee7b2fd0af8ef38eb29062e2d26bff85d17b  ./frontier/haar-tail/search-cache.json
-cac87aed6f967074c16970345d832b3076eaa0ae36dc18fe22a50b3ba2b1e76a  ./frontier/least-split-exclusion/README.md
+1102f9046c46bdf772d78d1dcdcd669f358af1f9aaf402fcb4d8126b4db98356  ./frontier/least-split-exclusion/README.md
 6827c2144e53c231b36d9936ee37db01b7e491fdc8cc9dcd68912d30cdd04119  ./frontier/least-split-exclusion/kernel-replay.json
 ad25eaf38eb3fc876123c8f892ce24a139fbabe3de367f1715af477f259f34be  ./frontier/least-split-exclusion/kernel-replay.log
 026ce5d2ad7b0145b75d3dd483b5c4ed02b5257d6bcdd5ccddebcb7af058706d  ./independent/AUDIT.md

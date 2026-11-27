@@ -95,10 +95,13 @@ fresh evaluation of the 465 high certificates or the 401 low certificates.
 [Commands, source hashes, and exit codes](kernel-replay.json) ·
 [Replay log](kernel-replay.log)
 
-From `Exp7Lean/`:
+From `Exp7Lean/`, when the existing high-search certificate objects have already
+been checked and are available:
 
 ```sh
-lake build Exp7Lean.Arithmetic.LeastSplitFull Exp7Lean.Arithmetic.LeastSplitExamples
+lake build Exp7Lean.Arithmetic.LeastSplitClass Exp7Lean.Arithmetic.LeastSplitExamples
+lake env lean -o .lake/build/lib/lean/Exp7Lean/Arithmetic/LeastSplitFull.olean \
+  Exp7Lean/Arithmetic/LeastSplitFull.lean
 lake env leanchecker -v Exp7Lean.Arithmetic.PrincipalPower
 lake env leanchecker -v Exp7Lean.Arithmetic.LeastSplit
 lake env leanchecker -v Exp7Lean.Arithmetic.LeastSplitClass
@@ -106,7 +109,13 @@ lake env leanchecker -v Exp7Lean.Arithmetic.LeastSplitFull
 ```
 
 A fresh checkout will also need to build the existing dependencies and high
-certificates. The final applied module is imported by `Exp7Full`; the version
+certificates, using `lake build Exp7Lean.Arithmetic.LeastSplitFull` with resources
+appropriate for the certificate run. The direct compile above reuses the
+checked objects even when their Lake build traces are absent. A full-target
+build in this checkout started rebuilding those old certificates and was stopped;
+no successful fresh certificate run is claimed here.
+
+The final applied module is imported by `Exp7Full`; the version
 with the high-search input explicit is imported by the default `Exp7Lean`
 target. No new Lean 4.35 integration result is claimed.
 
