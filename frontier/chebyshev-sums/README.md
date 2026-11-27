@@ -19,12 +19,10 @@ argument. Every sum has an explicit finite range.
 | `weightedPrimeBalance_gt` | The three inequalities imply the strict dyadic comparison for every `n ≥ 19`. |
 | `exists_cutoff_above_bridge` | Dyadic index selection gives the strict threshold for each `q > 2^135`. |
 
-The remaining link is to prove that the project's `Exp7.inertSum` for the
-two-cell Haar row dominates this balance. This requires the autocorrelation
-values on both half intervals and the signs and cutoffs of the prime-power
-terms. Combining that link with the Archimedean bound and the explicit
-formula would yield the exclusion above the bridge. The certified
-classification currently reaches `|D| ≤ 2^135`.
+The subsequent [Haar tail proof](../haar-tail/) connects this balance to
+the project's actual `Exp7.inertSum`, obtains the exclusion above the
+finite bridge, and compiles the classification for all negative fundamental
+discriminants in the shared workspace.
 
 `DyadicArithmetic.lean` is the unchanged arithmetic proof from the [pinned
 handoff](https://github.com/bgross0/exponent-seven/blob/248889f68a9a399ac1c4a011f89af1c4aa87ecd3/frontier/chebyshev-tail/ChebyshevTailArithmetic.lean).

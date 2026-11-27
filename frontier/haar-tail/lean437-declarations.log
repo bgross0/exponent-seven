@@ -1,0 +1,11 @@
+Exp7.ChebyshevTail.weightedPrimeBalance_le_inertSum {X : ℕ} (hX : 1 < X) :
+  Exp7.ChebyshevTail.weightedPrimeBalance ↑X ≤ Exp7.inertSum (Exp7.autocorr (Exp7.stepFn (Real.log ↑X) [1, -1])) X
+'Exp7.ChebyshevTail.weightedPrimeBalance_le_inertSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.ChebyshevTail.excludes_above_bridge (hGRH : Exp7.GRHPrimeConductor) {q : ℕ} (hq : Nat.Prime q) (h4 : q % 4 = 3)
+  (hlarge : 2 ^ 135 < q) : ¬Exp7.IsExp7 q
+'Exp7.ChebyshevTail.excludes_above_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.ChebyshevTail.classification_fundamental (hGRH : Exp7.GRHPrimeConductor) (hS : Exp7.SearchHigh)
+  (hSL : Exp7.SearchLow) (a b : ℤ) (hfund : (QuadraticAlgebra.discr a b).IsFundamentalDiscr)
+  (hneg : QuadraticAlgebra.discr a b < 0) [IsDomain (QuadraticAlgebra ℤ a b)] :
+  Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) = 7 ↔ ∃ q ∈ Exp7.known, QuadraticAlgebra.discr a b = -↑q
+'Exp7.ChebyshevTail.classification_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]

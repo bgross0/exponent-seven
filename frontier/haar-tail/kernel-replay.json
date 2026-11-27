@@ -1,0 +1,51 @@
+{
+  "tool": "Lean 4.35.0 leanchecker",
+  "mode": "Replay declarations of each named module against its imports",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Tail.HaarInert"
+      ],
+      "exit_code": 0,
+      "seconds": 3.535
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Tail.HaarJBound"
+      ],
+      "exit_code": 0,
+      "seconds": 3.475
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Tail.Exclusion"
+      ],
+      "exit_code": 0,
+      "seconds": 3.493
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7GRHBridge.Global"
+      ],
+      "exit_code": 0,
+      "seconds": 3.706
+    }
+  ],
+  "log_sha256": "72157d695c4c33bd2778c4f4c332daca0727e7aef5cf1f4ce598851f59edc433"
+}
