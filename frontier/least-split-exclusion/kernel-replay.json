@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-27",
+  "toolchain": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+  "baseline": "510bee972de41b79f9428f73bf78c61ed43bb091",
+  "mode": "Replay each named module against its compiled imports; existing search certificates reused, not re-evaluated.",
+  "commands": [
+    {
+      "command": [
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Arithmetic.PrincipalPower"
+      ],
+      "exit_code": 0,
+      "seconds": 11.314
+    },
+    {
+      "command": [
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Arithmetic.LeastSplit"
+      ],
+      "exit_code": 0,
+      "seconds": 10.766
+    },
+    {
+      "command": [
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Arithmetic.LeastSplitClass"
+      ],
+      "exit_code": 0,
+      "seconds": 10.221
+    },
+    {
+      "command": [
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Arithmetic.LeastSplitFull"
+      ],
+      "exit_code": 0,
+      "seconds": 10.258
+    }
+  ],
+  "source_sha256": {
+    "Exp7Lean/Exp7Lean/Arithmetic/PrincipalPower.lean": "f947408235211371833118a7936cd878d5e32102d51e525d0d89f82304b4d11c",
+    "Exp7Lean/Exp7Lean/Arithmetic/LeastSplit.lean": "73576842cc670932390cc959cc4b7dd6242dab629bc131a3e4d574df45bb3b59",
+    "Exp7Lean/Exp7Lean/Arithmetic/LeastSplitClass.lean": "dbe55530e8a539f5d363bc3d88d711700ca97e4e0abb97137c319a648103ab87",
+    "Exp7Lean/Exp7Lean/Arithmetic/LeastSplitFull.lean": "1ad5be398b3785d7d0881197607e803efdb1638602861935a1afb9c85870d418",
+    "Exp7Lean/Exp7Lean/Arithmetic/LeastSplitExamples.lean": "437687f68f6446e97658caff02000e3687e3ad4e9e9e0b7b411dd7c179e3491e"
+  },
+  "log_sha256": "ad25eaf38eb3fc876123c8f892ce24a139fbabe3de367f1715af477f259f34be"
+}

@@ -39,9 +39,20 @@ IsExp7 q + two distinct unramified split primes p,r, with p odd
      -> determinant_factorization and composition_identity
 ```
 
-The arithmetic modules contain 27 reusable theorems, excluding example fixtures.
+The initial `NormBounds`, `TwoSplitPrimes`, and `InertThreshold` modules contain
+27 reusable theorems, excluding example fixtures.
 These are elementary consequences and integration lemmas, not a claim of new
 number theory or an improved classification bound.
+
+## Proved application: the least split prime
+
+The library now feeds a concrete exclusion: under GRH, for every prime conductor
+`q = 3 mod 4` with `q >= QLOW`, the class of an ideal above the least split prime
+has nontrivial powers 1, 3, 5, and 7. This does not assume exponent seven for the
+whole class group. `LeastSplitFull.lean` supplies the existing high search and is
+part of `Exp7Full`; `LeastSplitClass.lean` keeps that input explicit.
+
+See the [proof and remaining odd-order obligation](../../../frontier/least-split-exclusion/README.md).
 
 ## Entry points for the research branches
 

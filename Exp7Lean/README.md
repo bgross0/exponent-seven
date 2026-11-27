@@ -24,6 +24,7 @@ In a Lean 4.35 workspace that builds `grh-compact` at `lsernau/grh-lean@72fead1`
 
 | Step | Status |
 |---|---|
+| Least split prime: no norm representations or trivial class powers at exponents 1, 3, 5, 7, for every prime conductor `q >= QLOW`, assuming GRH | **proved** (`Arithmetic/LeastSplitFull.lean`), with the existing high search supplied; the order-at-least-nine conclusion still takes oddness of the order as an explicit input. [Proof and validation](../frontier/least-split-exclusion/README.md) |
 | Step 0, genus theory (fundamental `D` to prime `q`) | **proved** (`Genus/Main.lean`) |
 | Step 1, class group to norm equation | **proved** for Mathlib's `ClassGroup` (`Step1.lean`) |
 | Bootstrap, least split prime, ladder bounds, Jacobi conditions | **proved** (`Main.lean`, `Low.lean`) |
