@@ -1,0 +1,4 @@
+-r requirements.txt
+# Discovery only; not imported by the independent verifier.
+numpy==2.3.5
+sympy==1.14.0

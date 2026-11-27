@@ -1,0 +1,13 @@
+⚠ [4052/4054] Replayed BSDRankTwo
+warning: BSDRankTwo.lean: imports `Mathlib.Data.Nat.Choose.Factorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.Algebra.Polynomial.Coeff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Substitution` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Inverse` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [4053/4054] Ran BSDRankTwo:irArts
+warning: BSDRankTwo.lean: imports `Mathlib.Data.Nat.Choose.Factorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.Algebra.Polynomial.Coeff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Substitution` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Inverse` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (4054 jobs).

@@ -1,0 +1,4 @@
+PASS supersingular Brandt module: 33 vertices; dim T2=-2 is 1; CM values [-1, -1, 0, 1, 1, 0, 0]
+PASS CM polynomial / lifts: 140 roots; min v(H)=32; max v(H')=12
+PASS CM graph: connected 140-cycle; raw Gamma1 coefficients [5, -1, -1, 5, -8]; jet mod5 [0, 0, 1]
+CM_INDEPENDENT_AUDIT_PASS PARI=[2, 19, 1]

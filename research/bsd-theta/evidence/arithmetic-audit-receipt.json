@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-11-27T15:57:58.346192+00:00",
+  "command": [
+    "/workspace/scratch/a5e8474eb180/deps/pari/gp",
+    "-fq",
+    "-s",
+    "256M",
+    "scripts/arithmetic_audit.gp"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "consecutive_replays_identical": true,
+  "stdout_is_valid_single_json_document": true,
+  "pass_marker_count": 1,
+  "hashes": {
+    "scripts/arithmetic_audit.gp": "bbb5eb508aee7d7055036548270c2c8dd955b07953a50170f62b553a1f57cfdb",
+    "data/arithmetic-audit.json": "3db7f2a91081df0bea5bad013649119625f0b2f9489768eff56e3e16d7303b26",
+    "evidence/arithmetic-audit.log": "3db7f2a91081df0bea5bad013649119625f0b2f9489768eff56e3e16d7303b26"
+  },
+  "pari_version": "PARI/GP 2.19.1"
+}

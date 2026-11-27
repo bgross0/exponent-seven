@@ -1,0 +1,47 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "verify_certificate.py",
+        "--gp",
+        "/workspace/scratch/a5e8474eb180/deps/pari/gp"
+      ],
+      "exit_code": 0,
+      "log": "evidence/certificate-replay.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "evidence/rejection-tests.log"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a5e8474eb180/deps/pari/gp",
+        "-fq",
+        "-s",
+        "256M",
+        "scripts/cm_independent_audit.gp"
+      ],
+      "exit_code": 0,
+      "log": "evidence/cm-independent-replay.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "formal/verify.py"
+      ],
+      "exit_code": 0,
+      "log": "evidence/formal-replay-summary.log"
+    }
+  ]
+}

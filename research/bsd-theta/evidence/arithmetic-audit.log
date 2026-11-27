@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "engine": "PARI/GP 2.19.1",
+  "curve": {"label": "389a1", "ainvs": [0,1,1,-2,0], "conductor": 389, "minimal_discriminant": 389, "c4": 112, "root_number": 1},
+  "p": 29,
+  "ordinary_reduction": {"ap": -6, "unit_root_mod_841": 139},
+  "mod29_irreducibility": {"frobenius_prime": 3, "point_count": 6, "trace": -2, "determinant": 3, "discriminant_mod29": 21, "legendre_symbol": -1},
+  "ramification_at_389": {"v_minimal_discriminant": 1, "v_c4": 0, "reduction": "split multiplicative I1", "mod29_inertia_nontrivial": true},
+  "positive_rank_witness": {"rational_point": [0,0], "good_reduction_orders_at3_and7": [6,13], "torsion_order_divides": 1, "point_nontorsion": true},
+  "quadratic_field": {"discriminant": -71, "integral_generator_polynomial": "x^2-x+18", "class_number": 7, "prime29_form": [29, 25, 6], "prime29_reduced_form": [3, 1, 6], "prime29_class_powers": [[3, 1, 6], [2, -1, 9], [4, -3, 5], [4, 3, 5], [2, 1, 9], [3, -1, 6], [1, 1, 18]], "prime29_omega_residue": 13, "splitting_at29": 1, "splitting_at389": -1},
+  "auxiliary_character_candidate": {"psi_class_generator_image": "zeta_7", "chi": "psi^2 = psi / psi^tau", "chi_prime29": "zeta_7^2", "zeta7_residue_mod29": 16, "theta_series_level": 71, "p_regular": true, "L_EK_chi_nonzero": "exact nonconstant CM toric sum; requires cited Gross/Waldspurger identification"},
+  "modular_symbols": {
+    "method": "exact rational Hecke eigenlines, primitive integral scaling; no analytic period normalization",
+    "initial_eigenvalues": [[2, -2], [3, -2], [5, -3], [7, -5]],
+    "minus_ambient_dimension": 32, "plus_ambient_dimension": 33,
+    "sturm_bound": 65, "all_prime_hecke_checks_through_bound": true,
+    "minus_symbol": [1, 1, 2, -1, -1, 2, -1, -2, -1, 2, 1, 2, -1, 0, -1, 0, 0, 0, 1, -2, 2, 0, 1, -2, -2, 0, 0, 0, 0, -2, 2, 3],
+    "plus_symbol": [0, 0, -1, 0, 1, 1, 0, 0, 0, 1, 2, 0, 0, -1, 0, 0, 0, 1, 0, -1, 0, 2, -1, 0, -1, 0, -1, 1, 0, 0, 0, 1, 1],
+    "L_E_1_symbol": 0,
+    "twist_cusp_values_a1_to70": [2, -2, -1, 0, -1, 2, -3, 2, 1, 1, 0, 0, 1, 4, 0, -1, -3, 0, 1, 0, 0, -3, -2, -2, -2, 0, -4, -3, 1, -2, 1, -1, 1, 1, 2, -2, -1, -1, 1, -1, 2, -1, 3, 4, 0, 2, 2, 2, 3, 0, 0, -1, 0, 3, 1, 0, -4, -1, 0, 0, -1, -1, -2, 3, -2, 1, 0, 1, 2, -2],
+    "twist_kronecker_weights_a1_to70": [1, 1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1],
+    "quadratic_twist_symbol_sum": -4,
+    "L_quadratic_twist_nonzero": true
+  },
+  "p5_candidate": {"p": 5, "ap": -3, "unit_root_mod25": 7, "splitting": 1, "frobenius3_discriminant_mod5": 2, "legendre_symbol": -1, "prime5_form": [5, 3, 4], "prime5_reduced_form": [4, -3, 5], "prime5_class_power_of_prime29": 3, "prime5_omega_residue": 2, "psi_prime5": "zeta_7^3", "chi_prime5": "zeta_7^6", "coefficient_field": "Q5(zeta_7), unramified degree6", "p_regular_residually": true, "mod5_absolutely_irreducible_via_frobenius_and_unipotent_inertia": true, "ring_class_group_size_conductor5": 28, "ring_class_group_size_conductor25": 140, "ring_class_group_size_conductor125": 700},
+  "independent_brandt_check": {"field": "F389[u]/(u^2-2)", "supersingular_count": 33, "all_j_checked_supersingular": true, "matrix_rebuilt_from_pari_Phi2": true, "T2_charpoly_matches_modular_symbols": true, "eigenvalue_minus2_multiplicity": 1, "phi": [0, 0, 0, 2, -2, -2, -2, 1, 1, -1, -1, 1, 1, 0, -1, -1, 0, 0, 0, 1, 1, 1, 1, 0, -1, -1, 0, 2, 0, 0, 2, -1, -1], "H_minus71_coefficients_ascending": [737707086760731113357714241006081263, -425319473946139603274605151187659, 5138800366453976780323726329446, -823534263439730779968091389, 98394038810047812049302, -3091990138604570, 313645809715, 1], "CM_indices_zero_based": [9, 10, 13, 21, 22, 28, 29], "CM_values": [-1, -1, 0, 1, 1, 0, 0], "CM_T2_is_seven_cycle": true},
+  "conductor5_correction_check": {"discriminant": -1775, "Hilbert_polynomial_degree": 28, "root_multiplicities_in_ssj_order": [0, 0, 0, 2, 0, 0, 0, 1, 1, 0, 0, 2, 2, 0, 3, 3, 3, 3, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2, 2], "total_phi_sum": 0, "ordinary_correction_after_tame_projection_is_zero": true},
+  "conductor25_class_group_check": {"discriminant": -44375, "class_number": 140, "norm2_form": [2, 1, 5547], "norm2_form_order": 140, "order_checks_at_exponents": [140,70,28,20]},
+  "theta_status": {"class_number_one_appendix_applies_directly": false, "ring_class_group_size_conductor29_squared": 5684, "ring_class_group_size_conductor29_cubed": 164836, "p29_tame_torsion_size": 196, "p5_tame_torsion_size": 28, "constant_and_linear_terms_vanish_by_theory": true, "p29_quadratic_coefficient": "NOT COMPUTED", "p5_quadratic_coefficient": "separate cm-jet-p5.json certificate; normalization audit external"},
+  "result": "PARI_ARITHMETIC_AUDIT_PASS",
+  "limitations": ["No full BSD conclusion", "No end-to-end formal proof", "Classical modularity, Eichler-Shimura, Sturm, CM and Gross/Waldspurger theorems are mathematical dependencies", "Conductor25 theta jet is checked by a separate script"]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "pass_marker": "CM_INDEPENDENT_AUDIT_PASS PARI=[2, 19, 1]",
+  "utc": "2026-11-27T16:02:23.157519+00:00",
+  "command": [
+    "../deps/pari/gp",
+    "-fq",
+    "-s",
+    "256M",
+    "scripts/cm_independent_audit.gp"
+  ],
+  "exit_code": 0,
+  "sha256": {
+    "scripts/cm_independent_audit.gp": "367e766fa19c053e8a08b6e5a33ea442dc5caa3c3383e19e0fce105dbb05dcf8",
+    "data/supersingular-389.json": "cb60ce7574e6a4a0e8cc9d4f108fec26547131ff7c38c2c682d2f1f1316f1998",
+    "data/H-minus44375-coeffs.json": "f222661c25ed46012466b9d55ee8f24c1638aa073326e975e79ec1e5ddb8de7c",
+    "data/CM-minus44375-lifts32.json": "cdc3013ad102db99aa503f31a042edf701843d3beaa65a1bdde649e19660e2c2",
+    "data/cm-jet-p5.json": "0fb46c8b69b82047e613cf2abf8e6235b692e10263fa917fc63f273a6030f2eb",
+    "evidence/cm-independent-gp.log": "1e35f83609152d31aab12367a38810fdf8316a0df4effe70326ea4c9d5d613d4"
+  },
+  "independence": "Uses PARI built-in polmodular, polclass, finite fields, exact rational quadratic-field evaluation, class groups, and matrix algebra. Does not import either Python probe. The supersingular witness arrays are embedded in the GP source.",
+  "scope": [
+    "Exact supersingular Brandt module and primitive rational eigenfunction",
+    "All seven H_-71 roots and nonconstant rational CM weights",
+    "Fresh polclass(-44375) comparison",
+    "140 strong Hensel root certificates and exact Phi2 congruence graph",
+    "Connected 140-cycle and raw Gamma1 coefficients [5,-1,-1,5,-8]",
+    "Raw quadratic jet [0,0,1] modulo 5"
+  ],
+  "limitations": [
+    "The PARI class-polynomial routine is a trusted arithmetic dependency in this independent check; see the separate FLINT/Arb provenance certificate for rigorous analytic enclosure verification.",
+    "CM, Jacquet-Langlands, Gross/Waldspurger, ordinary theta normalization, and the published generalized Kato theorem are classical mathematical dependencies rather than Lean proofs."
+  ],
+  "portable_command": [
+    "gp",
+    "-fq",
+    "-s",
+    "256M",
+    "scripts/cm_independent_audit.gp"
+  ],
+  "stderr_empty": true
+}

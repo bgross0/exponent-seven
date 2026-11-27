@@ -1,0 +1,26 @@
+import BSDRankTwo
+
+#check BSDRankTwo.prime_pow_dvd_choose
+#check BSDRankTwo.first_omitted_coefficient_valuation
+#check BSDRankTwo.finite_level_coeff_dvd
+#check BSDRankTwo.exact_order_of_certificate
+#check BSDRankTwo.exact_order_two_of_certificate
+#check BSDRankTwo.exact_order_two_at_two
+#check BSDRankTwo.coeff_one_eq_zero_of_substitution_symmetry
+#check BSDRankTwo.X_sq_dvd_of_inversion_symmetry
+
+#print axioms BSDRankTwo.prime_pow_dvd_choose
+#print axioms BSDRankTwo.prime_pow_dvd_choose_low
+#print axioms BSDRankTwo.first_omitted_coefficient_valuation
+#print axioms BSDRankTwo.omega_coeff_dvd
+#print axioms BSDRankTwo.coeff_mul_dvd
+#print axioms BSDRankTwo.finite_level_coeff_dvd
+#print axioms BSDRankTwo.exact_order_of_certificate
+#print axioms BSDRankTwo.exact_order_two_of_certificate
+#print axioms BSDRankTwo.exact_order_two_at_two
+#print axioms BSDRankTwo.coeff_one_subst_of_constantCoeff_zero
+#print axioms BSDRankTwo.coeff_one_eq_zero_of_substitution_symmetry
+#print axioms BSDRankTwo.X_sq_dvd_of_substitution_symmetry
+#print axioms BSDRankTwo.inversionSeries_constantCoeff
+#print axioms BSDRankTwo.inversionSeries_coeff_one
+#print axioms BSDRankTwo.X_sq_dvd_of_inversion_symmetry

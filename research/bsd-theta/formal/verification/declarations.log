@@ -1,0 +1,41 @@
+BSDRankTwo.prime_pow_dvd_choose {p n m s k : ℕ} (hp : Nat.Prime p) (hlevel : m + s ≤ n) (hk0 : 0 < k)
+  (hk : k < p ^ (s + 1)) : p ^ m ∣ (p ^ n).choose k
+BSDRankTwo.first_omitted_coefficient_valuation {p n m : ℕ} (hp : Nat.Prime p) (hm : 0 < m) (hlevel : m ≤ n) :
+  ((p ^ n).choose (p ^ (n - m + 1))).factorization p = m - 1
+BSDRankTwo.finite_level_coeff_dvd.{u_1} {R : Type u_1} [CommRing R] {p n m s k : ℕ} (hp : Nat.Prime p)
+  (hlevel : m + s ≤ n) (hk : k < p ^ (s + 1)) (F G H J : PowerSeries R)
+  (happrox : F - G = ↑(BSDRankTwo.omegaPoly p n) * H + PowerSeries.C ↑(p ^ m) * J) :
+  ↑(p ^ m) ∣ (PowerSeries.coeff k) F - (PowerSeries.coeff k) G
+BSDRankTwo.exact_order_of_certificate.{u_1} {R : Type u_1} [CommRing R] {p n m s d : ℕ} (hp : Nat.Prime p)
+  (hlevel : m + s ≤ n) (hd : d < p ^ (s + 1)) (F G H J : PowerSeries R)
+  (happrox : F - G = ↑(BSDRankTwo.omegaPoly p n) * H + PowerSeries.C ↑(p ^ m) * J)
+  (hvanish : ∀ i < d, (PowerSeries.coeff i) F = 0) (hresidue : ¬↑(p ^ m) ∣ (PowerSeries.coeff d) G) : F.order = ↑d
+BSDRankTwo.exact_order_two_of_certificate.{u_1} {R : Type u_1} [CommRing R] {p n m : ℕ} (hp : Nat.Prime p) (hp2 : 2 < p)
+  (hlevel : m ≤ n) (F G H J : PowerSeries R)
+  (happrox : F - G = ↑(BSDRankTwo.omegaPoly p n) * H + PowerSeries.C ↑(p ^ m) * J) (hvanish : PowerSeries.X ^ 2 ∣ F)
+  (hresidue : ¬↑(p ^ m) ∣ (PowerSeries.coeff 2) G) : F.order = 2
+BSDRankTwo.exact_order_two_at_two.{u_1} {R : Type u_1} [CommRing R] {n m : ℕ} (hlevel : m + 1 ≤ n)
+  (F G H J : PowerSeries R) (happrox : F - G = ↑(BSDRankTwo.omegaPoly 2 n) * H + PowerSeries.C ↑(2 ^ m) * J)
+  (hvanish : PowerSeries.X ^ 2 ∣ F) (hresidue : ¬↑(2 ^ m) ∣ (PowerSeries.coeff 2) G) : F.order = 2
+BSDRankTwo.coeff_one_eq_zero_of_substitution_symmetry.{u_1} {R : Type u_1} [CommRing R] (F U B : PowerSeries R)
+  (h_two : ∀ (a : R), a + a = 0 → a = 0) (hF : PowerSeries.constantCoeff F = 0) (hU : PowerSeries.constantCoeff U = 1)
+  (hB : PowerSeries.constantCoeff B = 0) (hB1 : (PowerSeries.coeff 1) B = -1) (hsym : F = U * PowerSeries.subst B F) :
+  (PowerSeries.coeff 1) F = 0
+BSDRankTwo.X_sq_dvd_of_inversion_symmetry.{u_1} {R : Type u_1} [CommRing R] (F U : PowerSeries R)
+  (h_two : ∀ (a : R), a + a = 0 → a = 0) (hF : PowerSeries.constantCoeff F = 0) (hU : PowerSeries.constantCoeff U = 1)
+  (hsym : F = U * PowerSeries.subst BSDRankTwo.inversionSeries F) : PowerSeries.X ^ 2 ∣ F
+'BSDRankTwo.prime_pow_dvd_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.prime_pow_dvd_choose_low' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.first_omitted_coefficient_valuation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.omega_coeff_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.coeff_mul_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.finite_level_coeff_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.exact_order_of_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.exact_order_two_of_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.exact_order_two_at_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.coeff_one_subst_of_constantCoeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.coeff_one_eq_zero_of_substitution_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.X_sq_dvd_of_substitution_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.inversionSeries_constantCoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.inversionSeries_coeff_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BSDRankTwo.X_sq_dvd_of_inversion_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]

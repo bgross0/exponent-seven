@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "PARI_arithmetic_replay": "PASS",
+    "actual_C7_adapter": "BSD_ALIGNMENT_C7_PASS",
+    "all_external_files_preserved": true,
+    "all_imported_files_byte_identical": true,
+    "cyclotomic_norm": 49,
+    "localization_original_checks": 5,
+    "new_document_relative_links": "PASS",
+    "p5_exact_certificate": "PASS"
+  },
+  "external_base_commit": "12c58ddf46ebd89141d4392b519ca7ae533e67ea",
+  "formal_scope": "Previously completed build and kernel replay preserved with unchanged sources; not replayed for this integration.",
+  "recorded_utc": "2026-11-27T16:31:34.510653+00:00",
+  "sha256": {
+    "research/README.md": "5692cbb4a3fefd8baa32501bd97ca71996180e45a3aca354d86b2a2cc98fd76b",
+    "research/bsd-coordination/README.md": "81e3d70b8d66a8a983607d0fb95aa8093d32c2cfa0203a68bc3e670e15a55fc7",
+    "research/bsd-coordination/check_alignment.py": "ae41ef27631d020b6d6f4dac5fa55585dd20080ca9a8afe6158f4a5a819ff514",
+    "research/bsd-coordination/cm-periods.json": "c3ebc1c3fcba80ed034adcae9bd5ec827f8d7de2209d3794bb196c21af3aad64"
+  },
+  "status": "PASS"
+}

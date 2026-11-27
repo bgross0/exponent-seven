@@ -1,0 +1,132 @@
+{
+  "recorded_utc": "2026-11-27T16:02:50.647060+00:00",
+  "lean": "Lean (version 4.36.0, x86_64-unknown-linux-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "mathlib_revision": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "scope": "Algebraic finite-level coefficient, exact-order certificate, and exact inversion-symmetry soundness.",
+  "kernel_replay_scope": "BSDRankTwo declarations replayed against compiled imports.",
+  "source_sha256": {
+    "BSDRankTwo.lean": "4fb173ee6ca9a14fcf115480db39185fdaa83079d5955b29ab022a76041562c0",
+    "Check.lean": "671d17389e6041fae24b24b21de2776c67ceb4d82b8b18f97a7d4c17ae238f18",
+    "lean-toolchain": "582a63f8f9c5128067b688778c1051cf1464c3ca9d57b9325025c051c29b774a",
+    "lakefile.toml": "f89aef7cdd35b025c7807231776a6707c62f537b86c3919bb7ba4980919788d7",
+    "lake-manifest.json": "2a4d383818a8ebc6d1fef49a0b018d8eb073456f657b08a5f407bd3cad62eb6e",
+    "verify.py": "2f4ef728223ea20a877785a2bf6f3d96803fe94d401d6acfcef287bf7a876359"
+  },
+  "object_sha256": "4b2f3aa080713cc7db991efee682d21ff62dd3d1f70e89e75bdb42dcb5301b38",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "BSDRankTwo"
+      ],
+      "exit_code": 0,
+      "seconds": 3.137,
+      "log": "build.log",
+      "log_sha256": "a8f63e7ca399012c7f901d25d14b863c73d7b473c3f5c2f35f300cf8bf96b3a3"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.469,
+      "log": "declarations.log",
+      "log_sha256": "a540e5dc34783f22d4f78e065b016709f8aeb666842f2e61305af6b283e4e646"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDRankTwo"
+      ],
+      "exit_code": 0,
+      "seconds": 3.669,
+      "log": "kernel-replay.log",
+      "log_sha256": "e2c9a1ab207d49b7f8e4047675665b888d745c9ee6b5032197ef903412bfbbcd"
+    }
+  ],
+  "axioms": {
+    "BSDRankTwo.prime_pow_dvd_choose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.prime_pow_dvd_choose_low": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.first_omitted_coefficient_valuation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.omega_coeff_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.coeff_mul_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.finite_level_coeff_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.exact_order_of_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.exact_order_two_of_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.exact_order_two_at_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.coeff_one_subst_of_constantCoeff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.coeff_one_eq_zero_of_substitution_symmetry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.X_sq_dvd_of_substitution_symmetry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.inversionSeries_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.inversionSeries_coeff_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDRankTwo.X_sq_dvd_of_inversion_symmetry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "forbidden_construct_scan_passed": true
+}
