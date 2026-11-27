@@ -1,0 +1,7 @@
+$ python3 check_eligibility.py --check eligibility.json
+PASS: independently recomputed every arithmetic field in eligibility.json
+exit_code=0
+
+$ python3 check_twist_lvalue.py --check twist-lvalue.json
+PASS: exact rational recomputation agrees with twist-lvalue.json
+exit_code=0

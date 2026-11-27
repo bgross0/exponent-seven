@@ -1,0 +1,63 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "check_eligibility.py",
+        "--check",
+        "eligibility.json"
+      ],
+      "elapsed_seconds": 0.05674,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "PASS: independently recomputed every arithmetic field in eligibility.json\n"
+    },
+    {
+      "command": [
+        "python3",
+        "check_twist_lvalue.py",
+        "--check",
+        "twist-lvalue.json"
+      ],
+      "elapsed_seconds": 1.343025,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "PASS: exact rational recomputation agrees with twist-lvalue.json\n"
+    }
+  ],
+  "generated_at_utc": "2026-11-27T16:01:28.443090+00:00",
+  "limitations": [
+    "No Lean toolchain available in this current workspace; no kernel-checked claim.",
+    "Finite arithmetic interpretation uses the standard reduction, Frobenius, Tate-curve and binary-form theorems explained in README.",
+    "The positive central L-value additionally uses modularity, the stated conductor/root number, Mellin/Fricke identity, and Hasse bounds.",
+    "No auxiliary ring-class-character central L-value, rank upper bound, Selmer-dimension bound, or BSD formula is established."
+  ],
+  "primary_sources": [
+    {
+      "url": "https://www.lmfdb.org/EllipticCurve/Q/data/389.a1",
+      "use": "Identity of curve and model only; arithmetic recomputed independently."
+    },
+    {
+      "url": "https://www.lmfdb.org/NumberField/2.0.71.1",
+      "use": "Independent cross-check of fundamental discriminant and class number."
+    },
+    {
+      "url": "https://math.berkeley.edu/~ribet/Articles/toulousela.pdf",
+      "use": "Tate-uniformization ramification argument in Proposition3.4; interpretation theorem is not implemented in Python."
+    },
+    {
+      "url": "https://web.math.ucsb.edu/~castella/Kato-print.pdf",
+      "use": "Motivating theorem hypotheses; no full theorem application is claimed."
+    }
+  ],
+  "python_version": "3.12.14",
+  "sha256": {
+    "README.md": "b5a327054798079bf40eac309f9b940363db8d6d4a9298555c7576efbed0ef05",
+    "check_eligibility.py": "b7643acf2d370104993071943c149d90bbc78d083dd5f5fa56a0680bb0a3c0a7",
+    "check_twist_lvalue.py": "461b29ddeb6574bd134afbe85870c70c72a3e8982937387325572353b6734ee7",
+    "eligibility.json": "02b035463ecbd8eed17e288697873562191739613cfd5b5e58166c570db618c3",
+    "twist-lvalue.json": "e387f73acf7323d48a08106e7f36aab50b106b6319eeee057de3e38ddbdfdb37",
+    "verification.log": "7fe21eaef9baed4edb7e790805c6c2b11a3bc43d4195627eeeb8e1c6f7b94a02"
+  },
+  "status": "PASS_EXACT_ARITHMETIC_NOT_LEAN"
+}

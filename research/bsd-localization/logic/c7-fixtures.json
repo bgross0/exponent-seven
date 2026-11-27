@@ -1,0 +1,369 @@
+{
+  "fixtures": [
+    {
+      "L_value_nonvanishing_certified": false,
+      "actual_Gross_data": false,
+      "all_nontrivial_periods_nonzero_over_Q_zeta7": false,
+      "all_values_equal": true,
+      "cyclotomic_norm": 0,
+      "fixture_name": "zero_vector",
+      "geometric_validation_performed": false,
+      "missing_bridge": "Verified Gross CM evaluations, eigenfunction identification, and applicable nonzero toric-period formula",
+      "period_remainders_j_1_to_6": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "sum_of_values": 0,
+      "unequal_pair_indices": null,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "L_value_nonvanishing_certified": false,
+      "actual_Gross_data": false,
+      "all_nontrivial_periods_nonzero_over_Q_zeta7": false,
+      "all_values_equal": true,
+      "cyclotomic_norm": 0,
+      "fixture_name": "constant_nonzero_fault",
+      "geometric_validation_performed": false,
+      "missing_bridge": "Verified Gross CM evaluations, eigenfunction identification, and applicable nonzero toric-period formula",
+      "period_remainders_j_1_to_6": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "sum_of_values": 35,
+      "unequal_pair_indices": null,
+      "values": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "L_value_nonvanishing_certified": false,
+      "actual_Gross_data": false,
+      "all_nontrivial_periods_nonzero_over_Q_zeta7": true,
+      "all_values_equal": false,
+      "cyclotomic_norm": 1,
+      "fixture_name": "unit_period",
+      "geometric_validation_performed": false,
+      "missing_bridge": "Verified Gross CM evaluations, eigenfunction identification, and applicable nonzero toric-period formula",
+      "period_remainders_j_1_to_6": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "sum_of_values": 1,
+      "unequal_pair_indices": [
+        0,
+        1
+      ],
+      "values": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "L_value_nonvanishing_certified": false,
+      "actual_Gross_data": false,
+      "all_nontrivial_periods_nonzero_over_Q_zeta7": true,
+      "all_values_equal": false,
+      "cyclotomic_norm": 7,
+      "fixture_name": "balanced_one_minus_zeta",
+      "geometric_validation_performed": false,
+      "missing_bridge": "Verified Gross CM evaluations, eigenfunction identification, and applicable nonzero toric-period formula",
+      "period_remainders_j_1_to_6": [
+        [
+          1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "sum_of_values": 0,
+      "unequal_pair_indices": [
+        0,
+        1
+      ],
+      "values": [
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "L_value_nonvanishing_certified": false,
+      "actual_Gross_data": false,
+      "all_nontrivial_periods_nonzero_over_Q_zeta7": true,
+      "all_values_equal": false,
+      "cyclotomic_norm": 594823321,
+      "fixture_name": "invisible_mod_29_but_nonzero",
+      "geometric_validation_performed": false,
+      "missing_bridge": "Verified Gross CM evaluations, eigenfunction identification, and applicable nonzero toric-period formula",
+      "period_remainders_j_1_to_6": [
+        [
+          29,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          29,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          29,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          29,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          29,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          29,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "sum_of_values": 29,
+      "unequal_pair_indices": [
+        0,
+        1
+      ],
+      "values": [
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "status": "Exact cyclotomic fixtures passed; no curve-specific periods computed"
+}

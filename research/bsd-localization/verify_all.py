@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+"""Recompute the BSD localization package's exact arithmetic certificates."""
+
+import argparse
+from concurrent.futures import ThreadPoolExecutor
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+
+ROOT = Path(__file__).resolve().parent
+JOBS = [
+    ("eligibility", "eligibility/arithmetic/check_eligibility.py",
+     ["--check", "eligibility/arithmetic/eligibility.json"], None),
+    ("twist_interval", "eligibility/arithmetic/check_twist_lvalue.py",
+     ["--check", "eligibility/arithmetic/twist-lvalue.json"], None),
+    ("localization_and_logic", "logic/verify_logic.py", [], "logic/result.json"),
+    ("cyclotomic_fixtures", "logic/c7_period.py", [], "logic/c7-fixtures.json"),
+    ("ring_class_projection", "projection/ring_class_projection.py", [], "projection/result.json"),
+]
+
+
+def run_job(job):
+    name, script, arguments, expected_path = job
+    command = [sys.executable, script, *arguments]
+    start = time.perf_counter()
+    process = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
+    elapsed = time.perf_counter() - start
+    if process.returncode:
+        raise RuntimeError(f"{name} failed:\n{process.stdout}\n{process.stderr}")
+    if expected_path:
+        expected = json.loads((ROOT / expected_path).read_text())
+        actual = json.loads(process.stdout)
+        if actual != expected:
+            raise RuntimeError(f"{name}: fresh output differs from {expected_path}")
+    return {"check": name, "command": ["python", script, *arguments],
+            "exit_code": process.returncode, "matches_saved_certificate": True,
+            "elapsed_seconds": round(elapsed, 6)}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--receipt", type=Path)
+    args = parser.parse_args()
+    with ThreadPoolExecutor(max_workers=5) as pool:
+        checks = list(pool.map(run_job, JOBS))
+    hashes = {}
+    for path in sorted(ROOT.rglob("*")):
+        if path.is_file() and path.suffix in (".py", ".md", ".json"):
+            if path.name == "verification.json":
+                continue
+            hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
+    receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
+               "sha256": hashes,
+               "scope": "Exact arithmetic and algebraic fixtures; mathematical interpretation in notes; no Lean verification or curve-specific theta/CM period computation."}
+    if args.receipt:
+        args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+    print(json.dumps(receipt, indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

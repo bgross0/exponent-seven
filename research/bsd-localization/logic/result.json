@@ -1,0 +1,117 @@
+{
+  "countermodels": {
+    "base_field": "Q; also valid after extension to Q_p",
+    "cases": [
+      {
+        "exact_sequence_checked": true,
+        "kappa": [
+          0,
+          1
+        ],
+        "kappa_in_localization_kernel": true,
+        "kappa_in_mw_model": false,
+        "localization_rank": 1,
+        "mw_model_dimension": 0,
+        "selmer_model_dimension": 2,
+        "sha_tate_model_dimension": 2
+      },
+      {
+        "exact_sequence_checked": true,
+        "kappa": [
+          0,
+          1
+        ],
+        "kappa_in_localization_kernel": true,
+        "kappa_in_mw_model": false,
+        "localization_rank": 1,
+        "mw_model_dimension": 1,
+        "selmer_model_dimension": 2,
+        "sha_tate_model_dimension": 1
+      }
+    ],
+    "height_matrix": [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "interpretation": "Abstract inference countermodels, not elliptic curves or BSD counterexamples",
+    "leading_term_identity_on_basis": true
+  },
+  "finite_precision": {
+    "coefficient_vectors": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        841,
+        0,
+        1
+      ],
+      [
+        0,
+        841,
+        1
+      ]
+    ],
+    "exact_T_orders": [
+      2,
+      0,
+      1
+    ],
+    "identical_reduction": [
+      0,
+      0,
+      1
+    ],
+    "level_relation_low_coefficient_divisibility_checked_n": [
+      1,
+      2,
+      3
+    ],
+    "modulus": 841,
+    "prime": 29
+  },
+  "localization": {
+    "a_p": -6,
+    "discriminant": 389,
+    "finite_field_point_count": 36,
+    "independent_addition_paths_agree": true,
+    "log_P_mod_p_squared_given_formal_group_lemma": 29,
+    "model": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "multiple": 36,
+    "point": [
+      0,
+      0
+    ],
+    "prime": 29,
+    "valuation_x_y_z": [
+      -2,
+      -3,
+      1
+    ],
+    "z_denominator": "1416646711496616889749519736874333357376369955282048725522897530833634125007371831895632634796730683739857728742697814654772863370820569766609873248227945335175738862896047366628641103693356",
+    "z_mod_p_squared": 203,
+    "z_numerator": "-145025262450038954468740067556265989073161669156694550963873850836676322089423911300177894035203883486317816136218252555793662686048166386421190186090213621101012295135662793614781878168495"
+  },
+  "not_proved_here": [
+    "a finite theta coefficient or its identification with the infinite theta element",
+    "nonvanishing of auxiliary complex L-values",
+    "generalized Kato-class nonvanishing for the example",
+    "Kummer membership of a generalized Kato class",
+    "any new uniform implication from analytic rank two to Mordell-Weil rank two"
+  ],
+  "status": "exact arithmetic checks passed; theoretical bridges are in AUDIT.md, not formalized"
+}
