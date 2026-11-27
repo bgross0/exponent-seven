@@ -1,0 +1,8 @@
+'Exp7.ChebyshevTail.mangoldt_div_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.ChebyshevTail.even_loss_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.ChebyshevTail.odd_loss_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.ChebyshevTail.positive_primes_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.ChebyshevTail.weightedPrimeBalance_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.ChebyshevTail.exists_cutoff_above_bridge {q : ℕ} (hq : 2 ^ 135 < q) :
+  ∃ n, 19 ≤ n ∧ 4 * (2 ^ n) ^ 7 < q ∧ Real.log ↑q + 4 < Exp7.ChebyshevTail.weightedPrimeBalance (2 ^ n)
+'Exp7.ChebyshevTail.exists_cutoff_above_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,29 @@
+✔ [5803/5814] Built Exp7Lean.Tail.EvenLoss (1.3s)
+✔ [5805/5814] Built Exp7Lean.Tail.LogWeight (1.4s)
+✔ [5807/5814] Built Exp7Lean.Tail.OddLoss (1.2s)
+⚠ [5809/5814] Built Exp7Lean.Tail.DyadicArithmetic (2.7s)
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:172:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:175:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:178:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:179:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:181:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:182:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+info: Exp7Lean/Tail/DyadicArithmetic.lean:262:0: 'Exp7.ChebyshevTailArithmetic.haarLowerBound_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Tail/DyadicArithmetic.lean:263:0: 'Exp7.ChebyshevTailArithmetic.exists_dyadic_index_of_mod_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [5811/5814] Built Exp7Lean.Tail.PositivePrimes (1.8s)
+✔ [5813/5814] Built Exp7Lean.Tail.WeightedComparison (1.4s)
+Build completed successfully (5814 jobs).
