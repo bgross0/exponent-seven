@@ -281,3 +281,74 @@ The local linear-algebra proofs in this directory are elementary and
 self-contained. The cohomological interpretation and higher-slope method
 are sourced in `../de_rham_strategy/SOURCES.md`. No new Lean theorem or
 general BSD statement is asserted here.
+
+## 6. Certifying the finite matrix directly from the Katz basis
+
+`katz_matrix_fit.py` replaces only the finite coordinate-solving stage of
+the weight-two Sage calculation. At k=k0=2 the factor G^kdiv is exactly1,
+so its equation is
+
+    E_short^T A^T = U5(E)^T  (mod5^mdash).
+
+The existing integral solver checks every equation, including coefficients
+outside its pivot minor. A two-sided scaled inverse of that minor gives
+the sharp guard c. The output is accepted only if mdash-c is at least the
+requested matrix precision m. It also rechecks the row convention
+U5(E)=A E modulo5^m. The full higher-precision solution and inverse witness
+are saved, so the independent verifier does not repeat elimination.
+
+```sh
+python research/bsd-localization/projection_backend/katz_matrix_fit.py \
+  --basis katz-basis-checkpoint.json.gz --output katz-fit.json.gz
+python research/bsd-localization/projection_backend/katz_matrix_fit.py \
+  --basis katz-basis-checkpoint.json.gz --verify katz-fit.json.gz
+```
+
+The basis checkpoint needs the existing `Katz_E_mod_5mdash`, `elldash`,
+`mdash`, and `parameters.matrix_digits` fields. The Python API is
+`fit_katz_matrix(e, elldash=..., basis_digits=..., matrix_digits=...)`;
+its result contains `row_operator_A_mod_5m`. A canonical residue-matrix
+digest binds the basis to the certificate. This is still a finite
+certificate: compatible exact integral solutions have the stated
+uniqueness, but neither their infinite analytic existence nor the omitted
+tail estimate follows from this fit.
+
+The new fit interface was checked against actual curve coefficients
+through q39 in the contracted oldform basis (5f,25V5f). Its exact U5 row
+matrix is [[-3,-1],[5,0]]. The measured inverse guard is2, so eight basis
+digits certify six matrix digits. Corrupted operators, inverse witnesses,
+U samples, and an attempt to claim seven digits are rejected. This is a
+two-dimensional interface regression, not the full Katz computation.
+
+```sh
+python research/bsd-localization/projection_backend/check_katz_matrix_fit.py \
+  --check research/bsd-localization/projection_backend/matrix-fit-regression.json
+```
+
+## 7. Independent exact replay of pole-core artifacts
+
+`replay_pole_core.py` checks the downloaded low-weight construction using
+ordinary Python and exact integers. Its original receipt remains
+reproducible with `--artifact-root`, which selects the actual level11
+smoke quotient and the actual level389 M2 checkpoint. It independently
+identifies the smoke M2 space by an eta product and an Eisenstein series,
+and identifies the pilot elliptic form through point counts and Hecke
+recurrences.
+
+The `--pilot-full DIR` mode accepts a subsequently completed level389
+artifact directory containing M2/M4/M6/M10 checkpoints and the core
+capsule. It replays every selected product, Eisenstein row, scaled Serre
+derivative, and simultaneous saturation operation. Full-rank coefficient
+minors modulo5 certify basis ranks. The derivative identities are checked
+coefficient by coefficient through an equivalent exact integer encoding;
+the quotient rank is certified by its explicit identity submatrix.
+Finally C Q=0 gives the upper bound98 on the derivative rank, and a
+nonzero modular minor gives the matching lower bound.
+
+Products and matrix identities use signed Kronecker encoding with a radix
+strictly larger than twice a proved bound on every coefficient. Equality
+of the resulting integers is therefore equivalent to equality of all
+coefficients; this is not a probabilistic evaluation or a modular hash.
+The full replay avoids a 293-by-390 rational row reduction. Its result
+certifies this finite construction only; it does not provide the proper
+de Rham projection of the CM input or a regulator comparison.

@@ -7,12 +7,14 @@ The backend is NOT executed or certified by this source file existing.
 from __future__ import annotations
 
 import argparse
+from contextlib import nullcontext
 import gzip
 import hashlib
 import inspect
 import json
 from pathlib import Path
 import platform
+import sys
 import time
 
 
@@ -39,9 +41,10 @@ def plan(digits):
             "matrix_digits": digits, "katz_n": n,
             "top_classical_weight": k,
             "expected_matrix_dimension": 31*(k-1)+k+2*(k//4),
-            "expected_sturm_bound": sturm,
+            "classical_sturm_degree": sturm,
+            "expected_sturm_bound": sturm + 1,
             "expected_basis_digits": digits + (n+5)//6,
-            "q_precision_exclusive": 5*sturm,
+            "q_precision_exclusive": 5*(sturm + 1),
             "safe_trace_largest_coefficient": 5*sturm,
             "integral_input_growth_proved": False,
             "proper_projection_computed": False}
@@ -59,12 +62,65 @@ def katz(args, sa, meta):
     source = Path(inspect.getfile(hs))
     meta["sage_hecke_series_source_sha256"] = hashlib.sha256(source.read_bytes()).hexdigest()
     sa.set_random_seed(args.seed)
+    actual_elldash = int(hs.compute_elldash(sa.ZZ(5), sa.ZZ(389), sa.ZZ(2),
+                                         sa.ZZ(job["katz_n"])))
+    if actual_elldash != job["expected_sturm_bound"]:
+        raise ArithmeticError("Sage Sturm q-precision differs from the declared plan")
+    progress("Sage coefficient-count convention checked before building: "
+             + json.dumps({"elldash": actual_elldash,
+                           "q_precision_exclusive": 5*actual_elldash,
+                           "largest_input_coefficient": 5*(actual_elldash-1)}))
     progress("Building the Katz basis and finite U5 block; no ordinary projector is applied.")
     start = time.monotonic()
-    alist, e, elldash, mdash = hs.higher_level_UpGj(
-        sa.ZZ(5), sa.ZZ(389), [sa.ZZ(2)], sa.ZZ(args.digits),
-        True, sa.ZZ(6), extra_data=True)
-    a = alist[0]
+    supplier_context = nullcontext()
+    if args.low_weight_checkpoints is not None:
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "pole_core_fast"))
+        from katz_supplier import installed_supplier
+        supplier_context = installed_supplier(
+            hs, args.low_weight_checkpoints, args.output / "low-weight-replay",
+            progress=progress)
+        meta["low_weight_basis_source"] = "checked_product_Serre_saturation_replay"
+    else:
+        meta["low_weight_basis_source"] = "Sage_ModularFormsRing"
+    with supplier_context:
+        if args.matrix_fit == "certified":
+            elldash, mdash = actual_elldash, job["expected_basis_digits"]
+            e, _ep1 = hs.higher_level_katz_exp(
+                sa.ZZ(5), sa.ZZ(389), sa.ZZ(2), sa.ZZ(args.digits),
+                sa.ZZ(mdash), sa.ZZ(elldash), sa.ZZ(5*elldash), True, sa.ZZ(6))
+            erows = [[int(x) for x in row] for row in e.rows()]
+            write_json(args.output / "katz-basis-checkpoint.json.gz",
+                       {"schema": "katz-basis-checkpoint-v1", "metadata": meta,
+                        "parameters": job, "elldash": elldash, "mdash": mdash,
+                        "Katz_E_mod_5mdash": erows,
+                        "scope": "Finite basis checkpoint; U matrix not yet fitted."}, True)
+            progress("Katz basis checkpoint saved; fitting all U5 rows with exact certificates.")
+            sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projection_backend"))
+            from katz_matrix_fit import fit_katz_matrix
+            fit = fit_katz_matrix(erows, elldash=int(elldash),
+                                  basis_digits=int(mdash), matrix_digits=int(args.digits))
+            write_json(args.output / "katz-matrix-fit.json.gz", fit, True)
+            a = sa.matrix(sa.Zmod(5**args.digits), fit["row_operator_A_mod_5m"])
+            meta["matrix_fit"] = {"method": "checked_inverse_minor",
+                                  "guard": fit["inverse_minor_guard"],
+                                  "coordinate_digits": fit["certified_coordinate_digits"]}
+            del erows, fit
+        else:
+            alist, e, elldash, mdash = hs.higher_level_UpGj(
+                sa.ZZ(5), sa.ZZ(389), [sa.ZZ(2)], sa.ZZ(args.digits),
+                True, sa.ZZ(6), extra_data=True)
+            a = alist[0]
+            meta["matrix_fit"] = {"method": "Sage_higher_level_UpGj"}
+    # Preserve the expensive finite geometry before subsequent validation.
+    # This checkpoint is deliberately marked unchecked until every gate passes.
+    raw_capsule = {"schema": "katz-matrix-unchecked-checkpoint-v1",
+                   "metadata": meta, "parameters": job,
+                   "elldash": int(elldash), "mdash": int(mdash),
+                   "row_operator_A_mod_5m": [[int(x) for x in row] for row in a.rows()],
+                   "Katz_E_mod_5mdash": [[int(x) for x in row] for row in e.rows()],
+                   "scope": "Unchecked checkpoint; not accepted by the projection adapter."}
+    write_json(args.output / "katz-unchecked.json.gz", raw_capsule, True)
+    del raw_capsule
     assert int(elldash) == job["expected_sturm_bound"]
     assert int(mdash) == job["expected_basis_digits"]
     assert a.nrows() == a.ncols() == job["expected_matrix_dimension"]
@@ -177,6 +233,10 @@ def main():
     parser.add_argument("--mode", choices=["plan", "katz", "pole-core"], default="plan")
     parser.add_argument("--digits", type=int, default=6)
     parser.add_argument("--seed", type=int, default=38971)
+    parser.add_argument("--low-weight-checkpoints", type=Path,
+                        help="Use certified M2/M4/M6 product checkpoints for the long Katz basis")
+    parser.add_argument("--matrix-fit", choices=("sage", "certified"), default="sage",
+                        help="Use Sage's original solve or the finite inverse-minor certificate")
     parser.add_argument("--output", type=Path, default=Path("de-rham-backend-output"))
     args = parser.parse_args()
     if not 1 <= args.digits <= 12:

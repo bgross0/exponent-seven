@@ -3,7 +3,8 @@
 This executable avoids constructing a direct weight-ten modular-symbol
 basis. It computes a weight-two q-basis once, checkpoints it immediately,
 and selects products to construct weights4,6,10. Every claimed span is
-checked against the full dimension and then checked over the rationals.
+checked against the full dimension and certified over the rationals by
+an explicit integer minor nonzero modulo an auxiliary prime.
 It finally constructs the same exact quotient
 
     (M10/E4^2) / d(M4/E4)
@@ -46,6 +47,16 @@ timeout 30m sage -python research/bsd-localization/pole_core_fast/build_core.py 
 its certification. A reused checkpoint is provenance-bearing input; the
 script checks its dimensions, precision, and exact rank, but does not
 reconstruct its original modular-symbol calculation.
+
+For the Katz supplier, stop after the required low-weight bases:
+
+```sh
+timeout 10m sage -python research/bsd-localization/pole_core_fast/build_core.py --stop-weight 6 --q-precision 390 --output katz-short-bases
+```
+
+`--stop-weight` accepts2,4,6,10 and defaults to10. For a smaller stopping
+weight the program writes `basis-result.json` and exits successfully
+after its last basis checkpoint, without constructing the pole quotient.
 
 ## Product and rank strategy
 
@@ -92,7 +103,11 @@ Selection uses an incremental echelon basis modulo65537. Only independent
 selected products are expanded over the integers. The program retains
 at most the target-dimension modular echelon rows and the selected exact
 rows, rather than materializing every product in one large matrix.
-Exact rational rank is checked after selection. Product descriptions
+After selection the program records pivot columns and the nonzero
+determinant residue of a full-size minor modulo the auxiliary prime.
+An integer minor nonzero modulo a prime is nonzero over Q, which proves
+the exact rational rank without a separate expensive rational elimination.
+The checkpoint labels this derived rank proof explicitly. Product descriptions
 identify the two input basis rows or the explicit Eisenstein oldform.
 
 An alternative `--method ring` uses the documented
@@ -148,6 +163,72 @@ the original pole-core backend so later consumers can read the result.
 The output is finite open de Rham geometry. It contains no projected CM
 vector, residue removal, Fricke transformation, cup functional, or
 arithmetic regulator comparison.
+
+## Reuse the short constructions for the larger Katz calculation
+
+`katz_supplier.py` extends only the direct M2 q-expansion. It reconstructs
+M4 and M6 from the saved product, Eisenstein, Serre-derivative, and
+saturation operations. It performs no direct M4/M6 modular-symbol
+construction and no rational rank calculation on the long bases.
+
+The adapter reads the three certified short basis checkpoints. It first
+matches Sage's newly extended M2 basis to the saved raw M2 basis by an
+exact coordinate transformation at short precision. This avoids an
+assumption that the q-expansion algorithm kept the same basis ordering or
+normalization when its requested precision changed.
+
+Let r2,r4,r6 be the numbers of simultaneous saturation rounds in the
+three checkpoints. To supply coefficients modulo5^m, the replay begins
+modulo5^(m+r2+r4+r6). Every round divides its kernel combinations by5,
+checks divisibility at **every long coefficient**, and reduces the common
+precision by one digit. It also reduces the unchanged rows to that common
+precision. Thus no unresolved division is performed in a ring that has
+already discarded the required guard digit. Products and the integer
+scaled Serre operators need no extra guard.
+
+At each stage, every coefficient overlapping the short exact checkpoint
+is compared. The saved mod5 unit minor is checked again. The extended M2
+and completed long weight bases are checkpointed, and the final package
+can be cached and reused with its request and checksum verified.
+
+A small real Sage smoke test, using the earlier level11 short run, is:
+
+```sh
+sage -python research/bsd-localization/pole_core_fast/katz_supplier.py --checkpoints pole-fast-smoke --digits 3 --q-precision 80 --output supplier-smoke
+```
+
+For the six-digit Katz matrix, its auxiliary basis precision is eight
+digits. The current Sage10.10 Sturm convention gives1366 columns in the
+short comparison, so the long geometry basis is needed to exclusive
+q-precision6830:
+
+```sh
+sage -python research/bsd-localization/pole_core_fast/katz_supplier.py --checkpoints katz-short-bases --digits 8 --q-precision 6830 --output katz-long-bases
+```
+
+The original CM input needs coefficients only through index6825 for
+U5(input) in that comparison: the last selected index is5*(1366-1).
+These two precision requirements concern different data.
+
+The parent backend can install the supplier for one Sage call:
+
+```python
+with installed_supplier(hs, checkpoint_dir, output_dir, progress=progress):
+    result = hs.higher_level_UpGj(p, N, klist, m, True, 6, extra_data=True)
+```
+
+This changes only `hs.low_weight_generators` inside the context and
+restores it on exit, including on errors. It returns the complete proven
+bases in weights2,4,6 with bound6. No global ring-generation conjecture is
+asserted: Sage's complementary-space construction must achieve the full
+dimension modulo5 at every requested weight before it can return. The
+backend's external timeout still bounds an unsuccessful search.
+
+The supplier's PASS status certifies the low-weight replay, not the full
+Katz matrix identity or an elliptic projection. Those checks remain in
+the parent backend. The executable has passed Python compilation and its
+plain-Python planning mode; measured Sage replay results must come from
+`supplier-result.json` after an actual run.
 
 ## Files saved by an actual run
 

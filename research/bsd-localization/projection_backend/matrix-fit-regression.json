@@ -1,0 +1,30 @@
+{
+  "basis": [
+    "5f",
+    "25V5f"
+  ],
+  "basis_digits": 8,
+  "curve": "y^2+y=x^3+x^2-2x",
+  "finite_equations_checked": 16,
+  "inverse_minor_guard": 2,
+  "known_U_row_matrix": [
+    [
+      -3,
+      -1
+    ],
+    [
+      5,
+      0
+    ]
+  ],
+  "matrix_digits": 6,
+  "q_precision_exclusive": 40,
+  "rejection_checks": {
+    "corrupted_inverse": true,
+    "corrupted_operator": true,
+    "inconsistent_U_sample": true,
+    "overclaimed_matrix_precision": true
+  },
+  "scope": "Exact actual elliptic q-series regression in a restricted two-dimensional contracted lattice; not the full level389 Katz matrix or a CM projection.",
+  "status": "PASS"
+}

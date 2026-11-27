@@ -133,9 +133,17 @@ For the six-digit gate the exact parameters are:
 | Katz cutoff n | 10 |
 | Highest auxiliary classical weight | 42 |
 | Finite matrix dimension | 1333 |
-| Classical Sturm bound used for this basis | 1365 |
+| Classical inclusive Sturm degree | 1365 |
+| Sage sturm_bound() coefficient count, elldash | 1366 |
 | Basis working precision | 8 digits |
-| q-expansion precision | O(q^6825) |
+| Katz basis q-expansion precision | O(q^6830) |
+| Largest input coefficient needed for U5 fit | q^6825, included in the saved input |
+
+The first cloud run exposed Sage's coefficient-count convention: its
+sturm_bound() returns the inclusive classical bound plus one. The probe
+now checks this before expensive construction, and saves an explicitly
+unchecked geometry checkpoint before later validation. The saved input
+already includes q^6825, so no CM input extension is needed for this fix.
 
 The numerical path after the matrix gate is specific:
 

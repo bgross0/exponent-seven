@@ -54,41 +54,45 @@
   ],
   "katz_job_parameters": [
     {
+      "Sage_sturm_q_precision": 586,
       "basis_working_digits": 3,
       "katz_n": 4,
       "matrix_digits": 2,
       "matrix_dimension": 553,
-      "q_precision_exclusive": 2925,
+      "q_precision_exclusive": 2930,
       "safe_trace_largest_coefficient": 2925,
       "sturm_bound": 585,
       "top_classical_weight": 18
     },
     {
+      "Sage_sturm_q_precision": 846,
       "basis_working_digits": 4,
       "katz_n": 6,
       "matrix_digits": 3,
       "matrix_dimension": 813,
-      "q_precision_exclusive": 4225,
+      "q_precision_exclusive": 4230,
       "safe_trace_largest_coefficient": 4225,
       "sturm_bound": 845,
       "top_classical_weight": 26
     },
     {
+      "Sage_sturm_q_precision": 1366,
       "basis_working_digits": 8,
       "katz_n": 10,
       "matrix_digits": 6,
       "matrix_dimension": 1333,
-      "q_precision_exclusive": 6825,
+      "q_precision_exclusive": 6830,
       "safe_trace_largest_coefficient": 6825,
       "sturm_bound": 1365,
       "top_classical_weight": 42
     },
     {
+      "Sage_sturm_q_precision": 2536,
       "basis_working_digits": 16,
       "katz_n": 19,
       "matrix_digits": 12,
       "matrix_dimension": 2503,
-      "q_precision_exclusive": 12675,
+      "q_precision_exclusive": 12680,
       "safe_trace_largest_coefficient": 12675,
       "sturm_bound": 2535,
       "top_classical_weight": 78

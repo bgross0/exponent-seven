@@ -86,8 +86,9 @@ def run():
                      "top_classical_weight": kmax,
                      "matrix_dimension": dimension(kmax),
                      "sturm_bound": sturm,
+                     "Sage_sturm_q_precision": sturm + 1,
                      "basis_working_digits": m + (n + 5)//6,
-                     "q_precision_exclusive": 5 * sturm,
+                     "q_precision_exclusive": 5 * (sturm + 1),
                      "safe_trace_largest_coefficient": 5 * sturm})
     return {
         "status": "passed_exact_algebra_checks",

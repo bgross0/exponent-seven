@@ -1,4 +1,4 @@
-name: BSD de Rham geometry
+name: BSD Katz geometry from certified low weight products
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: bsd-de-rham-geometry-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   geometry:
@@ -21,9 +21,9 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        mode: [katz, pole-core]
+        mode: [katz]
     container:
-      image: sagemath/sagemath:10.10
+      image: sagemath/sagemath:10.10@sha256:310dfe23fc786f3a5a06a7b0387c60201ec79b32c0db941b7624505ee5edb565
       options: --user 0
     steps:
       - name: Check out the exact research commit
@@ -31,16 +31,42 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Build and check the finite geometry
+      - name: Verify the long basis replay on the small example
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p geometry-output/supplier-smoke
+          timeout 5m sage -python research/bsd-localization/pole_core_fast/build_core.py \
+            --level 11 --q-precision 40 --stop-weight 6 \
+            --output geometry-output/supplier-smoke/short \
+            2>&1 | tee geometry-output/supplier-smoke/short.log
+          timeout 5m sage -python research/bsd-localization/pole_core_fast/katz_supplier.py \
+            --checkpoints geometry-output/supplier-smoke/short --digits 3 --q-precision 80 \
+            --output geometry-output/supplier-smoke/long \
+            2>&1 | tee geometry-output/supplier-smoke/long.log
+
+      - name: Build the pilot low weight bases
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p geometry-output/short-bases-389
+          timeout 10m sage -python research/bsd-localization/pole_core_fast/build_core.py \
+            --level 389 --q-precision 390 --stop-weight 6 \
+            --output geometry-output/short-bases-389 \
+            2>&1 | tee geometry-output/short-bases-389/run.log
+
+      - name: Build and check the finite Katz geometry
         shell: bash
         env:
           BSD_GEOMETRY_MODE: ${{ matrix.mode }}
         run: |
           set -o pipefail
           mkdir -p "geometry-output/$BSD_GEOMETRY_MODE"
-          timeout 45m sage -python \
+          timeout 35m sage -python \
             research/bsd-localization/de_rham_strategy/backend_probe.py \
             --mode "$BSD_GEOMETRY_MODE" --digits 6 \
+            --low-weight-checkpoints geometry-output/short-bases-389 \
+            --matrix-fit certified \
             --output "geometry-output/$BSD_GEOMETRY_MODE" \
             2>&1 | tee "geometry-output/$BSD_GEOMETRY_MODE/run.log"
 
@@ -51,4 +77,4 @@ jobs:
           name: bsd-geometry-${{ matrix.mode }}-${{ github.sha }}
           retention-days: 14
           if-no-files-found: warn
-          path: geometry-output/${{ matrix.mode }}/
+          path: geometry-output/

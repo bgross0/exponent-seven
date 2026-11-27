@@ -131,10 +131,22 @@ def certify_basis(sa, args, meta, weight, matrix, provenance, progress):
     expected = meta["dimensions"][str(weight)]
     if matrix.nrows() != expected:
         raise ArithmeticError(f"M{weight}: obtained {matrix.nrows()}, need {expected}")
-    progress("checking_exact_basis_rank", weight=weight, dimension=expected)
-    exact_rank = int(matrix.rank())
-    if exact_rank != expected:
-        raise ArithmeticError(f"M{weight}: exact rational rank failed")
+    progress("certifying_exact_rank_by_modular_minor", weight=weight,
+             dimension=expected,prime=args.selection_prime)
+    rank_matrix = matrix.change_ring(sa.GF(args.selection_prime))
+    rank_columns = list(rank_matrix.pivots())
+    if len(rank_columns) != expected:
+        raise ArithmeticError(f"M{weight}: auxiliary-prime rank certificate failed")
+    determinant_residue = int(rank_matrix.matrix_from_columns(rank_columns).det())
+    if determinant_residue == 0:
+        raise ArithmeticError("The alleged rank-certificate minor is zero")
+    # An integer minor nonzero modulo a prime is nonzero over Q. With exactly
+    # expected rows this is an exact rank proof, without costly QQ elimination.
+    exact_rank = expected
+    rank_certificate = {"method":"full_size_integer_minor_nonzero_mod_prime",
+                        "prime":args.selection_prime,"pivot_columns":rank_columns,
+                        "determinant_residue":determinant_residue,
+                        "QQ_rank_elimination_performed":False}
     raw = matrix
     saturation = []
     rank_five_before = int(matrix.change_ring(sa.GF(5)).rank())
@@ -158,6 +170,7 @@ def certify_basis(sa, args, meta, weight, matrix, provenance, progress):
                   "saturation_index_5_valuation": sum(len(x["replace_rows"])
                                                        for x in saturation),
                   "exact_rank": exact_rank,
+                  "exact_rank_certificate": rank_certificate,
                   "rank_mod5_before": rank_five_before,
                   "rank_mod5_after": rank_five_after,
                   "pivot_columns": pivot_columns,
@@ -358,13 +371,15 @@ def main():
     parser.add_argument("--no-saturate-5", action="store_true")
     parser.add_argument("--input-m2", type=Path)
     parser.add_argument("--method", choices=("products","ring"), default="products")
+    parser.add_argument("--stop-weight", type=int, choices=(2,4,6,10), default=10)
     parser.add_argument("--output", type=Path, default=Path("pole-core-fast-output"))
     parser.add_argument("--plan", action="store_true")
     args = parser.parse_args()
     if args.plan:
         print(json.dumps({"level": args.level, "method": args.method,
                           "q_precision_exclusive": args.q_precision,
-                          "weights": [2,4,6,10], "local_saturation_prime": 5,
+                          "weights": [k for k in (2,4,6,10) if k <= args.stop_weight],
+                          "stop_weight": args.stop_weight,"local_saturation_prime": 5,
                           "pilot_expected_dimensions": [33,99,163,293],
                           "pilot_expected_relation_rank": 98,
                           "pilot_expected_quotient_dimension": 195,
@@ -384,8 +399,8 @@ def main():
     spaces = {k: sa.ModularForms(args.level,k) for k in (2,4,6,10)}
     dimensions = {str(k): int(m.dimension()) for k,m in spaces.items()}
     bounds = {str(k): int(m.sturm_bound()) for k,m in spaces.items()}
-    if args.q_precision <= max(bounds.values()):
-        raise SystemExit("q-precision must be strictly greater than every reported Sturm bound")
+    if args.q_precision <= max(bounds[str(k)] for k in (2,4,6,10) if k <= args.stop_weight):
+        raise SystemExit("q-precision must be strictly greater than every requested weight's Sturm bound")
     meta = {"sage_version": SAGE_VERSION, "python_version": platform.python_version(),
             "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             "level": args.level, "dimensions": dimensions, "sturm_bounds": bounds,
@@ -423,6 +438,8 @@ def main():
     bases[2], records[2] = certify_basis(sa,args,meta,2,raw2,source2,progress)
     if args.method == "products":
         for weight,a,b in ((4,2,2),(6,2,4),(10,4,6)):
+            if weight > args.stop_weight:
+                break
             supplement_weight = max(k for k in bases if k < weight)
             bases[weight], records[weight] = product_basis(
                 sa,args,meta,weight,bases[a],bases[b],a,b,
@@ -430,6 +447,8 @@ def main():
     else:
         ring = sa.ModularFormsRing(args.level)
         for weight in (4,6,10):
+            if weight > args.stop_weight:
+                break
             progress("building_via_Sage_ring", weight=weight)
             series = ring.q_expansion_basis(weight,prec=args.q_precision,use_random=False)
             raw, scales = integer_rows(sa,series,args.q_precision)
@@ -437,6 +456,17 @@ def main():
                 sa,args,meta,weight,raw,
                 {"construction": "Sage_ModularFormsRing_q_expansion_basis",
                  "rational_row_scales": scales},progress)
+    if args.stop_weight < 10:
+        report = {"status":"exact_low_weight_bases_passed","metadata":meta,
+                  "stop_weight":args.stop_weight,
+                  "completed_dimensions":{str(k):b.nrows() for k,b in bases.items()},
+                  "elapsed_seconds":time.monotonic()-progress.start,
+                  "pole_quotient_computed":False,
+                  "scope":"Certified low-weight basis checkpoints only; the quotient stage was not requested."}
+        save(args.output/"basis-result.json",report)
+        progress("requested_low_weights_passed",stop_weight=args.stop_weight,
+                 completed_dimensions=report["completed_dimensions"])
+        return
     build_quotient(sa,args,meta,bases[4],bases[10],records[10],progress)
 
 
