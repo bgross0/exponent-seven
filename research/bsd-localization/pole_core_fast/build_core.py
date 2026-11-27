@@ -181,7 +181,7 @@ def eisenstein(sa, weight, precision, level=1):
 
 
 def product_basis(sa, args, meta, weight, left, right, left_weight,
-                  right_weight, progress):
+                  right_weight, supplement, supplement_weight, progress):
     target = meta["dimensions"][str(weight)]
     field = sa.GF(args.selection_prime)
     mod_ps = sa.PowerSeriesRing(field, "q", default_prec=args.q_precision)
@@ -225,18 +225,56 @@ def product_basis(sa, args, meta, weight, left, right, left_weight,
                 accepted.append(row.list())
                 descriptions.append({"kind": "Eisenstein_oldform", "weight": weight,
                                      "V_level": old_level, "scale": scales[0]})
+    eisenstein_rank = select.rank()
+    serre_attempted = 0
+    # The Serre derivative D_k(f)=theta(f)-(k/12)E2*f is classical of weight k+2.
+    # Use the integer multiple (12/gcd(k,12))*D_k to avoid introducing fractions.
+    # Iteration supplies a bounded supplement even when weight-2 was not built.
+    if select.rank() < target:
+        if supplement_weight >= weight or (weight-supplement_weight) % 2:
+            raise ArithmeticError("Invalid Serre derivative source weight")
+        e2_values = [1]+[-24*sa.sigma(n,1) for n in range(1,args.q_precision)]
+        e2_mod = mod_ps(e2_values).add_bigoh(args.q_precision)
+        e2_exact = exact_ps(e2_values).add_bigoh(args.q_precision)
+        steps = []
+        for k in range(supplement_weight,weight,2):
+            divisor = int(sa.gcd(k,12))
+            steps.append({"input_weight":k, "theta_multiplier":12//divisor,
+                          "E2_multiplier":k//divisor})
+        for index,source_row in enumerate(supplement.rows()):
+            serre_attempted += 1
+            candidate = mod_ps(source_row.list()).add_bigoh(args.q_precision)
+            for step in steps:
+                candidate = (step["theta_multiplier"]*mod_ps.gen()*candidate.derivative()
+                             -step["E2_multiplier"]*e2_mod*candidate)
+            if select.add([candidate[n] for n in range(args.q_precision)]):
+                exact = exact_ps(source_row.list()).add_bigoh(args.q_precision)
+                for step in steps:
+                    exact = (step["theta_multiplier"]*exact_ps.gen()*exact.derivative()
+                             -step["E2_multiplier"]*e2_exact*exact)
+                accepted.append([exact[n] for n in range(args.q_precision)])
+                descriptions.append({"kind":"scaled_Serre_derivative",
+                                     "source_weight":supplement_weight,
+                                     "source_basis_index":index, "steps":steps})
+            if select.rank() == target:
+                break
     progress("product_selection_finished", weight=weight, attempted=attempted,
-             product_rank=product_rank, rank_after_explicit_Eisenstein=select.rank())
+             product_rank=product_rank, rank_after_explicit_Eisenstein=eisenstein_rank,
+             Serre_candidates_tested=serre_attempted,
+             rank_after_Serre_derivatives=select.rank())
     if select.rank() != target:
         save(args.output/f"M{weight}-partial.json.gz",
              {"weight": weight, "rank": select.rank(), "target_dimension": target,
               "q_basis": [[str(x) for x in row] for row in accepted],
-              "provenance": descriptions, "scope": "Partial span only"})
-        raise ArithmeticError(f"M{weight}: products and explicit Eisenstein forms span only{select.rank()} of{target}")
+              "provenance": descriptions, "selection_prime":args.selection_prime,
+              "scope": "Partial modular rank; a bad selection prime can lower this rank"})
+        raise ArithmeticError(f"M{weight}: candidate rank modulo{args.selection_prime} is{select.rank()} of{target}")
     return certify_basis(sa, args, meta, weight, sa.matrix(sa.ZZ, accepted),
                          {"construction": "low_weight_products", "selected": descriptions,
                           "candidates_tested": attempted,
                           "product_rank_before_Eisenstein": product_rank,
+                          "rank_after_Eisenstein":eisenstein_rank,
+                          "Serre_candidates_tested":serre_attempted,
                           "selection_prime": args.selection_prime}, progress)
 
 
@@ -385,8 +423,10 @@ def main():
     bases[2], records[2] = certify_basis(sa,args,meta,2,raw2,source2,progress)
     if args.method == "products":
         for weight,a,b in ((4,2,2),(6,2,4),(10,4,6)):
+            supplement_weight = max(k for k in bases if k < weight)
             bases[weight], records[weight] = product_basis(
-                sa,args,meta,weight,bases[a],bases[b],a,b,progress)
+                sa,args,meta,weight,bases[a],bases[b],a,b,
+                bases[supplement_weight],supplement_weight,progress)
     else:
         ring = sa.ModularFormsRing(args.level)
         for weight in (4,6,10):

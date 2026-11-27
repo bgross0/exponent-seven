@@ -59,11 +59,34 @@ form dimension routine, are:
 | 6 | 163 | M2 times M4, then E6 and V389(E6) if needed |
 | 10 | 293 | M4 times M6, then E10 and V389(E10) if needed |
 
-The expected rank97 of the weight-two products in weight4 is not assumed.
-The actual rank before adding the explicit Eisenstein forms is reported.
-If these candidates fail to span any required weight, the script saves
-the partial basis and stops. It does not silently switch to a very large
-direct computation.
+If a product space and its two Eisenstein oldforms still miss a direction,
+the script adds scaled Serre derivatives of the nearest available lower
+weight basis. For a weight-k form f, the classical Serre derivative is
+
+    D_k(f)=theta(f)-(k/12)*E2*f,       E2=1-24*sum sigma_1(n)q^n.
+
+It is a modular form of weight k+2 on the same group. The implemented
+integral multiple is
+
+    (12/gcd(k,12))*theta(f)-(k/gcd(k,12))*E2*f.
+
+Thus weight4 receives the forms6*theta(f)-E2*f from M2. For weight6 the
+source is M4; if needed at weight10, two successive Serre derivatives
+start from M6. Every step and its source basis index are recorded in the
+provenance. These are proven modular forms, not arbitrary derivatives of
+q-series. All spanning and exact-rank checks still apply.
+
+The first actual pilot attempt measured rank96 for the weight-two
+products in weight4, and rank98 after E4,V389(E4). The previously proposed
+rank97 was therefore not used. A separate exact modular probe on that
+run's checkpoints found that6*theta(f0)-E2*f0, using the first M2 basis
+row, increases the rank to99 modulo65537. The full revised Sage gate must
+still complete before its M4 lattice and higher weights are certified.
+
+If all candidates fail, the script saves the partial basis and stops. A
+rank shortfall is over the selection prime and can be caused by a bad
+auxiliary prime; it is not a proof that the rational candidate span is
+deficient. The program never silently starts a large direct computation.
 
 Selection uses an incremental echelon basis modulo65537. Only independent
 selected products are expanded over the integers. The program retains
@@ -144,6 +167,8 @@ Primary API references checked for this implementation:
   https://doc.sagemath.org/html/en/reference/modfrm/sage/modular/modform/space.html
 * Sage graded rings and the product-based q-basis API:
   https://doc.sagemath.org/html/en/reference/modfrm/sage/modular/modform/ring.html
+* Sage's Serre derivative documentation, including the weight increase:
+  https://doc.sagemath.org/html/en/reference/modfrm/sage/modular/modform/element.html
 * Sage's integral matrix saturation API documents the same meaning of
   saturation at one prime; the executable uses explicit kernel operations
   to retain an auditable transformation history:
