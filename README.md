@@ -2,17 +2,17 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24549331.svg)](https://doi.org/10.5281/zenodo.24549331)
 
-Ben Gross. 25 November 2026.
+Ben Gross. 25 November 2026, revised 27 November 2026.
 
 **Status: computer-assisted research note for independent review. Not refereed.**
 
 - **Main result (Theorem E), formalized in Lean 4.** Assuming GRH for the quadratic characters of prime conductor, exactly 33 negative fundamental discriminants have class group of exponent 7. The Lean statement uses Mathlib's `ClassGroup` and covers every negative fundamental discriminant, with no size bound and no published bound assumed. GRH is its only hypothesis.
-- **Without the hypothesis.** In a Lean 4.35 workspace that also builds the formal proof of GRH for Dirichlet L-functions announced by Alpöge on 20 November 2026 (`lsernau/grh-lean`), the same theorem is proved with no hypothesis at all. That proof of GRH is machine-checked but not refereed, so the unconditional reading inherits its status.
+- **With GRH supplied by the formal proof.** In a Lean 4.35 workspace that also builds the formal proof of GRH for Dirichlet L-functions announced by Alpöge on 20 November 2026 (`lsernau/grh-lean`), the proof supplies GRH and both searches. The statement applies to quadratic orders that are domains with negative fundamental discriminant. That proof of GRH is machine-checked but not refereed, so the unconditional reading inherits its status.
 - **Searches.** The search above 3.1·10^20 has three implementations with different algorithms, one written by a different AI system; all three find 0 survivors. Both searches are also proved complete in Lean's kernel, from 465 and 401 per-prime certificates.
 - **Certificate.** Checked by two independent verifiers; its margins are proved in Lean.
 - **The 33 fields.** Rederived from scratch below 3.1·10^20 (Theorem D); the list agrees with the published table.
 
-Use of AI: the argument, code and computations were produced with Claude (Anthropic), directed by the author. The independent audit in `independent/AUDIT.md`, with the third search and the second certificate verifier, was produced with Codex (OpenAI). Corrections are welcome through the issue tracker.
+Use of AI: the argument, code and computations were produced with Claude (Anthropic), directed by the author. Codex formalized the finite bridge and dyadic tail and integrated the external GRH proof. The independent audit in `independent/AUDIT.md`, with the third search and the second certificate verifier, was produced with Codex (OpenAI). Corrections are welcome through the issue tracker.
 
 ## Result
 
@@ -22,11 +22,11 @@ Write E(D) for the exponent of the class group of Q(√D), D < 0 a fundamental d
 
 **Theorem D.** Assume GRH as in Theorem A. Then exactly 33 fundamental discriminants D with |D| ≤ 10^32 have E(D) = 7. This does not use the EKN table: the same method is run from scratch below 3.1·10^20 (see "The range below 3.1·10^20").
 
-**Theorem E.** Assume GRH as in Theorem A. Then exactly 33 negative fundamental discriminants have E(D) = 7, namely D = −q for the primes q = 71, 151, 223, 251, 463, 467, 487, 587, 811, 827, 859, 1163, 1171, 1483, 1523, 1627, 1787, 1987, 2011, 2083, 2179, 2251, 2467, 2707, 3019, 3067, 3187, 3907, 4603, 5107, 5923, 63499 and 118843. The largest is Q(√−118843).
+**Theorem E.** Assume GRH as in Theorem A. Then exactly 33 negative fundamental discriminants have E(D) = 7, namely D = −q for the primes q = 71, 151, 223, 251, 463, 467, 487, 587, 811, 827, 859, 1163, 1171, 1483, 1523, 1627, 1787, 1987, 2011, 2083, 2179, 2251, 2467, 2707, 3019, 3067, 3187, 3907, 4603, 5107, 5923, 63499 and 118843. The largest absolute discriminant is 118843.
 
 Theorem E is Theorem D together with two exclusions above 10^32 that use the same hypothesis (see "Above 10^32 (Theorem E)"). It needs neither the EKN table nor EKN Theorem 3.
 
-**Corollary B.** Assume ERH for the Dedekind zeta functions of the imaginary quadratic fields (the hypothesis of ARSX Theorem 1.3). Then, in addition to Theorem E, exactly 40 imaginary quadratic orders have Picard group of exponent 7 (largest discriminant −118843).
+**Corollary B.** Assume ERH for the Dedekind zeta functions of the imaginary quadratic fields (the hypothesis of ARSX Theorem 1.3). Then, in addition to Theorem E, exactly 40 imaginary quadratic orders have Picard group of exponent 7 (largest absolute discriminant 118843).
 
 **Corollary C.** Assume GRH as in Theorem A. Let q ≡ 3 (mod 4) be a prime with q ≥ 3.1·10^20, let p be the least prime that splits in Q(√−q), and let 𝔭 be a prime ideal above p. Then the ideal class of 𝔭 has odd order at least 9.
 
@@ -84,17 +84,17 @@ Run time: about 25 minutes on 2 vCPUs. The logs are in `logs/prod_0.log` and `lo
 
 Let q ≡ 3 (mod 4) be a prime with q ≥ 10^32. Both exclusions below are certificate rows in the sense of Step 2: under GRH they give a split prime p < X with 4X^7 < q. If the class group had exponent 7, Step 1 would give q ≤ 4p^7 < 4X^7 < q.
 
-- **10^32 ≤ q ≤ 2^135: one row.** X = 30000, and g has 64 cells, the first 32 equal to 1 and the last 32 equal to −1. Lean certifies its margin at Q = 2^135 as at least 7.5228 (`Exp7Lean/Exp7Lean/Rows/Bridge30000.lean`, by the same kernel-checked evaluator as the other 175 rows). The largest prime below 30000 is 29989, and 4·29989^7 ≈ 8.73·10^31 < 10^32. [Proof and receipts](frontier/bridge30000/README.md)
+- **10^32 ≤ q ≤ 2^135: one row.** X = 30000, and g has 64 cells, the first 32 equal to 1 and the last 32 equal to −1. Lean certifies its margin at Q = 2^135 as at least 7.52277024130489382120 (`Exp7Lean/Exp7Lean/Rows/Bridge30000.lean`, by the same kernel-checked evaluator as the other 175 rows). Since 4·30000^7 < 10^32, the split prime below 30000 satisfies 4p^7 < q. [Proof and receipts](frontier/bridge30000/README.md)
 - **q > 2^135: a closed-form row.** Here g = [1, −1] on two cells of [0, log X], so f(u) = 1 − 3u/L on [0, L/2] and f(u) = u/L − 1 on [L/2, L], where L = log X. Lean proves:
-  1. For every q > 2^135 there is an n ≥ 19 with 4·(2^n)^7 < q and log q + 4 < B(2^n), where B is an explicit finite prime sum. It counts the primes in (√X, X], minus a weighted von Mangoldt sum up to X^(1/3) and Σ Λ(m)/m up to √X. The proof uses Mathlib's Chebyshev bounds and Abel summation (`Tail/PositivePrimes.lean`, `OddLoss.lean`, `EvenLoss.lean`, `WeightedComparison.lean`).
+  1. For every q > 2^135 there is an n ≥ 19 with 4·(2^n)^7 < q and log q + 4 < B(2^n), where B is an explicit finite prime sum. With w_T(t) = (1 − log(t)/log(T))/√t and Y = X^(1/3), it sums 2w_X(p) log p over primes in (√X, X], subtracts 2Σ w_Y(n)Λ(n) over positive n ≤ Y, and subtracts Σ Λ(m)/m over positive m ≤ √X. The proof uses Mathlib's Chebyshev bounds and Abel summation (`Tail/PositivePrimes.lean`, `OddLoss.lean`, `EvenLoss.lean`, `WeightedComparison.lean`).
   2. B(X) is at most the inert sum Σ A_p of Step 2 for this g (`Tail/HaarInert.lean`).
-  3. J_f ≤ 4 (`Tail/HaarJBound.lean`).
+  3. J_f ≤ 4 when log X ≥ 1 (`Tail/HaarJBound.lean`).
 
   Since log π ≥ 0 and ψ(3/4) ≤ 0, the row margin at Q = q is positive (`Tail/Exclusion.lean`). [Chebyshev sums](frontier/chebyshev-sums/README.md) · [Tail proof and receipts](frontier/haar-tail/README.md)
 
-As a floating-point check outside Lean: the bridge row has margin 7.529. For the tail row at X = 2^19, the left side of the row inequality is about 381, against log q ≈ 98 at the top of that dyadic range, and it grows like √X.
+Floating-point evaluation using J_f gives a bridge margin of about 7.529. At X = 2^19 the tail row gives Σ − J_f + log π − ψ(3/4) ≈ 381.51, while log q ≤ 142 log 2 ≈ 98.43. The dyadic theorem proves the strict inequality for every n ≥ 19.
 
-The Lean theorem is `Exp7.ChebyshevTail.classification_fundamental`. It takes GRH and the two search statements as explicit arguments, and both search statements are proved (`Exp7.searchHigh`, `Exp7.searchLow`). The fully applied form is `Exp7.GRHIntegration.theoremD_fundamental_global` (`frontier/haar-tail/Global.lean`), which has no hypotheses:
+The Lean theorem is `Exp7.ChebyshevTail.classification_fundamental`. It takes GRH and the two search statements as explicit arguments, and both search statements are proved (`Exp7.searchHigh`, `Exp7.searchLow`). The fully applied form is `Exp7.GRHIntegration.theoremD_fundamental_global` (`frontier/haar-tail/Global.lean`), whose inputs describe the quadratic order and its discriminant.
 
 ```lean
 theorem theoremD_fundamental_global (a b : ℤ)
@@ -143,8 +143,8 @@ Everything for this part is in `lowrange/`. Put B = 10^5.
    - The form with GRH as a hypothesis builds in the native project (Lean v4.37.0-rc1, a release candidate).
    - The form with GRH imported as a theorem builds only in a combined Lean 4.35 workspace. That workspace applies compatibility patches to this project (`frontier/grh-integration/compat435/`), and it has been built on one machine.
 
-   A build on a second machine, and a check that the patched 4.35 statements are identical to the 4.37 ones, are still to do.
-4. The unconditional reading of Theorem E rests on the formal proof of GRH for Dirichlet L-functions (Alpöge, with Claude, 20 November 2026; here through its readable edition `lsernau/grh-lean`). That proof has been accepted by Lean's kernel and independent checkers but has not been refereed.
+   On the Precision, both versions printed identical types for the norm-equation theorem, explicit-formula bound, upper-tail exclusion, and the prime and fundamental classification theorems. The shared 4.35 build still awaits independent reproduction on a second machine.
+4. The unconditional reading of Theorem E rests on the formal proof of GRH for Dirichlet L-functions (Alpöge, with Claude, 20 November 2026; here through the compact edition in `lsernau/grh-lean`). That proof has been accepted by Lean's kernel and independent checkers but has not been refereed.
 5. The count of 33 fields does not rest on EKN's table or on EKN Theorem 3, and it agrees with that table. The count of 40 orders in Corollary B rests on ARSX and is not formalized. Corollary C is proved in this README but not in Lean. `lowsearch` has one implementation; it is checked against brute force and against `search7i` on an overlapping range.
 6. Priority: a search found no earlier claim on exponent 7, but unpublished or very recent work cannot be excluded.
 
@@ -202,7 +202,7 @@ The search prints one line per prime and ends with `DONE survivors 0`. The Lean 
 - E. Bach, J. Sorenson, *Explicit bounds for primes in residue classes*, Math. Comp. 65 (1996)
 - E. Carneiro, M. Milinovich, E. Quesada-Herrera, A. Ramos, [arXiv:2404.08380](https://arxiv.org/abs/2404.08380), Lemma 9
 - [`nunavipahe60-star/exponent-six`](https://github.com/nunavipahe60-star/exponent-six): the positive-kernel certificate method and the exponent-6 case
-- L. Alpöge, with Claude, *Remark* and Lean archive, 20 November 2026; readable edition [`lsernau/grh-lean`](https://github.com/lsernau/grh-lean) (pinned at `72fead1`); community repository [`leanprover-community/riemann-hypothesis`](https://github.com/leanprover-community/riemann-hypothesis)
+- L. Alpöge, with Claude, *Remark* and Lean archive, 20 November 2026; Luke Sernau and collaborators’ compact edition [`grh-compact`](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact); community repository [`leanprover-community/riemann-hypothesis`](https://github.com/leanprover-community/riemann-hypothesis)
 
 ## Related branches
 

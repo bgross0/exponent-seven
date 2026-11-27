@@ -15,14 +15,14 @@
 
 \title[Class groups of exponent 7]{Imaginary quadratic fields with class group of exponent 7}
 \author{Ben Gross}
-\date{25 November 2026}
+\date{25 November 2026, revised 27 November 2026}
 \subjclass[2020]{11R29 (primary); 11R11, 11Y40, 11M26}
 \keywords{class group, exponent, imaginary quadratic field, generalized Riemann hypothesis, explicit formula, computer-assisted proof}
 
 \begin{document}
 
 \begin{abstract}\emergencystretch=1em
-Assuming the generalized Riemann hypothesis for the quadratic Dirichlet $L$-functions of prime conductor, we show that exactly $33$ imaginary quadratic fields have class group of exponent $7$, the largest being $\Q(\sqrt{-118843})$. The proof does not use the earlier table of Elsenhans, Kl\"uners and Nicolae, which it recovers, or a published bound for the least split prime. With a result of Aiken, Ross, Shvydkoy and Xue it also shows that under ERH exactly $40$ imaginary quadratic orders have class group of exponent $7$. The proof also shows that for every prime $q\equiv3\pmod4$ with $q\ge3.1\cdot10^{20}$, the ideal class above the least split prime of $\Q(\sqrt{-q})$ has order at least $9$. The proof combines a positive-kernel explicit-formula certificate, checked in interval arithmetic, that bounds the least split prime, with a sieve search over the norm equation $4p^7=x^2+qy^2$. Large discriminants are excluded by one further certificate row and, beyond $2^{135}$, by a two-cell kernel with explicit Chebyshev estimates. The classification is formalized in Lean~4 for every negative fundamental discriminant, with this hypothesis as the only assumption. The completeness of the two finite searches is checked in Lean's kernel from per-prime certificates. Combined with the formal proof of GRH for Dirichlet $L$-functions announced by Alp\"oge, which is machine-checked but not refereed, the formal statement holds with no hypothesis. All code, certificates, proofs and logs are public.
+Assuming the generalized Riemann hypothesis for the quadratic Dirichlet $L$-functions of prime conductor, we show that exactly $33$ imaginary quadratic fields have class group of exponent $7$, with largest absolute discriminant $118843$. The proof does not use the earlier table of Elsenhans, Kl\"uners and Nicolae, which it recovers, or a published bound for the least split prime. With a result of Aiken, Ross, Shvydkoy and Xue it also shows that under ERH exactly $40$ imaginary quadratic orders have Picard group of exponent $7$. The proof also shows that for every prime $q\equiv3\pmod4$ with $q\ge3.1\cdot10^{20}$, the ideal class above the least split prime of $\Q(\sqrt{-q})$ has order at least $9$. The proof combines a positive-kernel explicit-formula certificate, checked in interval arithmetic, that bounds the least split prime, with a sieve search over the norm equation $4p^7=x^2+qy^2$. Large discriminants are excluded by one further certificate row and, beyond $2^{135}$, by a two-cell kernel with explicit Chebyshev estimates. Lean checks the two finite searches from $866$ per-prime certificates. In a shared Lean~4.35 build, the recently announced Dirichlet-GRH proof supplies the analytic hypothesis. The resulting theorem applies to every negative fundamental discriminant. All code, certificates, proofs and logs are public.
 \end{abstract}
 
 \maketitle
@@ -36,12 +36,12 @@ Assume GRH for the Dirichlet $L$-functions $L(s,\chi_D)$ of the odd real primiti
 \end{theorem}
 
 \begin{corollary}\label{cor:B}
-Assume ERH for the Dedekind zeta functions of the imaginary quadratic fields. Then exactly $40$ imaginary quadratic orders have Picard group of exponent $7$, the largest discriminant being $-118843$.
+Assume ERH for the Dedekind zeta functions of the imaginary quadratic fields. Then exactly $40$ imaginary quadratic orders have Picard group of exponent $7$, the largest absolute discriminant being $118843$.
 \end{corollary}
 
 Corollary~\ref{cor:B} follows from Theorem~\ref{thm:A} and \cite[Theorem~1.3(6)]{ARSX}. Under ERH, the first two results below give the field count of Theorem~\ref{thm:E} from Theorem~\ref{thm:A} and the literature. Theorem~\ref{thm:E} itself uses neither of them.
 \begin{itemize}
-\item Elsenhans, Kl\"uners and Nicolae \cite[Theorem~1 and Table~1]{EKN}: the list of imaginary quadratic fields with $E(D)\le 8$ and $|D|\le 3.1\cdot10^{20}$ is complete. It contains $33$ fields of exponent $7$, the largest with $D=-118843$.
+\item Elsenhans, Kl\"uners and Nicolae \cite[Theorem~1 and Table~1]{EKN}: the list of imaginary quadratic fields with $E(D)\le 8$ and $|D|\le 3.1\cdot10^{20}$ is complete. It contains $33$ fields of exponent $7$, with largest absolute discriminant $118843$.
 \item \cite[Theorem~3]{EKN}, derived from Bach and Sorenson \cite{BS}: under ERH for the Dedekind zeta function of $\Q(\sqrt D)$ and for $|D|>e^{25}$, some prime $p\le(1.881\log|D|+6.18)^2$ splits in $\Q(\sqrt D)$. By Step~1 below a split prime forces $|D|\le4p^7$ when $E(D)=7$, so $E(D)=7$ requires $h(\log|D|)\ge0$, where $h(t)=\log4+14\log(1.881t+6.18)-t$. Since $h'(t)=14\cdot1.881/(1.881t+6.18)-1<0$ for $t>10.7$, $h$ is decreasing on $[\log10^{32},\infty)$. Since $\log10^{32}<74$, we have $1.881\log10^{32}+6.18<146$, and $4\cdot146^{14}=7998342040108832435319302324224<10^{32}$, so $h(\log10^{32})<0$. Hence no $D$ with $|D|\ge10^{32}$ has $E(D)=7$.
 \item Aiken, Ross, Shvydkoy and Xue \cite[Theorem~1.3(6)]{ARSX}: under ERH, their table of $40$ orders of exponent $7$ is complete if no fundamental discriminant $D$ with $3.1\cdot10^{20}\le|D|\le3.9\cdot10^{30}$ has class group of exponent $7$. Theorem~\ref{thm:A} supplies this hypothesis.
 \end{itemize}
@@ -72,8 +72,10 @@ Two further exclusions, under the same hypothesis, remove the bound $|D|\le10^{3
 Assume GRH as in Theorem~\ref{thm:A}. Then exactly $33$ negative fundamental discriminants $D$ have $E(D)=7$, namely $D=-q$ for the $33$ primes $q$ listed above. This uses neither \cite[Theorem~1]{EKN} nor \cite[Theorem~3]{EKN}.
 \end{theorem}
 
+The integrated Lean theorem supplies the GRH premise of Theorem~\ref{thm:E} from the pinned formal proof in \cite{GRH}. Its statement retains the hypotheses that the discriminant is negative and fundamental. Section~\ref{sec:checks} identifies the Lean declaration and its inputs.
+
 \subsection*{Context}
-\cite[Theorem~2]{EKN} gives completeness under ERH for exponents $\le5$ and $8$. For exponents $6$ and $7$ the ERH bounds of \cite[Table~2]{EKN}, about $2.5\cdot10^{25}$ and $3.9\cdot10^{30}$, lie beyond their search limit, and \cite[Theorem~1.3(5),(6)]{ARSX} records both as conditional on these ranges. A computer-assisted note \cite{E6} treats exponent $6$ by a positive-kernel method that we adapt here. As \cite{EKN} remarks, finiteness of the list is known unconditionally for every exponent $2\le c\le 8$ except $c=7$.
+\cite[Theorem~2]{EKN} gives completeness under ERH for exponents $\le5$ and $8$. For exponents $6$ and $7$ the ERH bounds of \cite[Table~2]{EKN}, about $2.5\cdot10^{25}$ and $3.9\cdot10^{30}$, lie beyond their search limit, and \cite[Theorem~1.3(5),(6)]{ARSX} records both as conditional on these ranges. A computer-assisted note \cite{E6} treats exponent $6$ by a positive-kernel method that we adapt here. As \cite{EKN} remarks, at the time of their work finiteness of the list was known unconditionally for every exponent $2\le c\le 8$ except $c=7$.
 
 \section{Proof of Theorem~\ref{thm:A}}
 
@@ -156,27 +158,11 @@ For each of the $465$ primes $p\in[701,4297]$, each $y\ge1$, and each $x\ge0$ wi
 \subsection*{Proof of Corollary~\ref{cor:C}}
 Let $n$ be the order of the class of $\p$. The class number of $\Q(\sqrt{-q})$ is odd by genus theory, so $n$ is odd. As in Step~1, $\p^n=(\alpha)$ with $\alpha$ not rational, so $q\le4p^n$. If $q>10^{32}$, Section~\ref{sec:E} gives a split prime below some $X$ with $4X^7<q$, so $p<X$ and $n\le7$ would give $q\le4p^7<q$. Now let $q\le10^{32}$. By the first bootstrap row, $p\le6361$. If $n\le5$, then $q\le4\cdot6361^5<4.2\cdot10^{19}$, which is below $3.1\cdot10^{20}$. Suppose $n=7$. Steps~1 to~4 used $E(D)=7$ only to know that $\p^7$ is principal for the least split prime $p$: this gives $p\ge701$ in Step~1, it gives $q\le4P^7$ at each bootstrap row in Step~3 because the least split prime lies below $X$, and it gives the norm equation searched in Step~4. The search found no solution, so $n\ne7$. Hence $n\ge9$.\qed
 
-\section{Proof of Theorem~\ref{thm:E}: discriminants above $10^{32}$}\label{sec:E}
-
-By Theorem~\ref{thm:D} and Step~0 it suffices to show that no prime $q\equiv3\pmod4$ with $q\ge10^{32}$ has $E(-q)=7$. Both exclusions below are valid rows in the sense of \eqref{eq:row}. Each gives a split prime $p<X$ with $4X^7<q$, while Step~1 would give $q\le4p^7$.
-
-\subsection*{The range $10^{32}\le q\le2^{135}$}
-Take $X=30000$ and the $64$-cell step function $g$ equal to $1$ on the first $32$ cells and to $-1$ on the last $32$. The kernel-checked evaluator of Section~\ref{sec:checks} certifies that $(2^{135},30000,g)$ is a valid row with margin at least $7.5228$; a floating-point evaluation gives $7.529$. The largest prime below $30000$ is $29989$, and $4\cdot29989^7<8.73\cdot10^{31}<10^{32}$.
-
-\subsection*{The range $q>2^{135}$}
-Take $g=[1,-1]$ on two cells of $[0,L]$, $L=\log X$. Then $f(u)=1-3u/L$ on $[0,L/2]$ and $f(u)=u/L-1$ on $[L/2,L]$, so $f<0$ on $(L/3,L)$. We use three facts.
-\begin{enumerate}
-\item $J_f\le4$ whenever $L\ge1$.
-\item Let $B(X)$ be twice the sum of $f$-weighted $\log p$ over the primes $p\in(\sqrt X,X]$, minus twice a triangularly weighted sum of $\Lambda(n)$ over $n\le X^{1/3}$, minus $\sum_{d\le\sqrt X}\Lambda(d)/d$. Then $B(X)\le\Sigma(X,g)$ for every integer $X>1$. The first subtracted sum bounds the negative contributions of the odd prime powers below $X^{1/3}$, where $f>0$, and the second those of the even prime powers, each paired with its square root; every other term of $\Sigma(X,g)$ is nonnegative.
-\item For every $q>2^{135}$ there is an $n\ge19$ with $4\cdot2^{7n}<q$ and $\log q+4<B(2^n)$. This uses explicit lower and upper bounds for Chebyshev's functions and Abel summation.
-\end{enumerate}
-With $X=2^n$ from (3), facts (1) and (2), $\log\pi\ge0$ and $\psi(3/4)\le0$ make the margin of $(q,X,g)$ positive. For orientation, at $X=2^{19}$ a floating-point evaluation gives $\Sigma(X,g)-J_f+\log\pi-\psi(3/4)\approx381$, against $\log q\approx98$ at the top of the corresponding range of $q$, and the left side grows like $\sqrt X$.\qed
-
-\section{Proof of Theorem~\ref{thm:D}: the range below $3.1\cdot10^{20}$}
+\section{Proof of Theorem~\ref{thm:D}: the range below \texorpdfstring{$3.1\cdot10^{20}$}{3.1 x 10\string^20}}\label{sec:low}
 
 By Step~0 and Theorem~\ref{thm:A} it suffices to find the primes $q\equiv3\pmod4$ with $q<3.1\cdot10^{20}$ whose class group has exponent $7$. Put $B=10^5$.
 
-\subsection*{Below $B$}
+\subsection*{Below \texorpdfstring{$B$}{B}}
 For each of the $4808$ primes $q\equiv3\pmod4$ below $B$ the class number is computed by counting reduced forms. It is a power of $7$ greater than $1$ for exactly $32$ of them. For $31$ it equals $7$. For $q=63499$ it equals $49$, and $\mathfrak l^7$ is principal for every split prime $\ell\le\sqrt{q/3}$, so the exponent is $7$. These are the $32$ listed primes other than $118843$.
 
 \subsection*{More certificate rows}
@@ -192,6 +178,29 @@ Of the $6608$ values of $q$, $4685$ are composite. For each of the $1923$ primes
 
 \subsection*{Checks}
 \texttt{lowsearch} agrees with a brute-force reference on $106$ configurations, $105$ of them with survivors, including composite $y$ up to $659$. On the primes $701\le p\le760$, with the condition truncated to $\ell<60$, it produces the same $650{,}165$ survivors as the second implementation of Section~\ref{sec:checks}. The form-reduction test for principality agrees with the norm equation on $845$ small cases.
+
+\section{Proof of Theorem~\ref{thm:E}: discriminants above \texorpdfstring{$10^{32}$}{10\string^32}}\label{sec:E}
+
+By Theorem~\ref{thm:D} and Step~0 it suffices to show that no prime $q\equiv3\pmod4$ with $q\ge10^{32}$ has $E(-q)=7$. Both exclusions below are valid rows in the sense of \eqref{eq:row}. Each gives a split prime $p<X$ with $4X^7<q$, while Step~1 would give $q\le4p^7$.
+
+\subsection*{The range \texorpdfstring{$10^{32}\le q\le2^{135}$}{10\string^32 <= q <= 2\string^135}}
+Take $X=30000$ and the $64$-cell step function $g$ equal to $1$ on the first $32$ cells and to $-1$ on the last $32$. The kernel-checked evaluator of Section~\ref{sec:checks} certifies that $(2^{135},30000,g)$ is a valid row with margin at least $7.52277024130489382120$. A numerical evaluation using $J_f$ gives approximately $7.529$. Since $4\cdot30000^7<10^{32}$, the split prime furnished by this row satisfies $4p^7<q$.
+
+\subsection*{The range \texorpdfstring{$q>2^{135}$}{q > 2\string^135}}
+Take $g=[1,-1]$ on two cells of $[0,L]$, $L=\log X$. Then $f(u)=1-3u/L$ on $[0,L/2]$ and $f(u)=u/L-1$ on $[L/2,L]$, so $f<0$ on $(L/3,L)$. We use three facts.
+\begin{enumerate}
+\item $J_f\le4$ whenever $L\ge1$.
+\item Put $Y=X^{1/3}$ and $w_T(t)=(1-\log t/\log T)/\sqrt t$. For every integer $X>1$,
+\[
+ B(X)=2\!\sum_{\sqrt X<p\le X} w_X(p)\log p
+      -2\!\sum_{1\le n\le Y} w_Y(n)\Lambda(n)
+      -\!\sum_{1\le d\le\sqrt X}\frac{\Lambda(d)}{d}
+      \;\le\;\Sigma(X,g).
+\]
+The first sum runs over primes. On this interval $w_X(p)=-f(\log p)/\sqrt p$, accounting for the sign of an inert prime. The first subtracted sum bounds the negative contributions of the odd prime powers below $X^{1/3}$, where $f>0$, and the second those of the even prime powers, each paired with its square root; every other term of $\Sigma(X,g)$ is nonnegative.
+\item For every $q>2^{135}$ there is an $n\ge19$ with $4\cdot2^{7n}<q$ and $\log q+4<B(2^n)$. This uses explicit lower and upper bounds for Chebyshev's functions and Abel summation.
+\end{enumerate}
+With $X=2^n$ from (3), facts (1) and (2), $\log\pi\ge0$ and $\psi(3/4)\le0$ make the margin of $(q,X,g)$ positive. For orientation, at $X=2^{19}$ a floating-point evaluation gives $\Sigma(X,g)-J_f+\log\pi-\psi(3/4)\approx381.51$, against $\log q\le142\log2\approx98.43$ at that dyadic index. The uniform estimate in (3) covers all larger indices.\qed
 
 \section{Computation and checks}\label{sec:checks}
 
@@ -214,32 +223,36 @@ The following checks of \texttt{sieve7} are in the repository.
 \end{itemize}
 
 \subsection*{Formalization}
-Theorems~\ref{thm:A}, \ref{thm:D} and~\ref{thm:E} are formalized in Lean~4 with Mathlib, in the directory \texttt{Exp7Lean} of the repository, with GRH as their only hypothesis. The statements use Mathlib's class group of the order $\mathbb Z[\omega]$, $\omega^2=b\omega+a$, of discriminant $D=b^2+4a$; they are \texttt{theoremA\_\allowbreak fundamental\_\allowbreak GRH} and \texttt{theoremD\_\allowbreak fundamental\_\allowbreak GRH}. Assume that for every prime $q\equiv3\pmod4$ every zero of $L(s,(\cdot/q))$ with $0<\operatorname{Re}s<1$ has real part $1/2$ (\texttt{GRHPrimeConductor}, stated for Mathlib's Dirichlet $L$-function), and let $D<0$ be a fundamental discriminant. If $3.1\cdot10^{20}\le|D|\le10^{32}$, the exponent of the class group is not $7$. If $|D|\le10^{32}$, the exponent is $7$ if and only if $D=-q$ for one of the $33$ listed primes $q$. The same equivalence without the bound on $|D|$ is \texttt{ChebyshevTail.\allowbreak classification\_\allowbreak fundamental}, which adds the bridge row and the tail of Section~\ref{sec:E}.
+Theorems~\ref{thm:A}, \ref{thm:D} and~\ref{thm:E} are formalized in Lean~4 with Mathlib, in the directory \texttt{Exp7Lean} of the repository, with GRH as their only hypothesis. The statements use Mathlib's class group of the order $\mathbb Z[\omega]$, $\omega^2=b\omega+a$, of discriminant $D=b^2+4a$. The bounded declarations are \texttt{theoremA\_\allowbreak fundamental\_\allowbreak GRH} and \texttt{theoremD\_\allowbreak fundamental\_\allowbreak GRH}. Assume that for every prime $q\equiv3\pmod4$ every zero of $L(s,(\cdot/q))$ with $0<\operatorname{Re}s<1$ has real part $1/2$ (\texttt{GRHPrimeConductor}, stated for Mathlib's Dirichlet $L$-function), and let $D<0$ be a fundamental discriminant. If $3.1\cdot10^{20}\le|D|\le10^{32}$, the exponent of the class group is not $7$. If $|D|\le10^{32}$, the exponent is $7$ if and only if $D=-q$ for one of the $33$ listed primes $q$. The same equivalence without the bound on $|D|$ is \texttt{ChebyshevTail.\allowbreak classification\_\allowbreak fundamental}, which takes the two search statements as explicit arguments. The proofs \texttt{Exp7.searchHigh} and \texttt{Exp7.searchLow} supply them.
 
-In a Lean~4.35 workspace that also builds the readable edition of Alp\"oge's formal proof of GRH for Dirichlet $L$-functions \cite{GRH}, the hypothesis \texttt{GRHPrimeConductor} is derived from that proof. The resulting theorem \texttt{theoremD\_\allowbreak fundamental\_\allowbreak global} has no hypotheses. That workspace applies compatibility patches to this project and has been built on one machine; the native project uses Lean~v4.37.0-rc1.
+In Lean~4.35 the theorem \texttt{LFunction\_eq\_zero\_re} from the compact edition of \cite{GRH} supplies the project's GRH premise. The integrated theorem is
+\begin{center}
+\texttt{Exp7.GRHIntegration.theoremD\_fundamental\_global}.
+\end{center}
+It takes integers $a,b$ whose quadratic order is a domain with negative fundamental discriminant. The proof supplies GRH and both search certificates. The combined workspace applies compatibility patches to this project and has been built on one machine. The native project uses Lean~v4.37.0-rc1.
 
-The completeness of the two searches is proved in Lean's kernel, from one certificate for each prime $p$. For the search of Step~4, the certificate lists, for each $y$, the residues of $x$ modulo $8y^2$ with a proof that the list is complete; each remaining arithmetic progression is cut into blocks, and the conditions $(-q/\ell)=-1$ are evaluated on packed bit vectors until the block is empty. For the search of Section~3 the range of $q$ is cut in two. Below the cut the conditions on $q$ are periodic in $q$, and $q$ itself is sieved, which leaves an explicit list of exceptions. Above the cut $y$ is small, each $y$ is treated as in Step~4, and every surviving $x$ gives a $q$ that is among the $6608$ recorded survivors or violates one of the conditions. There are $465$ certificates for Step~4 and $401$ for Section~3; checking them takes about $11$ and $8$ core-hours. All $866$ certificates were also checked a second time, on a different machine and with a different version of Lean, by Codex.
+The completeness of the two searches is proved in Lean's kernel, from one certificate for each prime $p$. For the search of Step~4, the certificate lists, for each $y$, the residues of $x$ modulo $8y^2$ with a proof that the list is complete; each remaining arithmetic progression is cut into blocks, and the conditions $(-q/\ell)=-1$ are evaluated on packed bit vectors until the block is empty. For the search of Section~\ref{sec:low} the range of $q$ is cut in two. Below the cut the conditions on $q$ are periodic in $q$, and $q$ itself is sieved, which leaves an explicit list of exceptions. Above the cut $y$ is small, each $y$ is treated as in Step~4, and every surviving $x$ gives a $q$ that is among the $6608$ recorded survivors or violates one of the conditions. There are $465$ certificates for Step~4 and $401$ for Section~\ref{sec:low}; checking them takes about $11$ and $8$ core-hours. All $866$ certificates were also checked a second time, on a different machine and with a different version of Lean, by Codex.
 
-\texttt{\#print axioms} reports only the three standard axioms (\texttt{propext}, \texttt{Quot.sound}, \texttt{Classical.\allowbreak choice}), and the development contains no \texttt{sorry} and no \texttt{native\_decide}: every computation is evaluated by the kernel. The other parts of the proof are formalized as follows: Step~0; Step~1, including $p\nmid y$; the explicit-formula inequality \eqref{eq:EF}, by a damped explicit formula, analytic continuation in the damping parameter, and Hadamard's partial fractions derived from Jensen's formula, without outside libraries; the closed form of $f$ and the bound $J^+$; the margins of all $176$ certificate rows, by a verified fixed-point evaluator run in the kernel; the tail above $2^{135}$; the bootstrap chain, the inert primes below $701$, the least split prime and its range, the Jacobi-symbol conditions and the ladder bounds; that the class group is generated by the prime ideals of norm at most $\sqrt{q/3}$; that each of the $33$ fields has exponent $7$; and, by tables checked in the kernel, that no other prime below $10^5$ and no other survivor of the search of Section~3 does. No published bound is assumed. The count of $40$ orders in Corollary~\ref{cor:B} rests on \cite{ARSX} and is not formalized, and Corollary~\ref{cor:C} is not formalized.
+\texttt{\#print axioms} reports only the three standard axioms (\texttt{propext}, \texttt{Quot.sound}, \texttt{Classical.\allowbreak choice}), and the development contains no \texttt{sorry} and no \texttt{native\_decide}: every computation is evaluated by the kernel. The other parts of the proof are formalized as follows: Step~0; Step~1, including $p\nmid y$; the explicit-formula inequality \eqref{eq:EF}, by a damped explicit formula, analytic continuation in the damping parameter, and Hadamard's partial fractions derived from Jensen's formula, without outside libraries; the closed form of $f$ and the bound $J^+$; the margins of all $176$ certificate rows, by a verified fixed-point evaluator run in the kernel; the tail above $2^{135}$; the bootstrap chain, the inert primes below $701$, the least split prime and its range, the Jacobi-symbol conditions and the ladder bounds; that the class group is generated by the prime ideals of norm at most $\sqrt{q/3}$; that each of the $33$ fields has exponent $7$; and, by tables checked in the kernel, that no other prime below $10^5$ and no other survivor of the search of Section~\ref{sec:low} does. The global proof uses the dyadic bound of Section~\ref{sec:E}. The count of $40$ orders in Corollary~\ref{cor:B} rests on \cite{ARSX} and is not formalized, and Corollary~\ref{cor:C} is not formalized.
 
 \subsection*{Caveats}
-Theorems~\ref{thm:A}, \ref{thm:D} and~\ref{thm:E} no longer rest on the search programs or on the numerical verifiers: the completeness of the searches and the margins of the certificate are proved in Lean. What remains to be trusted is Lean's kernel, including its arithmetic on large natural numbers, and the formal statements. A formal proof certifies the statements only as written, so the Lean statements of the two theorems and the definitions they use (the class group, GRH, the list of $33$ primes) should be read by a person; they are short. The Lean development and the programs that generate the certificates were written by AI systems, and the paper has not been refereed. The statement for non-maximal orders rests on \cite{ARSX}. Read without the hypothesis, Theorem~\ref{thm:E} rests on the formal proof of GRH of \cite{GRH}, which has been checked by machine but not refereed.
+Theorems~\ref{thm:A}, \ref{thm:D} and~\ref{thm:E} no longer rest on the search programs or on the numerical verifiers: the completeness of the searches and the margins of the certificate are proved in Lean. What remains to be trusted is Lean's kernel, including its arithmetic on large natural numbers, and the formal statements. A formal proof certifies the statements only as written, so the Lean statements of these theorems and the definitions they use (the class group, GRH, the list of $33$ primes) should be read by a person; they are short. The Lean development and the programs that generate the certificates were written by AI systems, and the paper has not been refereed. The statement for non-maximal orders rests on \cite{ARSX}. With the GRH premise discharged, Theorem~\ref{thm:E} rests on the formal proof of GRH of \cite{GRH}, which has been checked by machine but not refereed.
 
 \subsection*{Data availability}
-Code, certificate, logs and checksums are archived on Zenodo and maintained on GitHub:
+Earlier releases are archived on Zenodo. The merged global proof, its build instructions and the printed theorem statements are in the GitHub repository at commit \href{https://github.com/bgross0/exponent-seven/tree/99a97e077b9ddb2430d5da862a1d0842854330f1}{\texttt{99a97e0}}.
 \begin{center}
 \url{https://doi.org/10.5281/zenodo.24549331}\qquad \url{https://github.com/bgross0/exponent-seven}
 \end{center}
 
 \subsection*{Use of AI}
-The argument, code and computations were produced with Claude (Anthropic) under the direction of the author, who takes responsibility for the content. The Lean formalization was produced with Claude; the packed bit-vector primitives used by the search certificates are due to ChatGPT (OpenAI). The independent audit, including the third search, the second certificate verifier and the second check of the Lean certificates, was produced with Codex (OpenAI).
+The argument, code and computations were produced with Claude (Anthropic) under the direction of the author, who takes responsibility for the content. The Lean formalization was produced with Claude; the packed bit-vector primitives used by the search certificates are due to ChatGPT (OpenAI). The independent audit, including the third search, the second certificate verifier and the second check of the Lean certificates, was produced with Codex (OpenAI). Codex also developed the finite bridge, the dyadic tail and their integration with the pinned GRH proof.
 
 \begin{thebibliography}{9}
 \bibitem{ARSX} D.~Aiken, E.~Ross, D.~Shvydkoy, H.~Xue, \emph{Boundary CM points and class groups of small exponent}, arXiv:2605.26020.
 \bibitem{BS} E.~Bach, J.~Sorenson, \emph{Explicit bounds for primes in residue classes}, Math.\ Comp.\ \textbf{65} (1996), 1717--1735.
 \bibitem{CMQR} E.~Carneiro, M.~B.~Milinovich, E.~Quesada-Herrera, A.~P.~Ramos, arXiv:2404.08380.
 \bibitem{EKN} A.-S.~Elsenhans, J.~Kl\"uners, F.~Nicolae, \emph{Imaginary quadratic number fields with class groups of small exponent}, Acta Arith.\ \textbf{193} (2020), 217--233. arXiv:1803.02056.
-\bibitem{GRH} L.~Alp\"oge, with Claude, \emph{Remark} and Lean archive, 20 November 2026; readable edition \url{https://github.com/lsernau/grh-lean}, commit 72fead1.
+\bibitem{GRH} L.~Alp\"oge, with Claude, \emph{Remark}, 20 November 2026, \url{https://alpo.ge/remark.pdf}. L.~Sernau and collaborators, shorter Lean formalization, compact edition (\texttt{grh-compact}), commit \texttt{72fead1}, \url{https://github.com/lsernau/grh-lean}.
 \bibitem{E6} \emph{Class groups of exponent 6}, computer-assisted note, \url{https://github.com/nunavipahe60-star/exponent-six}, November 2026.
 \end{thebibliography}
 

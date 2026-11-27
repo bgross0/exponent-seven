@@ -18,7 +18,7 @@ theorem Exp7.ChebyshevTail.classification_fundamental (hGRH : GRHPrimeConductor)
 - **`10^32 ≤ q ≤ 2^135`.** One 64-cell row at `X = 30000`, with a kernel-certified margin of at least `7.52277024130489382120` (`Rows/Bridge30000.lean`). [Proof and verification](../frontier/bridge30000/README.md)
 - **`q > 2^135`.** The two-cell row `[1, -1]` at a dyadic `X = 2^n`, with explicit Chebyshev estimates (`Tail/`). [Chebyshev sums](../frontier/chebyshev-sums/README.md) · [Tail](../frontier/haar-tail/README.md)
 
-In a Lean 4.35 workspace that also builds `lsernau/grh-lean@72fead1`, GRH is supplied by the imported theorem `LFunction_eq_zero_re`. There `Exp7.GRHIntegration.theoremD_fundamental_global` has no hypotheses, and its axioms are `propext`, `Classical.choice` and `Quot.sound` ([adapter](../frontier/haar-tail/Global.lean), [integration](../frontier/grh-integration/README.md)). That workspace applies compatibility patches to this project and has been built on one machine.
+In a Lean 4.35 workspace that builds `grh-compact` at `lsernau/grh-lean@72fead1`, GRH is supplied by the imported theorem `LFunction_eq_zero_re`. There `Exp7.GRHIntegration.theoremD_fundamental_global` has only the hypotheses on the quadratic order and its discriminant. Its axioms are `propext`, `Classical.choice` and `Quot.sound` ([adapter](../frontier/haar-tail/Global.lean), [integration](../frontier/grh-integration/README.md)). That workspace applies compatibility patches to this project and has been built on one machine.
 
 ## Status of each step
 
@@ -36,7 +36,7 @@ In a Lean 4.35 workspace that also builds `lsernau/grh-lean@72fead1`, GRH is sup
 | Exclusion for `10^32 ≤ q ≤ 2^135` | **proved**, kernel-checked row margin (`Rows/Bridge30000.lean`) |
 | Exclusion for `q > 2^135` | **proved** (`Tail/Exclusion.lean`): Chebyshev estimates for the inert sum of the row `[1, -1]` (`Tail/PositivePrimes.lean`, `OddLoss.lean`, `EvenLoss.lean`, `WeightedComparison.lean`, `HaarInert.lean`) and `J ≤ 4` (`Tail/HaarJBound.lean`) |
 | Theorem E, all negative fundamental discriminants, GRH as the only hypothesis | **proved** (`Tail/Exclusion.lean`, `classification_prime`, `classification_fundamental`) |
-| Theorem E with GRH imported as a theorem, no hypotheses | **proved** in the Lean 4.35 combined workspace (`../frontier/haar-tail/Global.lean`, `theoremD_fundamental_global`) |
+| Theorem E with GRH and both searches supplied | **proved** in the Lean 4.35 combined workspace (`../frontier/haar-tail/Global.lean`, `theoremD_fundamental_global`) |
 | Earlier route above `10^32` | `Above.lean` proves the bound from EKN Theorem 3, which it assumes; Theorem E does not use it |
 | The explicit-formula inequality `ExplicitFormulaBound` | **proved** (`Analytic/EF/`, about 4,900 lines: damped explicit formula, analytic continuation in the damping parameter, Hadamard partial fractions from Jensen's formula) |
 | Fixed-point numerics for `log`, `√`, `exp`, `π`, `γ` and the primes below 6400 | **proved** (`Numerics/`) |
@@ -183,8 +183,10 @@ The toolchain is Lean `v4.37.0-rc1` with the matching Mathlib. To check Theorem 
 
     lake build Exp7Lean.Rows.Bridge30000 Exp7Lean.Tail.Exclusion
 
+On the Precision, the two versions printed identical types for `normEq_classGroup`, `EF.explicitFormulaBound`, and the tail declarations `excludes_above_bridge`, `classification_prime` and `classification_fundamental`. The same explicit fundamental-discriminant statement typechecked in both environments.
+
 ## What is left
 
 1. A person should read the statement of Theorem E and the definitions it uses: `GRHPrimeConductor`, `known`, and Mathlib's `ClassGroup`, `QuadraticAlgebra` and `Int.IsFundamentalDiscr`.
-2. Build the Lean 4.35 combined workspace on a second machine. Check that its patched statements are identical to the native 4.37 ones.
+2. Build the Lean 4.35 combined workspace on a second machine.
 3. Formalize the count of 40 orders of Corollary B (ARSX) and Corollary C, if wanted.
