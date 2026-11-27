@@ -1,0 +1,96 @@
+{
+  "started_utc": "2026-11-27T14:14:29.641106+00:00",
+  "machine": "precision7670",
+  "lean": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "parent": "15f43ef547dfd7e177211cf8e9676b0d6938a6c0",
+  "threads": 4,
+  "source_sha256": {
+    "DyadicArithmetic.lean": "050550262cec4ef349c4dd3e85a1b09b45223757edcf7761e7e98a7711ba5fd5",
+    "EvenLoss.lean": "f2de19ef4402969d969e4fd758590c1f29faa78ed4cd13d39753aca16711edc8",
+    "Exclusion.lean": "e2c53778b83eaed0f59867d43673cdca0071b583cf9e5e57b95dfb9b746aa3ea",
+    "HaarInert.lean": "36f2dd8c7ad3a2bdb8b0c2666d3867780b41ba86fc33c85688b03686e564720b",
+    "HaarJBound.lean": "fc1695b7082669898ffed25aaf6e2ac8be4d5b953ceaa6841a9d8ffdf7ea001d",
+    "LogWeight.lean": "90aa005037dfacb116e89f92ae0222f48546281a9fe121ec85dab698136501f4",
+    "OddLoss.lean": "06053df5871b1c9100948d915789a29dbf27c395228e36e5cdd5e8bf2d7e2db8",
+    "PositivePrimes.lean": "ecb5f37a87265cc32bbc3823bf425e630b988a51206b65e01875635a940f9316",
+    "WeightedComparison.lean": "5168895070e5b85815138fe5bc44044e87833587ee720740a0949e0f6f1bac63"
+  },
+  "declarations_sha256": "8881ae1b134708ca72ed0af5ce934cf6b82827429b8c1b3c55ad5c48c6268e29",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "Exp7Lean.Tail.Exclusion"
+      ],
+      "log": "lean435-build.log",
+      "sha256": "e404f0c92a9377938d8c62b797e94522d438f2330d366b7ed55eafc3e193c8b9",
+      "exit_code": 0,
+      "seconds": 13.675
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--root=src",
+        "--tstack=400000",
+        "-o",
+        ".lake/build/lib/lean/Exp7GRHBridge/Global.olean",
+        "src/Exp7GRHBridge/Global.lean"
+      ],
+      "log": "lean435-global.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "seconds": 5.186
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/home/ben/GitHub/exponent-seven-haar/frontier/haar-tail/Declarations435.lean"
+      ],
+      "log": "lean435-declarations.log",
+      "sha256": "c6867c1180f9ab6077907411f1a1d27e0c9683c79b770c2d9280422199e2111c",
+      "exit_code": 0,
+      "seconds": 3.031
+    }
+  ],
+  "adapter_sha256": "be520021f4d027753ba11cf2fd4cee38c850a9bf00d52c5a82eb974573e3cc9a",
+  "external_grh_commit": "72fead102f663d5c7a407964a13dc0cf9d977207",
+  "axioms": {
+    "Exp7.GRHIntegration.primeConductor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.searchHigh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.searchLow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.excludes_above_bridge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD_global": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD_fundamental_global": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "result_olean_sha256": "550e260edd012129f6a242f3b8b713e6533a9f1fd99018580f9140aab47e7555"
+}

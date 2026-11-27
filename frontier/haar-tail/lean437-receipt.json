@@ -1,0 +1,63 @@
+{
+  "started_utc": "2026-11-27T14:14:22.638078+00:00",
+  "machine": "precision7670",
+  "lean": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "parent": "15f43ef547dfd7e177211cf8e9676b0d6938a6c0",
+  "threads": 4,
+  "source_sha256": {
+    "DyadicArithmetic.lean": "050550262cec4ef349c4dd3e85a1b09b45223757edcf7761e7e98a7711ba5fd5",
+    "EvenLoss.lean": "f2de19ef4402969d969e4fd758590c1f29faa78ed4cd13d39753aca16711edc8",
+    "Exclusion.lean": "e2c53778b83eaed0f59867d43673cdca0071b583cf9e5e57b95dfb9b746aa3ea",
+    "HaarInert.lean": "36f2dd8c7ad3a2bdb8b0c2666d3867780b41ba86fc33c85688b03686e564720b",
+    "HaarJBound.lean": "fc1695b7082669898ffed25aaf6e2ac8be4d5b953ceaa6841a9d8ffdf7ea001d",
+    "LogWeight.lean": "90aa005037dfacb116e89f92ae0222f48546281a9fe121ec85dab698136501f4",
+    "OddLoss.lean": "06053df5871b1c9100948d915789a29dbf27c395228e36e5cdd5e8bf2d7e2db8",
+    "PositivePrimes.lean": "ecb5f37a87265cc32bbc3823bf425e630b988a51206b65e01875635a940f9316",
+    "WeightedComparison.lean": "5168895070e5b85815138fe5bc44044e87833587ee720740a0949e0f6f1bac63"
+  },
+  "declarations_sha256": "95e2182c6b7e7856952f91a19041abe5f3b7c2e87e9eb5ba3b6cdd452764bc9d",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "Exp7Lean.Tail.Exclusion"
+      ],
+      "log": "lean437-build.log",
+      "sha256": "271d2f8b4aca33e76ab4301ae4c7a426d4a1fc294996be6f11ec07ee6baefbfd",
+      "exit_code": 0,
+      "seconds": 8.006
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/home/ben/GitHub/exponent-seven-haar/frontier/haar-tail/Declarations437.lean"
+      ],
+      "log": "lean437-declarations.log",
+      "sha256": "12525f0c203482f59c7e0507e698d511c81be3f1b14779716271e748bab4a1be",
+      "exit_code": 0,
+      "seconds": 1.97
+    }
+  ],
+  "axioms": {
+    "Exp7.ChebyshevTail.weightedPrimeBalance_le_inertSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.excludes_above_bridge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.classification_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "result_olean_sha256": "3c9d16175be412671f6cf93319c3452ae0688bf40d7cb935fb19c5607f3d77ae"
+}

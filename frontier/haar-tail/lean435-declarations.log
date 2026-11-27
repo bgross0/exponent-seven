@@ -1,0 +1,15 @@
+Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor
+'Exp7.GRHIntegration.primeConductor' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.searchHigh : Exp7.SearchHigh
+'Exp7.searchHigh' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.searchLow : Exp7.SearchLow
+'Exp7.searchLow' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.excludes_above_bridge {q : ℕ} (hq : Nat.Prime q) (h4 : q % 4 = 3) (hlarge : 2 ^ 135 < q) :
+  ¬Exp7.IsExp7 q
+'Exp7.GRHIntegration.excludes_above_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremD_global {q : ℕ} (hq : Nat.Prime q) (h4 : q % 4 = 3) : Exp7.IsExp7 q ↔ q ∈ Exp7.known
+'Exp7.GRHIntegration.theoremD_global' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremD_fundamental_global (a b : ℤ) (hfund : (QuadraticAlgebra.discr a b).IsFundamentalDiscr)
+  (hneg : QuadraticAlgebra.discr a b < 0) [IsDomain (QuadraticAlgebra ℤ a b)] :
+  Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) = 7 ↔ ∃ q ∈ Exp7.known, QuadraticAlgebra.discr a b = -↑q
+'Exp7.GRHIntegration.theoremD_fundamental_global' depends on axioms: [propext, Classical.choice, Quot.sound]

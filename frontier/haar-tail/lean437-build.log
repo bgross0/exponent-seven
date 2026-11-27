@@ -1,0 +1,271 @@
+⚠ [5810/6250] Replayed Exp7Lean.Tail.DyadicArithmetic
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:172:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:175:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:178:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:179:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:181:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Tail/DyadicArithmetic.lean:182:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+info: Exp7Lean/Tail/DyadicArithmetic.lean:262:0: 'Exp7.ChebyshevTailArithmetic.haarLowerBound_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Tail/DyadicArithmetic.lean:263:0: 'Exp7.ChebyshevTailArithmetic.exists_dyadic_index_of_mod_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [18307/18472] Replayed Exp7Lean.Basic
+warning: Exp7Lean/Basic.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18309/18472] Replayed Exp7Lean.Main
+warning: Exp7Lean/Main.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Main.lean:22:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+warning: Exp7Lean/Main.lean:113:0: automatically included section variable(s) unused in theorem `Exp7.X_lt_q`:
+  H
+  hq
+  hE
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit H hq hE in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [18311/18472] Replayed Exp7Lean.Above
+warning: Exp7Lean/Above.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Above.lean:17:43: `Real.exp_nat_mul` has been deprecated: Use `Real.exp_natCast_mul` instead
+
+Hint: Replace the deprecated name:
+  R̵e̵a̵l̵.̵e̵x̵p̵_̵n̵a̵t̵_̵m̵u̵l̵e̲x̲p̲_̲n̲a̲t̲C̲a̲s̲t̲_̲m̲u̲l̲
+warning: Exp7Lean/Above.lean:24:41: `Real.exp_nat_mul` has been deprecated: Use `Real.exp_natCast_mul` instead
+
+Hint: Replace the deprecated name:
+  R̵e̵a̵l̵.̵e̵x̵p̵_̵n̵a̵t̵_̵m̵u̵l̵e̲x̲p̲_̲n̲a̲t̲C̲a̲s̲t̲_̲m̲u̲l̲
+⚠ [18313/18472] Replayed Exp7Lean.Low
+warning: Exp7Lean/Low.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Low.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Low.lean:21:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+⚠ [18315/18472] Replayed Exp7Lean.Step1
+warning: Exp7Lean/Step1.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Step1.lean:138:4: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Exp7Lean/Step1.lean:139:4: `exact hp.ne_zero this`
+uses `this`, which was modified by the flexible tactic `simp` on line 138!
+warning: Exp7Lean/Step1.lean:253:4: `simp at him` is a flexible tactic modifying `him`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Exp7Lean/Step1.lean:254:4: `have : (p : ℤ) ∣ 1 := ⟨c.im, him⟩`
+uses `him`, which was modified by the flexible tactic `simp` on line 253!
+⚠ [18345/18472] Replayed Exp7Lean.Genus.Main
+warning: Exp7Lean/Genus/Main.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18347/18472] Replayed Exp7Lean.Final
+warning: Exp7Lean/Final.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Final.lean:51:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18349/18472] Replayed Exp7Lean.Analytic.Statement
+warning: Exp7Lean/Analytic/Statement.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18353/18472] Replayed Exp7Lean.Analytic.Reduce
+warning: Exp7Lean/Analytic/Reduce.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18357/18472] Replayed Exp7Lean.Analytic.JBound
+warning: Exp7Lean/Analytic/JBound.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+ℹ [18359/18472] Replayed Exp7Lean.Tail.HaarJBound
+info: Exp7Lean/Tail/HaarJBound.lean:107:0: 'Exp7.Jplus_haar_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Tail/HaarJBound.lean:108:0: 'Exp7.Jterm_haar_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [18377/18472] Replayed Exp7Lean.Rows.PrimePart
+warning: Exp7Lean/Rows/PrimePart.lean:217:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18393/18472] Replayed Exp7Lean.ClassGroup.Defs
+warning: Exp7Lean/ClassGroup/Defs.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/ClassGroup/Defs.lean:27:2: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Exp7Lean/ClassGroup/Defs.lean:28:2: `exact hl this`
+uses `this`, which was modified by the flexible tactic `simp` on line 27!
+⚠ [18403/18472] Replayed Exp7Lean.ClassGroup.GenBoundProof
+warning: Exp7Lean/ClassGroup/GenBoundProof.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18405/18472] Replayed Exp7Lean.ClassGroup.Results
+warning: Exp7Lean/ClassGroup/Results.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18407/18472] Replayed Exp7Lean.Final2
+warning: Exp7Lean/Final2.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18409/18472] Replayed Exp7Lean.Analytic.EF.Defs
+warning: Exp7Lean/Analytic/EF/Defs.lean:53:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18411/18472] Replayed Exp7Lean.Analytic.EF.Character
+warning: Exp7Lean/Analytic/EF/Character.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/Character.lean:38:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18413/18472] Replayed Exp7Lean.Analytic.EF.HadamardInput
+warning: Exp7Lean/Analytic/EF/HadamardInput.lean:17:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18417/18472] Replayed Exp7Lean.Analytic.EF.Digamma
+warning: Exp7Lean/Analytic/EF/Digamma.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/Digamma.lean:11:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/Digamma.lean:187:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/Digamma.lean:308:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/Digamma.lean:378:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/Digamma.lean:566:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18421/18472] Replayed Exp7Lean.Analytic.EF.Pointwise
+warning: Exp7Lean/Analytic/EF/Pointwise.lean:34:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18425/18472] Replayed Exp7Lean.Analytic.EF.Pairing
+warning: Exp7Lean/Analytic/EF/Pairing.lean:193:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Exp7Lean/Analytic/EF/Pairing.lean:204:6: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Exp7Lean/Analytic/EF/Pairing.lean:213:8: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Exp7Lean/Analytic/EF/Pairing.lean:217:6: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Exp7Lean/Analytic/EF/Pairing.lean:227:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Exp7Lean/Analytic/EF/Pairing.lean:236:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Exp7Lean/Analytic/EF/Pairing.lean:241:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+⚠ [18431/18472] Replayed Exp7Lean.Analytic.EF.TestFunction
+warning: Exp7Lean/Analytic/EF/TestFunction.lean:157:21: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Exp7Lean/Analytic/EF/TestFunction.lean:263:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Analytic/EF/TestFunction.lean:455:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18435/18472] Replayed Exp7Lean.Final3
+warning: Exp7Lean/Final3.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+ℹ [18463/18472] Replayed Exp7Lean.Rows.Margins
+info: Exp7Lean/Rows/Margins.lean:219:0: 'Exp7.rowMargins_allRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Rows/Margins.lean:220:0: 'Exp7.rowMargins_lowRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [18465/18472] Replayed Exp7Lean.Final4
+warning: Exp7Lean/Final4.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18467/18472] Replayed Exp7Lean.Fundamental
+warning: Exp7Lean/Fundamental.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+info: Exp7Lean/Fundamental.lean:103:0: 'Exp7.theoremA_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Fundamental.lean:104:0: 'Exp7.theoremD_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18469/18472] Replayed Exp7Lean.Rows.Bridge30000
+info: Exp7Lean/Rows/Bridge30000.lean:92:0: 'Exp7.Rows.Bridge30000.margin_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Rows/Bridge30000.lean:93:0: 'Exp7.Rows.Bridge30000.rowOK' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Rows/Bridge30000.lean:94:0: 'Exp7.Rows.Bridge30000.excludes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Rows/Bridge30000.lean:95:0: 'Exp7.Rows.Bridge30000.excludes_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [18471/18472] Built Exp7Lean.Tail.Exclusion (2.6s)
+Build completed successfully (18472 jobs).
