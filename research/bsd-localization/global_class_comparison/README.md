@@ -4,8 +4,14 @@ Date: 2026-11-27. Pilot: `E389.a1`, `K=Q(sqrt(-71))`, `p=5`.
 
 ## Result and scope
 
+**Revision:** the comparison family is now BSV. The prior DR22 raw-moment
+specialization argument was incomplete; the replacement proof and its
+source hypotheses are in [BSV_REPAIR](../general_criterion/BSV_REPAIR.md).
+The generic rank-one argument itself and the CH reflected class are
+unchanged.
+
 There is a way to compare the **full variable elliptic components** of the
-Castella--Hsieh class and the Darmon--Rotger diagonal family without
+Castella--Hsieh class and the Bertolini--Seveso--Venerucci diagonal family without
 identifying their historical cycle constructions, their integral lattices,
 or the absolute normalization of their test vectors.
 
@@ -14,7 +20,7 @@ the two nonzero classes belong to the same one-dimensional vector space
 over the fraction field of the anticyclotomic Iwasawa algebra. Consequently
 
 \[
-             \kappa_{\rm DR}=f(T)\kappa_{\rm CH},\qquad f(T)\ne0.       \tag{1}
+             \kappa_{\rm BSV}=f(T)\kappa_{\rm CH},\qquad f(T)\ne0.       \tag{1}
 \]
 
 This is an equality of full global cohomology classes **after passing to
@@ -29,7 +35,7 @@ prove that it is a unit, provided the order of the particular CH regulator
 used in the derived argument is established independently.
 
 The reflected/derived class is therefore still formed from the actual CH
-family. Nothing here replaces that class by an arbitrarily rescaled DR
+family. Nothing here replaces that class by an arbitrarily rescaled BSV
 family. The local comparison with the analytic computation remains a
 separate assertion about the full regulator; the new argument supplies its
 global-family prerequisite.
@@ -183,20 +189,23 @@ with an integral vanishing assertion for a compact module.
 
 ## 3. Both full classes satisfy the same local condition
 
-### 3.1 The DR22 condition is genuinely strict at the other prime
+### 3.1 The BSV condition is genuinely strict at the other prime
 
-DR22, *p-adic families of diagonal cycles*, Definition 5.2 constructs the
-full class before scalar pairing. Proposition 5.8, printed page 41,
-places its localization in the **image**
+BSV Corollary 8.2 places its full family in the balanced Selmer group.
+The kernel of the map to cohomology of the quotient representation is,
+by the long exact sequence, the image
 
 \[
  H^1(\mathbf Q_5,F^{\rm bal}\mathbb V)
        \longrightarrow H^1(\mathbf Q_5,\mathbb V).                    \tag{6}
 \]
 
-Here `F^bal` denotes its rank-four submodule `V^+`; it is not its
-rank-one submodule denoted `V^{++}`. In CH the rank-four object is
-instead denoted `F^{++}`. We distinguish these naming conventions.
+Here `F^bal` is the rank-four balanced representation, denoted `F^2`
+in BSV. Castella--Do (4.5) explicitly uses this BSV family, and its
+CM decompositions (3.3)--(3.4) and Proposition 5.3.1 verify the same
+full relaxed/strict condition. Thus this statement applies to the
+family whose normalized specialization is used in the replacement
+[edge comparison](../general_criterion/BSV_REPAIR.md).
 
 Choose local splittings of the two CM representations into their plus
 and minus characters. They split because they are induced from a field
@@ -213,7 +222,7 @@ For the same CM type, the variable block is the pair `++` and `--`;
 the mixed signs form the auxiliary block. Projecting (7) to the
 variable block therefore gives **full `V` at one prime and zero at
 the other**. In particular the conjugate-prime localization of the
-projected DR class is zero in full `H^1`, not merely after taking an
+projected BSV class is zero in full `H^1`, not merely after taking an
 ordinary quotient.
 
 This deduction is compatible with specialization: the composite map
@@ -302,33 +311,36 @@ so the two weight-one Frobenius roots are `zeta7^2` and `zeta7^-2`,
 which remain distinct modulo five. This verifies the CM-family
 conditions in addition to those for `f`.
 
-DR22 Section 1.3 and Definition 5.2 provide the family construction
-with odd `p`, tame level prime to `p`, and the indicated ordinary
-residual hypotheses. They do not impose `p` prime to `phi(M)`.
-The older DR17 Section 1.5--1.6 integral setup does impose that extra
-restriction. It fails here because `5` divides `phi(71*389)` and must
-not be silently imported. Our geometric comparison uses the DR22
-family and the rational projected-edge argument in
-[ARITHMETIC_SPECIALIZATION](../leading_comparison/ARITHMETIC_SPECIALIZATION.md).
-Tame finite-group projectors are taken with characteristic-zero
-coefficients; their finite denominators are harmless after inverting
-five. This does not assert an integral control theorem at this level.
+BSV Section 1.1 and (155)--(156) provide the ordinary family at
+`p>=5`, with tame level prime to `p`. The official erratum explicitly
+preserves the ordinary duality used in its construction. Its weight-one
+hypotheses are checked in [BSV_REPAIR](../general_criterion/BSV_REPAIR.md):
+the order-seven CM forms are classical and p-regular, and their dihedral
+projective image of order fourteen has only the imaginary quadratic
+self-twist, so they have no real quadratic multiplication.
+
+This rational ordinary construction has no `p`-prime-to-`phi(N)`
+restriction. The older DR17 integral construction does impose it; it
+fails here and is not used. Tame finite-group projectors are taken in
+characteristic zero. The former DR22 raw-moment edge proof is withdrawn;
+the replacement uses BSV Theorem 8.1 and explicitly proved finite and
+geometric extensions, not an asserted identification of BSV with DR22.
 
 Both generic classes are nonzero for allowed nonzero test choices.
 For CH, its ordinary Coleman reciprocity law and the supplied theta
 series of exact order two give a nonzero regulator image, hence a
 nontorsion class.
 
-For DR22, use the **full syntomic specialization** as the primary
+For BSV, use the **full syntomic specialization** as the primary
 argument. Choose the explicit minimal-level test-vector projection
 corresponding to the analytic cross-placement vector `A(W)`; Section
 6 describes its relation to the common computed vector `L(W)`.
 The nonzero analytic quadratic coefficient proves that `A(W)` is not
-the zero germ. Along the classical weights `s_n=4*5^n`, the parameters
+the zero germ. Along the classical weights `s_n=8*5^n`, the parameters
 `W_n=6^(s_n)-1` approach zero and `A(W_n)` is nonzero for every
 sufficiently large `n`.
 
-The projected edge proposition identifies the DR22 specialization
+The projected edge proposition identifies the BSV specialization
 with the appropriate projected etale diagonal cycle, up to a
 nonzero scalar. DR I Theorem 3.8 gives its full syntomic functional
 for every elliptic test vector. The CM test tensor extracts precisely
@@ -337,20 +349,20 @@ annihilated. The fixed-weight Euler operators are invertible at these
 classical weights, and all CM period identifications act by a
 nonzero scalar on this block. These full-vector statements are
 proved in [normalized_local_comparison](../normalized_local_comparison/README.md),
-Sections 2--3, using the frozen fixed-weight and projected-edge
-arguments. Consequently the variable class has nonzero local
+Sections 2--3, using the fixed-weight argument and the corrected BSV
+projected-edge comparison. Consequently the variable class has nonzero local
 Bloch--Kato logarithm at every sufficiently large classical weight
 in this sequence.
 
 A torsion family would be killed by a nonzero coefficient germ.
 That germ has no zeros at sufficiently small nonzero `W_n`, so
 the torsion family's specialization there would be zero. This
-contradicts the preceding nonzero logarithms. Thus `kappa_DR` is
+contradicts the preceding nonzero logarithms. Thus `kappa_BSV` is
 nontorsion in the variable block. This argument needs neither
-vanishing of the auxiliary DR class nor the normalized full
+vanishing of the auxiliary BSV class nor the normalized full
 Perrin--Riou interpolation formula.
 
-There is also an ordinary-reciprocity cross-check. DR22 Theorem 5.1
+There is also an ordinary-reciprocity cross-check. BSV Theorem A
 identifies an ordinary regulator image with the triple-product
 function. Its `f` quotient of (7) is
 `(V/F^+V) tensor g^+ tensor h^+`: it belongs to the variable block
@@ -371,7 +383,7 @@ images agree.
 ## 5. The full comparison theorem
 
 **Proposition.** After the representation, prime, and parameter
-identifications in Section 1, let `kappa_CH` and `kappa_DR` be the
+identifications in Section 1, let `kappa_CH` and `kappa_BSV` be the
 variable components with the nonzero test choices of Section 4.
 Then (1) holds in full global cohomology over `Q`.
 
@@ -395,7 +407,7 @@ write in a local coordinate
 Then
 
 \[
- P(\kappa_{\rm DR})=T^{m+r}(av+O(T)).                              \tag{10}
+ P(\kappa_{\rm BSV})=T^{m+r}(av+O(T)).                              \tag{10}
 \]
 
 Thus the leading projective directions coincide, even when `r` is
@@ -501,22 +513,21 @@ original `L0` lines. No claim that the scalar `f` itself lies in
 
 | Assertion | Status of this note |
 |---|---|
-| CH and DR variable classes are proportional in full generic global cohomology | Proved from the cited rank-one theorem and the stated package inputs |
+| CH and BSV variable classes are proportional in full generic global cohomology | Proved from the cited rank-one theorem and the stated package inputs |
 | Their leading full-regulator directions agree projectively | Proved by (10) |
 | Good tame test vectors have the same leading analytic vector line | Proved by (11) and its nonzero base factor |
 | Literal equality of historical integral families | Not asserted or needed |
 | Equality of their base specializations without tracking orders | Does not follow from generic proportionality |
 | A unit relating the two generic classes at augmentation | Not asserted or needed |
-| Full normalized PR/syntomic operator for the DR family | Separate local comparison obligation |
+| Full normalized PR/syntomic operator for the BSV family | Separate local comparison obligation |
 | Nonzero finite logarithm of the reflected class | Requires that local operator and the computed separation from its exceptional line |
 
-The remaining mathematical obligation of this note is therefore
-explicit: prove the full normalized local-regulator/syntomic
-comparison for the DR22 projected family in the same character and
-test-vector conventions, and identify the exceptional image line.
-Once that local statement is available, historical full-family
-equality is no longer an additional requirement for the projective
-nonvanishing argument.
+This note supplies the generic global line. The separate
+[normalized local comparison](../normalized_local_comparison/README.md)
+identifies its full regulator with the syntomic vector in the same
+character and test-vector conventions, and gives the base image line.
+Together these arguments remove any need to identify the historical
+integral families for the projective nonvanishing test.
 
 ## Primary references and dependency boundary
 
@@ -525,15 +536,15 @@ nonvanishing argument.
   [author PDF](https://web.math.ucsb.edu/~castella/Kato-print.pdf).
   Equations (3.10)--(3.13), Theorem 3.6, Corollary 3.7, and the
   derived arguments cited in the frozen package.
-* Darmon--Rotger, *p-adic families of diagonal cycles*:
-  [arXiv:2207.01314](https://arxiv.org/pdf/2207.01314).
-  Section 1.3; Definition 5.2; the rank-four filtration in Lemma
-  5.3; Proposition 5.8; Theorem 5.1. The projected weight-two-edge
-  extension is the separately proved lemma in this repository.
+* Bertolini--Seveso--Venerucci, *Reciprocity laws for balanced diagonal classes*:
+  [author PDF](https://www.esaga.uni-due.de/f/massimo.bertolini/publications/Ast-BSV1.pdf)
+  and [official erratum](https://www.esaga.uni-due.de/f/massimo.bertolini/publications/Errata-AstBSV1.pdf).
+  Theorem 8.1 and Corollary 8.2; finite edge extensions of Propositions
+  8.3 and 3.7 are proved in `general_criterion/BSV_REPAIR.md`.
 * Darmon--Rotger, *Diagonal cycles and Euler systems II*:
   [author PDF](https://web.mat.upc.edu/victor.rotger/docs/DR2.pdf).
   Its Section 1.5--1.6 integral `p`-prime-to-`phi(N)` restriction
-  is explicitly not used for the DR22 construction here.
+  is explicitly not used for the BSV construction here.
 * Castella--Do, *Diagonal cycles and anticyclotomic Iwasawa theory
   of modular forms*, August 4, 2025 author version:
   [primary PDF](https://kimtuando.github.io/website/Schoen_CM.pdf).

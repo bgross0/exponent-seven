@@ -3,31 +3,27 @@
 Date: 2026-11-27. This is a continuation of the independent source audit.
 It does not change the frozen fixed-weight or finite-computation files.
 
-## Status and the precise improvement
+## Current status and correction
 
-The published diagonal families are **full Galois classes**, before any
-ordinary regulator pairing. There is therefore no inherent loss of the
-second elliptic coordinate at their construction stage. There are, however,
-two real checks between that observation and the desired comparison:
+The previous Section 3 claimed that a raw moment/localization argument
+proved the normalized specialization of the DR22 family at `(2,k,k)`.
+That claim is withdrawn: the argument did not establish compatibility
+with the dual ordinary specialization defining the family. Killing an
+extra boundary term was insufficient. The precise diagnosis is in
+[the independent edge audit](../edge_specialization_audit/README.md).
 
-1. The crystalline geometric interpolation results inspected below exclude
-   the edge with one modular weight equal to two in the paragraphs governing
-   their statements. A cuspidal projection repairs the visible cohomological
-   obstruction. The repair, and its limits, are made explicit here.
-2. A syntomic/Bloch--Kato vector is not the Perrin--Riou vector. The latter
-   requires the full adjoint interpolation operator, in the same character,
-   period, test-vector, and reciprocity conventions. The local character
-   ambiguity can be substantially reduced, but the normalized averaged
-   Coleman map must still be matched.
+The current proof uses the **BSV family** instead. The replacement
+[full specialization proof](../general_criterion/BSV_REPAIR.md) starts
+from BSV Theorem 8.1, which already covers balanced weight-two triples,
+then proves the required exponent-zero extensions of its finite
+p-stabilization and geometric cycle comparisons. The rational cuspidal
+filter in Section 2 below remains valid. The local-character and
+operator calculations in Sections 4--5 also remain valid.
 
-The proposed full arithmetic-family specialization is **not marked proved
-for the existing named CH class** by this note. The elementary projected
-edge lemma below is proved. Section 3 gives a rational, projective
-extension of the DR22 geometric comparison by its actual extension-class
-construction. This is a deduction with a proof, rather than a claim that
-the printed theorem already includes the edge. Identifying this family
-and its de Rham trivialization with the existing named CH class remains
-separate.
+The global comparison is generic proportionality of BSV and CH in the
+same rank-one Selmer module. Reflection and global division continue to
+use the actual CH class. No equality of the historical BSV and DR22
+families is asserted.
 
 ## 1. What the primary sources actually provide
 
@@ -62,11 +58,13 @@ Use the following author versions; theorem numbering refers to these files.
 * **BSV22:** Bertolini--Seveso--Venerucci, *Reciprocity laws for balanced
   diagonal classes*,
   [author PDF](https://www.esaga.uni-due.de/f/massimo.bertolini/publications/Ast-BSV1.pdf).
-  Theorem 8.1 is full Galois-class specialization. The comparison in
-  Proposition 8.3 has all three modular weights at least three. The
-  inspected author version also has a standing restriction on the prime
-  stronger than needed by the present pilot. It cannot silently supply our
-  weight-two, prime-five geometric comparison.
+  Theorem 8.1 is full Galois-class specialization for every balanced
+  classical triple, including `(2,k,k)`. Proposition 8.3 and Section 3.2
+  print positive-weight restrictions; their required finite and geometric
+  extensions are proved in the replacement note. The standing prime
+  restriction is `p >= 5`, visually checked on page 3; our earlier reading
+  as `p>5` was a text-extraction error. The official erratum preserves the
+  ordinary duality used by this construction.
 * **CDo:** Castella--Do,
   [*Diagonal cycles and anticyclotomic Euler systems*, author PDF](https://kimtuando.github.io/website/Schoen_CM.pdf).
   Equation (4.5) uses the BSV family; Remark 4.3.1 identifies it with their
@@ -82,12 +80,11 @@ Use the following author versions; theorem numbering refers to these files.
   map for each test eigenvector. Theorem 3.4 applies to both eigenvectors,
   not just the ordinary test vector of Theorem 3.6.
 
-Equality of the ordinary outputs of two classes does not identify their
-full classes. One may instead explicitly choose the DR22 family for a new
-construction, using its own reciprocity theorem and the CM decomposition.
-That avoids an unproved historical-class identification; it does not
-automatically transfer every symmetry or derived-class assertion previously
-proved for another chosen normalization.
+Equality of ordinary outputs does not identify full classes. The current
+proof explicitly chooses the BSV family for the geometric comparison and
+uses the rank-one Selmer theorem to compare it generically with CH. The
+reflected construction is still performed on CH, so no unproved transfer
+of its global symmetry to a different normalization is required.
 
 ## 2. A proved rational projected-edge lemma
 
@@ -179,116 +176,39 @@ at `X=4`. Hence neither CM coefficient is `4` modulo five. All
 three factors of `C_3` are units at the base and on a sufficiently
 small weight disk.
 
-## 3. How far the published specialization proof now extends
+## 3. Replacement for the withdrawn DR22 specialization argument
 
-The following is an audit of the actual uses of a positive first exponent.
-It does not collapse them into a single null-homology assertion.
+The former argument in this section used raw covariant moment maps as
+though they were the normalized dual ordinary comparison in DR22.
+The independent audit explains the mismatch and the trace-degree factors
+that raw moments acquire. It does not claim that the actual published
+family or its theorem is false. The proof formerly written here was
+incomplete, and is not an input to the current localization theorem.
 
-| Step in DR22 | What happens at `(k°,l°,m°)=(0,r,r)` |
-|---|---|
-| Moment maps (1.20), specialization (3.1)--(3.3) | Degree-zero moment is evaluation on the constant polynomial `1`. The maps were defined for nonnegative exponents. No division by `k°` is introduced. |
-| Clebsch--Gordan invariant, Lemma 3.2 | It is `(X_2Y_3-Y_2X_3)^r`. The other two determinant exponents are zero. This is nonzero and has the required Tate weight. |
-| Surjectivity in the excision diagram (3.5) | The source uses vanishing of `H^4(X^3,H^{k°,l°,m°})`. At the edge it need not vanish globally. Its cuspidal first-factor projection does vanish: the only obstructing first-factor `H^2` is killed by (1). |
-| Identification of the middle cohomology in (4.9) | The same projection kills the extra first-factor `H^0` and `H^2`; the retained piece is precisely the `H^1` tensor product. |
-| Raw cycle versus DR14 cycle | DR14 Definition 3.2 supplies the cusp correction. Section 2 proves that it vanishes after the rational first-factor filter. |
-| Degeneracy maps and Lemmas 4.2--4.4 | Good Hecke operators commute with the `p`-degeneracy maps. Their formulas depend on Hecke roots and their differences, not on division by `k°`. |
-| Cycle counting in Lemma 4.5 | Its setup precedes the positivity restriction. For the first factor the indexing set is empty and `p^{k°}=1`; the finite-map counts still make sense. |
-| Ordinary root denominators | At the classical weights used here, each ordinary root is a unit and the other root has positive valuation; their differences are nonzero. |
+The replacement is
+[BSV_REPAIR.md](../general_criterion/BSV_REPAIR.md). It proves:
 
-### Rational extension-class argument
+> For ordinary Hida families satisfying BSV's actual hypotheses, at a
+> crystalline balanced triple `(2,k,k)`, `k>=3`, the full BSV class after
+> the specified ordinary-to-tame map is a nonzero scalar multiple of the
+> full cuspidally projected etale Abel--Jacobi class of the DR I cycle.
 
-**Projected edge proposition (deduced here).** Let the DR22 family be
-defined for three ordinary cuspidal Hida families at an odd prime `p`.
-Fix a crystalline balanced specialization of weights `(2,k,k)`, with
-`k>2`, trivial first nebentype, product of the three nebentypes one,
-and tame conductors prime to `p`. Use the same good-Hecke
-normalization, ordinary roots, `p`-degeneracy maps, and rational
-Scholl conventions as DR22. In the first factor use the cuspidal
-component of `f`; in DR14 Definition 3.2 use a cusp basepoint.
-Then the specialization of this **DR22-defined full Galois class**,
-after the `p`-degeneracy map to tame level and projection to that
-component, is a nonzero scalar multiple of the projected étale
-Abel--Jacobi class of the DR14 `(2,k,k)` cycle. This statement is
-about full classes before an ordinary scalar regulator pairing.
-It permits both classes to be zero: the same nonzero scalar relates
-them. No identification with a separately defined CH family is part
-of the proposition.
+The proof uses BSV Theorem 8.1 for its normalized family specialization,
+extends the three finite push-pull steps of Proposition 8.3 with the
+coefficient map `Sym^0(lambda)=id`, and identifies the edge diagonal's
+relative invariant with `(X_2Y_3-Y_2X_3)^(k-2)`. Functorial Gysin,
+Leray and Hochschild--Serre maps identify the full extension class.
+The rational cusp filter of Section 2 identifies the corrected DR I
+cycle with the same projected class. All four resulting Euler factors
+are nonzero at these classical weights, by their complex absolute values.
+No integral-unit assertion is required.
 
-Here is how to perform the required comparison, rather than infer it
-from null-homology alone. The argument uses the **DR22-defined family**
-and its moment maps. All groups in this paragraph have characteristic-zero
-coefficients; no assertion about integral torsion or exactness modulo
-arbitrary powers of `p` is made.
-
-Let `L=H^0 boxtimes H^r boxtimes H^r` be the coefficient sheaf on
-the threefold of modular curves. For a support `Z` containing the
-diagonal and the finitely many Hecke translates in `theta_q`, localization
-has the segment
-\[
- 0\longrightarrow H^3(X^3,L)(2)
- \longrightarrow H^3(X^3\setminus Z,L)(2)
- \longrightarrow H_Z^4(X^3,L)(2)
- \xrightarrow{\partial}H^4(X^3,L)(2).                \tag{3a}
-\]
-One need not make the last group zero. For any Galois-equivariant
-residue generator `b:Q_p(t)->H_Z^4(X^3,L)(2)` with `partial b=0`,
-pullback along `b` gives a short exact sequence, hence an extension
-class. Pushing out its left term to the desired `H^1` tensor quotient
-then gives the projected Abel--Jacobi class. This elementary
-pullback/pushout statement is functorial in a morphism of localization
-sequences.
-
-The universal class in DR22 is defined using the **modified** cycle
-`Delta^o=theta_q Delta`, not an unmodified diagonal whose boundary is
-being assumed zero. Apply the moment maps in (1.20) and (3.6) to its
-localization diagram. Their functoriality with good Hecke
-correspondences sends the residue generator to the `theta_q`-modified
-version of `(X_2Y_3-Y_2X_3)^r`, precisely the generator identified by
-Lemma 3.2 at the edge. Its boundary vanishes: the only possible
-degree-four Kunneth term is
-\[
- H^2(X,Q_p)\otimes H^1(X,H^r)\otimes H^1(X,H^r),
-\]
-and the first factor of `theta_q` contains `T_q-(q+1)`. Equivalently,
-one can apply `R_f` before the final `f`-projection. The degree-three
-term has only the `H^1 tensor H^1 tensor H^1` contribution because
-the two positive-weight coefficient sheaves have vanishing `H^0`
-and `H^2` after passing to their Scholl pieces.
-
-Thus the specialized universal extension maps to the pullback of
-(3a) along this modified generator. By the functorial
-pullback/pushout observation, their projected extension classes
-coincide. This is the argument of DR22 Theorem 3.1 with the boundary
-kernel retained; its proof does not require surjectivity onto the
-whole residue space after that modification. It repairs exactly the
-use of `H^4=0` in (3.5).
-
-The same construction over the tame and intermediate levels gives
-the projected counterpart of (4.9) and Proposition 4.6. Section 2
-identifies the resulting raw projected cycle with the projected
-DR14 cycle, including its cusp correction. The good-Hecke filter
-commutes with the `p`-degeneracy maps; therefore Lemmas 4.2--4.5
-and the final algebraic Euler-factor calculation apply to these
-extension classes at exponent zero as well. This proves the
-**rational projective extension** of the DR22 geometric comparison
-to `(2,k,k)`, for the specified cuspidal component and cusp correction.
-The argument deliberately does not assert an integral extension,
-nor an equality of differently defined historical families.
-
-All normalization factors in this comparison are nonzero at a fixed
-classical weight. In particular, for `(2,k,k)` the four balanced Euler
-factors have complex root-product absolute value `p^{-1/2}`. The
-ordinary denominators `1-beta/alpha` are nonzero. These statements
-justify projective comparison; they do not assert a uniform integral
-bound on the scalars. Keeping a projective conclusion also avoids
-silently identifying conventions for the Scholl factorials and the
-overall Abel--Jacobi sign.
-
-The remaining family-identification obligation is now explicit: use
-this DR22-defined class throughout, or prove its equality (up to an
-appropriate regular scalar) with the independently named CH class.
-The argument above asks for neither a rational point nor nonzero
-localization as a premise.
+Use the sequence `s_n=2(p-1)p^n`, hence `s_n=8*5^n` in this pilot,
+to satisfy BSV's congruence modulo `2(p-1)` at the weight-one CM center.
+The analytic wedge proof is unchanged for this sequence. Its source
+hypotheses, including ordinary duality in the official erratum and the
+weight-one non-real-multiplication condition, are checked in the
+replacement note.
 
 ## 4. Which family the inverse Bol operator represents
 
@@ -304,7 +224,7 @@ Consequently
 \[
              d^{-s}g_s^{[5]}=h_{-s}^{[5]}.            \tag{3}
 \]
-At the arithmetic weights `s=4*5^n`, principal-unit powers agree with
+At the arithmetic weights `s=8*5^n`, principal-unit powers agree with
 the ordinary algebraic powers on prime-to-five integers. Since
 `k=1+s`, (3) is exactly `d^{1-k}g_k^{[5]}`. It has weight
 `1-s=2-k`; multiplying by `h_s`, of weight `1+s=k`, gives weight two.
@@ -420,13 +340,12 @@ Coleman comparison are completed.
 A precise use of the projected edge proposition in the current
 research therefore retains two separate premises:
 
-1. **Chosen family and test vectors.** Either use the DR22-defined
-   class consistently, including its CM projection and test-vector
-   maps, or identify it with the named CH class in full Galois
-   cohomology. Equality of scalar reciprocity laws is not this
-   identification. A construction that changes the chosen family
-   must also recheck the global symmetry and Selmer hypotheses used
-   in its later derived-class step.
+1. **Chosen family and test vectors.** Use the BSV-defined class
+   consistently in the geometric comparison, with its CM projection
+   and test-vector maps. Compare it generically with CH in full
+   cohomology using the rank-one Selmer argument. Equality of scalar
+   reciprocity laws is not this comparison. Reflection and division
+   remain constructions on the actual CH family.
 2. **Normalized local identification.** Match the full syntomic/BK
    vector, in its CM period and elliptic cup basis, with CH (3.9)
    and Theorem 3.4, including the selected local prime, the twist
@@ -435,7 +354,7 @@ research therefore retains two separate premises:
    comparison by definition.
 
 A valid continuation can use the following independent inputs: the
-explicit cycle family and its rational projected moment diagram;
+normalized BSV specialization and its rational projected cycle comparison;
 the CM representation identity; the full fixed-weight syntomic
 calculation; and CH's full local interpolation theorem. The projective
 analytic continuation then uses zeros of an analytic wedge and needs

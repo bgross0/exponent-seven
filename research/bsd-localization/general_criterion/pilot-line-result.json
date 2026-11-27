@@ -1,0 +1,36 @@
+{
+  "basis_id": "E389-p5-falpha-fbeta-after-Klead-v1",
+  "certificate_sha256": "f67c42d03f9e5ea559bb7a83dc298b80170b633a4801579181bb4d7d2cd15d2c",
+  "determinant_residue": [
+    75,
+    0,
+    0
+  ],
+  "determinant_valuation": 2,
+  "determinant_valuation_lower_bound": 2,
+  "finite_checks": {
+    "both_representatives_primitive": true,
+    "canonical_residues": true,
+    "common_basis_ids": true,
+    "irreducible_mod_p": true,
+    "prime": true
+  },
+  "p": 5,
+  "precision": 3,
+  "schema": "bsd-projective-line-separation/v1",
+  "scope": "Finite arithmetic only. If the supplied common-basis and coordinatewise precision claims are proved, CERTIFIED_DISTINCT proves the two true lines differ. INCONCLUSIVE does not prove equality.",
+  "source_bindings": {
+    "analytic_leading_term": "../PILOT_LOCALIZATION_THEOREM.md equations (9)-(11); ../comparison_logic_audit/result.json corrected_five_b_over_a.",
+    "common_basis": "The same stabilization basis (f_alpha,f_beta) used in the pilot theorem, with K_lead already applied to the analytic vector.",
+    "exceptional_line": "../PILOT_LOCALIZATION_THEOREM.md equation (12); ../comparison_logic_audit/result.json zeta_five_b_over_a=86.",
+    "precision": "The pilot theorem proves both integral scaled ratios modulo125. The first normalized coordinate is exactly5. This checker does not reprove those bounds."
+  },
+  "status": "CERTIFIED_DISTINCT",
+  "unramified_degree": 3,
+  "unverified_mathematical_obligations": [
+    "The stated analytic coefficient is the first nonzero coefficient of the true germ.",
+    "The exceptional vector represents the source-derived exceptional line in the same basis.",
+    "Both normalizations and coordinate error bounds are mathematically justified.",
+    "The global, Selmer, theta-order, and full-comparison hypotheses of README.md hold."
+  ]
+}

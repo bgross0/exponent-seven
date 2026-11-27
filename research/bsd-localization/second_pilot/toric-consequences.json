@@ -1,0 +1,164 @@
+{
+  "CM7_values_in_certified_cycle_order": [
+    1,
+    1,
+    -1,
+    0,
+    0,
+    0,
+    -1
+  ],
+  "T2_eigenvalue": -1,
+  "T2_minus_eigenspace_dimension": 1,
+  "all_supersingular_automorphism_weights": 1,
+  "arithmetic_implications_with_written_source_theorems": {
+    "L_E_K_trivial_at1": "0 by Gross's exact period identity",
+    "L_E_at1": "0 by the trivial-character factorization and the nonzero twist factor",
+    "L_E_twist_minus71_at1": "positive by the separate rational interval certificate",
+    "all_nontrivial_order7_auxiliary_L_values": "nonzero by the exact period norm49 and Gross's formula",
+    "theta_order_at_augmentation": "2 after exact constant and linear vanishing and ordinary level compatibility, as explained in README.md"
+  },
+  "cyclotomic_multiplication_matrix": [
+    [
+      2,
+      -1,
+      0,
+      0,
+      1,
+      -2
+    ],
+    [
+      2,
+      1,
+      -1,
+      0,
+      1,
+      -1
+    ],
+    [
+      0,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      0,
+      -1
+    ],
+    [
+      1,
+      0,
+      -1,
+      1,
+      2,
+      -2
+    ],
+    [
+      1,
+      0,
+      0,
+      -1,
+      2,
+      0
+    ]
+  ],
+  "finite_quotient_relation_T_coefficients": [
+    0,
+    5,
+    10,
+    10,
+    5,
+    1
+  ],
+  "input_sha256": {
+    "second_pilot/result.json": "543fea967e9be80dba35a649912edcc306ea3fa1ef6f4a31297adaff70d5c194",
+    "second_pilot/twist-lvalue.json": "3bd5b87d3837d7b9df0234dfda066d95ad7dc996ff53a20242c03166c5e8c8ec",
+    "second_theta/certificate.json": "5e533e6f0ea31a2c59293448a5f2f8077de512b9e3c50e7420f6eafd2a699898"
+  },
+  "lower_level_norm_element_T_coefficients": [
+    5,
+    10,
+    10,
+    5,
+    1
+  ],
+  "nontrivial_order7_periods_are_5adic_units": true,
+  "nontrivial_period_polynomial_coefficients": [
+    1,
+    1,
+    -1,
+    0,
+    0,
+    0,
+    -1
+  ],
+  "norm_of_order7_period": 49,
+  "ordinary_regularization_quadratic_residue_mod5": 1,
+  "primitive_eigenfunction": [
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    -1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    2,
+    0,
+    0,
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    -1,
+    -1,
+    1,
+    1
+  ],
+  "raw_T_coefficients": [
+    0,
+    0,
+    1,
+    1,
+    0
+  ],
+  "raw_group_ring_factorization": "gamma*(gamma\u22121)^2",
+  "raw_grouped_coefficients": [
+    0,
+    1,
+    -2,
+    1,
+    0
+  ],
+  "schema": "bsd-second-pilot-toric-consequences-v1",
+  "scope": "Independent small exact consequences. Full class-polynomial, root and graph certification is a separate input; special-value and theta interpolation identities are mathematical theorems, not checked by this executable. No rational-point or finite-Sha input, no full localization theorem.",
+  "status": "PASS",
+  "trivial_period": 0,
+  "twist_L_interval": [
+    "1.1502294196396946581943689605252904429375",
+    "1.1502294351856175010472606527965917550173"
+  ]
+}

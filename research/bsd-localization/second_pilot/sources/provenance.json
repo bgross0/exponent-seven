@@ -1,0 +1,81 @@
+{
+  "adapted_interval_program": {
+    "changes": "New curve equation and point-count discriminant, bad prime433, minimal twist model, conductor2182753, and positivity interval; no floating point.",
+    "source": "eligibility/arithmetic/check_twist_lvalue.py",
+    "source_sha256": "461b29ddeb6574bd134afbe85870c70c72a3e8982937387325572353b6734ee7"
+  },
+  "cremona_complete_prefix": {
+    "columns": [
+      "conductor",
+      "Cremona isogeny label",
+      "curve number",
+      "a-invariants",
+      "rank",
+      "torsion order"
+    ],
+    "commit": "6fedd3ab463a70e52061ebc0b04832ad19fd2e01",
+    "full_file_bytes_ascii": 2146401,
+    "full_file_git_blob_sha": "baab5801d7f81e1d5c44f5eb5acf4f1e100bc90b",
+    "full_file_rows": 64687,
+    "local_file": "cremona-through-1000.txt",
+    "local_sha256": "f10837f771b6e64afba6a4b3a8bc2cfe76b203c83285f57e19a0d96249c661ef",
+    "rank_usage": "Candidate selection only; no arithmetic proof uses rank or generators.",
+    "repository": "JohnCremona/ecdata",
+    "retrieval": "GitHub file metadata at pinned commit; content fetched separately by the returned Git blob SHA",
+    "saved_rows": 5113,
+    "saved_selection": "Every row with conductor <=1000, in original order; not filtered by rank or primality",
+    "source_path": "allcurves/allcurves.00000-09999",
+    "source_url": "https://github.com/JohnCremona/ecdata/blob/6fedd3ab463a70e52061ebc0b04832ad19fd2e01/allcurves/allcurves.00000-09999"
+  },
+  "primary_curve_pages": [
+    {
+      "ainvs": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label_cremona": "433a1",
+      "label_lmfdb": "433.a1",
+      "url": "https://www.lmfdb.org/EllipticCurve/Q/433/a/1"
+    },
+    {
+      "ainvs": [
+        1,
+        1,
+        1,
+        -15,
+        16
+      ],
+      "label_cremona": "563a1",
+      "label_lmfdb": "563.a1",
+      "url": "https://www.lmfdb.org/EllipticCurve/Q/data/563.a1"
+    },
+    {
+      "ainvs": [
+        0,
+        1,
+        1,
+        -4,
+        2
+      ],
+      "label_cremona": "571b1",
+      "label_lmfdb": "571.a1",
+      "url": "https://www.lmfdb.org/EllipticCurve/Q/571/a/1"
+    },
+    {
+      "ainvs": [
+        1,
+        0,
+        0,
+        -4,
+        3
+      ],
+      "label_cremona": "643a1",
+      "label_lmfdb": "643.a1",
+      "url": "https://www.lmfdb.org/EllipticCurve/Q/643/a/1"
+    }
+  ],
+  "retrieved_utc_date": "2026-11-27"
+}

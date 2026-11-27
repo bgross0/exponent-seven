@@ -1,0 +1,22 @@
+{
+  "schema": "bsd-projective-line-separation/v1",
+  "ring": {"p": 7, "precision": 3, "modulus_polynomial": [1, 0, 1]},
+  "basis_id": "toy-two-dimensional-basis-v1",
+  "error_ideal": "p^N O_L^2",
+  "analytic": {
+    "basis_id": "toy-two-dimensional-basis-v1",
+    "coordinates": [[1, 0], [0, 1]],
+    "normalization": "Exact toy vector (1, theta); no elliptic-curve identification is claimed."
+  },
+  "exceptional": {
+    "basis_id": "toy-two-dimensional-basis-v1",
+    "coordinates": [[1, 0], [7, 1]],
+    "normalization": "Exact toy vector (1, theta+7)."
+  },
+  "source_bindings": {
+    "analytic_leading_term": "Toy definition in CERTIFICATE.md; exact vector (1,theta).",
+    "exceptional_line": "Toy definition in CERTIFICATE.md; exact vector (1,theta+7).",
+    "common_basis": "The named formal basis of L^2 with theta^2=-1.",
+    "precision": "Both toy vectors are exact integer polynomials, hence accurate modulo 7^3."
+  }
+}

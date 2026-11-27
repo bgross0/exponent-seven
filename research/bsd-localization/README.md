@@ -1,6 +1,8 @@
-# Rank-two BSD: nonzero localization in the E389 pilot
+# Rank-two BSD: a reusable localization criterion and a second theta pilot
 
-Research branch: `bsd-arithmetic-comparison`, continuing
+Research branch: `bsd-second-pilot-criterion`, continuing
+`bsd-arithmetic-comparison` at `efe135c95f20ae38e8b761529be73dd7d0382c67`.
+The preceding branch continued
 `bsd-projection-certificates` commit `260370b41e0849003b3e5ac94381042fa03b757e`,
 including its precision binding and durable witness replay update on top
 of the projection snapshot `9364a14d51c0bc144bb78ba79a91732050f93b31`.
@@ -41,9 +43,12 @@ coefficients in the specified elliptic stabilization basis, it gives
 \]
 
 The two arithmetic comparisons are now supplied by written arguments:
-the full global classes are generically proportional in a rank-one
-Selmer module, and the fully normalized local regulator is determined
-using both test eigenvectors. The resulting
+the full BSV and CH global classes are generically proportional in a
+rank-one Selmer module, and the fully normalized local regulator is
+determined using both test eigenvectors. The BSV normalized
+specialization replaces the incomplete raw DR22 moment argument in
+the preceding branch; the correction and independent audit are linked
+below. The resulting
 [pilot proof draft](PILOT_LOCALIZATION_THEOREM.md) proves nonzero finite
 localization of the reflected CH class from the explicitly listed
 arithmetic, geometric, and analytic inputs. It does not use the pilot's
@@ -56,13 +61,86 @@ establishes nonvanishing, without an absolute value for the logarithm.
 The cancellation to a rational residue is a finite-precision observation,
 not an exact descent theorem.
 
-The complete dependency ledger and proof are in
+The complete dependency ledger and corrected proof are in
 [PILOT_LOCALIZATION_THEOREM.md](PILOT_LOCALIZATION_THEOREM.md), with the
-[independent comparison review](comparison_logic_audit/FINAL_REVIEW.md).
+[BSV replacement proof](general_criterion/BSV_REPAIR.md),
+[independent specialization audit](edge_specialization_audit/README.md),
+[separate review of the replacement](edge_specialization_audit/INDEPENDENT_REVIEW.md),
+and [earlier logical comparison review](comparison_logic_audit/FINAL_REVIEW.md).
 This is a computer-assisted mathematical proof draft, not a new Lean
 formalization or a general BSD theorem. The infinite Katz interpretation
 retains its documented pinned-Sage geometric provenance, and the
 projected-edge and arithmetic source arguments remain written proofs.
+
+## New results in this branch
+
+### A second exact theta certificate
+
+For
+
+\[
+E_{433}:y^2+xy=x^3+1,\qquad K=\mathbf Q(\sqrt{-71}),\qquad p=5,
+\]
+
+we computed and independently verified the finite CM witness
+
+\[
+(b_0,b_1,b_2,b_3,b_4)=(0,1,-2,1,0),\qquad
+G(1+T)=T^2+T^3.
+\]
+
+Rigorous class-polynomial reconstruction, strong Hensel certificates,
+and exact cycle/Brandt checks account for all 140 conductor-25 CM
+classes. The conductor-one toric values sum to zero, and an independent
+positive interval for the quadratic-twist L-value proves `L(E433,1)=0`
+through Gross's formula, without using known rational points. Published
+theta interpolation, the functional equation, and ordinary regularization
+then give
+
+\[
+                  \Theta_{E_{433}/K,5}=T^2U(T),\qquad
+                         U(0)\in\mathbf Z_5^\times.
+\]
+
+The six auxiliary order-seven periods have exact cyclotomic norm 49
+and are five-adic units. See [the complete theta witness](second_theta/README.md)
+and [the arithmetic audit](second_pilot/README.md). This is a second
+theta/central-value example, not a second completed localization proof.
+Five is anomalous for E433, so its larger regulator calculation needs
+a fresh denominator and precision budget.
+
+### The general criterion and its finite certificate
+
+[general_criterion/README.md](general_criterion/README.md) separates the
+arithmetic hypotheses from the finite calculation. Once global division,
+the finite local condition, the CH regulator order and full projective
+comparison are established, a nonzero determinant against the base
+regulator line proves nonzero localization. The first nonzero analytic
+coefficient need not itself be quadratic; its projective direction is
+what the generic comparison transports.
+
+The standalone checker validates coefficient fields, common basis
+identifiers, primitive representatives, and determinant arithmetic.
+A zero residue returns `INCONCLUSIVE`; it does not certify equality.
+The current E389 data provide a real example, alongside a generic
+fixture and targeted corruption/precision checks. The checker explicitly
+does not certify the global or geometric provenance of its inputs.
+
+### A corrected geometric specialization
+
+The audit found that our previous raw DR22 moment argument had not
+proved the needed normalized family compatibility. That argument is
+withdrawn, and its precise gap is recorded in the
+[edge audit](edge_specialization_audit/README.md).
+
+The [replacement proof](general_criterion/BSV_REPAIR.md) uses BSV
+Theorem 8.1, which already specializes the normalized full family at
+the balanced weight-two edge. It proves the finite stabilization and
+projected geometric extensions needed to reach the DR I cycle. The
+ordinary-duality erratum, the actual `p>=5` hypothesis, all three
+cuspidal projections, and the classical sequence `s_n=8*5^n` are
+accounted for. The reflected global class remains CH's class; generic
+rank-one proportionality supplies the comparison with BSV.
 
 ## What is completed
 
@@ -105,9 +183,9 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Classical full-vector comparison | Both Frobenius coordinates of the syntomic vector at fixed weights (2,k,k), up to a nonzero scalar | [Projective identity and geometric hypotheses](fixed_weight_syntomic/README.md), [independent review](leading_comparison/fixed_weight_review.md); global sign remains unresolved |
 | Weight-one continuation | Full classical vector matching forces a precise projective comparison at weight one | [Analytic wedge proof](fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md); its family premise is supplied by the new global and local comparisons |
 | Full Perrin--Riou correction | Tracks the adjoint, factorial, twist and Frobenius factors on both coordinates | [Operator algebra](pr_syntomic_comparison/README.md), now applied through the [normalized local comparison](normalized_local_comparison/README.md) |
-| Weight-two specialization | Rational cuspidal projection removes the boundary obstruction for weights (2,k,k), k>2 | [Projected extension-class argument](leading_comparison/ARITHMETIC_SPECIALIZATION.md); this extends the inspected construction rather than widening a printed theorem's scope |
+| Weight-two specialization | BSV normalized specialization plus explicit finite/geometric extensions for (2,k,k), k>2 | [Corrected proof](general_criterion/BSV_REPAIR.md), [independent audit](edge_specialization_audit/README.md); previous raw DR22 moment argument withdrawn |
 | Big Galois image | The five-adic image contains SL2(Z5) | [Proof](galois_image/README.md), all 20 residual Frobenius possibilities checked, plus Tate uniformization and the stated lifting theorem |
-| Full global comparison | CH and DR variable classes are proportional over the Iwasawa fraction field | [Rank-one Selmer argument](global_class_comparison/README.md); full strictness and away-p local conditions are checked |
+| Full global comparison | CH and BSV variable classes are proportional over the Iwasawa fraction field | [Rank-one Selmer argument](global_class_comparison/README.md); full strictness and away-p local conditions are checked |
 | Normalized local comparison | Both regulator coordinates, CM component, adjoint, periods, averaging, and stabilization are matched | [Proof and 44 exact algebra checks](normalized_local_comparison/README.md) |
 | Nonzero reflected localization | Corrected leading direction 21 mod125 differs from base line 86 mod125 | [Combined pilot theorem](PILOT_LOCALIZATION_THEOREM.md), [independent arithmetic and logic](comparison_logic_audit/README.md); output is a Selmer class |
 
@@ -117,26 +195,21 @@ package has its own formal layer and verification receipts. Abstract
 algebraic countermodels are labeled separately from the actual elliptic
 fixtures, the completed Sage geometry, and the finite CM calculation.
 
-## Current frontier: generalize the criterion and connect Selmer classes to points
+## Current frontier: a second full localization test and the point comparison
 
-The pilot has an end-to-end written nonzero-localization proof. Three
-steps made the previous comparison tractable:
+The E389 proof draft now uses the corrected BSV specialization. Its
+sufficient criterion has been extracted, and E433 has a complete second
+finite theta and central-value certificate. The next computational gate
+is E433's full two-coordinate analytic CM projection, with rigorously
+propagated errors for its anomalous ordinary prime. That will determine
+whether its actual leading vector passes the projective separation test.
 
-1. Castella--Do's rank-one theorem gives generic proportionality of the
-   full global classes. A scalar zero or pole does not alter their
-   leading projective direction.
-2. CH Theorem 3.4 already describes the normalized Frobenius-averaged
-   regulator. Two independent test vectors determine its full matrix.
-3. A nonzero complementary quadratic coefficient detects a nonzero
-   finite local class without an extra simple-determinant theorem.
-
-The next research target is the general form and range of this
-sufficient criterion, with a second eligible test case. The separate
-Selmer-to-point problem remains: nonzero finite localization alone does
-not identify a rational point or settle a divisible Sha contribution.
-The pilot's already completed rank-two corollary uses its independently
-verified rational points; those points are absent from the new
-localization proof's dependency chain.
+The separate Selmer-to-point problem remains. Nonzero finite localization
+does not identify a Selmer class with a rational point or settle a
+possible divisible Sha contribution. The E389 rank-two corollary uses
+independently verified rational points; those points are absent from
+the new localization argument's dependency chain. Repeating a theta
+certificate or a line test cannot by itself close the point comparison.
 
 ## Projection-stage research record, frozen at 9364a14
 
@@ -916,7 +989,7 @@ To write a fresh receipt:
 python research/bsd-localization/verify_all.py --receipt research/bsd-localization/verification.json
 ```
 
-The runner performs 38 checks covering the original arithmetic, p5,
+The runner performs 46 checks covering the original arithmetic, p5,
 formal-log, reflection, exterior-algebra, finite-coordinate, crystalline,
 height, ambient-jet, CM-weight-jet, tame-trace, interpolation, exact Hecke
 projector, analytic-target identities, cubic descent, residue and Euler
@@ -927,9 +1000,13 @@ polynomial identities, the actual finite cubic ratio, the Perrin--Riou
 adjoint/operator algebra, the infinite bridge's integer bounds and
 precision table, the residual-image certificate, the full normalized
 local algebra, and the complementary-coefficient criterion with the
-corrected ratio. Symbolic checks use SymPy1.14.0; the finite projection
-adapter uses NumPy2.3.5 with explicit integer overflow guards. The other
-scripts use Python's standard library.
+corrected ratio. It now also checks E433 eligibility, its rigorous twist
+interval, the reconstructed CM/theta certificate, eleven corrupt-input
+rejections, the independent toric consequences, and the general projective
+certificate with its tests and E389 adapter. Symbolic checks use
+SymPy1.14.0; the finite projection adapter uses NumPy2.3.5 with explicit
+integer overflow guards; the second CM certificate uses python-flint0.9.0
+for rigorous complex balls. Other scripts use the Python standard library.
 The receipt records exit status, timing, and hashes of sources and
 compressed data. This command does not rebuild or reverify the other
 thread's CM/Lean package; its input provenance and mathematical scope are

@@ -1,0 +1,52 @@
+{
+  "corruptions_rejected": 11,
+  "rejections": [
+    {
+      "case": "noncanonical_field_residue",
+      "reason": "Noncanonical finite-field element"
+    },
+    {
+      "case": "invalid_Deuring_root",
+      "reason": "Invalid Deuring root"
+    },
+    {
+      "case": "invalid_Brandt_row",
+      "reason": "Bad edge counts"
+    },
+    {
+      "case": "nonprimitive_eigenfunction",
+      "reason": "Nonprimitive function"
+    },
+    {
+      "case": "wrong_class_polynomial",
+      "reason": "Wrong class polynomial"
+    },
+    {
+      "case": "invalid_Hensel_lift",
+      "reason": "Insufficient strong Hensel precision"
+    },
+    {
+      "case": "false_horizontal_edge",
+      "reason": "Stored graph mismatch"
+    },
+    {
+      "case": "nonpermutation_cycle",
+      "reason": "Cycle is not a permutation"
+    },
+    {
+      "case": "wrong_CM_value",
+      "reason": "Wrong CM values"
+    },
+    {
+      "case": "wrong_quotient_coefficient",
+      "reason": "Wrong grouped coefficients"
+    },
+    {
+      "case": "wrong_quadratic_moment",
+      "reason": "Wrong exact moments"
+    }
+  ],
+  "scope": "Adversarial checks of finite witness validation; no geometric or arithmetic comparison theorem is tested here.",
+  "status": "PASS",
+  "valid_baseline_accepted": true
+}

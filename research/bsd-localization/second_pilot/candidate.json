@@ -1,0 +1,50 @@
+{
+  "N_mod12": 1,
+  "X0_tame_genus": 2603,
+  "a2": -1,
+  "a3": -2,
+  "a5": -4,
+  "ainvs": [
+    1,
+    0,
+    0,
+    0,
+    1
+  ],
+  "alpha_mod125": 66,
+  "anomalous_at5": true,
+  "base_frobenius_polynomial": [
+    5,
+    4,
+    1
+  ],
+  "base_image_operator_I_F": [
+    "2/5",
+    "-7/25"
+  ],
+  "base_test_operator_I_F": [
+    "38/25",
+    "7/25"
+  ],
+  "class_numbers": {
+    "1": 7,
+    "25": 140,
+    "5": 28
+  },
+  "conductor": 433,
+  "full_CM_conductor25_classes": 140,
+  "iwasawa_prime": 5,
+  "label_cremona": "433a1",
+  "label_lmfdb": "433.a1",
+  "omega_mod5": 2,
+  "omega_polynomial": [
+    18,
+    -1,
+    1
+  ],
+  "quadratic_discriminant": -71,
+  "schema": "bsd-second-pilot-config-v1",
+  "scope": "Configuration and certified elementary inputs only; full leading-vector geometry and normalized-moment comparison are separate gates.",
+  "supersingular_j_count": 36,
+  "tame_common_level": 30743
+}

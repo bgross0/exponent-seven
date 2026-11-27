@@ -1,0 +1,53 @@
+{
+  "CM": [
+    {
+      "CM_values": [
+        1,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "D": -71,
+      "class_polynomial_sha256": "69e90f79dbe3718af1ff052322e14631d03cffe5ff2bc52b4e62f0b151ade1e5",
+      "classes": 7,
+      "max_derivative_valuation": 0,
+      "sum": 0
+    },
+    {
+      "D": -44375,
+      "class_polynomial_sha256": "5881a397aa9161a92629db2f92e00711c2f8152fad0871828dd5e958decb46c6",
+      "classes": 140,
+      "grouped_coefficients": [
+        0,
+        1,
+        -2,
+        1,
+        0
+      ],
+      "max_derivative_valuation": 7,
+      "quadratic_coefficient_mod5": 1,
+      "raw_T_coefficients": [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sum": 0
+    }
+  ],
+  "certificate_sha256": "5e533e6f0ea31a2c59293448a5f2f8077de512b9e3c50e7420f6eafd2a699898",
+  "class_polynomial_working_bits": 16384,
+  "curve": "433.a1",
+  "scope": "Rigorous class-polynomial reconstruction and exact finite Brandt, Hensel, CM-cycle and theta-moment witnesses. Published arithmetic interpretation remains a written argument.",
+  "status": "PASS",
+  "supersingular": {
+    "T2_rank_mod101": 35,
+    "complete_Deuring_roots": 216,
+    "rational_eigenline_dimension": 1,
+    "supersingular_vertices": 36
+  }
+}

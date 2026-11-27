@@ -172,7 +172,7 @@ This is exact algebra at the fixed weight. There is no substitution
 Suppose additionally that the actual averaged PR vector, pulled back
 by its correct character map, and \(A(W)\) are analytic on the same
 weight disk, \(W=(1+p)^s-1\). Suppose (6) holds along
-\(s_n=(p-1)p^n\). The superflat-wedge proof in
+\(s_n=2(p-1)p^n\). The superflat-wedge proof in
 ../fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md then applies
 with both \(R_{s_n}-I\) and \(S_{s_n}-I\) of valuation at least
 \(s_n-C\). It proves the conditional germ identity
@@ -328,12 +328,13 @@ these steps must be recorded; it cannot be hidden in \(\lambda_s\).
 The separately reviewed scalar ordinary reciprocity law supplies
 only one coordinate.
 
-The separate [arithmetic specialization note](../leading_comparison/ARITHMETIC_SPECIALIZATION.md)
-now supplies the rational projected weight-two geometric argument for
-the DR22-defined family. Identifying that family with the actual chosen
-CH class, and matching the normalized full local map, remain the two
-arithmetic comparison premises. The projected geometry by itself does
-not establish either identification.
+The corrected [BSV specialization proof](../general_criterion/BSV_REPAIR.md)
+supplies the rational projected weight-two geometric argument. The previous
+raw DR22 moment argument was incomplete and is not used. The separate
+[global comparison](../global_class_comparison/README.md) and
+[normalized local comparison](../normalized_local_comparison/README.md)
+supply the two arithmetic premises for the pilot. The algebra in this
+note remains conditional on those inputs; its checker does not verify them.
 
 No arithmetic nonzero localization or bad-line identification is
 claimed by this note. Its executable result is exact algebra:

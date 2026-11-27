@@ -1,9 +1,16 @@
 # Nonzero localization of the reflected class: the E389 pilot
 
-Date: 2026-11-27. Research branch: `bsd-arithmetic-comparison`.
-Continues the projection package at commit `260370b`, retaining its
-precision binding and witness replay update to the frozen mathematical
-snapshot `9364a14`.
+Date: 2026-11-27. Research branch: `bsd-second-pilot-criterion`.
+Continues `bsd-arithmetic-comparison` at `efe135c`, retaining the
+projection package's precision binding and witness replay.
+
+**Source correction:** the previous version used an incomplete DR22
+raw-moment specialization argument. This revision replaces that input
+with the [normalized BSV route](general_criterion/BSV_REPAIR.md), whose
+finite stabilization and geometric extensions were independently reviewed
+in [the edge audit](edge_specialization_audit/README.md). The reflected
+class remains the actual CH class. The finite numerical separation and
+all other named analytic inputs are retained.
 
 ## Statement and proof status
 
@@ -53,8 +60,9 @@ This is a **written computer-assisted mathematical proof draft**. The
 new finite algebra has executable certificates and independent review.
 The geometric comparison, local Galois complexes, and published source
 theorems are not new Lean-checked results. In particular, the argument
-retains the repository's proved rational projected-edge extension and
-its source-based infinite Katz comparison as mathematical inputs. It
+uses BSV's normalized specialization, the repository's explicit
+finite/geometric edge extensions, and the source-based infinite Katz
+comparison as mathematical inputs. It
 does not represent a completed formalization of those arguments.
 
 ## 1. The input ledger
@@ -70,10 +78,10 @@ The proof uses the following inputs with their actual scope.
 | Analytic CM vector, including exact lower zeros | `analytic_target_audit/`, `weight_reflection/`, and `leading_comparison/` |
 | Certified quadratic coefficient balls | Actual Sage CM projection and independent replay in `projection_backend/`; the infinite bound is `INFINITE_KATZ_BRIDGE.md`, with the pinned Sage geometric provenance stated there |
 | Full fixed-weight syntomic vector | `fixed_weight_syntomic/README.md`, retaining both elliptic coordinates |
-| The full geometric class at weights `(2,k,k)` | Rational projected-edge proposition in `leading_comparison/ARITHMETIC_SPECIALIZATION.md`; it extends the inspected moment/localization diagram rather than misquoting a higher-weight theorem |
-| Same generic global Selmer line | New `global_class_comparison/README.md`, using Castella--Do's rank-one theorem and full strict local conditions |
-| Fully normalized local comparison | New `normalized_local_comparison/README.md`, using syntomic/etale compatibility and both tests in CH Theorem 3.4 |
-| One-way nonvanishing criterion | New `comparison_logic_audit/README.md`; no simple-determinant or calibrated-logarithm theorem is assumed |
+| The full geometric class at weights `(2,k,k)` | BSV Theorem 8.1 plus the finite/geometric edge extensions in `general_criterion/BSV_REPAIR.md`; independent source audit in `edge_specialization_audit/`; the previous raw DR22 moment argument is withdrawn |
+| Same generic global Selmer line | `global_class_comparison/README.md`, using Castella--Do's rank-one theorem and full strict local conditions |
+| Fully normalized local comparison | `normalized_local_comparison/README.md`, using syntomic/etale compatibility and both tests in CH Theorem 3.4 |
+| One-way nonvanishing criterion | `comparison_logic_audit/README.md`; no simple-determinant or calibrated-logarithm theorem is assumed |
 
 The source-based Katz provenance is material. The finite witnesses replay
 the actual matrix and CM fit; the infinite theorem additionally uses the
@@ -184,14 +192,16 @@ logarithm. Such a scalar is unnecessary for the nonvanishing in (5).
 
 ## 4. Why the computed direction belongs to this class
 
-Let `kappa_DR` denote the variable component of the DR22 family with
+Let `kappa_BSV` denote the variable component of the BSV family with
 the specified projected classical specialization. The following
 comparison concerns full classes and full vectors.
 
 **Global comparison.** Both classes have the same anticyclotomic
 coefficient representation and the same full relaxed/strict local
-condition. DR22 Proposition 5.8 gives the image of local cohomology of
-the balanced subrepresentation. On the variable CM block, that
+condition. BSV Corollary 8.2 gives the balanced Selmer condition;
+the cohomology exact sequence expresses it as the image from the
+balanced subrepresentation. Castella--Do's CM decomposition applies to
+this same BSV family. On the variable CM block, that
 subrepresentation is full `V5E` at one prime and zero at the other.
 Away from five, perfect local cohomology and derived base change make
 the ambient local complexes acyclic at the augmentation germ.
@@ -209,7 +219,7 @@ auxiliary scalar-regulator identification.
 Consequently, in full global cohomology over the Iwasawa fraction field,
 
 \[
-                    \kappa_{\rm DR}=f(T)\kappa_{\rm CH},
+                    \kappa_{\rm BSV}=f(T)\kappa_{\rm CH},
                     \qquad f\ne0.                            \tag{6}
 \]
 
@@ -222,7 +232,7 @@ performed on the actual CH class, not on an arbitrary rescaling.
 holomorphic CM test tensor annihilates the auxiliary component and
 detects the full selected rank-two variable component. The projected
 syntomic/etale Abel--Jacobi comparison identifies its syntomic vector
-with the Bloch--Kato logarithm of the same DR specialization, up to a
+with the Bloch--Kato logarithm of the same BSV specialization, up to a
 nonzero rank-one CM period scalar. The general rational comparison
 has no restriction `p` prime to `phi(71*389)`; the older integral
 family construction with that restriction is not used.
@@ -336,11 +346,14 @@ corollary in `p5/` separately uses two independently verified rational
 points. Those points are deliberately absent from this theorem's
 dependency chain.
 
-The next useful work is to expose the general hypotheses of this
-criterion, independently review the projected-edge and analytic
-comparisons as mathematics, and test a second eligible curve. A later
-Selmer-to-point construction must carry its own proof; it cannot be
-deduced by relabeling the class constructed here.
+The reusable hypotheses are now extracted in
+[general_criterion/README.md](general_criterion/README.md), with a
+finite projective-separation checker. The geometric edge comparison
+has the corrected BSV proof and independent review. A second exact
+theta certificate has been completed for E433; its full two-coordinate
+analytic projection and localization test remain to be computed with
+a new precision budget. A later Selmer-to-point construction must
+carry its own proof; it cannot follow by relabeling the class here.
 
 ## Reproduction
 

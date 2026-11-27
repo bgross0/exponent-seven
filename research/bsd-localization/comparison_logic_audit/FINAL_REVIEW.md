@@ -2,6 +2,17 @@
 
 Date: 2026-11-27.
 
+**Subsequent source correction.** This review recorded the logic of the
+comparison using the then-stated DR22 projected-edge input. The later
+[edge audit](../edge_specialization_audit/README.md) found that input's
+raw-moment compatibility unproved. Its earlier acceptance below must
+not be read as verification of that missing step. The current theorem
+uses the separately proved and reviewed
+[BSV replacement](../general_criterion/BSV_REPAIR.md). The rank-one,
+full-regulator and finite-separation deductions reviewed here remain
+valid with that replacement. Historical family names below identify
+the earlier review, not an equality between BSV and DR22.
+
 This review concerns the written deductions in
 `global_class_comparison/README.md` and
 `normalized_local_comparison/README.md`, together with the named frozen

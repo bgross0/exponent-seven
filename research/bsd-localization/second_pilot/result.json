@@ -1,0 +1,1053 @@
+{
+  "anomalous_prime_audit": {
+    "CH_height_prefactor_valuation": -2,
+    "alpha_minus_one_valuation": 1,
+    "anomalous_prime_excluded_by_CH_hypotheses": false,
+    "base_image_operator_I_F": [
+      "2/5",
+      "-7/25"
+    ],
+    "base_test_operator_I_F": [
+      "38/25",
+      "7/25"
+    ],
+    "base_test_operator_determinant": "1",
+    "frobenius_polynomial": "F^2+4F+5",
+    "one_minus_alpha_inverse_valuation": 1,
+    "one_minus_alpha_over5_valuation": -1,
+    "ordinary_root_mod125": 66,
+    "ordinary_root_mod25": 16,
+    "ordinary_root_modulus": 390625,
+    "ordinary_root_residue": 110441,
+    "polynomial_at_five": 50,
+    "polynomial_at_one": 10,
+    "scope": "These denominators are nonzero but not units. This is not a unit-precision certificate for a future geometric projection."
+  },
+  "chosen_curve": {
+    "Gamma0_common_level_index": 31248,
+    "K_splitting_symbol": -1,
+    "N_inert_in_K": true,
+    "N_mod12": 1,
+    "X0_common_level_genus": 2603,
+    "a5": -4,
+    "ainvs": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "anomalous_at5": true,
+    "catalog_rank": 2,
+    "catalog_torsion": 1,
+    "conductor": 433,
+    "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+    "cremona_iso": "433a",
+    "cremona_label": "433a1",
+    "discriminant_valuation_at_N": 1,
+    "eligible_elementary_definite_ordinary_screen": true,
+    "geometry_dimension_ratio_to389": "217/195",
+    "invariants": {
+      "c4": 1,
+      "c6": -865,
+      "discriminant": -433,
+      "j": "-1/433"
+    },
+    "multiplicative_at_N": true,
+    "number": 1,
+    "ordinary_at5": true,
+    "point_counts": [
+      {
+        "a_q": -1,
+        "points_including_infinity": 4,
+        "prime": 2
+      },
+      {
+        "a_q": -2,
+        "points_including_infinity": 6,
+        "prime": 3
+      },
+      {
+        "a_q": -4,
+        "points_including_infinity": 10,
+        "prime": 5
+      },
+      {
+        "a_q": -3,
+        "points_including_infinity": 11,
+        "prime": 7
+      },
+      {
+        "a_q": -4,
+        "points_including_infinity": 16,
+        "prime": 11
+      },
+      {
+        "a_q": -5,
+        "points_including_infinity": 19,
+        "prime": 13
+      }
+    ],
+    "residual_inertia_transvection_at5": true,
+    "split_multiplicative_at_N": true,
+    "supersingular_j_count": 36,
+    "tame_common_level": 30743
+  },
+  "comparative_screen": [
+    {
+      "Gamma0_common_level_index": 28080,
+      "K_splitting_symbol": -1,
+      "N_inert_in_K": true,
+      "N_mod12": 5,
+      "X0_common_level_genus": 2339,
+      "a5": -3,
+      "ainvs": [
+        0,
+        1,
+        1,
+        -2,
+        0
+      ],
+      "anomalous_at5": false,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 389,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "389a",
+      "cremona_label": "389a1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": true,
+      "geometry_dimension_ratio_to389": "1",
+      "invariants": {
+        "c4": 112,
+        "c6": -856,
+        "discriminant": 389,
+        "j": "1404928/389"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -2,
+          "points_including_infinity": 5,
+          "prime": 2
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 6,
+          "prime": 3
+        },
+        {
+          "a_q": -3,
+          "points_including_infinity": 9,
+          "prime": 5
+        },
+        {
+          "a_q": -5,
+          "points_including_infinity": 13,
+          "prime": 7
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 16,
+          "prime": 11
+        },
+        {
+          "a_q": -3,
+          "points_including_infinity": 17,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 33,
+      "tame_common_level": 27619
+    },
+    {
+      "Gamma0_common_level_index": 31248,
+      "K_splitting_symbol": -1,
+      "N_inert_in_K": true,
+      "N_mod12": 1,
+      "X0_common_level_genus": 2603,
+      "a5": -4,
+      "ainvs": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "anomalous_at5": true,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 433,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "433a",
+      "cremona_label": "433a1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": true,
+      "geometry_dimension_ratio_to389": "217/195",
+      "invariants": {
+        "c4": 1,
+        "c6": -865,
+        "discriminant": -433,
+        "j": "-1/433"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -1,
+          "points_including_infinity": 4,
+          "prime": 2
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 6,
+          "prime": 3
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 10,
+          "prime": 5
+        },
+        {
+          "a_q": -3,
+          "points_including_infinity": 11,
+          "prime": 7
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 16,
+          "prime": 11
+        },
+        {
+          "a_q": -5,
+          "points_including_infinity": 19,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 36,
+      "tame_common_level": 30743
+    },
+    {
+      "Gamma0_common_level_index": 40608,
+      "K_splitting_symbol": -1,
+      "N_inert_in_K": true,
+      "N_mod12": 11,
+      "X0_common_level_genus": 3383,
+      "a5": -4,
+      "ainvs": [
+        1,
+        1,
+        1,
+        -15,
+        16
+      ],
+      "anomalous_at5": true,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 563,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "563a",
+      "cremona_label": "563a1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": true,
+      "geometry_dimension_ratio_to389": "94/65",
+      "invariants": {
+        "c4": 721,
+        "c6": -19385,
+        "discriminant": -563,
+        "j": "-374805361/563"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -1,
+          "points_including_infinity": 4,
+          "prime": 2
+        },
+        {
+          "a_q": -1,
+          "points_including_infinity": 5,
+          "prime": 3
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 10,
+          "prime": 5
+        },
+        {
+          "a_q": -5,
+          "points_including_infinity": 13,
+          "prime": 7
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 16,
+          "prime": 11
+        },
+        {
+          "a_q": 2,
+          "points_including_infinity": 12,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 48,
+      "tame_common_level": 39973
+    },
+    {
+      "Gamma0_common_level_index": 41184,
+      "K_splitting_symbol": 1,
+      "N_inert_in_K": false,
+      "N_mod12": 7,
+      "X0_common_level_genus": 3431,
+      "a5": -2,
+      "ainvs": [
+        0,
+        1,
+        1,
+        -4,
+        2
+      ],
+      "anomalous_at5": false,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 571,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "571b",
+      "cremona_label": "571b1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": false,
+      "geometry_dimension_ratio_to389": "22/15",
+      "invariants": {
+        "c4": 208,
+        "c6": -3160,
+        "discriminant": -571,
+        "j": "-8998912/571"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -2,
+          "points_including_infinity": 5,
+          "prime": 2
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 6,
+          "prime": 3
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 8,
+          "prime": 5
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 12,
+          "prime": 7
+        },
+        {
+          "a_q": -3,
+          "points_including_infinity": 15,
+          "prime": 11
+        },
+        {
+          "a_q": -5,
+          "points_including_infinity": 19,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 48,
+      "tame_common_level": 40541
+    },
+    {
+      "Gamma0_common_level_index": 46368,
+      "K_splitting_symbol": 1,
+      "N_inert_in_K": false,
+      "N_mod12": 7,
+      "X0_common_level_genus": 3863,
+      "a5": -2,
+      "ainvs": [
+        1,
+        0,
+        0,
+        -4,
+        3
+      ],
+      "anomalous_at5": false,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 643,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "643a",
+      "cremona_label": "643a1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": false,
+      "geometry_dimension_ratio_to389": "322/195",
+      "invariants": {
+        "c4": 193,
+        "c6": -2881,
+        "discriminant": -643,
+        "j": "-7189057/643"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -1,
+          "points_including_infinity": 4,
+          "prime": 2
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 6,
+          "prime": 3
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 8,
+          "prime": 5
+        },
+        {
+          "a_q": -3,
+          "points_including_infinity": 11,
+          "prime": 7
+        },
+        {
+          "a_q": -6,
+          "points_including_infinity": 18,
+          "prime": 11
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 18,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 54,
+      "tame_common_level": 45653
+    },
+    {
+      "Gamma0_common_level_index": 51120,
+      "K_splitting_symbol": -1,
+      "N_inert_in_K": true,
+      "N_mod12": 1,
+      "X0_common_level_genus": 4259,
+      "a5": -3,
+      "ainvs": [
+        0,
+        -1,
+        1,
+        -2,
+        0
+      ],
+      "anomalous_at5": false,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 709,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "709a",
+      "cremona_label": "709a1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": true,
+      "geometry_dimension_ratio_to389": "71/39",
+      "invariants": {
+        "c4": 112,
+        "c6": 424,
+        "discriminant": 709,
+        "j": "1404928/709"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -2,
+          "points_including_infinity": 5,
+          "prime": 2
+        },
+        {
+          "a_q": -1,
+          "points_including_infinity": 5,
+          "prime": 3
+        },
+        {
+          "a_q": -3,
+          "points_including_infinity": 9,
+          "prime": 5
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 12,
+          "prime": 7
+        },
+        {
+          "a_q": -1,
+          "points_including_infinity": 13,
+          "prime": 11
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 18,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 59,
+      "tame_common_level": 50339
+    },
+    {
+      "Gamma0_common_level_index": 71856,
+      "K_splitting_symbol": 1,
+      "N_inert_in_K": false,
+      "N_mod12": 1,
+      "X0_common_level_genus": 5987,
+      "a5": -4,
+      "ainvs": [
+        0,
+        -1,
+        1,
+        -5,
+        -3
+      ],
+      "anomalous_at5": true,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 997,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "997b",
+      "cremona_label": "997b1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": false,
+      "geometry_dimension_ratio_to389": "499/195",
+      "invariants": {
+        "c4": 256,
+        "c6": 3880,
+        "discriminant": 997,
+        "j": "16777216/997"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": 0,
+          "points_including_infinity": 3,
+          "prime": 2
+        },
+        {
+          "a_q": -1,
+          "points_including_infinity": 5,
+          "prime": 3
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 10,
+          "prime": 5
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 10,
+          "prime": 7
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 14,
+          "prime": 11
+        },
+        {
+          "a_q": -5,
+          "points_including_infinity": 19,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 83,
+      "tame_common_level": 70787
+    },
+    {
+      "Gamma0_common_level_index": 71856,
+      "K_splitting_symbol": 1,
+      "N_inert_in_K": false,
+      "N_mod12": 1,
+      "X0_common_level_genus": 5987,
+      "a5": -2,
+      "ainvs": [
+        0,
+        -1,
+        1,
+        -24,
+        54
+      ],
+      "anomalous_at5": false,
+      "catalog_rank": 2,
+      "catalog_torsion": 1,
+      "conductor": 997,
+      "cost_scope": "Exact dimensions/counts, not wall-time predictions. The common level has four cusps and no elliptic points since71 is 3mod4 and2mod3.",
+      "cremona_iso": "997c",
+      "cremona_label": "997c1",
+      "discriminant_valuation_at_N": 1,
+      "eligible_elementary_definite_ordinary_screen": false,
+      "geometry_dimension_ratio_to389": "499/195",
+      "invariants": {
+        "c4": 1168,
+        "c6": -39896,
+        "discriminant": 997,
+        "j": "1593413632/997"
+      },
+      "multiplicative_at_N": true,
+      "number": 1,
+      "ordinary_at5": true,
+      "point_counts": [
+        {
+          "a_q": -2,
+          "points_including_infinity": 5,
+          "prime": 2
+        },
+        {
+          "a_q": -1,
+          "points_including_infinity": 5,
+          "prime": 3
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 8,
+          "prime": 5
+        },
+        {
+          "a_q": -4,
+          "points_including_infinity": 12,
+          "prime": 7
+        },
+        {
+          "a_q": -2,
+          "points_including_infinity": 14,
+          "prime": 11
+        },
+        {
+          "a_q": -1,
+          "points_including_infinity": 15,
+          "prime": 13
+        }
+      ],
+      "residual_inertia_transvection_at5": true,
+      "split_multiplicative_at_N": true,
+      "supersingular_j_count": 83,
+      "tame_common_level": 70787
+    }
+  ],
+  "conductor_and_sign_certificate": {
+    "archimedean_root": -1,
+    "global_root_number": 1,
+    "local_root_at433": -1,
+    "minimality_reason": "The discriminant has valuation1 at433 and is a unit elsewhere; c4 is a unit. The curve has multiplicative I1 reduction at433 and conductor433.",
+    "non_CM_reason": "The rational j-invariant \u22121/433 is not integral.",
+    "residual_ramification_reason": "The Tate parameter has valuation1, so adjoining a fifth root gives an inertia transvection.",
+    "sqrt_minus_c6_mod433": 179
+  },
+  "cost_comparison": {
+    "chosen433_supersingular_count": 36,
+    "cubic_dimension_proxy_ratio": "10218313/7414875",
+    "extra_base_operator_denominator_digit_relative389": 1,
+    "geometry_dimension_ratio": "217/195",
+    "pilot389_supersingular_count": 33,
+    "quadratic_dimension_proxy_ratio": "47089/38025",
+    "same_conductor25_CM_classes": 140
+  },
+  "does_not_use": [
+    "Rational points",
+    "Catalog rank as an arithmetic implication",
+    "Finite Tate\u2013Shafarevich group",
+    "A unit assumption on alpha\u22121"
+  ],
+  "field_inputs": {
+    "class_number": 7,
+    "coefficient_field_degree_Q5_zeta7": 6,
+    "discriminant": -71,
+    "gcd_5N_D": 1,
+    "omega_polynomial": [
+      18,
+      -1,
+      1
+    ],
+    "omega_roots_mod433": [],
+    "omega_roots_mod5": [
+      2,
+      4
+    ],
+    "order5_mod7": 6,
+    "prime5_class_order": 7,
+    "prime5_reduced_form": [
+      4,
+      -3,
+      5
+    ],
+    "reduced_forms_minus44375_sha256": "f1deee88bd8d2d0a994861c22d0eeb86abe4ef61883da548907ee5620296f8b2",
+    "reduced_forms_minus71": [
+      [
+        1,
+        1,
+        18
+      ],
+      [
+        2,
+        -1,
+        9
+      ],
+      [
+        2,
+        1,
+        9
+      ],
+      [
+        3,
+        -1,
+        6
+      ],
+      [
+        3,
+        1,
+        6
+      ],
+      [
+        4,
+        -3,
+        5
+      ],
+      [
+        4,
+        3,
+        5
+      ]
+    ],
+    "ring_class_numbers_conductors_1_5_25": [
+      7,
+      28,
+      140
+    ]
+  },
+  "finite_galois_image": {
+    "GL2_order": 480,
+    "SL2_order": 120,
+    "all_cases_generate_GL2_F5": true,
+    "all_possible_cases": [
+      {
+        "frobenius_matrix": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          0,
+          3,
+          4,
+          3
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          0,
+          4,
+          3,
+          3
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          1,
+          1,
+          4,
+          2
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          1,
+          2,
+          2,
+          2
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          1,
+          3,
+          3,
+          2
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          1,
+          4,
+          1,
+          2
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          2,
+          1,
+          4,
+          1
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          2,
+          3,
+          3,
+          1
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          2,
+          4,
+          1,
+          1
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          3,
+          3,
+          4,
+          0
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          3,
+          4,
+          3,
+          0
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          4,
+          1,
+          3,
+          4
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          4,
+          2,
+          4,
+          4
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          4,
+          3,
+          1,
+          4
+        ],
+        "generated_order": 480
+      },
+      {
+        "frobenius_matrix": [
+          4,
+          4,
+          2,
+          4
+        ],
+        "generated_order": 480
+      }
+    ],
+    "determinant_mod5": 3,
+    "frobenius_prime": 3,
+    "inertia_transvection": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "infinite_interpretation": "Tate inertia plus these cases give residual GL2(F5); the closed-subgroup lifting theorem stated in README.md gives SL2(Z5) inside the five-adic image.",
+    "polynomial_coefficients_ascending": [
+      3,
+      2,
+      1
+    ],
+    "polynomial_discriminant_mod5": 2,
+    "polynomial_roots_mod5": [],
+    "trace_mod5": 3
+  },
+  "pending_arithmetic_certificates": [
+    "Root's separate second_theta calculation: conductor-one trivial toric sum exactly0, with identified E433 Brandt eigenfunction.",
+    "Nonconstant conductor-one seven CM values to establish nontrivial order7 auxiliary period nonvanishing.",
+    "Exact theta quadratic coefficient and ordinary normalization at conductor25.",
+    "Full geometric leading vector, anomalous-prime precision budget, and separation from the new base line."
+  ],
+  "schema": "bsd-second-pilot-screen-v1",
+  "selected_point_counts": [
+    {
+      "a_q": -1,
+      "points_including_infinity": 4,
+      "prime": 2
+    },
+    {
+      "a_q": -2,
+      "points_including_infinity": 6,
+      "prime": 3
+    },
+    {
+      "a_q": -4,
+      "points_including_infinity": 10,
+      "prime": 5
+    },
+    {
+      "a_q": -3,
+      "points_including_infinity": 11,
+      "prime": 7
+    },
+    {
+      "a_q": -4,
+      "points_including_infinity": 16,
+      "prime": 11
+    },
+    {
+      "a_q": -5,
+      "points_including_infinity": 19,
+      "prime": 13
+    },
+    {
+      "a_q": -3,
+      "points_including_infinity": 21,
+      "prime": 17
+    },
+    {
+      "a_q": -4,
+      "points_including_infinity": 24,
+      "prime": 19
+    },
+    {
+      "a_q": 8,
+      "points_including_infinity": 16,
+      "prime": 23
+    },
+    {
+      "a_q": 2,
+      "points_including_infinity": 28,
+      "prime": 29
+    },
+    {
+      "a_q": -9,
+      "points_including_infinity": 41,
+      "prime": 31
+    },
+    {
+      "a_q": -3,
+      "points_including_infinity": 41,
+      "prime": 37
+    },
+    {
+      "a_q": -9,
+      "points_including_infinity": 51,
+      "prime": 41
+    },
+    {
+      "a_q": -7,
+      "points_including_infinity": 51,
+      "prime": 43
+    }
+  ],
+  "selection_scope": "Smallest distinct prime-conductor catalog-rank2 class passing this elementary p5,K\u221271 screen in the complete Cremona prefix through1000. Catalog rank selects an example only; it is not a premise of the point-free arithmetic route.",
+  "source_blob_sha": "baab5801d7f81e1d5c44f5eb5acf4f1e100bc90b",
+  "source_sha256": "f10837f771b6e64afba6a4b3a8bc2cfe76b203c83285f57e19a0d96249c661ef",
+  "status": "PASS",
+  "twist_inputs": {
+    "ainvs": [
+      1,
+      -18,
+      0,
+      0,
+      -357911
+    ],
+    "conductor": 2182753,
+    "invariants": {
+      "c4": 5041,
+      "c6": 309593015,
+      "discriminant": -55467422937793,
+      "j": "-1/433"
+    },
+    "root_number": 1,
+    "twist_character_at_minus_conductor": 1
+  }
+}

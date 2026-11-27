@@ -37,13 +37,18 @@ zero, have been constructed. The analytic product construction supplies
 the candidate A. The substantive **additional arithmetic premise** is:
 
 > At every sufficiently large classical weight
-> k_n=1+(p-1)p^n, the actual full two-coordinate vector Z(W_n), in a
+> k_n=1+2(p-1)p^n, the actual full two-coordinate vector Z(W_n), in a
 > specified common de Rham trivialization, is a nonzero scalar multiple
 > of the proper syntomic vector Pi xi_(k_n) for the same cusp-normalized
 > diagonal cycle and tame test vector as in the fixed-weight lemma.
 > At those weights A(W_n) is the corresponding proper inverse-Bol product.
 
-Here W_n=(1+p)^((p-1)p^n)-1. The scalar is allowed to depend arbitrarily
+This sequence lies in the BSV classical congruence class modulo
+`2(p-1)`. The same proof works for any fixed positive p-adic unit
+multiple of `(p-1)p^n`; changing from one such sequence does not change
+the analytic germ or its leading direction.
+
+Here W_n=(1+p)^(2(p-1)p^n)-1. The scalar is allowed to depend arbitrarily
 on n. No bound or analyticity of it is assumed. Any non-scalar comparison
 matrix, Tate-trivialization change or test-vector map must already be
 included in the definition of Z: it cannot be hidden in that scalar.
@@ -115,7 +120,7 @@ this valuation. Changing the lattice or basis only changes C_0.
 For p>2,
 
 \[
- v_p(W_n)=n+1,\qquad k_n-1=(p-1)p^n.
+ v_p(W_n)=n+1,\qquad k_n-1=2(p-1)p^n.
 \]
 
 If the analytic function J(W)=B(W) wedge A(W) were not identically

@@ -67,6 +67,21 @@ JOBS = [
     ("full_normalized_local_algebra", "normalized_local_comparison/check_linear_algebra.py", [],
      "normalized_local_comparison/check_result.json"),
     ("projective_nonvanishing_and_corrected_ratio", "comparison_logic_audit/check_logic.py", ["--check"], None),
+    ("second_curve_eligibility", "second_pilot/screen.py", ["--check"], None),
+    ("second_curve_twist_interval", "second_pilot/check_twist_lvalue.py",
+     ["--check", "second_pilot/twist-lvalue.json"], None),
+    ("second_curve_rigorous_CM_theta", "second_theta/verify_theta.py",
+     ["--check", "second_theta/verification.json"], None),
+    ("second_curve_corrupt_witness_rejection", "second_theta/test_rejection.py",
+     ["--check", "second_theta/rejection.json"], None),
+    ("second_curve_independent_toric_consequences", "second_pilot/check_toric_consequences.py",
+     ["--check"], None),
+    ("general_projective_certificate_example", "general_criterion/certificate_checker.py",
+     ["general_criterion/certificate-example.json"], "general_criterion/certificate-example-result.json"),
+    ("general_projective_certificate_E389", "general_criterion/certificate_checker.py",
+     ["general_criterion/pilot-line-certificate.json"], "general_criterion/pilot-line-result.json"),
+    ("general_projective_certificate_precision_and_corruption", "general_criterion/test_certificate.py",
+     [], None),
 ]
 
 
@@ -84,7 +99,8 @@ def run_job(job):
         if actual != expected:
             raise RuntimeError(f"{name}: fresh output differs from {expected_path}")
     return {"check": name, "command": ["python", script, *arguments],
-            "exit_code": process.returncode, "matches_saved_certificate": True,
+            "exit_code": process.returncode,
+            "matches_saved_certificate": expected_path is not None or "--check" in arguments,
             "elapsed_seconds": round(elapsed, 6)}
 
 
@@ -102,7 +118,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge, every residual Frobenius matrix in the big-image certificate, full local-coordinate and adjoint algebra, and the corrected scaled ratio21 versus the base line86 modulo125. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, rational projected specialization, rank-one global comparison, and normalized local comparison are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The combined pilot nonzero-localization theorem is a written computer-assisted proof using these explicit inputs; it is not mechanically proved by this runner. No new Lean verification, upstream CM reconstruction, or Selmer-to-point comparison is certified here."}
+               "scope": "The compact suite verifies the retained E389 exact arithmetic, CM jets and traces, crystalline and regulator algebra, finite Katz/projection witnesses, bound arithmetic, residual image, and corrected projective ratio. New checks reconstruct E433 class polynomials with rigorous FLINT/Arb balls, verify its full finite CM/theta witness, reject eleven corrupt witnesses, recompute its exact eligibility and twist interval, and independently check the toric moments/norm. A generic projective certificate checker is exercised on a generic fixture and the E389 data, with precision and corruption tests. Source-based global division and Selmer conditions, the BSV normalized specialization and explicitly proved finite/geometric edge extensions, syntomic/etale and full local comparisons, and the infinite Katz interpretation are written mathematical arguments, not verified by this runner. The former raw DR22 moment argument is withdrawn and is not used. Large Sage geometry has separate replay receipts. This suite adds no Lean verification and does not prove a Selmer-to-point comparison or a second-curve localization theorem."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

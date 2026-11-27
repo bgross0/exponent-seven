@@ -4,9 +4,14 @@ Date: 2026-11-27. Continuation of the frozen snapshot `9364a14`.
 
 ## Result and scope
 
+**Revision:** this note uses the BSV family and the corrected normalized
+specialization in `general_criterion/BSV_REPAIR.md`. The former raw DR22
+moment argument is not an input. The local operator calculations and
+both-coordinate comparison below are unchanged by this choice of family.
+
 The remaining **local** comparison can be proved projectively for the
-DR22-defined diagonal family, using the rational projected edge proposition
-in [ARITHMETIC_SPECIALIZATION.md](../leading_comparison/ARITHMETIC_SPECIALIZATION.md).
+BSV-defined diagonal family, using the rational projected edge proposition
+in [BSV_REPAIR.md](../general_criterion/BSV_REPAIR.md).
 There is no additional undetermined matrix from CM periods or from
 Castella--Hsieh's Frobenius-conjugate averaging. This conclusion concerns
 the fully normalized map in CH (3.9), not its unaveraged precursor.
@@ -26,7 +31,7 @@ The argument has three ingredients:
 
 Thus the additional local premise in Section 3 of
 [pr_syntomic_comparison/README.md](../pr_syntomic_comparison/README.md)
-follows for that DR22-defined family from the projected geometric
+follows for that BSV-defined family from the projected geometric
 specialization and the compatibility of étale and syntomic Abel--Jacobi
 maps. Its transfer to the named CH global class requires the separate
 global-class comparison, or generic proportionality in the same Selmer
@@ -265,7 +270,7 @@ coefficients for varieties over p-adic fields. It has no hypothesis
 restriction to the integral family construction in DR II Section 1.6.
 The latter restriction fails for this pilot and is not used here. The
 family and its projected classical specialization are supplied by the
-separate DR22 construction and edge argument. The comparison is then
+separate BSV construction and edge argument. The comparison is then
 applied at each fixed classical weight to the projected cycle in its
 modular/Kuga--Sato realization, where \(p\nmid N\). All rational
 projectors and correspondences can be applied to the comparison diagram
@@ -301,8 +306,8 @@ fundamental exact sequence gives an isomorphism
 over the appropriate coefficient and base fields. This justifies the
 logarithm used here without choosing a complementary Hodge line.
 
-Let \(z_s^{\rm DR}\) be the selected variable component of the
-classical DR22 specialization, transported to tame level using the
+Let \(z_s^{\rm BSV}\) be the selected variable component of the
+classical BSV specialization, transported to tame level using the
 specified geometric map. The projected edge proposition identifies it
 with a nonzero scalar multiple of the projected étale AJ class of the
 cusp-corrected DR I cycle. DR I Theorem 3.8 says, for every permitted
@@ -311,7 +316,7 @@ the full proper syntomic vector \(\Pi\xi_k\).
 
 By Section 2 these evaluations detect exactly the desired rank-two
 variable component. By the comparison diagram they are the pairings of
-\(\log_{\rm BK}(z_s^{\rm DR})\) with those same two elliptic test
+\(\log_{\rm BK}(z_s^{\rm BSV})\) with those same two elliptic test
 vectors. Nondegeneracy gives
 
 \[
@@ -441,7 +446,7 @@ power of p, and inverse Frobenius in the fixed-weight syntomic vector.
 Equations (4) and (7) therefore give
 
 \[
- \mathscr P_{\rm DR}(\psi_{-s})
+ \mathscr P_{\rm BSV}(\psi_{-s})
    =\frac{\lambda_s\epsilon_k}{ac}
                  R_s S_s^{-1} C_s^{-1}N A_k.                  \tag{8}
 \]
@@ -452,20 +457,20 @@ nonzero and irrelevant projectively. No value of \((s-1)!\) or
 
 Assume the analytic q-family and its proper projection are defined on
 the weight disk used in the existing calculation, and pull the actual
-DR regulator back by the character map (2). Along
-\(s_n=4\cdot5^n\), the exact identities (8) satisfy the hypotheses
+BSV regulator back by the character map (2). Along
+\(s_n=8\cdot5^n\), the exact identities (8) satisfy the hypotheses
 of [PROJECTIVE_INTERPOLATION.md](../fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md):
 the errors in \(R_{s_n}\) and \(S_{s_n}\) have valuations at least
 \(s_n-O(1)\). The analytic wedge argument gives
 
 \[
  \boxed{\qquad
-      (C(W)N(F)^{-1}\mathscr P_{\rm DR}(W))\wedge A(W)=0.
+      (C(W)N(F)^{-1}\mathscr P_{\rm BSV}(W))\wedge A(W)=0.
       \qquad}                                                 \tag{9}
 \]
 
 This uses no bound on the nonzero scalars \(\lambda_{s_n}\). Any
-generic proportionality of the DR and CH global classes in the same
+generic proportionality of the BSV and CH global classes in the same
 Selmer module transfers (9) to CH after the same character pullback.
 The proportionality scalar may be meromorphic at augmentation; for
 this projective identity it need not be a unit. Vanishing orders and
@@ -539,13 +544,13 @@ derive (4), (7), (9), or (11).
 | Input | Status in this note |
 |---|---|
 | Fixed-weight full syntomic vector, including proper projection | Uses the frozen deduction in `fixed_weight_syntomic/` |
-| Rational projected DR22 specialization at `(2,k,k)` | Uses the explicit edge proposition in `leading_comparison/` |
+| Rational projected BSV specialization at `(2,k,k)` | Uses the corrected edge proposition in `general_criterion/BSV_REPAIR.md` |
 | Correct CM component and both elliptic logarithm coordinates | Proved in Sections 2--3 |
 | Syntomic/étale AJ compatibility at prime five | General published rational comparison; Section 3 |
 | Matched CM/LT rank-one twist | Exact arithmetic from the frozen note, used in Section 4 |
 | Full normalized CH local operator | Determined by both tests in CH Theorem 3.4; Section 4 |
 | Analytic projective continuation | Existing wedge lemma, applied in Section 5 |
-| Named CH class versus the DR22 class | Separate global comparison or generic rank-one argument |
+| Named CH class versus the BSV class | Separate global comparison or generic rank-one argument |
 | Global division, correct local Selmer condition, and a nonzero finite logarithm | Not concluded by this note |
 
 The new exact checker is:

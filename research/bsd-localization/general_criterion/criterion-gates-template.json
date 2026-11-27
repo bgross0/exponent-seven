@@ -1,0 +1,20 @@
+{
+  "schema": "bsd-nonzero-localization-gates/v1",
+  "scope": "Human-reviewed mathematical hypothesis ledger. The finite checker does not consume or certify these statuses.",
+  "curve": {"ainvariants": null, "conductor": null},
+  "field_discriminant": null,
+  "prime": null,
+  "auxiliary_character": null,
+  "gates": {
+    "eligible_arithmetic": {"status": "UNVERIFIED", "proof_reference": null},
+    "actual_reflected_global_family": {"status": "UNVERIFIED", "proof_reference": null},
+    "exact_theta_order_two": {"status": "UNVERIFIED", "proof_reference": null},
+    "finite_local_control": {"status": "UNVERIFIED", "proof_reference": null},
+    "common_full_global_line": {"status": "UNVERIFIED", "proof_reference": null},
+    "full_normalized_classical_specialization": {"status": "UNVERIFIED", "proof_reference": null},
+    "full_normalized_local_comparison": {"status": "UNVERIFIED", "proof_reference": null},
+    "true_infinite_analytic_leading_term": {"status": "UNVERIFIED", "proof_reference": null},
+    "certified_finite_line_separation": {"status": "UNVERIFIED", "certificate_path": null, "receipt_path": null}
+  },
+  "conclusion_if_all_gates_are_proved": "A finite Selmer class over Q with nonzero local logarithm, as stated in README.md; no rational-point or general BSD conclusion."
+}

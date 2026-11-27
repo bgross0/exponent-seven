@@ -1,0 +1,22 @@
+{
+  "schema": "bsd-projective-line-separation/v1",
+  "ring": {"p": 5, "precision": 3, "modulus_polynomial": [-1, -2, 1, 1]},
+  "basis_id": "E389-p5-falpha-fbeta-after-Klead-v1",
+  "error_ideal": "p^N O_L^2",
+  "analytic": {
+    "basis_id": "E389-p5-falpha-fbeta-after-Klead-v1",
+    "coordinates": [[5, 0, 0], [21, 0, 0]],
+    "normalization": "Scale K_lead*A2 by 5 divided by its first coordinate; second coordinate is the certified scaled ratio modulo125."
+  },
+  "exceptional": {
+    "basis_id": "E389-p5-falpha-fbeta-after-Klead-v1",
+    "coordinates": [[5, 0, 0], [86, 0, 0]],
+    "normalization": "Scale zeta by 5 divided by its first coordinate; second coordinate is 5*zeta2/zeta1 modulo125."
+  },
+  "source_bindings": {
+    "analytic_leading_term": "../PILOT_LOCALIZATION_THEOREM.md equations (9)-(11); ../comparison_logic_audit/result.json corrected_five_b_over_a.",
+    "exceptional_line": "../PILOT_LOCALIZATION_THEOREM.md equation (12); ../comparison_logic_audit/result.json zeta_five_b_over_a=86.",
+    "common_basis": "The same stabilization basis (f_alpha,f_beta) used in the pilot theorem, with K_lead already applied to the analytic vector.",
+    "precision": "The pilot theorem proves both integral scaled ratios modulo125. The first normalized coordinate is exactly5. This checker does not reprove those bounds."
+  }
+}
