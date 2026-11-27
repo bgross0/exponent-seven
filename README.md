@@ -156,7 +156,7 @@ The search prints one line per prime and ends with `DONE survivors 0`.
 Work in progress that is not part of the verified result on `main`:
 
 - `frontier-zero-obstruction`: a draft argument replacing GRH by a hypothesis on zeros of low height, for the range up to 10^162. Unreviewed; not formalized.
-- `grh-import-audit`: preparation for importing a Lean proof of GRH, which would discharge the hypothesis `GRHPrimeConductor`. Not built here; the result on `main` stays conditional on GRH.
+- The optional [Lean 4.35 GRH integration](frontier/grh-integration/README.md) applies the pinned external Dirichlet-GRH theorem to the four bounded results in `Final5` and `Final6`. The ordinary Lean 4.37 project exposes those results with an explicit `GRHPrimeConductor` argument.
 - `explicit-formula-wip`, `lean-sieve-handoff`, `sieve-reduction-audit`, `independent-audit`: earlier working branches, merged into `main`.
 
 ## License

@@ -1,0 +1,4 @@
+'Exp7.GRHIntegration.theoremA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.GRHIntegration.theoremD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.GRHIntegration.theoremA_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.GRHIntegration.theoremD_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
