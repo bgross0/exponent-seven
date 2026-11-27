@@ -1,4 +1,4 @@
-# Rank-two BSD: projective target and finite projection certificates
+# Rank-two BSD: computed CM projection and arithmetic comparison
 
 Research branch: `bsd-projection-certificates`, continuing
 `bsd-de-rham-preparation` commit `704a86d0f48f0f037d327ee9339a7e211e1a2652`.
@@ -25,15 +25,24 @@ input, extracts further exact consequences, and develops a specific global
 class to investigate next. It does not redo the 140-class CM construction.
 The original p=29 arithmetic and projection work remains available below.
 
-This continuation proves that the ordinary second coefficient is already
-nonzero under the supplied theta/arithmetic and analytic inputs. The new
-numerical target is the ratio of the critical and ordinary coefficients.
-It provides an explicit conditional CM tail inequality, a simpler cubic
-product input with a fixed Euler correction, and executable two-slope
-projection certificates with measured precision loss. Bounded Sage
-geometry jobs run on the research branch. The reflected class's finite
-logarithm has not been evaluated; identifying the relevant line under an
-arithmetic regulator comparison remains a substantive theorem to prove.
+The actual 1333-dimensional Katz geometry and the CM projection have now
+completed, with independent finite witness replay. An independently
+reviewed infinite-operator argument preserves the output precision under
+the documented pinned-Sage geometric provenance. For the two quadratic
+coefficients in the specified elliptic stabilization basis, it gives
+
+\[
+ 5\,b_2/a_2=109+75\xi+106\xi^2\pmod{125},\qquad
+ \xi=\zeta_7+\zeta_7^{-1}.
+\]
+
+Further deductions retain both Frobenius components in the fixed-weight
+syntomic formula, compute the full Perrin--Riou adjoint correction, and
+give a rational projected specialization argument at first weight two.
+The conditional comparison still requires identifying the chosen global
+class and the normalized local regulator. The reflected class's finite
+logarithm has not been evaluated. No new Lean verification or general BSD
+theorem is claimed.
 
 ## What is completed
 
@@ -55,29 +64,36 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Finite-coordinate extraction | An invariant first coefficient of a regular finite-log lift, or a second coefficient of a calibrated complementary vector regulator | [Proof and exact algebra](finite_log_reciprocity/FINITE_COORDINATE.md); an arithmetic reciprocity comparison is still required |
 | Explicit interpolation annihilator | `zeta=(20I-13F)/45 omega`, computed modulo `5^7` | [Local crystalline proof](local_crystalline/README.md), using exact Frobenius modulo `5^8` |
 | Cyclotomic strict height | `h_cyc(R,R)/5=1 mod5`, for `R=(log Q/5)P-(log P/5)Q` | [Exact rational height certificate](local_crystalline/height_leading.py); this is a cyclotomic quantity |
-| CM analytic input | Weight-one CM forms and their first two normalized weight derivatives, both p-adic embeddings | [Executable input and scope](reflected_pilot/README.md); no projected vector L-value or global class is computed |
+| CM analytic input | Weight-one CM forms and their first two normalized weight derivatives, both p-adic embeddings | [Executable input and scope](reflected_pilot/README.md); this input stage precedes the projection below |
 | Actual tame traces | Both traces equal `Xi+U71 Xi`; eight inputs through q128 and weight order two modulo 5^5 | [Proof](tame_trace_theory/TAME_TRACE.md), [computation](tame_trace_compute/README.md), and [independent audit](tame_trace_audit/README.md) |
 | Exact elliptic projector | Complete rank-two E factor; polynomial in T2 and T3 with at most one 5-adic digit of loss | [Witness and checker](elliptic_projection/README.md); proper de Rham reduction of the input remains separate |
 | Low-weight interpolation | Fourteen classical CM weights suffice for a second coefficient modulo 5^12 in an integral fixed module | [Proof and exact weights](tame_trace_audit/README.md); reduction and normalization denominators must be added |
 | Global obstruction criterion | The reflected logarithm is nonzero exactly when the augmentation-localized global H2 has length one, under the listed identifications | [Conditional arithmetic reduction](ambient_arithmetic/README.md); the actual first global Bockstein has not been evaluated |
 | Analytic target reduction | Second-factor depletion is cohomologically invisible; the normalized elliptic vector is even in weight and fixed by coefficient conjugation | [Proof](analytic_target_audit/README.md) and [finite identities](weight_reflection/README.md); the entire first vector coefficient is zero |
-| Larger executable input | One cubic-field representative through q6825 and weight order two modulo 5^12; generated in 16.896 seconds | [Data, algorithms, and measured benchmarks](trace_scaling/README.md); raw series, not yet projected de Rham coordinates |
+| Larger executable input | One cubic-field representative through q6825 and weight order two modulo 5^12; generated in 16.896 seconds | [Data, algorithms, and measured benchmarks](trace_scaling/README.md); the later projection consumes the related undepleted product |
 | Two-slope calibration | Explicit invertible conversion from the two p-stabilizations to omega, eta modulo 5^7 | [Calibration](de_rham_strategy/README.md); the U and F slope labels are interchanged |
 | Proper residue filter | U5^2-1 kills the residue quotient; its elliptic inverse is -(F+2I)/9 | [Proof and exact matrix check](residue_filter/README.md); zero correction loss in an F-stable integral lattice |
-| Finite geometry handoff | A 1333-dimensional six-digit Katz gate and an exact 195-dimensional pole-order core | [Executable Sage jobs and scope](de_rham_strategy/README.md); cloud-run provenance is recorded separately |
-| Ordinary second coefficient | ord_W a_E(W)=2, using the supplied theta input and Castella--Do's conductor-one factorization | [Leading comparison](leading_comparison/README.md); no value or valuation of a2 is claimed |
+| Actual finite geometry | The 1333-dimensional Katz gate passed; the separate pole-order route timed out after completing all four classical bases | [Actual run provenance](de_rham_strategy/katz-run-8726d59.json), [independent replay](projection_backend/ACTUAL_REPLAY.md), [pole run](de_rham_strategy/pole-run-409fe6f.json) |
+| Ordinary second coefficient | ord_W a_E(W)=2, using the supplied theta input and Castella--Do's conductor-one factorization | [Leading comparison](leading_comparison/README.md); the later actual calculation also supplies its valuation |
 | Projective numerical target | r_E=b2/a2 is invariant under regular scalar normalization and parameter change | [Line-level comparison target](leading_comparison/README.md); the arithmetic bad line is still unidentified |
 | Conditional quantitative tail | Explicit pole-index bound; cutoff17 gives eight digits after saturated pole reduction | [Proof and exact inequalities](cm_tail_bound/README.md), with the fixed-weight Coleman realization (CF) stated explicitly |
 | Undepleted cubic representative | Tr71 of (Q+sigma Q)/2 through q6825 modulo5^12; an explicit R(U) recovers the original E projection | [Product and Euler correction](cm_product_transfer/README.md); one-digit worst-case correction loss |
-| Finite projection implementation | Both slopes, exact inverse-minor witnesses, and valuation-sensitive normalization | [Executable adapter and proof](projection_backend/README.md); actual infinite input/operator comparison remains separate |
+| Finite projection implementation | Both slopes, exact inverse-minor witnesses, and valuation-sensitive normalization | [Executable adapter and proof](projection_backend/README.md); the generic finite checker has a narrower scope than the analytic proof |
+| Actual finite CM projection | Nonzero quadratic coefficients in both elliptic components; lower coefficients contain zero at the reported precision | [Finite result](projection_backend/actual-cm-finite-projection.json), [certificate replay](projection_backend/actual-cm-finite-replay.json) |
+| Infinite analytic comparison | Constructs the bounded dual, controls the input and normalization tails, and preserves the actual coefficient balls | [Proof](projection_backend/INFINITE_KATZ_BRIDGE.md), [independent review](cm_tail_bound/FINITE_TO_INFINITE_REVIEW.md); pinned-Sage source provenance is explicit |
+| Actual projective direction | 5 b2/a2 = 109+75 xi+106 xi^2 mod125; three scaled digits are sharp from the output balls | [Exact cubic calculation](projection_backend/cubic-ratio-result.json); arithmetic identification of the exceptional line remains open |
+| Classical full-vector comparison | Both Frobenius coordinates of the syntomic vector at fixed weights (2,k,k), up to a nonzero scalar | [Projective identity and geometric hypotheses](fixed_weight_syntomic/README.md), [independent review](leading_comparison/fixed_weight_review.md); global sign remains unresolved |
+| Conditional weight-one continuation | Full classical vector matching forces a precise projective comparison at weight one | [Analytic wedge proof and pilot matrix](fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md); the arithmetic family matching is an explicit unproved premise |
+| Full Perrin--Riou correction | Tracks the adjoint, factorial, twist and Frobenius factors on both coordinates | [Proof and exact algebra](pr_syntomic_comparison/README.md); normalized class and period comparison remains open |
+| Weight-two specialization | Rational cuspidal projection removes the boundary obstruction for weights (2,k,k), k>2 | [Projected extension-class argument](leading_comparison/ARITHMETIC_SPECIALIZATION.md); this extends the inspected construction rather than widening a printed theorem's scope |
 
 These additions contain mathematical proofs and exact Python calculations.
 They are **not additional Lean kernel-checked theorems**. The supplied
-package has its own formal layer and verification receipts. The new finite
-matrix examples are explicitly abstract algebraic models, not elliptic
-curves or counterexamples to BSD.
+package has its own formal layer and verification receipts. Abstract
+algebraic countermodels are labeled separately from the actual elliptic
+fixtures, the completed Sage geometry, and the finite CM calculation.
 
-## Current frontier: compute a direction and identify the exceptional line
+## Current frontier: identify the arithmetic exceptional line
 
 Write the analytic vector in its calibrated elliptic stabilization basis:
 
@@ -102,10 +118,11 @@ regular scalar multiple of a_E. Its exact order two forces the same
 order for a_E. The proof checks regularity in the CM weight variables;
 it does not infer it merely from nonvanishing of a scalar function.
 
-Consequently the next numerical target can be
+The computed numerical target is
 
 \[
- r_E=\frac{[W^2]b_E}{[W^2]a_E}\in\mathbf Q_5(\xi).
+ r_E=\frac{[W^2]b_E}{[W^2]a_E},\qquad
+ 5r_E=109+75\xi+106\xi^2\pmod{125}.
 \]
 
 This ratio removes common period and coordinate scales. Under the
@@ -113,8 +130,115 @@ appropriate arithmetic comparison, the reflected logarithm is nonzero
 exactly when the second vector lies outside the image of the rank-one
 base regulator. It therefore suffices to identify that one line, rather
 than every entry of an absolute comparison matrix. That identification
-is still unproved. The note gives a DL Euler-line candidate and an exact
-model showing why the known ordinary scalar law does not determine it.
+is still unproved. The notes give conditional candidate lines and an exact
+model showing why the known ordinary scalar law does not determine the
+answer. A numerical mismatch with a provisional candidate is a
+normalization diagnostic, not a nonzero-localization theorem.
+
+### Retaining both coordinates in the syntomic comparison
+
+The [source review](leading_comparison/VECTOR_SOURCE_REVIEW.md) checks why
+the published ordinary reciprocity laws do not supply a second coordinate:
+their maps discard the same local subspace, and changing which modular
+factor is ordinary accesses other CM blocks. This is a precise limitation
+of those cited formulas, not a claim about every possible reciprocity law.
+
+At each fixed integer k >= 2, the [new deduction](fixed_weight_syntomic/README.md)
+instead returns to the full syntomic primitive calculation. Put
+
+\[
+ A_k=\Pi[d^{1-k}g^{[p]}h],\qquad
+ J_k(F)=\frac{1-\chi_f(p)^{-1}F^2/p^2}
+ {\prod_{u\in\{a,b\},v\in\{c,d\}}(1-uvF/p^k)}.
+\]
+
+Here a,b and c,d are the p-Hecke roots, F is untwisted geometric
+Frobenius, and Pi is a Frobenius-equivariant proper projection followed
+by the elliptic Hecke projection. The inverse-Bol forms are genuine
+overconvergent sections. Every discarded product is U-annihilated;
+since U=pF^(-1) on rigid weight-two cohomology, its class is zero before
+ordinary projection. Tracking the fibre contraction and Tate twist then
+gives
+
+\[
+ \Pi\xi_k\ \parallel\ J_k(F)A_k.
+\]
+
+The proportionality scalar is nonzero. The argument retains the specified
+cusp basepoint and the proper projection; it does not assert zero residues
+for the unprojected product. A global syntomic sign convention remains
+unresolved, so the claim is projective. Exact polynomial checks cover the
+operator algebra, not these geometric hypotheses.
+
+The [conditional continuation lemma](fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md)
+avoids substituting k=1 into the nonanalytic factors p^(k-1) and (k-2)!.
+Along k_n=1+4*5^n, the unwanted matrix correction tends to the identity
+with error valuation growing exponentially in n. A nonzero analytic wedge
+evaluated at W_n would have only linear valuation growth. Thus the wedge
+must vanish identically, **if** an actual analytic arithmetic vector has
+the stated full classical specializations. No control of a varying
+nonzero scalar is required.
+
+For the pilot, after checking the CM root convention,
+tau=zeta7^3+zeta7^4=1-xi-xi^2 and the conditional raw syntomic comparison
+matrix is
+
+\[
+ M(0)=-\frac{3\bigl((5\tau+23)I+(5\tau+11)F\bigr)}
+ {5(5\tau^2+18\tau+25)},\qquad
+ M(0)^{-1}=\frac{10(\tau+1)I+(5\tau+11)F}{9}.
+\]
+
+This is a conditional full-vector comparison, not an identification of the
+named arithmetic class. It compares leading nonzero coefficient lines
+without asserting equal vanishing orders or division of a global
+cohomology class. In particular M is not yet the Perrin--Riou comparison
+matrix.
+
+The [full adjoint calculation](pr_syntomic_comparison/README.md) tracks the
+Perrin--Riou interpolation on both eigenvectors. After the factorial,
+Tate and Frobenius corrections, the conditional limiting PR matrix is
+
+\[
+ K_0=\frac{3\bigl((5\tau+11)I+2(\tau+1)F\bigr)}
+ {5\tau^2+18\tau+25},\qquad
+ K_0^{-1}=\frac{(5-\tau)I-2(\tau+1)F}{9}.
+\]
+
+Both are integral units on the specified F-stable lattice. This correction
+changes the provisional exceptional line, so the raw syntomic matrix
+cannot be used in its place. The exact comparison with the CH
+Frobenius-averaged map, its periods and its test vectors is still required.
+
+The [weight-two specialization argument](leading_comparison/ARITHMETIC_SPECIALIZATION.md)
+also resolves a scope issue in the inspected family theorems. For the pilot,
+the rational correspondence
+
+\[
+ R_f=(4-T_3)/6
+\]
+
+acts as the identity on the elliptic H1 factor and kills the unwanted H0
+and H2 terms. With the specified cusp correction, the extension-class
+construction then gives a rational projective comparison at weights
+(2,k,k), k>2. This is a proved deduction under its listed geometric
+conventions, not a claim that the printed all-positive-exponent theorem
+already covered that edge.
+
+Two arithmetic identifications remain:
+
+1. Match the chosen full diagonal family, variable CM summand and test
+   vectors with the named global class; alternatively, use the chosen
+   family consistently and establish the needed derived-class properties
+   for it.
+2. Match its full local vector with the normalized CH regulator, including
+   the chosen prime, character inversion, cup/Tate conventions, periods
+   and Frobenius averaging. Any non-scalar change must be explicit.
+
+The exact cubic checker compares the computed ratio with the provisional
+K0 line, obtaining a difference (115,0,35) modulo125 for the scaled ratio.
+Its valuation is1. This is recorded only as a diagnostic until both
+identifications hold.
 
 ### A quantitative bound for a simpler input
 
@@ -136,8 +260,10 @@ After saturated pole reduction the loss is at most floor(log_5(i-1)).
 Keeping pole indices through10,12,15,17 gives discarded-tail bounds of
 2,4,6,8 digits respectively. These numbers precede the actual later
 coordinate and normalization losses. The analytic argument is separate
-from the finite q-expansion checker; a backend still has to identify its
-computed lattice with the model used in this bound.
+from the finite q-expansion checker. The
+[infinite Katz bridge](projection_backend/INFINITE_KATZ_BRIDGE.md) now
+identifies the successful backend with the required model under its
+documented source provenance and tracks the later losses explicitly.
 
 The bounded input is the ordinary CM product Q=h_-s*V389(h_s). Its cubic
 average has been generated through q6825 modulo5^12 in22.160 seconds.
@@ -156,7 +282,16 @@ The exact field and matrix checks are in
 
 ### Executable finite projection, with corrected error accounting
 
-Once a Katz geometry capsule is available, run:
+The actual capsule was produced by
+[run46059120633](https://github.com/bgross0/exponent-seven/actions/runs/46059120633)
+from commit8726d59. The short bases took9.400 seconds, the long-basis
+replay170.376 seconds, and the full Katz gate480.888 seconds. The measured
+inverse guard is1: eight basis digits give seven coordinate digits, and
+the exported matrix is reduced to the requested six digits. Independent
+Python replay checked all1,820,878 finite coefficient equations and2732
+classical fixture identities.
+
+Run the projection against an extracted capsule with:
 
 ```sh
 python research/bsd-localization/projection_backend/project_capsule.py --katz de-rham-katz6/katz-capsule.json.gz --input-kind undepleted-product --output undepleted-projection-output
@@ -175,11 +310,63 @@ give quotient precision min(a-v,b+t-2v). The previous unconditional
 M-c-v statement was too optimistic for nonintegral outputs. An exact
 counterexample and the corrected theorem are included.
 
-The finite certificate still needs the compatible infinite input and
-operator comparison before it becomes a theorem about the analytic CM
-vector. The conditional tail estimate is stated in a saturated pole
-model; it must not be inserted directly as a precision label on an
-unrelated finite Katz-fit row.
+The generic finite certificate requires a compatible infinite input and
+operator comparison. For this actual capsule the
+[separate bridge](projection_backend/INFINITE_KATZ_BRIDGE.md) supplies it:
+the high-output blocks of U are divisible by5^7, the actual fitted input
+UQ has tail coordinates divisible by5^6, and a Schur-complement argument
+constructs the bounded dual eigenfunctionals. Exact classical eigenforms
+supply existence; inverse-minor witnesses supply uniqueness and precision.
+A bootstrap controls the normalization head without assuming it integral
+in advance. The [independent review](cm_tail_bound/FINITE_TO_INFINITE_REVIEW.md)
+checks each of these steps.
+
+The head's geometric provenance uses the successful pinned Sage source,
+the verified low-weight bases, saturated complementary spaces, and an
+integral invertible row change. The artifact-only replay does not yet save
+every higher-weight product choice and echelon operation. Thus the analytic
+interpretation has a documented source-based trust boundary; the finite
+matrix identities have independent arithmetic witnesses.
+
+### Actual quadratic coefficients and their precision
+
+The scale-zero fit of the actual undepleted CM product passed in118.511
+seconds. Its coordinate guard is1; the ordinary and critical dual guards
+are1 and2. Both classical fixtures normalize correctly, all eleven input
+and fixture columns fit, and the saved finite projection certificate
+replays successfully without repeating Gaussian elimination.
+
+Write xi=zeta7+zeta7^(-1), so xi^3+xi^2-2xi-1=0. After applying the
+constant Euler correction R(U), the reported finite quadratic balls are
+
+\[
+ \widetilde a_2=\frac{418+150\xi+83\xi^2}{5}+O(5^3),
+ \qquad
+ \widetilde b_2=\frac{14+27\xi+124\xi^2}{25}+O(5).
+\]
+
+Thus every value in these respective finite balls has valuation-1 and-2.
+The tildes label the finite certificate's output. Under the analytic
+bridge and source provenance just specified, the actual coefficients a2
+and b2 belong to these same balls. The resulting scaled ratio is
+
+\[
+ 5b_2/a_2=109+75\xi+106\xi^2\pmod{125}.
+\]
+
+These are three certified digits of the scaled ratio. An exact admissible
+perturbation of b2 proves a fourth digit does not follow from these balls.
+The constant and linear balls contain zero in all three cubic components;
+that finite agreement is not used to infer exact vanishing. The separate
+analytic identity supplies the exact lower-order zeros.
+
+The complete large witnesses are preserved in
+`bsd-katz-cm-finite-certificates-2026-11-27.zip` (48,854,642 bytes;
+SHA-256 `352237882bb1d79557d2705c197d0401d7620136cbcff57bf5a7c353e80c55e5`).
+The archive keeps the gated capsule, its matrix witness, the short and
+long low-weight checkpoints, and the actual CM projection witness.
+Duplicate unchecked capsules are omitted. Code and compact receipts
+remain in this research branch.
 
 ## Preceding reduction: one cubic input and the finite geometry
 
@@ -226,24 +413,24 @@ all discarded variants. Independent full-precision and lower-precision
 overlap checks pass; details and source hashes are in the
 [benchmark report](trace_scaling/README.md).
 
-The geometry is independent of the cubic coefficients. Build it once over
-the base 5-adic ring and apply it to the three scalar columns. The next
-job on a node with Sage is:
+The geometry is independent of the cubic coefficients. The completed
+run built it once over the base 5-adic ring and applied it to the three
+scalar columns. Its faster reproducible route first constructs the short
+low-weight bases, then replays them at the longer q-depth:
 
 ```sh
-timeout 45m sage -python research/bsd-localization/de_rham_strategy/backend_probe.py --mode katz --digits 6 --output de-rham-katz6
+sage -python research/bsd-localization/pole_core_fast/build_core.py --level 389 --q-precision 390 --stop-weight 6 --output short-bases-389
+sage -python research/bsd-localization/de_rham_strategy/backend_probe.py --mode katz --digits 6 --low-weight-checkpoints short-bases-389 --matrix-fit certified --output de-rham-katz6
 ```
 
-This uses Sage's documented higher_level_UpGj implementation. It exports
-the finite U5 matrix, its q-expansion basis, both classical elliptic
-p-stabilizations, and runtime/source provenance. It checks the finite
-matrix identities. The cloud job is tracked on the research branch.
-The subsequent dual-eigenvector extraction is now implemented in
-[projection_backend](projection_backend/README.md). The analytic tail
-argument is a separate theorem and must be connected to the computed
-lattice. Six matrix digits do not certify six final
-vector digits. The precise precision contract is in the
-[backend note](de_rham_strategy/README.md).
+The pinned container and exact bounded commands are in
+[the workflow](../../.github/workflows/bsd-de-rham-geometry.yml).
+The route uses Sage's Katz basis construction with the verified supplier
+and a checked inverse-minor matrix fit. It exports the finite U5 matrix,
+its q-expansion basis, both classical elliptic p-stabilizations, and
+runtime/source provenance. The subsequent dual extraction and analytic
+comparison are completed as described above. Six matrix digits lead to
+three ordinary and one critical absolute output digits after all losses.
 
 A second node can construct the smaller exact algebraic core independently:
 
@@ -258,16 +445,18 @@ input automatically. A derived cup-product/weight-twelve-trace formula
 offers a route to extracting the E component without constructing every
 ambient Hecke operator, but its numerical implementation remains pending.
 
-### Two obligations that computation alone will not remove
+### The preceding two obligations and their current status
 
-1. **An integral tail bound.** The CM identity
+1. **Integral tail bound, now supplied for this calculation.** The CM identity
    d^-s(g_s^[5])=h_-s^[5] rewrites the difficult inverse-Bol expression as a
    product of ordinary CM-family sections. This specializes the remaining
    problem to their norm on a fixed strict neighborhood and the growth of
    their weight jets. Analytic overconvergence and integral q-coefficients
-   alone do not supply the advertised Katz-lattice precision. See the
-   [radius audit](analytic_target_audit/RADIUS_AND_RESIDUES.md).
-2. **A leading-order arithmetic comparison.** The analytic vector must be
+   alone do not supply the advertised Katz-lattice precision. The
+   [radius audit](analytic_target_audit/RADIUS_AND_RESIDUES.md) identified
+   that issue; the new tail proof and infinite Katz bridge provide the
+   quantitative bound under the stated geometric provenance.
+2. **Leading-order arithmetic comparison, still open.** The analytic vector must be
    matched to the actual CH localization and its finite-log regulator.
    Because both lower vector coefficients vanish, this stage needs only
    the constant comparison matrix, the linear parameter scale, and the
@@ -435,10 +624,11 @@ their own costs.
 
 The q128 pilot exceeds the classical weight-two Sturm bound 65. That
 is useful for classical regressions, but it does not certify an arbitrary
-overconvergent jet from finitely many q coefficients. The next missing
-computational operation is the proper de Rham reduction at level 389
-with both slopes and bounded denominators. A full regulator comparison
-with the CH class remains a separate mathematical obligation.
+overconvergent jet from finitely many q coefficients. The subsequent
+q6825 input, actual Katz computation and infinite comparison above now
+supply the two-slope analytic projection with bounded denominators. A full
+regulator comparison with the CH class remains a separate mathematical
+obligation.
 
 ## A global test independent of computing the full vector L-function
 
@@ -671,16 +861,25 @@ To write a fresh receipt:
 python research/bsd-localization/verify_all.py --receipt research/bsd-localization/verification.json
 ```
 
-The runner performs 30 checks covering the original arithmetic, p5,
+The runner performs 35 checks covering the original arithmetic, p5,
 formal-log, reflection, exterior-algebra, finite-coordinate, crystalline,
 height, ambient-jet, CM-weight-jet, tame-trace, interpolation, exact Hecke
 projector, analytic-target identities, cubic descent, residue and Euler
 filters, two-slope calibration, both larger trace inputs, the conditional
-tail arithmetic, leading-coordinate identities, and finite projection
-certificates. Symbolic checks use SymPy1.14.0; the finite projection
+tail arithmetic, leading-coordinate identities, finite projection
+certificates, the finite Katz matrix fit, fixed-weight Frobenius
+polynomial identities, the actual finite cubic ratio, the Perrin--Riou
+adjoint/operator algebra, and the infinite bridge's integer bounds and
+precision table. Symbolic checks use SymPy1.14.0; the finite projection
 adapter uses NumPy2.3.5 with explicit integer overflow guards. The other
 scripts use Python's standard library.
 The receipt records exit status, timing, and hashes of sources and
 compressed data. This command does not rebuild or reverify the other
 thread's CM/Lean package; its input provenance and mathematical scope are
 stated above.
+
+The large successful Sage/CM runs are not repeated by this compact
+runner. Their separate receipts and the preserved witness archive support
+independent replay. The analytic and geometric proofs remain written
+mathematics with stated provenance; this command is not a Lean proof of
+them or an arithmetic nonzero-localization test.

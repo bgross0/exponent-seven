@@ -1,0 +1,65 @@
+{
+  "CM_coordinate_bound_shift_per30_after_index8": 19,
+  "CM_global_coordinate_bound": -1,
+  "CM_tail_coordinate_bound": 2,
+  "U_CM_fitted_head_error_bound": 6,
+  "U_CM_q_tail_bound": 7,
+  "U_CM_tail_coordinate_bound": 6,
+  "accepted_Sage_runtime_source_sha256": "6292ef3c2e20c2456058fdac25ecb1576e9abdace4c47a3aae13b1469f58703a",
+  "actual_precision_table": [
+    {
+      "Euler_factor_valuation": 0,
+      "denominator_digits": 5,
+      "denominator_valuation": 1,
+      "depleted_coefficient_digits": 3,
+      "depleted_coefficient_valuation": -1,
+      "direction": "alpha",
+      "eigenvalue_valuation": 0,
+      "head_kernel_digits": 5,
+      "input_head_valuation": 0,
+      "normalizer_head_error_bound": 7,
+      "normalizer_head_valuation": 0,
+      "normalizer_tail_bound": 7,
+      "numerator_digits": 5,
+      "numerator_valuation": 0,
+      "tail_dual_valuation_bound": 0,
+      "undepleted_coefficient_digits": 3
+    },
+    {
+      "Euler_factor_valuation": -1,
+      "denominator_digits": 5,
+      "denominator_valuation": 2,
+      "depleted_coefficient_digits": 1,
+      "depleted_coefficient_valuation": -2,
+      "direction": "beta",
+      "eigenvalue_valuation": 1,
+      "head_kernel_digits": 4,
+      "input_head_valuation": 0,
+      "normalizer_head_error_bound": 7,
+      "normalizer_head_valuation": 1,
+      "normalizer_tail_bound": 7,
+      "numerator_digits": 4,
+      "numerator_valuation": 1,
+      "tail_dual_valuation_bound": -1,
+      "undepleted_coefficient_digits": 2
+    }
+  ],
+  "head_pole_cutoff": 10,
+  "output_column_bound_residues_mod6": [
+    -1,
+    -1,
+    0,
+    1,
+    2,
+    3
+  ],
+  "output_column_bound_shift_per6": 4,
+  "scope": "Exact arithmetic instantiation of INFINITE_KATZ_BRIDGE.md using actual finite certificates. Geometric Katz splitting, source-based head provenance, Banach continuity, and the published U radius theorem are mathematical premises established in the written proof, not inferred by this finite arithmetic checker. Arithmetic regulator and global-class comparisons remain separate.",
+  "source_sha256": {
+    "Euler_transfer": "66e7a617d079fba36870296371914492da73e7b8e0a333ba552787dc271f9a11",
+    "actual_matrix_replay": "b90aa512b743ab129f01dee6aefb499b63a869f87d1bdb84613fbed0a7125581",
+    "actual_projection": "ed37f6d6b106afb518adcf866326842b792efc3604a040ebd1377753b2a60490"
+  },
+  "status": "PASS",
+  "tail_output_column_bound": 7
+}

@@ -1,0 +1,51 @@
+{
+  "basis_reports": {
+    "10": {
+      "dimension": 293,
+      "rank_mod5_after": 293,
+      "rank_mod5_before": 293,
+      "saturation_index_v5": 0,
+      "selected_product_rows_replayed": 293,
+      "unit_coefficient_minor_verified": true,
+      "weight": 10
+    },
+    "2": {
+      "dimension": 33,
+      "rank_mod5_after": 33,
+      "rank_mod5_before": 33,
+      "saturation_index_v5": 0,
+      "selected_product_rows_replayed": 0,
+      "unit_coefficient_minor_verified": true,
+      "weight": 2
+    },
+    "4": {
+      "dimension": 99,
+      "rank_mod5_after": 99,
+      "rank_mod5_before": 97,
+      "saturation_index_v5": 2,
+      "scaled_Serre_derivatives_replayed": 1,
+      "selected_product_rows_replayed": 99,
+      "unit_coefficient_minor_verified": true,
+      "weight": 4
+    },
+    "6": {
+      "dimension": 163,
+      "rank_mod5_after": 163,
+      "rank_mod5_before": 163,
+      "saturation_index_v5": 0,
+      "selected_product_rows_replayed": 163,
+      "unit_coefficient_minor_verified": true,
+      "weight": 6
+    }
+  },
+  "scope": "Exact product/Serre/saturation and unit-minor replay of all four saved pilot bases. The derivative-coordinate solve and195-dimensional quotient did not complete.",
+  "source_commit": "409fe6f82fc8596590bedf6222e1135e14c3d684",
+  "source_sha256": {
+    "M10-basis.json.gz": "c852e7adb28c16103b28df92c31bc761b48b8c4abcacc92d6cc5061e5ddb7e7c",
+    "M2-basis.json.gz": "cf093ae63a46bf56ab1913919d6dc965ac3919ad76bccee10cd6fe5809e1d03d",
+    "M4-basis.json.gz": "54ffbc062fd9cfbdc8b1af72f0e0ba0d6dc6ea1307d14038c2e701f3298f9ab4",
+    "M6-basis.json.gz": "9c41e077a8c356d1cbedcf1662463e3e13cfa509b42491dcab0ec0655c90ab47"
+  },
+  "status": "PASS",
+  "workflow_run": 46057628724
+}

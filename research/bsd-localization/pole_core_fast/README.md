@@ -11,10 +11,11 @@ It finally constructs the same exact quotient
 
 as `../de_rham_strategy/backend_probe.py`.
 
-The script's existence and Python syntax check are not an executed Sage
-result. Successful runs write their measured timings and checks to
-`backend-result.json`; no runtime or successful pilot rank is asserted
-before that file exists from the actual run.
+The full level-eleven smoke calculation has passed in Sage. The actual
+level389 bases in weights2,4,6 have also completed: dimensions33,99,163,
+all with full q-coefficient rank modulo5, in9.400 seconds. The higher
+pole quotient is a separate run. Successful full runs write their
+measured quotient checks to `backend-result.json`.
 
 ## Bounded execution
 
@@ -91,8 +92,10 @@ The first actual pilot attempt measured rank96 for the weight-two
 products in weight4, and rank98 after E4,V389(E4). The previously proposed
 rank97 was therefore not used. A separate exact modular probe on that
 run's checkpoints found that6*theta(f0)-E2*f0, using the first M2 basis
-row, increases the rank to99 modulo65537. The full revised Sage gate must
-still complete before its M4 lattice and higher weights are certified.
+row, increases the rank to99 modulo65537. The revised Sage run completed
+M4, including one saturation round replacing two rows, and M6 with no
+further saturation. Its exact provenance is in
+[the actual Katz run record](../de_rham_strategy/katz-run-8726d59.json).
 
 If all candidates fail, the script saves the partial basis and stops. A
 rank shortfall is over the selection prime and can be caused by a bad
@@ -224,10 +227,17 @@ asserted: Sage's complementary-space construction must achieve the full
 dimension modulo5 at every requested weight before it can return. The
 backend's external timeout still bounds an unsuccessful search.
 
-The supplier's PASS status certifies the low-weight replay, not the full
-Katz matrix identity or an elliptic projection. Those checks remain in
-the parent backend. The executable has passed Python compilation and its
-plain-Python planning mode; measured Sage replay results must come from
+The supplier's PASS status certifies the low-weight replay. The actual
+six-digit parent run subsequently passed its finite Katz matrix identity;
+neither stage alone is an elliptic CM projection. The pilot supplier took
+170.376 seconds, including161.285 seconds extending M2 to6830 coefficients.
+It checked every saved short coefficient and every long saturation
+division. The full matrix gate completed in480.888 seconds. These are
+measurements from
+[run46059120633](https://github.com/bgross0/exponent-seven/actions/runs/46059120633),
+with hashes and parameters in the run record linked above.
+
+For any new execution, measured Sage replay results must come from
 `supplier-result.json` after an actual run.
 
 ## Files saved by an actual run

@@ -1,0 +1,82 @@
+{
+  "independent_pilot_eigenform": {
+    "a389": 1,
+    "a5": -3,
+    "coefficients_checked": 390,
+    "coordinate_denominator_v5": 0,
+    "curve": "y^2+y=x^3+x^2-2x",
+    "exact_q_span_match": true,
+    "prime_point_counts": 77
+  },
+  "independent_smoke_M2_identification": {
+    "Eisenstein": "11*E2(q^11)-E2(q)",
+    "coefficients_checked": 80,
+    "eta_product": "eta(q)^2*eta(q^11)^2",
+    "exact_span_match": true
+  },
+  "pilot_M2_replay": {
+    "dimension": 33,
+    "rank_mod5_after": 33,
+    "rank_mod5_before": 33,
+    "saturation_index_v5": 0,
+    "selected_product_rows_replayed": 0,
+    "unit_coefficient_minor_verified": true,
+    "weight": 2
+  },
+  "pilot_level": 389,
+  "scope": "Independent exact Python replay of the actual level11 Sage smoke core and level389 M2 checkpoint. Level389 M4/full core and any CM input projection remain unclaimed.",
+  "smoke_basis_replays": [
+    {
+      "dimension": 2,
+      "rank_mod5_after": 2,
+      "rank_mod5_before": 1,
+      "saturation_index_v5": 1,
+      "selected_product_rows_replayed": 0,
+      "unit_coefficient_minor_verified": true,
+      "weight": 2
+    },
+    {
+      "dimension": 4,
+      "rank_mod5_after": 4,
+      "rank_mod5_before": 3,
+      "saturation_index_v5": 1,
+      "selected_product_rows_replayed": 4,
+      "unit_coefficient_minor_verified": true,
+      "weight": 4
+    },
+    {
+      "dimension": 6,
+      "rank_mod5_after": 6,
+      "rank_mod5_before": 6,
+      "saturation_index_v5": 0,
+      "selected_product_rows_replayed": 6,
+      "unit_coefficient_minor_verified": true,
+      "weight": 6
+    },
+    {
+      "dimension": 10,
+      "rank_mod5_after": 10,
+      "rank_mod5_before": 9,
+      "saturation_index_v5": 1,
+      "selected_product_rows_replayed": 10,
+      "unit_coefficient_minor_verified": true,
+      "weight": 10
+    }
+  ],
+  "smoke_derivative_coefficients_replayed": 160,
+  "smoke_derivative_coordinate_denominator_v5": 0,
+  "smoke_derivative_relation_rank": 3,
+  "smoke_level": 11,
+  "smoke_q_precision_exclusive": 40,
+  "smoke_quotient_coordinate_denominator_v5": 1,
+  "smoke_quotient_dimension": 7,
+  "source_sha256": {
+    "pole-products-389/M2-basis.json.gz": "b10305100f307104aa5582773d6188a016cb116751ab17d79781bb7ebf3434ba",
+    "pole-products-smoke/M10-basis.json.gz": "c06f837994cadc542c11ffa6060b63bdc1036aa5567d1921faf96f07ffa79116",
+    "pole-products-smoke/M2-basis.json.gz": "1d6741ee817cc223111c4765595e36b4cf3b3357b9e24c9b96299879ddd8920d",
+    "pole-products-smoke/M4-basis.json.gz": "faeae988cc3695b062713ef716dab71f50f11c3dafb3170b1f315e653d83e385",
+    "pole-products-smoke/M6-basis.json.gz": "01968b436923234943b8a0c2787585d8dad3ea719e4a469631d882048d4bae93",
+    "pole-products-smoke/pole-core-capsule.json.gz": "d714813af887f5cf86967a9d031c1d0a1a4313ba914ed9ee204708e0d7e9f47e"
+  },
+  "status": "PASS"
+}

@@ -56,7 +56,7 @@
       }
     },
     "scope": "Actual pilot crystalline operator; input is a known elliptic linear combination, not the CM jet",
-    "source_sha256": "5654f8cf30854cbeedf03d5e2359bf9769bd79fd3ce580c39980759ea438aafc"
+    "source_sha256": "f37d632ec5ca7c7193cc073e98284a45b7a90e069583fe3884dd1ee58738bad7"
   },
   "corrupted_and_unsupported_input_rejections": {
     "corrupted_coordinate": true,

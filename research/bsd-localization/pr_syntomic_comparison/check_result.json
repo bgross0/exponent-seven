@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "method": "exact rational Laurent polynomial and quadratic-field arithmetic",
+  "identities": [
+    "CH adjoint factorization after clearing denominators",
+    "nonanalytic p-power and Frobenius cancellation",
+    "superflat regulator remainder",
+    "conditional pilot PR comparison matrix",
+    "exact inverse of the conditional pilot matrix",
+    "unit determinant formula",
+    "pullback of CH base annihilator",
+    "nonzero wedge against the separate DL candidate",
+    "ordinary norm-five ideal seventh-power generator",
+    "conjugate norm-five generator and norm 5^7",
+    "relative Lubin-Tate norm identity"
+  ],
+  "rejected_errors": [
+    "using the test-vector operator without its adjoint",
+    "wrong sign in the superflat regulator factor",
+    "omitting the PR Frobenius correction",
+    "wrong linear coefficient in the inverse matrix"
+  ],
+  "theta": [
+    -281,
+    4
+  ],
+  "bar_theta": [
+    -277,
+    -4
+  ],
+  "norm_theta": 78125,
+  "actual_full_arithmetic_comparison_verified": false,
+  "arithmetic_bad_line_identified": false,
+  "nonzero_localization_proved": false
+}

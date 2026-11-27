@@ -2,21 +2,28 @@
 
 Date: 2026-11-27. Pilot: E389.a1, K=Q(sqrt(-71)), p=5.
 
-**No CM jet has yet been converted to proper de Rham coordinates here.**
-The new results are an exact two-slope coordinate calibration, a finite
-195-dimensional model for the open cohomology, and a targeted cup-product
-formula that can extract the elliptic factor using a classical weight-12
-trace. Two Sage backend gates were first supplied as executable handoffs.
-They are now being exercised on the research branch's cloud runner;
-the local Python environment has no Sage or Magma installation. A run
-starting does not certify the output: its result and provenance are
-recorded separately.
+**The actual Katz route has completed.** The 1333-dimensional geometry
+passed in480.888 seconds in the pinned Sage10.10 container; its
+[run record](katz-run-8726d59.json) and
+[independent replay](../projection_backend/ACTUAL_REPLAY.md) preserve the
+provenance. The subsequent CM projection completed in118.511 seconds.
+The [infinite Katz bridge](../projection_backend/INFINITE_KATZ_BRIDGE.md)
+and [independent review](../cm_tail_bound/FINITE_TO_INFINITE_REVIEW.md)
+justify its analytic interpretation under that source-based provenance.
+Six matrix digits yield three ordinary and one critical absolute output
+digits after the measured coordinate and normalization losses.
 
-The most useful next job is to build the backend geometry once. It is shared
-by every input coefficient and every weight jet. The existing trace input
-through q^6825 at twelve 5-adic digits is large enough for the standard
-six-digit Katz matrix gate. Six matrix digits do **not** automatically mean
-six certified digits of the final de Rham vector.
+The separate exact pole-quotient route built all four classical bases,
+including the 293-dimensional weight-ten basis in33.722 seconds, but its
+derivative-coordinate solve reached the35-minute limit. No pilot
+195-dimensional quotient certificate is claimed. See
+[the run record](pole-run-409fe6f.json) and
+[independent basis replay](../projection_backend/actual-pole-bases-replay.json).
+This unfinished alternative does not block the successful Katz route.
+
+The construction and precision contract below explain both approaches.
+The fastest tested Katz reproduction uses the verified low-weight
+supplier, as specified in the package README and pinned workflow.
 
 ## 1. What is already executable
 
@@ -70,9 +77,9 @@ image in that quotient. Those coefficients certify only the **classical
 numerator identities used to construct the quotient**.
 
 Both commands write progress to stdout. A timeout means an unfinished
-backend job, not a mathematical failure. The code has passed Python syntax
-checks; the Sage-dependent branches still need their first real execution.
-No package installation, service configuration, or network request is made.
+backend job, not a mathematical failure. Actual execution results are
+linked above. No package installation, service configuration, or network
+request is made by these scripts.
 
 ## 2. A calibrated conversion retaining both Frobenius slopes
 

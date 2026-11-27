@@ -1,0 +1,66 @@
+{
+  "artifact": "katz-success-8726d59",
+  "basis_q_precision_exclusive": 6830,
+  "classical_fixture_U5_identities_checked": 2732,
+  "classical_fixture_q1_normalizations_verified": true,
+  "classical_fixture_root_polynomial": "X^2+3X+5",
+  "gated_capsule_operator_equals_verified_sidecar": true,
+  "independent_pilot_eigenform": {
+    "a389": 1,
+    "a5": -3,
+    "coefficients_checked": 390,
+    "coordinate_denominator_v5": 0,
+    "curve": "y^2+y=x^3+x^2-2x",
+    "exact_q_span_match": true,
+    "prime_point_counts": 77
+  },
+  "matrix_certificate_replay": {
+    "coordinate_digits": 7,
+    "dimension": 1333,
+    "finite_equations_checked": 1820878,
+    "inverse_minor_guard": 1,
+    "matrix_digits": 6,
+    "scope": "Finite weight-two U5 coordinate fit. Every sampled q-coefficient and a two-sided scaled inverse minor are checked. The matrix is uniquely determined to the reported precision among compatible exact integral coordinate solutions. An infinite-operator comparison, omitted-tail bound, and geometric lattice identification remain separate obligations.",
+    "status": "PASS"
+  },
+  "scope": "Independent finite witness replay of the actual level389 Katz matrix and short product/Serre/saturation construction. M2 coefficients inherit their modular-space provenance from Sage; the elliptic row is independently matched by point counts. No CM input fit, geometric infinite-operator comparison, analytic tail, nonzero localization, or global BSD conclusion is inferred.",
+  "short_basis_q_precision_exclusive": 390,
+  "short_classical_basis_replays": [
+    {
+      "dimension": 33,
+      "rank_mod5_after": 33,
+      "rank_mod5_before": 33,
+      "saturation_index_v5": 0,
+      "selected_product_rows_replayed": 0,
+      "unit_coefficient_minor_verified": true,
+      "weight": 2
+    },
+    {
+      "dimension": 99,
+      "rank_mod5_after": 99,
+      "rank_mod5_before": 97,
+      "saturation_index_v5": 2,
+      "scaled_Serre_derivatives_replayed": 1,
+      "selected_product_rows_replayed": 99,
+      "unit_coefficient_minor_verified": true,
+      "weight": 4
+    },
+    {
+      "dimension": 163,
+      "rank_mod5_after": 163,
+      "rank_mod5_before": 163,
+      "saturation_index_v5": 0,
+      "selected_product_rows_replayed": 163,
+      "unit_coefficient_minor_verified": true,
+      "weight": 6
+    }
+  ],
+  "source_sha256": {
+    "katz/katz-capsule.json.gz": "6beec9168f5cd5e3d171578c61034f4db00631a90770285f57b1c461b651f89f",
+    "katz/katz-matrix-fit.json.gz": "f096646fa3dfae2b5868e417184b38072c6d7c5bbf22fa4ac2ff0359e91b2a38",
+    "short-bases-389/M2-basis.json.gz": "fce4ac2dba04551667afceccc29f388d90c4d2c201dd3664135c6bab5c4ef2b8",
+    "short-bases-389/M4-basis.json.gz": "cd59dcc1bbdd3852bb2f54185c8e6b66b197bac91fdc00bff76b6b3396ea835a",
+    "short-bases-389/M6-basis.json.gz": "51485f9251b18df7d5ccdc59d3c4e549b7ab5a10199df96d509b38cfe14e24f2"
+  },
+  "status": "PASS"
+}

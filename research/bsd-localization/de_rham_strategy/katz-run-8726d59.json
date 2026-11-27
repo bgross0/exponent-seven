@@ -1,0 +1,258 @@
+{
+  "artifact_bytes": 97730556,
+  "artifact_id": 15228252181,
+  "artifact_sha256": "14efe9187d9069ecaa9aafeb48c3f4951fe9739fa2849603361b9db14d7302a0",
+  "backend": {
+    "elapsed_seconds": 480.887580058,
+    "metadata": {
+      "backend_source_sha256": "638cb3cc8ea4e686a3a74fae692987b6add4a91b068b5f3919a5799d95bf48e5",
+      "low_weight_basis_source": "checked_product_Serre_saturation_replay",
+      "matrix_fit": {
+        "coordinate_digits": 7,
+        "guard": 1,
+        "method": "checked_inverse_minor"
+      },
+      "operator_convention": "Rows: U(e_i)=sum_j A[i,j]e_j; form rows act by c -> cA.",
+      "python_version": "3.12.3",
+      "sage_hecke_series_source_sha256": "6292ef3c2e20c2456058fdac25ecb1576e9abdace4c47a3aae13b1469f58703a",
+      "sage_version": "10.10"
+    },
+    "next_gate": "Katz coordinates of U5(input), measured dual-kernel Smith guard, and input tail bound",
+    "parameters": {
+      "classical_sturm_degree": 1365,
+      "expected_basis_digits": 8,
+      "expected_matrix_dimension": 1333,
+      "expected_sturm_bound": 1366,
+      "integral_input_growth_proved": false,
+      "katz_n": 10,
+      "level": 389,
+      "matrix_digits": 6,
+      "prime": 5,
+      "proper_projection_computed": false,
+      "q_precision_exclusive": 6830,
+      "safe_trace_largest_coefficient": 6825,
+      "scope": "Backend plan, not a computation of the elliptic CM jet",
+      "top_classical_weight": 42,
+      "weight": 2
+    },
+    "proper_de_Rham_input_projection_computed": false,
+    "status": "finite_matrix_gate_passed",
+    "uncompressed_capsule_sha256": "7a69120ffab86e02377f4a225608359382c675abe12c5cd1b57474d9ee8f8797"
+  },
+  "container_image": "sagemath/sagemath:10.10@sha256:310dfe23fc786f3a5a06a7b0387c60201ec79b32c0db941b7624505ee5edb565",
+  "files": {
+    "katz/backend-result.json": {
+      "bytes": 1224,
+      "sha256": "14f1bcb42e1a1e81b733d905dfcdac393fd934096e52a591c397a225394bb6d1"
+    },
+    "katz/katz-basis-checkpoint.json.gz": {
+      "bytes": 24075613,
+      "sha256": "c2b30764c55c5a2c54f75945477ced01fc103b682dae493ef45cbf4db54113fe"
+    },
+    "katz/katz-capsule.json.gz": {
+      "bytes": 25870105,
+      "sha256": "6beec9168f5cd5e3d171578c61034f4db00631a90770285f57b1c461b651f89f"
+    },
+    "katz/katz-matrix-fit.json.gz": {
+      "bytes": 6950425,
+      "sha256": "f096646fa3dfae2b5868e417184b38072c6d7c5bbf22fa4ac2ff0359e91b2a38"
+    },
+    "katz/katz-unchecked.json.gz": {
+      "bytes": 25848308,
+      "sha256": "56ef1f80fcc1760a6c42948ac6f5dad1accbab85b4522ab3ff04fe93cd26e474"
+    },
+    "katz/low-weight-replay/M2-long-raw-result.json": {
+      "bytes": 619,
+      "sha256": "5fc0f1bd45c2c1bb1656a2b1fdbb0e9f9cbc08a8a1ae4c2389469114b7fa8ab7"
+    },
+    "katz/low-weight-replay/M2-long-raw.json.gz": {
+      "bytes": 770296,
+      "sha256": "50552a3cd8cbf1cdc53545cec8154dd217c7b1b009e6075e10a60ba5b74f14dc"
+    },
+    "katz/low-weight-replay/M4-long-basis.json.gz": {
+      "bytes": 2051581,
+      "sha256": "1987390f7525754dda288535b4b89acf898e053ea92c77060133779719aad166"
+    },
+    "katz/low-weight-replay/M6-long-basis.json.gz": {
+      "bytes": 3408764,
+      "sha256": "f476e36b4c0c3006a93ce2af971e85f40cf03db1accef437f38d9c7ff5867a82"
+    },
+    "katz/low-weight-replay/low-weight-bases.json.gz": {
+      "bytes": 6143955,
+      "sha256": "3403700b7f2eb2579150eff3a072988366c45165e9843b69486077589240212b"
+    },
+    "katz/low-weight-replay/supplier-progress.json": {
+      "bytes": 2469,
+      "sha256": "e2cb7cf6c308c7bb52e594ae85e6263fd3742beeb6787c6c577da936ccee91c3"
+    },
+    "katz/low-weight-replay/supplier-result.json": {
+      "bytes": 1045,
+      "sha256": "c613ced956d6529c2d012a0c026635985829d8e7cd90a5ce320b9ea0666601d7"
+    },
+    "katz/run.log": {
+      "bytes": 4451,
+      "sha256": "ac7cc3fdab03a65583b76ddb0d2ecdcd90cd943d9d1836af4694f305abb43b8e"
+    },
+    "short-bases-389/M2-basis.json.gz": {
+      "bytes": 123564,
+      "sha256": "fce4ac2dba04551667afceccc29f388d90c4d2c201dd3664135c6bab5c4ef2b8"
+    },
+    "short-bases-389/M2-raw.json.gz": {
+      "bytes": 62347,
+      "sha256": "831508aba899f00db349230052b4f7b5d9fb0b26d506a6cce17b24d045fc67e4"
+    },
+    "short-bases-389/M4-basis.json.gz": {
+      "bytes": 700096,
+      "sha256": "cd59dcc1bbdd3852bb2f54185c8e6b66b197bac91fdc00bff76b6b3396ea835a"
+    },
+    "short-bases-389/M6-basis.json.gz": {
+      "bytes": 1671655,
+      "sha256": "51485f9251b18df7d5ccdc59d3c4e549b7ab5a10199df96d509b38cfe14e24f2"
+    },
+    "short-bases-389/basis-result.json": {
+      "bytes": 608,
+      "sha256": "60c298dc436330c1bc9a092ea7c63578363417bf534e10cdb421ebb94bb9a523"
+    },
+    "short-bases-389/progress.json": {
+      "bytes": 6868,
+      "sha256": "4d842922c1ab73ab94e95b559d06ffe168b798290efb6f6b32b419b96093f28f"
+    },
+    "short-bases-389/run.log": {
+      "bytes": 7393,
+      "sha256": "aa94cbf6e3e4fe0bda6726e4c32bd10930345d39d6bf5d7a6430f949ae06548e"
+    },
+    "supplier-smoke/long.log": {
+      "bytes": 2750,
+      "sha256": "c1335be2fbbbcd132ab47901642c7f673dbb3c52d577353b94c74d3ec8f3fed6"
+    },
+    "supplier-smoke/long/M2-long-raw-result.json": {
+      "bytes": 622,
+      "sha256": "b1c4acf1cdd6fa93043c1d3a9f99c09cbe92012c0a183960970270b148fefefb"
+    },
+    "supplier-smoke/long/M2-long-raw.json.gz": {
+      "bytes": 684,
+      "sha256": "36514290c216cf7a3ad3b142c1acdc8ec4ed145f67a23d41b595463a8d7ce580"
+    },
+    "supplier-smoke/long/M4-long-basis.json.gz": {
+      "bytes": 851,
+      "sha256": "8ed279593abcaf566da70e261e919eb60fc56ec302b0fc65d4dd0d7983b404e0"
+    },
+    "supplier-smoke/long/M6-long-basis.json.gz": {
+      "bytes": 1074,
+      "sha256": "75c319d1705fff5882795b480f4ce9911b70d2d21225b808fd98703b54a7ca54"
+    },
+    "supplier-smoke/long/low-weight-bases.json.gz": {
+      "bytes": 1849,
+      "sha256": "9768b8171a9650fa4069084c37a8dde8a88177b4f33aa0aaed94f0559ba9086e"
+    },
+    "supplier-smoke/long/supplier-progress.json": {
+      "bytes": 2587,
+      "sha256": "73f5738e16787a20b80076778140709e4826ae18e83169b13226620e7380076f"
+    },
+    "supplier-smoke/long/supplier-result.json": {
+      "bytes": 1042,
+      "sha256": "3a9e62ff9dfeaf8d266018e4949aed8c5d104d3d778c35c7b00c86c3893c17ba"
+    },
+    "supplier-smoke/short.log": {
+      "bytes": 2953,
+      "sha256": "cce4a3f0d69e3ab29f469e0fe7d229f271d24b2b011aa597ce2e816fd617ed4e"
+    },
+    "supplier-smoke/short/M2-basis.json.gz": {
+      "bytes": 965,
+      "sha256": "69fea46fc1082a767252882e734b247dee0a67bbdc5c9979a2c34b13a92a9d2d"
+    },
+    "supplier-smoke/short/M2-raw.json.gz": {
+      "bytes": 535,
+      "sha256": "01823d768ab045f8bba541cd852c6595e44f322b9ec11a904418f9df21cfdf1b"
+    },
+    "supplier-smoke/short/M4-basis.json.gz": {
+      "bytes": 1607,
+      "sha256": "88d03ac20265dbfc5f20969207424b3eb4a3967443025771c4fe5a5743b15c77"
+    },
+    "supplier-smoke/short/M6-basis.json.gz": {
+      "bytes": 2074,
+      "sha256": "d1af7d565ea2b5f0b0c0d076d65a3fab5632e2ea89417b1bd4c0f2920a0a2930"
+    },
+    "supplier-smoke/short/basis-result.json": {
+      "bytes": 594,
+      "sha256": "4ed32990b9968c0cccb1f29a14731e3db8f9660214104cbc4eb586a9687b4ab3"
+    },
+    "supplier-smoke/short/progress.json": {
+      "bytes": 2756,
+      "sha256": "78eed8cb46d28d72f92da30b22fa9acd3e410d09c7626eb5758813f20f13e304"
+    }
+  },
+  "long_supplier": {
+    "all_long_divisions_by_5_checked": true,
+    "all_short_overlaps_checked": true,
+    "dimensions": {
+      "2": 33,
+      "4": 99,
+      "6": 163
+    },
+    "direct_weights_extended": [
+      2
+    ],
+    "elapsed_seconds": 170.375582851,
+    "long_QQ_rank_computed": false,
+    "request": {
+      "digits": 8,
+      "initial_work_digits": 9,
+      "level": 389,
+      "prime": 5,
+      "q_precision_exclusive": 6830,
+      "saturation_rounds": {
+        "2": 0,
+        "4": 1,
+        "6": 0
+      },
+      "schema": "long-low-weight-request-v1",
+      "short_checkpoint_sha256": {
+        "2": "fce4ac2dba04551667afceccc29f388d90c4d2c201dd3664135c6bab5c4ef2b8",
+        "4": "cd59dcc1bbdd3852bb2f54185c8e6b66b197bac91fdc00bff76b6b3396ea835a",
+        "6": "51485f9251b18df7d5ccdc59d3c4e549b7ab5a10199df96d509b38cfe14e24f2"
+      },
+      "supplier_source_sha256": "66172c11259556260751c2219d36f8035460a7e6c94d0629c9f7a1dd9d2d76ad"
+    },
+    "scope": "Exact modular replay of proven finite low-weight bases. Higher-weight generation is checked by Sage's complementary-space ranks; no global generator conjecture is assumed.",
+    "status": "low_weight_replay_passed",
+    "uncompressed_capsule_sha256": "f998c3e4ce824b265224a2aa3bf13f9f60359725edcda19e9a64cf63b9fd8863",
+    "weight_bound": 6
+  },
+  "scope": "Actual finite Katz geometry and low-weight basis replay. The independent Python replay is recorded separately. No infinite input/operator comparison, actual projected CM vector, or arithmetic nonzero-localization conclusion is asserted by this record.",
+  "short_bases": {
+    "completed_dimensions": {
+      "2": 33,
+      "4": 99,
+      "6": 163
+    },
+    "elapsed_seconds": 9.398800437000006,
+    "metadata": {
+      "dimensions": {
+        "10": 293,
+        "2": 33,
+        "4": 99,
+        "6": 163
+      },
+      "level": 389,
+      "method": "products",
+      "operator_convention": "Rows; numerator coordinate row v maps to v*Q.",
+      "python_version": "3.12.3",
+      "sage_version": "10.10",
+      "source_sha256": "83599d3135415e8e500eb65cff468c016955eeade3e402b601c2ae137888d75c",
+      "sturm_bounds": {
+        "10": 326,
+        "2": 66,
+        "4": 131,
+        "6": 196
+      }
+    },
+    "pole_quotient_computed": false,
+    "scope": "Certified low-weight basis checkpoints only; the quotient stage was not requested.",
+    "status": "exact_low_weight_bases_passed",
+    "stop_weight": 6
+  },
+  "source_commit": "8726d59f52a59eb01376445d3295df3685ed46b2",
+  "workflow_run": 46059120633,
+  "workflow_url": "https://github.com/bgross0/exponent-seven/actions/runs/46059120633"
+}

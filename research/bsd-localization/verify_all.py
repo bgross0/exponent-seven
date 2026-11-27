@@ -55,6 +55,14 @@ JOBS = [
     ("cubic_undepleted_euler_transfer", "cm_product_transfer/check_transfer.py", ["--check"], None),
     ("cubic_undepleted_product_6825_12", "cm_product_transfer/product_trace.py", ["--check"], None),
     ("finite_two_slope_projection_certificates", "projection_backend/check_projection.py", ["--check"], None),
+    ("certified_katz_matrix_fit", "projection_backend/check_katz_matrix_fit.py",
+     ["--check", "projection_backend/matrix-fit-regression.json"], None),
+    ("fixed_weight_full_frobenius_algebra", "fixed_weight_syntomic/check_identity.py", [],
+     "fixed_weight_syntomic/check_result.json"),
+    ("actual_finite_cubic_ratio", "projection_backend/check_cubic_ratio.py", ["--check"], None),
+    ("perrin_riou_syntomic_operator_comparison", "pr_syntomic_comparison/check_comparison.py", [],
+     "pr_syntomic_comparison/check_result.json"),
+    ("infinite_katz_bound_arithmetic", "projection_backend/check_infinite_bounds.py", ["--check"], None),
 ]
 
 
@@ -90,7 +98,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, conditional tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, and algebraic lift/descent/Bockstein fixtures. The analytic tail theorem retains the explicitly stated Coleman-family and integral-model hypotheses. External Sage geometry runs have separate provenance. No new Lean verification, upstream CM reconstruction, unconditional infinite-operator identification, arithmetic global Bockstein, actual projected CM vector, or nonzero reflected logarithm is certified by this runner."}
+               "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, and rational projected specialization are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The conditional arithmetic comparison still requires a consistently identified global class and normalized full local regulator. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, or nonzero reflected logarithm is certified by this runner."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

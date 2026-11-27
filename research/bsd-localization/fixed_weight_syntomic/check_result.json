@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "method": "exact universal Laurent polynomial arithmetic over Q",
+  "identities": [
+    "four-contribution numerator after clearing denominators",
+    "root and Tate normalization gives 1-chi_f^-1 F^2/p^2",
+    "four-factor denominator equals -ac/(p*t) F S C",
+    "relative algebraic sign and scalar in equation (10)",
+    "conditional pilot matrix modulo F^2+3F+5",
+    "projective inverse of the conditional pilot matrix",
+    "exact inverse has scalar 1/9",
+    "norm-five ideal witnesses and CM root-ratio trace zeta^3+zeta^4"
+  ],
+  "rejected_errors": [
+    "wrong numerator sign",
+    "missing Tate-induced factor p in z=F/(p*t)",
+    "missing Frobenius F in denominator factorization",
+    "incorrect linear coefficient of the conditional pilot matrix"
+  ],
+  "geometric_hypotheses_verified_by_this_script": false,
+  "global_syntomic_sign_verified_by_this_script": false,
+  "weight_one_interpolation_proved_by_this_script": false
+}

@@ -1,0 +1,1189 @@
+{
+  "artifact_bytes": 7411189,
+  "artifact_id": 15229137593,
+  "artifact_sha256": "05f6ec6bdb41e39ed4958ac2e3518ff5293827c874baef1a46f6787c316ace8c",
+  "basis_checkpoints": {
+    "pole-products-389/M10-basis.json.gz": {
+      "bytes": 4826911,
+      "sha256": "c852e7adb28c16103b28df92c31bc761b48b8c4abcacc92d6cc5061e5ddb7e7c"
+    },
+    "pole-products-389/M2-basis.json.gz": {
+      "bytes": 123426,
+      "sha256": "cf093ae63a46bf56ab1913919d6dc965ac3919ad76bccee10cd6fe5809e1d03d"
+    },
+    "pole-products-389/M4-basis.json.gz": {
+      "bytes": 699971,
+      "sha256": "54ffbc062fd9cfbdc8b1af72f0e0ba0d6dc6ea1307d14038c2e701f3298f9ab4"
+    },
+    "pole-products-389/M6-basis.json.gz": {
+      "bytes": 1671515,
+      "sha256": "9c41e077a8c356d1cbedcf1662463e3e13cfa509b42491dcab0ec0655c90ab47"
+    }
+  },
+  "computation_limit_minutes": 35,
+  "conclusion": "timeout during exact derivative coordinate solve",
+  "exit_code": 124,
+  "progress": [
+    {
+      "elapsed_seconds": 0.010623351999996089,
+      "metadata": {
+        "dimensions": {
+          "10": 293,
+          "2": 33,
+          "4": 99,
+          "6": 163
+        },
+        "level": 389,
+        "method": "products",
+        "operator_convention": "Rows; numerator coordinate row v maps to v*Q.",
+        "python_version": "3.12.3",
+        "sage_version": "10.10",
+        "source_sha256": "1653f4f457417b4d870eda1136c5ac95f05a763bc84548e1bdef651e85a8195e",
+        "sturm_bounds": {
+          "10": 326,
+          "2": 66,
+          "4": 131,
+          "6": 196
+        }
+      },
+      "q_precision_exclusive": 390,
+      "stage": "starting"
+    },
+    {
+      "dimension": 33,
+      "elapsed_seconds": 0.010883880999998041,
+      "stage": "computing_M2_directly"
+    },
+    {
+      "M2_q_expansion_seconds": 4.222502453000004,
+      "construction": "Sage_ModularForms_q_expansion_basis",
+      "elapsed_seconds": 4.272865593000006,
+      "rational_row_scales": [
+        "490148617",
+        "490148617",
+        "490148617",
+        "10003033",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "70021231",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "70021231",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "70021231",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "490148617",
+        "97"
+      ],
+      "stage": "M2_raw_checkpointed",
+      "weight": 2
+    },
+    {
+      "dimension": 33,
+      "elapsed_seconds": 4.273338107000001,
+      "stage": "checking_exact_basis_rank",
+      "weight": 2
+    },
+    {
+      "dimension": 33,
+      "elapsed_seconds": 4.371698057000003,
+      "rank_mod5": 33,
+      "saturation_index_5_valuation": 0,
+      "sha256": "7a25ca71ed05e5664c59e8655f0978b78f12a3457f6e8243a1eb906ea509ff3a",
+      "stage": "basis_checkpointed",
+      "weight": 2
+    },
+    {
+      "elapsed_seconds": 4.419490861,
+      "factors": [
+        2,
+        2
+      ],
+      "stage": "selecting_products",
+      "target_dimension": 99,
+      "weight": 4
+    },
+    {
+      "attempted": 155,
+      "elapsed_seconds": 4.590127402999997,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 261,
+      "elapsed_seconds": 4.686567612000005,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 285,
+      "elapsed_seconds": 4.708788894000008,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 390,
+      "elapsed_seconds": 4.803630315999996,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 408,
+      "elapsed_seconds": 4.820240261000009,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 516,
+      "elapsed_seconds": 4.915632325000004,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 525,
+      "elapsed_seconds": 4.923953893000004,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 533,
+      "elapsed_seconds": 4.931378289000008,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "attempted": 540,
+      "elapsed_seconds": 4.937887541000009,
+      "rank": 95,
+      "stage": "product_selection_progress",
+      "weight": 4
+    },
+    {
+      "Serre_candidates_tested": 1,
+      "attempted": 561,
+      "elapsed_seconds": 4.968287251999996,
+      "product_rank": 96,
+      "rank_after_Serre_derivatives": 99,
+      "rank_after_explicit_Eisenstein": 98,
+      "stage": "product_selection_finished",
+      "weight": 4
+    },
+    {
+      "dimension": 99,
+      "elapsed_seconds": 4.973120863000005,
+      "stage": "checking_exact_basis_rank",
+      "weight": 4
+    },
+    {
+      "elapsed_seconds": 5.002125950000007,
+      "replaced_rows": 2,
+      "round": 1,
+      "stage": "saturating_at_5",
+      "weight": 4
+    },
+    {
+      "dimension": 99,
+      "elapsed_seconds": 5.286015507000002,
+      "rank_mod5": 99,
+      "saturation_index_5_valuation": 2,
+      "sha256": "6d6d8bc1fc7b5cd4c0f8fbb553f9c1527f82239052f80625a4f10076913a067f",
+      "stage": "basis_checkpointed",
+      "weight": 4
+    },
+    {
+      "elapsed_seconds": 5.374515072999998,
+      "factors": [
+        2,
+        4
+      ],
+      "stage": "selecting_products",
+      "target_dimension": 163,
+      "weight": 6
+    },
+    {
+      "attempted": 198,
+      "elapsed_seconds": 5.624370745999997,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 297,
+      "elapsed_seconds": 5.7269861010000085,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 396,
+      "elapsed_seconds": 5.831431003999995,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 594,
+      "elapsed_seconds": 6.038828784000003,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 693,
+      "elapsed_seconds": 6.142631143000003,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 792,
+      "elapsed_seconds": 6.2458843419999965,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 990,
+      "elapsed_seconds": 6.453290347999996,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1089,
+      "elapsed_seconds": 6.5666595849999965,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1188,
+      "elapsed_seconds": 6.669360296000008,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1287,
+      "elapsed_seconds": 6.772919286000004,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1485,
+      "elapsed_seconds": 6.980145797999995,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1584,
+      "elapsed_seconds": 7.083238334000001,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1683,
+      "elapsed_seconds": 7.187737415000001,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1881,
+      "elapsed_seconds": 7.395230798,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 1980,
+      "elapsed_seconds": 7.502968038999995,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2079,
+      "elapsed_seconds": 7.605568681999998,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2178,
+      "elapsed_seconds": 7.707799703000006,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2376,
+      "elapsed_seconds": 7.912155896000002,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2475,
+      "elapsed_seconds": 8.014338285999997,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2574,
+      "elapsed_seconds": 8.115482830000005,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2772,
+      "elapsed_seconds": 8.316363068000001,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2871,
+      "elapsed_seconds": 8.417373601000008,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 2970,
+      "elapsed_seconds": 8.521173251999997,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 3168,
+      "elapsed_seconds": 8.721334952999996,
+      "rank": 161,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "attempted": 3265,
+      "elapsed_seconds": 8.827143539000005,
+      "rank": 163,
+      "stage": "product_selection_progress",
+      "weight": 6
+    },
+    {
+      "Serre_candidates_tested": 0,
+      "attempted": 3265,
+      "elapsed_seconds": 8.827892653000006,
+      "product_rank": 163,
+      "rank_after_Serre_derivatives": 163,
+      "rank_after_explicit_Eisenstein": 163,
+      "stage": "product_selection_finished",
+      "weight": 6
+    },
+    {
+      "dimension": 163,
+      "elapsed_seconds": 8.837368554000008,
+      "stage": "checking_exact_basis_rank",
+      "weight": 6
+    },
+    {
+      "dimension": 163,
+      "elapsed_seconds": 9.369922685000006,
+      "rank_mod5": 163,
+      "saturation_index_5_valuation": 0,
+      "sha256": "c08cfdd724622909af7ef548773ed27ad1d1e1f72a7d8d309c691fdaa0232d1b",
+      "stage": "basis_checkpointed",
+      "weight": 6
+    },
+    {
+      "elapsed_seconds": 9.552755808,
+      "factors": [
+        4,
+        6
+      ],
+      "stage": "selecting_products",
+      "target_dimension": 293,
+      "weight": 10
+    },
+    {
+      "attempted": 163,
+      "elapsed_seconds": 9.792376466000007,
+      "rank": 163,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 326,
+      "elapsed_seconds": 10.085990015999997,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 489,
+      "elapsed_seconds": 10.325896127000007,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 652,
+      "elapsed_seconds": 10.566488347000004,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 815,
+      "elapsed_seconds": 10.806395733000002,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 978,
+      "elapsed_seconds": 11.045134499,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 1141,
+      "elapsed_seconds": 11.283515444000003,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 1304,
+      "elapsed_seconds": 11.521674122999997,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 1467,
+      "elapsed_seconds": 11.760055619,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 1630,
+      "elapsed_seconds": 11.997118865000004,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 1793,
+      "elapsed_seconds": 12.234179866000005,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 1956,
+      "elapsed_seconds": 12.472045465000008,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 2119,
+      "elapsed_seconds": 12.708128293000001,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 2282,
+      "elapsed_seconds": 12.944073774000003,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 2445,
+      "elapsed_seconds": 13.180676085000002,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 2608,
+      "elapsed_seconds": 13.418316150999999,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 2771,
+      "elapsed_seconds": 13.654031130000007,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 2934,
+      "elapsed_seconds": 13.889189334999998,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 3097,
+      "elapsed_seconds": 14.123185532000008,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 3260,
+      "elapsed_seconds": 14.356043104000008,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 3423,
+      "elapsed_seconds": 14.591273060999995,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 3586,
+      "elapsed_seconds": 14.825071332999997,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 3749,
+      "elapsed_seconds": 15.057771517000006,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 3912,
+      "elapsed_seconds": 15.289793439999997,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 4075,
+      "elapsed_seconds": 15.521748357000007,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 4238,
+      "elapsed_seconds": 15.753640136000001,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 4401,
+      "elapsed_seconds": 15.985365713999997,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 4564,
+      "elapsed_seconds": 16.216140077999995,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 4727,
+      "elapsed_seconds": 16.44547213,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 4890,
+      "elapsed_seconds": 16.676219945,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 5053,
+      "elapsed_seconds": 16.90802876800001,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 5216,
+      "elapsed_seconds": 17.137626548,
+      "rank": 288,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 5379,
+      "elapsed_seconds": 17.37986902600001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 5542,
+      "elapsed_seconds": 17.61684264,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 5705,
+      "elapsed_seconds": 17.85677713300001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 5868,
+      "elapsed_seconds": 18.097322862,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 6031,
+      "elapsed_seconds": 18.337348536000007,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 6194,
+      "elapsed_seconds": 18.576852192000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 6357,
+      "elapsed_seconds": 18.81655441000001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 6520,
+      "elapsed_seconds": 19.05554315100001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 6683,
+      "elapsed_seconds": 19.293976650000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 6846,
+      "elapsed_seconds": 19.531894905,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7009,
+      "elapsed_seconds": 19.769344329999996,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7172,
+      "elapsed_seconds": 20.011039964000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7335,
+      "elapsed_seconds": 20.246869704000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7498,
+      "elapsed_seconds": 20.48405754000001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7661,
+      "elapsed_seconds": 20.71970380500001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7824,
+      "elapsed_seconds": 20.953934739000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 7987,
+      "elapsed_seconds": 21.188513893999996,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 8150,
+      "elapsed_seconds": 21.422778811,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 8313,
+      "elapsed_seconds": 21.657126313000006,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 8476,
+      "elapsed_seconds": 21.89195004700001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 8639,
+      "elapsed_seconds": 22.125175366000008,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 8802,
+      "elapsed_seconds": 22.357377295999996,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 8965,
+      "elapsed_seconds": 22.591328810999997,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 9128,
+      "elapsed_seconds": 22.824010666000007,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 9291,
+      "elapsed_seconds": 23.055882992999997,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 9454,
+      "elapsed_seconds": 23.288240821000002,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 9617,
+      "elapsed_seconds": 23.518579885999998,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 9780,
+      "elapsed_seconds": 23.753841836000007,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 9943,
+      "elapsed_seconds": 23.985218765,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 10106,
+      "elapsed_seconds": 24.21500813,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 10269,
+      "elapsed_seconds": 24.446082282999996,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 10432,
+      "elapsed_seconds": 24.676600694,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 10595,
+      "elapsed_seconds": 24.919197327000006,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 10758,
+      "elapsed_seconds": 25.161942136999997,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 10921,
+      "elapsed_seconds": 25.404556704,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 11084,
+      "elapsed_seconds": 25.646409453000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 11247,
+      "elapsed_seconds": 25.88920230400001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 11410,
+      "elapsed_seconds": 26.131082444,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 11573,
+      "elapsed_seconds": 26.372222608,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 11736,
+      "elapsed_seconds": 26.612247342000003,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 11899,
+      "elapsed_seconds": 26.852977788000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 12062,
+      "elapsed_seconds": 27.092125648999996,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 12225,
+      "elapsed_seconds": 27.331079626000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 12388,
+      "elapsed_seconds": 27.570456897,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 12551,
+      "elapsed_seconds": 27.810365413,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 12714,
+      "elapsed_seconds": 28.050683296000003,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 12877,
+      "elapsed_seconds": 28.289392515000003,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 13040,
+      "elapsed_seconds": 28.528517593000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 13203,
+      "elapsed_seconds": 28.766728388000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 13366,
+      "elapsed_seconds": 29.006789991000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 13529,
+      "elapsed_seconds": 29.244255459,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 13692,
+      "elapsed_seconds": 29.48270988,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 13855,
+      "elapsed_seconds": 29.723239140000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14018,
+      "elapsed_seconds": 29.959591400000008,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14181,
+      "elapsed_seconds": 30.195395183000002,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14344,
+      "elapsed_seconds": 30.434487680000004,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14507,
+      "elapsed_seconds": 30.671733503,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14670,
+      "elapsed_seconds": 30.907820555,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14833,
+      "elapsed_seconds": 31.142887685000005,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 14996,
+      "elapsed_seconds": 31.377688035000006,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 15159,
+      "elapsed_seconds": 31.611106084,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 15322,
+      "elapsed_seconds": 31.849930657,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 15485,
+      "elapsed_seconds": 32.08312910400001,
+      "rank": 289,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 15648,
+      "elapsed_seconds": 32.330601955999995,
+      "rank": 291,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "attempted": 15746,
+      "elapsed_seconds": 32.480374874999995,
+      "rank": 293,
+      "stage": "product_selection_progress",
+      "weight": 10
+    },
+    {
+      "Serre_candidates_tested": 0,
+      "attempted": 15746,
+      "elapsed_seconds": 32.48136255600001,
+      "product_rank": 293,
+      "rank_after_Serre_derivatives": 293,
+      "rank_after_explicit_Eisenstein": 293,
+      "stage": "product_selection_finished",
+      "weight": 10
+    },
+    {
+      "dimension": 293,
+      "elapsed_seconds": 32.499120798999996,
+      "stage": "checking_exact_basis_rank",
+      "weight": 10
+    },
+    {
+      "dimension": 293,
+      "elapsed_seconds": 33.721976763,
+      "rank_mod5": 293,
+      "saturation_index_5_valuation": 0,
+      "sha256": "559795235fbc1c5b46b7a7a501b5b1ed649ec28c9d76a06aab25363172ab7699",
+      "stage": "basis_checkpointed",
+      "weight": 10
+    },
+    {
+      "elapsed_seconds": 33.93492029800001,
+      "numerator_dimension": 293,
+      "relations": 99,
+      "stage": "solving_exact_derivative_coordinates"
+    }
+  ],
+  "scope": "All four classical bases reached their expected dimensions; the pilot derivative-coordinate solve and quotient did not complete. The successful Katz path is separate.",
+  "smoke_result": {
+    "M10_dimension": 10,
+    "M4_dimension": 4,
+    "derivative_coordinate_denominator_v5": 0,
+    "elapsed_seconds": 0.2683375569999953,
+    "exact_relation_rank": 3,
+    "five_saturated_M10_q_lattice": true,
+    "geometric_pole_lattice_comparison_proved": false,
+    "metadata": {
+      "dimensions": {
+        "10": 10,
+        "2": 2,
+        "4": 4,
+        "6": 6
+      },
+      "level": 11,
+      "method": "products",
+      "operator_convention": "Rows; numerator coordinate row v maps to v*Q.",
+      "python_version": "3.12.3",
+      "sage_version": "10.10",
+      "source_sha256": "1653f4f457417b4d870eda1136c5ac95f05a763bc84548e1bdef651e85a8195e",
+      "sturm_bounds": {
+        "10": 11,
+        "2": 3,
+        "4": 5,
+        "6": 7
+      }
+    },
+    "proper_de_Rham_input_projection_computed": false,
+    "quotient_coordinate_denominator_v5": 1,
+    "quotient_dimension": 7,
+    "scope": "Exact finite open de Rham quotient. No CM input projection, residue filter, cup functional, or arithmetic regulator comparison.",
+    "status": "exact_pole_core_gate_passed",
+    "uncompressed_capsule_sha256": "581072e4e69812942adbfd5620158ad08a96b63c1bf011e2ef57e6d96d716b35"
+  },
+  "source_commit": "409fe6f82fc8596590bedf6222e1135e14c3d684",
+  "workflow_run": 46057628724,
+  "workflow_url": "https://github.com/bgross0/exponent-seven/actions/runs/46057628724"
+}

@@ -1,0 +1,104 @@
+{
+  "coefficient_polynomial": "xi^3+xi^2-2xi-1",
+  "finite_depleted_alpha_W2": {
+    "absolute_digits": 3,
+    "denominator_exponent": 1,
+    "numerator": [
+      418,
+      150,
+      83
+    ],
+    "valuation": -1
+  },
+  "finite_depleted_beta_W2": {
+    "absolute_digits": 1,
+    "denominator_exponent": 2,
+    "numerator": [
+      14,
+      27,
+      124
+    ],
+    "valuation": -2
+  },
+  "five_times_ratio": {
+    "absolute_digits": 3,
+    "inverse_denominator_witness": [
+      29,
+      71,
+      108
+    ],
+    "modulus": 125,
+    "residue": [
+      109,
+      75,
+      106
+    ],
+    "valuation": 0
+  },
+  "fourth_digit_not_implied": {
+    "admissible_beta_perturbation": "+5",
+    "difference_mod625": [
+      500,
+      125,
+      375
+    ],
+    "scaled_ratio_change_valuation": 3
+  },
+  "irreducible_mod5": true,
+  "polynomial_discriminant": 49,
+  "provisional_line_diagnostic": {
+    "converted_stabilization_coordinates_mod5_7": [
+      [
+        1780,
+        31595,
+        31595
+      ],
+      [
+        67664,
+        66785,
+        66785
+      ]
+    ],
+    "five_times_candidate_ratio_mod5_6": [
+      10869,
+      6950,
+      11446
+    ],
+    "scaled_ratio_difference_mod125": [
+      115,
+      0,
+      35
+    ],
+    "scaled_ratio_difference_valuation": 1,
+    "scope": "Exact comparison with supplied provisional K^-1*zeta coordinates only; local reciprocity, common-class, and period premises are not proved here.",
+    "supplied_omega_eta_mod5_7": [
+      [
+        14297,
+        10250,
+        10250
+      ],
+      [
+        2899,
+        48585,
+        48585
+      ]
+    ],
+    "unscaled_ratio_difference_valuation": 0
+  },
+  "ratio_beta_over_alpha": {
+    "absolute_digits": 2,
+    "denominator": 5,
+    "numerator": [
+      109,
+      75,
+      106
+    ],
+    "valuation": -1
+  },
+  "scope": "Consequences of the saved finite projection balls. Infinite Katz identification and arithmetic regulator interpretation require their own arguments.",
+  "source_sha256": {
+    "actual_projection": "ed37f6d6b106afb518adcf866326842b792efc3604a040ebd1377753b2a60490",
+    "elliptic_calibration": "f37d632ec5ca7c7193cc073e98284a45b7a90e069583fe3884dd1ee58738bad7"
+  },
+  "status": "PASS"
+}

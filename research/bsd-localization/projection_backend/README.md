@@ -8,13 +8,25 @@ dual eigenfunctionals, normalize against U5(f_alpha) and U5(f_beta), and
 convert the result into the saved omega,eta basis. It uses Python and NumPy;
 the Sage capsule is an input, not a runtime dependency.
 
-**The code certifies finite modular linear algebra.** A finite q-fit does
-not prove an integral Katz expansion or control the infinite operator.
-Those analytic hypotheses are explicitly separate. A successful run here
-must not be called a certified CM de Rham value until those hypotheses have
-been supplied. The arithmetic regulator comparison is a further theorem.
+**The code certifies finite modular linear algebra.** A finite q-fit by
+itself does not prove an integral Katz expansion or control the infinite
+operator. For the actual successful 1333-dimensional capsule,
+[INFINITE_KATZ_BRIDGE.md](INFINITE_KATZ_BRIDGE.md) now supplies the analytic
+comparison under the documented pinned-Sage geometric provenance;
+[the independent review](../cm_tail_bound/FINITE_TO_INFINITE_REVIEW.md)
+checks it. That interpretation and the artifact-only finite replay have
+different scopes. The arithmetic regulator comparison remains a further
+theorem.
 
-## 1. Running the next calculation
+The actual projection completed in118.511 seconds. Its saved
+[finite result](actual-cm-finite-projection.json) and
+[replay receipt](actual-cm-finite-replay.json) give both quadratic
+components. The bridge preserves their balls, and
+[the exact cubic checker](check_cubic_ratio.py) obtains
+5b2/a2=109+75xi+106xi^2 modulo125. This is not yet a nonzero reflected
+logarithm.
+
+## 1. Reproducing the calculation
 
 From the repository root, after the Katz geometry capsule exists:
 
