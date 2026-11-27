@@ -26,6 +26,17 @@ JOBS = [
     ("exterior_descent", "rationality/check_exterior_descent.py", [], "rationality/result.json"),
     ("finite_lifts_and_reflection", "derived_global/bockstein_lifts.py", [],
      "derived_global/bockstein-results.json"),
+    ("finite_coordinate_algebra", "finite_log_reciprocity/check_finite_coordinate.py", [],
+     "finite_log_reciprocity/finite-coordinate-results.json"),
+    ("crystalline_frobenius_and_annihilator", "local_crystalline/frobenius.py",
+     ["--check", "local_crystalline/result.json"], None),
+    ("published_frobenius_calibration", "local_crystalline/calibration.py", [],
+     "local_crystalline/calibration-result.json"),
+    ("cyclotomic_strict_height", "local_crystalline/height_leading.py",
+     ["--check", "local_crystalline/height-result.json"], None),
+    ("ambient_bockstein_algebra", "ambient_arithmetic/check_ambient_jet.py",
+     ["--check", "ambient_arithmetic/result.json"], None),
+    ("cm_weight_second_jets", "reflected_pilot/cm_weight_jets.py", ["--check"], None),
 ]
 
 
@@ -55,13 +66,13 @@ def main():
         checks = list(pool.map(run_job, JOBS))
     hashes = {}
     for path in sorted(ROOT.rglob("*")):
-        if path.is_file() and path.suffix in (".py", ".md", ".json"):
+        if path.is_file() and path.suffix in (".py", ".md", ".json", ".gz", ".txt"):
             if path.name == "verification.json":
                 continue
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, extracted p5 CM-period refinements, 30-digit local logs, and algebraic lift/reflection/descent fixtures. Mathematical arguments are in the notes. No new Lean verification, upstream CM reconstruction, or nonzero reflected logarithm is certified by this runner."}
+               "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

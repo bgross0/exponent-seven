@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "scope": "Exact rational formal algebra; no arithmetic nonvanishing claim",
+  "truncation_modulus": "t^7",
+  "checks": {
+    "entire_singular_series_does_not_determine_finite_log": true,
+    "regular_lift_independence": true,
+    "complementary_vector_extraction": true,
+    "annihilator_extension_independence": true,
+    "weight_coordinate_and_output_basis_change": true,
+    "CH_j0_annihilator_operator_for_E389_at_5": true,
+    "ordinary_branch_deepest_line_kernel": true
+  },
+  "regulator_det_coefficients": [
+    "0",
+    "-7",
+    "-2",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "calibration_c_P": "7",
+  "coordinate_linear_term": "3",
+  "zeta_operator_in_Q_F": [
+    "4/9",
+    "-13/45"
+  ],
+  "fixtures": [
+    {
+      "finite_log": "0",
+      "singular_series_coefficients": [
+        "0",
+        "0",
+        "1",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "complementary_second_coefficient": "0",
+      "changed_coordinate_second_coefficient": "0",
+      "finite_log_recovered": "0"
+    },
+    {
+      "finite_log": "1",
+      "singular_series_coefficients": [
+        "0",
+        "0",
+        "1",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "complementary_second_coefficient": "7",
+      "changed_coordinate_second_coefficient": "63",
+      "finite_log_recovered": "1"
+    },
+    {
+      "finite_log": "-3",
+      "singular_series_coefficients": [
+        "0",
+        "0",
+        "1",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "complementary_second_coefficient": "-21",
+      "changed_coordinate_second_coefficient": "-189",
+      "finite_log_recovered": "-3"
+    },
+    {
+      "finite_log": "7/5",
+      "singular_series_coefficients": [
+        "0",
+        "0",
+        "1",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      "complementary_second_coefficient": "49/5",
+      "changed_coordinate_second_coefficient": "441/5",
+      "finite_log_recovered": "7/5"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
         "--check",
         "eligibility/arithmetic/eligibility.json"
       ],
-      "elapsed_seconds": 0.04645,
+      "elapsed_seconds": 0.033778,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -20,7 +20,7 @@
         "--check",
         "eligibility/arithmetic/twist-lvalue.json"
       ],
-      "elapsed_seconds": 1.334845,
+      "elapsed_seconds": 1.416053,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -30,7 +30,7 @@
         "python",
         "logic/verify_logic.py"
       ],
-      "elapsed_seconds": 0.024561,
+      "elapsed_seconds": 0.04956,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -40,7 +40,7 @@
         "python",
         "logic/c7_period.py"
       ],
-      "elapsed_seconds": 0.049554,
+      "elapsed_seconds": 0.038898,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -50,7 +50,7 @@
         "python",
         "projection/ring_class_projection.py"
       ],
-      "elapsed_seconds": 0.098865,
+      "elapsed_seconds": 0.122217,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -62,7 +62,7 @@
         "--check",
         "p5/result.json"
       ],
-      "elapsed_seconds": 0.068348,
+      "elapsed_seconds": 0.043788,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -74,7 +74,7 @@
         "--check",
         "local_model/result.json"
       ],
-      "elapsed_seconds": 0.042245,
+      "elapsed_seconds": 0.053778,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -84,7 +84,7 @@
         "python",
         "rationality/check_exterior_descent.py"
       ],
-      "elapsed_seconds": 0.087314,
+      "elapsed_seconds": 0.101432,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -94,15 +94,89 @@
         "python",
         "derived_global/bockstein_lifts.py"
       ],
-      "elapsed_seconds": 0.036867,
+      "elapsed_seconds": 0.047067,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "finite_coordinate_algebra",
+      "command": [
+        "python",
+        "finite_log_reciprocity/check_finite_coordinate.py"
+      ],
+      "elapsed_seconds": 0.037055,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "crystalline_frobenius_and_annihilator",
+      "command": [
+        "python",
+        "local_crystalline/frobenius.py",
+        "--check",
+        "local_crystalline/result.json"
+      ],
+      "elapsed_seconds": 0.369107,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "published_frobenius_calibration",
+      "command": [
+        "python",
+        "local_crystalline/calibration.py"
+      ],
+      "elapsed_seconds": 0.181893,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cyclotomic_strict_height",
+      "command": [
+        "python",
+        "local_crystalline/height_leading.py",
+        "--check",
+        "local_crystalline/height-result.json"
+      ],
+      "elapsed_seconds": 0.039101,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "ambient_bockstein_algebra",
+      "command": [
+        "python",
+        "ambient_arithmetic/check_ambient_jet.py",
+        "--check",
+        "ambient_arithmetic/result.json"
+      ],
+      "elapsed_seconds": 0.484735,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cm_weight_second_jets",
+      "command": [
+        "python",
+        "reflected_pilot/cm_weight_jets.py",
+        "--check"
+      ],
+      "elapsed_seconds": 5.683542,
       "exit_code": 0,
       "matches_saved_certificate": true
     }
   ],
+  "documentation_updated_after_checks": [
+    "README.md",
+    "reflected_pilot/README.md"
+  ],
   "python": "3.12.14",
-  "scope": "Exact arithmetic, extracted p5 CM-period refinements, 30-digit local logs, and algebraic lift/reflection/descent fixtures. Mathematical arguments are in the notes. No new Lean verification, upstream CM reconstruction, or nonzero reflected logarithm is certified by this runner.",
+  "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner.",
   "sha256": {
-    "README.md": "f34ccb2631200f0fd17014af6c2a24266eb2f6720afaa2b7a14396feace9d7bd",
+    "README.md": "b5c5dc7c8e5e037c1b9b830dff97bb78747de7e0c6334c370e318bbf3b47ca31",
+    "ambient_arithmetic/README.md": "5cca054e3c9e5ecfc3b7a3277196a2504131f3792a9c8c8590bd6aa81c99cb81",
+    "ambient_arithmetic/check_ambient_jet.py": "3fe19c2e1d0862540ea74f484361353467d807f2b8da459f975bfe4018014bab",
+    "ambient_arithmetic/result.json": "8a77f20788a406911726ab30387b4f2a75025cfdc9ad6cdb5a0e3333c4387969",
     "derived_global/AMBIENT_CONTROL.md": "faa73e7433264c377554ed8353b5d322fbb49b7ab20a8c6a490b114c53feea4e",
     "derived_global/DERIVED_CLASSES.md": "0b208ac03bc5d0a81cdde7b7ca34384752e9379d014c4a33b59e89bbfcbbd15c",
     "derived_global/bockstein-results.json": "5d9a87e65bc1311a3ec9fa376041787c322f7ae913c132f52d8ec8c44f7ca97a",
@@ -112,8 +186,19 @@
     "eligibility/arithmetic/check_twist_lvalue.py": "461b29ddeb6574bd134afbe85870c70c72a3e8982937387325572353b6734ee7",
     "eligibility/arithmetic/eligibility.json": "02b035463ecbd8eed17e288697873562191739613cfd5b5e58166c570db618c3",
     "eligibility/arithmetic/twist-lvalue.json": "e387f73acf7323d48a08106e7f36aab50b106b6319eeee057de3e38ddbdfdb37",
+    "finite_log_reciprocity/FINITE_COORDINATE.md": "12fcd0d3117e5ee34f7b1fc4db372feb680e0c3a73169ba19ee6b26d72f8a4a0",
+    "finite_log_reciprocity/SOURCE_LEDGER.md": "ac2fe06cb6a3b48cba4318e9ba69e4fc4b1be7361720835933eee35bf5b58148",
+    "finite_log_reciprocity/check_finite_coordinate.py": "c3241c6f6bc3bb1245fd22aabb2ba199b8effd701e194dce3bb6e7f3bc64d4a7",
+    "finite_log_reciprocity/finite-coordinate-results.json": "b91074776f672fbe870e5c78c604dc7ed3519125832701fecdd7b126d05caa92",
     "literature/THEOREM_LEDGER.md": "ab88e7ef3129d6b6045658076a9443580c2d490d4253105eafd0b15200983d91",
     "literature/THETA_CONVENTIONS.md": "0fbbf6c10b3ae2bfbea3f431e2e9b66d2037ee8ee309fd5c68ec34fe765e2e59",
+    "local_crystalline/README.md": "3d19b884da3235db7ecb697016f3152e0f97e06db8308a200576f7b1e52445db",
+    "local_crystalline/calibration-result.json": "3bd9c4893acbc662526cff936721bfbe603007d34344a2c40ef4e0fbc01fbd8a",
+    "local_crystalline/calibration.py": "b772a996db6a090d1cfb9dff205d9dba2c67f425dab68aad16d0a17ea49d6ad2",
+    "local_crystalline/frobenius.py": "4aea8b94033c437722fc0d42a3a833c2642947980c533cfd88fa50cba51d6dcd",
+    "local_crystalline/height-result.json": "5a16a12e85618dd92d9d040202c6bc7c4f06b796327fa4a603c947eb425a6466",
+    "local_crystalline/height_leading.py": "47524989b80e130c23ab102ca694afd5e4e8b841c44b81be6f75d0898229a4f7",
+    "local_crystalline/result.json": "5dede4b7010fde0eac60a0f385d8de72ae5a0af488ba58cbd154bcb5627e9112",
     "local_model/README.md": "9ec98ef1e9d7df30042881175609f75339bf99d798ea512c15ce4fc1e5009585",
     "local_model/formal_log.py": "314e2296ad86bfa4410e2d45f6c05b9aefded324859e6362b99541bc8d9b6db8",
     "local_model/result.json": "723534fec4e2b54a58436600ec31d9e9286a08adac23ce331dcd6dcc8120acb0",
@@ -135,7 +220,12 @@
     "rationality/REFLECTED_REVIEW.md": "8689072ddb02300f8ab3fb3ac77249a417caf502f669cbe88fbb7bd7bfa03892",
     "rationality/check_exterior_descent.py": "d05b47a0c0e695435e00b3422be175792e7346fc22abf2c9f8f3bffa06ab1fdf",
     "rationality/result.json": "3c0c375a52680c22ffd926152c221f14ad34322a79d6d113094ba06aee5e3933",
-    "verify_all.py": "b37b557aced2f82c5a9493c08979cd88e8db321cc238a7bdaa17c1e1bfafbb62"
+    "reflected_pilot/README.md": "6c93a78724fb758e5bdda49114d2c268c634b6fb1d12c98a1fb9c4011b864d53",
+    "reflected_pilot/cm-weight-jets.json.gz": "5054b565231b63457eba413dfcb3e74eb0970891a6dfbc7a91375bdff57857d3",
+    "reflected_pilot/cm_weight_jets.py": "6639fe73e4c14e92e19ed68cde8b24a8b12b68b6835116cd34f03bba55153497",
+    "reflected_pilot/result.json": "414b0e1f155ae2d61a1968592c919c773609991e3ec7f64e2539dcf5d9734b71",
+    "requirements.txt": "a9c3ba45c24d6d45907c5638480ae19a8d3211d42bb3338fe984248212f72cc9",
+    "verify_all.py": "d85538aa698fe7aab03e571c638de138751b4f68c1618c72542a1944c20c0330"
   },
   "status": "PASS"
 }

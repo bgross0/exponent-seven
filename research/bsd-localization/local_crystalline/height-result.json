@@ -1,0 +1,138 @@
+{
+  "basis": [
+    "P=(0,0)",
+    "Q=(1,0)"
+  ],
+  "determinant_div_25_mod_5": 1,
+  "discriminant": 389,
+  "finite_field_point_count": 9,
+  "height_modulus": 25,
+  "height_normalization": "-2/n^2 log_5(sigma(t(nB))/d(nB)); Sage convention",
+  "height_pairing_matrix_mod_25": [
+    [
+      0,
+      15
+    ],
+    [
+      15,
+      20
+    ]
+  ],
+  "model": [
+    0,
+    1,
+    1,
+    -2,
+    0
+  ],
+  "normalized_height_pairing_matrix_mod_5": [
+    [
+      0,
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "points": {
+    "A=Q-P": {
+      "denominator_d": "917918950015",
+      "formal_parameter": "-33847293654788209837705/114172900304810251543538",
+      "height_mod_25": 15,
+      "log_point_div_5_mod_5": 2,
+      "log_unit_mod_25": 5,
+      "multiple": 9,
+      "multiple_coordinates": [
+        "-416398953587889503344609/842575198796640068500225",
+        "-1289297229330430091467837952593115486/773415741788091743187604207791253375"
+      ],
+      "point": [
+        "-1",
+        "1"
+      ],
+      "unit_t_over_d_mod_25": 6
+    },
+    "P": {
+      "denominator_d": "496035",
+      "formal_parameter": "1869740440020/6362164375021",
+      "height_mod_25": 0,
+      "log_point_div_5_mod_5": 1,
+      "log_unit_mod_25": 0,
+      "multiple": 9,
+      "multiple_coordinates": [
+        "33046084324/246050721225",
+        "-55777095075809107/122049769502842875"
+      ],
+      "point": [
+        "0",
+        "0"
+      ],
+      "unit_t_over_d_mod_25": 7
+    },
+    "P+Q": {
+      "denominator_d": "12278804002050455",
+      "formal_parameter": "-1780657630374968973163587170889665/7250891837293838059546330836937912",
+      "height_mod_25": 0,
+      "log_point_div_5_mod_5": 4,
+      "log_unit_mod_25": 0,
+      "multiple": 9,
+      "multiple_coordinates": [
+        "-57353920736485559036133114886474/150769027720770270115844365707025",
+        "-2867676652929653665722531257867839120115008484176/1851263340963049982514702265231265056985797946375"
+      ],
+      "point": [
+        "-2",
+        "-1"
+      ],
+      "unit_t_over_d_mod_25": 1
+    },
+    "Q": {
+      "denominator_d": "124991065",
+      "formal_parameter": "51414701739403105/103754114414340313",
+      "height_mod_25": 20,
+      "log_point_div_5_mod_5": 3,
+      "log_unit_mod_25": 15,
+      "multiple": 9,
+      "multiple_coordinates": [
+        "47905643486138021/15622766329834225",
+        "-12083247015143325974529269/1952706201812121056199625"
+      ],
+      "point": [
+        "1",
+        "0"
+      ],
+      "unit_t_over_d_mod_25": 9
+    }
+  },
+  "prime": 5,
+  "published_sage_comparison": {
+    "basis": [
+      "A=(-1,1)",
+      "Q=(1,0)"
+    ],
+    "basis_relation": "A=Q-P",
+    "height_matrix_mod_25": [
+      [
+        15,
+        5
+      ],
+      [
+        5,
+        20
+      ]
+    ],
+    "independent_exact_calculation_agrees": true
+  },
+  "scope": "Cyclotomic height only; no anticyclotomic Bockstein comparison or nonzero reflected logarithm is asserted",
+  "status": "PASS",
+  "strict_vector": {
+    "coordinates_mod_5": [
+      3,
+      -1
+    ],
+    "definition": "R=(log(Q)/5)*P-(log(P)/5)*Q",
+    "self_height_div_5_mod_5": 1,
+    "self_height_valuation": 1
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "absolute_digits": 8,
+  "basis": [
+    "omega=dx/Y",
+    "eta=x dx/Y"
+  ],
+  "curve_Y_squared_polynomial_low_to_high": [
+    1,
+    -8,
+    4,
+    4
+  ],
+  "finite_field_point_count": 9,
+  "frobenius_determinant": 5,
+  "frobenius_matrix": [
+    [
+      285070,
+      163221
+    ],
+    [
+      276685,
+      105552
+    ]
+  ],
+  "frobenius_trace": -3,
+  "interpolation_annihilator": {
+    "absolute_digits": 7,
+    "definition": "zeta=(1-F/5)*(1-F^-1)^-1*omega; phi=F/5 on V=H^1_et(1)",
+    "modulus": 78125,
+    "purpose": "CH scalar pairing whose base value vanishes on every local class; divided-map log calibration remains to be proved",
+    "vector_in_twisted_omega_eta_basis": [
+      13133,
+      32916
+    ]
+  },
+  "matrix_convention": "columns are images of basis vectors",
+  "modulus": 390625,
+  "ordinary_unit_root": 249782,
+  "precision": {
+    "bound": "k+1-floor(log_5(10*k+5)); nondecreasing for k>=0",
+    "first_omitted_k": 9,
+    "interpretation_reference": "README.md; Kedlaya Lemma 2 plus explicit reduction of Y dx",
+    "tail_coefficient_valuation_lower_bound": 8
+  },
+  "prime": 5,
+  "scope": "Local crystalline Frobenius and unit-root splitting; no global Kato jet or nonzero reflected logarithm",
+  "status": "PASS",
+  "unit_root_line": {
+    "differential": "eta+s*omega",
+    "vector_in_omega_eta_basis": [
+      306458,
+      1
+    ]
+  }
+}

@@ -1,7 +1,8 @@
-# Rank-two BSD: the completed pilot and a reflected-class research target
+# Rank-two BSD: finite-coordinate research and exact pilot computations
 
-Research branch: `bsd-derived-localization`, continuing
-`bsd-localization-audit` commit `12c58ddf46ebd89141d4392b519ca7ae533e67ea`.
+Research branch: `bsd-finite-log-coordinate`, continuing
+`bsd-derived-localization` commit `46ca3323b6b8f10f2334925220a5c75a487a2bfb`.
+The preceding audit commit is `12c58ddf46ebd89141d4392b519ca7ae533e67ea`.
 The original base in exponent-seven is
 `640e6c91b3485e1a55c99476ecb06ebd8379740b`.
 
@@ -17,6 +18,12 @@ This continuation accepts that arithmetic/theorem bridge as an identified
 input, extracts further exact consequences, and develops a specific global
 class to investigate next. It does not redo the 140-class CM construction.
 The original p=29 arithmetic and projection work remains available below.
+
+This continuation specifies the missing local coordinate, computes its
+interpolation annihilator, and produces exact CM weight derivatives for
+a possible analytic comparison. It also certifies a nonzero cyclotomic
+height on the pilot's strict line. The reflected class's finite logarithm
+has not yet been evaluated.
 
 ## What is completed
 
@@ -35,12 +42,166 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Reflected relaxed class | A well-defined, possibly zero Selmer class under the stated CH hypotheses and theta order at least two | [Construction](derived_global/DERIVED_CLASSES.md) and [independent cohomological review](rationality/REFLECTED_REVIEW.md); nonzero localization remains unresolved |
 | Geometric realization criterion | A canonical Selmer exterior class and a finite-extension Kummer comparison sufficient for rank two | [Rationality note](rationality/README.md); the comparison itself remains to be constructed |
 | Descent failure to avoid | A Galois-invariant wedge of two character components need not descend from rational points | [Exact exterior/descent checker](rationality/check_exterior_descent.py) |
+| Finite-coordinate extraction | An invariant first coefficient of a regular finite-log lift, or a second coefficient of a calibrated complementary vector regulator | [Proof and exact algebra](finite_log_reciprocity/FINITE_COORDINATE.md); an arithmetic reciprocity comparison is still required |
+| Explicit interpolation annihilator | `zeta=(20I-13F)/45 omega`, computed modulo `5^7` | [Local crystalline proof](local_crystalline/README.md), using exact Frobenius modulo `5^8` |
+| Cyclotomic strict height | `h_cyc(R,R)/5=1 mod5`, for `R=(log Q/5)P-(log P/5)Q` | [Exact rational height certificate](local_crystalline/height_leading.py); this is a cyclotomic quantity |
+| CM analytic input | Weight-one CM forms and their first two normalized weight derivatives, both p-adic embeddings | [Executable input and scope](reflected_pilot/README.md); no projected vector L-value or global class is computed |
+| Tame-level reduction | Two degeneracy traces recover the entire E-old component at level 389 with an invertible recovery matrix modulo 5 | [Trace argument and conditional resource estimates](reflected_pilot/README.md); the cusp/trace computation remains to be implemented |
+| Global obstruction criterion | The reflected logarithm is nonzero exactly when the augmentation-localized global H2 has length one, under the listed identifications | [Conditional arithmetic reduction](ambient_arithmetic/README.md); the actual first global Bockstein has not been evaluated |
 
 These additions contain mathematical proofs and exact Python calculations.
 They are **not additional Lean kernel-checked theorems**. The supplied
 package has its own formal layer and verification receipts. The new finite
 matrix examples are explicitly abstract algebraic models, not elliptic
 curves or counterexamples to BSD.
+
+## The new finite-coordinate target
+
+Let `y=loc_v(kappa_infinity)` at the prime where the CH scalar Coleman
+map is nonzero. The other full localization vanishes, so
+`loc_v(x)=y/t`. At the base, `y_0=0`. In a local basis `w,n`, with
+`w` generating the finite direction and normalized by `log(w_0)=1`,
+and `F(n)=1`, write
+
+\[
+y=t\,a(t)w+t^2b(t)n.
+\]
+
+The scalar theta identity determines `t^2 b(t)`; the wanted finite
+logarithm is `a(0)`. The proof identifies a coordinate-independent
+extraction rule. If `G` is any regular lift of the finite logarithm,
+
+\[
+\log_\omega(x_0)=[t]G(y).
+\]
+
+Changing `G` by another lift does not alter that coefficient. In
+particular, more precision in the scalar theta series does not evaluate
+this different coordinate without an additional arithmetic relation.
+
+CH's base-character interpolation operator identifies an explicit
+complementary pairing. For `phi=F/5` on `H^1_et(E)(1)`, set
+
+\[
+\zeta=(1-F/5)(1-F^{-1})^{-1}\omega
+       =\frac{20I-13F}{45}\omega.
+\]
+
+The pairing `Col_zeta` vanishes at the base on every local class.
+If its divided map is calibrated by
+`(Col_zeta/t)_0 = c_zeta*log_omega` on the finite line, with
+`c_zeta != 0`, the exact desired expression is
+
+\[
+\boxed{\log_\omega(x_0)=c_\zeta^{-1}[t^2]\operatorname{Col}_\zeta(y).}
+\]
+
+The local simple-determinant and normalization comparison, followed by
+an explicit reciprocity law for this complementary component, are
+specified in the [finite-coordinate note](finite_log_reciprocity/FINITE_COORDINATE.md).
+These are proof obligations, not assumptions silently used to report
+nonvanishing.
+
+The exact Frobenius computation gives
+
+\[
+F\equiv\begin{pmatrix}285070&163221\\276685&105552\end{pmatrix}
+\pmod{390625},\qquad
+\zeta\equiv13133\omega+32916\eta\pmod{78125},
+\]
+
+where `omega=dx/(2y+1)`, `eta=x omega`, and matrix columns are images.
+The implementation includes a rigorous infinite-tail bound and agrees
+with an independently published `37a1` unit-root/E2 example.
+
+The three ordinary dominant triple-product quotients all annihilate the
+deepest all-plus line containing the missing finite coordinate. Merely
+permuting these quotients does not recover it. Darmon--Lauder's full
+de Rham-valued analytic construction supplies a concrete second-jet
+candidate to investigate. Its comparison with this CH class is an
+additional theorem, and the derivative assertion in their paper is
+explicitly conjectural. The
+[source ledger](finite_log_reciprocity/SOURCE_LEDGER.md) records exact
+theorem scopes, including the recent finite-slope and CM results.
+
+## Reducing the next analytic computation before adding hardware
+
+The common tame level of the triple product is `71*389=27619`. The two
+degeneracy maps to level 389 each have degree 72. On the elliptic
+component their trace/pullback matrix is
+
+\[
+\begin{pmatrix}72&a_{71}(E)\\a_{71}(E)&72\end{pmatrix}
+=\begin{pmatrix}72&-10\\-10&72\end{pmatrix}.
+\]
+
+Its determinant is `5084=4 mod5`. Both traces together therefore retain
+the entire E-old component, with no 5-adic precision loss in recovering
+it. A single trace would not suffice for an arbitrary oldform combination.
+The trace applies to the whole modular-form product; a trace of each
+factor separately is a different operation.
+
+For the stated 12-digit reference Katz setup, moving the subsequent
+projection to level 389 changes these illustrative workspace bounds:
+
+| Quantity | At level 27619 | After two traces to level 389 |
+|---|---:|---:|
+| Weight-78 modular-form dimension | 180182 | 2503 |
+| Required input q bound for the reference setup | 912600 | 12675 |
+| One dense matrix, four-byte entries | 129862212496 bytes | 25060036 bytes |
+| One dense matrix, eight-byte working entries | 259724424992 bytes | 50120072 bytes |
+
+This is a factor of 72 in the q bound and about 5182 in the dense matrix
+storage estimate. It is not a measured runtime improvement. Implementing
+the two traces requires the other cusp/coset expansions or an equivalent
+cohomological representation, with the two distinct Hasse/Eisenstein
+pullback trivializations tracked at bounded precision. These operations,
+additional matrices, and eigenprojection denominators are not included
+in the table. The saved 4096-term CM jets are a checked input fixture;
+the full traced projection and reciprocity comparison remain outstanding.
+
+## A global test independent of computing the full vector L-function
+
+The [ambient arithmetic note](ambient_arithmetic/README.md) sharpens the
+previous abstract obstruction models. With `R` the augmentation discrete
+valuation ring, let
+
+\[
+M=H^1_{\rm Iw}(K_\infty,V)_R,\quad
+B=H^2_{\rm Iw}(K_\infty,V)_R,\quad
+N=R\kappa+Rc\kappa.
+\]
+
+The note lists and analyzes the exact Poitou--Tate sequence, local
+Coleman saturation, and anticyclotomic main-conjecture equality needed
+to obtain
+
+\[
+\operatorname{length}_R B=\operatorname{length}_R(M/N),\qquad
+\ell(x_0)\ne0\Longleftrightarrow\operatorname{length}_R B=1.
+\]
+
+Using the pilot's two-dimensional plus Selmer space and nonzero finite
+localization further reduces the possibilities to `B=R/(t)` and
+`B=R/(t^2)`. The conjugation sign in the specialization sequence is
+tracked explicitly. The first alternative gives a transverse reflected
+class; the second makes it strict.
+
+A first global Bockstein, equivalently cup product with the linearized
+anticyclotomic character, distinguishes the two cases. If an actual
+global cohomology complex is represented through first order by
+`D(t)=D0+tD1+...`, its rank is
+
+\[
+\operatorname{rank}[D_0\mid D_1K_0]-\operatorname{rank}D_0,
+\qquad \operatorname{im}K_0=\ker D_0.
+\]
+
+This specifies a second arithmetic route to the missing logarithm.
+No certified global presentation or arithmetic cup-product value is
+provided in this package; the executable matrices are exact algebraic
+fixtures. The cyclotomic height computed separately concerns a
+different direction and does not select either anticyclotomic case.
 
 ## Input provenance and the pilot corollary
 
@@ -220,6 +381,7 @@ computation at a smaller level.
 From the repository root:
 
 ```sh
+python -m pip install -r research/bsd-localization/requirements.txt
 python research/bsd-localization/verify_all.py
 ```
 
@@ -229,9 +391,11 @@ To write a fresh receipt:
 python research/bsd-localization/verify_all.py --receipt research/bsd-localization/verification.json
 ```
 
-The runner checks the original arithmetic and the new p5, formal-log,
-Bockstein, reflection and exterior-algebra certificates against saved JSON.
-All scripts use Python's standard library. The receipt records exit status,
-timing and file hashes. This command does not rebuild or reverify the other
+The runner checks the original arithmetic, p5, formal-log, reflection,
+exterior-algebra, finite-coordinate, crystalline, height, ambient-jet and
+CM-weight-jet certificates against saved data. The ambient algebra
+checker uses SymPy 1.14.0; the other scripts use Python's standard library.
+The receipt records exit status, timing, and hashes of sources and
+compressed data. This command does not rebuild or reverify the other
 thread's CM/Lean package; its input provenance and mathematical scope are
 stated above.

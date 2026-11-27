@@ -1,0 +1,21 @@
+{
+  "computed_E2": 10272,
+  "curve": "37a1",
+  "frobenius_matrix": [
+    [
+      1465,
+      5187
+    ],
+    [
+      8945,
+      14158
+    ]
+  ],
+  "modulus": 15625,
+  "prime": 5,
+  "published_E2": 10272,
+  "purpose": "Independent published normalization and precision calibration",
+  "source": "Sage official padic_E2 documentation; model y^2=x^3-x+1/4",
+  "status": "PASS",
+  "unit_root_line_coefficient": 14769
+}

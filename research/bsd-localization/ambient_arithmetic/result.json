@@ -1,0 +1,97 @@
+{
+  "all_checks_passed": true,
+  "claims_not_verified": [
+    "A global Galois-cohomology presentation for the pilot.",
+    "The arithmetic value of the anticyclotomic cup product.",
+    "The main-conjecture and local-regulator comparison hypotheses.",
+    "Arithmetic realization or full Poitou-Tate self-duality of fixtures."
+  ],
+  "format": "ambient-arithmetic-jet-check-v1",
+  "higher_dimensional_H2_guard": {
+    "H1_base_dimension": 2,
+    "H2_base_dimension": 2,
+    "first_bockstein_rank": 1
+  },
+  "models": [
+    {
+      "ambient_H2_length": 2,
+      "ambient_beta_on_strict_kappa0": 0,
+      "ambient_smith_t_orders": [
+        2
+      ],
+      "basis_change_checks_passed": true,
+      "global_first_jet": {
+        "H1_base_dimension": 3,
+        "H2_base_dimension": 1,
+        "first_bockstein_rank": 0
+      },
+      "kappa0": [
+        "1",
+        "0",
+        "0"
+      ],
+      "local_quotient_index": 2,
+      "model_logarithm": "0",
+      "name": "even_global_H2_length_two",
+      "normalization_check_passed": true,
+      "obstructed_base_direction_c_sign": 1,
+      "ordinary_first_jet": {
+        "H1_base_dimension": 2,
+        "H2_base_dimension": 2,
+        "first_bockstein_rank": 0
+      },
+      "ordinary_smith_t_orders": [
+        0,
+        2,
+        2
+      ],
+      "reflected_family_index": 2,
+      "reflected_x0": [
+        "0",
+        "0",
+        "0"
+      ],
+      "scope": "Algebraic fixture; no arithmetic realization asserted."
+    },
+    {
+      "ambient_H2_length": 1,
+      "ambient_beta_on_strict_kappa0": 0,
+      "ambient_smith_t_orders": [
+        1
+      ],
+      "basis_change_checks_passed": true,
+      "global_first_jet": {
+        "H1_base_dimension": 3,
+        "H2_base_dimension": 1,
+        "first_bockstein_rank": 1
+      },
+      "kappa0": [
+        "1",
+        "0",
+        "0"
+      ],
+      "local_quotient_index": 3,
+      "model_logarithm": "-2",
+      "name": "odd_global_H2_length_one",
+      "normalization_check_passed": true,
+      "obstructed_base_direction_c_sign": -1,
+      "ordinary_first_jet": {
+        "H1_base_dimension": 2,
+        "H2_base_dimension": 2,
+        "first_bockstein_rank": 0
+      },
+      "ordinary_smith_t_orders": [
+        0,
+        2,
+        2
+      ],
+      "reflected_family_index": 1,
+      "reflected_x0": [
+        "0",
+        "-2",
+        "0"
+      ],
+      "scope": "Algebraic fixture; no arithmetic realization asserted."
+    }
+  ]
+}

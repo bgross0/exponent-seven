@@ -1,0 +1,150 @@
+{
+  "schema": "reflected-pilot-receipt-v1",
+  "q_bound": 4096,
+  "p_digits": 12,
+  "data_sha256": "80b2b0f5ba32d6a3d45ebb828c21e5bf043226cfd4290b72dd9d81ed8ae830ba",
+  "data_bytes": 5414800,
+  "runtime_seconds_observed": 5.676,
+  "higher_precision_check": {
+    "higher_digits": 13,
+    "q_bound": 500,
+    "cyclotomic_vectors_compared": 17034
+  },
+  "verification": {
+    "2": {
+      "algebraic_weight5_specialization_coefficients_checked_mod125_or_available_precision": 4096,
+      "hecke_relations_at_each_of_orders_0_1_2": 9515,
+      "integral_ideals_prime_to_selected_p": 8550,
+      "ordinary_Up_eigenvalue_zeta_exponent": 2,
+      "ordinary_Up_logarithmic_derivative": 74800148
+    },
+    "4": {
+      "algebraic_weight5_specialization_coefficients_checked_mod125_or_available_precision": 4096,
+      "hecke_relations_at_each_of_orders_0_1_2": 9515,
+      "integral_ideals_prime_to_selected_p": 8550,
+      "ordinary_Up_eigenvalue_zeta_exponent": 5,
+      "ordinary_Up_logarithmic_derivative": 74800148
+    }
+  },
+  "mod5_samples": {
+    "2": {
+      "g_n2": [
+        4,
+        0,
+        4,
+        4,
+        4,
+        4
+      ],
+      "g_jet1_n2": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "g_jet2_n2": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "4": {
+      "g_n2": [
+        4,
+        0,
+        4,
+        4,
+        4,
+        4
+      ],
+      "g_jet1_n2": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "g_jet2_n2": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  },
+  "full_level_naive_Lauder_weight2_projection": {
+    "level": 27619,
+    "Gamma0_index": 28080,
+    "genus": 2339,
+    "target_p_digits": 12,
+    "Katz_n": 19,
+    "maximum_classical_weight": 78,
+    "M_weight_dimension": 180182,
+    "Sturm_bound": 182520,
+    "q_precision_required_by_basic_algorithm": 912600,
+    "working_p_digits": 16,
+    "one_dense_mod_5_power_12_matrix_bytes_with_uint32": 129862212496,
+    "one_dense_working_mod_5_power_16_matrix_bytes_with_uint64": 259724424992,
+    "scope": "basic full-space algorithm estimate, not measured runtime or a lower bound for targeted algorithms"
+  },
+  "compressed_artifact": {
+    "filename": "cm-weight-jets.json.gz",
+    "bytes": 1872318,
+    "sha256": "5054b565231b63457eba413dfcb3e74eb0970891a6dfbc7a91375bdff57857d3",
+    "mtime": 0,
+    "embedded_filename": false
+  },
+  "runtime_seconds_including_deterministic_gzip": 6.278,
+  "source_script_sha256": "6639fe73e4c14e92e19ed68cde8b24a8b12b68b6835116cd34f03bba55153497",
+  "two_degeneracy_trace_reduction": {
+    "a71": -10,
+    "degeneracy_degree": 72,
+    "determinant": 5084,
+    "five_adic_precision_loss_from_this_matrix_inversion": 0,
+    "inverse_matrix_modulus": [
+      [
+        32270358,
+        207932515
+      ],
+      [
+        207932515,
+        32270358
+      ]
+    ],
+    "pullback_trace_Gram_matrix_on_E_factor": [
+      [
+        72,
+        -10
+      ],
+      [
+        -10,
+        72
+      ]
+    ],
+    "scope": "finite Gram-matrix certificate; the two tame traces of the input overconvergent form have not been computed",
+    "source_level": 27619,
+    "target_level": 389
+  },
+  "after_two_tame_traces_to_level389": {
+    "Gamma0_index": 390,
+    "genus": 32,
+    "elliptic_points_order2": 2,
+    "elliptic_points_order3": 0,
+    "cusps": 2,
+    "maximum_classical_weight": 78,
+    "M_weight_dimension": 2503,
+    "Sturm_bound": 2535,
+    "q_precision_basic_Katz_algorithm": 12675,
+    "one_dense_uint32_matrix_bytes": 25060036,
+    "one_dense_uint64_matrix_bytes": 50120072,
+    "scope": "conditional workload after constructing both tame traces; traces and lower-level projection not implemented"
+  }
+}
