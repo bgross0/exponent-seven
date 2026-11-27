@@ -1,6 +1,6 @@
 # Theta certificates: group projection, conductor indexing, and normalization
 
-Audit date: 2026-11-27. This note separates the source definition from elementary deductions needed by a finite certificate. No theta coefficient for $K=\mathbf Q(\sqrt{-71})$ is asserted to have been computed here.
+Audit date: 2026-11-27. This note records the original p=29 planning calculation and separates the source definition from elementary deductions needed by a finite certificate. The completed p=5 computation now supplied by the other research thread is incorporated in `../p5/README.md`; the p=29 planning task below is no longer the next required computation.
 
 ## Primary definition
 
@@ -98,19 +98,21 @@ For $n\ge1$ and every $1\le j<29$, the coefficient $\binom{29^n}{j}$ has $29$-ad
 
 This is an indexing calculation, not an assertion that these levels suffice for every desired valuation: if the quadratic coefficient vanishes to higher $29$-adic order, precision must increase.
 
-The first useful attempt is therefore **modulo $29$**, at conductor exponent $m=2$, using the $5684$ full group values and a $29$-element wild quotient. If the quadratic coefficient is nonzero, that precision already certifies its nonvanishing. Escalate to modulo $841$ and $m=3$ with $164836$ full group values only if the first test vanishes or exact comparison with the published modulo-$841$ fixture is desired. No full expanded polynomial is needed to accumulate the constant, linear, and quadratic coefficients.
+For a p=29 computation, the first useful attempt would therefore be **modulo $29$**, at conductor exponent $m=2$, using the $5684$ full group values and a $29$-element wild quotient. If the quadratic coefficient is nonzero, that precision already certifies its nonvanishing. Escalation to modulo $841$ and $m=3$ would use $164836$ full group values. No full expanded polynomial is needed to accumulate the constant, linear, and quadratic coefficients. The supplied p=5 certificate makes this p=29 escalation unnecessary for the present pilot.
 
 ## Published regression fixture and unresolved dictionary
 
 **Castella–Hsieh 2022**, [published PDF](https://web.math.ucsb.edu/~castella/Kato-print.pdf), Table 1, p. 30, includes
 
 \[
-E=389.a1,\quad K=\mathbf Q(\sqrt{-7}),\quad p=29,
+E=389.a1,\quad K=\mathbf Q(\sqrt{-2}),\quad p=11,
 \qquad
-\Theta\equiv148T^2+31T^3+O(T^4)\pmod{(841,T^{29})}.
+\Theta\equiv10T^2+69T^3+O(T^4)\pmod{(121,T^{11})}.
 \]
 
 This fixture is sourced, **not independently recomputed**. It is not a fixture for $K=\mathbf Q(\sqrt{-71})$. The appendix assumes class number one, a primitive quaternionic eigenfunction modulo $p$, $u=1+p$, and the displayed Gross-point representatives. Scaling the eigenfunction, changing the chosen generator, or translating the initial Gross point can change the coefficients.
+
+Correction in this continuation: the earlier version incorrectly attributed a p=29, K=sqrt(-7) coefficient pair to this table. Direct inspection of the published first row gives the p=11, K=sqrt(-2) fixture above. No executable certificate or mathematical deduction in this package depended on the incorrect pair.
 
 There is an unresolved normalization dictionary: that appendix prints
 

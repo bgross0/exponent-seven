@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "scope": "Exact algebra identities; no arithmetic existence claim",
+  "canonical_class_instances": 6336,
+  "invertible_basis_changes": 2112,
+  "C7_descent_trap": {
+    "character_trace": 0,
+    "inverse_character_trace": 0,
+    "exterior_square_of_point_trace": 0,
+    "diagonal_norm_on_invariant_wedge": 7
+  },
+  "tested_extension_degrees": [
+    2,
+    5,
+    7,
+    35
+  ],
+  "abstract_membership_countermodels": [
+    {
+      "M_dimension": 0,
+      "quotient_dimension": 2,
+      "strict_class_in_M": false,
+      "canonical_bivector_in_exterior_M": false
+    },
+    {
+      "M_dimension": 1,
+      "quotient_dimension": 1,
+      "strict_class_in_M": false,
+      "canonical_bivector_in_exterior_M": false
+    },
+    {
+      "M_dimension": 2,
+      "quotient_dimension": 0,
+      "strict_class_in_M": true,
+      "canonical_bivector_in_exterior_M": true
+    }
+  ]
+}

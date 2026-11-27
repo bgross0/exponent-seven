@@ -8,7 +8,7 @@
         "--check",
         "eligibility/arithmetic/eligibility.json"
       ],
-      "elapsed_seconds": 0.07067,
+      "elapsed_seconds": 0.04645,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -20,7 +20,7 @@
         "--check",
         "eligibility/arithmetic/twist-lvalue.json"
       ],
-      "elapsed_seconds": 1.38287,
+      "elapsed_seconds": 1.334845,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -30,7 +30,7 @@
         "python",
         "logic/verify_logic.py"
       ],
-      "elapsed_seconds": 0.03152,
+      "elapsed_seconds": 0.024561,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -40,7 +40,7 @@
         "python",
         "logic/c7_period.py"
       ],
-      "elapsed_seconds": 0.026853,
+      "elapsed_seconds": 0.049554,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -50,33 +50,92 @@
         "python",
         "projection/ring_class_projection.py"
       ],
-      "elapsed_seconds": 0.125282,
+      "elapsed_seconds": 0.098865,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "p5_refinements",
+      "command": [
+        "python",
+        "p5/check_refinements.py",
+        "--check",
+        "p5/result.json"
+      ],
+      "elapsed_seconds": 0.068348,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "local_logarithms_30_digits",
+      "command": [
+        "python",
+        "local_model/formal_log.py",
+        "--check",
+        "local_model/result.json"
+      ],
+      "elapsed_seconds": 0.042245,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "exterior_descent",
+      "command": [
+        "python",
+        "rationality/check_exterior_descent.py"
+      ],
+      "elapsed_seconds": 0.087314,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "finite_lifts_and_reflection",
+      "command": [
+        "python",
+        "derived_global/bockstein_lifts.py"
+      ],
+      "elapsed_seconds": 0.036867,
       "exit_code": 0,
       "matches_saved_certificate": true
     }
   ],
   "python": "3.12.14",
-  "scope": "Exact arithmetic and algebraic fixtures; mathematical interpretation in notes; no Lean verification or curve-specific theta/CM period computation.",
+  "scope": "Exact arithmetic, extracted p5 CM-period refinements, 30-digit local logs, and algebraic lift/reflection/descent fixtures. Mathematical arguments are in the notes. No new Lean verification, upstream CM reconstruction, or nonzero reflected logarithm is certified by this runner.",
   "sha256": {
-    "README.md": "11e3dca73b21841b41565a089b481226fc02c5014744a983afb8dc55803578aa",
+    "README.md": "f34ccb2631200f0fd17014af6c2a24266eb2f6720afaa2b7a14396feace9d7bd",
+    "derived_global/AMBIENT_CONTROL.md": "faa73e7433264c377554ed8353b5d322fbb49b7ab20a8c6a490b114c53feea4e",
+    "derived_global/DERIVED_CLASSES.md": "0b208ac03bc5d0a81cdde7b7ca34384752e9379d014c4a33b59e89bbfcbbd15c",
+    "derived_global/bockstein-results.json": "5d9a87e65bc1311a3ec9fa376041787c322f7ae913c132f52d8ec8c44f7ca97a",
+    "derived_global/bockstein_lifts.py": "bc3ac26bddc41941159f1c4dbb7e220c0bee4658e37e7b9deace8c331c6b0d37",
     "eligibility/arithmetic/README.md": "9d026df1c9da3edd14361f3e125158aab37ccd02ce94eff7fbe573d067a3d003",
     "eligibility/arithmetic/check_eligibility.py": "b7643acf2d370104993071943c149d90bbc78d083dd5f5fa56a0680bb0a3c0a7",
     "eligibility/arithmetic/check_twist_lvalue.py": "461b29ddeb6574bd134afbe85870c70c72a3e8982937387325572353b6734ee7",
     "eligibility/arithmetic/eligibility.json": "02b035463ecbd8eed17e288697873562191739613cfd5b5e58166c570db618c3",
     "eligibility/arithmetic/twist-lvalue.json": "e387f73acf7323d48a08106e7f36aab50b106b6319eeee057de3e38ddbdfdb37",
     "literature/THEOREM_LEDGER.md": "ab88e7ef3129d6b6045658076a9443580c2d490d4253105eafd0b15200983d91",
-    "literature/THETA_CONVENTIONS.md": "f35a99ad19483b323bf106bd88fa713f3dccc8a102b5eae027111f3f65a39aee",
-    "logic/AUDIT.md": "b360b3a4566b4ff1cabb31798fed6d141777542896d95ae94c804cf1d59ce7b3",
+    "literature/THETA_CONVENTIONS.md": "0fbbf6c10b3ae2bfbea3f431e2e9b66d2037ee8ee309fd5c68ec34fe765e2e59",
+    "local_model/README.md": "9ec98ef1e9d7df30042881175609f75339bf99d798ea512c15ce4fc1e5009585",
+    "local_model/formal_log.py": "314e2296ad86bfa4410e2d45f6c05b9aefded324859e6362b99541bc8d9b6db8",
+    "local_model/result.json": "723534fec4e2b54a58436600ec31d9e9286a08adac23ce331dcd6dcc8120acb0",
+    "logic/AUDIT.md": "9d833eb03591dece226f391c071c873b9270cdf743d263087bf48fc636477c2a",
     "logic/C7_AUXILIARY_PERIOD.md": "f9d7d97e27cd7085d6c936d5b6fe102196f95e1e6147b1c72685754700c6bf35",
     "logic/TWIST_INTERVAL_REVIEW.md": "b58ec5a10adfbd15b83913148bfa528a2f89e98f71ef2c93b98b17b1edbd304b",
     "logic/c7-fixtures.json": "9c23f69d14d751234d5000cc0182f97ad31d87047bf9210ec4eb01e661e6c215",
     "logic/c7_period.py": "64cc142763b4922abf6d613046efd58633ca5debf1628d0d6072ec7adc09f24f",
     "logic/result.json": "9243ae1519e37d9d81cd054dfb153f43d6b990163bb8bc00d80ae281fc61546f",
     "logic/verify_logic.py": "78a16e65b5d22142b0d3c692bf818707188baf6e6757c21be5c4fb5cd2ab62ee",
+    "p5/README.md": "24c3a371bb5f9d3832d7705b236fda4f35cf029358c778ea5186f383ea807518",
+    "p5/check_refinements.py": "31e5f0fa4a98b8d98a3431d53ccd550f5a135801bd04d4f51f3acb6e5490318e",
+    "p5/inputs.json": "8ed14ec2f42a2fa83bde88ed622a862b32265882f16a63174f1a589aaa497ff9",
+    "p5/result.json": "09021cabe780596a8f0b0a0e11af426303eb45c3712d9fad4ce843a65682a9ee",
     "projection/README.md": "edf0f322199c26f6f686c60248ea04975b0733696c8b2a2567a8133abadbf494",
     "projection/result.json": "390951cfc0347238b6b8b0dd450c0cc99e6867a7d163cf2c29579f64f5c45c76",
     "projection/ring_class_projection.py": "d3fe5a0f56bdb3d3ebb46e168d0f56b7b31619b2fab6a8d63384a2bd731b6e70",
-    "verify_all.py": "c5fae3ac5c18a3982faf36f6c0235dcfbae5c2b2da22f5e5997d049e485ff13a"
+    "rationality/README.md": "d2ed0792542929d4364bd2f1d02653ea392b26dee77380783eba54f60112a929",
+    "rationality/REFLECTED_REVIEW.md": "8689072ddb02300f8ab3fb3ac77249a417caf502f669cbe88fbb7bd7bfa03892",
+    "rationality/check_exterior_descent.py": "d05b47a0c0e695435e00b3422be175792e7346fc22abf2c9f8f3bffa06ab1fdf",
+    "rationality/result.json": "3c0c375a52680c22ffd926152c221f14ad34322a79d6d113094ba06aee5e3933",
+    "verify_all.py": "b37b557aced2f82c5a9493c08979cd88e8db321cc238a7bdaa17c1e1bfafbb62"
   },
   "status": "PASS"
 }

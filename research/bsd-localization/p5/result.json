@@ -1,0 +1,138 @@
+{
+  "status": "PASS: exact p5 arithmetic and consequences of supplied CM data",
+  "input_provenance": {
+    "data/supersingular-389.json": "cb60ce7574e6a4a0e8cc9d4f108fec26547131ff7c38c2c682d2f1f1316f1998",
+    "data/cm-jet-p5.json": "0fb46c8b69b82047e613cf2abf8e6235b692e10263fa917fc63f273a6030f2eb"
+  },
+  "curve": {
+    "a_invariants": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "points_mod_5": 9,
+    "a5": -3,
+    "unit_root_mod_25": 7,
+    "omega_roots_mod_5": [
+      2,
+      4
+    ]
+  },
+  "coefficient_field": {
+    "Q5_zeta7_degree": 6,
+    "unramified": true,
+    "Frobenius_orbit_of_zeta_exponents": [
+      1,
+      5,
+      4,
+      6,
+      2,
+      3
+    ],
+    "real_Hecke_field_cubic_values_mod_5": [
+      4,
+      4,
+      2,
+      4,
+      1
+    ]
+  },
+  "actual_CM_cycle": {
+    "local_indices": [
+      0,
+      2,
+      1,
+      4,
+      5,
+      6,
+      3
+    ],
+    "values": [
+      -1,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "cyclotomic_norm": 49,
+    "all_six_periods_are_5_adic_units": true,
+    "inverse_period_coefficients_mod_5": [
+      3,
+      2,
+      1,
+      1,
+      2,
+      3
+    ],
+    "saved_j_order_norm_not_a_toric_norm": 7
+  },
+  "localization": [
+    {
+      "point": [
+        0,
+        0
+      ],
+      "multiple": 9,
+      "z_numerator": "1869740440020",
+      "z_denominator": "6362164375021",
+      "valuation_z": 1,
+      "z_mod_25": 20,
+      "log_mod_25_given_integral_formal_log": 5
+    },
+    {
+      "point": [
+        1,
+        0
+      ],
+      "multiple": 9,
+      "z_numerator": "51414701739403105",
+      "z_denominator": "103754114414340313",
+      "valuation_z": 1,
+      "z_mod_25": 10,
+      "log_mod_25_given_integral_formal_log": 15
+    }
+  ],
+  "strict_regulator_vector_coefficients_mod_5": [
+    3,
+    -1
+  ],
+  "theta_from_supplied_grouped_data": {
+    "raw_coefficients": [
+      5,
+      -1,
+      -1,
+      5,
+      -8
+    ],
+    "moments": [
+      0,
+      -20,
+      -34
+    ],
+    "norm_element_T_coefficients_mod_5": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "regularized_quadratic_coefficient_mod_5": 4
+  },
+  "trace_descent_fault_case": {
+    "coefficients_in_1_zeta_through_zeta5": [
+      0,
+      1,
+      -1,
+      0,
+      0,
+      0
+    ],
+    "field_trace": 0,
+    "nonzero_element": true
+  },
+  "scope": "The input archive establishes CM/theta identifications. This refinement checks the extracted cycle, period units, coefficient field, and local logs; it does not rerun the full CM proof or claim Lean verification."
+}

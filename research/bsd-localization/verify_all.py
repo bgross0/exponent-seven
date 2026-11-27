@@ -20,6 +20,12 @@ JOBS = [
     ("localization_and_logic", "logic/verify_logic.py", [], "logic/result.json"),
     ("cyclotomic_fixtures", "logic/c7_period.py", [], "logic/c7-fixtures.json"),
     ("ring_class_projection", "projection/ring_class_projection.py", [], "projection/result.json"),
+    ("p5_refinements", "p5/check_refinements.py", ["--check", "p5/result.json"], None),
+    ("local_logarithms_30_digits", "local_model/formal_log.py",
+     ["--check", "local_model/result.json"], None),
+    ("exterior_descent", "rationality/check_exterior_descent.py", [], "rationality/result.json"),
+    ("finite_lifts_and_reflection", "derived_global/bockstein_lifts.py", [],
+     "derived_global/bockstein-results.json"),
 ]
 
 
@@ -55,7 +61,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic and algebraic fixtures; mathematical interpretation in notes; no Lean verification or curve-specific theta/CM period computation."}
+               "scope": "Exact arithmetic, extracted p5 CM-period refinements, 30-digit local logs, and algebraic lift/reflection/descent fixtures. Mathematical arguments are in the notes. No new Lean verification, upstream CM reconstruction, or nonzero reflected logarithm is certified by this runner."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

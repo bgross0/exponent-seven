@@ -154,7 +154,7 @@ Under Castella–Hsieh's hypotheses, their nonvanishing theorem supplies dim S =
 \kappa\mapsto0\text{ in }V_p\Sha.
 \]
 
-This is weaker as a stated input than assuming all of Sha[p^infinity] finite, but proving it is a serious arithmetic problem. It is not established by the finite theta coefficient computation.
+This isolates a specific class to realize geometrically. Under the already stated hypotheses of Selmer dimension two, nonzero localization, and a nonzero strict kappa, however, this Kummer-membership assertion is equivalent to finiteness of Sha[p^infinity], not an arithmetically weaker conclusion. The equivalence and a finite-extension exterior-class criterion are proved in `../rationality/README.md`. The finite theta coefficient computation does not establish the membership assertion.
 
 An alternative sufficient input is two independent rational points. Then dim S = 2 implies rank two and finiteness of Sha[p^infinity] directly. The neighboring eligibility audit supplies an elementary finite-field independence certificate for (0,0) and (1,0) on E389.a1.
 

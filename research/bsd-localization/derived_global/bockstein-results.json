@@ -1,0 +1,359 @@
+{
+  "status": "Exact rational algebraic models only; not an elliptic-curve nonvanishing proof",
+  "finite_lift_models": {
+    "diag(t,t^2)": {
+      "differential_coefficients": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "levels": [
+        {
+          "modulus_power": 1,
+          "jet_kernel_dimension": 2,
+          "constant_image_dimension": 2,
+          "constant_image_basis": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 2,
+          "jet_kernel_dimension": 3,
+          "constant_image_dimension": 1,
+          "constant_image_basis": [
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 3,
+          "jet_kernel_dimension": 3,
+          "constant_image_dimension": 0,
+          "constant_image_basis": []
+        },
+        {
+          "modulus_power": 4,
+          "jet_kernel_dimension": 3,
+          "constant_image_dimension": 0,
+          "constant_image_basis": []
+        }
+      ]
+    },
+    "diag(t^2,0)": {
+      "differential_coefficients": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "levels": [
+        {
+          "modulus_power": 1,
+          "jet_kernel_dimension": 2,
+          "constant_image_dimension": 2,
+          "constant_image_basis": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 2,
+          "jet_kernel_dimension": 4,
+          "constant_image_dimension": 2,
+          "constant_image_basis": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 3,
+          "jet_kernel_dimension": 5,
+          "constant_image_dimension": 1,
+          "constant_image_basis": [
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 4,
+          "jet_kernel_dimension": 6,
+          "constant_image_dimension": 1,
+          "constant_image_basis": [
+            [
+              "0",
+              "1"
+            ]
+          ]
+        }
+      ]
+    },
+    "t^2*J": {
+      "differential_coefficients": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            -1,
+            0
+          ]
+        ]
+      ],
+      "levels": [
+        {
+          "modulus_power": 1,
+          "jet_kernel_dimension": 2,
+          "constant_image_dimension": 2,
+          "constant_image_basis": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 2,
+          "jet_kernel_dimension": 4,
+          "constant_image_dimension": 2,
+          "constant_image_basis": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 3,
+          "jet_kernel_dimension": 4,
+          "constant_image_dimension": 0,
+          "constant_image_basis": []
+        },
+        {
+          "modulus_power": 4,
+          "jet_kernel_dimension": 4,
+          "constant_image_dimension": 0,
+          "constant_image_basis": []
+        }
+      ]
+    },
+    "coupled([[1,t],[0,t^2]])": {
+      "differential_coefficients": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "levels": [
+        {
+          "modulus_power": 1,
+          "jet_kernel_dimension": 1,
+          "constant_image_dimension": 1,
+          "constant_image_basis": [
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 2,
+          "jet_kernel_dimension": 2,
+          "constant_image_dimension": 1,
+          "constant_image_basis": [
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        {
+          "modulus_power": 3,
+          "jet_kernel_dimension": 2,
+          "constant_image_dimension": 0,
+          "constant_image_basis": []
+        },
+        {
+          "modulus_power": 4,
+          "jet_kernel_dimension": 2,
+          "constant_image_dimension": 0,
+          "constant_image_basis": []
+        }
+      ]
+    }
+  },
+  "reflected_derivative_models": [
+    {
+      "input_a": [
+        "1"
+      ],
+      "opposite_defect_valuation": 2,
+      "opposite_defect_leading_coefficient": "2",
+      "numerator_valuation": 2,
+      "derived_constant": [
+        "0",
+        "0"
+      ],
+      "derived_polynomials": [
+        [],
+        [
+          "0",
+          "-2"
+        ]
+      ]
+    },
+    {
+      "input_a": [
+        "1",
+        "1"
+      ],
+      "opposite_defect_valuation": 2,
+      "opposite_defect_leading_coefficient": "2",
+      "numerator_valuation": 1,
+      "derived_constant": [
+        "2",
+        "0"
+      ],
+      "derived_polynomials": [
+        [
+          "2"
+        ],
+        [
+          "0",
+          "-2"
+        ]
+      ]
+    }
+  ],
+  "all_checks_passed": true
+}

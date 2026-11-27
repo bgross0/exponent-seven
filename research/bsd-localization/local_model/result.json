@@ -1,0 +1,124 @@
+{
+  "absolute_digits": 31,
+  "curve_ainvariants": [
+    0,
+    1,
+    1,
+    -2,
+    0
+  ],
+  "differential": "dx/(2y+1)",
+  "differential_coefficients_first_12": [
+    1,
+    0,
+    1,
+    2,
+    -3,
+    6,
+    -5,
+    -12,
+    31,
+    -80,
+    51,
+    50
+  ],
+  "formal_parameter": "t=-x/y",
+  "formal_parameters_9_times_points": {
+    "P": {
+      "denominator": "6362164375021",
+      "numerator": "1869740440020"
+    },
+    "Q": {
+      "denominator": "103754114414340313",
+      "numerator": "51414701739403105"
+    }
+  },
+  "log_P_mod_5_to_absolute_digits": 2197697177685573761305,
+  "log_Q_mod_5_to_absolute_digits": 1132323596868974533065,
+  "normalized_digits": 30,
+  "normalized_log_P": 439539435537114752261,
+  "normalized_log_Q": 226464719373794906613,
+  "p_cleared_height_factor": 832156459082287920456,
+  "points": {
+    "P": [
+      0,
+      0
+    ],
+    "Q": [
+      1,
+      0
+    ]
+  },
+  "precision_table": [
+    {
+      "log_P_div_5": 1,
+      "log_Q_div_5": 3,
+      "modulus": 5,
+      "normalized_digits": 1,
+      "ratio_log_Q_over_log_P": 3
+    },
+    {
+      "log_P_div_5": 11,
+      "log_Q_div_5": 13,
+      "modulus": 25,
+      "normalized_digits": 2,
+      "ratio_log_Q_over_log_P": 8
+    },
+    {
+      "log_P_div_5": 2261,
+      "log_Q_div_5": 363,
+      "modulus": 3125,
+      "normalized_digits": 5,
+      "ratio_log_Q_over_log_P": 2658
+    },
+    {
+      "log_P_div_5": 5377261,
+      "log_Q_div_5": 5844113,
+      "modulus": 9765625,
+      "normalized_digits": 10,
+      "ratio_log_Q_over_log_P": 5133908
+    },
+    {
+      "log_P_div_5": 3011479986636,
+      "log_Q_div_5": 66358658187863,
+      "modulus": 95367431640625,
+      "normalized_digits": 20,
+      "ratio_log_Q_over_log_P": 71123149665158
+    },
+    {
+      "log_P_div_5": 439539435537114752261,
+      "log_Q_div_5": 226464719373794906613,
+      "modulus": 931322574615478515625,
+      "normalized_digits": 30,
+      "ratio_log_Q_over_log_P": 281099199846294196408
+    }
+  ],
+  "prime": 5,
+  "scope": "Exact finite-precision local arithmetic; tail and interpretation proved in README; no global derived class computed",
+  "status": "PASS",
+  "strict_line": {
+    "basis": [
+      "P",
+      "Q"
+    ],
+    "exact_definition": "(log(Q)/log(P))*P-Q in E(Q) tensor Q_5",
+    "modulus": 931322574615478515625,
+    "normalized_vector": [
+      281099199846294196408,
+      -1
+    ]
+  },
+  "tail_bound": {
+    "first_omitted_log_degree": 62,
+    "lower_bound_on_omitted_valuation": 31,
+    "reason": "v_5(t)>=1 and integral differential coefficients; n-v_5(n)>=n/2"
+  },
+  "unit_root_alpha": 2289499604067580718532,
+  "validation": {
+    "P_plus_Q_additivity": true,
+    "Q_minus_P_additivity": true,
+    "independent_lower_precision_agrees": true,
+    "multipliers_9_and_18_agree": true,
+    "quadratic_log_remainders_zero_mod_25": true
+  }
+}

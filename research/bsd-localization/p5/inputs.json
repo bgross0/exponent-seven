@@ -1,0 +1,98 @@
+{
+  "source_archive_sha256": "f4d0332acbe087da2dda53a9a380f41c75d3ec63c5ad59441f2a5785ef21531a",
+  "source_files": {
+    "data/supersingular-389.json": "cb60ce7574e6a4a0e8cc9d4f108fec26547131ff7c38c2c682d2f1f1316f1998",
+    "data/cm-jet-p5.json": "0fb46c8b69b82047e613cf2abf8e6235b692e10263fa917fc63f273a6030f2eb"
+  },
+  "source_scope": "Extracted finite data from the separately audited BSD rank-two package; the source CM and theta identifications remain explicit mathematical inputs.",
+  "CM_indices": [
+    9,
+    10,
+    13,
+    21,
+    22,
+    28,
+    29
+  ],
+  "CM_values_in_saved_j_order": [
+    -1,
+    -1,
+    0,
+    1,
+    1,
+    0,
+    0
+  ],
+  "CM_induced_T2": [
+    [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0
+    ]
+  ],
+  "raw_Gamma1_coefficients": [
+    5,
+    -1,
+    -1,
+    5,
+    -8
+  ]
+}
