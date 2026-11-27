@@ -1,0 +1,49 @@
+{
+  "host": "precision7670",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-12850HX",
+  "logical_cpus": 24,
+  "mem_total_kib": 32533348,
+  "swap_total_kib": 524284,
+  "recorded_free_disk_gib": 612.48,
+  "lean": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lake": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "python": "3.14.4",
+  "sympy": "1.14.0",
+  "gnu_time": "time (GNU Time) UNKNOWN",
+  "project": "aae4b2012f80bcb5cbe7b30c13debf0704f07266",
+  "external": "72fead102f663d5c7a407964a13dc0cf9d977207",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "combined_source_manifest": "INTEGRATION-PROVENANCE.json",
+  "prepared_input_count": 914,
+  "external_cache": "Independent copy of the previously built Lean 4.35 workspace; smoke, external and imported rechecked by Lake at the new project pin.",
+  "jobs": 4,
+  "lean_threads_per_certificate": 1,
+  "stages": [
+    "Sieve",
+    "SieveLow",
+    "Exp7GRHBridge.Final"
+  ],
+  "certificate_runner": [
+    "python3",
+    "/home/ben/GitHub/exponent-seven-certs435/frontier/grh-integration/certificates435/run.py",
+    "--workspace",
+    "/home/ben/exp7-certs435/combined",
+    "--project",
+    "/home/ben/exp7-certs435/project",
+    "--logs",
+    "/home/ben/exp7-certs435/logs",
+    "--jobs",
+    "4"
+  ],
+  "final_runner": [
+    "python3",
+    "/home/ben/GitHub/exponent-seven-certs435/frontier/grh-integration/run_stage.py",
+    "final",
+    "--workspace",
+    "/home/ben/exp7-certs435/combined",
+    "--lake",
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "--threads",
+    "4"
+  ]
+}

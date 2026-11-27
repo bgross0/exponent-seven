@@ -85,6 +85,21 @@ fundamental statements retain their upstream definitions and hypotheses.
 [Fundamental build](grh-integration/precision7670/certificates435/03-fundamental.log) ·
 [Re-pinned GRH import](grh-integration/precision7670/certificates435/imported.log)
 
+**The two finite searches and the bounded classification passed on Lean 4.35.**
+The kernel checked each of the 465 main and 401 low-range prime certificates.
+The generated assemblies prove `Exp7.searchHigh : Exp7.SearchHigh` and
+`Exp7.searchLow : Exp7.SearchLow`. A fresh process imported
+`Exp7GRHBridge.Final` and printed the signatures and axiom lists for
+`Exp7.GRHIntegration.theoremA`, `theoremD`, `theoremA_fundamental`, and
+`theoremD_fundamental` in the same namespace. All four depend on exactly
+`propext`, `Classical.choice`, and `Quot.sound`. For a negative fundamental
+discriminant of an order in the statement, Theorem D characterizes exponent
+seven by membership in the list of 33 known cases through `10^32`. Theorem A
+excludes exponent seven from `3.1 × 10^20` through `10^32`.
+[Exact statements and axioms](grh-integration/precision7670/certificates435/final.declarations.log) ·
+[Final receipt](grh-integration/precision7670/certificates435/final.json) ·
+[Certificate counts, source archives and timings](grh-integration/precision7670/certificates435/verified.json)
+
 ### 2. A route to the entire range above 10^32 using existing analytic tools
 
 `Above.lean` still obtains a small split prime through `Published.ekn3`.

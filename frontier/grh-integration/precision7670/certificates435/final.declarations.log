@@ -1,0 +1,27 @@
+LFunction_eq_zero_re : DirichletLZerosOnLine
+'LFunction_eq_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor
+'Exp7.GRHIntegration.primeConductor' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.searchHigh : Exp7.SearchHigh
+'Exp7.searchHigh' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.searchLow : Exp7.SearchLow
+'Exp7.searchLow' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Exp7.GRHIntegration.theoremA : ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → Exp7.QLOW ≤ q → q ≤ Exp7.QTOP → ¬Exp7.IsExp7 q
+'Exp7.GRHIntegration.theoremA' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Exp7.GRHIntegration.theoremD : ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → q ≤ Exp7.QTOP → (Exp7.IsExp7 q ↔ q ∈ Exp7.known)
+'Exp7.GRHIntegration.theoremD' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremA_fundamental : ∀ (a b : ℤ),
+  (QuadraticAlgebra.discr a b).IsFundamentalDiscr →
+    QuadraticAlgebra.discr a b < 0 →
+      ∀ [inst : IsDomain (QuadraticAlgebra ℤ a b)],
+        ↑Exp7.QLOW ≤ -QuadraticAlgebra.discr a b →
+          -QuadraticAlgebra.discr a b ≤ ↑Exp7.QTOP → Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
+'Exp7.GRHIntegration.theoremA_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremD_fundamental : ∀ (a b : ℤ),
+  (QuadraticAlgebra.discr a b).IsFundamentalDiscr →
+    QuadraticAlgebra.discr a b < 0 →
+      ∀ [inst : IsDomain (QuadraticAlgebra ℤ a b)],
+        -QuadraticAlgebra.discr a b ≤ ↑Exp7.QTOP →
+          (Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) = 7 ↔
+            ∃ q ∈ Exp7.known, QuadraticAlgebra.discr a b = -↑q)
+'Exp7.GRHIntegration.theoremD_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]

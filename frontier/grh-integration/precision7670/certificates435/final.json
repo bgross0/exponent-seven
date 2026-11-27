@@ -1,0 +1,71 @@
+{
+  "stage": "final",
+  "target": "Exp7GRHBridge.Final",
+  "command": [
+    "/home/ben/exp7-grh-build/lean-4.35.0-linux/bin/lake",
+    "env",
+    "lean",
+    "-R",
+    "src",
+    "src/Exp7GRHBridge/Final.lean",
+    "-o",
+    "/home/ben/exp7-certs435/combined/.lake/build/lib/lean/Exp7GRHBridge/Final.pending.olean"
+  ],
+  "workspace": "/home/ben/exp7-certs435/combined",
+  "threads": 4,
+  "started_utc": "2026-11-27T00:28:19.006891+00:00",
+  "status": "COMMAND_SUCCEEDED",
+  "exit_code": 0,
+  "provenance_sha256": "e758dd07eba595f40ccce73b4536e45bb59c35d77c38f2e09b424af96a1f3ce9",
+  "declarations_log": "final.declarations.log",
+  "declaration_axioms": {
+    "LFunction_eq_zero_re": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.primeConductor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.searchHigh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.searchLow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremA": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremA_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.GRHIntegration.theoremD_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "declarations_sha256": "04a744f92b0d00ec6e5c57bb9c21fddc45a165e80983298ee06794860d2817ec",
+  "olean_sha256": "c70b437e34686284f06159b3f028d2fef9e5ab5420921f80535955c9b0734639",
+  "completed_utc": "2026-11-27T00:28:30.461815+00:00",
+  "elapsed_seconds": 11.455,
+  "child_user_cpu_seconds": 5.037,
+  "child_system_cpu_seconds": 4.215,
+  "largest_child_max_rss_kib": 8187532,
+  "log_sha256": "0f8c1bf9e53d1eab3d40d4028e9f6fd01ceaf677a42f937eba956f2c5f7dde1d"
+}

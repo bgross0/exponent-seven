@@ -1,0 +1,16 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "Exp7Lean/SieveLow/All.lean",
+    "-o",
+    "/home/ben/exp7-certs435/combined/.lake/build/lib/lean/Exp7Lean/SieveLow/All.pending.olean"
+  ],
+  "exit_code": 0,
+  "primes": 401,
+  "elapsed_seconds": 3.433,
+  "source_sha256": "929cc3ac205603385c40ca7551a823a429ce252b3e8717e12f4090211ebec3ed",
+  "log_sha256": "3310bd4a7c569a65850a30de20f95285abe23ef4ddee11d08d06d0bb2b3bf69e",
+  "olean_sha256": "49cc6ca0f59cfc7481557e518e9dd7df393bfbfbf4ab70d2e0a3f27c88175fdf"
+}

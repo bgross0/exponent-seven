@@ -1,5 +1,13 @@
 # Importing the compact Dirichlet-GRH proof into exponent-seven
 
+At exponent-seven `aae4b20`, the Precision verified all 866 per-prime
+certificates, imported both search proofs, and compiled the four bounded
+classification theorems on Lean 4.35. The complete prime-conductor and
+negative-fundamental-discriminant signatures and their axiom lists are
+available in the [fresh Lean output](precision7670/certificates435/final.declarations.log).
+The [verification summary](precision7670/certificates435/verified.json)
+records the source archives, coverage, and timings.
+
 The Precision 7670 compiled `Main` and `Exp7GRHBridge.Imported` on 26 November
 2026. Lean reported exactly `propext`, `Classical.choice`, and `Quot.sound`
 for both `LFunction_eq_zero_re` and `Exp7.GRHIntegration.primeConductor`.

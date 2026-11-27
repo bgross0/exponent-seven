@@ -1,0 +1,48 @@
+{
+  "project": "aae4b2012f80bcb5cbe7b30c13debf0704f07266",
+  "certificate_jobs": 4,
+  "lean_threads_per_prime": 1,
+  "families": {
+    "searchHigh": {
+      "primes": 465,
+      "accepted_standard_axioms": true,
+      "batch_started_utc": "2026-11-26T21:08:26+00:00",
+      "assembly_completed_utc": "2026-11-26T22:07:48.162326+00:00",
+      "launch_through_assembly_seconds": 3562.16,
+      "core_hours_user": 3.5524,
+      "slowest_seconds": 87.75,
+      "highest_process_max_rss_kib": 8603092,
+      "assembly_seconds": 2.959,
+      "sources": {
+        "file": "Sieve-sources.tar.zst",
+        "bytes": 1204368,
+        "sha256": "3b4b924264c69adc59bbcf9fbe8eeaf14be774b8b2a18df289b8864ac8d59cb5"
+      }
+    },
+    "searchLow": {
+      "primes": 401,
+      "accepted_standard_axioms": true,
+      "batch_started_utc": "2026-11-26T22:07:48+00:00",
+      "assembly_completed_utc": "2026-11-27T00:27:55.124727+00:00",
+      "launch_through_assembly_seconds": 8407.12,
+      "core_hours_user": 8.8088,
+      "slowest_seconds": 436.88,
+      "highest_process_max_rss_kib": 12411848,
+      "assembly_seconds": 3.433,
+      "sources": {
+        "file": "SieveLow-sources.tar.zst",
+        "bytes": 32266780,
+        "sha256": "7c329d3de67bcc0b210dd55475c2abc83efe1bc7fbfe452343200cb5b12d4c37"
+      }
+    }
+  },
+  "prime_logs": {
+    "file": "prime-logs.tar.zst",
+    "bytes": 69512,
+    "sha256": "d5abdd5c15bf9f5c0b0e0cb77e0dc00cdb07dd3caeba44c4996aa30a7934b47f"
+  },
+  "final_receipt": "final.json",
+  "final_declarations": "final.declarations.log",
+  "final_seconds": 11.455,
+  "min_sampled_available_ram_gib": 3.58
+}
