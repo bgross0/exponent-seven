@@ -1,0 +1,73 @@
+{
+  "machine": "precision7670",
+  "started_utc": "2026-11-27T04:42:16.826958+00:00",
+  "toolchain": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "source_sha256": {
+    "DyadicArithmetic.lean": "050550262cec4ef349c4dd3e85a1b09b45223757edcf7761e7e98a7711ba5fd5",
+    "EvenLoss.lean": "f2de19ef4402969d969e4fd758590c1f29faa78ed4cd13d39753aca16711edc8",
+    "LogWeight.lean": "90aa005037dfacb116e89f92ae0222f48546281a9fe121ec85dab698136501f4",
+    "OddLoss.lean": "06053df5871b1c9100948d915789a29dbf27c395228e36e5cdd5e8bf2d7e2db8",
+    "PositivePrimes.lean": "ecb5f37a87265cc32bbc3823bf425e630b988a51206b65e01875635a940f9316",
+    "WeightedComparison.lean": "5168895070e5b85815138fe5bc44044e87833587ee720740a0949e0f6f1bac63"
+  },
+  "declarations_sha256": "a6ebfc880fb7382a656c595baadb470c911016e2850ba129b8c9c71ead5568f9",
+  "LEAN_NUM_THREADS": 4,
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "Exp7Lean.Tail.WeightedComparison"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 5.589,
+      "log": "lean437-build.log",
+      "log_sha256": "32ec45827b7a0c2d3e6f89370edf5ba4e4ef26d32e5b091d6ca5166c89ed0058"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/home/ben/GitHub/exponent-seven-tail/frontier/chebyshev-sums/Declarations.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.098,
+      "log": "lean437-declarations.log",
+      "log_sha256": "69b21156a2c9b9b7b46c45d865f6552eb686c5c306dc836020ad717adf58b3d9"
+    }
+  ],
+  "audited_theorems": {
+    "Exp7.ChebyshevTail.mangoldt_div_sum_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.even_loss_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.odd_loss_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.positive_primes_ge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.weightedPrimeBalance_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.ChebyshevTail.exists_cutoff_above_bridge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
+}

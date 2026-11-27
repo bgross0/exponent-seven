@@ -1,0 +1,43 @@
+⚠ [2865/2870] Built Exp7Lean.Tail.LogWeight (1.8s)
+warning: src/Exp7Lean/Tail/LogWeight.lean: imports `Mathlib.NumberTheory.Chebyshev` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/LogWeight.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2866/2870] Built Exp7Lean.Tail.EvenLoss (1.0s)
+warning: src/Exp7Lean/Tail/EvenLoss.lean: imports `Mathlib.NumberTheory.Chebyshev` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/EvenLoss.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [2867/2870] Built Exp7Lean.Tail.DyadicArithmetic (3.5s)
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Basic.Real.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Tactic.GCongr` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Tactic.Push` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean: imports `Mathlib.Data.Nat.Log` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean:172:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean:175:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean:178:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean:179:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean:181:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: src/Exp7Lean/Tail/DyadicArithmetic.lean:182:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+info: src/Exp7Lean/Tail/DyadicArithmetic.lean:262:0: 'Exp7.ChebyshevTailArithmetic.haarLowerBound_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: src/Exp7Lean/Tail/DyadicArithmetic.lean:263:0: 'Exp7.ChebyshevTailArithmetic.exists_dyadic_index_of_mod_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [2868/2870] Built Exp7Lean.Tail.OddLoss (1.7s)
+✔ [2869/2870] Built Exp7Lean.Tail.PositivePrimes (2.3s)
+✔ [2870/2870] Built Exp7Lean.Tail.WeightedComparison (1.8s)
+Build completed successfully (2870 jobs).
