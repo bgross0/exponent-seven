@@ -1,12 +1,24 @@
 # Lean formalization
 
-A Lean 4 / Mathlib formalization of Theorems A and D. Both are proved with GRH for the quadratic characters of prime conductor as their only hypothesis; the two computer searches are checked in Lean's kernel. The one input that is still assumed is the published split-prime bound used above `10^32` (see `Above.lean`), which Theorems A and D do not use.
+A Lean 4 / Mathlib formalization of Theorems A, D and E. All three are proved with GRH for the quadratic characters of prime conductor as their only hypothesis. The two computer searches are checked in Lean's kernel, and no published bound is assumed.
 
-The optional finite bridge excludes exponent seven for negative fundamental
-discriminants with `10^32 ≤ |D| ≤ 2^135` under the same GRH input. Its single
-64-cell row has a kernel-certified margin of at least `7.52277024130489382120`.
-Build it with `lake build Exp7Lean.Rows.Bridge30000` from this directory.
-[Proof and verification](../frontier/bridge30000/README.md)
+Theorem E classifies every negative fundamental discriminant:
+
+```lean
+theorem Exp7.ChebyshevTail.classification_fundamental (hGRH : GRHPrimeConductor)
+    (hS : SearchHigh) (hSL : SearchLow) (a b : ℤ)
+    (hfund : Int.IsFundamentalDiscr (QuadraticAlgebra.discr a b))
+    (hneg : QuadraticAlgebra.discr a b < 0) [IsDomain (QuadraticAlgebra ℤ a b)] :
+    Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) = 7 ↔
+      ∃ q ∈ known, QuadraticAlgebra.discr a b = -(q : ℤ)
+```
+
+`SearchHigh` and `SearchLow` are proved (`Exp7.searchHigh`, `Exp7.searchLow`), so GRH is the only remaining hypothesis. The proof above `10^32` has two parts:
+
+- **`10^32 ≤ q ≤ 2^135`.** One 64-cell row at `X = 30000`, with a kernel-certified margin of at least `7.52277024130489382120` (`Rows/Bridge30000.lean`). [Proof and verification](../frontier/bridge30000/README.md)
+- **`q > 2^135`.** The two-cell row `[1, -1]` at a dyadic `X = 2^n`, with explicit Chebyshev estimates (`Tail/`). [Chebyshev sums](../frontier/chebyshev-sums/README.md) · [Tail](../frontier/haar-tail/README.md)
+
+In a Lean 4.35 workspace that builds `grh-compact` at `lsernau/grh-lean@72fead1`, GRH is supplied by the imported theorem `LFunction_eq_zero_re`. There `Exp7.GRHIntegration.theoremD_fundamental_global` has only the hypotheses on the quadratic order and its discriminant. Its axioms are `propext`, `Classical.choice` and `Quot.sound` ([adapter](../frontier/haar-tail/Global.lean), [integration](../frontier/grh-integration/README.md)). That workspace applies compatibility patches to this project and has been built on one machine.
 
 ## Status of each step
 
@@ -21,7 +33,11 @@ Build it with `lake build Exp7Lean.Rows.Bridge30000` from this directory.
 | The 33 fields have exponent 7; the class-number-one fields do not | **proved** (`ClassGroup/Results.lean`) |
 | No other prime below `10^5` has exponent 7 | **proved**, kernel-checked table (`Witness/Direct.lean`) |
 | The 6608 survivors of the low search: only `118843` has exponent 7 | **proved**, kernel-checked table (`Witness/Survivors.lean`) |
-| Bound above `10^32` | **proved** (`Above.lean`); the split-prime bound of EKN Theorem 3 is assumed |
+| Exclusion for `10^32 ≤ q ≤ 2^135` | **proved**, kernel-checked row margin (`Rows/Bridge30000.lean`) |
+| Exclusion for `q > 2^135` | **proved** (`Tail/Exclusion.lean`): Chebyshev estimates for the inert sum of the row `[1, -1]` (`Tail/PositivePrimes.lean`, `OddLoss.lean`, `EvenLoss.lean`, `WeightedComparison.lean`, `HaarInert.lean`) and `J ≤ 4` (`Tail/HaarJBound.lean`) |
+| Theorem E, all negative fundamental discriminants, GRH as the only hypothesis | **proved** (`Tail/Exclusion.lean`, `classification_prime`, `classification_fundamental`) |
+| Theorem E with GRH and both searches supplied | **proved** in the Lean 4.35 combined workspace (`../frontier/haar-tail/Global.lean`, `theoremD_fundamental_global`) |
+| Earlier route above `10^32` | `Above.lean` proves the bound from EKN Theorem 3, which it assumes; Theorem E does not use it |
 | The explicit-formula inequality `ExplicitFormulaBound` | **proved** (`Analytic/EF/`, about 4,900 lines: damped explicit formula, analytic continuation in the damping parameter, Hadamard partial fractions from Jensen's formula) |
 | Fixed-point numerics for `log`, `√`, `exp`, `π`, `γ` and the primes below 6400 | **proved** (`Numerics/`) |
 | Numerical margins of the 175 rows (`RowMargins`) | **proved**, kernel-checked (`Rows/`): a verified fixed-point evaluator with soundness theorem `rowCheck_sound`, about 0.5 s of kernel time per row |
@@ -37,7 +53,7 @@ Build it with `lake build Exp7Lean.Rows.Bridge30000` from this directory.
 | Completeness of the low-range search (`SearchLow`) | **proved**, kernel-checked (`SieveLow/All.lean`, `Exp7.searchLow`): 401 per-prime certificates `SieveLow/P<p>.lean`, about 8 core-hours of `decide +kernel` |
 | Theorem D with GRH as its only hypothesis | **proved** (`Final6.lean`, `theoremD_GRH`, `theoremD_fundamental_GRH`) |
 
-Theorems A and D are fully formalized: their only hypothesis is GRH (`Final5.lean`, `Final6.lean`).
+Theorems A and D, the bounded results, are fully formalized with GRH as their only hypothesis (`Final5.lean`, `Final6.lean`):
 
 ```lean
 theorem theoremA_fundamental_GRH (hGRH : GRHPrimeConductor) (a b : ℤ)
@@ -82,7 +98,7 @@ theorem theoremA_fundamental (hGRH : GRHPrimeConductor) (hS : SearchHigh) (a b :
     Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
 ```
 
-`GRHPrimeConductor` is the hypothesis of the theorem itself (GRH for the characters of prime conductor). The other two hypotheses are what remains to be formalized: completeness of the two searches (`SieveKernel.lean` has the packed-bitset primitives for this). `EF.explicitFormulaBound : ExplicitFormulaBound` has no hypotheses. `isExp7_of_known_all : ∀ q ∈ known, IsExp7 q` has no hypotheses.
+`GRHPrimeConductor` is the hypothesis of the theorem itself (GRH for the characters of prime conductor). `SearchHigh` and `SearchLow` are proved in `Sieve/All.lean` and `SieveLow/All.lean`; `Final5.lean` and `Final6.lean` apply them. `EF.explicitFormulaBound : ExplicitFormulaBound` and `isExp7_of_known_all : ∀ q ∈ known, IsExp7 q` have no hypotheses.
 
 The headline statements are in `Final.lean`, for `IsExp7 q := Monoid.exponent (ClassGroup (OK q)) = 7`, where `OK q = ℤ[ω]`, `ω² = ω − (q+1)/4`, is the ring of integers of `ℚ(√-q)`:
 
@@ -135,7 +151,7 @@ Lean checks all of the following:
 
 ## What is assumed (not formalized)
 
-> This section describes the original abstract interface. Most of these inputs are now proved; see the status table at the top. The final theorems in `Final4.lean` assume only `GRHPrimeConductor`, `SearchHigh` and (for Theorem D) `SearchLow`.
+> This section describes the original abstract interface, kept for reference. Every input in the table is now proved, except `Published.ekn3` and `Published.ekn1`, which Theorems A, D and E do not use; see the status table at the top.
 
 These are the fields of `Inputs` and `Published`. Each is a precise statement of what the note establishes outside Lean, or imports from the literature.
 
@@ -152,7 +168,7 @@ These are the fields of `Inputs` and `Published`. Each is a precise statement of
 | `LowInputs.searchLow` | for `3 ≤ p < 2760` and `q < 3.1·10^20`, the only prime survivor with exponent 7 is `118843` | `lowrange/lowsearch.c` and `lowrange/classify.py` |
 | `LowInputs.exp118843` | `ℚ(√-118843)` has exponent 7 | class group computation |
 
-`Splits q p` is defined by the Dedekind–Kummer criterion: `2` splits iff `q ≡ 7 (mod 8)`, and an odd `p` splits iff the Jacobi symbol `(-q/p)` is 1. In `Main.lean`, `Above.lean` and `Low.lean`, `IsExp7` is a parameter, so those theorems hold for any predicate that satisfies the inputs; `Final.lean` instantiates it with Mathlib's `ClassGroup`. The reduction from fundamental discriminants `D` to primes `q` (Step 0, genus theory) is also not formalized.
+`Splits q p` is defined by the Dedekind–Kummer criterion: `2` splits iff `q ≡ 7 (mod 8)`, and an odd `p` splits iff the Jacobi symbol `(-q/p)` is 1. In `Main.lean`, `Above.lean` and `Low.lean`, `IsExp7` is a parameter, so those theorems hold for any predicate that satisfies the inputs; `Final.lean` instantiates it with Mathlib's `ClassGroup`. The reduction from fundamental discriminants `D` to primes `q` (Step 0, genus theory) is proved in `Genus/Main.lean`.
 
 The certificate rows in `Basic.lean` and `Low.lean` are generated from `../certificate.json` and `../lowrange/certificate_full.json`. As a check that the search hypotheses state exactly what was computed, `Qlo p` evaluated in Lean equals the lower bound in the production logs for all 465 primes, and `QloFull p` equals the lower bound in `lowrange/low_run.log` for all 401 primes.
 
@@ -163,10 +179,14 @@ The certificate rows in `Basic.lean` and `Low.lean` are generated from `../certi
     lake exe cache get      # prebuilt Mathlib
     lake build
 
-The toolchain is Lean `v4.37.0-rc1` with the matching Mathlib.
+The toolchain is Lean `v4.37.0-rc1` with the matching Mathlib. To check Theorem E above `10^32`:
 
-## Next steps toward a full formalization
+    lake build Exp7Lean.Rows.Bridge30000 Exp7Lean.Tail.Exclusion
 
-1. `cert`: the explicit formula for `L(s, χ)` is not in Mathlib. That is the main gap.
-2. Step 0: genus theory, in the same setting as `Step1.lean`. The class-group computations (`direct`, `exp118843`) need a bound on generators of the class group.
-3. `search`: about 10^15 candidates are beyond direct kernel checking. A verified sieve with a small checkable certificate would be needed.
+On the Precision, the two versions printed identical types for `normEq_classGroup`, `EF.explicitFormulaBound`, and the tail declarations `excludes_above_bridge`, `classification_prime` and `classification_fundamental`. The same explicit fundamental-discriminant statement typechecked in both environments.
+
+## What is left
+
+1. A person should read the statement of Theorem E and the definitions it uses: `GRHPrimeConductor`, `known`, and Mathlib's `ClassGroup`, `QuadraticAlgebra` and `Int.IsFundamentalDiscr`.
+2. Build the Lean 4.35 combined workspace on a second machine.
+3. Formalize the count of 40 orders of Corollary B (ARSX) and Corollary C, if wanted.
