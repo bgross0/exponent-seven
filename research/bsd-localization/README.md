@@ -1,7 +1,9 @@
-# Rank-two BSD: tame traces and an exact elliptic projector
+# Rank-two BSD: reduced analytic input and de Rham preparation
 
-Research branch: `bsd-tame-trace-computation`, continuing
-`bsd-finite-log-coordinate` commit `29eaf5a02bff8907b9914cdf71221da8bb6e6896`.
+Research branch: `bsd-de-rham-preparation`, continuing
+`bsd-tame-trace-computation` commit `0667f5e23fa33a4cfc09ccd80abaedc94c9d5297`.
+The latter continued `bsd-finite-log-coordinate` commit
+`29eaf5a02bff8907b9914cdf71221da8bb6e6896`.
 That branch continued `bsd-derived-localization` at
 `46ca3323b6b8f10f2334925220a5c75a487a2bfb`.
 The preceding audit commit is `12c58ddf46ebd89141d4392b519ca7ae533e67ea`.
@@ -21,12 +23,15 @@ input, extracts further exact consequences, and develops a specific global
 class to investigate next. It does not redo the 140-class CM construction.
 The original p=29 arithmetic and projection work remains available below.
 
-This continuation computes the actual tame traces of the CM weight jets
-and certifies a full two-dimensional elliptic Hecke projector with an
-explicit one-digit precision bound. It follows the earlier finite-coordinate,
-crystalline, and cyclotomic-height work. The remaining computational step
-is proper de Rham reduction of the traced inputs; the reflected class's
-finite logarithm has not yet been evaluated.
+This continuation reduces the analytic computation to one representative
+over a cubic coefficient field, proves that its full elliptic constant
+and first weight coefficients vanish, and computes the representative
+through q6825 at twelve 5-adic digits. It supplies a two-slope coordinate
+calibration, an exact residue filter, and bounded Sage jobs to construct
+the remaining finite geometry. The remaining computational step is proper
+de Rham reduction with a certified input-tail bound. The reflected class's
+finite logarithm has not yet been evaluated, and its arithmetic comparison
+with this analytic vector remains a separate theorem to prove.
 
 ## What is completed
 
@@ -53,12 +58,114 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Exact elliptic projector | Complete rank-two E factor; polynomial in T2 and T3 with at most one 5-adic digit of loss | [Witness and checker](elliptic_projection/README.md); proper de Rham reduction of the input remains separate |
 | Low-weight interpolation | Fourteen classical CM weights suffice for a second coefficient modulo 5^12 in an integral fixed module | [Proof and exact weights](tame_trace_audit/README.md); reduction and normalization denominators must be added |
 | Global obstruction criterion | The reflected logarithm is nonzero exactly when the augmentation-localized global H2 has length one, under the listed identifications | [Conditional arithmetic reduction](ambient_arithmetic/README.md); the actual first global Bockstein has not been evaluated |
+| Analytic target reduction | Second-factor depletion is cohomologically invisible; the normalized elliptic vector is even in weight and fixed by coefficient conjugation | [Proof](analytic_target_audit/README.md) and [finite identities](weight_reflection/README.md); the entire first vector coefficient is zero |
+| Larger executable input | One cubic-field representative through q6825 and weight order two modulo 5^12; generated in 16.896 seconds | [Data, algorithms, and measured benchmarks](trace_scaling/README.md); raw series, not yet projected de Rham coordinates |
+| Two-slope calibration | Explicit invertible conversion from the two p-stabilizations to omega, eta modulo 5^7 | [Calibration](de_rham_strategy/README.md); the U and F slope labels are interchanged |
+| Proper residue filter | U5^2-1 kills the residue quotient; its elliptic inverse is -(F+2I)/9 | [Proof and exact matrix check](residue_filter/README.md); zero correction loss in an F-stable integral lattice |
+| Finite geometry handoff | A 1333-dimensional six-digit Katz gate and an exact 195-dimensional pole-order core | [Executable Sage jobs and scope](de_rham_strategy/README.md); Sage-dependent jobs have not yet run |
 
 These additions contain mathematical proofs and exact Python calculations.
 They are **not additional Lean kernel-checked theorems**. The supplied
 package has its own formal layer and verification receipts. The new finite
 matrix examples are explicitly abstract algebraic models, not elliptic
 curves or counterexamples to BSD.
+
+## Current research frontier and next executable job
+
+The new [analytic audit](analytic_target_audit/README.md) removes redundant
+inputs before the expensive geometry. The eight saved raw variants do not
+have identical q-series, but have the same proper elliptic output after
+the prescribed identifications. The projected output is fixed by
+sigma(zeta7)=zeta7^-1. It can therefore be computed from one averaged
+representative over
+
+\[
+ L^+=\mathbf Q_5(\xi),\qquad
+ \xi=\zeta_7+\zeta_7^{-1},\qquad
+ \xi^3+\xi^2-2\xi-1=0.
+\]
+
+This is a sixteen-fold reduction in scalar input storage: eight inputs
+over a degree-six field become one input over a degree-three field. It is
+not a measured sixteen-fold speedup for the whole project. Both elliptic
+de Rham directions are retained.
+
+If s=k-1 and L(s) is the properly normalized elliptic projection, then
+
+\[
+ \langle389\rangle^{s/2}L(s)
+ \quad\text{is even in }s,\qquad L(0)=L'(0)=0.
+\]
+
+The base zero uses Darmon--Lauder's proved Theorem 3.1 and L(E,1)=0;
+the first zero follows from the weight symmetry. No conjectural derivative
+identity is used for those zeros. The desired remaining analytic datum is
+the vector coefficient L2=[W^2]L(W), with W=6^s-1. The stored second jet is
+a Taylor coefficient, not the second derivative (which is twice it).
+
+### The input is ready
+
+[cubic-trace-6825-12.json.gz](trace_scaling/cubic-trace-6825-12.json.gz)
+contains all three Taylor orders through q6825 modulo 5^12. Generation
+took 16.896 seconds and about 129 MiB peak resident memory in this
+environment. The compressed file is 224893 bytes. The generator only
+computes the coefficients consumed by the trace, shares the weight-jet
+products, and uses exact packed-integer convolution. It avoids generating
+all discarded variants. Independent full-precision and lower-precision
+overlap checks pass; details and source hashes are in the
+[benchmark report](trace_scaling/README.md).
+
+The geometry is independent of the cubic coefficients. Build it once over
+the base 5-adic ring and apply it to the three scalar columns. The next
+job on a node with Sage is:
+
+```sh
+timeout 45m sage -python research/bsd-localization/de_rham_strategy/backend_probe.py --mode katz --digits 6 --output de-rham-katz6
+```
+
+This uses Sage's documented higher_level_UpGj implementation. It exports
+the finite U5 matrix, its q-expansion basis, both classical elliptic
+p-stabilizations, and runtime/source provenance. It checks the finite
+matrix identities. **This Sage job has not run here.** Its subsequent
+dual-eigenvector extraction and the infinite input-tail estimate are not
+implemented by the probe. Six matrix digits do not certify six final
+vector digits. The precise precision contract is in the
+[backend note](de_rham_strategy/README.md).
+
+A second node can construct the smaller exact algebraic core independently:
+
+```sh
+timeout 45m sage -python research/bsd-localization/de_rham_strategy/backend_probe.py --mode pole-core --output de-rham-pole-core
+```
+
+This builds the quotient of weight-ten numerators by 98 derivative
+relations, leaving dimension 195. Its classical q-expansion bound proves
+those finite numerator identities; it does not truncate the analytic
+input automatically. A derived cup-product/weight-twelve-trace formula
+offers a route to extracting the E component without constructing every
+ambient Hecke operator, but its numerical implementation remains pending.
+
+### Two obligations that computation alone will not remove
+
+1. **An integral tail bound.** The CM identity
+   d^-s(g_s^[5])=h_-s^[5] rewrites the difficult inverse-Bol expression as a
+   product of ordinary CM-family sections. This specializes the remaining
+   problem to their norm on a fixed strict neighborhood and the growth of
+   their weight jets. Analytic overconvergence and integral q-coefficients
+   alone do not supply the advertised Katz-lattice precision. See the
+   [radius audit](analytic_target_audit/RADIUS_AND_RESIDUES.md).
+2. **A leading-order arithmetic comparison.** The analytic vector must be
+   matched to the actual CH localization and its finite-log regulator.
+   Because both lower vector coefficients vanish, this stage needs only
+   the constant comparison matrix, the linear parameter scale, and the
+   finite-log normalization at leading order. A nonzero second analytic
+   vector by itself does not prove a nonzero reflected logarithm. The
+   [target audit](analytic_target_audit/README.md) proves the simplification
+   and retains an exact insufficiency model.
+
+The global Bockstein criterion below is an independent arithmetic route
+to the same missing nonvanishing. It remains worth pursuing in parallel;
+the completed cyclotomic height concerns a different deformation direction.
 
 ## The new finite-coordinate target
 
@@ -451,10 +558,11 @@ To write a fresh receipt:
 python research/bsd-localization/verify_all.py --receipt research/bsd-localization/verification.json
 ```
 
-The runner checks the original arithmetic, p5, formal-log, reflection,
-exterior-algebra, finite-coordinate, crystalline, height, ambient-jet and
-CM-weight-jet, tame-trace, interpolation and exact Hecke-projector
-certificates against saved data. The ambient algebra and Hecke projector
+The runner performs 25 checks covering the original arithmetic, p5,
+formal-log, reflection, exterior-algebra, finite-coordinate, crystalline,
+height, ambient-jet, CM-weight-jet, tame-trace, interpolation, exact Hecke
+projector, analytic-target identities, cubic descent, residue filter,
+two-slope calibration, and the larger trace certificates. The ambient algebra and Hecke projector
 use SymPy 1.14.0; the other scripts use Python's standard library.
 The receipt records exit status, timing, and hashes of sources and
 compressed data. This command does not rebuild or reverify the other

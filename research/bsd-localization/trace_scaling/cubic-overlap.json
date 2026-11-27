@@ -1,0 +1,10 @@
+{
+  "comparison_modulus": 3125,
+  "comparison_q_bound": 128,
+  "cubic_vector_coefficients_checked": 387,
+  "independent_q128_reducer": "../weight_reflection/reduced_trace_inputs.json",
+  "independent_q128_reducer_sha256": "f6813a3e26e185e0ea5e190f857451c88028c9b5a324609df25421cd0fb8f95c",
+  "large_gzip_sha256": "bbee40091bf8f13e0b89ace6381fb323bb03e62a1c6125a1f5948368f7361d19",
+  "scalar_coefficients_checked": 1161,
+  "status": "all checks passed"
+}

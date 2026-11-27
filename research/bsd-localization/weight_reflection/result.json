@@ -1,0 +1,72 @@
+{
+  "cubic_input_reduction": {
+    "coefficient_field_degree": 3,
+    "cubic_polynomial_irreducible_mod5": true,
+    "division_by_two_is_5_adic_unit": true,
+    "file": "reduced_trace_inputs.json",
+    "number_of_input_families": 1,
+    "original_eight_input_scalar_residues": 18576,
+    "q_bound": 128,
+    "representation_size_reduction_factor": 16,
+    "scalar_residues": 1161,
+    "taylor_orders": [
+      0,
+      1,
+      2
+    ]
+  },
+  "exact_fricke": {
+    "a389": 1,
+    "fricke_matrix_involutive": true,
+    "fricke_on_full_E_factor": -1,
+    "modular_curve_level": 389,
+    "singular_fiber_point_count_mod389": 389,
+    "verified_all_manin_relations": 780
+  },
+  "identities": {
+    "depletion_difference": "U5(Xi_single-Xi_both)=0",
+    "normalized_projected_evenness": "C(s)=389^(s/2)*Pi_E([A_s]); C(-s)=C(s)",
+    "opposite_embedding": "sigma(zeta7)=zeta7^(-1)",
+    "raw_both_depleted_reflection": "A(iota(W))=(1+W)^nu389*B(W)",
+    "weight_involution": "iota(W)=(1+W)^(-1)-1",
+    "zero_base_consequence": "Pi_E([A_0])=0 implies the entire first projected weight coefficient is zero"
+  },
+  "raw": {
+    "U5_depletion_vector_identities": 9840,
+    "bound": 4096,
+    "digits": 12,
+    "embedding_conjugation_vector_identities": 49164,
+    "first_nonzero_depletion_difference_q_index": {
+      "2": {
+        "V389_g_depleted_times_h": 394,
+        "g_depleted_times_V389_h": 1946
+      },
+      "4": {
+        "V389_g_depleted_times_h": 394,
+        "g_depleted_times_V389_h": 1946
+      }
+    },
+    "nu389_modulus": 42504617,
+    "reflection_vector_identities": 24582
+  },
+  "scope": "Exact finite arithmetic and exact elliptic Fricke sign. Analytic reflection, U5-kernel exactness and base-zero hypotheses are justified in the accompanying mathematical notes, not inferred from finite q-expansions. No second projected coefficient or nonzero global logarithm is computed.",
+  "status": "PASS",
+  "traced": {
+    "U5_depletion_vector_identities": 312,
+    "bound": 128,
+    "digits": 5,
+    "embedding_conjugation_vector_identities": 1548,
+    "first_nonzero_depletion_difference_q_index": {
+      "2": {
+        "V389_g_depleted_times_h": 9,
+        "g_depleted_times_V389_h": 28
+      },
+      "4": {
+        "V389_g_depleted_times_h": 9,
+        "g_depleted_times_V389_h": 28
+      }
+    },
+    "nu389_modulus": 1492,
+    "reflection_vector_identities": 774
+  }
+}

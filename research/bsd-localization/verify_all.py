@@ -41,6 +41,15 @@ JOBS = [
     ("tame_trace_and_interpolation_audit", "tame_trace_audit/check_trace_audit.py",
      ["--check", "tame_trace_audit/result.json"], None),
     ("exact_elliptic_hecke_projector", "elliptic_projection/check_projector.py", ["--check"], None),
+    ("analytic_target_algebra", "analytic_target_audit/check_target.py",
+     ["--check", "analytic_target_audit/result.json"], None),
+    ("weight_reflection_and_cubic_descent", "weight_reflection/check_reflection.py", ["--check"], None),
+    ("proper_cohomology_residue_filter", "residue_filter/check_filter.py", ["--check"], None),
+    ("two_slope_calibration_and_geometry_dimensions", "de_rham_strategy/check_strategy.py", ["--check"], None),
+    ("selected_trace_2048_12", "trace_scaling/selected_trace.py",
+     ["--bound", "2048", "--digits", "12", "--output", "trace_scaling/traces-2048-12.json.gz", "--check"], None),
+    ("cubic_trace_6825_12", "trace_scaling/cubic_trace.py", ["--check"], None),
+    ("independent_cubic_trace_overlap", "trace_scaling/check_cubic_overlap.py", ["--check"], None),
 ]
 
 
@@ -76,7 +85,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, actual tame-trace jets, exact elliptic Hecke projection, low-weight interpolation, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner."}
+               "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, actual tame-trace jets, exact elliptic Hecke projection, low-weight interpolation, weight reflection and cubic descent identities, q6825 cubic trace at twelve digits, two-slope coordinate calibration, residue-filter arithmetic, classical geometry dimensions, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. The Sage backend geometry jobs have not run in this environment. No new Lean verification, upstream CM reconstruction, overconvergent input-tail bound, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

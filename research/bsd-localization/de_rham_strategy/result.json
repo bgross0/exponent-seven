@@ -1,0 +1,112 @@
+{
+  "Fomega_over5": [
+    57014,
+    55337
+  ],
+  "U_matrix": [
+    [
+      27427,
+      71154
+    ],
+    [
+      35815,
+      50695
+    ]
+  ],
+  "alpha": 15407,
+  "backend_executed_here": false,
+  "basis": [
+    "omega=dx/(2y+1)",
+    "eta=x*omega"
+  ],
+  "beta": 62715,
+  "calibration_digits": 7,
+  "checks": {
+    "F_eigenbasis_labels_swapped": true,
+    "U_eigenbasis": true,
+    "U_equals_5F_inverse": true,
+    "conversion_determinant_unit": true,
+    "cup_trace_factor_1_over_576": true,
+    "inverse_both_orders": true,
+    "pole_core_dimension_195": true
+  },
+  "classical_dimensions": {
+    "10": 293,
+    "14": 423,
+    "2": 33,
+    "4": 99,
+    "42": 1333,
+    "6": 163,
+    "78": 2503
+  },
+  "conversion_additional_digits_lost": 0,
+  "conversion_determinant": 70296,
+  "frobenius_source_sha256": "5dede4b7010fde0eac60a0f385d8de72ae5a0af488ba58cbd154bcb5627e9112",
+  "inverse_conversion": [
+    [
+      61021,
+      17007
+    ],
+    [
+      17105,
+      28421
+    ]
+  ],
+  "katz_job_parameters": [
+    {
+      "basis_working_digits": 3,
+      "katz_n": 4,
+      "matrix_digits": 2,
+      "matrix_dimension": 553,
+      "q_precision_exclusive": 2925,
+      "safe_trace_largest_coefficient": 2925,
+      "sturm_bound": 585,
+      "top_classical_weight": 18
+    },
+    {
+      "basis_working_digits": 4,
+      "katz_n": 6,
+      "matrix_digits": 3,
+      "matrix_dimension": 813,
+      "q_precision_exclusive": 4225,
+      "safe_trace_largest_coefficient": 4225,
+      "sturm_bound": 845,
+      "top_classical_weight": 26
+    },
+    {
+      "basis_working_digits": 8,
+      "katz_n": 10,
+      "matrix_digits": 6,
+      "matrix_dimension": 1333,
+      "q_precision_exclusive": 6825,
+      "safe_trace_largest_coefficient": 6825,
+      "sturm_bound": 1365,
+      "top_classical_weight": 42
+    },
+    {
+      "basis_working_digits": 16,
+      "katz_n": 19,
+      "matrix_digits": 12,
+      "matrix_dimension": 2503,
+      "q_precision_exclusive": 12675,
+      "safe_trace_largest_coefficient": 12675,
+      "sturm_bound": 2535,
+      "top_classical_weight": 78
+    }
+  ],
+  "modulus": 78125,
+  "normalization": "Identify the elliptic modular differential [f] with omega.",
+  "scope": "Calibration and finite model only; no projected CM jet computed.",
+  "source_digits": 8,
+  "stabilizations_to_omega_eta_columns": [
+    [
+      70116,
+      22803
+    ],
+    [
+      8795,
+      966
+    ]
+  ],
+  "status": "passed_exact_algebra_checks"
+}

@@ -1,0 +1,393 @@
+{
+  "checks": [
+    {
+      "check": "eligibility",
+      "command": [
+        "python",
+        "eligibility/arithmetic/check_eligibility.py",
+        "--check",
+        "eligibility/arithmetic/eligibility.json"
+      ],
+      "elapsed_seconds": 0.060613,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "twist_interval",
+      "command": [
+        "python",
+        "eligibility/arithmetic/check_twist_lvalue.py",
+        "--check",
+        "eligibility/arithmetic/twist-lvalue.json"
+      ],
+      "elapsed_seconds": 1.705704,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "localization_and_logic",
+      "command": [
+        "python",
+        "logic/verify_logic.py"
+      ],
+      "elapsed_seconds": 0.043749,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cyclotomic_fixtures",
+      "command": [
+        "python",
+        "logic/c7_period.py"
+      ],
+      "elapsed_seconds": 0.037092,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "ring_class_projection",
+      "command": [
+        "python",
+        "projection/ring_class_projection.py"
+      ],
+      "elapsed_seconds": 0.140897,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "p5_refinements",
+      "command": [
+        "python",
+        "p5/check_refinements.py",
+        "--check",
+        "p5/result.json"
+      ],
+      "elapsed_seconds": 0.078751,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "local_logarithms_30_digits",
+      "command": [
+        "python",
+        "local_model/formal_log.py",
+        "--check",
+        "local_model/result.json"
+      ],
+      "elapsed_seconds": 0.070425,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "exterior_descent",
+      "command": [
+        "python",
+        "rationality/check_exterior_descent.py"
+      ],
+      "elapsed_seconds": 0.100108,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "finite_lifts_and_reflection",
+      "command": [
+        "python",
+        "derived_global/bockstein_lifts.py"
+      ],
+      "elapsed_seconds": 0.032257,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "finite_coordinate_algebra",
+      "command": [
+        "python",
+        "finite_log_reciprocity/check_finite_coordinate.py"
+      ],
+      "elapsed_seconds": 0.044871,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "crystalline_frobenius_and_annihilator",
+      "command": [
+        "python",
+        "local_crystalline/frobenius.py",
+        "--check",
+        "local_crystalline/result.json"
+      ],
+      "elapsed_seconds": 0.574862,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "published_frobenius_calibration",
+      "command": [
+        "python",
+        "local_crystalline/calibration.py"
+      ],
+      "elapsed_seconds": 0.216501,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cyclotomic_strict_height",
+      "command": [
+        "python",
+        "local_crystalline/height_leading.py",
+        "--check",
+        "local_crystalline/height-result.json"
+      ],
+      "elapsed_seconds": 0.036003,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "ambient_bockstein_algebra",
+      "command": [
+        "python",
+        "ambient_arithmetic/check_ambient_jet.py",
+        "--check",
+        "ambient_arithmetic/result.json"
+      ],
+      "elapsed_seconds": 0.659356,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cm_weight_second_jets",
+      "command": [
+        "python",
+        "reflected_pilot/cm_weight_jets.py",
+        "--check"
+      ],
+      "elapsed_seconds": 5.638307,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "actual_tame_trace_jets",
+      "command": [
+        "python",
+        "tame_trace_compute/compute_traces.py",
+        "--check"
+      ],
+      "elapsed_seconds": 6.599878,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "tame_trace_and_interpolation_audit",
+      "command": [
+        "python",
+        "tame_trace_audit/check_trace_audit.py",
+        "--check",
+        "tame_trace_audit/result.json"
+      ],
+      "elapsed_seconds": 0.038965,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "exact_elliptic_hecke_projector",
+      "command": [
+        "python",
+        "elliptic_projection/check_projector.py",
+        "--check"
+      ],
+      "elapsed_seconds": 1.965594,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "analytic_target_algebra",
+      "command": [
+        "python",
+        "analytic_target_audit/check_target.py",
+        "--check",
+        "analytic_target_audit/result.json"
+      ],
+      "elapsed_seconds": 0.038907,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "weight_reflection_and_cubic_descent",
+      "command": [
+        "python",
+        "weight_reflection/check_reflection.py",
+        "--check"
+      ],
+      "elapsed_seconds": 1.294257,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "proper_cohomology_residue_filter",
+      "command": [
+        "python",
+        "residue_filter/check_filter.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.027577,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "two_slope_calibration_and_geometry_dimensions",
+      "command": [
+        "python",
+        "de_rham_strategy/check_strategy.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.028637,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "selected_trace_2048_12",
+      "command": [
+        "python",
+        "trace_scaling/selected_trace.py",
+        "--bound",
+        "2048",
+        "--digits",
+        "12",
+        "--output",
+        "trace_scaling/traces-2048-12.json.gz",
+        "--check"
+      ],
+      "elapsed_seconds": 11.393696,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "cubic_trace_6825_12",
+      "command": [
+        "python",
+        "trace_scaling/cubic_trace.py",
+        "--check"
+      ],
+      "elapsed_seconds": 17.176373,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "independent_cubic_trace_overlap",
+      "command": [
+        "python",
+        "trace_scaling/check_cubic_overlap.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.042927,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    }
+  ],
+  "python": "3.12.14",
+  "scope": "Exact arithmetic, p5 CM-period refinements, 30-digit local logs, local crystalline Frobenius, leading cyclotomic heights, CM second weight jets, actual tame-trace jets, exact elliptic Hecke projection, low-weight interpolation, weight reflection and cubic descent identities, q6825 cubic trace at twelve digits, two-slope coordinate calibration, residue-filter arithmetic, classical geometry dimensions, and algebraic lift/reflection/descent/finite-coordinate/Bockstein fixtures. Mathematical arguments and conditional comparisons are in the notes. The Sage backend geometry jobs have not run in this environment. No new Lean verification, upstream CM reconstruction, overconvergent input-tail bound, arithmetic global Bockstein, projected vector L-value, or nonzero reflected logarithm is certified by this runner.",
+  "sha256": {
+    "README.md": "bfc69c3247143f374e6d91a45da37cf2a09d1ed8d42fabf8ca308d89a5436634",
+    "ambient_arithmetic/README.md": "5cca054e3c9e5ecfc3b7a3277196a2504131f3792a9c8c8590bd6aa81c99cb81",
+    "ambient_arithmetic/check_ambient_jet.py": "3fe19c2e1d0862540ea74f484361353467d807f2b8da459f975bfe4018014bab",
+    "ambient_arithmetic/result.json": "8a77f20788a406911726ab30387b4f2a75025cfdc9ad6cdb5a0e3333c4387969",
+    "analytic_target_audit/RADIUS_AND_RESIDUES.md": "1cfe7cc047686b45fd03b7a57ad63aa93abf1713519d82ea6df1d1aac2ac3bd7",
+    "analytic_target_audit/README.md": "ab70fd957fbe0fbdcedb63c9fc7d7624b28f7d6f5ca97d1ae12f133965452751",
+    "analytic_target_audit/check_target.py": "7184966e9f9f64e05e18a508c018d695b9722c05b0658e72337a0089cdfb5e92",
+    "analytic_target_audit/result.json": "403a2171d4cec75a1e68b121edd2f18c49621b2933330347deacb9f2316d0ee4",
+    "de_rham_strategy/README.md": "ebd94dd6333e74b029c32ebdeab1f19573998a3a3b799bfc2dcd8b8fa302e83d",
+    "de_rham_strategy/SOURCES.md": "bf37ec6f31317c67b4c84a0a408f4f362642e73446c35f9a56cceafa5991de80",
+    "de_rham_strategy/backend_probe.py": "39bdf0236d581ab5dddc83b060f1cb60e75d6a973e775cbf0915fcdb82d475fc",
+    "de_rham_strategy/check_strategy.py": "adf1c9a29e3455fa967f5fb43d80cd429a7f15bf6b15b831070ccfa3febcf7f3",
+    "de_rham_strategy/result.json": "5654f8cf30854cbeedf03d5e2359bf9769bd79fd3ce580c39980759ea438aafc",
+    "derived_global/AMBIENT_CONTROL.md": "faa73e7433264c377554ed8353b5d322fbb49b7ab20a8c6a490b114c53feea4e",
+    "derived_global/DERIVED_CLASSES.md": "0b208ac03bc5d0a81cdde7b7ca34384752e9379d014c4a33b59e89bbfcbbd15c",
+    "derived_global/bockstein-results.json": "5d9a87e65bc1311a3ec9fa376041787c322f7ae913c132f52d8ec8c44f7ca97a",
+    "derived_global/bockstein_lifts.py": "bc3ac26bddc41941159f1c4dbb7e220c0bee4658e37e7b9deace8c331c6b0d37",
+    "eligibility/arithmetic/README.md": "9d026df1c9da3edd14361f3e125158aab37ccd02ce94eff7fbe573d067a3d003",
+    "eligibility/arithmetic/check_eligibility.py": "b7643acf2d370104993071943c149d90bbc78d083dd5f5fa56a0680bb0a3c0a7",
+    "eligibility/arithmetic/check_twist_lvalue.py": "461b29ddeb6574bd134afbe85870c70c72a3e8982937387325572353b6734ee7",
+    "eligibility/arithmetic/eligibility.json": "02b035463ecbd8eed17e288697873562191739613cfd5b5e58166c570db618c3",
+    "eligibility/arithmetic/twist-lvalue.json": "e387f73acf7323d48a08106e7f36aab50b106b6319eeee057de3e38ddbdfdb37",
+    "elliptic_projection/README.md": "d9738f9105ef44e6d331b4db54c9e24eb3952a73b6d77ea32a0ed1eb19200deb",
+    "elliptic_projection/check_projector.py": "aa72d0c64a777e8e9008690a564543fd530b2ec342a1739d42a4578cd7dde7cb",
+    "elliptic_projection/manin.py": "7f41b1cb39c41504147bb19fdd968e5ef34023ec14ea4440b391a362bc9562f8",
+    "elliptic_projection/result.json": "da0904ed9cc89128372102f178184ac515dc1844f9c3ad200f23b06db6355c8d",
+    "elliptic_projection/witness.json": "a1b47f4cad805f133bce12d07d9023c8bee06d2d2dac4653a47d485aef08bd4e",
+    "finite_log_reciprocity/FINITE_COORDINATE.md": "12fcd0d3117e5ee34f7b1fc4db372feb680e0c3a73169ba19ee6b26d72f8a4a0",
+    "finite_log_reciprocity/SOURCE_LEDGER.md": "ac2fe06cb6a3b48cba4318e9ba69e4fc4b1be7361720835933eee35bf5b58148",
+    "finite_log_reciprocity/check_finite_coordinate.py": "c3241c6f6bc3bb1245fd22aabb2ba199b8effd701e194dce3bb6e7f3bc64d4a7",
+    "finite_log_reciprocity/finite-coordinate-results.json": "b91074776f672fbe870e5c78c604dc7ed3519125832701fecdd7b126d05caa92",
+    "literature/THEOREM_LEDGER.md": "ab88e7ef3129d6b6045658076a9443580c2d490d4253105eafd0b15200983d91",
+    "literature/THETA_CONVENTIONS.md": "0fbbf6c10b3ae2bfbea3f431e2e9b66d2037ee8ee309fd5c68ec34fe765e2e59",
+    "local_crystalline/README.md": "3d19b884da3235db7ecb697016f3152e0f97e06db8308a200576f7b1e52445db",
+    "local_crystalline/calibration-result.json": "3bd9c4893acbc662526cff936721bfbe603007d34344a2c40ef4e0fbc01fbd8a",
+    "local_crystalline/calibration.py": "b772a996db6a090d1cfb9dff205d9dba2c67f425dab68aad16d0a17ea49d6ad2",
+    "local_crystalline/frobenius.py": "4aea8b94033c437722fc0d42a3a833c2642947980c533cfd88fa50cba51d6dcd",
+    "local_crystalline/height-result.json": "5a16a12e85618dd92d9d040202c6bc7c4f06b796327fa4a603c947eb425a6466",
+    "local_crystalline/height_leading.py": "47524989b80e130c23ab102ca694afd5e4e8b841c44b81be6f75d0898229a4f7",
+    "local_crystalline/result.json": "5dede4b7010fde0eac60a0f385d8de72ae5a0af488ba58cbd154bcb5627e9112",
+    "local_model/README.md": "9ec98ef1e9d7df30042881175609f75339bf99d798ea512c15ce4fc1e5009585",
+    "local_model/formal_log.py": "314e2296ad86bfa4410e2d45f6c05b9aefded324859e6362b99541bc8d9b6db8",
+    "local_model/result.json": "723534fec4e2b54a58436600ec31d9e9286a08adac23ce331dcd6dcc8120acb0",
+    "logic/AUDIT.md": "9d833eb03591dece226f391c071c873b9270cdf743d263087bf48fc636477c2a",
+    "logic/C7_AUXILIARY_PERIOD.md": "f9d7d97e27cd7085d6c936d5b6fe102196f95e1e6147b1c72685754700c6bf35",
+    "logic/TWIST_INTERVAL_REVIEW.md": "b58ec5a10adfbd15b83913148bfa528a2f89e98f71ef2c93b98b17b1edbd304b",
+    "logic/c7-fixtures.json": "9c23f69d14d751234d5000cc0182f97ad31d87047bf9210ec4eb01e661e6c215",
+    "logic/c7_period.py": "64cc142763b4922abf6d613046efd58633ca5debf1628d0d6072ec7adc09f24f",
+    "logic/result.json": "9243ae1519e37d9d81cd054dfb153f43d6b990163bb8bc00d80ae281fc61546f",
+    "logic/verify_logic.py": "78a16e65b5d22142b0d3c692bf818707188baf6e6757c21be5c4fb5cd2ab62ee",
+    "p5/README.md": "24c3a371bb5f9d3832d7705b236fda4f35cf029358c778ea5186f383ea807518",
+    "p5/check_refinements.py": "31e5f0fa4a98b8d98a3431d53ccd550f5a135801bd04d4f51f3acb6e5490318e",
+    "p5/inputs.json": "8ed14ec2f42a2fa83bde88ed622a862b32265882f16a63174f1a589aaa497ff9",
+    "p5/result.json": "09021cabe780596a8f0b0a0e11af426303eb45c3712d9fad4ce843a65682a9ee",
+    "projection/README.md": "edf0f322199c26f6f686c60248ea04975b0733696c8b2a2567a8133abadbf494",
+    "projection/result.json": "390951cfc0347238b6b8b0dd450c0cc99e6867a7d163cf2c29579f64f5c45c76",
+    "projection/ring_class_projection.py": "d3fe5a0f56bdb3d3ebb46e168d0f56b7b31619b2fab6a8d63384a2bd731b6e70",
+    "rationality/README.md": "d2ed0792542929d4364bd2f1d02653ea392b26dee77380783eba54f60112a929",
+    "rationality/REFLECTED_REVIEW.md": "8689072ddb02300f8ab3fb3ac77249a417caf502f669cbe88fbb7bd7bfa03892",
+    "rationality/check_exterior_descent.py": "d05b47a0c0e695435e00b3422be175792e7346fc22abf2c9f8f3bffa06ab1fdf",
+    "rationality/result.json": "3c0c375a52680c22ffd926152c221f14ad34322a79d6d113094ba06aee5e3933",
+    "reflected_pilot/README.md": "3d674ceca0a97b528cae521b3adbe3e9424b585634604416ea981f9e860167dc",
+    "reflected_pilot/cm-weight-jets.json.gz": "5054b565231b63457eba413dfcb3e74eb0970891a6dfbc7a91375bdff57857d3",
+    "reflected_pilot/cm_weight_jets.py": "6639fe73e4c14e92e19ed68cde8b24a8b12b68b6835116cd34f03bba55153497",
+    "reflected_pilot/result.json": "414b0e1f155ae2d61a1968592c919c773609991e3ec7f64e2539dcf5d9734b71",
+    "requirements.txt": "a9c3ba45c24d6d45907c5638480ae19a8d3211d42bb3338fe984248212f72cc9",
+    "residue_filter/README.md": "68b9a3bce084c4505f2d1751ba6dcb2afee88de7a996c4b7b923004172b9770b",
+    "residue_filter/check_filter.py": "7d031a798929bb4dc592b78f8a7f3b4b0cdf7daf6867791b83beaaf5bd5c7bf6",
+    "residue_filter/result.json": "e52c1805ba98cfe5947f6a9ca9c73cb49876cb210cd2261c7555da7cbc38c9c9",
+    "tame_trace_audit/README.md": "ce028910422fa9c357ce65b593e5698113e881fa6f9e7f2886cd3c89c4f03ed3",
+    "tame_trace_audit/check_trace_audit.py": "1decbc0cf3a746bc3b9d544cd9646cb64f7c33ca0368489c72ca97f3c275f804",
+    "tame_trace_audit/result.json": "b13b657c943b1bf2fcd2fe7afa03a1ae8f4193c0f463489837486096b9ad6944",
+    "tame_trace_compute/README.md": "95696aed26d41f00379530edd3d3713044df38f852b27daab7d313c7802ba880",
+    "tame_trace_compute/compute_traces.py": "b8ae226f7806fc6c18bba213460927430b290eafdead0c6f95bfceefc3a7b124",
+    "tame_trace_compute/result.json": "1f74d552d05337517fe92340821f78c43fb79a0282a4e801851f1d8430466142",
+    "tame_trace_compute/traces.json": "4117034c9ef61b5cc09d81e4c42f3449624e82216b12e5e639cc25107541148a",
+    "tame_trace_theory/SOURCES.md": "700511fbe5b85c168a2505494827770fa8ba4286b7ed9bca30f40dd3c9530b84",
+    "tame_trace_theory/TAME_TRACE.md": "01e5d698c5638205e2505b9bbd535221314f67b0b5b63420dbb6f0e8b47164a3",
+    "tame_trace_theory/TRACE_INTERFACE.json": "b129a142a474afdfd1085306e51b46ed9dbe4072b84daae69f55ea71fdc3e5d2",
+    "trace_scaling/README.md": "782e00aa7e18a30e1b3c3a1d550515c9a1dafa650278d500d6e240e143bdc141",
+    "trace_scaling/benchmark-128-5.json": "006bb70db4c67a9efa4e5c5319bb1657062f5c99858d33e63e38879af2b68969",
+    "trace_scaling/benchmark-2048-12.json": "a96db57fd3c963f1d631a9ff5b0e27f472c8e3b2c2c4c7ab4fa77271e4c693b3",
+    "trace_scaling/benchmark-2048-5-workers2.json": "28b66bd4152b0a917fda674eeb55f5d39e8379378a08e2eb54e34878a5bd5ff6",
+    "trace_scaling/benchmark-2048-5.json": "12a0a376578be10a6e3849e854054a8b775f9a3316d00f87dc948e1c197c2a6c",
+    "trace_scaling/benchmark-512-12.json": "f23bedf30b373993d5b4f7b9dfd99d53cad2a591b7b64ca72302af1ba74becb2",
+    "trace_scaling/benchmark-512-5.json": "26e1a917d13bc0bc73ee936f535389e8b1143811cffa0aaa8c37dbd3bcd05328",
+    "trace_scaling/benchmark-baseline-128-5.json": "88436eab7a9434e0e65e8a43163f4fd1a12913383d18951dc895dffaef6f7bd6",
+    "trace_scaling/check_cubic_overlap.py": "eb1fd853cb349275b8268773b5ffffb710a5820cbcef7a690b50e6ae4762351c",
+    "trace_scaling/cubic-overlap.json": "11ce6649dcde61f5d9bdcf4e801f7a7b3acc48b87ecab0a92f930481745aee14",
+    "trace_scaling/cubic-result.json": "88634ddbec4077f82741a5bc590a38f0c52ce2a9da1e96b309493151133ec6c6",
+    "trace_scaling/cubic-trace-6825-12.json.gz": "bbee40091bf8f13e0b89ace6381fb323bb03e62a1c6125a1f5948368f7361d19",
+    "trace_scaling/cubic_trace.py": "c2b62267193d1766a8309bf8e1c7f6c74283ed5c165d27dea673bd208577672b",
+    "trace_scaling/result.json": "0dcd9b8dd9ee12d85fa8a735e04866bfa4aa5ac373b9039f509deb646ebab9ea",
+    "trace_scaling/run_benchmarks.py": "5bf107270127bd3e99d21dc7c2dd547e2135caed0b815d616dac9d333a89b5fa",
+    "trace_scaling/selected_trace.py": "b8f7491a4178af8580bd1557f5e6af7f21ae7a4b516f36a502cd6d9d8be29edc",
+    "trace_scaling/traces-2048-12.json.gz": "fbbe08f468a1d83dc86848f4e40dd352ee8ea230341fc5acf868899a3e05a4cf",
+    "verify_all.py": "a05a6eb92d14b597619541310b63bf1e1d4e89bd0ae099d4c84844ce1b0b6026",
+    "weight_reflection/README.md": "665b25e88347a1b69615f759141e9fdf450924ca4b4b17c427a414e2762608ba",
+    "weight_reflection/check_reflection.py": "c03c306e06710e2950424fae8257c6f64b0eb948c17870801785292f78fb94e1",
+    "weight_reflection/reduced_trace_inputs.json": "f6813a3e26e185e0ea5e190f857451c88028c9b5a324609df25421cd0fb8f95c",
+    "weight_reflection/result.json": "647b778aa6b29850e4243c99be82ffec4d2ba49bcb957a2614ed9176cc20a11e"
+  },
+  "status": "PASS"
+}

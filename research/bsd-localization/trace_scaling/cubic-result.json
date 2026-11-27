@@ -1,0 +1,39 @@
+{
+  "bound": 6825,
+  "counts": {
+    "cm_table_q_bound": 484186,
+    "compact_table_storage_bytes": 34861464,
+    "embedding_omega_mod5": 2,
+    "enumerated_ideals": 1263725,
+    "ideals_prime_to_selected_p": 808868,
+    "packed_radix_bits": 60,
+    "packed_table_storage_upper_bound_bytes": 64613564,
+    "raw_product_q_bound": 484575,
+    "selected_raw_averaged_product_sha256": "0ab908ffcacd129e1d351cc8817163e4e13f8149dbb75fe46b1cb036b10e735c",
+    "selected_raw_product_indices": 13554,
+    "shared_cyclotomic_jet_products_evaluated": 597343,
+    "unit_log_cache_entries": 562089
+  },
+  "digits": 12,
+  "gzip_bytes": 224893,
+  "gzip_sha256": "bbee40091bf8f13e0b89ace6381fb323bb03e62a1c6125a1f5948368f7361d19",
+  "performance": {
+    "CM_table_seconds": 10.647586,
+    "contraction_seconds": 6.075999,
+    "generation_and_overlap_seconds": 16.76711
+  },
+  "process_peak_RSS_KiB": 132220,
+  "scope": "one averaged representative of an E-projected class; no nonvanishing or final error-bound claim",
+  "status": "all checks passed",
+  "uncompressed_bytes": 556833,
+  "uncompressed_sha256": "b1c4b10504dfe04daee367941f4e9b3ae42b31ec0a55f2bcf7e00cb8383fec2c",
+  "verification": {
+    "exact_cubic_arithmetic_checks": 263,
+    "overlap_cubic_vector_coefficients_checked": 6147,
+    "overlap_modulus": 244140625,
+    "overlap_q_bound": 2048,
+    "reference": "traces-2048-12.json.gz",
+    "reference_gzip_sha256": "fbbe08f468a1d83dc86848f4e40dd352ee8ea230341fc5acf868899a3e05a4cf"
+  },
+  "wall_seconds": 16.89623
+}

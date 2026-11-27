@@ -1,0 +1,77 @@
+{
+  "bound": 128,
+  "counts_by_embedding": {
+    "2": {
+      "all_possible_full_convolution_pairs_for_one_placement": 101660,
+      "all_possible_selected_convolution_pairs": 1443,
+      "cm_table_q_bound": 8699,
+      "compact_table_storage_bytes": 313200,
+      "cyclotomic_jet_products_evaluated": 736,
+      "enumerated_ideals": 22704,
+      "ideals_prime_to_selected_p": 18179,
+      "ordinary_integer_multiplications_per_jet_product": 6,
+      "packed_radix_bits": 28,
+      "packed_table_storage_upper_bound_bytes": 1102760,
+      "pairs_with_nonzero_CM_jets": 775,
+      "raw_product_q_bound": 9088,
+      "selected_raw_product_indices": 255,
+      "selected_raw_product_sha256": "736c648c1ec9f8020d681f9476f3a0215850541d276ae4983a116bcad635c527",
+      "unit_log_cache_entries": 8711
+    },
+    "4": {
+      "all_possible_full_convolution_pairs_for_one_placement": 101660,
+      "all_possible_selected_convolution_pairs": 1443,
+      "cm_table_q_bound": 8699,
+      "compact_table_storage_bytes": 313200,
+      "cyclotomic_jet_products_evaluated": 736,
+      "enumerated_ideals": 22704,
+      "ideals_prime_to_selected_p": 18179,
+      "ordinary_integer_multiplications_per_jet_product": 6,
+      "packed_radix_bits": 28,
+      "packed_table_storage_upper_bound_bytes": 1104272,
+      "pairs_with_nonzero_CM_jets": 775,
+      "raw_product_q_bound": 9088,
+      "selected_raw_product_indices": 255,
+      "selected_raw_product_sha256": "1a38475138f73c5fc6b8e73dc54b907f77b166281b988739d802b49225c874e0",
+      "unit_log_cache_entries": 8446
+    }
+  },
+  "digits": 5,
+  "embeddings": [
+    2,
+    4
+  ],
+  "gzip_bytes": 25992,
+  "gzip_sha256": "d8c12f987027147c1634f673516ee49999c525242ccbbf66fde12e174e29dd0a",
+  "parent_process_peak_RSS_KiB": 18348,
+  "performance_by_embedding": {
+    "2": {
+      "CM_table_seconds": 0.12381,
+      "contraction_seconds": 0.015719,
+      "process_peak_RSS_KiB": 17792,
+      "total_seconds": 0.139529
+    },
+    "4": {
+      "CM_table_seconds": 0.106781,
+      "contraction_seconds": 0.014364,
+      "process_peak_RSS_KiB": 18220,
+      "total_seconds": 0.121145
+    }
+  },
+  "scope": "arithmetic CM trace inputs only; no nonvanishing claim for an analytic projection or global class",
+  "status": "all checks passed",
+  "uncompressed_bytes": 82930,
+  "uncompressed_sha256": "8c6172765aece958b0e2afde134d6cd7ce9b8b82192baaa53e0879047d28b703",
+  "verification": {
+    "CM_arithmetic_module_sha256": "6639fe73e4c14e92e19ed68cde8b24a8b12b68b6835116cd34f03bba55153497",
+    "depletion_difference_U5_zero_vector_coefficients_checked": 312,
+    "exact_packed_ring_identities_checked": 327,
+    "overlap_modulus": 3125,
+    "overlap_q_bound": 128,
+    "overlap_vector_coefficients_checked": 3096,
+    "pinned_reference": "../tame_trace_compute/traces.json",
+    "pinned_reference_sha256": "4117034c9ef61b5cc09d81e4c42f3449624e82216b12e5e639cc25107541148a"
+  },
+  "wall_seconds": 0.283536,
+  "workers": 1
+}

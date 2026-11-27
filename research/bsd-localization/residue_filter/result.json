@@ -1,0 +1,66 @@
+{
+  "F_matrix": [
+    [
+      285070,
+      163221
+    ],
+    [
+      276685,
+      105552
+    ]
+  ],
+  "U5_on_E": "-F-3I",
+  "U_matrix": [
+    [
+      105552,
+      227404
+    ],
+    [
+      113940,
+      285070
+    ]
+  ],
+  "automorphism_orbit_size": 3,
+  "coefficient_convention": "geometric Q5-linear Frobenius extended L-linearly; do not apply unramified Frobenius to external coefficients",
+  "cyclic389_subgroups": 390,
+  "digit_loss_lattice": "an F_E-stable integral lattice; changing from a merely Hecke-stable lattice has a separate denominator cost",
+  "filter_determinant_on_E": 27,
+  "filter_matrix": [
+    [
+      73963,
+      99038
+    ],
+    [
+      48805,
+      316659
+    ]
+  ],
+  "filter_on_E": "3(F+I)",
+  "inverse_filter_digit_loss": 0,
+  "inverse_filter_matrix": [
+    [
+      228742,
+      242281
+    ],
+    [
+      12660,
+      335494
+    ]
+  ],
+  "inverse_filter_on_E": "-(F+2I)/9",
+  "j0_curve_frobenius_trace": 0,
+  "j0_curve_point_count_F5": 6,
+  "level": 389,
+  "matrix_modulus": 390625,
+  "open_cohomology_dimension": 195,
+  "prime": 5,
+  "projection_formula": "Pi_E(proper(z))=-(F_E+2I)/9 * P_E((U5^2-1)z)",
+  "proper_cohomology_dimension": 64,
+  "rational_cusps": 2,
+  "residue_annihilator": "U5^2-1",
+  "residue_quotient_dimension": 131,
+  "scope": "Exact residue and elliptic filter arithmetic, using the geometric residue sequence and Frobenius interpretation explained in README. No reduction of a new overconvergent input or nonzero logarithm is computed.",
+  "status": "PASS",
+  "supersingular_divisor_degree": 130,
+  "supersingular_field_of_definition": "F25"
+}

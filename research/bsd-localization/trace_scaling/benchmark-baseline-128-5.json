@@ -1,0 +1,9 @@
+{
+  "artifact_sha256": "4117034c9ef61b5cc09d81e4c42f3449624e82216b12e5e639cc25107541148a",
+  "bound": 128,
+  "digits": 5,
+  "process_peak_RSS_KiB": 123400,
+  "scope": "original full-product workflow, including its original verification",
+  "status": "all checks passed",
+  "wall_seconds": 6.301227142001153
+}
