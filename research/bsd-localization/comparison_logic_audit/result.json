@@ -1,0 +1,122 @@
+{
+  "averaging_countermodels": {
+    "I_plus_F_image_of_1_1": [
+      -4,
+      -1
+    ],
+    "I_plus_F_line_determinant": 3,
+    "quadratic_trace_determinant_in_1_u_basis": [
+      0,
+      -2
+    ]
+  },
+  "conditional_corrected_ratio": {
+    "K0_eigenvalue_ratio": [
+      79,
+      1,
+      91
+    ],
+    "K0_eigenvalue_ratio_denominator": [
+      1,
+      65,
+      65
+    ],
+    "K0_eigenvalue_ratio_numerator": [
+      19,
+      56,
+      56
+    ],
+    "U_roots_alpha_beta": [
+      32,
+      90
+    ],
+    "corrected_five_b_over_a": [
+      21,
+      0,
+      0
+    ],
+    "denominator_inverse_witness": [
+      101,
+      110,
+      10
+    ],
+    "difference_valuation": 1,
+    "modulus": 125,
+    "original_five_b_over_a": [
+      109,
+      75,
+      106
+    ],
+    "scaled_ratio_difference": [
+      60,
+      0,
+      0
+    ],
+    "scope": "Exact conditional K0 normalization diagnostic. Rationality is observed at available precision only. Arithmetic identification and an exact rational-descent theorem are not inferred by this checker.",
+    "zeta_five_b_over_a": 86,
+    "zeta_stabilization_coordinates_mod5_7": [
+      19330,
+      67476
+    ]
+  },
+  "nonvanishing_models": {
+    "double_zero_cubic_vector": [
+      1,
+      0
+    ],
+    "double_zero_finite_logarithm": 1,
+    "double_zero_quadratic_vector": [
+      0,
+      1
+    ],
+    "scope": "A nonzero complementary quadratic coefficient is sufficient without determinant order1; a zero coefficient is inconclusive.",
+    "simple_zero_quadratic_vector": [
+      3,
+      1
+    ]
+  },
+  "pilot_base_operator": {
+    "A_phi_coefficients_I_F": [
+      "59/45",
+      "13/45"
+    ],
+    "adjoint_equals_inverse": true,
+    "determinant": "1",
+    "inverse_coefficients_I_F": [
+      "4/9",
+      "-13/45"
+    ]
+  },
+  "scope": "Exact pilot adjoint algebra, independent cubic cancellation, and abstract logical countermodels. The general determinant-free implication is proved in README.md. No global comparison, full arithmetic local identification, or new Lean proof is certified by this executable.",
+  "source_sha256": {
+    "de_rham_strategy/result.json": "f37d632ec5ca7c7193cc073e98284a45b7a90e069583fe3884dd1ee58738bad7",
+    "local_crystalline/result.json": "5dede4b7010fde0eac60a0f385d8de72ae5a0af488ba58cbd154bcb5627e9112",
+    "projection_backend/cubic-ratio-result.json": "16f8ce8f89878c88aa847f690458b6b04baee60e4194108e33ee26e565489b07"
+  },
+  "status": "PASS",
+  "unit_rescaling_model": {
+    "logarithm_before_after": [
+      6,
+      18
+    ],
+    "rescaled_x0": [
+      22,
+      18,
+      0
+    ],
+    "strict_kappa0": [
+      1,
+      0,
+      0
+    ],
+    "u0_u1": [
+      3,
+      5
+    ],
+    "x0": [
+      4,
+      6,
+      0
+    ]
+  }
+}

@@ -1,6 +1,10 @@
-# Rank-two BSD: computed CM projection and arithmetic comparison
+# Rank-two BSD: nonzero localization in the E389 pilot
 
-Research branch: `bsd-projection-certificates`, continuing
+Research branch: `bsd-arithmetic-comparison`, continuing
+`bsd-projection-certificates` commit `260370b41e0849003b3e5ac94381042fa03b757e`,
+including its precision binding and durable witness replay update on top
+of the projection snapshot `9364a14d51c0bc144bb78ba79a91732050f93b31`.
+The projection branch continued
 `bsd-de-rham-preparation` commit `704a86d0f48f0f037d327ee9339a7e211e1a2652`.
 The latter continued
 `bsd-tame-trace-computation` commit `0667f5e23fa33a4cfc09ccd80abaedc94c9d5297`.
@@ -36,13 +40,29 @@ coefficients in the specified elliptic stabilization basis, it gives
  \xi=\zeta_7+\zeta_7^{-1}.
 \]
 
-Further deductions retain both Frobenius components in the fixed-weight
-syntomic formula, compute the full Perrin--Riou adjoint correction, and
-give a rational projected specialization argument at first weight two.
-The conditional comparison still requires identifying the chosen global
-class and the normalized local regulator. The reflected class's finite
-logarithm has not been evaluated. No new Lean verification or general BSD
-theorem is claimed.
+The two arithmetic comparisons are now supplied by written arguments:
+the full global classes are generically proportional in a rank-one
+Selmer module, and the fully normalized local regulator is determined
+using both test eigenvectors. The resulting
+[pilot proof draft](PILOT_LOCALIZATION_THEOREM.md) proves nonzero finite
+localization of the reflected CH class from the explicitly listed
+arithmetic, geometric, and analytic inputs. It does not use the pilot's
+known rational points or known Mordell--Weil rank.
+
+After the required Frobenius correction, the scaled leading ratio is
+`21 mod125`; the base regulator line has ratio `86 mod125`. Their
+difference `60 mod125` has valuation one and proves separation. This
+establishes nonvanishing, without an absolute value for the logarithm.
+The cancellation to a rational residue is a finite-precision observation,
+not an exact descent theorem.
+
+The complete dependency ledger and proof are in
+[PILOT_LOCALIZATION_THEOREM.md](PILOT_LOCALIZATION_THEOREM.md), with the
+[independent comparison review](comparison_logic_audit/FINAL_REVIEW.md).
+This is a computer-assisted mathematical proof draft, not a new Lean
+formalization or a general BSD theorem. The infinite Katz interpretation
+retains its documented pinned-Sage geometric provenance, and the
+projected-edge and arithmetic source arguments remain written proofs.
 
 ## What is completed
 
@@ -58,10 +78,10 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Coefficient descent | Selmer dimension descends from Q5(zeta7); the strict line descends | [p5 proof](p5/README.md); arbitrary normalized individual classes need not be Q5-valued |
 | Local comparison target | Point logarithms and strict-line coordinate to 30 normalized 5-adic digits | [Formal-log proof and data](local_model/README.md), including a rigorous tail estimate |
 | Family obstruction | An everywhere-Selmer family in this definite anticyclotomic tower cannot supply the missing base class | [Derived-class analysis](derived_global/DERIVED_CLASSES.md), applying the published universal-norm theorem |
-| Reflected relaxed class | A well-defined, possibly zero Selmer class under the stated CH hypotheses and theta order at least two | [Construction](derived_global/DERIVED_CLASSES.md) and [independent cohomological review](rationality/REFLECTED_REVIEW.md); nonzero localization remains unresolved |
+| Reflected relaxed class | Well-defined global derivative, finite at the base; nonzero finite localization in this pilot | [Construction](derived_global/DERIVED_CLASSES.md), [cohomological review](rationality/REFLECTED_REVIEW.md), and [combined proof](PILOT_LOCALIZATION_THEOREM.md) |
 | Geometric realization criterion | A canonical Selmer exterior class and a finite-extension Kummer comparison sufficient for rank two | [Rationality note](rationality/README.md); the comparison itself remains to be constructed |
 | Descent failure to avoid | A Galois-invariant wedge of two character components need not descend from rational points | [Exact exterior/descent checker](rationality/check_exterior_descent.py) |
-| Finite-coordinate extraction | An invariant first coefficient of a regular finite-log lift, or a second coefficient of a calibrated complementary vector regulator | [Proof and exact algebra](finite_log_reciprocity/FINITE_COORDINATE.md); an arithmetic reciprocity comparison is still required |
+| Finite-coordinate extraction | A nonzero complementary quadratic coefficient suffices for nonzero finite localization | [New one-way criterion](comparison_logic_audit/README.md); the earlier [calibrated formula](finite_log_reciprocity/FINITE_COORDINATE.md) is stronger than required |
 | Explicit interpolation annihilator | `zeta=(20I-13F)/45 omega`, computed modulo `5^7` | [Local crystalline proof](local_crystalline/README.md), using exact Frobenius modulo `5^8` |
 | Cyclotomic strict height | `h_cyc(R,R)/5=1 mod5`, for `R=(log Q/5)P-(log P/5)Q` | [Exact rational height certificate](local_crystalline/height_leading.py); this is a cyclotomic quantity |
 | CM analytic input | Weight-one CM forms and their first two normalized weight derivatives, both p-adic embeddings | [Executable input and scope](reflected_pilot/README.md); this input stage precedes the projection below |
@@ -75,17 +95,21 @@ not a new general BSD theorem or a claim that the curve's rank was unknown.
 | Proper residue filter | U5^2-1 kills the residue quotient; its elliptic inverse is -(F+2I)/9 | [Proof and exact matrix check](residue_filter/README.md); zero correction loss in an F-stable integral lattice |
 | Actual finite geometry | The 1333-dimensional Katz gate passed; the separate pole-order route timed out after completing all four classical bases | [Actual run provenance](de_rham_strategy/katz-run-8726d59.json), [independent replay](projection_backend/ACTUAL_REPLAY.md), [pole run](de_rham_strategy/pole-run-409fe6f.json) |
 | Ordinary second coefficient | ord_W a_E(W)=2, using the supplied theta input and Castella--Do's conductor-one factorization | [Leading comparison](leading_comparison/README.md); the later actual calculation also supplies its valuation |
-| Projective numerical target | r_E=b2/a2 is invariant under regular scalar normalization and parameter change | [Line-level comparison target](leading_comparison/README.md); the arithmetic bad line is still unidentified |
+| Projective numerical target | r_E=b2/a2 is invariant under regular scalar normalization and parameter change | [Line-level target](leading_comparison/README.md); the arithmetic comparison is supplied below |
 | Conditional quantitative tail | Explicit pole-index bound; cutoff17 gives eight digits after saturated pole reduction | [Proof and exact inequalities](cm_tail_bound/README.md), with the fixed-weight Coleman realization (CF) stated explicitly |
 | Undepleted cubic representative | Tr71 of (Q+sigma Q)/2 through q6825 modulo5^12; an explicit R(U) recovers the original E projection | [Product and Euler correction](cm_product_transfer/README.md); one-digit worst-case correction loss |
 | Finite projection implementation | Both slopes, exact inverse-minor witnesses, and valuation-sensitive normalization | [Executable adapter and proof](projection_backend/README.md); the generic finite checker has a narrower scope than the analytic proof |
 | Actual finite CM projection | Nonzero quadratic coefficients in both elliptic components; lower coefficients contain zero at the reported precision | [Finite result](projection_backend/actual-cm-finite-projection.json), [certificate replay](projection_backend/actual-cm-finite-replay.json) |
 | Infinite analytic comparison | Constructs the bounded dual, controls the input and normalization tails, and preserves the actual coefficient balls | [Proof](projection_backend/INFINITE_KATZ_BRIDGE.md), [independent review](cm_tail_bound/FINITE_TO_INFINITE_REVIEW.md); pinned-Sage source provenance is explicit |
-| Actual projective direction | 5 b2/a2 = 109+75 xi+106 xi^2 mod125; three scaled digits are sharp from the output balls | [Exact cubic calculation](projection_backend/cubic-ratio-result.json); arithmetic identification of the exceptional line remains open |
+| Actual projective direction | 5 b2/a2 = 109+75 xi+106 xi^2 mod125; three scaled digits are sharp from the output balls | [Exact cubic calculation](projection_backend/cubic-ratio-result.json); after the proved correction the ratio is 21 mod125 |
 | Classical full-vector comparison | Both Frobenius coordinates of the syntomic vector at fixed weights (2,k,k), up to a nonzero scalar | [Projective identity and geometric hypotheses](fixed_weight_syntomic/README.md), [independent review](leading_comparison/fixed_weight_review.md); global sign remains unresolved |
-| Conditional weight-one continuation | Full classical vector matching forces a precise projective comparison at weight one | [Analytic wedge proof and pilot matrix](fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md); the arithmetic family matching is an explicit unproved premise |
-| Full Perrin--Riou correction | Tracks the adjoint, factorial, twist and Frobenius factors on both coordinates | [Proof and exact algebra](pr_syntomic_comparison/README.md); normalized class and period comparison remains open |
+| Weight-one continuation | Full classical vector matching forces a precise projective comparison at weight one | [Analytic wedge proof](fixed_weight_syntomic/PROJECTIVE_INTERPOLATION.md); its family premise is supplied by the new global and local comparisons |
+| Full Perrin--Riou correction | Tracks the adjoint, factorial, twist and Frobenius factors on both coordinates | [Operator algebra](pr_syntomic_comparison/README.md), now applied through the [normalized local comparison](normalized_local_comparison/README.md) |
 | Weight-two specialization | Rational cuspidal projection removes the boundary obstruction for weights (2,k,k), k>2 | [Projected extension-class argument](leading_comparison/ARITHMETIC_SPECIALIZATION.md); this extends the inspected construction rather than widening a printed theorem's scope |
+| Big Galois image | The five-adic image contains SL2(Z5) | [Proof](galois_image/README.md), all 20 residual Frobenius possibilities checked, plus Tate uniformization and the stated lifting theorem |
+| Full global comparison | CH and DR variable classes are proportional over the Iwasawa fraction field | [Rank-one Selmer argument](global_class_comparison/README.md); full strictness and away-p local conditions are checked |
+| Normalized local comparison | Both regulator coordinates, CM component, adjoint, periods, averaging, and stabilization are matched | [Proof and 44 exact algebra checks](normalized_local_comparison/README.md) |
+| Nonzero reflected localization | Corrected leading direction 21 mod125 differs from base line 86 mod125 | [Combined pilot theorem](PILOT_LOCALIZATION_THEOREM.md), [independent arithmetic and logic](comparison_logic_audit/README.md); output is a Selmer class |
 
 These additions contain mathematical proofs and exact Python calculations.
 They are **not additional Lean kernel-checked theorems**. The supplied
@@ -93,7 +117,35 @@ package has its own formal layer and verification receipts. Abstract
 algebraic countermodels are labeled separately from the actual elliptic
 fixtures, the completed Sage geometry, and the finite CM calculation.
 
-## Current frontier: identify the arithmetic exceptional line
+## Current frontier: generalize the criterion and connect Selmer classes to points
+
+The pilot has an end-to-end written nonzero-localization proof. Three
+steps made the previous comparison tractable:
+
+1. Castella--Do's rank-one theorem gives generic proportionality of the
+   full global classes. A scalar zero or pole does not alter their
+   leading projective direction.
+2. CH Theorem 3.4 already describes the normalized Frobenius-averaged
+   regulator. Two independent test vectors determine its full matrix.
+3. A nonzero complementary quadratic coefficient detects a nonzero
+   finite local class without an extra simple-determinant theorem.
+
+The next research target is the general form and range of this
+sufficient criterion, with a second eligible test case. The separate
+Selmer-to-point problem remains: nonzero finite localization alone does
+not identify a rational point or settle a divisible Sha contribution.
+The pilot's already completed rank-two corollary uses its independently
+verified rational points; those points are absent from the new
+localization proof's dependency chain.
+
+## Projection-stage research record, frozen at 9364a14
+
+The narrative below, through the section before Reproduction, is retained
+as the history of the preceding calculations and reductions. Statements
+that a comparison is pending describe that earlier snapshot. The current
+status and exact input ledger are the combined pilot proof linked above.
+
+### Identifying the arithmetic exceptional line: the preceding frontier
 
 Write the analytic vector in its calibrated elliptic stabilization basis:
 
@@ -864,7 +916,7 @@ To write a fresh receipt:
 python research/bsd-localization/verify_all.py --receipt research/bsd-localization/verification.json
 ```
 
-The runner performs 35 checks covering the original arithmetic, p5,
+The runner performs 38 checks covering the original arithmetic, p5,
 formal-log, reflection, exterior-algebra, finite-coordinate, crystalline,
 height, ambient-jet, CM-weight-jet, tame-trace, interpolation, exact Hecke
 projector, analytic-target identities, cubic descent, residue and Euler
@@ -872,8 +924,10 @@ filters, two-slope calibration, both larger trace inputs, the conditional
 tail arithmetic, leading-coordinate identities, finite projection
 certificates, the finite Katz matrix fit, fixed-weight Frobenius
 polynomial identities, the actual finite cubic ratio, the Perrin--Riou
-adjoint/operator algebra, and the infinite bridge's integer bounds and
-precision table. Symbolic checks use SymPy1.14.0; the finite projection
+adjoint/operator algebra, the infinite bridge's integer bounds and
+precision table, the residual-image certificate, the full normalized
+local algebra, and the complementary-coefficient criterion with the
+corrected ratio. Symbolic checks use SymPy1.14.0; the finite projection
 adapter uses NumPy2.3.5 with explicit integer overflow guards. The other
 scripts use Python's standard library.
 The receipt records exit status, timing, and hashes of sources and
@@ -884,5 +938,6 @@ stated above.
 The large successful Sage/CM runs are not repeated by this compact
 runner. Their separate receipts and the preserved witness archive support
 independent replay. The analytic and geometric proofs remain written
-mathematics with stated provenance; this command is not a Lean proof of
-them or an arithmetic nonzero-localization test.
+mathematics with stated provenance. This command checks their finite
+arithmetic inputs; it is not a Lean proof of them or a mechanical proof
+of the assembled pilot nonzero-localization theorem.

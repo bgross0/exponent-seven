@@ -1,0 +1,334 @@
+{
+  "curve": {
+    "ainvs": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "c4": 112,
+    "c6": -856,
+    "discriminant": 389,
+    "j": "1404928/389"
+  },
+  "field_hypothesis_inputs": {
+    "class_number": 7,
+    "discriminant": -71,
+    "gcd_pN_D": 1,
+    "omega_roots_mod389": [],
+    "omega_roots_mod5": [
+      2,
+      4
+    ],
+    "reduced_forms": [
+      [
+        1,
+        1,
+        18
+      ],
+      [
+        2,
+        -1,
+        9
+      ],
+      [
+        2,
+        1,
+        9
+      ],
+      [
+        3,
+        -1,
+        6
+      ],
+      [
+        3,
+        1,
+        6
+      ],
+      [
+        4,
+        -3,
+        5
+      ],
+      [
+        4,
+        3,
+        5
+      ]
+    ]
+  },
+  "finite_group_certificate": {
+    "GL2_order": 480,
+    "SL2_order": 120,
+    "all_generated_groups_equal_GL2": true,
+    "all_possible_frobenius_matrices": [
+      {
+        "generated_order": 480,
+        "matrix": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          0,
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          0,
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          0,
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          1,
+          1,
+          4,
+          2
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          1,
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          1,
+          4,
+          1,
+          2
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          2,
+          1,
+          4,
+          1
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          2,
+          3,
+          3,
+          1
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          2,
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          3,
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          3,
+          3,
+          4,
+          0
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          3,
+          4,
+          3,
+          0
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          4,
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          4,
+          2,
+          4,
+          4
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          4,
+          3,
+          1,
+          4
+        ]
+      },
+      {
+        "generated_order": 480,
+        "matrix": [
+          4,
+          4,
+          2,
+          4
+        ]
+      }
+    ],
+    "identity_instead_of_transvection_order": 24,
+    "reducible_frobenius_contrast_order": 20,
+    "transvection": [
+      1,
+      1,
+      0,
+      1
+    ]
+  },
+  "point_counts": {
+    "3": {
+      "affine_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "order_including_infinity": 6,
+      "trace": -2
+    },
+    "5": {
+      "affine_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "order_including_infinity": 9,
+      "trace": -3
+    }
+  },
+  "residual_frobenius3": {
+    "characteristic_polynomial": [
+      3,
+      2,
+      1
+    ],
+    "discriminant_mod5": 2,
+    "roots_mod5": []
+  },
+  "scope": "Exact point counts, curve invariants, splitting inputs and finite group generation. The Tate-uniformization interpretation, absolute irreducibility, and passage from residual image to the closed 5-adic image are proved using the stated mathematical inputs in README.md. This checker does not compute an infinite Galois group or formalize those theorems in Lean.",
+  "status": "PASS"
+}

@@ -8,7 +8,7 @@
         "--check",
         "eligibility/arithmetic/eligibility.json"
       ],
-      "elapsed_seconds": 0.079495,
+      "elapsed_seconds": 0.037993,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -20,7 +20,7 @@
         "--check",
         "eligibility/arithmetic/twist-lvalue.json"
       ],
-      "elapsed_seconds": 1.848842,
+      "elapsed_seconds": 1.34486,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -30,7 +30,7 @@
         "python",
         "logic/verify_logic.py"
       ],
-      "elapsed_seconds": 0.043551,
+      "elapsed_seconds": 0.036331,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -40,7 +40,7 @@
         "python",
         "logic/c7_period.py"
       ],
-      "elapsed_seconds": 0.065781,
+      "elapsed_seconds": 0.038121,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -50,7 +50,7 @@
         "python",
         "projection/ring_class_projection.py"
       ],
-      "elapsed_seconds": 0.146918,
+      "elapsed_seconds": 0.093912,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -62,7 +62,7 @@
         "--check",
         "p5/result.json"
       ],
-      "elapsed_seconds": 0.105016,
+      "elapsed_seconds": 0.05718,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -74,7 +74,7 @@
         "--check",
         "local_model/result.json"
       ],
-      "elapsed_seconds": 0.096563,
+      "elapsed_seconds": 0.064257,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -84,7 +84,7 @@
         "python",
         "rationality/check_exterior_descent.py"
       ],
-      "elapsed_seconds": 0.128538,
+      "elapsed_seconds": 0.11447,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -94,7 +94,7 @@
         "python",
         "derived_global/bockstein_lifts.py"
       ],
-      "elapsed_seconds": 0.086801,
+      "elapsed_seconds": 0.034425,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -104,7 +104,7 @@
         "python",
         "finite_log_reciprocity/check_finite_coordinate.py"
       ],
-      "elapsed_seconds": 0.07941,
+      "elapsed_seconds": 0.044458,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -116,7 +116,7 @@
         "--check",
         "local_crystalline/result.json"
       ],
-      "elapsed_seconds": 0.589835,
+      "elapsed_seconds": 0.35605,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -126,7 +126,7 @@
         "python",
         "local_crystalline/calibration.py"
       ],
-      "elapsed_seconds": 0.265287,
+      "elapsed_seconds": 0.157958,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -138,7 +138,7 @@
         "--check",
         "local_crystalline/height-result.json"
       ],
-      "elapsed_seconds": 0.068009,
+      "elapsed_seconds": 0.033853,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -150,7 +150,7 @@
         "--check",
         "ambient_arithmetic/result.json"
       ],
-      "elapsed_seconds": 0.652502,
+      "elapsed_seconds": 0.515658,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -161,7 +161,7 @@
         "reflected_pilot/cm_weight_jets.py",
         "--check"
       ],
-      "elapsed_seconds": 7.930781,
+      "elapsed_seconds": 5.785768,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -172,7 +172,7 @@
         "tame_trace_compute/compute_traces.py",
         "--check"
       ],
-      "elapsed_seconds": 7.84368,
+      "elapsed_seconds": 6.588059,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -184,7 +184,7 @@
         "--check",
         "tame_trace_audit/result.json"
       ],
-      "elapsed_seconds": 0.082708,
+      "elapsed_seconds": 0.033045,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -195,7 +195,7 @@
         "elliptic_projection/check_projector.py",
         "--check"
       ],
-      "elapsed_seconds": 2.602532,
+      "elapsed_seconds": 1.988316,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -207,7 +207,7 @@
         "--check",
         "analytic_target_audit/result.json"
       ],
-      "elapsed_seconds": 0.088303,
+      "elapsed_seconds": 0.040257,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -218,7 +218,7 @@
         "weight_reflection/check_reflection.py",
         "--check"
       ],
-      "elapsed_seconds": 1.845106,
+      "elapsed_seconds": 1.331866,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -229,7 +229,7 @@
         "residue_filter/check_filter.py",
         "--check"
       ],
-      "elapsed_seconds": 0.070455,
+      "elapsed_seconds": 0.027592,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -240,7 +240,7 @@
         "de_rham_strategy/check_strategy.py",
         "--check"
       ],
-      "elapsed_seconds": 0.065294,
+      "elapsed_seconds": 0.027441,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -257,7 +257,7 @@
         "trace_scaling/traces-2048-12.json.gz",
         "--check"
       ],
-      "elapsed_seconds": 16.464533,
+      "elapsed_seconds": 11.538516,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -268,7 +268,7 @@
         "trace_scaling/cubic_trace.py",
         "--check"
       ],
-      "elapsed_seconds": 25.096852,
+      "elapsed_seconds": 16.841541,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -279,7 +279,7 @@
         "trace_scaling/check_cubic_overlap.py",
         "--check"
       ],
-      "elapsed_seconds": 0.090335,
+      "elapsed_seconds": 0.035833,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -290,7 +290,7 @@
         "leading_comparison/check_leading.py",
         "--check"
       ],
-      "elapsed_seconds": 0.068065,
+      "elapsed_seconds": 0.032155,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -301,7 +301,7 @@
         "cm_tail_bound/check_bound.py",
         "--check"
       ],
-      "elapsed_seconds": 1.778653,
+      "elapsed_seconds": 1.319839,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -312,7 +312,7 @@
         "cm_product_transfer/check_transfer.py",
         "--check"
       ],
-      "elapsed_seconds": 0.441593,
+      "elapsed_seconds": 0.372333,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -323,7 +323,7 @@
         "cm_product_transfer/product_trace.py",
         "--check"
       ],
-      "elapsed_seconds": 32.745083,
+      "elapsed_seconds": 22.17994,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -334,7 +334,7 @@
         "projection_backend/check_projection.py",
         "--check"
       ],
-      "elapsed_seconds": 0.159255,
+      "elapsed_seconds": 0.165198,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -346,7 +346,7 @@
         "--check",
         "projection_backend/matrix-fit-regression.json"
       ],
-      "elapsed_seconds": 0.13372,
+      "elapsed_seconds": 0.152719,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -356,7 +356,7 @@
         "python",
         "fixed_weight_syntomic/check_identity.py"
       ],
-      "elapsed_seconds": 0.033694,
+      "elapsed_seconds": 0.021441,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -367,7 +367,7 @@
         "projection_backend/check_cubic_ratio.py",
         "--check"
       ],
-      "elapsed_seconds": 0.073303,
+      "elapsed_seconds": 0.02909,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -377,7 +377,7 @@
         "python",
         "pr_syntomic_comparison/check_comparison.py"
       ],
-      "elapsed_seconds": 0.03848,
+      "elapsed_seconds": 0.023405,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -388,15 +388,48 @@
         "projection_backend/check_infinite_bounds.py",
         "--check"
       ],
-      "elapsed_seconds": 0.0658,
+      "elapsed_seconds": 0.026868,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "pilot_residual_and_big_image_inputs",
+      "command": [
+        "python",
+        "galois_image/check_image.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.034239,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "full_normalized_local_algebra",
+      "command": [
+        "python",
+        "normalized_local_comparison/check_linear_algebra.py"
+      ],
+      "elapsed_seconds": 0.033068,
+      "exit_code": 0,
+      "matches_saved_certificate": true
+    },
+    {
+      "check": "projective_nonvanishing_and_corrected_ratio",
+      "command": [
+        "python",
+        "comparison_logic_audit/check_logic.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.030913,
       "exit_code": 0,
       "matches_saved_certificate": true
     }
   ],
-  "python": "3.14.4",
-  "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, and rational projected specialization are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The conditional arithmetic comparison still requires a consistently identified global class and normalized full local regulator. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, or nonzero reflected logarithm is certified by this runner.",
+  "python": "3.12.14",
+  "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge, every residual Frobenius matrix in the big-image certificate, full local-coordinate and adjoint algebra, and the corrected scaled ratio21 versus the base line86 modulo125. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, rational projected specialization, rank-one global comparison, and normalized local comparison are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The combined pilot nonzero-localization theorem is a written computer-assisted proof using these explicit inputs; it is not mechanically proved by this runner. No new Lean verification, upstream CM reconstruction, or Selmer-to-point comparison is certified here.",
   "sha256": {
-    "README.md": "6792360c8ef0a5251c97cb099c77796097bee721c712ae1dc43a2a9728962106",
+    "PILOT_LOCALIZATION_THEOREM.md": "e9b16c29e877271cbbd241e8c03627c48869e4fabfd1bd3ce24499a8ec34fe70",
+    "README.md": "df7918890e18de9db11b8039e7523ae0312b0d05d440a64a8fef5901c4ad82d0",
     "ambient_arithmetic/README.md": "5cca054e3c9e5ecfc3b7a3277196a2504131f3792a9c8c8590bd6aa81c99cb81",
     "ambient_arithmetic/check_ambient_jet.py": "3fe19c2e1d0862540ea74f484361353467d807f2b8da459f975bfe4018014bab",
     "ambient_arithmetic/result.json": "8a77f20788a406911726ab30387b4f2a75025cfdc9ad6cdb5a0e3333c4387969",
@@ -415,6 +448,10 @@
     "cm_tail_bound/README.md": "add510d0893d830e79dbb0e244258ccb67eaa76f17e12d28c659f30486ef9079",
     "cm_tail_bound/check_bound.py": "d803007d13c9ba05b31686975996b0ce75f3225235e53c84d5d4fe60ba808ff4",
     "cm_tail_bound/result.json": "55e2c9d624712b851d6e2e7e13e0d3095f3066358c9a259031ce95a8d4fc8ccf",
+    "comparison_logic_audit/FINAL_REVIEW.md": "10b6d1f26ff63bda9759cb4e053d4b96419d3f03122e0d2ef657e1ea7b3106ff",
+    "comparison_logic_audit/README.md": "dc4281e764a0fd93b1016cdca3bb50522818ec90fa2408753f4337f725b3be42",
+    "comparison_logic_audit/check_logic.py": "9b7698a775ec06c7c51e93e92a314bc90bbc53cd9538722b6dc84e01b51be2a2",
+    "comparison_logic_audit/result.json": "7377181ae543ccbdb3a30a6cc734aa92a3d5f0057637208fec8b7f5cbeaca88b",
     "de_rham_strategy/README.md": "d163a016e2b8f9e7d5146e8ff06947e82eb299501bf1af45d57180c0c67b1e99",
     "de_rham_strategy/SOURCES.md": "bf37ec6f31317c67b4c84a0a408f4f362642e73446c35f9a56cceafa5991de80",
     "de_rham_strategy/backend_probe.py": "638cb3cc8ea4e686a3a74fae692987b6add4a91b068b5f3919a5799d95bf48e5",
@@ -444,6 +481,10 @@
     "fixed_weight_syntomic/README.md": "304cae7488b91ec0d9125b8a1ebd6999900a74fe719a47cb3cc7b5b40748157e",
     "fixed_weight_syntomic/check_identity.py": "d8f076301693c168d4e3f4e785960ca136879e76a4b42128195d0edbafaf78bd",
     "fixed_weight_syntomic/check_result.json": "42f5f1a3a27063203c43b884bec792a812f8fcfa454d39098f0ccf23f7b387c9",
+    "galois_image/README.md": "f884d83eafad03cfe693bc6255903198821ef9826d0e286d5807621648e61e19",
+    "galois_image/check_image.py": "c4828e1cda3c022f5d3a0eb284d6f5dc3f8b9810bc63ae39ef0e098ba6681e59",
+    "galois_image/result.json": "7041d47111069630bace8c6e1ffce6cb757e3402c9b051efd86bbac2c01c6e27",
+    "global_class_comparison/README.md": "cc4d01971fe1e3e1b7bc0c4765f53275bc45a6f4e9f9d22af317fec82e08a61c",
     "leading_comparison/ARITHMETIC_SPECIALIZATION.md": "52984fcbb85cf650815001a8339286b8022fd22c793d039432e427c42cd67917",
     "leading_comparison/README.md": "b091d634efb68bd2cc28d16596299c1e46a63907e882c4043212f0a006ef341d",
     "leading_comparison/VECTOR_SOURCE_REVIEW.md": "cba7dbd1bbe5d7d878d0e20a20e99b8b04a891752e4f156145037fd04f5a8960",
@@ -470,6 +511,9 @@
     "logic/c7_period.py": "64cc142763b4922abf6d613046efd58633ca5debf1628d0d6072ec7adc09f24f",
     "logic/result.json": "9243ae1519e37d9d81cd054dfb153f43d6b990163bb8bc00d80ae281fc61546f",
     "logic/verify_logic.py": "78a16e65b5d22142b0d3c692bf818707188baf6e6757c21be5c4fb5cd2ab62ee",
+    "normalized_local_comparison/README.md": "6c40fc27cf1f0d8931d3550993fd1afb9fb7b2965d218169b1591944c327bf61",
+    "normalized_local_comparison/check_linear_algebra.py": "fbd26a17a1e01d7bd0aa5a177ee5b968cb4368c2c25ad6735c6704e27d9c6aa0",
+    "normalized_local_comparison/check_result.json": "a569fd2b23cf360e3a98e8d7cf2bd95c23177d58d9b9428e8fe2ec2880d68d93",
     "p5/README.md": "24c3a371bb5f9d3832d7705b236fda4f35cf029358c778ea5186f383ea807518",
     "p5/check_refinements.py": "31e5f0fa4a98b8d98a3431d53ccd550f5a135801bd04d4f51f3acb6e5490318e",
     "p5/inputs.json": "8ed14ec2f42a2fa83bde88ed622a862b32265882f16a63174f1a589aaa497ff9",
@@ -543,7 +587,7 @@
     "trace_scaling/run_benchmarks.py": "5bf107270127bd3e99d21dc7c2dd547e2135caed0b815d616dac9d333a89b5fa",
     "trace_scaling/selected_trace.py": "b8f7491a4178af8580bd1557f5e6af7f21ae7a4b516f36a502cd6d9d8be29edc",
     "trace_scaling/traces-2048-12.json.gz": "fbbe08f468a1d83dc86848f4e40dd352ee8ea230341fc5acf868899a3e05a4cf",
-    "verify_all.py": "d9829cd995d70d5c0d1761e3d45db0babd64b398411ddbf6cccc7a70f9d2d254",
+    "verify_all.py": "0a241368e71b1d12258625353a160f3c08117073efe0250f34683a9be17424fe",
     "weight_reflection/README.md": "665b25e88347a1b69615f759141e9fdf450924ca4b4b17c427a414e2762608ba",
     "weight_reflection/check_reflection.py": "c03c306e06710e2950424fae8257c6f64b0eb948c17870801785292f78fb94e1",
     "weight_reflection/reduced_trace_inputs.json": "f6813a3e26e185e0ea5e190f857451c88028c9b5a324609df25421cd0fb8f95c",

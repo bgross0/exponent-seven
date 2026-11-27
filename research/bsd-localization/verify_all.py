@@ -63,6 +63,10 @@ JOBS = [
     ("perrin_riou_syntomic_operator_comparison", "pr_syntomic_comparison/check_comparison.py", [],
      "pr_syntomic_comparison/check_result.json"),
     ("infinite_katz_bound_arithmetic", "projection_backend/check_infinite_bounds.py", ["--check"], None),
+    ("pilot_residual_and_big_image_inputs", "galois_image/check_image.py", ["--check"], None),
+    ("full_normalized_local_algebra", "normalized_local_comparison/check_linear_algebra.py", [],
+     "normalized_local_comparison/check_result.json"),
+    ("projective_nonvanishing_and_corrected_ratio", "comparison_logic_audit/check_logic.py", ["--check"], None),
 ]
 
 
@@ -98,7 +102,7 @@ def main():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     receipt = {"status": "PASS", "python": sys.version.split()[0], "checks": checks,
                "sha256": hashes,
-               "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, and rational projected specialization are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The conditional arithmetic comparison still requires a consistently identified global class and normalized full local regulator. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, or nonzero reflected logarithm is certified by this runner."}
+               "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge, every residual Frobenius matrix in the big-image certificate, full local-coordinate and adjoint algebra, and the corrected scaled ratio21 versus the base line86 modulo125. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, rational projected specialization, rank-one global comparison, and normalized local comparison are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The combined pilot nonzero-localization theorem is a written computer-assisted proof using these explicit inputs; it is not mechanically proved by this runner. No new Lean verification, upstream CM reconstruction, or Selmer-to-point comparison is certified here."}
     if args.receipt:
         args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     print(json.dumps(receipt, indent=2, sort_keys=True))

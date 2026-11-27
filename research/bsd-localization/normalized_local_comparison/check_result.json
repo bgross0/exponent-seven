@@ -1,0 +1,90 @@
+{
+  "status": "pass",
+  "checks_passed": 44,
+  "checks": [
+    "elliptic Frobenius polynomial",
+    "untwisted Frobenius similitude",
+    "untwisted Frobenius adjoint",
+    "Tate-twisted Frobenius adjoint",
+    "independent elliptic tests",
+    "negative-twist adjoint s=1",
+    "inverse-Frobenius cancellation s=1",
+    "two-coordinate reconstruction s=1",
+    "negative-twist adjoint s=4",
+    "inverse-Frobenius cancellation s=4",
+    "two-coordinate reconstruction s=4",
+    "negative-twist adjoint s=20",
+    "inverse-Frobenius cancellation s=20",
+    "two-coordinate reconstruction s=20",
+    "negative-twist adjoint s=100",
+    "inverse-Frobenius cancellation s=100",
+    "two-coordinate reconstruction s=100",
+    "general alternating adjoint retains determinant",
+    "inverse alone fails when determinant differs from one",
+    "CM holomorphic tensor selects exactly UU",
+    "full CM extraction E=0, CM=0, test=0",
+    "full CM extraction E=0, CM=0, test=1",
+    "full CM extraction E=0, CM=1, test=0",
+    "full CM extraction E=0, CM=1, test=1",
+    "full CM extraction E=0, CM=2, test=0",
+    "full CM extraction E=0, CM=2, test=1",
+    "full CM extraction E=0, CM=3, test=0",
+    "full CM extraction E=0, CM=3, test=1",
+    "full CM extraction E=1, CM=0, test=0",
+    "full CM extraction E=1, CM=0, test=1",
+    "full CM extraction E=1, CM=1, test=0",
+    "full CM extraction E=1, CM=1, test=1",
+    "full CM extraction E=1, CM=2, test=0",
+    "full CM extraction E=1, CM=2, test=1",
+    "full CM extraction E=1, CM=3, test=0",
+    "full CM extraction E=1, CM=3, test=1",
+    "rank-one period change is common scalar at test=(Fraction(1, 1), Fraction(2, 1))",
+    "rank-one period change is common scalar at test=(Fraction(3, 1), Fraction(5, 1))",
+    "base interpolation operator",
+    "base determinant one",
+    "base image operator",
+    "base image annihilator",
+    "base image vector coordinates",
+    "unweighted trace does not preserve a general coefficient line"
+  ],
+  "CM_selection_on_UU_UH_HU_HH": [
+    "1",
+    "0",
+    "0",
+    "0"
+  ],
+  "base_A0_matrix": [
+    [
+      "59/45",
+      "-13/9"
+    ],
+    [
+      "13/45",
+      "4/9"
+    ]
+  ],
+  "base_A0_adjoint_matrix": [
+    [
+      "4/9",
+      "13/9"
+    ],
+    [
+      "-13/45",
+      "59/45"
+    ]
+  ],
+  "base_zeta_in_omega_Fomega": [
+    "4/9",
+    "-13/45"
+  ],
+  "trace_counterexample_wedge_in_1_u": [
+    "0",
+    "-2"
+  ],
+  "not_checked": [
+    "published geometric or p-adic comparison theorems",
+    "projected DR22 edge specialization",
+    "global class proportionality or Selmer hypotheses",
+    "nonzero arithmetic localization"
+  ]
+}
