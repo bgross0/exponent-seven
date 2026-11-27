@@ -1,0 +1,67 @@
+{
+  "toolchain": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "project_base": "04d553508eb27e2a5a8e3e4becd1da64ccfedd0e",
+  "started_utc": "2026-11-27T03:27:19.882519+00:00",
+  "commands": [
+    {
+      "command": [
+        "lake",
+        "build",
+        "Exp7Lean.Rows.Bridge30000"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.345,
+      "log_sha256": "221056b9335802d48f0b3e7749956ae00bbc64ece5b02487e403c86b014e9246"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/home/ben/exp7-bridge30000/Declarations437.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.869,
+      "log_sha256": "2c1436308b742f020efa8b6f3f07d9c69c146cfe462fb30aa16486ab3d2277f0"
+    }
+  ],
+  "axioms": {
+    "Exp7.Rows.Bridge30000.primeTotal_eq": [
+      "propext"
+    ],
+    "Exp7.Rows.Bridge30000.margin_eq": [
+      "propext"
+    ],
+    "Exp7.Rows.Bridge30000.margin_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Rows.Bridge30000.rowOK": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Rows.Bridge30000.excludes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Exp7.Rows.Bridge30000.excludes_fundamental": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "declarations_sha256": "2c1436308b742f020efa8b6f3f07d9c69c146cfe462fb30aa16486ab3d2277f0",
+  "build_log": "final-build-437.log",
+  "completed_utc": "2026-11-27T03:27:26.097138+00:00",
+  "source_sha256": {
+    "Exp7Lean/Rows/PrimePart.lean": "e8691f0ff80759f41bd357373fe107de79d3b4cbdac1f6024a573d502edd11e4",
+    "Exp7Lean/Rows/JPart.lean": "0fdf401550c5e03d045e13b23c360dced873d2b2c6a144b7a1dd59139b234da9",
+    "Exp7Lean/Rows/Check.lean": "5928738fd28dd31b166348f78a7433674c3184fdea0b20946de619321a646d94",
+    "Exp7Lean/Rows/Bridge30000Data.lean": "71f86c1810a291346764b2f08f273b41ebc09518c858bb664d6aa38e499fdd0b",
+    "Exp7Lean/Rows/Bridge30000.lean": "a550211cdd121f93211a5760e06b52bbfa246b50276959166afe1acb478ce24b"
+  }
+}

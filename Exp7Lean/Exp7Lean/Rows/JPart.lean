@@ -311,7 +311,7 @@ theorem tail_le {X : ℕ} (hX : 2 ≤ X) (hs : 0 < sqrtLo20 X) :
 
 variable {X LX LXhi : ℕ}
 
-theorem le_jHiN (C : RowCtx X LX LXhi sq pack v) (hs : 0 < sqrtLo20 X) (cnt : ℕ)
+theorem le_jHiN {B : ℕ} (C : RowCtx X LX LXhi sq pack v B) (hs : 0 < sqrtLo20 X) (cnt : ℕ)
     (hcnt : cnt ≤ 1008) :
     Dr * ((1 - corr v 1) + ∑ m ∈ Finset.range cnt, jReal (Real.log X) v (16 + m) +
         4 / (3 * X * √(X : ℝ) * (1 - 1 / ((X : ℝ) * X)))) ≤
@@ -361,7 +361,7 @@ theorem le_jHiN (C : RowCtx X LX LXhi sq pack v) (hs : 0 < sqrtLo20 X) (cnt : �
   rw [Nat.cast_add, Nat.cast_add, mul_add, mul_add]
   linarith
 
-theorem le_jHi (C : RowCtx X LX LXhi sq pack v) (hs : 0 < sqrtLo20 X) :
+theorem le_jHi {B : ℕ} (C : RowCtx X LX LXhi sq pack v B) (hs : 0 < sqrtLo20 X) :
     Dr * Jterm (autocorr (stepFn (Real.log X) v)) ≤ (jHi X LX LXhi sq pack : ℝ) := by
   unfold jHi
   have hJ := Jterm_le_jReal C.hX C.pk.ne C.pk.len

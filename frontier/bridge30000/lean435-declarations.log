@@ -1,0 +1,41 @@
+Exp7.Rows.Bridge30000.primeTotal_eq : Exp7.Rows.Bridge30000.primeTotal = 9924256547414500872107
+'Exp7.Rows.Bridge30000.primeTotal_eq' depends on axioms: [propext]
+Exp7.Rows.Bridge30000.margin_eq : Exp7.Rows.marginLower (2 ^ 135) 30000 (Exp7.Num.logLo Exp7.Num.P20 30000)
+    (Exp7.Num.logHi Exp7.Num.P20 30000) 64 Exp7.Rows.Bridge30000.pack Exp7.Rows.Bridge30000.primeTotal =
+  752277024130489382120
+'Exp7.Rows.Bridge30000.margin_eq' depends on axioms: [propext]
+Exp7.Rows.Bridge30000.margin_bound : 752277024130489382120 ≤
+  100000000000000000000 * Exp7.rowMargin (2 ^ 135) 30000 (List.map Int.cast Exp7.Rows.Bridge30000.vector)
+'Exp7.Rows.Bridge30000.margin_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.Rows.Bridge30000.rowOK : Exp7.Rows.RowOK { Q := 2 ^ 135, X := 30000 }
+'Exp7.Rows.Bridge30000.rowOK' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.Rows.Bridge30000.excludes : Exp7.GRHPrimeConductor →
+  ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → 10 ^ 32 ≤ q → q ≤ 2 ^ 135 → ¬Exp7.IsExp7 q
+'Exp7.Rows.Bridge30000.excludes' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.Rows.Bridge30000.excludes_fundamental : Exp7.GRHPrimeConductor →
+  ∀ (a b : ℤ),
+    (QuadraticAlgebra.discr a b).IsFundamentalDiscr →
+      QuadraticAlgebra.discr a b < 0 →
+        ∀ [inst : IsDomain (QuadraticAlgebra ℤ a b)],
+          10 ^ 32 ≤ -QuadraticAlgebra.discr a b →
+            -QuadraticAlgebra.discr a b ≤ 2 ^ 135 → Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
+'Exp7.Rows.Bridge30000.excludes_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.primeConductor : Exp7.GRHPrimeConductor
+'Exp7.GRHIntegration.primeConductor' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Exp7.GRHIntegration.bridge30000 : ∀ {q : ℕ}, Nat.Prime q → q % 4 = 3 → 10 ^ 32 ≤ q → q ≤ 2 ^ 135 → ¬Exp7.IsExp7 q
+'Exp7.GRHIntegration.bridge30000' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.bridge30000_fundamental : ∀ (a b : ℤ),
+  (QuadraticAlgebra.discr a b).IsFundamentalDiscr →
+    QuadraticAlgebra.discr a b < 0 →
+      ∀ [inst : IsDomain (QuadraticAlgebra ℤ a b)],
+        10 ^ 32 ≤ -QuadraticAlgebra.discr a b →
+          -QuadraticAlgebra.discr a b ≤ 2 ^ 135 → Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) ≠ 7
+'Exp7.GRHIntegration.bridge30000_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.GRHIntegration.theoremD_fundamental_135 : ∀ (a b : ℤ),
+  (QuadraticAlgebra.discr a b).IsFundamentalDiscr →
+    QuadraticAlgebra.discr a b < 0 →
+      ∀ [inst : IsDomain (QuadraticAlgebra ℤ a b)],
+        -QuadraticAlgebra.discr a b ≤ 2 ^ 135 →
+          (Monoid.exponent (ClassGroup (QuadraticAlgebra ℤ a b)) = 7 ↔
+            ∃ q ∈ Exp7.known, QuadraticAlgebra.discr a b = -↑q)
+'Exp7.GRHIntegration.theoremD_fundamental_135' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -17,12 +17,14 @@ open Real Exp7.Num
 
 local notation "Dr" => (100000000000000000000 : ℝ)
 
-/-- Positivity of the fixed-point lower bound of the margin:
-`totalLo + const - (jHi + logHi Q) ≥ 1`. -/
+/-- Directed lower bound for the row margin at scale `10^20`, given a lower prime sum. -/
+def marginLower (Q X LX LXhi sq pack : ℕ) (total : ℤ) : ℤ :=
+  Int.sub (Int.add total (Int.ofNat 223059076563587229937))
+    (Int.ofNat (Nat.add (jHi X LX LXhi sq pack) (logHi P20w Q)))
+
+/-- Positivity of the fixed-point lower bound of the margin. -/
 def rowCore (Q X LX LXhi sq pack : ℕ) : Bool :=
-  Nat.ble 1 (Int.toNat (Int.sub
-    (Int.add (totalLo X LX LXhi sq pack) (Int.ofNat 223059076563587229937))
-    (Int.ofNat (Nat.add (jHi X LX LXhi sq pack) (logHi P20w Q)))))
+  Nat.ble 1 (Int.toNat (marginLower Q X LX LXhi sq pack (totalLo X LX LXhi sq pack)))
 
 /-- The complete check of a certificate row `(Q, X)` with kernel vector `v`. -/
 def rowCheck (Q X : ℕ) (v : List ℤ) (pack : ℕ) : Bool :=
@@ -34,10 +36,10 @@ def rowCheck (Q X : ℕ) (v : List ℤ) (pack : ℕ) : Bool :=
 theorem P20_D' : ((P20.D : ℕ) : ℝ) = Dr := by norm_num [P20]
 theorem P20w_D' : ((P20w.D : ℕ) : ℝ) = Dr := by norm_num [P20w]
 
-theorem rowCore_sound {Q X LX LXhi sq pack : ℕ} {v : List ℝ} (C : RowCtx X LX LXhi sq pack v)
-    (hQ : 1 ≤ Q) (hs : 0 < sqrtLo20 X) (h : rowCore Q X LX LXhi sq pack = true) :
-    0 < rowMargin Q X v := by
-  have hT := totalLo_le C
+theorem marginLower_le {Q X LX LXhi sq pack B : ℕ} {v : List ℝ} {total : ℤ}
+    (C : RowCtx X LX LXhi sq pack v B) (hQ : 1 ≤ Q) (hs : 0 < sqrtLo20 X)
+    (hT : (total : ℝ) ≤ Dr * inertSum (autocorr (stepFn (Real.log X) v)) X) :
+    ((marginLower Q X LX LXhi sq pack total : ℤ) : ℝ) ≤ Dr * rowMargin Q X v := by
   have hJ := le_jHi C hs
   have hlQ : Dr * Real.log Q ≤ (logHi P20w Q : ℝ) := by
     have := le_logHi P20w_valid hQ
@@ -50,20 +52,22 @@ theorem rowCore_sound {Q X LX LXhi sq pack : ℕ} {v : List ℝ} (C : RowCtx X L
     have e20 : (10 : ℝ) ^ 20 = Dr := by norm_num
     rw [e20] at this
     exact this
-  have h1 : 1 ≤ Int.toNat (totalLo X LX LXhi sq pack + ((223059076563587229937 : ℕ) : ℤ) -
-      ((jHi X LX LXhi sq pack + logHi P20w Q : ℕ) : ℤ)) := Nat.le_of_ble_eq_true h
-  have hz : 0 < totalLo X LX LXhi sq pack + ((223059076563587229937 : ℕ) : ℤ) -
-      ((jHi X LX LXhi sq pack + logHi P20w Q : ℕ) : ℤ) := by
-    by_contra hneg
-    have := Int.toNat_of_nonpos (not_lt.mp hneg)
+  change (↑(total + (223059076563587229937 : ℤ) - ↑(jHi X LX LXhi sq pack + logHi P20w Q)) : ℝ) ≤ _
+  push_cast
+  unfold rowMargin psi34
+  linarith
+
+theorem rowCore_sound {Q X LX LXhi sq pack : ℕ} {v : List ℝ} (C : RowCtx X LX LXhi sq pack v)
+    (hQ : 1 ≤ Q) (hs : 0 < sqrtLo20 X) (h : rowCore Q X LX LXhi sq pack = true) :
+    0 < rowMargin Q X v := by
+  have hz : 0 < marginLower Q X LX LXhi sq pack (totalLo X LX LXhi sq pack) := by
+    have hh := Nat.le_of_ble_eq_true h
+    change 1 ≤ Int.toNat (marginLower Q X LX LXhi sq pack (totalLo X LX LXhi sq pack)) at hh
     omega
-  have hzr : (0 : ℝ) < ((totalLo X LX LXhi sq pack + ((223059076563587229937 : ℕ) : ℤ) -
-      ((jHi X LX LXhi sq pack + logHi P20w Q : ℕ) : ℤ) : ℤ) : ℝ) := by exact_mod_cast hz
-  push_cast at hzr
-  have hpos : Dr * 0 < Dr * rowMargin Q X v := by
-    unfold rowMargin psi34
-    linarith
-  exact lt_of_mul_lt_mul_left hpos (by norm_num)
+  have hzr : (0 : ℝ) < (marginLower Q X LX LXhi sq pack (totalLo X LX LXhi sq pack) : ℤ) := by
+    exact_mod_cast hz
+  have hpos := lt_of_lt_of_le hzr (marginLower_le C hQ hs (totalLo_le C))
+  exact pos_of_mul_pos_right hpos (by norm_num)
 
 /-- **Soundness of the row check.** -/
 theorem rowCheck_sound {Q X : ℕ} {v : List ℤ} {pack : ℕ} (h : rowCheck Q X v pack = true) :
