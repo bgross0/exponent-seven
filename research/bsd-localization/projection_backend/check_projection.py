@@ -102,6 +102,12 @@ def elliptic_subspace_adapter_regression():
     cert = {"fit": fit, "effective_matrix_digits": m, "dual_functionals": duals,
             "projection": projections(inp, fit, duals)}
     verify_certificate(inp, cert)
+    # Keep the valid witness fixed and isolate its agreement with the source precision.
+    for source_digits in (md - 1, md + 1):
+        other_precision = dict(inp, fit_digits=source_digits)
+        assert rejected(lambda: verify_certificate(other_precision, cert))
+    noninteger_fit = dict(fit, input_digits=float(md))
+    assert rejected(lambda: verify_certificate(inp, dict(cert, fit=noninteger_fit)))
     for i, (aa, bb) in enumerate(known):
         assert ball_contains_integer(cert["projection"]["stabilization_coefficients"]["alpha"][f"W2_xi{i}"], aa)
         assert ball_contains_integer(cert["projection"]["stabilization_coefficients"]["beta"][f"W2_xi{i}"], bb)

@@ -360,13 +360,16 @@ The constant and linear balls contain zero in all three cubic components;
 that finite agreement is not used to infer exact vanishing. The separate
 analytic identity supplies the exact lower-order zeros.
 
-The complete large witnesses are preserved in
-`bsd-katz-cm-finite-certificates-2026-11-27.zip` (48,854,642 bytes;
-SHA-256 `352237882bb1d79557d2705c197d0401d7620136cbcff57bf5a7c353e80c55e5`).
-The archive keeps the gated capsule, its matrix witness, the short and
-long low-weight checkpoints, and the actual CM projection witness.
-Duplicate unchecked capsules are omitted. Code and compact receipts
-remain in this research branch.
+The
+[public v1 witness archive](https://github.com/bgross0/exponent-seven/releases/download/bsd-katz-cm-witness-v1/bsd-katz-cm-witness-v1.zip)
+contains the verified Katz capsule and matrix witness from Actions run `46059120633`, the
+short and long low-weight checkpoints, and the finite CM projection certificate
+regenerated on the Precision. Its SHA-256 is
+`fc551679fa16d7ad4e836e8f59f27456266786b8618e7e2b794df912b1aa511b`. The earlier working
+archive `bsd-katz-cm-finite-certificates-2026-11-27.zip` had SHA-256
+`352237882bb1d79557d2705c197d0401d7620136cbcff57bf5a7c353e80c55e5`. The regenerated
+projection agreed with the saved result in every field except elapsed time.
+[Replay both certificates](projection_backend/README.md#1-reproducing-the-calculation)
 
 ## Preceding reduction: one cubic input and the finite geometry
 

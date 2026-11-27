@@ -195,7 +195,11 @@ def projections(inputs, fit, duals):
 
 def verify_certificate(inputs, certificate):
     p = inputs["p"]
-    precision = verify_integral_solution(inputs["fit_matrix"], inputs["rhs"], certificate["fit"], p)
+    fit = certificate["fit"]
+    digits = fit["input_digits"]
+    require(type(digits) is int and digits == inputs["fit_digits"],
+            "Fit precision must equal the integer digit count from the source capsule")
+    precision = verify_integral_solution(inputs["fit_matrix"], inputs["rhs"], fit, p)
     m = min(inputs["matrix_digits"], precision)
     require(m > 0 and certificate["effective_matrix_digits"] == m, "Wrong effective operator precision")
     coords = array(certificate["fit"]["coordinates"], p**m)

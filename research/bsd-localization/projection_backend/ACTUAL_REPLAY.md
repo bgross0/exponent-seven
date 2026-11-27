@@ -1,16 +1,9 @@
 # Independent replay of the actual Katz certificate
 
-The downloaded run `46059120633`, built from the `8726d59` branch state,
-contains the actual level389 finite Katz calculation. The replay entry
-point is `replay_actual_katz.py`; its receipt is
-`actual-katz-replay.json`. The replay requires ordinary Python, NumPy, and
-SymPy, with no local Sage installation.
-
-```sh
-python research/bsd-localization/projection_backend/replay_actual_katz.py \
-  --artifact-root /workspace/scratch/50ed92e4bf2d/bsd-geometry-downloads/katz-success-8726d59 \
-  --check research/bsd-localization/projection_backend/actual-katz-replay.json
-```
+Actions run `46059120633` computed the level-389 Katz geometry at `8726d59`. The
+[download and replay instructions](README.md#1-reproducing-the-calculation) use the same
+geometry from the v1 witness archive. The verifier compares its result with
+`actual-katz-replay.json` using Python, NumPy and SymPy.
 
 ## What the replay establishes
 

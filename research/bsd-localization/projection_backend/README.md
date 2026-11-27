@@ -28,42 +28,43 @@ logarithm.
 
 ## 1. Reproducing the calculation
 
-From the repository root, after the Katz geometry capsule exists:
+The
+[v1 witness archive](https://github.com/bgross0/exponent-seven/releases/download/bsd-katz-cm-witness-v1/bsd-katz-cm-witness-v1.zip)
+contains the Katz geometry from Actions run `46059120633` and the independently
+regenerated finite CM certificate. Use the repository at tag `bsd-katz-cm-witness-v1` for
+this replay. From its root, with the dependencies in
+`research/bsd-localization/requirements.txt` installed, run
 
 ```sh
-python research/bsd-localization/projection_backend/project_capsule.py \
-  --katz de-rham-katz6/katz-capsule.json.gz \
-  --output finite-projection-output
+witness_dir=$(mktemp -d)
+curl --fail --location --output "$witness_dir/bsd-katz-cm-witness-v1.zip" \
+  https://github.com/bgross0/exponent-seven/releases/download/bsd-katz-cm-witness-v1/bsd-katz-cm-witness-v1.zip
+(
+  cd "$witness_dir" &&
+  echo 'fc551679fa16d7ad4e836e8f59f27456266786b8618e7e2b794df912b1aa511b  bsd-katz-cm-witness-v1.zip' | sha256sum -c - &&
+  unzip -q bsd-katz-cm-witness-v1.zip &&
+  cd witness && sha256sum -c SHA256SUMS
+)
 ```
 
-The default trace is the saved q6825/twelve-digit cubic representative.
-The adapter checks its dimensions and precision, and rechecks the whole
-finite identity U(E)=A E rather than trusting the capsule's boolean flag.
-It fits eleven columns together: the three scalar coefficients of each
-of the three weight orders, plus U(f_alpha) and U(f_beta).
-
-The outputs are:
-
-* `finite-projection-certificate.json.gz`: coordinate vectors, scaled
-  inverse-minor witnesses, primitive dual vectors, source hashes, and
-  precision-bearing output balls.
-* `projection-result.json`: measured guards, both slope coefficients,
-  omega,eta coordinates, fixture checks, and predicted lower-zero diagnostics.
-
-The symmetric elliptic oldspace coordinate is also reported after division
-by62. This is not a silent choice of the global test vector.
-
-Verification does not rerun the elimination algorithm:
+First verify the geometry against the recorded Katz receipt. Then verify the projection of
+the undepleted CM product against its trace in the repository. Both commands use the same
+extracted capsule.
 
 ```sh
-python research/bsd-localization/projection_backend/project_capsule.py \
-  --katz de-rham-katz6/katz-capsule.json.gz \
-  --verify finite-projection-output/finite-projection-certificate.json.gz
+backend=research/bsd-localization/projection_backend
+python "$backend/replay_actual_katz.py" \
+  --artifact-root "$witness_dir/witness" --check "$backend/actual-katz-replay.json"
+python "$backend/project_capsule.py" --input-kind undepleted-product \
+  --katz "$witness_dir/witness/katz/katz-capsule.json.gz" \
+  --verify "$witness_dir/witness/cm/finite-projection-certificate.json.gz"
 ```
 
-Instead it checks the source hashes, all finite fit equations, the two-sided
-scaled inverse identities, the dual eigen-equations, the classical fixture
-eigen-equations, every normalization bound, and the saved outputs.
+The second command checks the source hashes, all eleven fitted columns, both dual
+eigenvectors, the normalization equations and the resulting projection. The fit must use
+the eight input digits recorded in the capsule. The coordinates are determined to seven
+digits. Supplying `--output finite-projection-output` in place of `--verify ...`
+regenerates the certificate and `projection-result.json`.
 
 An optional `--scale b` multiplies **both** the input and all normalization
 rows by5^b before fitting. This can clear denominators, and the common scale

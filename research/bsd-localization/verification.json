@@ -8,7 +8,7 @@
         "--check",
         "eligibility/arithmetic/eligibility.json"
       ],
-      "elapsed_seconds": 0.052177,
+      "elapsed_seconds": 0.079495,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -20,7 +20,7 @@
         "--check",
         "eligibility/arithmetic/twist-lvalue.json"
       ],
-      "elapsed_seconds": 1.516954,
+      "elapsed_seconds": 1.848842,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -30,7 +30,7 @@
         "python",
         "logic/verify_logic.py"
       ],
-      "elapsed_seconds": 0.038983,
+      "elapsed_seconds": 0.043551,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -40,7 +40,7 @@
         "python",
         "logic/c7_period.py"
       ],
-      "elapsed_seconds": 0.044163,
+      "elapsed_seconds": 0.065781,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -50,7 +50,7 @@
         "python",
         "projection/ring_class_projection.py"
       ],
-      "elapsed_seconds": 0.110109,
+      "elapsed_seconds": 0.146918,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -62,7 +62,7 @@
         "--check",
         "p5/result.json"
       ],
-      "elapsed_seconds": 0.072853,
+      "elapsed_seconds": 0.105016,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -74,7 +74,7 @@
         "--check",
         "local_model/result.json"
       ],
-      "elapsed_seconds": 0.052551,
+      "elapsed_seconds": 0.096563,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -84,7 +84,7 @@
         "python",
         "rationality/check_exterior_descent.py"
       ],
-      "elapsed_seconds": 0.087257,
+      "elapsed_seconds": 0.128538,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -94,7 +94,7 @@
         "python",
         "derived_global/bockstein_lifts.py"
       ],
-      "elapsed_seconds": 0.030254,
+      "elapsed_seconds": 0.086801,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -104,7 +104,7 @@
         "python",
         "finite_log_reciprocity/check_finite_coordinate.py"
       ],
-      "elapsed_seconds": 0.042011,
+      "elapsed_seconds": 0.07941,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -116,7 +116,7 @@
         "--check",
         "local_crystalline/result.json"
       ],
-      "elapsed_seconds": 0.351386,
+      "elapsed_seconds": 0.589835,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -126,7 +126,7 @@
         "python",
         "local_crystalline/calibration.py"
       ],
-      "elapsed_seconds": 0.199436,
+      "elapsed_seconds": 0.265287,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -138,7 +138,7 @@
         "--check",
         "local_crystalline/height-result.json"
       ],
-      "elapsed_seconds": 0.030363,
+      "elapsed_seconds": 0.068009,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -150,7 +150,7 @@
         "--check",
         "ambient_arithmetic/result.json"
       ],
-      "elapsed_seconds": 0.520909,
+      "elapsed_seconds": 0.652502,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -161,7 +161,7 @@
         "reflected_pilot/cm_weight_jets.py",
         "--check"
       ],
-      "elapsed_seconds": 5.758478,
+      "elapsed_seconds": 7.930781,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -172,7 +172,7 @@
         "tame_trace_compute/compute_traces.py",
         "--check"
       ],
-      "elapsed_seconds": 6.448924,
+      "elapsed_seconds": 7.84368,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -184,7 +184,7 @@
         "--check",
         "tame_trace_audit/result.json"
       ],
-      "elapsed_seconds": 0.071646,
+      "elapsed_seconds": 0.082708,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -195,7 +195,7 @@
         "elliptic_projection/check_projector.py",
         "--check"
       ],
-      "elapsed_seconds": 1.94707,
+      "elapsed_seconds": 2.602532,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -207,7 +207,7 @@
         "--check",
         "analytic_target_audit/result.json"
       ],
-      "elapsed_seconds": 0.059178,
+      "elapsed_seconds": 0.088303,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -218,7 +218,7 @@
         "weight_reflection/check_reflection.py",
         "--check"
       ],
-      "elapsed_seconds": 1.417585,
+      "elapsed_seconds": 1.845106,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -229,7 +229,7 @@
         "residue_filter/check_filter.py",
         "--check"
       ],
-      "elapsed_seconds": 0.027331,
+      "elapsed_seconds": 0.070455,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -240,7 +240,7 @@
         "de_rham_strategy/check_strategy.py",
         "--check"
       ],
-      "elapsed_seconds": 0.032894,
+      "elapsed_seconds": 0.065294,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -257,7 +257,7 @@
         "trace_scaling/traces-2048-12.json.gz",
         "--check"
       ],
-      "elapsed_seconds": 11.346199,
+      "elapsed_seconds": 16.464533,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -268,7 +268,7 @@
         "trace_scaling/cubic_trace.py",
         "--check"
       ],
-      "elapsed_seconds": 17.335125,
+      "elapsed_seconds": 25.096852,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -279,7 +279,7 @@
         "trace_scaling/check_cubic_overlap.py",
         "--check"
       ],
-      "elapsed_seconds": 0.043851,
+      "elapsed_seconds": 0.090335,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -290,7 +290,7 @@
         "leading_comparison/check_leading.py",
         "--check"
       ],
-      "elapsed_seconds": 0.0386,
+      "elapsed_seconds": 0.068065,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -301,7 +301,7 @@
         "cm_tail_bound/check_bound.py",
         "--check"
       ],
-      "elapsed_seconds": 1.257289,
+      "elapsed_seconds": 1.778653,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -312,7 +312,7 @@
         "cm_product_transfer/check_transfer.py",
         "--check"
       ],
-      "elapsed_seconds": 0.341233,
+      "elapsed_seconds": 0.441593,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -323,7 +323,7 @@
         "cm_product_transfer/product_trace.py",
         "--check"
       ],
-      "elapsed_seconds": 22.789181,
+      "elapsed_seconds": 32.745083,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -334,7 +334,7 @@
         "projection_backend/check_projection.py",
         "--check"
       ],
-      "elapsed_seconds": 0.171481,
+      "elapsed_seconds": 0.159255,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -346,7 +346,7 @@
         "--check",
         "projection_backend/matrix-fit-regression.json"
       ],
-      "elapsed_seconds": 0.157925,
+      "elapsed_seconds": 0.13372,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -356,7 +356,7 @@
         "python",
         "fixed_weight_syntomic/check_identity.py"
       ],
-      "elapsed_seconds": 0.025794,
+      "elapsed_seconds": 0.033694,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -367,7 +367,7 @@
         "projection_backend/check_cubic_ratio.py",
         "--check"
       ],
-      "elapsed_seconds": 0.037882,
+      "elapsed_seconds": 0.073303,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -377,7 +377,7 @@
         "python",
         "pr_syntomic_comparison/check_comparison.py"
       ],
-      "elapsed_seconds": 0.027979,
+      "elapsed_seconds": 0.03848,
       "exit_code": 0,
       "matches_saved_certificate": true
     },
@@ -388,15 +388,15 @@
         "projection_backend/check_infinite_bounds.py",
         "--check"
       ],
-      "elapsed_seconds": 0.029962,
+      "elapsed_seconds": 0.0658,
       "exit_code": 0,
       "matches_saved_certificate": true
     }
   ],
-  "python": "3.12.14",
+  "python": "3.14.4",
   "scope": "Exact arithmetic, CM periods, local logs and crystalline Frobenius, cyclotomic height, CM second jets, tame traces, elliptic Hecke projection, reflection/cubic identities, both q6825 cubic inputs at twelve digits, two-slope calibration, residue/Euler filters, tail-bound arithmetic, leading-coordinate/projective identities, finite inverse-minor projection certificates, certified finite Katz matrix fitting, the actual cubic ratio, fixed-weight Frobenius and Perrin--Riou adjoint identities, and algebraic lift/descent/Bockstein fixtures. This runner also checks the integer inequalities and precision table in the infinite Katz bridge. The source-based geometric provenance, analytic tail theorem, Banach and cohomological comparison, and rational projected specialization are written mathematical arguments, not consequences of this finite runner. Actual large Sage geometry and CM projection witnesses have separate replay receipts. The conditional arithmetic comparison still requires a consistently identified global class and normalized full local regulator. No new Lean verification, upstream CM reconstruction, arithmetic global Bockstein, or nonzero reflected logarithm is certified by this runner.",
   "sha256": {
-    "README.md": "8ddbf26355f08b35d68a7eca9b894e40ff6a43d3102558f56e4eab80f01397d2",
+    "README.md": "6792360c8ef0a5251c97cb099c77796097bee721c712ae1dc43a2a9728962106",
     "ambient_arithmetic/README.md": "5cca054e3c9e5ecfc3b7a3277196a2504131f3792a9c8c8590bd6aa81c99cb81",
     "ambient_arithmetic/check_ambient_jet.py": "3fe19c2e1d0862540ea74f484361353467d807f2b8da459f975bfe4018014bab",
     "ambient_arithmetic/result.json": "8a77f20788a406911726ab30387b4f2a75025cfdc9ad6cdb5a0e3333c4387969",
@@ -483,9 +483,9 @@
     "projection/README.md": "edf0f322199c26f6f686c60248ea04975b0733696c8b2a2567a8133abadbf494",
     "projection/result.json": "390951cfc0347238b6b8b0dd450c0cc99e6867a7d163cf2c29579f64f5c45c76",
     "projection/ring_class_projection.py": "d3fe5a0f56bdb3d3ebb46e168d0f56b7b31619b2fab6a8d63384a2bd731b6e70",
-    "projection_backend/ACTUAL_REPLAY.md": "b7ab2c05246873424696a97a7904f095c9706e95b4b9a5a79a61353038e3f90d",
+    "projection_backend/ACTUAL_REPLAY.md": "5eecbe1e6f06813cb5912d054e8240e8040a9da8a7b2eac526f517899372a4e7",
     "projection_backend/INFINITE_KATZ_BRIDGE.md": "575943a7d2e773d9b48188b3ec0292e5ed3369476d128cb1916a8e18089a64cc",
-    "projection_backend/README.md": "80369886c4d25086aac6f6b9f9566cb8eb8f50b031445292067c1206b0212b47",
+    "projection_backend/README.md": "d10b8b45bb2d4eccc685acc4b72a96609cb47d608e56cd4461629b460b00d1b6",
     "projection_backend/actual-cm-finite-projection.json": "ed37f6d6b106afb518adcf866326842b792efc3604a040ebd1377753b2a60490",
     "projection_backend/actual-cm-finite-replay.json": "15af3baf237c728e8f3a29cbc9fb345a13cce2f01ff12af901e8a4d6963e7b0e",
     "projection_backend/actual-katz-replay.json": "b90aa512b743ab129f01dee6aefb499b63a869f87d1bdb84613fbed0a7125581",
@@ -493,13 +493,13 @@
     "projection_backend/check_cubic_ratio.py": "647f3d11be64ca8e872cbd8cf796346b79967d9b1f12611903e79d984eae1807",
     "projection_backend/check_infinite_bounds.py": "360819b2295ca60ba81a87527b68c2681dbb60f27a048d60695f248023a24e75",
     "projection_backend/check_katz_matrix_fit.py": "246f913f7ee53e9f7a97643bcc676d3e45cca3f3e254f300e68a15813f87a99b",
-    "projection_backend/check_projection.py": "63fa82bb69e124b83c8f149c32ea08041e381be4019e78495158eb803b9ca26d",
+    "projection_backend/check_projection.py": "163dc047dd393803cdf1829efe12ddfb0b119ce7090e885187936b2f0107d819",
     "projection_backend/cubic-ratio-result.json": "16f8ce8f89878c88aa847f690458b6b04baee60e4194108e33ee26e565489b07",
     "projection_backend/finite_projection.py": "6b53bba5966c77062b338ecfd9ac206ae2b13bf54703e85fdcb5247b47198090",
     "projection_backend/infinite-katz-bounds.json": "0952d142a058c37963a0873880da3751598d8f7055008112130c9459323102a0",
     "projection_backend/katz_matrix_fit.py": "6141530f4d52a4d07d75c2343a106e65718ec304da4c0ac5ae508607e45edd64",
     "projection_backend/matrix-fit-regression.json": "4b855c532079450b42a2d50d2cd200fcbbbf62707ff784e5b6400e18ec35376b",
-    "projection_backend/project_capsule.py": "bbdabc4b3bf113e8716b2984b819978462d04ddcd3c6fcdc657cea13e1467111",
+    "projection_backend/project_capsule.py": "fd1f5a71ac6e742a3b85c726fc55c84d3be9a3fa99111428c9e6a4b8a63240f4",
     "projection_backend/replay_actual_katz.py": "8c522408553963cf2bbbcb183ffeeab6a7c696c2ae036e7f74168f222615517b",
     "projection_backend/replay_pole_core.py": "374b58b8c9886ba2d30d761903ec91bd4ebc69a55026500b2e442009c0483844",
     "projection_backend/result.json": "939787604ded3ab8c59b5a973b8f24179b40d94d23c21af8bd6b84306ae176ea",
