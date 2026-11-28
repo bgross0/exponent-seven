@@ -1,0 +1,403 @@
+{
+  "status": "all numerical interval inequalities positive; not a Lean proof",
+  "arithmetic": "integer endpoints / 10**40, outward rounding; Python stdlib only",
+  "pi_enclosure": [
+    "3.1415926535897932384626433832795028841956",
+    "3.1415926535897932384626433832795028841976"
+  ],
+  "gamma_enclosure": [
+    "0.5772156640681995281065120861141485038762",
+    "0.5772156649015328614398454194474818383462"
+  ],
+  "rows": [
+    {
+      "X": 19000,
+      "Qmin": "3900000000000000000000000000000",
+      "Qmax": "100000000000000000000000000000000",
+      "prime_power_terms": 2222,
+      "delta": "1/100",
+      "output_scale": 1000000,
+      "prime_sum": [
+        76650521,
+        76650522
+      ],
+      "J_upper_enclosure": [
+        483334,
+        483335
+      ],
+      "margin": [
+        4715054,
+        4715055
+      ],
+      "low_zero_loss_upper_enclosure": [
+        2558041,
+        2558042
+      ],
+      "sharper_profile_preconditions": {
+        "kappa_upper_enclosure": [
+          931480,
+          931481
+        ],
+        "taper_condition_margin": [
+          47308,
+          47309
+        ]
+      },
+      "profiles": [
+        {
+          "method": "original_s_equals_2",
+          "height": 1000,
+          "weighted_mass_upper_enclosure": [
+            77682722,
+            77682723
+          ],
+          "low_zero_loss_upper_enclosure": [
+            2558041,
+            2558042
+          ],
+          "high_zero_loss_upper_enclosure": [
+            608418,
+            608419
+          ],
+          "residual": [
+            1548595,
+            1548596
+          ]
+        },
+        {
+          "method": "shifted_s_equals_T_plus_1",
+          "height": 100,
+          "weighted_mass_upper_enclosure": [
+            402299,
+            402300
+          ],
+          "low_zero_loss_upper_enclosure": [
+            2558041,
+            2558042
+          ],
+          "high_zero_loss_upper_enclosure": [
+            636502,
+            636503
+          ],
+          "residual": [
+            1520510,
+            1520511
+          ]
+        },
+        {
+          "method": "shifted_tail_and_exact_Haar_low_loss",
+          "height": 60,
+          "weighted_mass_upper_enclosure": [
+            666298,
+            666299
+          ],
+          "low_zero_loss_upper_enclosure": [
+            726362,
+            726363
+          ],
+          "high_zero_loss_upper_enclosure": [
+            2947889,
+            2947890
+          ],
+          "residual": [
+            1040803,
+            1040804
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.361
+    },
+    {
+      "X": 30000,
+      "Qmin": "100000000000000000000000000000000",
+      "Qmax": "10000000000000000000000000000000000000000",
+      "prime_power_terms": 3320,
+      "delta": "1/100",
+      "output_scale": 1000000,
+      "prime_sum": [
+        95424837,
+        95424838
+      ],
+      "J_upper_enclosure": [
+        461919,
+        461920
+      ],
+      "margin": [
+        5090105,
+        5090106
+      ],
+      "low_zero_loss_upper_enclosure": [
+        3539947,
+        3539948
+      ],
+      "sharper_profile_preconditions": {
+        "kappa_upper_enclosure": [
+          931480,
+          931481
+        ],
+        "taper_condition_margin": [
+          49503,
+          49504
+        ]
+      },
+      "profiles": [
+        {
+          "method": "original_s_equals_2",
+          "height": 1000,
+          "weighted_mass_upper_enclosure": [
+            96103403,
+            96103404
+          ],
+          "low_zero_loss_upper_enclosure": [
+            3539947,
+            3539948
+          ],
+          "high_zero_loss_upper_enclosure": [
+            795820,
+            795821
+          ],
+          "residual": [
+            754337,
+            754338
+          ]
+        },
+        {
+          "method": "shifted_s_equals_T_plus_1",
+          "height": 100,
+          "weighted_mass_upper_enclosure": [
+            494403,
+            494404
+          ],
+          "low_zero_loss_upper_enclosure": [
+            3539947,
+            3539948
+          ],
+          "high_zero_loss_upper_enclosure": [
+            827047,
+            827048
+          ],
+          "residual": [
+            723110,
+            723111
+          ]
+        },
+        {
+          "method": "shifted_tail_and_exact_Haar_low_loss",
+          "height": 60,
+          "weighted_mass_upper_enclosure": [
+            819803,
+            819804
+          ],
+          "low_zero_loss_upper_enclosure": [
+            1001722,
+            1001723
+          ],
+          "high_zero_loss_upper_enclosure": [
+            3834876,
+            3834877
+          ],
+          "residual": [
+            253506,
+            253507
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.274
+    },
+    {
+      "X": 100000,
+      "Qmin": "10000000000000000000000000000000000000000",
+      "Qmax": "1000000000000000000000000000000000000000000000000000000000000",
+      "prime_power_terms": 9700,
+      "delta": "1/100",
+      "output_scale": 1000000,
+      "prime_sum": [
+        168193072,
+        168193073
+      ],
+      "J_upper_enclosure": [
+        413613,
+        413614
+      ],
+      "margin": [
+        31854943,
+        31854944
+      ],
+      "low_zero_loss_upper_enclosure": [
+        6925555,
+        6925556
+      ],
+      "sharper_profile_preconditions": {
+        "kappa_upper_enclosure": [
+          931480,
+          931481
+        ],
+        "taper_condition_margin": [
+          55290,
+          55291
+        ]
+      },
+      "profiles": [
+        {
+          "method": "original_s_equals_2",
+          "height": 1000,
+          "weighted_mass_upper_enclosure": [
+            142155105,
+            142155106
+          ],
+          "low_zero_loss_upper_enclosure": [
+            6925555,
+            6925556
+          ],
+          "high_zero_loss_upper_enclosure": [
+            1422783,
+            1422784
+          ],
+          "residual": [
+            23506604,
+            23506605
+          ]
+        },
+        {
+          "method": "shifted_s_equals_T_plus_1",
+          "height": 100,
+          "weighted_mass_upper_enclosure": [
+            724661,
+            724662
+          ],
+          "low_zero_loss_upper_enclosure": [
+            6925555,
+            6925556
+          ],
+          "high_zero_loss_upper_enclosure": [
+            1465157,
+            1465158
+          ],
+          "residual": [
+            23464231,
+            23464232
+          ]
+        },
+        {
+          "method": "shifted_tail_and_exact_Haar_low_loss",
+          "height": 60,
+          "weighted_mass_upper_enclosure": [
+            1203567,
+            1203568
+          ],
+          "low_zero_loss_upper_enclosure": [
+            1930308,
+            1930309
+          ],
+          "high_zero_loss_upper_enclosure": [
+            6804746,
+            6804747
+          ],
+          "residual": [
+            23119888,
+            23119889
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.782
+    },
+    {
+      "X": 1000000,
+      "Qmin": "1000000000000000000000000000000000000000000000000000000000000",
+      "Qmax": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "prime_power_terms": 78734,
+      "delta": "1/100",
+      "output_scale": 1000000,
+      "prime_sum": [
+        484511342,
+        484511343
+      ],
+      "J_upper_enclosure": [
+        344678,
+        344679
+      ],
+      "margin": [
+        113378470,
+        113378471
+      ],
+      "low_zero_loss_upper_enclosure": [
+        29660773,
+        29660774
+      ],
+      "sharper_profile_preconditions": {
+        "kappa_upper_enclosure": [
+          931480,
+          931481
+        ],
+        "taper_condition_margin": [
+          66363,
+          66364
+        ]
+      },
+      "profiles": [
+        {
+          "method": "original_s_equals_2",
+          "height": 1000,
+          "weighted_mass_upper_enclosure": [
+            377018785,
+            377018786
+          ],
+          "low_zero_loss_upper_enclosure": [
+            29660773,
+            29660774
+          ],
+          "high_zero_loss_upper_enclosure": [
+            6202524,
+            6202525
+          ],
+          "residual": [
+            77515171,
+            77515172
+          ]
+        },
+        {
+          "method": "shifted_s_equals_T_plus_1",
+          "height": 100,
+          "weighted_mass_upper_enclosure": [
+            1898980,
+            1898981
+          ],
+          "low_zero_loss_upper_enclosure": [
+            29660773,
+            29660774
+          ],
+          "high_zero_loss_upper_enclosure": [
+            6311003,
+            6311004
+          ],
+          "residual": [
+            77406693,
+            77406694
+          ]
+        },
+        {
+          "method": "shifted_tail_and_exact_Haar_low_loss",
+          "height": 60,
+          "weighted_mass_upper_enclosure": [
+            3160765,
+            3160766
+          ],
+          "low_zero_loss_upper_enclosure": [
+            8075488,
+            8075489
+          ],
+          "high_zero_loss_upper_enclosure": [
+            29373976,
+            29373977
+          ],
+          "residual": [
+            75929004,
+            75929005
+          ]
+        }
+      ],
+      "elapsed_seconds": 10.719
+    }
+  ],
+  "total_elapsed_seconds": 12.243
+}

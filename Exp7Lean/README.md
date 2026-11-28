@@ -24,6 +24,7 @@ In a Lean 4.35 workspace that builds `grh-compact` at `lsernau/grh-lean@72fead1`
 
 | Step | Status |
 |---|---|
+| Low-height zero obstruction: unconditional analytic foundation | **proved** (`Frontier/All.lean`): damped explicit formula without GRH, weighted zero masses, high-zero loss, reflection and conditional obstruction assembly. The full height-60 theorem still requires the smoothed-kernel identity, bounds and Lean numerical certificates. [Proof boundary and verification](../frontier/zero-obstruction/README.md) |
 | Least split prime: no norm representations or trivial class powers at exponents 1, 3, 5, 7, for every prime conductor `q >= QLOW`, assuming GRH | **proved** (`Arithmetic/LeastSplitFull.lean`), with the existing high search supplied; the order-at-least-nine conclusion still takes oddness of the order as an explicit input. [Proof and validation](../frontier/least-split-exclusion/README.md) |
 | Step 0, genus theory (fundamental `D` to prime `q`) | **proved** (`Genus/Main.lean`) |
 | Step 1, class group to norm equation | **proved** for Mathlib's `ClassGroup` (`Step1.lean`) |

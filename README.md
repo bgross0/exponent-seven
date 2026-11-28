@@ -188,7 +188,7 @@ The search prints one line per prime and ends with `DONE survivors 0`. The Lean 
 | `independent/` | the second and third search implementations, the second certificate verifier, the Codex audit notes (`AUDIT.md`), brute-force references, validation and run summaries |
 | `lowrange/` | Theorem D: extended certificate, the search below 3.1·10^20, class groups below 10^5, classification of survivors, logs |
 | `Exp7Lean/` | Lean 4 formalization of Theorems A, D and E |
-| `frontier/` | build receipts and notes for the bridge row, the tail above 2^135 and the Lean 4.35 integration with the imported GRH theorem |
+| `frontier/` | build receipts and notes for the bridge row, the tail above 2^135, the Lean 4.35 integration, and the low-height zero-obstruction work |
 | `figures.py` | regenerates the three figures from the certificate and the logs |
 | `CITATION.cff`, `.zenodo.json` | citation metadata |
 | `logs/` | output of the production run, the rerun, the third search and the checks |
@@ -208,9 +208,9 @@ The search prints one line per prime and ends with `DONE survivors 0`. The Lean 
 
 - The [Lean 4.35 GRH integration](frontier/grh-integration/README.md) builds this project together with the external Dirichlet-GRH theorem. It applies that theorem to the bounded results in `Final5` and `Final6` and, with the [tail](frontier/haar-tail/README.md), to the global classification. The native Lean 4.37 project states the same results with an explicit `GRHPrimeConductor` argument.
 
-Work in progress that is not part of the verified result on `main`:
+Research branches and ongoing work:
 
-- `frontier-zero-obstruction`: a draft argument replacing GRH by a hypothesis on zeros of low height, for the range up to 10^162. Unreviewed; not formalized.
+- `frontier-zero-obstruction`: the original draft was strengthened to height 60 on `grh-import-audit`, with an analytic audit and an independent integer verifier. The [formal continuation on main](frontier/zero-obstruction/README.md) proves the unconditional damped formula, zero-mass and tail bounds, reflection, row coverage and conditional obstruction assembly. The full height-60 theorem remains unformalized: the smoothed-kernel identity, bounds and Lean numerical certificates are still required.
 - `explicit-formula-wip`, `lean-sieve-handoff`, `sieve-reduction-audit`, `independent-audit`: earlier working branches, merged into `main`.
 
 ## License
