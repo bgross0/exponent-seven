@@ -12,15 +12,22 @@ import BSDHenselDistinct
 import BSDOrdinary
 import BSDThetaLimit
 import BSDArithmeticCertificate
+import BSDHorizontal71
+import BSDRationalPoints
+import BSDE389Theta
 
 /-!
 # Integrated arithmetic and finite certificate entry points
 
 These theorems connect the canonical matrix/root/cycle data with the period
 algebra and the finite theta polynomial. The imported modules additionally
-construct actual roots in a completed quadratic order, the curves' ordinary
-unit roots, and a power-series limit of a compatible finite tower. Arithmetic
-CM identification and construction of that tower remain proof obligations.
+construct actual roots in a completed quadratic order, prove their exact
+degree-seven polynomial graph, construct the curves' ordinary unit roots,
+and construct a power-series limit of a compatible finite tower. The
+conductor-389 curve has two proved independent actual rational points, and
+its finite theta data have a separate certificate using its own ordinary
+root. Arithmetic CM identification and construction of that tower, and
+the Selmer/rank-upper-bound/Sha conclusions, remain proof obligations.
 -/
 
 namespace BSDCertificates

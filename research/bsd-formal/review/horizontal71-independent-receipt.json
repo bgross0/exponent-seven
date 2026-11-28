@@ -1,0 +1,22 @@
+{
+  "certificate_sha256": "e031728ca59b5870709fa372dddb50d22ece75dd9d81bfe64968222f672bc8fd",
+  "independent_checker_sha256": "470ac481b2c7cf9934ace48dda6d1f783fb10bda9c27406666dbf0ce095f362d",
+  "source_sha256": {
+    "BSDHorizontal71.lean": "05aa1224b2e7a05676f01755ef5cb7594ea2dfc32249f1177d2b0a898ffaf865",
+    "BSDHenselWitness.lean": "f7bc8b98388416d051dbcba8f5732850b7fde0bc69fd2c73fc8470c12e70b7bc",
+    "BSDFiniteWitness.lean": "543a706d5e3681577395bfc4c54b650a9bc2cd7e6130a7dcf315f4d68736df6c"
+  },
+  "source_mode": "direct Lean literals",
+  "arithmetic": "Python integers only; sparse bivariate coefficient dictionaries",
+  "exact_bivariate_identities": 2,
+  "denominator_coprime_to_modulus": true,
+  "denominator_mod_433": 405,
+  "candidate_root_residues": 7,
+  "candidate_derivative_unit_checks": 7,
+  "directed_horizontal_edges": 14,
+  "horizontal_derivative_unit_checks": 14,
+  "nonedge_phi_unit_checks": 35,
+  "status": "PASS",
+  "arithmetic_CM_identification_claimed": false,
+  "Lean_kernel_verification_claimed": false
+}

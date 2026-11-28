@@ -1,16 +1,19 @@
 # Lean proofs for the BSD certificate project
 
 This directory formalizes finite arithmetic and algebra from the BSD research
-streams. It contains **266 proved theorems: 251 new theorems and 15 preserved
+streams. It contains **320 proved theorems: 305 additions and 15 preserved
 theorems from the original theta package**. The project is pinned to Lean
 4.36.0 and Mathlib commit `fc4f59e577feb1a4956671bc04ac18aaaf8cd842`.
 
-The latest extension adds **113 theorems** to the previous 153-theorem
-milestone. It constructs actual roots of the two full candidate polynomials,
-constructs ordinary unit roots from the two curves' point counts, and
-constructs a power series from a compatible finite tower. See
-[`ARITHMETIC_BRIDGES.md`](ARITHMETIC_BRIDGES.md) for the completed bridges and
-the exact arithmetic inputs still required.
+The latest extension adds **54 theorems** to the previous 266-theorem
+milestone. It proves two independent actual rational points on the original
+conductor-389 curve, upgrades the degree-seven candidate-root graph to exact
+polynomial equations, and gives the original curve its own finite theta
+certificate with only one first-level congruence. See
+[`E389_ARITHMETIC_STATUS.md`](E389_ARITHMETIC_STATUS.md) for the fixed pilot
+endpoint, the new proofs, and the substantial arithmetic theory still missing.
+[`ARITHMETIC_BRIDGES.md`](ARITHMETIC_BRIDGES.md) records the preceding
+root/ordinary-parameter/infinite-limit construction milestone.
 
 The verification result and exact source hashes are recorded in
 [`verification/receipt.json`](verification/receipt.json). The verifier builds
@@ -20,8 +23,9 @@ permitted axiom set is `propext`, `Classical.choice`, and `Quot.sound`.
 
 The key remaining arithmetic task is to identify the finite data and the
 power series in these proofs with the specified curve's arithmetic CM objects
-and infinite theta series. The conditional theorem states those obligations
-explicitly. This directory does not prove the universal BSD conjecture.
+and infinite theta series. The conditional tower theorems state those obligations
+explicitly. The rational-point independence and exact seven-root graph
+theorems are unconditional statements about their specified objects. This directory does not prove the universal BSD conjecture.
 
 ## 1. What Lean now proves
 
@@ -42,10 +46,73 @@ explicitly. This directory does not prove the universal BSD conjecture.
 | `BSDOrdinary` | 22 new | Actual Mathlib curve point counts at five and the unique ordinary unit root of each point-count Euler polynomial |
 | `BSDThetaLimit` | 31 new | Construction from a compatible finite tower, exact low-order vanishing, first-level approximation, and a complete conditional order certificate |
 | `BSDArithmeticCertificate` | 4 new | The assembled E433 finite-tower implication with the actual ordinary normalization `alpha^(-2)` |
+| `BSDRationalPoints` | 21 new | Two independent actual E389 rational points, cardinal rank at least two, and an actual infinite-order point |
+| `BSDHorizontal71` | 24 new | Exact Phi_2 equations and unit nonedges for the seven actual candidate roots; explicit seven-cycle |
+| `BSDE389Theta` | 9 new | Original E389 140-value sums, its own ordinary normalization, and a tower certificate needing only one quadratic congruence |
 
 The theorem inventory is generated from declarations rather than comments.
 The source and verification receipt distinguish the 15 reused theorems from
 the new contribution.
+
+### Independent actual rational points on the original pilot
+
+`BSDRationalPoints` uses the same Mathlib curve as `BSDOrdinary.curve389`:
+
+\[
+E_{389}:y^2+y=x^3+x^2-2x.
+\]
+
+It proves `LinearIndependent ℤ ![P,Q]` for the actual points `P=(0,0)` and
+`Q=(1,0)`, injectivity of `(m,n) ↦ mP+nQ`, and
+`2 ≤ Module.rank ℤ E.Point`. The rank here is cardinal-valued, so the theorem
+does not assume finite generation. It also proves that P has infinite order.
+
+The proof uses the actual elliptic duplication formula. Monic rational-root
+integrality and three root-free quartics modulo eleven rule out halves of
+P, Q and P+Q. A root-free cubic modulo four excludes rational two-torsion.
+Repeated halving forces every coefficient of an integral relation to be
+zero. No Selmer bound, modularity, Mordell–Weil theorem, point-reduction
+homomorphism, or arithmetic identification is assumed.
+
+### Exact graph of the seven constructed roots
+
+`BSDHorizontal71` proves exact polynomial equations between the existing
+seven actual roots, not only congruences of their supplied approximations.
+In the certified cyclic order, for all `i,j : Fin 7`,
+
+\[
+\Phi_2(r_i,r_j)=0 \iff j=i+1\text{ or }i=j+1.
+\]
+
+The proof uses two full integer polynomial identities, a proved unit clearing
+denominator, Hensel lifting, and simple-root uniqueness in the completed ring.
+All 35 directed nonedges have unit Phi_2 values. No domain instance is assumed.
+The generator `scripts/generate_horizontal71.py` regenerates the identities;
+Lean checks the resulting witnesses independently of that generator.
+
+This is an algebraic correspondence theorem for the displayed full
+polynomial. Identifying its roots with CM invariants and the Phi_2 expression
+with actual degree-two isogenies remains separate. The simple-root argument
+does not automatically extend to the 140-root family.
+
+### Original E389 finite theta interface
+
+`BSDE389Theta` checks all 140 original supplied values and the quotient sums
+`[5,-1,-1,5,-8]`. Their shifted polynomial is exactly
+
+\[
+-20T-34T^2-27T^3-8T^4.
+\]
+
+The linear term -20 is retained. Exact vanishing for the infinite limit must
+come from the all-level hypotheses, not this finite residue. The coefficient
+of T² after ordinary regularization is `-34u-10c`, hence congruent to the
+unit u modulo five. The module uses the actual E389 unit `alpha389^(-2)`.
+
+`e389_certificate_of_finite_tower` now needs only the quadratic first-level
+congruence, together with successive compatibility, finite symmetry at all
+levels and exact zero augmentation. Its arithmetic tower is still an input.
+It does not identify a control polynomial with the CM theta series.
 
 ### Exact finite arithmetic
 
