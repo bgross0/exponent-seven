@@ -139,4 +139,10 @@ example : 1 / (60 : ℝ) ^ 4 ≤ (7321 / 12960000) / (61 ^ 2 + 60 ^ 2) := by
 #print axioms weilAdmissible_smoothCorrelation_row
 #print axioms smoothed_row_damped_formula
 
+#print axioms smoothCorrelation_row_eq_truncatedCubic
+#print axioms rowTruncatedCubic_eq_piece
+#print axioms rowCubicPieces_cover
+#print axioms rowTruncatedCubic_zero_of_one_le
+#print axioms smoothCorrelation_row_eq_piece
+
 end Exp7.Frontier

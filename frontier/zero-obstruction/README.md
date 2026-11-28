@@ -1,10 +1,10 @@
-# Zero obstruction: normalized, admissible smoothed kernel
+# Zero obstruction with the certified smoothed Haar cubic
 
 The frontier now has a Lean-checked unconditional damped explicit formula,
 weighted zero-mass bounds, the actual smoothed-Haar complex transform,
 exact L2 normalization and Fourier inversion, absolute convergence of its
 zero sum, and a concrete-kernel conditional obstruction assembly. The actual
-row kernel is now proved admissible and supplied to the damped formula. The
+row kernel satisfies the damped formula and equals the cubic used by the integer verifier. The
 full height-60 obstruction is **not yet formalized**. No new unconditional classification is claimed.
 
 This work continues the height-60 argument in commit
@@ -39,10 +39,11 @@ zeros by an arbitrary finite list or introduce a new L-function model.
 | `SmoothedNorm.lean` | Integrating the three squared pieces proves `integral norm(g)^2 = 2a-2b` when `0 < b` and `2b <= a`. The actual correlation is real and has value one at zero. |
 | `SmoothedSupport.lean` | The correlation is continuous, integrable, even, and vanishes whenever `abs u >= 2(a+b)`. |
 | `SmoothedAdmissible.lean` | Fourier and cosine inversion; spectral integral `2*pi`; `abs f <= 1`; `WeilAdmissible` for the concrete kernel and the exact row parameters. The unconditional damped formula is instantiated for every natural `X > 1`. |
+| `SmoothedCubic.lean` | The actual correlation equals the exact truncated cube sum for every real argument and natural `X > 1`. All seven closed polynomial cells agree with it, including both evaluations at every shared endpoint. |
 | `Rows.lean` | The four exact integer intervals cover `[39*10^29, 10^162]`, each cutoff satisfies `4*X^7 < Qmin`, and every hypothetical exponent-seven field in the range supplies an inert row. |
 
-There are 122 named theorems, plus three exact numerical regression examples.
-`Checks.lean` prints all 122 theorem axiom dependencies. The only permitted
+There are 127 named theorems, plus three exact numerical regression examples.
+`Checks.lean` prints all 127 theorem axiom dependencies. The only permitted
 axioms are `propext`, `Classical.choice`, and `Quot.sound`. Hypotheses of the
 conditional assembly theorem are still hypotheses even though they do not
 appear in the axiom list.
@@ -92,6 +93,13 @@ actual convolution. Fourier inversion then proves the existing
 supply normalization, support, admissibility, or a transform identity.
 It still does not assert the undamped zero-sum identity.
 
+`smoothCorrelation_row_eq_truncatedCubic` expresses the autocorrelation as a
+sum of translated positive-part cubes at `t = u/log X`. The proof integrates
+pairs of overlapping linear ramps exactly. `smoothCorrelation_row_eq_piece`
+covers every polynomial selected by a closed cell of the evaluator. Verification
+reads the rational shifts, divisor and Horner coefficients from the integer
+program and checks both symbolic identities in Lean for arbitrary real `t`.
+
 ## What remains
 
 1. Derive the undamped identity retaining the full zero sum. Continue an
@@ -99,8 +107,7 @@ It still does not assert the undamped zero-sum identity.
    rather than substituting zero damping into the positive-width Poisson formula.
    Absolute convergence at the final zero sum is proved, but does not by itself
    justify analytic continuation.
-2. Connect the numerical verifier's truncated-cubic formula to the actual
-   correlation and prove the exact low-zero shape/variation bound. The high-zero
+2. Prove the exact low-zero shape and total-variation bound. The high-zero
    quartic bound is already proved and supplied by
    `smoothH_zero_obstruction_of_inert_certificate`; the low-zero estimate
    remains an explicit hypothesis.
@@ -132,7 +139,7 @@ python3 frontier/zero-obstruction/verify.py
 ```
 
 The script builds the focused frontier target, checks the root import,
-replays all 17 frontier modules with `leanchecker` against compiled imports, audits
+replays all 18 frontier modules with `leanchecker` against compiled imports, audits
 the printed axiom dependencies, runs the seven integer arithmetic tests,
 and reproduces all four rows. It records source hashes, commands, results
 and logs in `verification/`. This does not rebuild the old class-group search

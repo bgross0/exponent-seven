@@ -4,6 +4,7 @@
 import hashlib
 import json
 import re
+import runpy
 import shutil
 import subprocess
 import sys
@@ -20,7 +21,7 @@ MODULES = [
     "Pointwise", "DampedFormula", "ZeroMass", "ZeroLoss", "Obstruction", "Rows",
     "ComplexTransform", "SmoothedKernel", "SmoothedCorrelation", "SmoothedDecay",
     "SmoothedSum", "SmoothedShape", "SmoothedNorm", "SmoothedSupport",
-    "SmoothedAdmissible", "All", "Checks"
+    "SmoothedAdmissible", "SmoothedCubic", "All", "Checks"
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 
@@ -36,6 +37,36 @@ def without_timings(value):
     if isinstance(value, list):
         return [without_timings(v) for v in value]
     return value
+
+
+def cubic_table_checks():
+    """Ask Lean to identify the live evaluator's rational tables with its definitions."""
+    evaluator = runpy.run_path(str(ROOT / "frontier/zero-integer/verify.py"))
+
+    def rational(value):
+        return f"({value.numerator} / {value.denominator} : ℝ)"
+
+    cubes = [f"{rational(weight)} * max (t - {rational(knot)}) 0 ^ 3"
+             for knot, weight in sorted(evaluator["SHIFTS"].items())]
+    cells = []
+    for left, right, coefficients, _ in evaluator["PIECES"]:
+        horner = "0"
+        for coefficient in reversed(coefficients):
+            horner = f"({horner} * t + {rational(coefficient)})"
+        cells.append(f"({rational(left)}, {rational(right)}, {horner})")
+
+    return f"""import Exp7Lean.Frontier.SmoothedCubic
+open Exp7.Frontier
+theorem verifier_truncatedCubic (t : ℝ) : rowTruncatedCubic t = ({" + ".join(cubes)}) / {rational(evaluator["DIVISOR"])} := by
+  norm_num [rowTruncatedCubic, rowCubeDifference]
+  ring_nf
+theorem verifier_hornerCells (t : ℝ) : rowCubicPieces t = [{", ".join(cells)}] := by
+  norm_num [rowCubicPieces, List.cons.injEq, Prod.mk.injEq]
+  ring_nf
+  simp
+#print axioms verifier_truncatedCubic
+#print axioms verifier_hornerCells
+"""
 
 
 def main():
@@ -62,12 +93,13 @@ def main():
         "commands": [],
     }
 
-    def run(label, command, cwd):
+    def run(label, command, cwd, stdin=None):
         print(label, flush=True)
         start = time.monotonic()
         log = OUT / f"{label}.log"
         with log.open("w") as stream:
-            result = subprocess.run(command, cwd=cwd, stdout=stream, stderr=subprocess.STDOUT)
+            result = subprocess.run(command, cwd=cwd, input=stdin, text=True,
+                                    stdout=stream, stderr=subprocess.STDOUT)
         receipt["commands"].append({
             "label": label, "command": command, "cwd": str(cwd.relative_to(ROOT)) or ".",
             "exit_code": result.returncode, "seconds": round(time.monotonic() - start, 3),
@@ -103,6 +135,7 @@ def main():
         for module in MODULES:
             run(f"kernel-{module}", [lake, "env", "leanchecker", "-v",
                                      f"Exp7Lean.Frontier.{module}"], PROJECT)
+        run("cubic-binding", [lake, "env", "lean", "--stdin"], PROJECT, stdin=cubic_table_checks())
         run("integer-tests", [sys.executable, "frontier/zero-integer/test_verify.py"], ROOT)
         numeric_text = run("integer-replay", [sys.executable, "frontier/zero-integer/verify.py"], ROOT)
         numeric = json.loads(numeric_text)
