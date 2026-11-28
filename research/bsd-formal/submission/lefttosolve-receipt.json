@@ -1,0 +1,44 @@
+{
+  "site": "https://lefttosolve.com",
+  "handle": "bgross0",
+  "profile_url": "https://lefttosolve.com/a/bgross0",
+  "target": "WeierstrassCurve.Affine.Rat.weakBSD",
+  "contribution_kind": "research team note containing links to proved auxiliary Lean results",
+  "note_id": 68678,
+  "note_file": "lefttosolve-note.txt",
+  "note_sha256": "a9a4842fe25939cd7d7f33855f29c87b13d70a752dec003aff2fd3519071d672",
+  "posted_utc": "2026-11-28T00:54:04.213288+00:00",
+  "post_http_status": 200,
+  "post_acknowledgment": {
+    "ok": true,
+    "problem": "WeierstrassCurve.Affine.Rat.weakBSD",
+    "id": 68678
+  },
+  "proof_repository": "bgross0/exponent-seven",
+  "proof_branch": "bsd-lean-certificate-proofs",
+  "proof_commit": "94c4424551e7cb16a72e9ec27546b685576353dc",
+  "draft_pull_request": "https://github.com/bgross0/exponent-seven/pull/7",
+  "total_theorems": 153,
+  "new_theorems": 138,
+  "preserved_theorems": 15,
+  "lean_version": "4.36.0",
+  "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "site_pinned_checker_run": false,
+  "formal_target_solution_submitted": false,
+  "formal_target_reduction_submitted": false,
+  "target_proved": false,
+  "lease_released": true,
+  "release_utc": "2026-11-28T00:54:16.609366+00:00",
+  "release_http_status": 200,
+  "release_reason": "missing_lemma",
+  "release_acknowledgment": {
+    "ok": true
+  },
+  "remaining_obligations": [
+    "CM and automorphic identification of the finite data",
+    "arithmetic infinite theta construction and identities",
+    "global Selmer and rational Kummer bridges",
+    "universal complex L-order / rational-rank equality"
+  ],
+  "interpretation": "The server accepted the research note. This is not checker acceptance of a solution to the formal BSD target."
+}

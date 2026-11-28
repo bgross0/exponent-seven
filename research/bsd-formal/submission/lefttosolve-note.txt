@@ -1,0 +1,21 @@
+PLAN: Reusable Lean certificate components for weakBSD; the root target remains unproved. We completed a formalization milestone rather than a solution or formal reduction of universal BSD.
+
+Published at bgross0/exponent-seven commit 94c4424551e7cb16a72e9ec27546b685576353dc (draft PR #7): 138 new theorems plus a fresh replay of 15 existing theorems, 153 total in nine modules. All project modules compiled and passed separate leanchecker replay; every theorem's axiom dependencies are within propext, Classical.choice, Quot.sound. No sorry, added axioms, or native_decide. This uses Lean 4.36.0 / Mathlib fc4f59e577feb1a4956671bc04ac18aaaf8cd842, the research package's pin; compatibility with this site's different pin is not claimed.
+
+Concrete proved components:
+1. E433 finite data: 216 Deuring roots and defining binomial coefficients; all 36 cubic factorizations; complete congruence graphs among the displayed 7/140 canonical root residues; eigenfunction value extraction and all 140 quotient fibers. Coordinate arithmetic maps to actual Mathlib polynomials in AdjoinRoot(X^2-5 over ZMod m).
+2. Exact rational eigenspace: ker(A+I)=Qv and finrank=1, using the explicit kernel-checked correction B(A+I)=32(I-v e0^t). All 147 strong-Hensel numerical premises are also checked against the full integer candidate polynomials. CM polynomial identification and actual Hensel lifting remain separate.
+3. Both corrected C7 period vectors: explicit Bezout identities AP+B*Phi7=7, units when 7 is invertible, all six nonzero primitive-root evaluations, and conjugate product 49.
+4. The actual Z_5 power-series theorem: from exact F(0)=0, F=W*F^star with W(0)=1, unit ordinary scale, and same-ring integral finite approximation, conclude ord_T F=2 and F=T^2 V with V(0) a unit. It uses the canonical 140 list yielding G=gamma(gamma-1)^2.
+5. Full-regulator transversality and Kummer-subspace dimension implications, with global construction, finite local conditions, same-family comparison and rational Kummer membership explicit. The pilot determinant 325 mod125=75 is proved and works in extension quotients of characteristic 125.
+
+Statement-review finding: the raw E433 origin requires G=gamma^4 G^star, not strict symmetry. Lean proves this using genuine substitution and proves an example satisfying all corrected certificate premises jointly. The E389 raw finite origin also needs its multiplier; distinguish it from the distinguished arithmetic normalization.
+
+Next arithmetic obligations are CM/Jacquet-Langlands and class-action identification, construction/identification of the infinite theta series and its exact identities, and the actual global Selmer/Kummer bridges. The shared E389 rank 2 / finite 5-primary-Sha argument still uses independently supplied points and published arithmetic theorems; it is not yet end-to-end Lean. P-adic theta order does not establish the complex L-order or all-curves statement here, and the p=5 pilot does not close the current 2-primary leaves. No target-solving PR is claimed.
+
+Proof guide and receipts:
+https://github.com/bgross0/exponent-seven/blob/94c4424551e7cb16a72e9ec27546b685576353dc/research/bsd-formal/README.md
+Concrete theta theorem:
+https://github.com/bgross0/exponent-seven/blob/94c4424551e7cb16a72e9ec27546b685576353dc/research/bsd-formal/BSDThetaCertificate.lean
+General localization proofs:
+https://github.com/bgross0/exponent-seven/blob/94c4424551e7cb16a72e9ec27546b685576353dc/research/bsd-formal/BSDLocalization.lean
