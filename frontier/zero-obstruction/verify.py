@@ -17,7 +17,9 @@ PROJECT = ROOT / "Exp7Lean"
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "verification"
 MODULES = [
-    "Pointwise", "DampedFormula", "ZeroMass", "ZeroLoss", "Obstruction", "Rows", "All", "Checks"
+    "Pointwise", "DampedFormula", "ZeroMass", "ZeroLoss", "Obstruction", "Rows",
+    "ComplexTransform", "SmoothedKernel", "SmoothedCorrelation", "SmoothedDecay",
+    "SmoothedSum", "All", "Checks"
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 
@@ -125,7 +127,8 @@ def main():
     finally:
         receipt["finished_utc"] = datetime.now(timezone.utc).isoformat()
         (OUT / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
-    print("Passed: 27 theorem dependency checks, 8 module replays, and four integer rows.")
+    print(f"Passed: {len(found)} theorem dependency checks, "
+          f"{len(MODULES)} module replays, and four integer rows.")
 
 
 if __name__ == "__main__":

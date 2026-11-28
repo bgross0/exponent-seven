@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "started_utc": "2026-11-28T14:21:56.265513+00:00",
-  "head_before_verification": "32311f41fc397b2f45e09757559970ddea3e8475",
+  "started_utc": "2026-11-28T14:49:47.467643+00:00",
+  "head_before_verification": "e6ae57c641f95afc86e6e88b7cc9651b76c14534",
   "toolchain": "leanprover/lean4:v4.37.0-rc1",
   "historical_frontier_commit": "462b231fb1fdd3133de798e2d89501434a86e1a3",
   "scope": "Focused build and new-module kernel replay against compiled imports; no fresh class-group search rebuild; no full height-60 formalization",
@@ -12,12 +12,17 @@
     "Exp7Lean/Exp7Lean/Frontier/ZeroLoss.lean": "82bf3e2d8b06812e98d7045840ab990557f066db9aeaf321d7b1167edf9419a3",
     "Exp7Lean/Exp7Lean/Frontier/Obstruction.lean": "e3d30491842e7cdf586dc115572b4470b2d711fceebd674548e86506c87ef345",
     "Exp7Lean/Exp7Lean/Frontier/Rows.lean": "8e356804148d41f9ba1da0f87f944967139775ea460cadc7367c653a45552b3d",
-    "Exp7Lean/Exp7Lean/Frontier/All.lean": "b4c0b98e107876503591d82bc1c7247b070a5d645ed51a34de1ac80e130db452",
-    "Exp7Lean/Exp7Lean/Frontier/Checks.lean": "2c6d6df6fdf7cae91dac9a2a12020f135cb113c02aac0a217ff79f255822eeb9",
+    "Exp7Lean/Exp7Lean/Frontier/ComplexTransform.lean": "36a07531d3690d1bd3f1e3828925064b893294f15ef76b89b4e4e051543a85f2",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedKernel.lean": "0acb079d61f558e1a85b57ec40255dc619ca640fd014ae76c67a41ead2d11fba",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedCorrelation.lean": "947fd446e947959ac945f559f435d42682881355a990725373e0b8d19da6970a",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedDecay.lean": "2215d1bc15808da37c7541b3b366cfc91397dc3413272bab8cac77fa3b91862a",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedSum.lean": "5fd3740d3c4ead3a25531f92c66bf4f9d1ca7b470e4661901829b944248fc097",
+    "Exp7Lean/Exp7Lean/Frontier/All.lean": "410eab608320ef0abea1715fb789869974ce242fe08bf019f11a4f0c28d4550b",
+    "Exp7Lean/Exp7Lean/Frontier/Checks.lean": "1482e8ba7b9264513ac25dc66c553a7dd39db7514d6b4686b751ed8d7c2a5b49",
     "Exp7Lean/Exp7Lean.lean": "386a4f0d962fd3d93fb2a35ed1ea027ab08e31c1de7d37215661c4fedad7e007",
     "Exp7Lean/lean-toolchain": "f11739c25d1640e2b3fda8a98af6d64e97d7b2b1c99840535587a9079b3afee7",
     "Exp7Lean/lake-manifest.json": "76c5d718f19542e45bcb03c0c338d12aaacb91db84c1168b8e1ce96b52f7245c",
-    "frontier/zero-obstruction/verify.py": "8ca90ff97c6482b8fbda1f38b236b6f58d6fc5f90f01e3e009b4f515ebb9077d",
+    "frontier/zero-obstruction/verify.py": "c7b8dff2f70ab0485d9579cb0e90cba6cd918e5c93e89f0db81aba4d74896f4e",
     "frontier/zero-integer/verify.py": "8da1ed4d73b4782c2815f6afe0b3a29dc3c2bea2134db99dce39775eb2f4c2b0",
     "frontier/zero-integer/test_verify.py": "4978d2139b36f8d6f68da5b52334b1ad2cfca8a9e5a5fdbd2fbb273a6e91d93d",
     "frontier/zero-integer/result.json": "572a14fba5ec54ef214ed0095d16632b6f2ef541f2cd16170d870cd34ba4afc6",
@@ -33,7 +38,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 54.452,
+      "seconds": 46.327,
       "log": "verification/build.log"
     },
     {
@@ -46,7 +51,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.659,
+      "seconds": 5.425,
       "log": "verification/root-import.log"
     },
     {
@@ -59,7 +64,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 11.102,
+      "seconds": 5.615,
       "log": "verification/axioms.log"
     },
     {
@@ -73,7 +78,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 19.403,
+      "seconds": 10.495,
       "log": "verification/kernel-Pointwise.log"
     },
     {
@@ -87,7 +92,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 16.62,
+      "seconds": 10.543,
       "log": "verification/kernel-DampedFormula.log"
     },
     {
@@ -101,7 +106,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 16.611,
+      "seconds": 10.516,
       "log": "verification/kernel-ZeroMass.log"
     },
     {
@@ -115,7 +120,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 17.372,
+      "seconds": 10.481,
       "log": "verification/kernel-ZeroLoss.log"
     },
     {
@@ -129,7 +134,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 16.106,
+      "seconds": 10.384,
       "log": "verification/kernel-Obstruction.log"
     },
     {
@@ -143,8 +148,78 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 15.837,
+      "seconds": 10.351,
       "log": "verification/kernel-Rows.log"
+    },
+    {
+      "label": "kernel-ComplexTransform",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.ComplexTransform"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 10.599,
+      "log": "verification/kernel-ComplexTransform.log"
+    },
+    {
+      "label": "kernel-SmoothedKernel",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedKernel"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 10.445,
+      "log": "verification/kernel-SmoothedKernel.log"
+    },
+    {
+      "label": "kernel-SmoothedCorrelation",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedCorrelation"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 10.273,
+      "log": "verification/kernel-SmoothedCorrelation.log"
+    },
+    {
+      "label": "kernel-SmoothedDecay",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedDecay"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 10.462,
+      "log": "verification/kernel-SmoothedDecay.log"
+    },
+    {
+      "label": "kernel-SmoothedSum",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedSum"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 10.536,
+      "log": "verification/kernel-SmoothedSum.log"
     },
     {
       "label": "kernel-All",
@@ -157,7 +232,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 16.761,
+      "seconds": 10.42,
       "log": "verification/kernel-All.log"
     },
     {
@@ -171,7 +246,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 17.433,
+      "seconds": 10.163,
       "log": "verification/kernel-Checks.log"
     },
     {
@@ -182,7 +257,7 @@
       ],
       "cwd": ".",
       "exit_code": 0,
-      "seconds": 1.27,
+      "seconds": 0.988,
       "log": "verification/integer-tests.log"
     },
     {
@@ -193,7 +268,7 @@
       ],
       "cwd": ".",
       "exit_code": 0,
-      "seconds": 12.468,
+      "seconds": 7.93,
       "log": "verification/integer-replay.log"
     }
   ],
@@ -328,6 +403,266 @@
       "Classical.choice",
       "Quot.sound",
       "propext"
+    ],
+    "expTwist_convolution": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_convolution": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "expTwist_intervalBox": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_expTwist_intervalBox": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_intervalBox": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_intervalBox_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "expTwist_haarBase": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "expTwist_averagingBox": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_expTwist_haarBase": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_expTwist_averagingBox": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_expTwist_smoothedHaar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_smoothedHaar_factor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_haarBase": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_averagingBox": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_smoothedHaar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_smoothedHaar_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexSinc_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexSinc_of_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analyticAt_complexSinc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexSinc_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexSinc_ofReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothG_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analyticAt_smoothG": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "analyticAt_smoothH": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothG_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_product": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothG_closed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_smoothedHaar_eq_smoothG": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_closed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_ofReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_real_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_real_im": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "expTwist_reflect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_reflect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_expTwist_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "complexTransform_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "norm_cos_le_cosh_im": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "norm_sin_le_cosh_im": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothTailConstant_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "cosh_mul_im_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_strip_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_quartic_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "zeroFrequency_parts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_zero_quartic_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_high_zero_loss_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_strip_weight_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "summable_smoothH_zero_norm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "summable_smoothH_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "summable_smoothH_zero_re": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_zero_sum_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_zero_obstruction_of_inert_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
     ]
   },
   "integer_replay_matches_historical_result_except_timings": true,
@@ -356,8 +691,13 @@
     "ZeroLoss": "e4485091ada6b5b13d4a47a188efd5a4e0b3cf8bed759dd26f1a77a1ec300968",
     "Obstruction": "429da47528369d19d1958cc277ef2ad352ce66ba27e7fa794b4a2d13c96a0cea",
     "Rows": "cecf60d0eb8f051511bcdf0c00ab6e6a98511017bdff820b18283af6ca506638",
-    "All": "089799dba91aad57f660b26a2b80cf69543f4a398f942af95dd019dc3aaa1fe0",
+    "ComplexTransform": "a342c0e4ae4378b87fcc9f3173c78684ba377795edb346e62a0a1e65fe65995d",
+    "SmoothedKernel": "089b70b27f9383edabbaeb997f5da342fc1fd4a003f43f2b865b92b753f0a9be",
+    "SmoothedCorrelation": "81ae3d6aaf6f94da19f7be64350d2cccdcf58702a26b48e198c3e87300a88329",
+    "SmoothedDecay": "780257f114c22fb7d47760080e9bca68bbd90cce6c612b803d29dd89fe4d4a30",
+    "SmoothedSum": "eab0b828e190014faff76ae0b39645bfd1b5424ef4a103e385b197889d60c79f",
+    "All": "55f08f6571b1711e7f08e76c58051ff4f519d4072f15d971a6b5e215d1584f7f",
     "Checks": "b8339c8271f31f377d03a389fc90a548ef029dcb07513ba6eb16b56a9b85f41e"
   },
-  "finished_utc": "2026-11-28T14:25:42.384253+00:00"
+  "finished_utc": "2026-11-28T14:53:09.452784+00:00"
 }
