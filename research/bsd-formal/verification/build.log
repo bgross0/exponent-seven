@@ -1,48 +1,92 @@
-⚠ [4051/4189] Replayed BSDRankTwo
+⚠ [4051/4305] Replayed BSDRankTwo
 warning: BSDRankTwo.lean: imports `Mathlib.Data.Nat.Choose.Factorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.Algebra.Polynomial.Coeff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Substitution` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Inverse` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4052/4189] Ran BSDRankTwo:irArts
+⚠ [4052/4305] Ran BSDRankTwo:irArts
 warning: BSDRankTwo.lean: imports `Mathlib.Data.Nat.Choose.Factorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.Algebra.Polynomial.Coeff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Substitution` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDRankTwo.lean: imports `Mathlib.RingTheory.PowerSeries.Inverse` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4119/4189] Replayed BSDCMPeriods
-warning: BSDCMPeriods.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Data.Fin.VecNotation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4120/4189] Ran BSDCMPeriods:irArts
-warning: BSDCMPeriods.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Data.Fin.VecNotation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4121/4189] Replayed BSDFiniteWitness
+⚠ [4119/4305] Replayed BSDFiniteWitness
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.List.Nodup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.List.Perm.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.Nat.Prime.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.Nat.Choose.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4122/4189] Ran BSDFiniteWitness:irArts
+⚠ [4120/4305] Ran BSDFiniteWitness:irArts
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.List.Nodup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.List.Perm.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.Nat.Prime.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDFiniteWitness.lean: imports `Mathlib.Data.Nat.Choose.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4413/4547] Replayed BSDThetaCertificate
+⚠ [4411/4713] Replayed BSDThetaCertificate
 warning: BSDThetaCertificate.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDThetaCertificate.lean: imports `Mathlib.RingTheory.LocalRing.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDThetaCertificate.lean: imports `Mathlib.NumberTheory.Padics.PadicIntegers` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDThetaCertificate.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4414/4547] Ran BSDThetaCertificate:irArts
+⚠ [4412/4713] Ran BSDThetaCertificate:irArts
 warning: BSDThetaCertificate.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDThetaCertificate.lean: imports `Mathlib.RingTheory.LocalRing.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDThetaCertificate.lean: imports `Mathlib.NumberTheory.Padics.PadicIntegers` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDThetaCertificate.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4467/4547] Replayed BSDLocalization
+⚠ [4699/5197] Replayed BSDCoordinateRing
+warning: BSDCoordinateRing.lean: imports `Mathlib.Algebra.Polynomial.Eval.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.RingTheory.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [4700/5197] Ran BSDCoordinateRing:irArts
+warning: BSDCoordinateRing.lean: imports `Mathlib.Algebra.Polynomial.Eval.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.RingTheory.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6445/6507] Replayed BSDHenselSemantics
+warning: BSDHenselSemantics.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselSemantics.lean: imports `Mathlib.RingTheory.Ideal.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselSemantics.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6446/6507] Ran BSDHenselSemantics:irArts
+warning: BSDHenselSemantics.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselSemantics.lean: imports `Mathlib.RingTheory.Ideal.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselSemantics.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6644/6708] Replayed BSDHenselLift
+warning: BSDHenselLift.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.Henselian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6645/6708] Ran BSDHenselLift:irArts
+warning: BSDHenselLift.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.Henselian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6646/6708] Replayed BSDHenselDistinct
+warning: BSDHenselDistinct.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselDistinct.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselDistinct.lean: imports `Mathlib.Data.Nat.ModEq` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6647/6708] Ran BSDHenselDistinct:irArts
+warning: BSDHenselDistinct.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselDistinct.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHenselDistinct.lean: imports `Mathlib.Data.Nat.ModEq` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6688/6708] Replayed BSDOrdinary
+warning: BSDOrdinary.lean: imports `Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDOrdinary.lean: imports `Mathlib.NumberTheory.Padics.Hensel` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDOrdinary.lean: imports `Mathlib.Data.Fintype.Option` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDOrdinary.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6689/6708] Ran BSDOrdinary:irArts
+warning: BSDOrdinary.lean: imports `Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDOrdinary.lean: imports `Mathlib.NumberTheory.Padics.Hensel` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDOrdinary.lean: imports `Mathlib.Data.Fintype.Option` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDOrdinary.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6690/6708] Replayed BSDThetaLimit
+warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.PowerSeries.Trunc` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.AdicCompletion.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Ring.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6691/6708] Ran BSDThetaLimit:irArts
+warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.PowerSeries.Trunc` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.AdicCompletion.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Ring.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6692/6708] Built BSDLocalization (2.5s)
 warning: BSDLocalization.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -50,7 +94,7 @@ warning: BSDLocalization.lean: imports `Mathlib.RingTheory.PowerSeries.Basic` fr
 warning: BSDLocalization.lean: imports `Mathlib.RingTheory.PowerSeries.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4468/4547] Ran BSDLocalization:irArts
+⚠ [6693/6708] Ran BSDLocalization:irArts
 warning: BSDLocalization.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -58,72 +102,45 @@ warning: BSDLocalization.lean: imports `Mathlib.RingTheory.PowerSeries.Basic` fr
 warning: BSDLocalization.lean: imports `Mathlib.RingTheory.PowerSeries.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDLocalization.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4469/4547] Replayed BSDEigenline
+✔ [6694/6708] Built BSDArithmeticCertificate (2.5s)
+✔ [6696/6708] Built BSDE389Theta (2.9s)
+⚠ [6698/6708] Built BSDCMPeriods (3.7s)
+warning: BSDCMPeriods.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Data.Fin.VecNotation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6699/6708] Ran BSDCMPeriods:irArts
+warning: BSDCMPeriods.lean: imports `Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Data.Fin.VecNotation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDCMPeriods.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6700/6708] Built BSDRationalPoints (3.6s)
+warning: BSDRationalPoints.lean: imports `Mathlib.RingTheory.Polynomial.RationalRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRationalPoints.lean: imports `Mathlib.LinearAlgebra.LinearIndependent.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRationalPoints.lean: imports `Mathlib.LinearAlgebra.Dimension.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRationalPoints.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6701/6708] Ran BSDRationalPoints:irArts
+warning: BSDRationalPoints.lean: imports `Mathlib.RingTheory.Polynomial.RationalRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRationalPoints.lean: imports `Mathlib.LinearAlgebra.LinearIndependent.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRationalPoints.lean: imports `Mathlib.LinearAlgebra.Dimension.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDRationalPoints.lean: imports `Mathlib.GroupTheory.OrderOfElement` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6702/6708] Built BSDHorizontal71 (4.0s)
+warning: BSDHorizontal71.lean: imports `Mathlib.Algebra.Polynomial.Taylor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHorizontal71.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6703/6708] Ran BSDHorizontal71:irArts
+warning: BSDHorizontal71.lean: imports `Mathlib.Algebra.Polynomial.Taylor` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: BSDHorizontal71.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6704/6708] Built BSDEigenline (71s)
 warning: BSDEigenline.lean: imports `Mathlib.LinearAlgebra.Matrix.ToLin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDEigenline.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDEigenline.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDEigenline.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4470/4547] Ran BSDEigenline:irArts
+⚠ [6705/6708] Ran BSDEigenline:irArts
 warning: BSDEigenline.lean: imports `Mathlib.LinearAlgebra.Matrix.ToLin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDEigenline.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDEigenline.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: BSDEigenline.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4691/4915] Replayed BSDCoordinateRing
-warning: BSDCoordinateRing.lean: imports `Mathlib.Algebra.Polynomial.Eval.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.RingTheory.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [4692/4915] Ran BSDCoordinateRing:irArts
-warning: BSDCoordinateRing.lean: imports `Mathlib.Algebra.Polynomial.Eval.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.RingTheory.AdjoinRoot` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.Data.ZMod.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDCoordinateRing.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6451/6639] Replayed BSDHenselSemantics
-warning: BSDHenselSemantics.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselSemantics.lean: imports `Mathlib.RingTheory.Ideal.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselSemantics.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6452/6639] Ran BSDHenselSemantics:irArts
-warning: BSDHenselSemantics.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselSemantics.lean: imports `Mathlib.RingTheory.Ideal.Quotient.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselSemantics.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6650/6702] Replayed BSDHenselLift
-warning: BSDHenselLift.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.Henselian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6651/6702] Ran BSDHenselLift:irArts
-warning: BSDHenselLift.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselLift.lean: imports `Mathlib.RingTheory.Henselian` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6652/6702] Replayed BSDHenselDistinct
-warning: BSDHenselDistinct.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselDistinct.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselDistinct.lean: imports `Mathlib.Data.Nat.ModEq` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6653/6702] Ran BSDHenselDistinct:irArts
-warning: BSDHenselDistinct.lean: imports `Mathlib.NumberTheory.Zsqrtd.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselDistinct.lean: imports `Mathlib.RingTheory.AdicCompletion.LocalRing` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDHenselDistinct.lean: imports `Mathlib.Data.Nat.ModEq` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6694/6702] Replayed BSDThetaLimit
-warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.PowerSeries.Trunc` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.AdicCompletion.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Ring.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6695/6702] Ran BSDThetaLimit:irArts
-warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.PowerSeries.Trunc` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDThetaLimit.lean: imports `Mathlib.RingTheory.AdicCompletion.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Polynomial.Derivative` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDThetaLimit.lean: imports `Mathlib.Algebra.Ring.GeomSum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6696/6702] Built BSDOrdinary (5.9s)
-warning: BSDOrdinary.lean: imports `Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDOrdinary.lean: imports `Mathlib.NumberTheory.Padics.Hensel` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDOrdinary.lean: imports `Mathlib.Data.Fintype.Option` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDOrdinary.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [6697/6702] Ran BSDOrdinary:irArts
-warning: BSDOrdinary.lean: imports `Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDOrdinary.lean: imports `Mathlib.NumberTheory.Padics.Hensel` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDOrdinary.lean: imports `Mathlib.Data.Fintype.Option` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-warning: BSDOrdinary.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-✔ [6698/6702] Built BSDArithmeticCertificate (2.1s)
-✔ [6700/6702] Built BSDCertificates (2.1s)
-Build completed successfully (6702 jobs).
+✔ [6706/6708] Built BSDCertificates (4.6s)
+Build completed successfully (6708 jobs).
