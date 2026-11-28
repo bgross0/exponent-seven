@@ -1,0 +1,18 @@
+PLAN: Follow-up to research note #68678: 113 additional Lean theorems now construct objects that the earlier certificates only assumed. Universal weakBSD remains open.
+
+The branch bsd-lean-certificate-proofs (draft PR #7) now contains 266 theorems: 251 new plus the 15 preserved original theorems. All 15 modules compile and pass separate leanchecker replay; all 266 theorem axiom reports are confined to propext, Classical.choice, Quot.sound. Lean 4.36.0 / Mathlib fc4f59e577feb1a4956671bc04ac18aaaf8cd842; the site's different pinned checker has not been run.
+
+1. ACTUAL ROOTS. Full integer coefficient lists now become Mathlib polynomials, with formal derivatives, monicity and actual degrees 7/140 proved. In the explicitly constructed, nontrivial (433^4)-adic completion of Z[sqrt5], scaled Hensel gives 7 and 140 actual roots. Each family is injective and reduces to the original canonical table. The 147 numerical inputs are discharged. This does not identify the polynomials as Hilbert class polynomials, prove the completion is the intended unramified field, prove exhaustive root lists, or prove cross-family distinctness.
+
+2. ACTUAL ORDINARY UNITS. Counts of Mathlib curve Point types (including infinity) give #E433(F5)=10 and #E389(F5)=9. The resulting traces−4/−3 produce Euler polynomials X^2+4X+5 and X^2+3X+5. Hensel constructs their unique 5-adic unit roots. The E433 assembled theorem uses the actual unit alpha^(-2).
+
+3. CONSTRUCTED LIMIT. Given finite polynomials G_n with omega_n | G_(n+1)−G_n, omega_n=(1+T)^(5^n)−1, coefficientwise 5-adic completeness constructs F. Finite inversion symmetries with origin multipliers of augmentation 1 and G_0(0)=0 imply exact F(0)=[T]F=0. Five first-level coefficient congruences modulo 5, tied to the canonical 140-value table, give ord_T F=2 and F=T^2V with V(0) a unit. No infinite series, exact infinite vanishing, infinite symmetry or approximation witnesses are inputs.
+
+Review found exact G1=Greg and zero augmentation force the lower correction c=0. That consequence is proved; the intended modulo 5 interface removes the restriction. A constant control tower u(T^2+T^3)−cT^4 formally witnesses every revised finite input for arbitrary c, with multiplier (1+T)^4. It is not identified with a CM tower.
+
+Still open: arithmetic CM/Brandt/Jacquet-Langlands identification and construction of the actual coherent finite tower, including distribution/symmetry uniformly for all n. Finite-level objects at every level are not a finite amount of checked input. No full Iwasawa inverse-limit ring isomorphism or all-level exact quotient theorem is claimed. Selmer/Kummer arithmetic and universal complex L-order/rank equality remain open; this does not close the target's 2-primary leaves. No target-solving or formal reduction PR is claimed.
+
+Proof guide:
+https://github.com/bgross0/exponent-seven/blob/c7cd5ffdd05d20e75b1f5f9c80e0e1131c473d2c/research/bsd-formal/ARITHMETIC_BRIDGES.md
+Assembled Lean theorem:
+https://github.com/bgross0/exponent-seven/blob/c7cd5ffdd05d20e75b1f5f9c80e0e1131c473d2c/research/bsd-formal/BSDArithmeticCertificate.lean

@@ -385,4 +385,6 @@ These are complete proofs of their stated finite, constructive, or conditional p
 They are appropriate reusable auxiliary results for the problem team's notes.
 They must not be submitted as `OMA.solution` for universal BSD. The submission
 record is in [`submission/`](submission/). The first research contribution
-was acknowledged as note 68678; this is not checker acceptance of universal BSD.
+was acknowledged as note 68678; the 113-theorem arithmetic extension was
+acknowledged as note 78488. Neither acknowledgment is checker acceptance of
+universal BSD.
