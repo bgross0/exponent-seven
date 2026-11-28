@@ -19,7 +19,8 @@ OUT = HERE / "verification"
 MODULES = [
     "Pointwise", "DampedFormula", "ZeroMass", "ZeroLoss", "Obstruction", "Rows",
     "ComplexTransform", "SmoothedKernel", "SmoothedCorrelation", "SmoothedDecay",
-    "SmoothedSum", "All", "Checks"
+    "SmoothedSum", "SmoothedShape", "SmoothedNorm", "SmoothedSupport",
+    "SmoothedAdmissible", "All", "Checks"
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 

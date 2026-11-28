@@ -5,8 +5,8 @@ import Exp7Lean.Frontier.ComplexTransform
 
 `smoothG` agrees with the complex Fourier transform of the actual convolution,
 including at zero. `smoothH` is its normalized product at opposite frequencies.
-The normalization constant is explicit; its equality to the squared L2 norm
-is a separate obligation, not an assumption hidden in these definitions.
+The normalization constant is explicit. Its equality to the squared L2 norm
+is proved separately in `SmoothedNorm`, rather than assumed in these definitions.
 -/
 
 namespace Exp7.Frontier

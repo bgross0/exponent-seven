@@ -4,8 +4,8 @@ import Exp7Lean.Frontier.SmoothedKernel
 # The transform of the actual smoothed correlation
 
 This identifies `smoothH` with an integral of a concrete convolution, at every
-complex frequency. The denominator is explicit; proving that the correlation
-has value one at zero still requires its L2 normalization.
+complex frequency. The denominator is explicit; `SmoothedNorm` proves that
+it is the squared L2 norm and that the correlation has value one at zero.
 -/
 
 namespace Exp7.Frontier

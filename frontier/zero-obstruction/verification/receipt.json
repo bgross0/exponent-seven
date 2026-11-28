@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "started_utc": "2026-11-28T14:49:47.467643+00:00",
-  "head_before_verification": "e6ae57c641f95afc86e6e88b7cc9651b76c14534",
+  "started_utc": "2026-11-28T16:10:07.245938+00:00",
+  "head_before_verification": "7add849404cb8b23134e2114d00ba1c7b2620ebb",
   "toolchain": "leanprover/lean4:v4.37.0-rc1",
   "historical_frontier_commit": "462b231fb1fdd3133de798e2d89501434a86e1a3",
   "scope": "Focused build and new-module kernel replay against compiled imports; no fresh class-group search rebuild; no full height-60 formalization",
@@ -13,16 +13,20 @@
     "Exp7Lean/Exp7Lean/Frontier/Obstruction.lean": "e3d30491842e7cdf586dc115572b4470b2d711fceebd674548e86506c87ef345",
     "Exp7Lean/Exp7Lean/Frontier/Rows.lean": "8e356804148d41f9ba1da0f87f944967139775ea460cadc7367c653a45552b3d",
     "Exp7Lean/Exp7Lean/Frontier/ComplexTransform.lean": "36a07531d3690d1bd3f1e3828925064b893294f15ef76b89b4e4e051543a85f2",
-    "Exp7Lean/Exp7Lean/Frontier/SmoothedKernel.lean": "0acb079d61f558e1a85b57ec40255dc619ca640fd014ae76c67a41ead2d11fba",
-    "Exp7Lean/Exp7Lean/Frontier/SmoothedCorrelation.lean": "947fd446e947959ac945f559f435d42682881355a990725373e0b8d19da6970a",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedKernel.lean": "74679c53129b05c67fc9ce6f265e169b48d65c96c47d2586bd85c49d22e37dba",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedCorrelation.lean": "6f48cf4905059117ccc58092473205d2131855c03a1032e6931d77128454c0b9",
     "Exp7Lean/Exp7Lean/Frontier/SmoothedDecay.lean": "2215d1bc15808da37c7541b3b366cfc91397dc3413272bab8cac77fa3b91862a",
     "Exp7Lean/Exp7Lean/Frontier/SmoothedSum.lean": "5fd3740d3c4ead3a25531f92c66bf4f9d1ca7b470e4661901829b944248fc097",
-    "Exp7Lean/Exp7Lean/Frontier/All.lean": "410eab608320ef0abea1715fb789869974ce242fe08bf019f11a4f0c28d4550b",
-    "Exp7Lean/Exp7Lean/Frontier/Checks.lean": "1482e8ba7b9264513ac25dc66c553a7dd39db7514d6b4686b751ed8d7c2a5b49",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedShape.lean": "0434e7aaf033b084f80637e42d06558b6389b2f085e1e6ed14a704d4b7e87abd",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedNorm.lean": "ed37e8ad26c733398b7f0aec80edad64470e26afba342821de9bf3f35ad98dc9",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedSupport.lean": "0e8d143abeedd32d9c6e57fb5db5658b06099dc0b73199285a3db8c3dd14fe5d",
+    "Exp7Lean/Exp7Lean/Frontier/SmoothedAdmissible.lean": "a880f258ccfc525f33f2166acdf4b565168316dd76d05af792cdb4e8fc53f119",
+    "Exp7Lean/Exp7Lean/Frontier/All.lean": "a79a8177595b6caa52364856583e8379e4f51f982b23b3c9851fdbc2db12dd7f",
+    "Exp7Lean/Exp7Lean/Frontier/Checks.lean": "39a51d3e0a31ed972b183b9425d6df926aeab4cc01512a2789001e59f2601f28",
     "Exp7Lean/Exp7Lean.lean": "386a4f0d962fd3d93fb2a35ed1ea027ab08e31c1de7d37215661c4fedad7e007",
     "Exp7Lean/lean-toolchain": "f11739c25d1640e2b3fda8a98af6d64e97d7b2b1c99840535587a9079b3afee7",
     "Exp7Lean/lake-manifest.json": "76c5d718f19542e45bcb03c0c338d12aaacb91db84c1168b8e1ce96b52f7245c",
-    "frontier/zero-obstruction/verify.py": "c7b8dff2f70ab0485d9579cb0e90cba6cd918e5c93e89f0db81aba4d74896f4e",
+    "frontier/zero-obstruction/verify.py": "4663142b5459cec3e5f3698c6cf57202bcd7d8ca8ffc3e9f44d490d1ba85d776",
     "frontier/zero-integer/verify.py": "8da1ed4d73b4782c2815f6afe0b3a29dc3c2bea2134db99dce39775eb2f4c2b0",
     "frontier/zero-integer/test_verify.py": "4978d2139b36f8d6f68da5b52334b1ad2cfca8a9e5a5fdbd2fbb273a6e91d93d",
     "frontier/zero-integer/result.json": "572a14fba5ec54ef214ed0095d16632b6f2ef541f2cd16170d870cd34ba4afc6",
@@ -38,7 +42,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 46.327,
+      "seconds": 75.159,
       "log": "verification/build.log"
     },
     {
@@ -51,7 +55,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 5.425,
+      "seconds": 6.362,
       "log": "verification/root-import.log"
     },
     {
@@ -64,7 +68,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 5.615,
+      "seconds": 6.696,
       "log": "verification/axioms.log"
     },
     {
@@ -78,7 +82,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.495,
+      "seconds": 11.427,
       "log": "verification/kernel-Pointwise.log"
     },
     {
@@ -92,7 +96,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.543,
+      "seconds": 12.078,
       "log": "verification/kernel-DampedFormula.log"
     },
     {
@@ -106,7 +110,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.516,
+      "seconds": 11.281,
       "log": "verification/kernel-ZeroMass.log"
     },
     {
@@ -120,7 +124,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.481,
+      "seconds": 11.028,
       "log": "verification/kernel-ZeroLoss.log"
     },
     {
@@ -134,7 +138,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.384,
+      "seconds": 12.35,
       "log": "verification/kernel-Obstruction.log"
     },
     {
@@ -148,7 +152,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.351,
+      "seconds": 11.425,
       "log": "verification/kernel-Rows.log"
     },
     {
@@ -162,7 +166,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.599,
+      "seconds": 10.783,
       "log": "verification/kernel-ComplexTransform.log"
     },
     {
@@ -176,7 +180,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.445,
+      "seconds": 11.144,
       "log": "verification/kernel-SmoothedKernel.log"
     },
     {
@@ -190,7 +194,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.273,
+      "seconds": 11.29,
       "log": "verification/kernel-SmoothedCorrelation.log"
     },
     {
@@ -204,7 +208,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.462,
+      "seconds": 11.311,
       "log": "verification/kernel-SmoothedDecay.log"
     },
     {
@@ -218,8 +222,64 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.536,
+      "seconds": 11.652,
       "log": "verification/kernel-SmoothedSum.log"
+    },
+    {
+      "label": "kernel-SmoothedShape",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedShape"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 12.168,
+      "log": "verification/kernel-SmoothedShape.log"
+    },
+    {
+      "label": "kernel-SmoothedNorm",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedNorm"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 12.14,
+      "log": "verification/kernel-SmoothedNorm.log"
+    },
+    {
+      "label": "kernel-SmoothedSupport",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedSupport"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 10.814,
+      "log": "verification/kernel-SmoothedSupport.log"
+    },
+    {
+      "label": "kernel-SmoothedAdmissible",
+      "command": [
+        "/home/zlab/.elan/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Frontier.SmoothedAdmissible"
+      ],
+      "cwd": "Exp7Lean",
+      "exit_code": 0,
+      "seconds": 11.976,
+      "log": "verification/kernel-SmoothedAdmissible.log"
     },
     {
       "label": "kernel-All",
@@ -232,7 +292,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.42,
+      "seconds": 10.85,
       "log": "verification/kernel-All.log"
     },
     {
@@ -246,7 +306,7 @@
       ],
       "cwd": "Exp7Lean",
       "exit_code": 0,
-      "seconds": 10.163,
+      "seconds": 10.561,
       "log": "verification/kernel-Checks.log"
     },
     {
@@ -257,7 +317,7 @@
       ],
       "cwd": ".",
       "exit_code": 0,
-      "seconds": 0.988,
+      "seconds": 1.029,
       "log": "verification/integer-tests.log"
     },
     {
@@ -268,7 +328,7 @@
       ],
       "cwd": ".",
       "exit_code": 0,
-      "seconds": 7.93,
+      "seconds": 8.061,
       "log": "verification/integer-replay.log"
     }
   ],
@@ -663,6 +723,221 @@
       "Classical.choice",
       "Quot.sound",
       "propext"
+    ],
+    "intervalBox_product_ae": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_intervalBox_product": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "intervalBox_convolution": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaar_eq_ofReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "continuous_smoothedHaarReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "continuous_smoothedHaar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaar_im": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "intervalOverlap_zero_left": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "intervalOverlap_zero_right": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "intervalOverlap_reflect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_zero_of_abs_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "hasCompactSupport_smoothedHaarReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_central": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_plateau": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_outer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_sq_central_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_sq_plateau_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_sq_outer_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_sq_positive_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaarReal_sq_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothedHaar_norm_sq_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_eq_ofReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_im": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_smoothedHaarReal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "hasCompactSupport_smoothedHaar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "continuous_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_zero_of_abs_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "hasCompactSupport_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "continuous_smoothSpectrum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothH_real_decay": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "integrable_smoothH_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "fourier_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_fourier_inverse": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_cosine_inverse": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "weilAdmissible_smoothCorrelation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothSpectrum_integral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothCorrelation_abs_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "weilAdmissible_smoothCorrelation_row": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "smoothed_row_damped_formula": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
     ]
   },
   "integer_replay_matches_historical_result_except_timings": true,
@@ -692,12 +967,16 @@
     "Obstruction": "429da47528369d19d1958cc277ef2ad352ce66ba27e7fa794b4a2d13c96a0cea",
     "Rows": "cecf60d0eb8f051511bcdf0c00ab6e6a98511017bdff820b18283af6ca506638",
     "ComplexTransform": "a342c0e4ae4378b87fcc9f3173c78684ba377795edb346e62a0a1e65fe65995d",
-    "SmoothedKernel": "089b70b27f9383edabbaeb997f5da342fc1fd4a003f43f2b865b92b753f0a9be",
-    "SmoothedCorrelation": "81ae3d6aaf6f94da19f7be64350d2cccdcf58702a26b48e198c3e87300a88329",
+    "SmoothedKernel": "9eab7d0d87aaccf3e9db3c40bf20f4a60580831bc10b191cd28adca2625548ff",
+    "SmoothedCorrelation": "a71bdf10913f4c9ec6afaffe1d6cec3396832f24b4ef19d1883ab2ec04ddc347",
     "SmoothedDecay": "780257f114c22fb7d47760080e9bca68bbd90cce6c612b803d29dd89fe4d4a30",
     "SmoothedSum": "eab0b828e190014faff76ae0b39645bfd1b5424ef4a103e385b197889d60c79f",
-    "All": "55f08f6571b1711e7f08e76c58051ff4f519d4072f15d971a6b5e215d1584f7f",
+    "SmoothedShape": "a980adf0d40b193692c43a87659a54fe342e34db5983c17ce94d224d7f090868",
+    "SmoothedNorm": "b369d219fbef161523baac75179687bf0c2affa989b20e5ee27dcb21a5d8c8a5",
+    "SmoothedSupport": "a1568295c3f31937cb59fe506d3cbc34fe5bb3098ecd582ef08fbe4eacfab6b2",
+    "SmoothedAdmissible": "43fecd2a41668fd4c541f5aa0c6df44ef2ae035f53b99e07477c2b2b3cf2fdd2",
+    "All": "2e0ed818acb0e18b5ebef3a4a5bdee14311717ccc420be13281efed2725f2551",
     "Checks": "b8339c8271f31f377d03a389fc90a548ef029dcb07513ba6eb16b56a9b85f41e"
   },
-  "finished_utc": "2026-11-28T14:53:09.452784+00:00"
+  "finished_utc": "2026-11-28T16:14:58.869295+00:00"
 }

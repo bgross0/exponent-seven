@@ -210,7 +210,7 @@ The search prints one line per prime and ends with `DONE survivors 0`. The Lean 
 
 Research branches and ongoing work:
 
-- `frontier-zero-obstruction`: the original draft was strengthened to height 60 on `grh-import-audit`, with an analytic audit and an independent integer verifier. The [formal continuation on main](frontier/zero-obstruction/README.md) proves the unconditional damped formula, the actual smoothed-Haar complex transform, absolute convergence and high-zero decay, zero-mass bounds, reflection, row coverage and conditional obstruction assembly. The full height-60 theorem remains unformalized: kernel normalization and admissibility, the undamped identity, low-zero bounds and Lean numerical certificates are still required.
+- `frontier-zero-obstruction`: the original draft was strengthened to height 60 on `grh-import-audit`, with an analytic audit and an independent integer verifier. The [formal continuation on main](frontier/zero-obstruction/README.md) proves the unconditional damped formula, the actual smoothed-Haar complex transform, exact normalization, Fourier inversion and admissibility, absolute convergence and high-zero decay, zero-mass bounds, reflection, row coverage and conditional obstruction assembly. The full height-60 theorem remains unformalized: the undamped identity, the truncated-cubic bridge, low-zero bounds and Lean numerical certificates are still required.
 - `explicit-formula-wip`, `lean-sieve-handoff`, `sieve-reduction-audit`, `independent-audit`: earlier working branches, merged into `main`.
 
 ## License

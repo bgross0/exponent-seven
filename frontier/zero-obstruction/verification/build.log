@@ -1,10 +1,10 @@
-⚠ [18291/18372] Replayed Exp7Lean.Basic
+⚠ [18291/18380] Replayed Exp7Lean.Basic
 warning: Exp7Lean/Basic.lean:1:1: * `-/`:
 Copyright too short!
 
 
 Note: This linter can be disabled with `set_option linter.style.header false`
-⚠ [18293/18372] Replayed Exp7Lean.Main
+⚠ [18293/18380] Replayed Exp7Lean.Main
 warning: Exp7Lean/Main.lean:1:1: * `-/`:
 Copyright too short!
 
@@ -23,7 +23,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit H hq hE in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [18295/18372] Replayed Exp7Lean.Above
+⚠ [18295/18380] Replayed Exp7Lean.Above
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Above.lean:1:1: * `-/`:
@@ -39,7 +39,7 @@ warning: Exp7Lean/Above.lean:24:41: `Real.exp_nat_mul` has been deprecated: Use 
 
 Hint: Replace the deprecated name:
   R̵e̵a̵l̵.̵e̵x̵p̵_̵n̵a̵t̵_̵m̵u̵l̵e̲x̲p̲_̲n̲a̲t̲C̲a̲s̲t̲_̲m̲u̲l̲
-⚠ [18297/18372] Replayed Exp7Lean.Low
+⚠ [18297/18380] Replayed Exp7Lean.Low
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -59,7 +59,7 @@ Instead, use `open Classical in` for definitions or instances, the `classical` t
 For theorem statements, either add missing decidability assumptions or use `open Classical in`.
 
 Note: This linter can be disabled with `set_option linter.style.openClassical false`
-⚠ [18299/18372] Replayed Exp7Lean.Step1
+⚠ [18299/18380] Replayed Exp7Lean.Step1
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -89,7 +89,7 @@ warning: Exp7Lean/Step1.lean:253:4: `simp at him` is a flexible tactic modifying
 Note: This linter can be disabled with `set_option linter.flexible false`
 info: Exp7Lean/Step1.lean:254:4: `have : (p : ℤ) ∣ 1 := ⟨c.im, him⟩`
 uses `him`, which was modified by the flexible tactic `simp` on line 253!
-⚠ [18301/18372] Replayed Exp7Lean.Final
+⚠ [18301/18380] Replayed Exp7Lean.Final
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -128,7 +128,7 @@ Note: This linter can be disabled with `set_option linter.style.header false`
 warning: Exp7Lean/Final.lean:51:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-⚠ [18303/18372] Replayed Exp7Lean.Analytic.Statement
+⚠ [18303/18380] Replayed Exp7Lean.Analytic.Statement
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -196,7 +196,7 @@ Copyright too short!
 
 
 Note: This linter can be disabled with `set_option linter.style.header false`
-⚠ [18305/18372] Replayed Exp7Lean.Analytic.EF.Defs
+⚠ [18305/18380] Replayed Exp7Lean.Analytic.EF.Defs
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -326,7 +326,7 @@ warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is
 warning: Exp7Lean/Analytic/EF/Defs.lean:53:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-⚠ [18307/18372] Replayed Exp7Lean.Analytic.EF.Character
+⚠ [18307/18380] Replayed Exp7Lean.Analytic.EF.Character
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -587,14 +587,14 @@ Note: This linter can be disabled with `set_option linter.style.longLine false`
 warning: Exp7Lean/Analytic/EF/Character.lean:38:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-⚠ [18315/18372] Replayed Exp7Lean.Analytic.EF.HadamardHF1
+⚠ [18315/18380] Replayed Exp7Lean.Analytic.EF.HadamardHF1
 warning: Exp7Lean/Analytic/EF/HadamardHF1Counting.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Analytic/EF/HadamardHF1Counting.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18321/18372] Replayed Exp7Lean.Analytic.EF.HadamardInput
+⚠ [18321/18380] Replayed Exp7Lean.Analytic.EF.HadamardInput
 warning: Exp7Lean/Analytic/EF/HadamardInput.lean:17:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-⚠ [18325/18372] Replayed Exp7Lean.Analytic.EF.Digamma
+⚠ [18325/18380] Replayed Exp7Lean.Analytic.EF.Digamma
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -867,7 +867,7 @@ Note: This linter can be disabled with `set_option linter.style.longLine false`
 warning: Exp7Lean/Analytic/EF/Digamma.lean:566:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-⚠ [18327/18372] Replayed Exp7Lean.Analytic.EF.DirichletSeries
+⚠ [18327/18380] Replayed Exp7Lean.Analytic.EF.DirichletSeries
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -1378,11 +1378,11 @@ warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18329/18372] Replayed Exp7Lean.Analytic.EF.Pointwise
+⚠ [18329/18380] Replayed Exp7Lean.Analytic.EF.Pointwise
 warning: Exp7Lean/Analytic/EF/Pointwise.lean:34:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-⚠ [18331/18372] Replayed Exp7Lean.Analytic.EF.Admissible
+⚠ [18333/18380] Replayed Exp7Lean.Analytic.EF.Admissible
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -1637,7 +1637,7 @@ warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18333/18372] Replayed Exp7Lean.Analytic.EF.Pairing
+⚠ [18335/18380] Replayed Exp7Lean.Analytic.EF.Pairing
 warning: Exp7Lean/Analytic/EF/Pairing.lean:193:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
 However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
 
@@ -1666,7 +1666,7 @@ warning: Exp7Lean/Analytic/EF/Pairing.lean:241:4: The `show` tactic should only 
 However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
 
 Note: This linter can be disabled with `set_option linter.style.show false`
-⚠ [18337/18372] Replayed Exp7Lean.Analytic.Reduce
+⚠ [18345/18380] Replayed Exp7Lean.Analytic.Reduce
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -1793,7 +1793,7 @@ warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18343/18372] Replayed Exp7Lean.Analytic.Autocorr
+⚠ [18353/18380] Replayed Exp7Lean.Analytic.Autocorr
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -1920,7 +1920,7 @@ warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18345/18372] Replayed Exp7Lean.Analytic.JBound
+⚠ [18355/18380] Replayed Exp7Lean.Analytic.JBound
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -2175,7 +2175,7 @@ warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
-⚠ [18357/18372] Replayed Exp7Lean.Analytic.EF.TestFunction
+⚠ [18357/18380] Replayed Exp7Lean.Analytic.EF.TestFunction
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
 warning: Exp7Lean/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
@@ -2954,13 +2954,25 @@ Note: This linter can be disabled with `set_option linter.style.longLine false`
 warning: Exp7Lean/Analytic/EF/TestFunction.lean:455:100: This line exceeds the 100 character limit, please shorten it!
 
 Note: This linter can be disabled with `set_option linter.style.longLine false`
-✔ [18359/18372] Built Exp7Lean.Frontier.ComplexTransform (7.1s)
-✔ [18361/18372] Built Exp7Lean.Frontier.SmoothedKernel (5.9s)
-✔ [18363/18372] Built Exp7Lean.Frontier.SmoothedDecay (5.6s)
-✔ [18365/18372] Built Exp7Lean.Frontier.SmoothedCorrelation (5.6s)
-✔ [18367/18372] Built Exp7Lean.Frontier.SmoothedSum (6.4s)
-✔ [18369/18372] Built Exp7Lean.Frontier.All (4.4s)
-ℹ [18371/18372] Built Exp7Lean.Frontier.Checks (5.8s)
+✔ [18361/18380] Built Exp7Lean.Frontier.SmoothedKernel (6.4s)
+✔ [18363/18380] Built Exp7Lean.Frontier.SmoothedCorrelation (6.6s)
+✔ [18365/18380] Built Exp7Lean.Frontier.SmoothedDecay (6.7s)
+✔ [18367/18380] Built Exp7Lean.Frontier.SmoothedSum (6.6s)
+✔ [18369/18380] Built Exp7Lean.Frontier.SmoothedShape (7.1s)
+⚠ [18371/18380] Built Exp7Lean.Frontier.SmoothedNorm (5.6s)
+warning: Exp7Lean/Frontier/SmoothedNorm.lean:69:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Frontier/SmoothedNorm.lean:94:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Frontier/SmoothedNorm.lean:97:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [18373/18380] Built Exp7Lean.Frontier.SmoothedSupport (6.7s)
+✔ [18375/18380] Built Exp7Lean.Frontier.SmoothedAdmissible (12s)
+✔ [18377/18380] Built Exp7Lean.Frontier.All (5.2s)
+ℹ [18379/18380] Built Exp7Lean.Frontier.Checks (6.7s)
 info: Exp7Lean/Frontier/Checks.lean:17:0: 'Exp7.Frontier.pointwise_identity_unconditional' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Exp7Lean/Frontier/Checks.lean:18:0: 'Exp7.Frontier.re_one_div_sub_eq_offLine' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Exp7Lean/Frontier/Checks.lean:19:0: 'Exp7.Frontier.summable_offLineZerosKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -3040,4 +3052,47 @@ info: Exp7Lean/Frontier/Checks.lean:93:0: 'Exp7.Frontier.summable_smoothH_zero' 
 info: Exp7Lean/Frontier/Checks.lean:94:0: 'Exp7.Frontier.summable_smoothH_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Exp7Lean/Frontier/Checks.lean:95:0: 'Exp7.Frontier.smoothH_zero_sum_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Exp7Lean/Frontier/Checks.lean:96:0: 'Exp7.Frontier.smoothH_zero_obstruction_of_inert_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
-Build completed successfully (18372 jobs).
+info: Exp7Lean/Frontier/Checks.lean:98:0: 'Exp7.Frontier.intervalBox_product_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:99:0: 'Exp7.Frontier.integrable_intervalBox_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:100:0: 'Exp7.Frontier.intervalBox_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:101:0: 'Exp7.Frontier.smoothedHaar_eq_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:102:0: 'Exp7.Frontier.continuous_smoothedHaarReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:103:0: 'Exp7.Frontier.continuous_smoothedHaar' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:104:0: 'Exp7.Frontier.smoothedHaar_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:105:0: 'Exp7.Frontier.intervalOverlap_zero_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:106:0: 'Exp7.Frontier.intervalOverlap_zero_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:107:0: 'Exp7.Frontier.intervalOverlap_reflect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:108:0: 'Exp7.Frontier.smoothedHaarReal_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:109:0: 'Exp7.Frontier.smoothedHaarReal_zero_of_abs_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:110:0: 'Exp7.Frontier.hasCompactSupport_smoothedHaarReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:111:0: 'Exp7.Frontier.smoothedHaarReal_central' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:112:0: 'Exp7.Frontier.smoothedHaarReal_plateau' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:113:0: 'Exp7.Frontier.smoothedHaarReal_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:114:0: 'Exp7.Frontier.smoothedHaarReal_sq_central_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:115:0: 'Exp7.Frontier.smoothedHaarReal_sq_plateau_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:116:0: 'Exp7.Frontier.smoothedHaarReal_sq_outer_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:117:0: 'Exp7.Frontier.smoothedHaarReal_sq_positive_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:118:0: 'Exp7.Frontier.smoothedHaarReal_sq_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:119:0: 'Exp7.Frontier.smoothedHaar_norm_sq_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:120:0: 'Exp7.Frontier.smoothCorrelation_eq_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:121:0: 'Exp7.Frontier.smoothCorrelation_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:122:0: 'Exp7.Frontier.smoothCorrelation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:123:0: 'Exp7.Frontier.integrable_smoothedHaarReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:124:0: 'Exp7.Frontier.hasCompactSupport_smoothedHaar' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:125:0: 'Exp7.Frontier.continuous_smoothCorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:126:0: 'Exp7.Frontier.smoothCorrelation_zero_of_abs_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:127:0: 'Exp7.Frontier.hasCompactSupport_smoothCorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:128:0: 'Exp7.Frontier.integrable_smoothCorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:129:0: 'Exp7.Frontier.smoothCorrelation_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:130:0: 'Exp7.Frontier.continuous_smoothSpectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:131:0: 'Exp7.Frontier.smoothH_real_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:132:0: 'Exp7.Frontier.integrable_smoothH_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:133:0: 'Exp7.Frontier.fourier_smoothCorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:134:0: 'Exp7.Frontier.smoothCorrelation_fourier_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:135:0: 'Exp7.Frontier.smoothCorrelation_cosine_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:136:0: 'Exp7.Frontier.weilAdmissible_smoothCorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:137:0: 'Exp7.Frontier.smoothSpectrum_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:138:0: 'Exp7.Frontier.smoothCorrelation_abs_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:139:0: 'Exp7.Frontier.weilAdmissible_smoothCorrelation_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/Frontier/Checks.lean:140:0: 'Exp7.Frontier.smoothed_row_damped_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (18380 jobs).

@@ -1,10 +1,11 @@
-# Zero obstruction: smoothed-kernel milestone
+# Zero obstruction: normalized, admissible smoothed kernel
 
 The frontier now has a Lean-checked unconditional damped explicit formula,
 weighted zero-mass bounds, the actual smoothed-Haar complex transform,
-absolute convergence of its zero sum, and a concrete-kernel conditional
-obstruction assembly. The full height-60 obstruction is **not yet
-formalized**. No new unconditional classification is claimed.
+exact L2 normalization and Fourier inversion, absolute convergence of its
+zero sum, and a concrete-kernel conditional obstruction assembly. The actual
+row kernel is now proved admissible and supplied to the damped formula. The
+full height-60 obstruction is **not yet formalized**. No new unconditional classification is claimed.
 
 This work continues the height-60 argument in commit
 `462b231fb1fdd3133de798e2d89501434a86e1a3` on `grh-import-audit`, beyond the
@@ -19,8 +20,7 @@ that earlier work. The new replay is recorded separately here.
 
 Statements about zeros and class groups use the existing quadratic character
 `chi q`, completed L-function multiplicity `EF.mult`, and arithmetic predicate
-`IsExp7`. The
-analytic statements concern prime `q` with `q % 4 = 3`. They do not replace
+`IsExp7`. The number-theoretic analytic statements concern prime `q` with `q % 4 = 3`. They do not replace
 zeros by an arbitrary finite list or introduce a new L-function model.
 
 | Module in `Exp7Lean/Exp7Lean/Frontier/` | Proved result |
@@ -32,13 +32,17 @@ zeros by an arbitrary finite list or introduce a new L-function model.
 | `Obstruction.lean` | Multiplicity-preserving reflection; a negative certificate margin forces an actual L-function zero with `Re rho > 1/2+d` and `abs (Im rho) <= T`. The final wrapper connects the existing exponent-seven norm cutoff to the inert prime sum. |
 | `ComplexTransform.lean` | Exponential twisting and convolution factorization for complex frequencies; direct box integration proves the transform of the actual smoothed Haar function. |
 | `SmoothedKernel.lean` | Entire extensions of G and H via complex sinc; the removable value at zero; the closed transform formula and nonnegativity on the real axis. |
-| `SmoothedCorrelation.lean` | H is the complex Fourier transform of the actual correlation divided by the explicit constant `2a-2b`, at every complex frequency. Identifying that constant with the squared L2 norm remains to be proved. |
+| `SmoothedCorrelation.lean` | H is the complex Fourier transform of the actual correlation divided by the explicit constant `2a-2b`, at every complex frequency. Its identification with the squared L2 norm is proved in `SmoothedNorm`. |
 | `SmoothedDecay.lean` | The exact quartic strip bound and high-zero loss for H, with the same constant as the height-60 audit. No high-zero strip hypothesis or GRH is required. |
 | `SmoothedSum.lean` | Absolute convergence of the concrete complex zero sum; its real-part lower bound; the concrete-kernel obstruction wrapper with convergence and high-zero decay discharged. |
+| `SmoothedShape.lean` | Interval overlap identifies the actual convolution with a real continuous function; oddness, compact support and the central ramp, plateau and outer ramp are proved. |
+| `SmoothedNorm.lean` | Integrating the three squared pieces proves `integral norm(g)^2 = 2a-2b` when `0 < b` and `2b <= a`. The actual correlation is real and has value one at zero. |
+| `SmoothedSupport.lean` | The correlation is continuous, integrable, even, and vanishes whenever `abs u >= 2(a+b)`. |
+| `SmoothedAdmissible.lean` | Fourier and cosine inversion; spectral integral `2*pi`; `abs f <= 1`; `WeilAdmissible` for the concrete kernel and the exact row parameters. The unconditional damped formula is instantiated for every natural `X > 1`. |
 | `Rows.lean` | The four exact integer intervals cover `[39*10^29, 10^162]`, each cutoff satisfies `4*X^7 < Qmin`, and every hypothetical exponent-seven field in the range supplies an inert row. |
 
-There are 79 named theorems, plus three exact numerical regression examples.
-`Checks.lean` prints all 79 theorem axiom dependencies. The only permitted
+There are 122 named theorems, plus three exact numerical regression examples.
+`Checks.lean` prints all 122 theorem axiom dependencies. The only permitted
 axioms are `propext`, `Classical.choice`, and `Quot.sound`. Hypotheses of the
 conditional assembly theorem are still hypotheses even though they do not
 appear in the axiom list.
@@ -72,34 +76,43 @@ Lean proves the equivalent closed formulas in the historical audit.
 The concrete obstruction wrapper uses `Re f` and `Re H((rho-1/2)/i)`.
 It proves convergence and supplies the high-zero estimate, but still takes
 as inputs the undamped explicit formula, the low-zero bound, the archimedean
-bound and a strict numeric margin. The intended normalization theorem assumes
-`2b < a` and still needs proof; defining the denominator to be `2a-2b` does
-not establish that identity.
+bound and a strict numeric margin. Normalization and admissibility are now
+proved under `0 < b` and `2b <= a`, including the boundary case.
+
+For `x >= 0`, the spatial function is `-x/b` on `[0,b]`, `-1` on
+`[b,a-b]`, `(x-a-b)/(2b)` on `[a-b,a+b]`, and zero beyond. Its squared
+integrals on the three pieces are respectively `b/3`, `a-2b`, and `2b/3`.
+Oddness doubles their sum to `2a-2b`; this establishes `f(0)=1` for the
+actual convolution. Fourier inversion then proves the existing
+`WeilAdmissible` interface.
+
+`smoothed_row_damped_formula` uses exactly `a=99*log(X)/200` and
+`b=log(X)/200`. Its assumptions are prime `q`, `q % 4 = 3`, natural
+`X > 1`, and real damping `delta > 1/2`. It does not ask the caller to
+supply normalization, support, admissibility, or a transform identity.
+It still does not assert the undamped zero-sum identity.
 
 ## What remains
 
-1. Prove the smoothed Haar kernel's L2 normalization, real-valuedness,
-   support and admissibility. Its complex Fourier transform, entire extension,
-   strip decay and zero-sum convergence are now proved. The numerical verifier's
-   truncated cubic formula must still be connected to the actual correlation.
-2. Derive the undamped identity retaining the full zero sum. Continue an
+1. Derive the undamped identity retaining the full zero sum. Continue an
    appropriate analytic transform, with locally uniform convergence proved,
    rather than substituting zero damping into the positive-width Poisson formula.
    Absolute convergence at the final zero sum is proved, but does not by itself
    justify analytic continuation.
-3. Prove the exact low-zero shape/variation bound for this kernel. The high-zero
-   quartic bound is now proved and supplied by
+2. Connect the numerical verifier's truncated-cubic formula to the actual
+   correlation and prove the exact low-zero shape/variation bound. The high-zero
+   quartic bound is already proved and supplied by
    `smoothH_zero_obstruction_of_inert_certificate`; the low-zero estimate
    remains an explicit hypothesis.
-4. Bound the real logarithmic derivatives and gamma terms numerically to
+3. Bound the real logarithmic derivatives and gamma terms numerically to
    convert `logDerivativeMass q 2` and `logDerivativeMass q 61` into the
    conductor-only mass bounds used by the integer verifier. The current
    mass theorems retain the exact analytic quantities.
-5. Prove the archimedean bound and certify the four finite prime-power sums
-   in Lean, including a prime table through one million. Row coverage and
-   the norm cutoffs are already proved, but positive Python margins are not
-   Lean certificates.
-6. Instantiate the conditional assembly at `d=1/100`, `T=60`, then connect
+4. Prove the explicit archimedean bound and certify the four finite prime-power
+   sums in Lean, including a prime table through one million. General
+   admissibility and `abs f <= 1` are now proved, but the sharper archimedean
+   constant and positive Python margins are not Lean certificates.
+5. Instantiate the conditional assembly at `d=1/100`, `T=60`, then connect
    the existing fundamental-discriminant reduction.
 
 Even after these steps, excluding the forced low, off-line zero uniformly is
@@ -119,7 +132,7 @@ python3 frontier/zero-obstruction/verify.py
 ```
 
 The script builds the focused frontier target, checks the root import,
-replays all 13 frontier modules with `leanchecker` against compiled imports, audits
+replays all 17 frontier modules with `leanchecker` against compiled imports, audits
 the printed axiom dependencies, runs the seven integer arithmetic tests,
 and reproduces all four rows. It records source hashes, commands, results
 and logs in `verification/`. This does not rebuild the old class-group search
