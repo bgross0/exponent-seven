@@ -1,0 +1,457 @@
+{
+  "base_head_before_verification": "6b2ee722784e2f1a05ee34f6cfb072c7631af8ba",
+  "commands": [
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 0.87,
+      "exit_code": 0,
+      "label": "lean-version",
+      "log": "verification/lean-version.log",
+      "log_sha256": "91cb3661433be8a70db28be8ac1889777bc65ed26eafa0e835f229b4e0e4baae"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "--rehash",
+        "build",
+        "Exp7Lean.ClassGroup.SeventyOneChecks"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 11.87,
+      "exit_code": 0,
+      "label": "build",
+      "log": "verification/build.log",
+      "log_sha256": "647fee0fba09cda1e8f6c426e259d86a5589c4b401f899289ccd37517a2a9ca9"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "lean",
+        "Exp7Lean/ClassGroup/SeventyOneChecks.lean"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 3.132,
+      "exit_code": 0,
+      "label": "axioms-and-signatures",
+      "log": "verification/axioms-and-signatures.log",
+      "log_sha256": "d8796a3d568febc768d5624d4d4b449d16451f3122f7f6d94041abd0a7de4242"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Basic"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 6.11,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.Basic",
+      "log": "verification/kernel-Exp7Lean.Basic.log",
+      "log_sha256": "1ba7a1f6e49ae905f4864640dcbaf0ead95303a4cb32f4f903d5c8b16831fcc9"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Main"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 5.055,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.Main",
+      "log": "verification/kernel-Exp7Lean.Main.log",
+      "log_sha256": "5a557c0ce50c1b16ef3b854073d790163ded528df38d35779b13518aba004a57"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Above"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 5.237,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.Above",
+      "log": "verification/kernel-Exp7Lean.Above.log",
+      "log_sha256": "a0ccd2370028e9f59b2bea0f030f1fcd84a4c0bd0cf70a0eb1f6235bf284260e"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Low"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 5.099,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.Low",
+      "log": "verification/kernel-Exp7Lean.Low.log",
+      "log_sha256": "aa1d4a658b212b4cb47adbab72b7f01a225aed70e482a3d0b0eb75335ce50e02"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Step1"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 4.968,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.Step1",
+      "log": "verification/kernel-Exp7Lean.Step1.log",
+      "log_sha256": "693d3b09d813f6ed6656b31be67c97b6ded31710641a972518ab552ad2366ffe"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.Final"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 5.759,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.Final",
+      "log": "verification/kernel-Exp7Lean.Final.log",
+      "log_sha256": "1fa92edd5a80ac275486b1268e595493545f5cb5c6ba47968fe085a572a0fcec"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.Defs"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 4.973,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.Defs",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.Defs.log",
+      "log_sha256": "018ee4a7ea728cc44eb7e61d2a47570123162baac890176e30c9c5901b180c2f"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.Converse"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 4.587,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.Converse",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.Converse.log",
+      "log_sha256": "dc176268785f5c58fc1dab40420ba1f784891cc7cc06e8e8b10a16706a1d41bb"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.Criterion"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 4.626,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.Criterion",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.Criterion.log",
+      "log_sha256": "2389d3bfe45203e83bd0dd32cc12f9dffb07fef26acd05fa058c687ae84def06"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.GenBoundProof"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 5.15,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.GenBoundProof",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.GenBoundProof.log",
+      "log_sha256": "c297cf3ec66a4f92ca43c0d9cf26e52769da576f05c8eaca9bb1a66e4ca8f09a"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.SeventyOneLocal"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 4.706,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.SeventyOneLocal",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.SeventyOneLocal.log",
+      "log_sha256": "8e3b2e53bd8826d9ffc3ec18571f5a5bec9a07886287c61e32ad53e9d282b7d9"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.SeventyOne"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 4.274,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.SeventyOne",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.SeventyOne.log",
+      "log_sha256": "c6de439ba264c1ecaf2e90a046cc5fa7057014021383258b470bad4886cc22b7"
+    },
+    {
+      "command": [
+        "/workspace/scratch/50ed92e4bf2d/toolchains/lean-4.37.0-rc1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "Exp7Lean.ClassGroup.SeventyOneChecks"
+      ],
+      "cwd": "Exp7Lean",
+      "elapsed_seconds": 3.903,
+      "exit_code": 0,
+      "label": "kernel-Exp7Lean.ClassGroup.SeventyOneChecks",
+      "log": "verification/kernel-Exp7Lean.ClassGroup.SeventyOneChecks.log",
+      "log_sha256": "3e56d30aa05d47a589936d8a7e68bf92a12d3f5ccb05ebb0fe022797a630403e"
+    }
+  ],
+  "finished_utc": "2026-11-28T17:27:24.907748+00:00",
+  "lean_version": "Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)",
+  "mathlib_revision": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "module_olean_sha256": {
+    "Exp7Lean.Above": "e8466b57f9baea7649ac640f14f2dd40daf9dffeea47a280adf533bae578f0a7",
+    "Exp7Lean.Basic": "fdc31cdb33b8cd05e559f7a74ad637507f7cef8539347cd4e753a2a8aa26c5a2",
+    "Exp7Lean.ClassGroup.Converse": "6ba712b2911cc0277a6a1942730dcd8669b0004e6bc46d7500abb4cf9945c3a0",
+    "Exp7Lean.ClassGroup.Criterion": "2e117fa5481c6da427d237cf13cc2cb839e78312b4766290c48de68b962e3d4d",
+    "Exp7Lean.ClassGroup.Defs": "7b09f139f74cd673f76059348954e16cbdb68ecb6fb5cc05e3a03408933aae17",
+    "Exp7Lean.ClassGroup.GenBoundProof": "5a8142851fe5dcb7f05da60698b4e68aab21a219a8a898248425b3d594b42956",
+    "Exp7Lean.ClassGroup.SeventyOne": "8ee11ed449a6d996ff4e3238a44abdb168f2d4b4be0932ec6275cf6ed743c632",
+    "Exp7Lean.ClassGroup.SeventyOneChecks": "7fa4277c8dbed050c4579a19295b389398858d9d1e47c990dda2da8d24354305",
+    "Exp7Lean.ClassGroup.SeventyOneLocal": "78733d191af6d36ff990cd4fbc4ec77816af6a6e4a64f2ee0bcd61b8094cf2bb",
+    "Exp7Lean.Final": "0df2f250eee8a8356ba039b727a5dd9f56b1099aecc210ed9da360553a2e11b0",
+    "Exp7Lean.Low": "37802a734eee5ed876b9892d09236714dfec2763349e6e9c00299bce624812ce",
+    "Exp7Lean.Main": "48db08f2dba9a3ec98f5d0a748f7b9724a4af1d51a01ed39c87c308d2fc16e5b",
+    "Exp7Lean.Step1": "98f317b90e79efe162c705f3a29f2bd04df576712a10bd35a4b09063fb10b9ab"
+  },
+  "project_modules_replayed": [
+    "Exp7Lean.Basic",
+    "Exp7Lean.Main",
+    "Exp7Lean.Above",
+    "Exp7Lean.Low",
+    "Exp7Lean.Step1",
+    "Exp7Lean.Final",
+    "Exp7Lean.ClassGroup.Defs",
+    "Exp7Lean.ClassGroup.Converse",
+    "Exp7Lean.ClassGroup.Criterion",
+    "Exp7Lean.ClassGroup.GenBoundProof",
+    "Exp7Lean.ClassGroup.SeventyOneLocal",
+    "Exp7Lean.ClassGroup.SeventyOne",
+    "Exp7Lean.ClassGroup.SeventyOneChecks"
+  ],
+  "public_theorems": [
+    "Exp7.SeventyOneLocal.alpha_eq",
+    "Exp7.SeventyOneLocal.norm_alpha",
+    "Exp7.SeventyOneLocal.ideal_two_seventh_power",
+    "Exp7.SeventyOneLocal.ideal_two_absNorm",
+    "Exp7.SeventyOneLocal.split12_omega",
+    "Exp7.SeventyOneLocal.split14_omega",
+    "Exp7.SeventyOneLocal.split12_star",
+    "Exp7.SeventyOneLocal.split12_alpha",
+    "Exp7.SeventyOneLocal.split14_alpha",
+    "Exp7.SeventyOneLocal.coe_alpha12",
+    "Exp7.SeventyOneLocal.coe_alpha14",
+    "Exp7.SeventyOneLocal.coe_localRatio",
+    "Exp7.SeventyOneLocal.coe_residueRatio",
+    "Exp7.SeventyOneLocal.residueRatio_order",
+    "Exp7.SeventyOneLocal.localRatio_fourth",
+    "Exp7.SeventyOneLocal.localRatio_fourth_ne_one",
+    "Exp7.SeventyOneLocal.localRatio_order",
+    "Exp7.K71.twoClass_pow_seven",
+    "Exp7.K71.twoClass_ne_one",
+    "Exp7.K71.twoClass_order",
+    "Exp7.K71.threeClass_eq_twoClass_cube",
+    "Exp7.K71.twoClass_generates",
+    "Exp7.K71.class_number_seven",
+    "Exp7.K71.class_group_cyclic",
+    "Exp7.K71.cyclicCoordinates_one",
+    "Exp7.K71.cyclicCoordinates_intCast"
+  ],
+  "scope": "Native Exp7 Lean 4.37.0-rc1: build and kernel replay of the complete project import closure for the new field-arithmetic modules, against compiled pinned Mathlib imports. No fresh replay of all Mathlib; no BSD theta/CM/Picard/Selmer identification or terminal BSD theorem.",
+  "source_sha256": {
+    "Exp7Lean/Exp7Lean/Above.lean": "8b837400b6887ae821eca70d8be6fc2139910d6c59333f564c2c73b6818da494",
+    "Exp7Lean/Exp7Lean/Basic.lean": "f9425547cb760648e8df0c11978767442986bd464fb81e1eee29035f0fc93081",
+    "Exp7Lean/Exp7Lean/ClassGroup/Converse.lean": "61aa5a337dfd17010cd91402484c511ffc3ce32d4aa64861847a17a60ca7be56",
+    "Exp7Lean/Exp7Lean/ClassGroup/Criterion.lean": "9e61a45a6600c5f79950c5c3b0efb608872ee3281d101400bc3f1016782f4a0c",
+    "Exp7Lean/Exp7Lean/ClassGroup/Defs.lean": "3a3ebc321d7c804f42259282f10336ab60b670248b0ec20e0b2961cc1ca67d35",
+    "Exp7Lean/Exp7Lean/ClassGroup/GenBoundProof.lean": "3a9e71b6c808be34ca01a45e47e4a23ec8e2e7b651fd1414ce2f5cfd2f91cd05",
+    "Exp7Lean/Exp7Lean/ClassGroup/SeventyOne.lean": "937f9af1b17c84b5adf50844d6a45af475261be5b637e6fcc4123337ec630e7a",
+    "Exp7Lean/Exp7Lean/ClassGroup/SeventyOneChecks.lean": "d6469ca78e21793b51d5622352dcbd2c4e782191b5099cd6b69944ade7bd0fc2",
+    "Exp7Lean/Exp7Lean/ClassGroup/SeventyOneLocal.lean": "efec87a9364cfe8d1944eb05efc9f137084c484f7538e9659126de57b203a601",
+    "Exp7Lean/Exp7Lean/Final.lean": "b227b1f9926dc87b8a33ad99bbb747a6e2cdf01724fe0d35b6dc9695f4474178",
+    "Exp7Lean/Exp7Lean/Low.lean": "255d2255c0c949e354afd798fd7b042b4c8540349abad5f38f300268edbe6032",
+    "Exp7Lean/Exp7Lean/Main.lean": "feb65f24525b4ebf346cf22c627ec826f91ef46a777c7173cc37c32fbdde553c",
+    "Exp7Lean/Exp7Lean/Step1.lean": "a1e03fdd665d455f9c3b66fb8fb050149af809417323e1c78cde59d8e4f56d7d",
+    "Exp7Lean/lake-manifest.json": "76c5d718f19542e45bcb03c0c338d12aaacb91db84c1168b8e1ce96b52f7245c",
+    "Exp7Lean/lakefile.toml": "d2878f98323d801fce464d1aae6a5929597e57f213e907afbde6bb7840f4d0f8",
+    "Exp7Lean/lean-toolchain": "f11739c25d1640e2b3fda8a98af6d64e97d7b2b1c99840535587a9079b3afee7",
+    "research/bsd-field-arithmetic/verify.py": "a67ecde10de83078516c96f1b1b27cc1efbb6688cec56f8bad7bc578b7d4424c"
+  },
+  "started_utc": "2026-11-28T17:26:04.531241+00:00",
+  "status": "passed",
+  "theorem_axioms": {
+    "Exp7.K71.class_group_cyclic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.class_number_seven": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.cyclicCoordinates_intCast": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.cyclicCoordinates_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.threeClass_eq_twoClass_cube": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.twoClass_generates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.twoClass_ne_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.twoClass_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.K71.twoClass_pow_seven": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.alpha_eq": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.coe_alpha12": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.coe_alpha14": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.coe_localRatio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.coe_residueRatio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.ideal_two_absNorm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.ideal_two_seventh_power": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.localRatio_fourth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.localRatio_fourth_ne_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.localRatio_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.norm_alpha": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.residueRatio_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.split12_alpha": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.split12_omega": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.split12_star": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.split14_alpha": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Exp7.SeventyOneLocal.split14_omega": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "toolchain": "leanprover/lean4:v4.37.0-rc1"
+}
