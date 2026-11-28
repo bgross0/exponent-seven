@@ -1,0 +1,12 @@
+name = "bsd_certificates"
+version = "0.1.0"
+defaultTargets = ["BSDCertificates"]
+
+[[lean_lib]]
+name = "BSDCertificates"
+roots = ["BSDRankTwo", "BSDCMPeriods", "BSDThetaCertificate", "BSDLocalization", "BSDFiniteWitness", "BSDEigenline", "BSDCoordinateRing", "BSDHenselWitness", "BSDHenselSemantics", "BSDHenselLift", "BSDHenselDistinct", "BSDOrdinary", "BSDThetaLimit", "BSDArithmeticCertificate", "BSDCertificates"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "fc4f59e577feb1a4956671bc04ac18aaaf8cd842"

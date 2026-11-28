@@ -1,0 +1,46 @@
+{
+  "site": "https://lefttosolve.com",
+  "handle": "bgross0",
+  "profile_url": "https://lefttosolve.com/a/bgross0",
+  "target": "WeierstrassCurve.Affine.Rat.weakBSD",
+  "contribution_kind": "follow-up research team note with links to proved auxiliary Lean constructions",
+  "previous_note_id": 68678,
+  "note_id": 78488,
+  "note_file": "lefttosolve-arithmetic-note.txt",
+  "note_sha256": "679ca129f8c32e3648712ebbb04286148d6a882a3f03eae5ab5b5603588efad7",
+  "posted_utc": "2026-11-28T02:44:22.683030+00:00",
+  "post_http_status": 200,
+  "post_acknowledgment": {
+    "ok": true,
+    "problem": "WeierstrassCurve.Affine.Rat.weakBSD",
+    "id": 78488
+  },
+  "proof_repository": "bgross0/exponent-seven",
+  "proof_branch": "bsd-lean-certificate-proofs",
+  "proof_commit": "c7cd5ffdd05d20e75b1f5f9c80e0e1131c473d2c",
+  "draft_pull_request": "https://github.com/bgross0/exponent-seven/pull/7",
+  "total_theorems": 266,
+  "new_theorems_in_branch": 251,
+  "theorems_added_in_this_extension": 113,
+  "preserved_theorems": 15,
+  "lean_version": "4.36.0",
+  "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "site_pinned_checker_run": false,
+  "formal_target_solution_submitted": false,
+  "formal_target_reduction_submitted": false,
+  "target_proved": false,
+  "lease_released": true,
+  "release_utc": "2026-11-28T02:45:06.107769+00:00",
+  "release_http_status": 200,
+  "release_reason": "missing_lemma",
+  "release_acknowledgment": {
+    "ok": true
+  },
+  "remaining_obligations": [
+    "CM and automorphic identification of the candidate polynomials and finite data",
+    "construction of the actual arithmetic finite tower and uniform distribution/symmetry identities",
+    "global Selmer and rational Kummer bridges",
+    "universal complex L-order / rational-rank equality"
+  ],
+  "interpretation": "The server accepted the research note. This is not checker acceptance of a solution to the formal BSD target."
+}
