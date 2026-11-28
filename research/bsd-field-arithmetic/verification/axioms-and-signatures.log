@@ -1,0 +1,56 @@
+'Exp7.SeventyOneLocal.alpha_eq' depends on axioms: [propext, Quot.sound]
+'Exp7.SeventyOneLocal.norm_alpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.ideal_two_seventh_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.ideal_two_absNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.split12_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.split14_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.split12_star' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.split12_alpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.split14_alpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.coe_alpha12' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.coe_alpha14' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.coe_localRatio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.coe_residueRatio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.residueRatio_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.localRatio_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.localRatio_fourth_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.SeventyOneLocal.localRatio_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.twoClass_pow_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.twoClass_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.twoClass_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.threeClass_eq_twoClass_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.twoClass_generates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.class_number_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.class_group_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.cyclicCoordinates_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.K71.cyclicCoordinates_intCast' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exp7.SeventyOneLocal.alpha_eq : Exp7.SeventyOneLocal.alpha = 10 + QuadraticAlgebra.omega
+Exp7.SeventyOneLocal.norm_alpha : QuadraticAlgebra.norm Exp7.SeventyOneLocal.alpha = 128
+Exp7.SeventyOneLocal.ideal_two_seventh_power : Exp7.idealI 71 2 0 ^ 7 = Ideal.span {Exp7.SeventyOneLocal.alpha}
+Exp7.SeventyOneLocal.ideal_two_absNorm : Ideal.absNorm (Exp7.idealI 71 2 0) = 2
+Exp7.SeventyOneLocal.split12_omega : Exp7.SeventyOneLocal.split12 QuadraticAlgebra.omega = 12
+Exp7.SeventyOneLocal.split14_omega : Exp7.SeventyOneLocal.split14 QuadraticAlgebra.omega = 14
+Exp7.SeventyOneLocal.split12_star (z : Exp7.OK 71) :
+  Exp7.SeventyOneLocal.split12 (star z) = Exp7.SeventyOneLocal.split14 z
+Exp7.SeventyOneLocal.split12_alpha : Exp7.SeventyOneLocal.split12 Exp7.SeventyOneLocal.alpha = 22
+Exp7.SeventyOneLocal.split14_alpha : Exp7.SeventyOneLocal.split14 Exp7.SeventyOneLocal.alpha = 24
+Exp7.SeventyOneLocal.coe_alpha12 :
+  ↑Exp7.SeventyOneLocal.alpha12 = Exp7.SeventyOneLocal.split12 Exp7.SeventyOneLocal.alpha
+Exp7.SeventyOneLocal.coe_alpha14 :
+  ↑Exp7.SeventyOneLocal.alpha14 = Exp7.SeventyOneLocal.split12 (star Exp7.SeventyOneLocal.alpha)
+Exp7.SeventyOneLocal.coe_localRatio : ↑Exp7.SeventyOneLocal.localRatio = 3
+Exp7.SeventyOneLocal.coe_residueRatio : ↑Exp7.SeventyOneLocal.residueRatio = 3
+Exp7.SeventyOneLocal.residueRatio_order : orderOf Exp7.SeventyOneLocal.residueRatio = 4
+Exp7.SeventyOneLocal.localRatio_fourth : ↑(Exp7.SeventyOneLocal.localRatio ^ 4) = 1 + 5
+Exp7.SeventyOneLocal.localRatio_fourth_ne_one : Exp7.SeventyOneLocal.localRatio ^ 4 ≠ 1
+Exp7.SeventyOneLocal.localRatio_order : orderOf Exp7.SeventyOneLocal.localRatio = 20
+Exp7.K71.twoClass_pow_seven : Exp7.K71.twoClass ^ 7 = 1
+Exp7.K71.twoClass_ne_one : Exp7.K71.twoClass ≠ 1
+Exp7.K71.twoClass_order : orderOf Exp7.K71.twoClass = 7
+Exp7.K71.threeClass_eq_twoClass_cube : Exp7.K71.threeClass = Exp7.K71.twoClass ^ 3
+Exp7.K71.twoClass_generates : Subgroup.zpowers Exp7.K71.twoClass = ⊤
+Exp7.K71.class_number_seven : Nat.card (ClassGroup (Exp7.OK 71)) = 7
+Exp7.K71.class_group_cyclic : IsCyclic (ClassGroup (Exp7.OK 71))
+Exp7.K71.cyclicCoordinates_one : Exp7.K71.cyclicCoordinates (Multiplicative.ofAdd 1) = Exp7.K71.twoClass
+Exp7.K71.cyclicCoordinates_intCast (n : ℤ) :
+  Exp7.K71.cyclicCoordinates (Multiplicative.ofAdd ↑n) = Exp7.K71.twoClass ^ n

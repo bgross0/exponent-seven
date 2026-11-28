@@ -1,0 +1,153 @@
+⚠ [18291/18316] Replayed Exp7Lean.Basic
+warning: Exp7Lean/Basic.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+⚠ [18293/18316] Replayed Exp7Lean.Main
+warning: Exp7Lean/Main.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Main.lean:22:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+warning: Exp7Lean/Main.lean:113:0: automatically included section variable(s) unused in theorem `Exp7.X_lt_q`:
+  H
+  hq
+  hE
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit H hq hE in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [18295/18316] Replayed Exp7Lean.Above
+warning: Exp7Lean/Above.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Above.lean:17:43: `Real.exp_nat_mul` has been deprecated: Use `Real.exp_natCast_mul` instead
+
+Hint: Replace the deprecated name:
+  R̵e̵a̵l̵.̵e̵x̵p̵_̵n̵a̵t̵_̵m̵u̵l̵e̲x̲p̲_̲n̲a̲t̲C̲a̲s̲t̲_̲m̲u̲l̲
+warning: Exp7Lean/Above.lean:24:41: `Real.exp_nat_mul` has been deprecated: Use `Real.exp_natCast_mul` instead
+
+Hint: Replace the deprecated name:
+  R̵e̵a̵l̵.̵e̵x̵p̵_̵n̵a̵t̵_̵m̵u̵l̵e̲x̲p̲_̲n̲a̲t̲C̲a̲s̲t̲_̲m̲u̲l̲
+⚠ [18297/18316] Replayed Exp7Lean.Low
+warning: Exp7Lean/Low.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Low.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Exp7Lean/Low.lean:21:5: please avoid 'open (scoped) Classical' statements: this can hide theorem statements which would be better stated with explicit decidability statements.
+Instead, use `open Classical in` for definitions or instances, the `classical` tactic for proofs.
+For theorem statements, either add missing decidability assumptions or use `open Classical in`.
+
+Note: This linter can be disabled with `set_option linter.style.openClassical false`
+⚠ [18299/18316] Replayed Exp7Lean.Step1
+warning: Exp7Lean/Step1.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Step1.lean:138:4: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Exp7Lean/Step1.lean:139:4: `exact hp.ne_zero this`
+uses `this`, which was modified by the flexible tactic `simp` on line 138!
+warning: Exp7Lean/Step1.lean:253:4: `simp at him` is a flexible tactic modifying `him`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Exp7Lean/Step1.lean:254:4: `have : (p : ℤ) ∣ 1 := ⟨c.im, him⟩`
+uses `him`, which was modified by the flexible tactic `simp` on line 253!
+⚠ [18301/18316] Replayed Exp7Lean.Final
+warning: Exp7Lean/Final.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/Final.lean:51:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [18303/18316] Replayed Exp7Lean.ClassGroup.Defs
+warning: Exp7Lean/ClassGroup/Defs.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: Exp7Lean/ClassGroup/Defs.lean:27:2: `simp at this` is a flexible tactic modifying `this`. Try `simp?` and use the suggested `simp only [...]`. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Exp7Lean/ClassGroup/Defs.lean:28:2: `exact hl this`
+uses `this`, which was modified by the flexible tactic `simp` on line 27!
+⚠ [18309/18316] Replayed Exp7Lean.ClassGroup.GenBoundProof
+warning: Exp7Lean/ClassGroup/GenBoundProof.lean:1:1: * `-/`:
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+ℹ [18315/18316] Built Exp7Lean.ClassGroup.SeventyOneChecks (3.5s)
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:5:0: 'Exp7.SeventyOneLocal.alpha_eq' depends on axioms: [propext, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:6:0: 'Exp7.SeventyOneLocal.norm_alpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:7:0: 'Exp7.SeventyOneLocal.ideal_two_seventh_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:8:0: 'Exp7.SeventyOneLocal.ideal_two_absNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:9:0: 'Exp7.SeventyOneLocal.split12_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:10:0: 'Exp7.SeventyOneLocal.split14_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:11:0: 'Exp7.SeventyOneLocal.split12_star' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:12:0: 'Exp7.SeventyOneLocal.split12_alpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:13:0: 'Exp7.SeventyOneLocal.split14_alpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:14:0: 'Exp7.SeventyOneLocal.coe_alpha12' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:15:0: 'Exp7.SeventyOneLocal.coe_alpha14' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:16:0: 'Exp7.SeventyOneLocal.coe_localRatio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:17:0: 'Exp7.SeventyOneLocal.coe_residueRatio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:18:0: 'Exp7.SeventyOneLocal.residueRatio_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:19:0: 'Exp7.SeventyOneLocal.localRatio_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:20:0: 'Exp7.SeventyOneLocal.localRatio_fourth_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:21:0: 'Exp7.SeventyOneLocal.localRatio_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:22:0: 'Exp7.K71.twoClass_pow_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:23:0: 'Exp7.K71.twoClass_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:24:0: 'Exp7.K71.twoClass_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:25:0: 'Exp7.K71.threeClass_eq_twoClass_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:26:0: 'Exp7.K71.twoClass_generates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:27:0: 'Exp7.K71.class_number_seven' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:28:0: 'Exp7.K71.class_group_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:29:0: 'Exp7.K71.cyclicCoordinates_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:30:0: 'Exp7.K71.cyclicCoordinates_intCast' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:32:0: Exp7.SeventyOneLocal.alpha_eq : Exp7.SeventyOneLocal.alpha = 10 + QuadraticAlgebra.omega
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:33:0: Exp7.SeventyOneLocal.norm_alpha : QuadraticAlgebra.norm Exp7.SeventyOneLocal.alpha = 128
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:34:0: Exp7.SeventyOneLocal.ideal_two_seventh_power : Exp7.idealI 71 2 0 ^ 7 = Ideal.span {Exp7.SeventyOneLocal.alpha}
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:35:0: Exp7.SeventyOneLocal.ideal_two_absNorm : Ideal.absNorm (Exp7.idealI 71 2 0) = 2
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:36:0: Exp7.SeventyOneLocal.split12_omega : Exp7.SeventyOneLocal.split12 QuadraticAlgebra.omega = 12
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:37:0: Exp7.SeventyOneLocal.split14_omega : Exp7.SeventyOneLocal.split14 QuadraticAlgebra.omega = 14
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:38:0: Exp7.SeventyOneLocal.split12_star (z : Exp7.OK 71) :
+  Exp7.SeventyOneLocal.split12 (star z) = Exp7.SeventyOneLocal.split14 z
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:39:0: Exp7.SeventyOneLocal.split12_alpha : Exp7.SeventyOneLocal.split12 Exp7.SeventyOneLocal.alpha = 22
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:40:0: Exp7.SeventyOneLocal.split14_alpha : Exp7.SeventyOneLocal.split14 Exp7.SeventyOneLocal.alpha = 24
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:41:0: Exp7.SeventyOneLocal.coe_alpha12 :
+  ↑Exp7.SeventyOneLocal.alpha12 = Exp7.SeventyOneLocal.split12 Exp7.SeventyOneLocal.alpha
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:42:0: Exp7.SeventyOneLocal.coe_alpha14 :
+  ↑Exp7.SeventyOneLocal.alpha14 = Exp7.SeventyOneLocal.split12 (star Exp7.SeventyOneLocal.alpha)
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:43:0: Exp7.SeventyOneLocal.coe_localRatio : ↑Exp7.SeventyOneLocal.localRatio = 3
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:44:0: Exp7.SeventyOneLocal.coe_residueRatio : ↑Exp7.SeventyOneLocal.residueRatio = 3
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:45:0: Exp7.SeventyOneLocal.residueRatio_order : orderOf Exp7.SeventyOneLocal.residueRatio = 4
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:46:0: Exp7.SeventyOneLocal.localRatio_fourth : ↑(Exp7.SeventyOneLocal.localRatio ^ 4) = 1 + 5
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:47:0: Exp7.SeventyOneLocal.localRatio_fourth_ne_one : Exp7.SeventyOneLocal.localRatio ^ 4 ≠ 1
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:48:0: Exp7.SeventyOneLocal.localRatio_order : orderOf Exp7.SeventyOneLocal.localRatio = 20
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:49:0: Exp7.K71.twoClass_pow_seven : Exp7.K71.twoClass ^ 7 = 1
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:50:0: Exp7.K71.twoClass_ne_one : Exp7.K71.twoClass ≠ 1
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:51:0: Exp7.K71.twoClass_order : orderOf Exp7.K71.twoClass = 7
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:52:0: Exp7.K71.threeClass_eq_twoClass_cube : Exp7.K71.threeClass = Exp7.K71.twoClass ^ 3
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:53:0: Exp7.K71.twoClass_generates : Subgroup.zpowers Exp7.K71.twoClass = ⊤
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:54:0: Exp7.K71.class_number_seven : Nat.card (ClassGroup (Exp7.OK 71)) = 7
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:55:0: Exp7.K71.class_group_cyclic : IsCyclic (ClassGroup (Exp7.OK 71))
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:56:0: Exp7.K71.cyclicCoordinates_one : Exp7.K71.cyclicCoordinates (Multiplicative.ofAdd 1) = Exp7.K71.twoClass
+info: Exp7Lean/ClassGroup/SeventyOneChecks.lean:57:0: Exp7.K71.cyclicCoordinates_intCast (n : ℤ) :
+  Exp7.K71.cyclicCoordinates (Multiplicative.ofAdd ↑n) = Exp7.K71.twoClass ^ n
+Build completed successfully (18316 jobs).
