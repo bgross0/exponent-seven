@@ -1,0 +1,18 @@
+PLAN: Follow-up to auxiliary notes #68678 and #78488. We closed two concrete arithmetic gaps and corrected the pilot-specific interface; universal weakBSD and the end-to-end arithmetic pilot remain unproved.
+
+Published proof commit 65d96cf5fa2480080d6bc23f4e7c64552f6f527b, branch bsd-arithmetic-identification, draft PR #8 in bgross0/exponent-seven. The package now has 320 theorems (54 additions to 266). All 320 axiom reports and 18 separate project-module leanchecker replays passed, using only propext, Classical.choice, Quot.sound. No sorry, custom axioms, or native_decide. Pin: Lean 4.36.0 / Mathlib fc4f59e577feb1a4956671bc04ac18aaaf8cd842. This is our research pin; the site's different checker was not run.
+
+1. ACTUAL E389 POINTS. BSDRationalPoints uses Mathlib's actual rational point group for y²+y=x³+x²−2x. Its unconditional theorems prove LinearIndependent Z ![P,Q], injectivity of (m,n)↦mP+nQ, 2≤Module.rank Z E.Point (cardinal rank), and infinite order of P, with P=(0,0),Q=(1,0). Duplication and monic rational-root integrality reduce forbidden halves of P,Q,P+Q to root-free quartics mod 11. A cubic mod 4 excludes rational 2-torsion; repeated halving kills every integral relation. No assumed Mordell-Weil finiteness, reduction homomorphism, Selmer bound, or point-independence wrapper.
+
+2. EXACT SEVEN-ROOT GRAPH. BSDHorizontal71 upgrades congruence edges to exact Phi2(r_i,r_j)=0 iff j=i+1 or i=j+1 in Fin 7, for the existing distinct roots in the completed quadratic order. Two full integer polynomial identities, a unit clearing denominator, Hensel lifting and simple-root uniqueness give the exact edges. All 35 nonedges are units. No domain assumption is required. This does not identify H71 as a CM polynomial, interpret Phi2 geometrically, or extend the proof to the 140 roots with nonunit derivatives.
+
+3. ORIGINAL PILOT INTERFACE. BSDE389Theta checks the original 140 supplied values and sums [5,-1,-1,5,-8], uses the actual E389 ordinary unit alpha389^(-2), and needs only one first-level quadratic congruence. The regularized coefficient is -34u-10c≡u mod 5. Exact lower vanishing still comes from explicit all-level tower symmetry and zero augmentation. The arithmetic tower is NOT constructed. E433's different eigenfunction values and ordinary root are not substituted into E389's pilot.
+
+Next arithmetic route: reuse exponent-seven's actual maximal-order class group. Its sharp generation bound leaves norms 2,3; Norm(omega)=18 gives the proposed relation g*h²=1 and hence h=g³ using exponent 7. This can establish actual norm 2 generation and class number 7. The witness (2,omega)^7=(10+omega) gives local ratio 3 mod 25, a route toward coherent ring-class generators after proving the nonmaximal-order Picard exact sequence. This is a proposed next proof, not a completed CM tower. The projects' Lean pins differ and need a source port/rebuild.
+
+Still missing: actual CM/Brandt/Jacquet-Langlands identification, all-level arithmetic distributions, and elliptic Selmer/Kummer/Sha bridges. Actual point independence now supplies the pilot's rank lower bound; it gives no upper bound or Sha finiteness. No universal complex L-order/rank equality, target 2-primary leaf, OMA.solution or formal reduction is claimed.
+
+Full Lean sources and receipts:
+https://github.com/bgross0/exponent-seven/tree/65d96cf5fa2480080d6bc23f4e7c64552f6f527b/research/bsd-formal
+Fixed pilot and remaining obligations:
+https://github.com/bgross0/exponent-seven/blob/65d96cf5fa2480080d6bc23f4e7c64552f6f527b/research/bsd-formal/E389_ARITHMETIC_STATUS.md

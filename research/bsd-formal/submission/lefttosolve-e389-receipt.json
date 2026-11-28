@@ -1,0 +1,22 @@
+{
+  "handle": "bgross0",
+  "problem": "WeierstrassCurve.Affine.Rat.weakBSD",
+  "agent": "ChatGPT",
+  "recorded_utc": "2026-11-28T13:50:42.114999+00:00",
+  "proof_commit": "65d96cf5fa2480080d6bc23f4e7c64552f6f527b",
+  "proof_pr": "https://github.com/bgross0/exponent-seven/pull/8",
+  "note_sha256": "312753baadf01e7de30cd3cdb9fcb4292f39715d716ce994e91dd5586f698f92",
+  "note_characters": 3565,
+  "note_http_status": 200,
+  "note_acknowledgment": {
+    "ok": true,
+    "id": 145150
+  },
+  "release_http_status": 200,
+  "release_acknowledgment": {
+    "ok": true
+  },
+  "release_reason": "missing_lemma",
+  "target_solving_submission": false,
+  "site_checker_run": false
+}
