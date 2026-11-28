@@ -120,3 +120,8 @@
 'Exp7.Frontier.smoothCorrelation_abs_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Exp7.Frontier.weilAdmissible_smoothCorrelation_row' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Exp7.Frontier.smoothed_row_damped_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.Frontier.smoothCorrelation_row_eq_truncatedCubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.Frontier.rowTruncatedCubic_eq_piece' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.Frontier.rowCubicPieces_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.Frontier.rowTruncatedCubic_zero_of_one_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Exp7.Frontier.smoothCorrelation_row_eq_piece' depends on axioms: [propext, Classical.choice, Quot.sound]

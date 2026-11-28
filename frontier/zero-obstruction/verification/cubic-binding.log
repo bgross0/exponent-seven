@@ -1,0 +1,2 @@
+'verifier_truncatedCubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'verifier_hornerCells' depends on axioms: [propext, Classical.choice, Quot.sound]

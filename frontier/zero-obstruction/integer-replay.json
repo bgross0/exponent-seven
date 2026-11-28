@@ -105,7 +105,7 @@
           ]
         }
       ],
-      "elapsed_seconds": 0.207
+      "elapsed_seconds": 0.067
     },
     {
       "X": 30000,
@@ -202,7 +202,7 @@
           ]
         }
       ],
-      "elapsed_seconds": 0.19
+      "elapsed_seconds": 0.058
     },
     {
       "X": 100000,
@@ -299,7 +299,7 @@
           ]
         }
       ],
-      "elapsed_seconds": 0.687
+      "elapsed_seconds": 0.215
     },
     {
       "X": 1000000,
@@ -396,8 +396,8 @@
           ]
         }
       ],
-      "elapsed_seconds": 6.806
+      "elapsed_seconds": 2.056
     }
   ],
-  "total_elapsed_seconds": 7.946
+  "total_elapsed_seconds": 2.415
 }
