@@ -1,51 +1,72 @@
 {
   "result": "PASS",
-  "recorded_utc": "2026-11-28T00:48:35.662423+00:00",
+  "recorded_utc": "2026-11-28T02:42:00.452636+00:00",
   "lean": "Lean (version 4.36.0, x86_64-unknown-linux-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
   "mathlib_revision": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
   "mathlib_tracked_sources_clean": true,
-  "theorem_count": 153,
+  "theorem_count": 266,
   "prior_theorem_count": 15,
-  "new_theorem_count": 138,
+  "new_theorem_count": 251,
+  "previous_milestone_theorem_count": 153,
+  "theorems_added_since_previous_milestone": 113,
+  "previous_milestone_proof_commit": "94c4424551e7cb16a72e9ec27546b685576353dc",
   "theorems_per_module": {
+    "BSDArithmeticCertificate": 4,
     "BSDCMPeriods": 24,
     "BSDCertificates": 4,
     "BSDCoordinateRing": 16,
     "BSDEigenline": 12,
     "BSDFiniteWitness": 26,
+    "BSDHenselDistinct": 16,
+    "BSDHenselLift": 12,
+    "BSDHenselSemantics": 28,
     "BSDHenselWitness": 10,
     "BSDLocalization": 25,
+    "BSDOrdinary": 22,
     "BSDRankTwo": 15,
-    "BSDThetaCertificate": 21
+    "BSDThetaCertificate": 21,
+    "BSDThetaLimit": 31
   },
   "source_sha256": {
+    "BSDArithmeticCertificate.lean": "3691e249efac0143a26c7103513e14ca3b7c1369a823680c8d175ab2f7b3208f",
     "BSDCMPeriods.lean": "c6c3cd024817335a4d35372a0e6181dffb7c94fd2d87534b319d862d1f8d4dad",
-    "BSDCertificates.lean": "fd9e5adece82f68bf33aea92815f046675996b07a5321acd511e394241dd7962",
+    "BSDCertificates.lean": "9a9c7daf906940544ad6578506999484098829467572a03d2b9bde692c4114e6",
     "BSDCoordinateRing.lean": "c896ea828c7efe45bf020c22d16f35791474766f79fd101d65273269dfcec340",
     "BSDEigenline.lean": "eccff52aca57dce14d7d58f4fcb3764512b9479e38c73092b969b5adb8cf68b4",
     "BSDFiniteWitness.lean": "543a706d5e3681577395bfc4c54b650a9bc2cd7e6130a7dcf315f4d68736df6c",
+    "BSDHenselDistinct.lean": "e09b39c5a73da4a2f905a1b616cdbf1c39c57a2e5d2a33b5370d0bb1952110f1",
+    "BSDHenselLift.lean": "8692b8281900d8b0cac12ca3a22947788931e883147f505f1e1b10a45a5880ea",
+    "BSDHenselSemantics.lean": "c2d2c3f80f6dcc541460a4793dcdee732784db8133de7d7e6fa8261862eb09b3",
     "BSDHenselWitness.lean": "f7bc8b98388416d051dbcba8f5732850b7fde0bc69fd2c73fc8470c12e70b7bc",
     "BSDLocalization.lean": "571ecf2e043b3bb23ede8a8138a39374e3784afa713334438ee2d5d8bcb1660a",
+    "BSDOrdinary.lean": "968f29cfd725e63a9b25e5c6487ea5df70cbaacb3379748e45d4c431984d57c8",
     "BSDRankTwo.lean": "4fb173ee6ca9a14fcf115480db39185fdaa83079d5955b29ab022a76041562c0",
     "BSDThetaCertificate.lean": "1eb272fd216f7616af514c1cd3571f2b5d928eb996089c71bb5534951fed43b7",
-    "Check.lean": "3e8a71787ed50939b6ea35fc16c203d51d5cf1ea21660d10769172263ace889a",
+    "BSDThetaLimit.lean": "da0b5786086776685a40d5385313b933f26dcf4169dadc5a42c2d8b6a3b8e9a3",
+    "Check.lean": "70f5cd03824e3c7d62a5a490ff61c40ff10ca23286186ac1a28094491436daf3",
     "lake-manifest.json": "c12bd7fa9421adeb052000a3ec2275dd6308a7d673a803cf3a1edd885c309f21",
-    "lakefile.toml": "9fad15105d78d0aede858ca13e6ef33e14bf5ae781afb62c565eca4d61d65110",
+    "lakefile.toml": "c12af1c0735739b4b7f771a4b7006303dc682016caddf28cc0b25e73a97412a4",
     "lean-toolchain": "582a63f8f9c5128067b688778c1051cf1464c3ca9d57b9325025c051c29b774a",
     "scripts/generate_finite_witness.py": "7bc863bdacfe3af4bf7713b4385418023b98c1c1bb0fd7108eb4a39fdc73483d",
     "scripts/generate_hensel_witness.py": "b8a520506c0c74b378f49dffb3e27e82abbb5b07e2192c78148f9ae065074010",
-    "verify.py": "5f1fd53b8c0b264f23574e13bfb35f9e627d1625f288de7c640b380665f3c73c"
+    "verify.py": "a7bbe05648cd8dcade43858e7209d556be2f1ddfea478654d2645be2c94a8672"
   },
   "object_sha256": {
+    "BSDArithmeticCertificate": "67f64e3c0e96cd48c77f80297a635ca914abb8fea6b5129c62aa627ca385f3d6",
     "BSDCMPeriods": "7675998cc7f9484be1810964d70684b37e3b0645508f6b223a0be90725cf3d87",
-    "BSDCertificates": "e5a6d935485634d2b96cb593a0759f04f0590ee347ff64f8e67a7dff72a9888a",
+    "BSDCertificates": "4eee526ef3e3a7488377495b5b4bea475173bb1efea1c73105719a9f9970425c",
     "BSDCoordinateRing": "4015f15217d8adbbec1c52564c01904e2a226a45c02f685755a6b036e6ca98a3",
     "BSDEigenline": "478a600e4b1a9bfa4cf2bd3ec1fde6d1bb2296b8abbb4657ee93132f78d69ed8",
     "BSDFiniteWitness": "ff4f5ec1b1c9ec14ffc5627a33150da7f15e232fad6b7b950e3659682e50cfec",
+    "BSDHenselDistinct": "112cdb91c26fd4b6cd74db3a87cbf72be5633bc3cdae44aed1eab6e61cb8932a",
+    "BSDHenselLift": "766fb2b62ba32f9fff11fea46a9e6b57dbb81dc72154bad93602bcd3189fda7c",
+    "BSDHenselSemantics": "8593cdd7a6e517ebde2a0e456c9246b5b646b50ca10aa11b0b117c10f8a5019b",
     "BSDHenselWitness": "14d284138be75a9915a7c5eac14e059b9730abed4bb0e5a6efc3c2b0b190d2c6",
     "BSDLocalization": "30ab377b0c571f714a5d925a8d4fab6aff3111b89fbde35c1253dc676dadfd96",
+    "BSDOrdinary": "8cd5c7acba3cd49d0811f7b4539872edd8b79375449ac003b9eaf2661f5cf490",
     "BSDRankTwo": "833b7bd81e07f42c70c883a82c78599c9be565dd5788ab2a1e52e34776bdb845",
-    "BSDThetaCertificate": "89f2a1fc71d8a256a1101970b922e7d40b71b4e407633f26fd44879277f0a842"
+    "BSDThetaCertificate": "89f2a1fc71d8a256a1101970b922e7d40b71b4e407633f26fd44879277f0a842",
+    "BSDThetaLimit": "c5c416ec9f592bc4b91728520f870bd46c8ffb02e4d6973bb06d44913e9e88f0"
   },
   "commands": [
     {
@@ -55,9 +76,9 @@
         "BSDCertificates"
       ],
       "exit_code": 0,
-      "seconds": 4.034,
+      "seconds": 14.557,
       "log": "build.log",
-      "log_sha256": "909384c92e1cc24208cc9b30c3be7c9a1109aa8b924bd8443d6f001217b1c088"
+      "log_sha256": "88f5762e80999aea67e85dff33b48c477672e9010bfb675d872725ac00ad2cd5"
     },
     {
       "command": [
@@ -67,9 +88,22 @@
         "Check.lean"
       ],
       "exit_code": 0,
-      "seconds": 1.991,
+      "seconds": 2.741,
       "log": "axioms.log",
-      "log_sha256": "7c80323ea0114a63720f7aee9f85c33bc5e0d50c01c23a0d3716da698b2ad31c"
+      "log_sha256": "1d81503bea88180799850e86fc97c8837e3d8088ecafab33756bb5e405136ab0"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDArithmeticCertificate"
+      ],
+      "exit_code": 0,
+      "seconds": 3.697,
+      "log": "kernel-BSDArithmeticCertificate.log",
+      "log_sha256": "4cdef365100409a3014823a90947a99c958ae22e9fc9a383545eda77a1b8c59b"
     },
     {
       "command": [
@@ -80,7 +114,7 @@
         "BSDCMPeriods"
       ],
       "exit_code": 0,
-      "seconds": 3.503,
+      "seconds": 3.425,
       "log": "kernel-BSDCMPeriods.log",
       "log_sha256": "8898fc442dd8c81b647d2333cd625c5ceb8d773035613b3929c4180b30726c84"
     },
@@ -93,7 +127,7 @@
         "BSDCertificates"
       ],
       "exit_code": 0,
-      "seconds": 3.571,
+      "seconds": 3.542,
       "log": "kernel-BSDCertificates.log",
       "log_sha256": "ed93a28ff67495cf8b5fd0aa1efe1bfe436f319caddee60a311e85f95137e2eb"
     },
@@ -106,7 +140,7 @@
         "BSDCoordinateRing"
       ],
       "exit_code": 0,
-      "seconds": 3.578,
+      "seconds": 3.069,
       "log": "kernel-BSDCoordinateRing.log",
       "log_sha256": "b30b28960f83f07892f4c43586c959e02f450350337563bd03b922683e64c2ca"
     },
@@ -119,7 +153,7 @@
         "BSDEigenline"
       ],
       "exit_code": 0,
-      "seconds": 37.336,
+      "seconds": 52.379,
       "log": "kernel-BSDEigenline.log",
       "log_sha256": "fe6996c6a25ee492848540de4aab0a441988525ae7a2236a4a56611282f54744"
     },
@@ -132,9 +166,48 @@
         "BSDFiniteWitness"
       ],
       "exit_code": 0,
-      "seconds": 34.239,
+      "seconds": 30.178,
       "log": "kernel-BSDFiniteWitness.log",
       "log_sha256": "6b4c08599fce1829a9f3b36b9e7b30f3fb54f0382170ce25c8538085b273d996"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDHenselDistinct"
+      ],
+      "exit_code": 0,
+      "seconds": 5.409,
+      "log": "kernel-BSDHenselDistinct.log",
+      "log_sha256": "f9663bbecbc7e28cfa5dbbbe91ce16170069d3de3fb1ab3e88e7be9ab9d6366d"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDHenselLift"
+      ],
+      "exit_code": 0,
+      "seconds": 4.082,
+      "log": "kernel-BSDHenselLift.log",
+      "log_sha256": "3dda42bd388f09d44d7d2b9cf3906f0fefa58c9358c65bacee06fe9a9a42305d"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDHenselSemantics"
+      ],
+      "exit_code": 0,
+      "seconds": 7.685,
+      "log": "kernel-BSDHenselSemantics.log",
+      "log_sha256": "4ea3d0d020857e99d4b8d1ddba1bf933805aa83c830f42b52c559591909acc09"
     },
     {
       "command": [
@@ -145,7 +218,7 @@
         "BSDHenselWitness"
       ],
       "exit_code": 0,
-      "seconds": 11.83,
+      "seconds": 9.463,
       "log": "kernel-BSDHenselWitness.log",
       "log_sha256": "24f930f259a6be351eb138316ce7817d5874ba0cbdcfa70d6683a8b93cc1bdaf"
     },
@@ -158,9 +231,22 @@
         "BSDLocalization"
       ],
       "exit_code": 0,
-      "seconds": 4.497,
+      "seconds": 3.272,
       "log": "kernel-BSDLocalization.log",
       "log_sha256": "03cae11cc2ace5816df8f5dbf6bdcb1461020cab6337bfc3004844ca02a24642"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDOrdinary"
+      ],
+      "exit_code": 0,
+      "seconds": 3.844,
+      "log": "kernel-BSDOrdinary.log",
+      "log_sha256": "f44a90abcf69977d99721c86d67ceebec0e8e3db3a07e50b17ed442cd04e0e01"
     },
     {
       "command": [
@@ -171,7 +257,7 @@
         "BSDRankTwo"
       ],
       "exit_code": 0,
-      "seconds": 4.0,
+      "seconds": 3.402,
       "log": "kernel-BSDRankTwo.log",
       "log_sha256": "e2c9a1ab207d49b7f8e4047675665b888d745c9ee6b5032197ef903412bfbbcd"
     },
@@ -184,12 +270,45 @@
         "BSDThetaCertificate"
       ],
       "exit_code": 0,
-      "seconds": 4.132,
+      "seconds": 3.34,
       "log": "kernel-BSDThetaCertificate.log",
       "log_sha256": "f5b359e87db3b9905e7aff0828a37c361bbab8bdc6ec3b6abce3b74aa9ab96b2"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "BSDThetaLimit"
+      ],
+      "exit_code": 0,
+      "seconds": 3.214,
+      "log": "kernel-BSDThetaLimit.log",
+      "log_sha256": "9d3d13fbd09198884bc6871790c856124c342d92ab86997789d8404f093bcf89"
     }
   ],
   "axioms": {
+    "BSDArithmeticCertificate.conductor25Scale_isUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDArithmeticCertificate.conductor25Scale_inverse_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDArithmeticCertificate.e433_certificate_of_exact_finite_tower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDArithmeticCertificate.e433_certificate_of_finite_tower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "BSDCMPeriods.cyclicPeriod_values389": [
       "propext",
       "Classical.choice",
@@ -503,6 +622,257 @@
     "BSDFiniteWitness.cm71Weights_match433": [
       "propext"
     ],
+    "BSDHenselDistinct.coordinate_residues_eq_of_order_dvd": [
+      "propext"
+    ],
+    "BSDHenselDistinct.coordinate_residues_eq_of_quotient_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.coordinate_residues_eq_of_completed_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.mapped_getElem!": [
+      "propext"
+    ],
+    "BSDHenselDistinct.indexed_map_injective_of_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.rootLifts71_residue_injective": [
+      "propext",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.rootLifts44375_residue_injective": [
+      "propext",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.root71_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.root44375_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.candidate71_distinct_roots": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.candidate44375_distinct_roots": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.evalPair_reduce": [
+      "propext"
+    ],
+    "BSDHenselDistinct.rootLifts71_canonical_residue": [
+      "propext"
+    ],
+    "BSDHenselDistinct.rootLifts44375_canonical_residue": [
+      "propext"
+    ],
+    "BSDHenselDistinct.root71_canonical_residue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselDistinct.root44375_canonical_residue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.simple_root_in_complete_ring": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.scaled_root_in_complete_ring": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.evalPair_isUnit_of_norm_coprime": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.completionIdeal_ne_top": [
+      "propext",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.quadraticGenerator_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.completedIdeal_eq_span": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.quotient_modulus_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.root_exists_of_lifting_inputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.root71_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.root44375_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.root71_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselLift.root44375_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.integerPolynomial_nil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.integerPolynomial_cons": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.integerPolynomial_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.integerPolynomial_weighted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.integerPolynomial_formalDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.map_evalPair": [
+      "propext",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.coefficientPolynomial_integerCoefficientsMod": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.evaluateMod_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.evaluateMod_derivative_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.map_integerPolynomial_eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.evaluateMod_difference_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.natCast_dvd": [
+      "propext"
+    ],
+    "BSDHenselSemantics.evalPair_dvd": [
+      "propext"
+    ],
+    "BSDHenselSemantics.polynomial_eval_dvd_of_residue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.evalPair_coordinate_division": [
+      "propext"
+    ],
+    "BSDHenselSemantics.exists_scaled_polynomial_eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.normalizedDerivative71_coprime": [
+      "propext"
+    ],
+    "BSDHenselSemantics.normalizedDerivative44375_coprime": [
+      "propext"
+    ],
+    "BSDHenselSemantics.derivative71_precision": [
+      "propext"
+    ],
+    "BSDHenselSemantics.derivative44375_precision": [
+      "propext"
+    ],
+    "BSDHenselSemantics.numericalPremises_lifting_inputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.candidate71_lifting_inputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.candidate44375_lifting_inputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.integerPolynomial_monic_natDegree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.candidate71_monic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.candidate71_natDegree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.candidate44375_monic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDHenselSemantics.candidate44375_natDegree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "BSDHenselWitness.candidate71_reduction": [
       "propext"
     ],
@@ -636,6 +1006,114 @@
       "Quot.sound"
     ],
     "BSDLocalization.quotient_zero_of_two_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.discriminant433": [
+      "propext"
+    ],
+    "BSDOrdinary.discriminant389": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.pointCount433": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.pointCount389": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.trace433": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.trace389": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.euler_eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.euler_derivative_eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.unit_of_close_to_unit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.exists_ordinary_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.unit_root_congruent_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.existsUnique_ordinary_root": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.trace433_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.trace389_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary433_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary389_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary433_equation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary389_equation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary433_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary389_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary433Unit_val": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDOrdinary.ordinary389Unit_val": [
       "propext",
       "Classical.choice",
       "Quot.sound"
@@ -808,6 +1286,161 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "BSDThetaLimit.compatible_coeff_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.shifted_coeff_cauchy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.exists_coefficient_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_coeff_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_coeff_precision": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.eq_of_forall_pow_dvd_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.compatible_constantCoeff_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_constantCoeff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.exists_omega_five_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_finite_approximation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_five_adic_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.cyclicInverse_coeff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.cyclicInverse_coeff_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.coeff_one_comp_of_coeff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.omega_dvd_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.finiteSymmetric_linear_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_coeff_one_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.finite_tower_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.omega_dvd_omega": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.compatible_of_successive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.constant_compatible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_constant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.raw_finite_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.raw_finite_tower_inputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.trace_scale_zero_of_exact_first_level": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.thetaLimit_regularized_approximation_mod_five": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.finite_tower_certificate_mod_five": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.control_finite_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "BSDThetaLimit.control_finite_tower_inputs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "BSDFiniteWitness.nonresidue5_at433": [],
     "BSDFiniteWitness.vertex_table433": [],
     "BSDFiniteWitness.eigenvector433_identity": [],
@@ -826,6 +1459,6 @@
     "propext"
   ],
   "kernel_replay_scope": "All project modules replayed separately against their compiled imports; this is not a fresh replay of every Mathlib declaration.",
-  "scope": "Exact finite certificate algebra/arithmetic and explicitly conditional power-series, localization, and dimension theorems. No arithmetic theta identification or universal BSD proof is asserted.",
+  "scope": "Exact finite certificates; full candidate-polynomial semantics; actual distinct roots in a concrete nontrivial completed quadratic order; actual point counts and ordinary unit roots; construction and order certificate from an explicitly assumed compatible symmetric finite tower; conditional localization and dimension theorems. No CM polynomial identification, arithmetic tower identification, or universal BSD proof is asserted.",
   "forbidden_construct_scan_passed": true
 }

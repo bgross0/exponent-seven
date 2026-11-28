@@ -14,7 +14,6 @@ import json
 import re
 import subprocess
 import time
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -72,7 +71,15 @@ def main():
             r"\b(?:sorry|admit|native_decide|unsafe|implemented_by|partial)\b", source)
         if forbidden:
             raise RuntimeError(f"Forbidden construct in {module}: {forbidden.group(0)}")
-        found = re.findall(r"(?m)^\s*(?:theorem|lemma)\s+([A-Za-z0-9_']+)", source)
+        # Attributes can share the declaration line, as in `@[simp] theorem`.
+        # Reject an unrecognized theorem form instead of silently skipping it.
+        found = re.findall(
+            r"(?m)^\s*(?:@\[[\s\S]*?\]\s*)*"
+            r"(?:(?:private|public|protected|nonrec)\s+)*"
+            r"(?:theorem|lemma)\s+([^\s:(\[{]+)", source)
+        declared = re.findall(r"\b(?:theorem|lemma)\s+([^\s:(\[{]+)", source)
+        if sorted(found) != sorted(declared):
+            raise RuntimeError(f"Unrecognized theorem declaration form in {module}")
         counts[module] = len(found)
         names.extend(module + "." + name for name in found)
     check = "import BSDCertificates\n\n" + "\n".join("#print axioms " + n for n in names) + "\n"
@@ -105,8 +112,8 @@ def main():
             raise RuntimeError(f"Unexpected axiom in {name}: {deps}")
     def replay(module):
         return run(["lake", "env", "leanchecker", "-v", module], "kernel-" + module + ".log")
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        commands.extend(pool.map(replay, modules))
+    # A single replay avoids loading several large imported environments at once.
+    commands.extend(replay(module) for module in modules)
     for rel, expected in source_hashes.items():
         if digest(ROOT / rel) != expected:
             raise RuntimeError("Source changed during verification: " + rel)
@@ -116,13 +123,16 @@ def main():
         "mathlib_tracked_sources_clean": True,
         "theorem_count": len(names), "prior_theorem_count": counts.get("BSDRankTwo", 0),
         "new_theorem_count": len(names)-counts.get("BSDRankTwo", 0),
+        "previous_milestone_theorem_count": 153,
+        "theorems_added_since_previous_milestone": len(names)-153,
+        "previous_milestone_proof_commit": "94c4424551e7cb16a72e9ec27546b685576353dc",
         "theorems_per_module": counts,
         "source_sha256": source_hashes,
         "object_sha256": {m: digest(ROOT / (".lake/build/lib/lean/" + m + ".olean")) for m in modules},
         "commands": commands, "axioms": axioms,
         "axiom_union": sorted({a for deps in axioms.values() for a in deps}),
         "kernel_replay_scope": "All project modules replayed separately against their compiled imports; this is not a fresh replay of every Mathlib declaration.",
-        "scope": "Exact finite certificate algebra/arithmetic and explicitly conditional power-series, localization, and dimension theorems. No arithmetic theta identification or universal BSD proof is asserted.",
+        "scope": "Exact finite certificates; full candidate-polynomial semantics; actual distinct roots in a concrete nontrivial completed quadratic order; actual point counts and ordinary unit roots; construction and order certificate from an explicitly assumed compatible symmetric finite tower; conditional localization and dimension theorems. No CM polynomial identification, arithmetic tower identification, or universal BSD proof is asserted.",
         "forbidden_construct_scan_passed": True,
     }
     (OUT / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")

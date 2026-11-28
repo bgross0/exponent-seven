@@ -6,13 +6,21 @@ import BSDLocalization
 import BSDEigenline
 import BSDCoordinateRing
 import BSDHenselWitness
+import BSDHenselSemantics
+import BSDHenselLift
+import BSDHenselDistinct
+import BSDOrdinary
+import BSDThetaLimit
+import BSDArithmeticCertificate
 
 /-!
-# Integrated finite certificate entry points
+# Integrated arithmetic and finite certificate entry points
 
 These theorems connect the canonical matrix/root/cycle data with the period
-algebra and the finite theta polynomial. Arithmetic CM identification and the
-infinite theta interpolation laws remain separate proof obligations.
+algebra and the finite theta polynomial. The imported modules additionally
+construct actual roots in a completed quadratic order, the curves' ordinary
+unit roots, and a power-series limit of a compatible finite tower. Arithmetic
+CM identification and construction of that tower remain proof obligations.
 -/
 
 namespace BSDCertificates

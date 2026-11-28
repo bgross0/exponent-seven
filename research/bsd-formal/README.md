@@ -1,9 +1,16 @@
 # Lean proofs for the BSD certificate project
 
 This directory formalizes finite arithmetic and algebra from the BSD research
-streams. It contains **153 proved theorems: 138 new theorems and 15 preserved
+streams. It contains **266 proved theorems: 251 new theorems and 15 preserved
 theorems from the original theta package**. The project is pinned to Lean
 4.36.0 and Mathlib commit `fc4f59e577feb1a4956671bc04ac18aaaf8cd842`.
+
+The latest extension adds **113 theorems** to the previous 153-theorem
+milestone. It constructs actual roots of the two full candidate polynomials,
+constructs ordinary unit roots from the two curves' point counts, and
+constructs a power series from a compatible finite tower. See
+[`ARITHMETIC_BRIDGES.md`](ARITHMETIC_BRIDGES.md) for the completed bridges and
+the exact arithmetic inputs still required.
 
 The verification result and exact source hashes are recorded in
 [`verification/receipt.json`](verification/receipt.json). The verifier builds
@@ -29,6 +36,12 @@ explicitly. This directory does not prove the universal BSD conjecture.
 | `BSDThetaCertificate` | 21 new | All 140 quotient-fiber sums, ordinary regularization, the concrete conditional certificate over the 5-adic integers, and a proved nonvacuity example |
 | `BSDLocalization` | 25 new | Finite determinant soundness, full-regulator transversality, and Kummer-subspace dimension implications |
 | `BSDCertificates` | 4 new | Connections from the canonical finite tables to the period and theta-polynomial results |
+| `BSDHenselSemantics` | 28 new | Full polynomial/derivative semantics, monicity and degrees, actual residual divisibility, and normalized derivative units |
+| `BSDHenselLift` | 12 new | Actual root existence in the explicitly constructed nontrivial completed quadratic order |
+| `BSDHenselDistinct` | 16 new | Injective seven- and 140-root families and exact canonical-residue labels |
+| `BSDOrdinary` | 22 new | Actual Mathlib curve point counts at five and the unique ordinary unit root of each point-count Euler polynomial |
+| `BSDThetaLimit` | 31 new | Construction from a compatible finite tower, exact low-order vanishing, first-level approximation, and a complete conditional order certificate |
+| `BSDArithmeticCertificate` | 4 new | The assembled E433 finite-tower implication with the actual ordinary normalization `alpha^(-2)` |
 
 The theorem inventory is generated from declarations rather than comments.
 The source and verification receipt distinguish the 15 reused theorems from
@@ -96,10 +109,27 @@ exponent s, and
 \]
 
 The same approximations reduce to the canonical residue tables modulo
-`433^4`. These are proofs of the numerical premises. Applying strong Hensel in
-the intended unramified quadratic 433-adic extension, and identifying the
-candidate polynomials with analytic Hilbert class polynomials, remain separate
-formalization steps.
+`433^4`. The new semantic bridge interprets every full coefficient and the
+formal derivative as actual Mathlib polynomials. It proves that these
+polynomials are monic of degrees seven and 140 over every nontrivial
+commutative coefficient ring.
+
+`BSDHenselLift` constructs the concrete ring
+
+\[
+C=\widehat{\mathbb Z[\sqrt5]}^{\,(433^4)},
+\]
+
+proves that it is nontrivial and complete, and applies a proved scaled
+Hensel theorem. `BSDHenselDistinct` then proves actual families of seven
+and 140 roots, respectively, injective within each family. Their residues
+are exactly the original canonical root-table entries. All numerical
+hypotheses are discharged by the existing data and new semantic proofs.
+
+Identifying the candidate polynomials with analytic Hilbert class polynomials
+and identifying this completion with the intended unramified quadratic
+433-adic integer ring remain separate arithmetic steps. No integral-domain,
+exhaustive-root-list, or cross-family distinctness claim is made here.
 
 ### Cyclic character periods
 
@@ -180,6 +210,72 @@ identification of G with the infinite theta series. See
 [`ORIGIN_CONVENTIONS.md`](ORIGIN_CONVENTIONS.md) for the review finding and the
 corresponding E389 convention.
 
+### Ordinary roots from actual curve point counts
+
+`BSDOrdinary` defines both curve models over a coefficient ring, proves their
+integer discriminants, and proves that their reductions modulo five are
+elliptic. It counts Mathlib's actual `WeierstrassCurve.Affine.Point` types,
+including the point at infinity:
+
+\[
+\#E_{433}(\mathbb F_5)=10,\qquad \#E_{389}(\mathbb F_5)=9.
+\]
+
+The traces defined from these counts are -4 and -3. Applying Mathlib's
+5-adic Hensel theorem constructs the unique unit root of each point-count
+Euler polynomial:
+
+\[
+\alpha_{433}^2+4\alpha_{433}+5=0,\qquad
+\alpha_{389}^2+3\alpha_{389}+5=0.
+\]
+
+Their existence and unit properties are proved, not hypotheses.
+`BSDArithmeticCertificate` uses the actual unit
+`conductor25Scale = alpha433^(-2)`. Identification of this chosen scale with
+the arithmetic CM normalization is part of the remaining first-level
+identification.
+
+### Constructing the series from a finite tower
+
+`BSDThetaLimit` takes finite polynomials `G n` at quotient order `5^n`.
+Successive cyclic compatibility means
+
+\[
+\omega_n\mid G_{n+1}-G_n,\qquad \omega_n=(1+T)^{5^n}-1.
+\]
+
+The proved prime-power binomial bounds make every coefficient sequence
+5-adically Cauchy. Mathlib completeness constructs `thetaLimit G`, with
+uniqueness and proved coefficient precision. Finite inversion symmetries
+at every level, with origin multipliers of augmentation one, and zero
+augmentation at level zero imply exact constant and linear vanishing of
+the constructed limit. No infinite functional equation or infinite
+vanishing assumption is supplied.
+
+The intended entry point is
+`BSDArithmeticCertificate.e433_certificate_of_finite_tower`. It uses the
+actual ordinary scale, the successive distribution relation, the finite
+symmetries, zero level-zero augmentation, and five first-level coefficient
+congruences modulo five. It concludes
+
+\[
+\operatorname{ord}_T F=2,\qquad F=T^2V,\qquad V(0)\in\mathbb Z_5^\times
+\]
+
+for the constructed series. The integral approximation witnesses are also
+constructed. The family consists of finite objects at every level: the
+distribution and symmetry inputs are **uniform statements for all levels**,
+not consequences of checking one finite table.
+
+Statement review found that exact first-level equality to the regularized
+element, together with exact zero augmentation, forces its correction scalar
+to be zero. This is now a proved lemma. The intended modulo-five interface
+avoids that extra restriction. A constant control tower
+`u(T^2+T^3)-cT^4` proves the revised hypotheses jointly consistent for every
+correction scalar c, using multiplier `(1+T)^4`. The control tower is not an
+arithmetic CM identification.
+
 ### Localization and Kummer linear algebra
 
 `BSDLocalization.logarithm_ne_zero_of_theta_and_leading_comparison` formalizes
@@ -215,10 +311,10 @@ has dimension one. Arithmetic Kummer membership is always explicit.
 | Layer | Remaining obligation |
 | --- | --- |
 | CM geometry | Prove the Deuring and CM interpretations of the finite data and identify the candidate integer polynomials with the actual Hilbert class polynomials |
-| Root lifting | Apply strong Hensel in the intended complete extension, using the now-proved numerical premises |
+| Completed coefficient ring | Identify the concrete completed quadratic order with the intended unramified quadratic 433-adic integer ring; actual root existence and canonical labels are now proved |
 | Automorphic identification | Identify the displayed matrix/eigenline with the Brandt/Jacquet-Langlands object for the specified curve |
 | Class action | Identify the cycle with the class-group action and prove that index modulo five gives the intended anticyclotomic quotient |
-| Infinite theta | Construct the arithmetic theta series and prove the exact constant zero, inversion symmetry, ordinary-unit normalization, and integral approximation used above |
+| Arithmetic theta tower | Construct the actual finite CM family, prove its distribution and finite symmetry uniformly over all levels, prove its zero augmentation, and identify its first-level coefficients and normalization; the limit construction and certificate implication are now proved |
 | Global classes | Construct the compatible global family, verify the finite local condition, and prove the full arithmetic regulator comparison |
 | Rational points and Sha | Identify the actual Kummer/Selmer objects and quotient, then formalize the arithmetic passage from its vanishing to finite primary Sha |
 | Universal BSD | Establish the required complex L-function order and rational rank for every curve in the exact target |
@@ -236,7 +332,10 @@ cyclic E389 ordering, not the old sorted-j ordering.
 `BSDRankTwo.lean` is byte-identical to the file in that handoff's imported theta
 package. It is replayed here; its 15 theorems are not counted as newly proved.
 The other sources formalize parts of the work at
-`f3742fbf6ae1915cc35def76d2bc3937bebfda1e`.
+`f3742fbf6ae1915cc35def76d2bc3937bebfda1e`. The first 153-theorem milestone
+is preserved at proof commit `94c4424551e7cb16a72e9ec27546b685576353dc`;
+the latest extension adds 113 theorems without replacing the original
+numerical certificate.
 
 The shared handoff's E389 rank-two and finite-5-primary-Sha conclusion is a
 documented application of arithmetic theorems and the independently supplied
@@ -282,7 +381,8 @@ L-function's meromorphic order with rational-point rank. None of the theorems
 in this directory has that type. A theorem whose remaining hypotheses include
 the arithmetic bridge is not a complete proof of that target.
 
-These are complete proofs of their stated finite or conditional propositions.
+These are complete proofs of their stated finite, constructive, or conditional propositions.
 They are appropriate reusable auxiliary results for the problem team's notes.
 They must not be submitted as `OMA.solution` for universal BSD. The submission
-record, when posted, belongs in `submission/` with this distinction preserved.
+record is in [`submission/`](submission/). The first research contribution
+was acknowledged as note 68678; this is not checker acceptance of universal BSD.

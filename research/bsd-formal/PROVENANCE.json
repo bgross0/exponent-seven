@@ -16,10 +16,21 @@
     "commit": "cf84450fb80b673c9b32c5abb71d7e26d4e87957",
     "acknowledgment": "Read and used corrected E389 cyclic order; the preserved source is replayed. Future ownership assignments remain separate."
   },
-  "new_formalization_scope": "Finite arithmetic/algebra and explicit conditional theta/localization/Kummer implications; no universal BSD solution",
+  "new_formalization_scope": "Finite arithmetic and actual candidate-polynomial roots in a concrete nontrivial completed quadratic order; actual curve point counts and ordinary unit roots; power-series construction and order certificate from explicitly assumed finite-tower arithmetic; conditional localization and Kummer implications. No arithmetic CM/theta identification or universal BSD solution.",
   "lefttosolve_target_reviewed": {
     "id": "WeierstrassCurve.Affine.Rat.weakBSD",
     "upstream_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
     "classification": "Auxiliary contributions only; exact target not proved"
+  },
+  "previous_formal_milestone": {
+    "proof_commit": "94c4424551e7cb16a72e9ec27546b685576353dc",
+    "branch_head_before_extension": "1e9821b31f1f6996ac3ff88d62e22ef4b76c458b",
+    "theorems": 153
+  },
+  "hensel_proof_source": {
+    "path": "Mathlib/RingTheory/Henselian.lean",
+    "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+    "adaptation": "Newton proof for an arbitrary polynomial, followed by scaled Taylor lifting",
+    "license": "Apache-2.0; original attribution retained in BSDHenselLift.lean"
   }
 }

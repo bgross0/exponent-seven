@@ -4,7 +4,7 @@ defaultTargets = ["BSDCertificates"]
 
 [[lean_lib]]
 name = "BSDCertificates"
-roots = ["BSDRankTwo", "BSDCMPeriods", "BSDThetaCertificate", "BSDLocalization", "BSDFiniteWitness", "BSDEigenline", "BSDCoordinateRing", "BSDHenselWitness", "BSDCertificates"]
+roots = ["BSDRankTwo", "BSDCMPeriods", "BSDThetaCertificate", "BSDLocalization", "BSDFiniteWitness", "BSDEigenline", "BSDCoordinateRing", "BSDHenselWitness", "BSDHenselSemantics", "BSDHenselLift", "BSDHenselDistinct", "BSDOrdinary", "BSDThetaLimit", "BSDArithmeticCertificate", "BSDCertificates"]
 
 [[require]]
 name = "mathlib"
