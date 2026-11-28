@@ -190,4 +190,4 @@ On the Precision, the two versions printed identical types for `normEq_classGrou
 
 1. A person should read the statement of Theorem E and the definitions it uses: `GRHPrimeConductor`, `known`, and Mathlib's `ClassGroup`, `QuadraticAlgebra` and `Int.IsFundamentalDiscr`.
 2. Build the Lean 4.35 combined workspace on a second machine.
-3. Formalize the count of 40 orders of Corollary B (ARSX) and Corollary C, if wanted.
+3. Formalize the count of 40 orders of Corollary B (ARSX), and the oddness step of Corollary C (genus theory: the class number of ℚ(√−q) is odd for prime q). The rest of Corollary C is in `Arithmetic/LeastSplitFull.lean`.
